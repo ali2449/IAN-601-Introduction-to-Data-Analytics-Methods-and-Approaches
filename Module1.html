@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Module 1: Absolute Beginner's Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/eclipse.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    
+    <style>
+        /* Same comprehensive styles as original workbook */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+        
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --section-bg: #1e293b;
+            --code-bg: #020617;
+            --border-color: #334155;
+            --header-color: #38bdf8;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f1f5f9;
+            --text-color: #1e293b;
+            --section-bg: #ffffff;
+            --code-bg: #f8fafc;
+            --border-color: #e2e8f0;
+            --header-color: #1d4ed8;
+            --accent-color: #4f46e5;
+            --accent-hover: #4338ca;
+            --success-color: #059669;
+            --error-color: #dc2626;
+            --warning-color: #d97706;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            line-height: 1.6;
+        }
+
+        .section-card {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            color: white;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .CodeMirror {
+            height: auto;
+            min-height: 150px;
+            border-radius: 0.5rem;
+            font-size: 14px;
+            margin: 0.5rem 0;
+            transition: background-color 0.3s;
+        }
+        
+        .output-area {
+            background-color: var(--code-bg);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+            font-family: monospace;
+            font-size: 14px;
+            min-height: 60px;
+            white-space: pre-wrap;
+            transition: background-color 0.3s;
+        }
+
+        .chapter-title {
+            color: var(--header-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--header-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .function-title {
+            color: var(--header-color);
+            font-weight: bold;
+            margin: 1.5rem 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .concept-box {
+            background-color: var(--section-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+            transition: background-color 0.3s;
+        }
+
+        .explanation-box {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .status-indicator {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .status-loading {
+            background-color: #fef3c7;
+            color: #92400e;
+            border: 1px solid #f59e0b;
+        }
+        
+        .status-ready {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid var(--success-color);
+        }
+
+        .status-error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid var(--error-color);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 100;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--border-color);
+        }
+
+        .table-of-contents {
+            position: sticky;
+            top: 1rem;
+            max-height: calc(100vh - 2rem);
+            overflow-y: auto;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+
+        .toc-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .toc-item:hover {
+            color: var(--header-color);
+        }
+
+        .toc-item:last-child {
+            border-bottom: none;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: var(--border-color);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .code-container {
+            position: relative;
+            margin: 1.5rem 0;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-color);
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s, background-color 0.2s;
+            z-index: 10;
+        }
+
+        .copy-button:hover {
+            opacity: 1;
+            background-color: var(--border-color);
+        }
+
+        .success-message {
+            color: var(--success-color);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .info-box {
+            background-color: var(--code-bg);
+            border-left: 4px solid var(--header-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .warning-box {
+            background-color: #fef3c7;
+            border-left: 4px solid var(--warning-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+            color: #92400e;
+        }
+
+        .real-world-example {
+            background-color: var(--section-bg);
+            border: 2px dashed var(--success-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .table-of-contents {
+                position: static;
+                max-height: none;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+
+<div class="theme-toggle" id="theme-toggle">
+    <span id="theme-icon">🌙</span>
+</div>
+
+<div class="max-w-6xl mx-auto">
+    <header class="text-center mb-8">
+        <h1 class="text-4xl font-extrabold mb-4">🐍 Python Fundamentals – Module 1</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-4">No experience needed – start here!</p>
+        <div id="status-indicator" class="status-indicator status-loading">
+            ⏳ Loading Pyodide (Python in your browser)... This takes ~10 seconds.
+        </div>
+        <div id="progress-bar" class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Table of Contents -->
+        <div class="lg:col-span-1">
+            <div class="table-of-contents">
+                <h2 class="font-bold text-lg mb-4">📖 Contents</h2>
+                <div id="toc-list"></div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="lg:col-span-3">
+
+            <section class="section-card" id="chapter-1">
+                <div class="chapter-title">💼 Business Context – Why Python?</div>
+                <div class="concept-box">
+                    <p>Before writing code, understand <strong>why</strong> we use Python in business and healthcare:</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                        <li><strong>Automate calculations</strong> – profit, taxes, patient statistics.</li>
+                        <li><strong>Analyze data</strong> – sales trends, patient heart rates.</li>
+                        <li><strong>Make decisions</strong> – “Should we open a new clinic?” based on data.</li>
+                    </ul>
+                    <p class="mt-2">In this module, you'll learn the building blocks: <strong>variables</strong>, <strong>data types</strong>, <strong>input/output</strong>, and <strong>formatting</strong>. Every concept includes a real‑world example.</p>
+                </div>
+            </section>
+
+            <!-- ========== 1. PRINT & F-STRINGS (detailed beginner explanation) ========== -->
+            <section class="section-card" id="print-fstring">
+                <div class="chapter-title">🖨️ The print() Function & f‑strings</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold text-lg mb-2">What is print()?</h4>
+                    <p><code>print()</code> is a built‑in Python function that <strong>displays text</strong> on the screen. Think of it as a messenger that takes what you give it and shows it to the user.</p>
+                    <p class="mt-1">Example: <code>print("Hello world")</code> → shows <strong>Hello world</strong>.</p>
+                    <p>You can print numbers, text, variables, or a combination.</p>
+                </div>
+
+                <div class="explanation-box">
+                    <h4 class="font-bold text-lg mb-2">What is an f‑string?</h4>
+                    <p>An <strong>f‑string</strong> (formatted string) lets you <strong>mix text and variables</strong> easily. Put an <code>f</code> before the quotes and use <code>{variable_name}</code> inside.</p>
+                    <p class="italic">Analogy: Like a Mad Libs template – you write the story and Python fills in the blanks.</p>
+                    <p class="mt-1">Example: <code>name = "Alice"</code> then <code>print(f"Hello {name}")</code> → <strong>Hello Alice</strong>.</p>
+                    <p>You can also format numbers: <code>{value:.2f}</code> shows 2 decimal places.</p>
+                </div>
+
+                <!-- Live example with comments -->
+                <div class="code-container">
+                    <textarea id="editor_print_basics" class="code-editor"># ---------- print() basics ----------
+print("Hello! This is my first Python program.")
+
+# Print multiple items with commas (auto space)
+print("Patient name:", "Alice", "Age:", 45)
+
+# ---------- f-strings (recommended) ----------
+patient = "Bob"
+age = 30
+print(f"Patient {patient} is {age} years old.")
+
+# Format numbers: display with 2 decimal places
+temperature = 98.625
+print(f"Temperature: {temperature:.2f}°F")
+
+# Use commas for thousands separator
+revenue = 1234567.89
+print(f"Revenue: ${revenue:,.2f}")
+
+# Escape sequences: \n = new line
+print("Line 1\nLine 2\nLine 3")</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_print_basics" class="output-area">Click Run to see the print() examples.</div>
+                </div>
+            </section>
+
+            <!-- ========== 2. VARIABLES (with analogy) ========== -->
+            <section class="section-card" id="variables">
+                <div class="chapter-title">📦 Variables – Storing Information</div>
+                <div class="explanation-box">
+                    <p><strong>Variable = labelled box</strong> that holds a value. You put data into a box and give it a name. Later, you can open the box and use the data.</p>
+                    <p>✅ <strong>Rules:</strong> Names can contain letters, numbers, underscores (but cannot start with a number). Choose descriptive names like <code>patient_age</code> instead of <code>x</code>.</p>
+                </div>
+                <div class="code-container">
+                    <textarea id="editor_variables" class="code-editor"># Creating variables (assignment)
+sales = 1000          # store number 1000 into 'sales'
+patient_name = "John" # store text "John" into 'patient_name'
+is_vaccinated = True  # store True/False
+
+# Using variables
+print("Sales today:", sales)
+print("Patient:", patient_name)
+
+# Changing a variable (reassign)
+sales = 1200   # now sales holds 1200
+print("Updated sales:", sales)</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_variables" class="output-area">Click Run to see variable examples.</div>
+                </div>
+            </section>
+
+            <!-- ========== 3. DATA TYPES ========== -->
+            <section class="section-card" id="datatypes">
+                <div class="chapter-title">🔢 Data Types – Different Kinds of Data</div>
+                <div class="explanation-box">
+                    <p>Every value has a <strong>type</strong>. Python automatically figures out the type.</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>int</strong> – whole numbers: <code>age = 25</code></li>
+                        <li><strong>float</strong> – decimals: <code>height = 5.9</code></li>
+                        <li><strong>str</strong> – text: <code>name = "Alice"</code></li>
+                        <li><strong>bool</strong> – True/False: <code>is_healthy = True</code></li>
+                    </ul>
+                    <p>Use <code>type()</code> to check a variable's type.</p>
+                </div>
+                <div class="code-container">
+                    <textarea id="editor_datatypes" class="code-editor">age = 30          # int
+temperature = 98.6 # float
+name = "Sarah"    # str
+has_fever = False # bool
+
+print("age is", type(age))
+print("temperature is", type(temperature))
+print("name is", type(name))
+print("has_fever is", type(has_fever))</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_datatypes" class="output-area">Click Run to see types printed.</div>
+                </div>
+            </section>
+
+            <!-- ========== 4. BASIC OPERATIONS ========== -->
+            <section class="section-card" id="operations">
+                <div class="chapter-title">🧮 Basic Calculations</div>
+                <div class="explanation-box">
+                    <p>Python can do math like a calculator. Operators: <code>+ - * /</code> (plus, minus, multiply, divide).</p>
+                    <p>Use parentheses to control order: <code>(2+3)*4</code> = 20.</p>
+                </div>
+                <div class="code-container">
+                    <textarea id="editor_ops" class="code-editor">revenue = 5000
+cost = 3200
+profit = revenue - cost
+tax = profit * 0.10
+net_profit = profit - tax
+
+print(f"Revenue: ${revenue}")
+print(f"Cost: ${cost}")
+print(f"Gross profit: ${profit}")
+print(f"Tax (10%): ${tax}")
+print(f"Net profit: ${net_profit}")
+
+# Other operators
+print("10 / 3 =", 10/3)   # division = float
+print("10 // 3 =", 10//3) # floor division (integer)
+print("10 % 3 =", 10%3)   # remainder
+print("2 ** 3 =", 2**3)   # power (2³ = 8)</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_ops" class="output-area">Click Run to see arithmetic.</div>
+                </div>
+            </section>
+
+            <!-- ========== 5. INPUT & TYPE CONVERSION ========== -->
+            <section class="section-card" id="input">
+                <div class="chapter-title">⌨️ Getting User Input</div>
+                <div class="explanation-box">
+                    <p><code>input("Prompt: ")</code> asks the user to type something. It <strong>always returns a string</strong>. To do math, convert to number using <code>int()</code> or <code>float()</code>.</p>
+                    <p><strong>Why conversion?</strong> If you add <code>"5" + "10"</code> you get <code>"510"</code> (string concatenation), not 15.</p>
+                </div>
+                <div class="code-container">
+                    <textarea id="editor_input" class="code-editor"># Simple input
+name = input("What is your name? ")
+print(f"Hello, {name}!")
+
+# Numeric input – convert to float
+price = float(input("Enter price: "))
+quantity = int(input("Enter quantity: "))
+total = price * quantity
+print(f"Total cost: ${total:.2f}")
+
+# Conversion examples
+print("'123' as int:", int("123"))
+print("'45.67' as float:", float("45.67"))
+print("100 as string:", str(100))</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_input" class="output-area">Click Run, then respond to prompts.</div>
+                </div>
+            </section>
+
+            <!-- Chapter 2: Practice Exercises (with detailed hints) -->
+            <section class="section-card" id="exercises">
+                <div class="chapter-title">✍️ Practice Exercises</div>
+                <div class="concept-box">
+                    <p>Try each exercise. Write your code in the editor and click Run. Use the hints if stuck.</p>
+                </div>
+
+                <div class="function-title">1. Foundation – Patient Greeting</div>
+                <div class="explanation-box"><p>Create variables <code>patient_name</code> and <code>patient_age</code>. Print them using an f-string.</p></div>
+                <div class="code-container">
+                    <textarea id="ex1" class="code-editor">patient_name = "Emily"
+patient_age = 42
+# Your f-print here</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_ex1" class="output-area"></div>
+                </div>
+
+                <div class="function-title">2. Data Types Detective</div>
+                <div class="explanation-box"><p>Assign a float, an int, a string, and a boolean. Print each with <code>type()</code>.</p></div>
+                <div class="code-container">
+                    <textarea id="ex2" class="code-editor"># Your code</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_ex2" class="output-area"></div>
+                </div>
+
+                <div class="function-title">3. Rectangle Area</div>
+                <div class="explanation-box"><p>Define <code>length = 8.5</code> and <code>width = 3.2</code>. Compute area and print.</p></div>
+                <div class="code-container">
+                    <textarea id="ex3" class="code-editor">length = 8.5
+width = 3.2
+# area = ...</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_ex3" class="output-area"></div>
+                </div>
+
+                <div class="function-title">4. Shopping Calculator</div>
+                <div class="explanation-box"><p>Ask user for price and quantity (convert to numbers). Calculate total and print with <code>${:.2f}</code>.</p></div>
+                <div class="code-container">
+                    <textarea id="ex4" class="code-editor">price = float(input("Price: "))
+quantity = int(input("Quantity: "))
+# calculate total</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_ex4" class="output-area"></div>
+                </div>
+            </section>
+
+            <!-- Chapter 3: Business Applications (with more detail) -->
+            <section class="section-card" id="business-apps">
+                <div class="chapter-title">🏥 Business Applications</div>
+                <div class="function-title">Health Record – Vital Signs</div>
+                <div class="explanation-box">
+                    <p>Store patient name, heart rate, and temperature. Print a formatted summary.</p>
+                </div>
+                <div class="code-container">
+                    <textarea id="app_health" class="code-editor">patient = "Michael"
+heart_rate = 72
+temperature = 98.6
+print(f"Patient: {patient} | Heart rate: {heart_rate} bpm | Temp: {temperature}°F")</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_app_health" class="output-area"></div>
+                </div>
+                <div class="function-title">Profit Margin Calculator</div>
+                <div class="explanation-box"><p>Interactive tool: get revenue and cost, print profit and margin percentage.</p></div>
+                <div class="code-container">
+                    <textarea id="app_profit" class="code-editor">revenue = float(input("Revenue: "))
+cost = float(input("Cost: "))
+profit = revenue - cost
+margin = (profit / revenue) * 100
+print(f"Profit: ${profit:.2f}")
+print(f"Margin: {margin:.1f}%")</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_app_profit" class="output-area"></div>
+                </div>
+            </section>
+
+            <!-- Chapter 4: Capstone Project -->
+            <section class="section-card" id="capstone">
+                <div class="chapter-title">🚀 Capstone Project – Sales Report Generator</div>
+                <div class="concept-box">
+                    <p><strong>Task</strong>: Build a program that asks for sales and costs, then prints a professional report showing:</p>
+                    <ul class="list-disc pl-5">
+                        <li>Total sales and total costs</li>
+                        <li>Gross profit</li>
+                        <li>Tax (10% of gross profit)</li>
+                        <li>Net profit</li>
+                    </ul>
+                    <p>Use <strong>f-strings</strong>, <strong>format specifiers</strong> (<code>:,.2f</code>), and <strong>input conversion</strong>.</p>
+                </div>
+                <div class="code-container">
+                    <textarea id="capstone_code" class="code-editor">print("===== SALES REPORT GENERATOR =====")
+sales = float(input("Total sales: "))
+costs = float(input("Total costs: "))
+
+profit = sales - costs
+tax = profit * 0.10
+net = profit - tax
+
+print("\n---------- REPORT ----------")
+print(f"Sales:      ${sales:>12,.2f}")
+print(f"Costs:      ${costs:>12,.2f}")
+print(f"Gross Profit: ${profit:>12,.2f}")
+print(f"Tax (10%):   ${tax:>12,.2f}")
+print(f"Net Profit:  ${net:>12,.2f}")
+print("----------------------------")</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_capstone" class="output-area"></div>
+                </div>
+            </section>
+
+            <!-- Chapter 5: Solutions (with explanations) -->
+            <section class="section-card" id="solutions">
+                <div class="chapter-title">🔑 Solutions & Explanations</div>
+                <div class="concept-box">
+                    <p>Run these to see correct code. Read the comments to understand each step.</p>
+                </div>
+                <div class="function-title">Exercise 1 Solution</div>
+                <div class="code-container">
+                    <textarea id="sol1" class="code-editor">patient_name = "Emily"
+patient_age = 42
+print(f"Patient: {patient_name}, Age: {patient_age}")</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_sol1" class="output-area"></div>
+                </div>
+                <div class="function-title">Exercise 2 Solution</div>
+                <div class="code-container">
+                    <textarea id="sol2" class="code-editor">a = 3.14
+b = 100
+c = "Python"
+d = True
+print(type(a), type(b), type(c), type(d))</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_sol2" class="output-area"></div>
+                </div>
+                <div class="function-title">Exercise 3 Solution</div>
+                <div class="code-container">
+                    <textarea id="sol3" class="code-editor">length = 8.5
+width = 3.2
+area = length * width
+print(f"Area: {area}")</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_sol3" class="output-area"></div>
+                </div>
+                <div class="function-title">Exercise 4 Solution</div>
+                <div class="code-container">
+                    <textarea id="sol4" class="code-editor">price = float(input("Price: "))
+quantity = int(input("Quantity: "))
+total = price * quantity
+print(f"Total: ${total:.2f}")</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_sol4" class="output-area"></div>
+                </div>
+                <div class="function-title">Capstone Solution</div>
+                <div class="code-container">
+                    <textarea id="sol_cap" class="code-editor"># Same as the capstone code above – see capstone section for reference</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output_sol_cap" class="output-area"></div>
+                </div>
+            </section>
+
+            <!-- Glossary & FAQ for beginners -->
+            <section class="section-card" id="faq">
+                <div class="chapter-title">❓ Glossary & FAQ</div>
+                <div class="explanation-box">
+                    <h4 class="font-bold">Glossary</h4>
+                    <ul class="list-disc pl-5">
+                        <li><strong>print()</strong> – function to display output.</li>
+                        <li><strong>f-string</strong> – formatted string with <code>f"text {variable}"</code>.</li>
+                        <li><strong>Variable</strong> – name that stores a value.</li>
+                        <li><strong>int</strong> – integer (whole number).</li>
+                        <li><strong>float</strong> – decimal number.</li>
+                        <li><strong>str</strong> – string (text).</li>
+                        <li><strong>bool</strong> – True/False.</li>
+                        <li><strong>Type conversion</strong> – changing type with <code>int()</code>, <code>float()</code>, <code>str()</code>.</li>
+                    </ul>
+                    <h4 class="font-bold mt-3">FAQ</h4>
+                    <p><strong>Q: What is the difference between <code>print("Hello")</code> and <code>print(f"Hello {name}")</code>?</strong><br>A: The first prints fixed text; the second inserts the value of <code>name</code> into the string.</p>
+                    <p><strong>Q: Why do I get an error when adding a string and a number?</strong><br>A: Python doesn't know whether to add or concatenate. Use <code>str()</code> to convert number to string, or use an f-string.</p>
+                    <p><strong>Q: How do I show two decimal places?</strong><br>A: Use <code>{value:.2f}</code> inside an f-string.</p>
+                    <p><strong>Q: What does <code>input()</code> return?</strong><br>A> Always a string. Convert with <code>int()</code> or <code>float()</code> for numbers.</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<script>
+// Pyodide and interactive setup (same as original, included for completeness)
+let pyodide;
+let isPyodideReady = false;
+let currentTheme = 'dark';
+
+function addToOutput(outputId, text) {
+    const el = document.getElementById(outputId);
+    if (el) el.textContent += text;
+}
+
+function updateProgress(pct) {
+    const fill = document.getElementById('progress-fill');
+    if (fill) fill.style.width = `${pct}%`;
+}
+
+function toggleTheme() {
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    currentTheme = newTheme;
+    const icon = document.getElementById('theme-icon');
+    icon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+    document.querySelectorAll('.CodeMirror').forEach(cm => {
+        cm.CodeMirror.setOption('theme', newTheme === 'dark' ? 'monokai' : 'eclipse');
+    });
+    localStorage.setItem('theme', newTheme);
+}
+
+function generateTOC() {
+    const toc = document.getElementById('toc-list');
+    const sections = document.querySelectorAll('.section-card');
+    sections.forEach(sec => {
+        const title = sec.querySelector('.chapter-title')?.innerText || sec.id;
+        const item = document.createElement('div');
+        item.className = 'toc-item';
+        item.innerText = title;
+        item.addEventListener('click', () => sec.scrollIntoView({ behavior: 'smooth' }));
+        toc.appendChild(item);
+    });
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        const msg = document.createElement('div');
+        msg.className = 'success-message';
+        msg.innerText = 'Copied!';
+        const container = document.querySelector('.code-container');
+        if (container) {
+            const old = container.querySelector('.success-message');
+            if (old) old.remove();
+            container.appendChild(msg);
+            setTimeout(() => msg.remove(), 1500);
+        }
+    });
+}
+
+async function initPyodide() {
+    try {
+        const statusDiv = document.getElementById('status-indicator');
+        statusDiv.innerText = "🔄 Loading Pyodide...";
+        updateProgress(20);
+        pyodide = await loadPyodide({ indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/" });
+        statusDiv.innerText = "📦 Preparing Python environment...";
+        updateProgress(60);
+        await pyodide.runPythonAsync(`
+import sys
+import js
+class OutputCapture:
+    def __init__(self, output_id):
+        self.output_id = output_id
+    def write(self, text):
+        js.addToOutput(self.output_id, text)
+    def flush(self):
+        pass
+original_stdout = sys.stdout
+`);
+        statusDiv.className = "status-indicator status-ready";
+        statusDiv.innerText = "✅ Ready! Click Run on any example.";
+        updateProgress(100);
+        isPyodideReady = true;
+    } catch (err) {
+        console.error(err);
+        const statusDiv = document.getElementById('status-indicator');
+        statusDiv.className = "status-indicator status-error";
+        statusDiv.innerText = "❌ Failed to load Pyodide: " + err.message;
+    }
+}
+
+async function runCode(code, outputElement) {
+    if (!isPyodideReady) {
+        outputElement.innerText = "Pyodide still loading, please wait...";
+        return;
+    }
+    try {
+        outputElement.innerText = "Running...";
+        const outId = outputElement.id;
+        await pyodide.runPythonAsync(`
+import sys
+output_capture = OutputCapture("${outId}")
+sys.stdout = output_capture
+`);
+        await pyodide.runPythonAsync(code);
+        await pyodide.runPythonAsync(`sys.stdout = original_stdout`);
+    } catch (err) {
+        outputElement.innerText = "Error: " + err.message;
+    }
+}
+
+window.addToOutput = addToOutput;
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    currentTheme = savedTheme;
+    document.getElementById('theme-icon').innerText = savedTheme === 'dark' ? '🌙' : '☀️';
+    generateTOC();
+    await initPyodide();
+
+    // Attach CodeMirror and event handlers to all code containers
+    document.querySelectorAll('.code-container').forEach(container => {
+        const textarea = container.querySelector('.code-editor');
+        const runBtn = container.querySelector('.run-button');
+        const copyBtn = container.querySelector('.copy-button');
+        const outputArea = container.querySelector('.output-area');
+        if (!textarea) return;
+        const editor = CodeMirror.fromTextArea(textarea, {
+            lineNumbers: true,
+            mode: 'python',
+            theme: currentTheme === 'dark' ? 'monokai' : 'eclipse',
+            value: textarea.value
+        });
+        runBtn.addEventListener('click', async () => {
+            const code = editor.getValue();
+            await runCode(code, outputArea);
+        });
+        copyBtn.addEventListener('click', () => copyToClipboard(editor.getValue()));
+    });
+
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+});
+</script>
+</body>
+</html>
