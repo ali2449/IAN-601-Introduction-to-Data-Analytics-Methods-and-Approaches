@@ -1,0 +1,3644 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete NumPy Tutorial: All Chapters with Detailed Examples</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/eclipse.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --section-bg: #1e293b;
+            --code-bg: #020617;
+            --border-color: #334155;
+            --header-color: #38bdf8;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+            --info-color: #3b82f6;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f1f5f9;
+            --text-color: #1e293b;
+            --section-bg: #ffffff;
+            --code-bg: #f8fafc;
+            --border-color: #e2e8f0;
+            --header-color: #1d4ed8;
+            --accent-color: #4f46e5;
+            --accent-hover: #4338ca;
+            --success-color: #059669;
+            --error-color: #dc2626;
+            --warning-color: #d97706;
+            --info-color: #2563eb;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            line-height: 1.6;
+        }
+
+        .section-card {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            transition: background-color 0.3s, border-color 0.3s;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            color: white;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .CodeMirror {
+            height: auto;
+            min-height: 150px;
+            border-radius: 0.5rem;
+            font-size: 14px;
+            margin: 0.75rem 0;
+            transition: background-color 0.3s;
+            border: 1px solid var(--border-color);
+        }
+        
+        .output-area {
+            background-color: var(--code-bg);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 0.75rem;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            min-height: 80px;
+            white-space: pre-wrap;
+            transition: background-color 0.3s;
+            border: 1px solid var(--border-color);
+            line-height: 1.5;
+        }
+
+        .chapter-title {
+            color: var(--header-color);
+            font-weight: 800;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--header-color);
+            padding-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .chapter-title::before {
+            content: "📚";
+            font-size: 1.5rem;
+        }
+
+        .function-title {
+            color: var(--header-color);
+            font-weight: 700;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.35rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .function-title::before {
+            content: "🔍";
+            font-size: 1.1rem;
+        }
+
+        .concept-box {
+            background-color: var(--section-bg);
+            border-left: 5px solid var(--accent-color);
+            padding: 1.75rem;
+            margin: 2rem 0;
+            border-radius: 0 0.75rem 0.75rem 0;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .explanation-box {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.75rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .status-indicator {
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            margin: 1.5rem 0;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+        
+        .status-loading {
+            background-color: #fef3c7;
+            color: #92400e;
+            border: 1px solid #f59e0b;
+        }
+        
+        .status-ready {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid var(--success-color);
+        }
+
+        .status-error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid var(--error-color);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 6rem;
+            right: 1.5rem;
+            z-index: 100;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 3.5rem;
+            height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--border-color);
+            transform: scale(1.05);
+        }
+
+        .table-of-contents {
+            position: sticky;
+            top: 1.5rem;
+            max-height: calc(100vh - 3rem);
+            overflow-y: auto;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .toc-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .toc-item:hover {
+            color: var(--header-color);
+            transform: translateX(5px);
+        }
+
+        .toc-item:last-child {
+            border-bottom: none;
+        }
+
+        .toc-item::before {
+            content: "📖";
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background-color: var(--border-color);
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 0.75rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: width 0.5s;
+        }
+
+        .code-container {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.375rem;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.8rem;
+            color: var(--text-color);
+            cursor: pointer;
+            opacity: 0.8;
+            transition: all 0.2s;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .copy-button:hover {
+            opacity: 1;
+            background-color: var(--border-color);
+        }
+
+        .success-message {
+            color: var(--success-color);
+            font-size: 0.875rem;
+            margin-top: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box {
+            background-color: var(--code-bg);
+            border-left: 5px solid var(--info-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.75rem 0.75rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .info-box::before {
+            content: "💡";
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .warning-box {
+            background-color: #fef3c7;
+            border-left: 5px solid var(--warning-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.75rem 0.75rem 0;
+            color: #92400e;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .warning-box::before {
+            content: "⚠️";
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .key-point {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.375rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin: 0 0.25rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .real-world-example {
+            background-color: var(--section-bg);
+            border: 2px dashed var(--success-color);
+            border-radius: 0.75rem;
+            padding: 1.75rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .real-world-example::before {
+            content: "🌍 Real-World Application";
+            position: absolute;
+            top: -12px;
+            left: 1.5rem;
+            background-color: var(--section-bg);
+            padding: 0 0.75rem;
+            font-weight: 700;
+            color: var(--success-color);
+            font-size: 0.875rem;
+        }
+
+        .learning-objectives {
+            background-color: var(--section-bg);
+            border: 2px solid var(--info-color);
+            border-radius: 0.75rem;
+            padding: 1.75rem;
+            margin: 2rem 0;
+        }
+
+        .learning-objectives h3 {
+            color: var(--info-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .learning-objectives h3::before {
+            content: "🎯";
+        }
+
+        .learning-objectives ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .learning-objectives li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .learning-objectives li::before {
+            content: "✅";
+            flex-shrink: 0;
+        }
+
+        .concept-diagram {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .concept-diagram img {
+            max-width: 100%;
+            border-radius: 0.5rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        @media (max-width: 768px) {
+            .table-of-contents {
+                position: static;
+                max-height: none;
+                margin-bottom: 1.5rem;
+            }
+            
+            .section-card {
+                padding: 1.5rem;
+            }
+            
+            .chapter-title {
+                font-size: 1.5rem;
+            }
+            
+            .theme-toggle {
+                top: 5rem;
+                right: 1rem;
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+
+        .chapter-progress {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            padding: 1rem;
+            background-color: var(--section-bg);
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .chapter-nav-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .chapter-nav-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .chapter-nav-btn:disabled {
+            background-color: var(--border-color);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .floating-action {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--accent-color);
+            color: white;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            z-index: 90;
+            border: none;
+            font-size: 1.25rem;
+        }
+
+        .floating-action:hover {
+            background-color: var(--accent-hover);
+            transform: scale(1.1);
+        }
+
+        .keyboard-shortcut {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            font-family: monospace;
+            font-size: 0.75rem;
+            margin: 0 0.25rem;
+        }
+
+        .prerequisites {
+            background-color: var(--section-bg);
+            border: 2px solid var(--warning-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .prerequisites h3 {
+            color: var(--warning-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .prerequisites h3::before {
+            content: "📋";
+        }
+
+        .function-card {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .function-signature {
+            background-color: var(--code-bg);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: 'Consolas', 'Monaco', monospace;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .parameter-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .parameter-table th, .parameter-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .parameter-table th {
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Navigation Menu Styles */
+        .nav-menu {
+            background-color: var(--section-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 6xl;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--header-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .nav-link.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .module-dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .dropdown-toggle:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            min-width: 250px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 0.25rem;
+            transition: all 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .dropdown-item.current {
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--section-bg);
+                border-bottom: 1px solid var(--border-color);
+                padding: 1rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                border: none;
+                background-color: transparent;
+            }
+        }
+
+        .module-progress {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: var(--section-bg);
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .progress-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: conic-gradient(var(--accent-color) 0% 60%, var(--border-color) 60% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.875rem;
+        }
+
+        .module-info {
+            flex: 1;
+        }
+
+        .module-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .module-description {
+            font-size: 0.875rem;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        /* Sidebar sections with theme support */
+        .sidebar-section {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Sidebar link styling */
+        .sidebar-link {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+            color: var(--text-color);
+        }
+
+        .sidebar-link:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .sidebar-link-description {
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .current-module {
+            background-color: var(--accent-color) !important;
+            border-color: var(--accent-color) !important;
+            color: white !important;
+        }
+
+        .current-module .sidebar-link-description {
+            color: white !important;
+            opacity: 0.9;
+        }
+
+        /* Navigation dropdown theming */
+        .dropdown-menu {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        .dropdown-item {
+            color: var(--text-color);
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .dropdown-item.current {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Mobile menu theming */
+        @media (max-width: 768px) {
+            .nav-links {
+                background-color: var(--section-bg);
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .dropdown-menu {
+                background-color: transparent;
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+
+<!-- Navigation Menu -->
+<nav class="nav-menu">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">
+            <span>📚</span>
+            Python Health Analytics
+        </a>
+        
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+            ☰
+        </button>
+
+        <div class="nav-links" id="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            
+            <div class="module-dropdown">
+                <button class="dropdown-toggle" id="dropdown-toggle">
+                    Modules <span>▼</span>
+                </button>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="module1.html" class="dropdown-item">
+                        <strong>Module 1:</strong> Python Fundamentals & Business Context
+                    </a>
+                    <a href="module2.html" class="dropdown-item">
+                        <strong>Module 2:</strong> Control Flow & Decision Making
+                    </a>
+                    <a href="module3.html" class="dropdown-item">
+                        <strong>Module 3:</strong> Data Structures in Python
+                    </a>
+                    <a href="module4.html" class="dropdown-item">
+                        <strong>Module 4:</strong> Python Functions
+                    </a>
+                    <a href="module5.html" class="dropdown-item">
+                        <strong>Module 5:</strong> Object-Oriented Data Modeling in Health Informatics
+                    </a>
+                    <a href="module6.html" class="dropdown-item current">
+                        <strong>Module 6:</strong> Array Analytics with NumPy
+                    </a>
+                    <a href="module7.html" class="dropdown-item">
+                        <strong>Module 7:</strong> Pandas for Data Analysis
+                    </a>
+                </div>
+            </div>
+            
+            <a href="#" class="nav-link">Projects</a>
+            <a href="#" class="nav-link">Resources</a>
+        </div>
+    </div>
+</nav>
+
+<div class="theme-toggle" id="theme-toggle">
+    <span id="theme-icon">🌙</span>
+</div>
+
+<button class="floating-action" id="scroll-to-top" title="Scroll to top">↑</button>
+
+<div class="max-w-6xl mx-auto">
+    <header class="text-center mb-12 mt-8">
+        <div class="module-progress">
+            <div class="progress-circle">6/7</div>
+            <div class="module-info">
+                <div class="module-title">Module 6: Array Analytics with NumPy</div>
+                <div class="module-description">Master numerical computing with NumPy arrays for health data analysis</div>
+            </div>
+        </div>
+
+        <h1 class="text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent mt-6">Complete NumPy Tutorial</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-6 max-w-3xl mx-auto">Module 6: Array Analytics with NumPy - Detailed Function Breakdown</p>
+        <div id="status-indicator" class="status-indicator status-loading">
+            <span>⏳</span>
+            <span>Loading Pyodide and NumPy... This may take a few seconds.</span>
+        </div>
+        <div id="progress-bar" class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Table of Contents -->
+        <div class="lg:col-span-1">
+            <div class="table-of-contents">
+                <h2 class="font-bold text-xl mb-4 flex items-center gap-2">
+                    <span>📑</span>
+                    Table of Contents
+                </h2>
+                <div id="toc-list">
+                    <!-- TOC items will be generated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Quick Navigation -->
+            <div class="sidebar-section">
+                <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                    <span>🚀</span>
+                    Quick Navigation
+                </h3>
+                <div class="space-y-2">
+                    <a href="module5.html" class="block p-2 rounded border transition-colors sidebar-link">
+                        <div class="font-semibold">← Previous Module</div>
+                        <div class="text-sm sidebar-link-description">Module 5: OOP in Health Informatics</div>
+                    </a>
+                    <a href="module7.html" class="block p-2 rounded border transition-colors sidebar-link">
+                        <div class="font-semibold">Next Module →</div>
+                        <div class="text-sm sidebar-link-description">Module 7: Pandas for Data Analysis</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Tips -->
+            <div class="sidebar-section">
+                <h3 class="font-bold text-lg mb-2 flex items-center gap-2">
+                    <span>💡</span>
+                    Quick Tips
+                </h3>
+                <ul class="text-sm space-y-2">
+                    <li class="flex items-start gap-2">
+                        <span class="keyboard-shortcut">Ctrl+Space</span>
+                        <span>Auto-complete in code editors</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="keyboard-shortcut">Click Run</span>
+                        <span>Execute any code example</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="keyboard-shortcut">Toggle Theme</span>
+                        <span>Switch between light/dark mode</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- All Modules Overview -->
+            <div class="sidebar-section">
+                <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                    <span>📚</span>
+                    All Modules
+                </h3>
+                <div class="space-y-3">
+                    <a href="module1.html" class="block p-2 rounded border transition-colors sidebar-link text-sm">
+                        <div class="font-semibold">Module 1: Python Fundamentals</div>
+                        <div class="sidebar-link-description">Variables, data types, basic operations</div>
+                    </a>
+                    <a href="module2.html" class="block p-2 rounded border transition-colors sidebar-link text-sm">
+                        <div class="font-semibold">Module 2: Control Flow</div>
+                        <div class="sidebar-link-description">Conditionals, loops, decision making</div>
+                    </a>
+                    <a href="module3.html" class="block p-2 rounded border transition-colors sidebar-link text-sm">
+                        <div class="font-semibold">Module 3: Data Structures</div>
+                        <div class="sidebar-link-description">Lists, tuples, dictionaries, sets</div>
+                    </a>
+                    <a href="module4.html" class="block p-2 rounded border transition-colors sidebar-link text-sm">
+                        <div class="font-semibold">Module 4: Functions</div>
+                        <div class="sidebar-link-description">Function definition, parameters, scope</div>
+                    </a>
+                    <a href="module5.html" class="block p-2 rounded border transition-colors sidebar-link text-sm">
+                        <div class="font-semibold">Module 5: OOP</div>
+                        <div class="sidebar-link-description">Classes, objects, inheritance</div>
+                    </a>
+                    <a href="module6.html" class="block p-2 rounded border transition-colors sidebar-link current-module text-sm">
+                        <div class="font-semibold">Module 6: NumPy</div>
+                        <div class="sidebar-link-description">Array operations, numerical computing</div>
+                    </a>
+                    <a href="module7.html" class="block p-2 rounded border transition-colors sidebar-link text-sm">
+                        <div class="font-semibold">Module 7: Pandas</div>
+                        <div class="sidebar-link-description">Data analysis, DataFrames, series</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="lg:col-span-3">
+            <!-- Chapter 1: Array Creation Functions -->
+            <section class="section-card" id="chapter-1">
+                <div class="chapter-title">Chapter 1: Array Creation Functions</div>
+                
+                <div class="learning-objectives">
+                    <h3>Learning Objectives</h3>
+                    <ul>
+                        <li>Master basic array creation from Python sequences</li>
+                        <li>Learn specialized functions for creating arrays with specific patterns</li>
+                        <li>Understand when to use different array creation methods</li>
+                        <li>Create sequences with arange, linspace, and logspace</li>
+                    </ul>
+                </div>
+
+                <!-- np.array() -->
+                <div class="function-card" id="np-array">
+                    <div class="function-title">np.array() - Create Array from Sequence</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Basic Array Creation</h4>
+                        <p class="mb-3">The <code>np.array()</code> function is the most fundamental way to create NumPy arrays. It converts Python sequences (lists, tuples) into NumPy arrays.</p>
+                        
+                        <div class="function-signature">
+                            numpy.array(object, dtype=None, *, copy=True, order='K', subok=False, ndmin=0)
+                        </div>
+
+                        <table class="parameter-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Default</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>object</code></td>
+                                    <td>Array-like object (list, tuple, etc.)</td>
+                                    <td>Required</td>
+                                </tr>
+                                <tr>
+                                    <td><code>dtype</code></td>
+                                    <td>Data type of elements</td>
+                                    <td>None (inferred)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>copy</code></td>
+                                    <td>Whether to copy the input</td>
+                                    <td>True</td>
+                                </tr>
+                                <tr>
+                                    <td><code>ndmin</code></td>
+                                    <td>Minimum number of dimensions</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="info-box">
+                            <div>
+                                <strong>Key Properties:</strong>
+                                <ul class="mt-2 space-y-1">
+                                    <li><code>shape</code> - Dimensions of the array</li>
+                                    <li><code>dtype</code> - Data type of elements</li>
+                                    <li><code>ndim</code> - Number of dimensions</li>
+                                    <li><code>size</code> - Total number of elements</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor1_1" class="code-editor">
+import numpy as np
+
+# Create 1D array from list
+arr_1d = np.array([1, 2, 3, 4, 5])
+print("1D Array:", arr_1d)
+print("Shape:", arr_1d.shape)
+print("Data type:", arr_1d.dtype)
+print("Dimensions:", arr_1d.ndim)
+print("Size:", arr_1d.size)
+
+# Create 2D array from nested lists
+arr_2d = np.array([[1, 2, 3], [4, 5, 6]])
+print("\n2D Array:")
+print(arr_2d)
+print("Shape:", arr_2d.shape)
+
+# Specify data type explicitly
+arr_float = np.array([1, 2, 3], dtype=float)
+print("\nFloat array:", arr_float)
+print("Data type:", arr_float.dtype)
+
+# Minimum dimensions
+arr_3d = np.array([1, 2, 3], ndmin=3)
+print("\nArray with ndmin=3:", arr_3d)
+print("Shape:", arr_3d.shape)
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output1_1" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.zeros() -->
+                <div class="function-card" id="np-zeros">
+                    <div class="function-title">np.zeros() - Create Array Filled with Zeros</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Initialize Arrays with Zeros</h4>
+                        <p class="mb-3">Creates an array of given shape and type, filled with zeros. Useful for initializing arrays before filling them with computed values.</p>
+                        
+                        <div class="function-signature">
+                            numpy.zeros(shape, dtype=float, order='C')
+                        </div>
+
+                        <div class="info-box">
+                            <div>
+                                <strong>Common Use Cases:</strong>
+                                <ul class="mt-2 space-y-1">
+                                    <li>Initializing arrays for accumulation operations</li>
+                                    <li>Creating masks and filters</li>
+                                    <li>Setting up arrays for mathematical operations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor1_2" class="code-editor">
+import numpy as np
+
+# Create 1D array of zeros
+zeros_1d = np.zeros(5)
+print("1D zeros array:", zeros_1d)
+
+# Create 2D array of zeros
+zeros_2d = np.zeros((3, 4))
+print("\n2D zeros array (3x4):")
+print(zeros_2d)
+
+# Create zeros with specific data type
+zeros_int = np.zeros((2, 3), dtype=int)
+print("\nInteger zeros (2x3):")
+print(zeros_int)
+
+# Create 3D array of zeros
+zeros_3d = np.zeros((2, 3, 4))
+print("\n3D zeros array shape:", zeros_3d.shape)
+print("Total elements:", zeros_3d.size)
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output1_2" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.ones() -->
+                <div class="function-card" id="np-ones">
+                    <div class="function-title">np.ones() - Create Array Filled with Ones</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Initialize Arrays with Ones</h4>
+                        <p class="mb-3">Creates an array of given shape and type, filled with ones. Useful for multiplicative operations and creating unit matrices.</p>
+                        
+                        <div class="function-signature">
+                            numpy.ones(shape, dtype=float, order='C')
+                        </div>
+
+                        <div class="real-world-example">
+                            <p><strong>Real-World Application:</strong> In neural networks, ones arrays are used to initialize bias vectors. In image processing, they can create uniform masks for filtering operations.</p>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor1_3" class="code-editor">
+import numpy as np
+
+# Create 1D array of ones
+ones_1d = np.ones(5)
+print("1D ones array:", ones_1d)
+
+# Create 2D array of ones
+ones_2d = np.ones((2, 3))
+print("\n2D ones array (2x3):")
+print(ones_2d)
+
+# Create ones with specific data type
+ones_int = np.ones((3, 2), dtype=int)
+print("\nInteger ones (3x2):")
+print(ones_int)
+
+# Using ones for multiplicative operations
+base_array = np.array([1, 2, 3])
+result = base_array * np.ones(3)
+print("\nMultiplication with ones:", result)
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output1_3" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.full() -->
+                <div class="function-card" id="np-full">
+                    <div class="function-title">np.full() - Create Array Filled with Specific Value</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Constant Value Arrays</h4>
+                        <p class="mb-3">Creates an array of given shape and type, filled with a specific fill value. More flexible than zeros() or ones() for arbitrary constant values.</p>
+                        
+                        <div class="function-signature">
+                            numpy.full(shape, fill_value, dtype=None, order='C')
+                        </div>
+
+                        <div class="info-box">
+                            <div>
+                                <strong>Use Cases:</strong>
+                                <ul class="mt-2 space-y-1">
+                                    <li>Creating arrays with specific initial values</li>
+                                    <li>Setting up constant matrices</li>
+                                    <li>Initializing arrays with sentinel values</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor1_4" class="code-editor">
+import numpy as np
+
+# Create array filled with specific value
+full_arr = np.full((2, 3), 7)
+print("2x3 array filled with 7:")
+print(full_arr)
+
+# Create array with float values
+full_float = np.full((3, 2), 3.14)
+print("\n3x2 array filled with 3.14:")
+print(full_float)
+
+# Create array with string values
+full_str = np.full((2, 2), "hello")
+print("\n2x2 array filled with 'hello':")
+print(full_str)
+
+# Different data types
+full_complex = np.full((2, 2), 1+2j)
+print("\n2x2 array with complex numbers:")
+print(full_complex)
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output1_4" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.empty() -->
+                <div class="function-card" id="np-empty">
+                    <div class="function-title">np.empty() - Create Uninitialized Array</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Fast Array Creation</h4>
+                        <p class="mb-3">Creates an array of given shape and type without initializing entries. This is the fastest way to create arrays when you plan to fill all values immediately.</p>
+                        
+                        <div class="function-signature">
+                            numpy.empty(shape, dtype=float, order='C')
+                        </div>
+
+                        <div class="warning-box">
+                            <div>
+                                <strong>Important:</strong> The array contains garbage values from memory. Always fill the array completely before using it for computations.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor1_5" class="code-editor">
+import numpy as np
+
+# Create uninitialized array
+empty_arr = np.empty((2, 3))
+print("Empty array (contains garbage values):")
+print(empty_arr)
+
+# Create empty array with specific dtype
+empty_int = np.empty((3, 2), dtype=int)
+print("\nEmpty integer array:")
+print(empty_int)
+
+# Proper usage: create empty then fill
+data = np.empty(5)
+data[:] = [1, 2, 3, 4, 5]  # Fill with values
+print("\nEmpty array after filling:", data)
+
+# Compare performance (conceptual)
+print("\nNote: empty() is faster than zeros() when you")
+print("plan to overwrite all values immediately.")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output1_5" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.arange() -->
+                <div class="function-card" id="np-arange">
+                    <div class="function-title">np.arange() - Create Array with Regular Intervals</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Regular Sequence Arrays</h4>
+                        <p class="mb-3">Creates an array with evenly spaced values within a given interval. Similar to Python's range() but returns a NumPy array and works with floats.</p>
+                        
+                        <div class="function-signature">
+                            numpy.arange([start,] stop[, step,], dtype=None)
+                        </div>
+
+                        <table class="parameter-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Default</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>start</code></td>
+                                    <td>Start of interval</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td><code>stop</code></td>
+                                    <td>End of interval (exclusive)</td>
+                                    <td>Required</td>
+                                </tr>
+                                <tr>
+                                    <td><code>step</code></td>
+                                    <td>Spacing between values</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor1_6" class="code-editor">
+import numpy as np
+
+# Basic arange (similar to range)
+arr1 = np.arange(5)
+print("arange(5):", arr1)
+
+# With start and stop
+arr2 = np.arange(2, 8)
+print("arange(2, 8):", arr2)
+
+# With step
+arr3 = np.arange(0, 10, 2)
+print("arange(0, 10, 2):", arr3)
+
+# With float step
+arr4 = np.arange(0, 2.1, 0.5)
+print("arange(0, 2.1, 0.5):", arr4)
+
+# Negative step
+arr5 = np.arange(10, 0, -2)
+print("arange(10, 0, -2):", arr5)
+
+# Compare with Python range
+python_range = list(range(0, 10, 2))
+numpy_arange = np.arange(0, 10, 2)
+print(f"\nPython range: {python_range}")
+print(f"NumPy arange: {numpy_arange}")
+print(f"Type: {type(numpy_arange)}")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output1_6" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.linspace() -->
+                <div class="function-card" id="np-linspace">
+                    <div class="function-title">np.linspace() - Create Array with Specified Number of Points</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Linearly Spaced Arrays</h4>
+                        <p class="mb-3">Creates an array with specified number of evenly spaced points between start and stop values. Unlike arange(), you specify the number of points rather than the step size.</p>
+                        
+                        <div class="function-signature">
+                            numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)
+                        </div>
+
+                        <div class="real-world-example">
+                            <p><strong>Real-World Application:</strong> In signal processing, linspace is used to create time arrays for sampling signals. In mathematical plotting, it creates smooth x-axis values for function visualization.</p>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor1_7" class="code-editor">
+import numpy as np
+
+# Basic linspace
+arr1 = np.linspace(0, 1, 5)
+print("linspace(0, 1, 5):", arr1)
+
+# Without endpoint
+arr2 = np.linspace(0, 1, 5, endpoint=False)
+print("linspace(0, 1, 5, endpoint=False):", arr2)
+
+# Get step size
+arr3, step = np.linspace(0, 10, 6, retstep=True)
+print(f"\nlinspace(0, 10, 6): {arr3}")
+print(f"Step size: {step}")
+
+# Compare with arange
+print("\nComparison with arange:")
+linspace_result = np.linspace(0, 1, 11)
+arange_result = np.arange(0, 1.1, 0.1)
+print(f"linspace(0, 1, 11): {linspace_result}")
+print(f"arange(0, 1.1, 0.1): {arange_result}")
+
+# Practical example: creating time array for signal
+time = np.linspace(0, 2*np.pi, 100)  # 100 points from 0 to 2π
+sine_wave = np.sin(time)
+print(f"\nTime array for sine wave: {time[:5]}... (100 points total)")
+print(f"Sine values: {sine_wave[:5]}...")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output1_7" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.logspace() -->
+                <div class="function-card" id="np-logspace">
+                    <div class="function-title">np.logspace() - Create Array with Logarithmically Spaced Points</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Logarithmic Sequences</h4>
+                        <p class="mb-3">Creates an array with numbers spaced evenly on a log scale. Useful for data that spans multiple orders of magnitude.</p>
+                        
+                        <div class="function-signature">
+                            numpy.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None, axis=0)
+                        </div>
+
+                        <div class="info-box">
+                            <div>
+                                <strong>Key Points:</strong>
+                                <ul class="mt-2 space-y-1">
+                                    <li><code>start</code> and <code>stop</code> are exponents of the base</li>
+                                    <li>Default base is 10, but can be changed</li>
+                                    <li>Useful for frequency ranges, probability distributions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor1_8" class="code-editor">
+import numpy as np
+
+# Basic logspace (base 10)
+arr1 = np.logspace(0, 2, 5)  # 10^0 to 10^2, 5 points
+print("logspace(0, 2, 5):", arr1)
+
+# Different base
+arr2 = np.logspace(0, 3, 4, base=2)  # 2^0 to 2^3, 4 points
+print("logspace(0, 3, 4, base=2):", arr2)
+
+# Without endpoint
+arr3 = np.logspace(0, 3, 5, endpoint=False)
+print("logspace(0, 3, 5, endpoint=False):", arr3)
+
+# Practical example: frequency analysis
+frequencies = np.logspace(1, 4, 10)  # 10 Hz to 10 kHz, 10 points
+print(f"\nFrequency range for analysis: {frequencies}")
+
+# Compare with linear spacing
+linear_freq = np.linspace(10, 10000, 10)
+print(f"Linear frequency spacing: {linear_freq}")
+
+print("\nNote: Logspacing gives more points at lower frequencies,")
+print("which is often desirable in signal processing.")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output1_8" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.eye() -->
+                <div class="function-card" id="np-eye">
+                    <div class="function-title">np.eye() - Create Identity Matrix</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Identity Matrices</h4>
+                        <p class="mb-3">Creates a 2D array with ones on the diagonal and zeros elsewhere. Essential for linear algebra operations.</p>
+                        
+                        <div class="function-signature">
+                            numpy.eye(N, M=None, k=0, dtype=float, order='C')
+                        </div>
+
+                        <table class="parameter-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Default</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>N</code></td>
+                                    <td>Number of rows</td>
+                                    <td>Required</td>
+                                </tr>
+                                <tr>
+                                    <td><code>M</code></td>
+                                    <td>Number of columns</td>
+                                    <td>N</td>
+                                </tr>
+                                <tr>
+                                    <td><code>k</code></td>
+                                    <td>Diagonal index (0=main, positive=upper, negative=lower)</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor1_9" class="code-editor">
+import numpy as np
+
+# Create identity matrix
+identity = np.eye(3)
+print("3x3 Identity matrix:")
+print(identity)
+
+# Rectangular identity-like matrix
+rect_eye = np.eye(2, 3)
+print("\n2x3 Identity-like matrix:")
+print(rect_eye)
+
+# Different diagonal
+upper_diag = np.eye(3, k=1)
+print("\n3x3 matrix with ones on first upper diagonal:")
+print(upper_diag)
+
+lower_diag = np.eye(3, k=-1)
+print("\n3x3 matrix with ones on first lower diagonal:")
+print(lower_diag)
+
+# Different data type
+int_eye = np.eye(2, dtype=int)
+print("\n2x2 Integer identity matrix:")
+print(int_eye)
+
+# Identity property: A × I = A
+A = np.array([[1, 2], [3, 4]])
+I = np.eye(2)
+result = A @ I  # Matrix multiplication
+print(f"\nMatrix A: {A}")
+print(f"A × I = {result}")
+print(f"Are they equal? {np.array_equal(A, result)}")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output1_9" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.diag() -->
+                <div class="function-card" id="np-diag">
+                    <div class="function-title">np.diag() - Create Diagonal Array or Extract Diagonal</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Diagonal Operations</h4>
+                        <p class="mb-3">Extract a diagonal or construct a diagonal array. Can work in two modes: extract diagonal from 2D array or create 2D array from 1D diagonal.</p>
+                        
+                        <div class="function-signature">
+                            numpy.diag(v, k=0)
+                        </div>
+
+                        <div class="info-box">
+                            <div>
+                                <strong>Dual Functionality:</strong>
+                                <ul class="mt-2 space-y-1">
+                                    <li>If input is 1D: returns a 2D array with input on diagonal</li>
+                                    <li>If input is 2D: returns the diagonal as 1D array</li>
+                                    <li><code>k</code> specifies which diagonal to use</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor1_10" class="code-editor">
+import numpy as np
+
+# Create diagonal matrix from 1D array
+diag_from_1d = np.diag([1, 2, 3, 4])
+print("Diagonal matrix from [1, 2, 3, 4]:")
+print(diag_from_1d)
+
+# Extract diagonal from 2D array
+matrix = np.array([[1, 2, 3],
+                   [4, 5, 6], 
+                   [7, 8, 9]])
+diagonal = np.diag(matrix)
+print(f"\nMatrix:")
+print(matrix)
+print(f"Main diagonal: {diagonal}")
+
+# Different diagonals
+upper_diag = np.diag(matrix, k=1)
+lower_diag = np.diag(matrix, k=-1)
+print(f"First upper diagonal (k=1): {upper_diag}")
+print(f"First lower diagonal (k=-1): {lower_diag}")
+
+# Create matrix with offset diagonal
+offset_diag = np.diag([1, 2, 3], k=1)
+print("\nMatrix with diagonal at k=1:")
+print(offset_diag)
+
+# Practical use: creating tridiagonal matrix
+main_diag = np.diag([2, 2, 2, 2])
+upper_diag = np.diag([1, 1, 1], k=1)
+lower_diag = np.diag([1, 1, 1], k=-1)
+tridiagonal = main_diag + upper_diag + lower_diag
+print("\nTridiagonal matrix:")
+print(tridiagonal)
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output1_10" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <div class="chapter-progress">
+                    <button class="chapter-nav-btn" disabled>
+                        <span>←</span>
+                        Previous
+                    </button>
+                    <span class="text-sm text-gray-500 dark:text-gray-400 flex items-center">Chapter 1 of 6</span>
+                    <button class="chapter-nav-btn" onclick="scrollToChapter('chapter-2')">
+                        Next
+                        <span>→</span>
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- Chapter 2: Array Manipulation Functions -->
+            <section class="section-card" id="chapter-2">
+                <div class="chapter-title">Chapter 2: Array Manipulation Functions</div>
+                
+                <div class="learning-objectives">
+                    <h3>Learning Objectives</h3>
+                    <ul>
+                        <li>Learn to reshape and resize arrays</li>
+                        <li>Understand array joining and splitting</li>
+                        <li>Master array stacking operations</li>
+                        <li>Learn to add and remove dimensions</li>
+                        <li>Understand array transposition</li>
+                    </ul>
+                </div>
+
+                <!-- np.reshape() -->
+                <div class="function-card" id="np-reshape">
+                    <div class="function-title">np.reshape() - Change Array Shape</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Reshaping Arrays</h4>
+                        <p class="mb-3">Gives a new shape to an array without changing its data. The total number of elements must remain the same.</p>
+                        
+                        <div class="function-signature">
+                            numpy.reshape(a, newshape, order='C')
+                        </div>
+
+                        <div class="info-box">
+                            <div>
+                                <strong>Key Points:</strong>
+                                <ul class="mt-2 space-y-1">
+                                    <li>Returns a view when possible (same memory)</li>
+                                    <li>Use -1 to automatically calculate a dimension</li>
+                                    <li>Total elements must match original array</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor2_1" class="code-editor">
+import numpy as np
+
+# Create 1D array
+arr = np.arange(12)
+print("Original 1D array:", arr)
+
+# Reshape to 2D
+reshaped_2d = np.reshape(arr, (3, 4))
+print("\nReshaped to 3x4:")
+print(reshaped_2d)
+
+# Reshape to 3D
+reshaped_3d = np.reshape(arr, (2, 3, 2))
+print("\nReshaped to 2x3x2:")
+print(reshaped_3d)
+
+# Automatic dimension calculation
+auto_shape = np.reshape(arr, (2, -1))  # -1 means calculate automatically
+print("\nAuto reshape (2, -1):")
+print(auto_shape)
+
+# Method syntax (equivalent)
+method_reshape = arr.reshape(4, 3)
+print("\nUsing method syntax (4x3):")
+print(method_reshape)
+
+# Check if it's a view
+print(f"\nOriginal array ID: {id(arr)}")
+print(f"Reshaped array ID: {id(reshaped_2d)}")
+print(f"Same memory? {np.shares_memory(arr, reshaped_2d)}")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output2_1" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.resize() -->
+                <div class="function-card" id="np-resize">
+                    <div class="function-title">np.resize() - Change Array Size</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Resizing Arrays</h4>
+                        <p class="mb-3">Returns a new array with the specified shape. If the new array is larger, the original array is repeated to fill the space.</p>
+                        
+                        <div class="function-signature">
+                            numpy.resize(a, new_shape)
+                        </div>
+
+                        <div class="warning-box">
+                            <div>
+                                <strong>Important:</strong> Unlike reshape(), resize() can change the total number of elements and always returns a copy, not a view.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor2_2" class="code-editor">
+import numpy as np
+
+# Create sample array
+arr = np.array([[1, 2], [3, 4]])
+print("Original array:")
+print(arr)
+
+# Resize to larger array
+larger = np.resize(arr, (3, 3))
+print("\nResized to 3x3 (repeats elements):")
+print(larger)
+
+# Resize to smaller array
+smaller = np.resize(arr, (2, 1))
+print("\nResized to 2x1 (truncates):")
+print(smaller)
+
+# Compare with reshape
+try:
+    reshape_attempt = np.reshape(arr, (3, 3))
+except ValueError as e:
+    print(f"\nReshape error: {e}")
+
+# Method syntax (different behavior!)
+arr_copy = arr.copy()
+arr_copy.resize((3, 3), refcheck=False)
+print("\nUsing resize method (fills with zeros):")
+print(arr_copy)
+
+# Practical example: extending patterns
+pattern = np.array([1, 2, 3])
+extended = np.resize(pattern, 10)
+print(f"\nPattern {pattern} extended to length 10: {extended}")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output2_2" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.ravel() and np.flatten() -->
+                <div class="function-card" id="np-ravel-flatten">
+                    <div class="function-title">np.ravel() and np.flatten() - Flatten Arrays</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Array Flattening</h4>
+                        <p class="mb-3">Both functions convert multi-dimensional arrays to 1D, but with important differences in memory usage.</p>
+                        
+                        <div class="function-signature">
+                            numpy.ravel(a, order='C')<br>
+                            ndarray.flatten(order='C')
+                        </div>
+
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Function</th>
+                                        <th>Returns</th>
+                                        <th>Memory</th>
+                                        <th>Speed</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ravel()</code></td>
+                                        <td>View (when possible)</td>
+                                        <td>Efficient</td>
+                                        <td>Fast</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>flatten()</code></td>
+                                        <td>Always copy</td>
+                                        <td>Less efficient</td>
+                                        <td>Slower</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor2_3" class="code-editor">
+import numpy as np
+
+# Create 2D array
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print("Original 2D array:")
+print(arr)
+
+# Using ravel (returns view when possible)
+flat_ravel = np.ravel(arr)
+print("\nUsing ravel():", flat_ravel)
+
+# Using flatten (always returns copy)
+flat_flatten = arr.flatten()
+print("Using flatten():", flat_flatten)
+
+# Check memory sharing
+print(f"\nMemory sharing check:")
+print(f"ravel shares memory: {np.shares_memory(arr, flat_ravel)}")
+print(f"flatten shares memory: {np.shares_memory(arr, flat_flatten)}")
+
+# Order parameter
+print("\n--- Order Parameter ---")
+arr_2d = np.array([[1, 2, 3], [4, 5, 6]])
+print("Original:")
+print(arr_2d)
+
+# C-order (row-major)
+c_order = np.ravel(arr_2d, order='C')
+print(f"C-order: {c_order}")
+
+# F-order (column-major)
+f_order = np.ravel(arr_2d, order='F')
+print(f"F-order: {f_order}")
+
+# Practical use case
+matrix = np.random.randint(0, 10, (3, 3))
+print(f"\nRandom matrix:")
+print(matrix)
+print(f"Flattened for processing: {matrix.flatten()}")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output2_3" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.transpose() and .T -->
+                <div class="function-card" id="np-transpose">
+                    <div class="function-title">np.transpose() and .T - Array Transposition</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Array Transposition</h4>
+                        <p class="mb-3">Reverse or permute the axes of an array. For 2D arrays, this means swapping rows and columns.</p>
+                        
+                        <div class="function-signature">
+                            numpy.transpose(a, axes=None)<br>
+                            ndarray.T
+                        </div>
+
+                        <div class="info-box">
+                            <div>
+                                <strong>Transposition Methods:</strong>
+                                <ul class="mt-2 space-y-1">
+                                    <li><code>arr.T</code> - Simple transpose (attribute)</li>
+                                    <li><code>np.transpose(arr)</code> - Function version</li>
+                                    <li><code>np.transpose(arr, axes)</code> - Custom axis order</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor2_4" class="code-editor">
+import numpy as np
+
+# 2D array transposition
+arr_2d = np.array([[1, 2, 3], [4, 5, 6]])
+print("Original 2D array:")
+print(arr_2d)
+print("Shape:", arr_2d.shape)
+
+# Using .T attribute
+transposed_T = arr_2d.T
+print("\nTransposed (.T):")
+print(transposed_T)
+print("Shape:", transposed_T.shape)
+
+# Using transpose function
+transposed_func = np.transpose(arr_2d)
+print("\nTransposed (function):")
+print(transposed_func)
+
+# 3D array transposition
+arr_3d = np.arange(24).reshape(2, 3, 4)
+print(f"\n3D array shape: {arr_3d.shape}")
+
+# Default transpose reverses axes
+transposed_3d = np.transpose(arr_3d)
+print(f"Transposed 3D shape: {transposed_3d.shape}")
+
+# Custom axis order
+custom_transpose = np.transpose(arr_3d, (1, 0, 2))
+print(f"Custom transpose (1,0,2) shape: {custom_transpose.shape}")
+
+# Practical example: image channels
+# Simulate RGB image (height, width, channels)
+image = np.random.randint(0, 256, (100, 150, 3))
+print(f"\nImage shape (H, W, C): {image.shape}")
+print(f"Transposed image shape (C, H, W): {image.transpose(2, 0, 1).shape}")
+
+# Matrix multiplication property
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+print(f"\n(A × B)^T = B^T × A^T:")
+left = (A @ B).T
+right = B.T @ A.T
+print(f"Left side: {left}")
+print(f"Right side: {right}")
+print(f"Equal? {np.array_equal(left, right)}")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output2_4" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.concatenate() -->
+                <div class="function-card" id="np-concatenate">
+                    <div class="function-title">np.concatenate() - Join Arrays</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Array Concatenation</h4>
+                        <p class="mb-3">Join a sequence of arrays along an existing axis. All arrays must have the same shape except in the dimension corresponding to the axis.</p>
+                        
+                        <div class="function-signature">
+                            numpy.concatenate((a1, a2, ...), axis=0, out=None)
+                        </div>
+
+                        <div class="real-world-example">
+                            <p><strong>Real-World Application:</strong> In time series analysis, concatenate is used to combine data from different time periods. In image processing, it can stitch multiple images together.</p>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor2_5" class="code-editor">
+import numpy as np
+
+# 1D array concatenation
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+concatenated_1d = np.concatenate([arr1, arr2])
+print("1D concatenation:", concatenated_1d)
+
+# 2D array concatenation
+matrix1 = np.array([[1, 2], [3, 4]])
+matrix2 = np.array([[5, 6], [7, 8]])
+
+# Concatenate along rows (axis=0)
+concat_rows = np.concatenate([matrix1, matrix2], axis=0)
+print("\nConcatenate along rows (axis=0):")
+print(concat_rows)
+
+# Concatenate along columns (axis=1)
+concat_cols = np.concatenate([matrix1, matrix2], axis=1)
+print("\nConcatenate along columns (axis=1):")
+print(concat_cols)
+
+# Multiple arrays
+arr3 = np.array([7, 8, 9])
+multi_concat = np.concatenate([arr1, arr2, arr3])
+print(f"\nMultiple arrays concatenated: {multi_concat}")
+
+# 3D concatenation
+cube1 = np.ones((2, 2, 2))
+cube2 = np.zeros((2, 2, 2))
+
+# Concatenate along different axes
+concat_3d_0 = np.concatenate([cube1, cube2], axis=0)
+concat_3d_1 = np.concatenate([cube1, cube2], axis=1)
+concat_3d_2 = np.concatenate([cube1, cube2], axis=2)
+
+print(f"\n3D concatenation shapes:")
+print(f"axis=0: {concat_3d_0.shape}")
+print(f"axis=1: {concat_3d_1.shape}")
+print(f"axis=2: {concat_3d_2.shape}")
+
+# Error case: incompatible shapes
+try:
+    bad_concat = np.concatenate([matrix1, arr1])
+except ValueError as e:
+    print(f"\nError with incompatible shapes: {e}")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output2_5" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.stack() -->
+                <div class="function-card" id="np-stack">
+                    <div class="function-title">np.stack() - Stack Arrays Along New Axis</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Array Stacking</h4>
+                        <p class="mb-3">Join a sequence of arrays along a new axis. All input arrays must have the same shape.</p>
+                        
+                        <div class="function-signature">
+                            numpy.stack(arrays, axis=0, out=None)
+                        </div>
+
+                        <div class="info-box">
+                            <div>
+                                <strong>Key Difference from concatenate():</strong>
+                                <ul class="mt-2 space-y-1">
+                                    <li><code>concatenate()</code> - joins along existing axis</li>
+                                    <li><code>stack()</code> - creates new axis and joins</li>
+                                    <li>All arrays must have identical shapes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor2_6" class="code-editor">
+import numpy as np
+
+# Stack 1D arrays to create 2D array
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+arr3 = np.array([7, 8, 9])
+
+# Stack along different axes
+stack_axis0 = np.stack([arr1, arr2, arr3], axis=0)
+stack_axis1 = np.stack([arr1, arr2, arr3], axis=1)
+
+print("Original arrays:")
+print(f"arr1: {arr1}, arr2: {arr2}, arr3: {arr3}")
+print(f"\nStack axis=0 (creates rows):")
+print(stack_axis0)
+print(f"Shape: {stack_axis0.shape}")
+
+print(f"\nStack axis=1 (creates columns):")
+print(stack_axis1)
+print(f"Shape: {stack_axis1.shape}")
+
+# Stack 2D arrays to create 3D array
+matrix1 = np.array([[1, 2], [3, 4]])
+matrix2 = np.array([[5, 6], [7, 8]])
+
+stack_3d = np.stack([matrix1, matrix2], axis=0)
+print(f"\n2D arrays stacked to 3D:")
+print(stack_3d)
+print(f"Shape: {stack_3d.shape}")
+
+# Compare with concatenate
+concat_result = np.concatenate([matrix1, matrix2], axis=0)
+stack_result = np.stack([matrix1, matrix2], axis=0)
+
+print(f"\nComparison:")
+print(f"Concatenate shape: {concat_result.shape}")
+print(f"Stack shape: {stack_result.shape}")
+
+# Practical example: stacking image channels
+red = np.ones((100, 100)) * 255
+green = np.ones((100, 100)) * 128
+blue = np.zeros((100, 100))
+
+# Stack to create RGB image
+rgb_image = np.stack([red, green, blue], axis=2)
+print(f"\nRGB image shape: {rgb_image.shape}")
+print(f"Red channel shape: {rgb_image[:,:,0].shape}")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output2_6" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.vstack() and np.hstack() -->
+                <div class="function-card" id="np-vstack-hstack">
+                    <div class="function-title">np.vstack() and np.hstack() - Vertical and Horizontal Stacking</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Convenience Stacking Functions</h4>
+                        <p class="mb-3">Specialized functions for common stacking operations along the first (vertical) and second (horizontal) axes.</p>
+                        
+                        <div class="function-signature">
+                            numpy.vstack(tup)<br>
+                            numpy.hstack(tup)
+                        </div>
+
+                        <div class="info-box">
+                            <div>
+                                <strong>Equivalent Operations:</strong>
+                                <ul class="mt-2 space-y-1">
+                                    <li><code>vstack()</code> = <code>concatenate(axis=0)</code></li>
+                                    <li><code>hstack()</code> = <code>concatenate(axis=1)</code></li>
+                                    <li>More readable for common use cases</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor2_7" class="code-editor">
+import numpy as np
+
+# Vertical stacking (stack rows)
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+vstacked = np.vstack([arr1, arr2])
+print("Vertical stack of 1D arrays:")
+print(vstacked)
+print(f"Shape: {vstacked.shape}")
+
+# Horizontal stacking (stack columns)
+hstacked = np.hstack([arr1, arr2])
+print(f"\nHorizontal stack of 1D arrays: {hstacked}")
+print(f"Shape: {hstacked.shape}")
+
+# 2D array stacking
+matrix1 = np.array([[1, 2], [3, 4]])
+matrix2 = np.array([[5, 6], [7, 8]])
+
+vstack_2d = np.vstack([matrix1, matrix2])
+print("\nVertical stack of 2D arrays:")
+print(vstack_2d)
+
+hstack_2d = np.hstack([matrix1, matrix2])
+print("\nHorizontal stack of 2D arrays:")
+print(hstack_2d)
+
+# Mixed dimensions (1D and 2D)
+# For vstack, 1D arrays are treated as row vectors
+row_vector = np.array([1, 2, 3])
+matrix = np.array([[4, 5, 6], [7, 8, 9]])
+
+mixed_vstack = np.vstack([row_vector, matrix])
+print("\nMixed vstack (1D + 2D):")
+print(mixed_vstack)
+
+# For hstack, shapes must match along all but second axis
+col_vector = np.array([[1], [2], [3]])
+matrix_square = np.array([[4, 5], [6, 7], [8, 9]])
+
+mixed_hstack = np.hstack([col_vector, matrix_square])
+print("\nMixed hstack (column vector + matrix):")
+print(mixed_hstack)
+
+# Practical example: assembling datasets
+features1 = np.random.randn(10, 5)  # 10 samples, 5 features
+features2 = np.random.randn(15, 5)  # 15 samples, 5 features
+all_features = np.vstack([features1, features2])
+print(f"\nDataset assembly:")
+print(f"Features1 shape: {features1.shape}")
+print(f"Features2 shape: {features2.shape}")
+print(f"Combined shape: {all_features.shape}")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output2_7" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- np.split() -->
+                <div class="function-card" id="np-split">
+                    <div class="function-title">np.split() - Split Array into Multiple Sub-arrays</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Array Splitting</h4>
+                        <p class="mb-3">Split an array into multiple sub-arrays along the specified axis.</p>
+                        
+                        <div class="function-signature">
+                            numpy.split(ary, indices_or_sections, axis=0)
+                        </div>
+
+                        <table class="parameter-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>indices_or_sections</code></td>
+                                    <td>If integer: number of equal sections<br>If 1D array: split points</td>
+                                </tr>
+                                <tr>
+                                    <td><code>axis</code></td>
+                                    <td>Axis along which to split</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor2_8" class="code-editor">
+import numpy as np
+
+# Split 1D array into equal parts
+arr = np.arange(10)
+print("Original array:", arr)
+
+# Split into 2 equal parts
+split_2 = np.split(arr, 2)
+print("\nSplit into 2 equal parts:")
+for i, part in enumerate(split_2):
+    print(f"Part {i}: {part}")
+
+# Split into 5 equal parts
+split_5 = np.split(arr, 5)
+print("\nSplit into 5 equal parts:")
+for i, part in enumerate(split_5):
+    print(f"Part {i}: {part}")
+
+# Split at specific indices
+split_indices = np.split(arr, [3, 7])
+print("\nSplit at indices [3, 7]:")
+for i, part in enumerate(split_indices):
+    print(f"Part {i}: {part}")
+
+# 2D array splitting
+matrix = np.arange(16).reshape(4, 4)
+print(f"\n2D array:")
+print(matrix)
+
+# Split along rows (axis=0)
+split_rows = np.split(matrix, 2, axis=0)
+print("\nSplit along rows into 2 parts:")
+for i, part in enumerate(split_rows):
+    print(f"Part {i}:")
+    print(part)
+
+# Split along columns (axis=1)
+split_cols = np.split(matrix, [1, 3], axis=1)
+print("\nSplit along columns at [1, 3]:")
+for i, part in enumerate(split_cols):
+    print(f"Part {i}:")
+    print(part)
+
+# Error case: uneven split
+try:
+    bad_split = np.split(arr, 3)  # 10 elements can't be split into 3 equal parts
+except ValueError as e:
+    print(f"\nError with uneven split: {e}")
+
+# Alternative: array_split for uneven splits
+uneven_split = np.array_split(arr, 3)
+print("\nUsing array_split for uneven division:")
+for i, part in enumerate(uneven_split):
+    print(f"Part {i}: {part}")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output2_8" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <div class="chapter-progress">
+                    <button class="chapter-nav-btn" onclick="scrollToChapter('chapter-1')">
+                        <span>←</span>
+                        Previous
+                    </button>
+                    <span class="text-sm text-gray-500 dark:text-gray-400 flex items-center">Chapter 2 of 6</span>
+                    <button class="chapter-nav-btn" onclick="scrollToChapter('chapter-3')">
+                        Next
+                        <span>→</span>
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- Chapter 3: Array Indexing and Slicing -->
+            <section class="section-card" id="chapter-3">
+                <div class="chapter-title">Chapter 3: Array Indexing and Slicing</div>
+                
+                <div class="learning-objectives">
+                    <h3>Learning Objectives</h3>
+                    <ul>
+                        <li>Master basic indexing and slicing operations</li>
+                        <li>Understand boolean and fancy indexing</li>
+                        <li>Learn advanced indexing techniques</li>
+                        <li>Practice indexing with real-world examples</li>
+                    </ul>
+                </div>
+
+                <!-- Basic Indexing -->
+                <div class="function-card" id="basic-indexing">
+                    <div class="function-title">Basic Indexing and Slicing</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Accessing Array Elements</h4>
+                        <p class="mb-3">NumPy arrays support Python's indexing and slicing syntax, with additional capabilities for multi-dimensional arrays.</p>
+                        
+                        <div class="info-box">
+                            <div>
+                                <strong>Key Concepts:</strong>
+                                <ul class="mt-2 space-y-1">
+                                    <li>Zero-based indexing like Python lists</li>
+                                    <li>Negative indices count from the end</li>
+                                    <li>Slicing: <code>start:stop:step</code></li>
+                                    <li>Multi-dimensional indexing with comma-separated indices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor3_1" class="code-editor">
+import numpy as np
+
+# Create sample arrays
+arr_1d = np.array([10, 20, 30, 40, 50, 60, 70, 80, 90])
+arr_2d = np.array([[1, 2, 3, 4],
+                   [5, 6, 7, 8],
+                   [9, 10, 11, 12]])
+
+print("1D Array:", arr_1d)
+print("2D Array:")
+print(arr_2d)
+
+# Basic 1D indexing
+print("\n--- 1D Indexing ---")
+print(f"arr_1d[0]: {arr_1d[0]}")        # First element
+print(f"arr_1d[-1]: {arr_1d[-1]}")      # Last element
+print(f"arr_1d[2:5]: {arr_1d[2:5]}")    # Slice from index 2 to 4
+print(f"arr_1d[::2]: {arr_1d[::2]}")    # Every second element
+print(f"arr_1d[::-1]: {arr_1d[::-1]}")  # Reverse the array
+
+# 2D indexing
+print("\n--- 2D Indexing ---")
+print(f"arr_2d[0, 1]: {arr_2d[0, 1]}")          # Row 0, Column 1
+print(f"arr_2d[1, :]: {arr_2d[1, :]}")          # Entire row 1
+print(f"arr_2d[:, 2]: {arr_2d[:, 2]}")          # Entire column 2
+print(f"arr_2d[0:2, 1:3]:")                     # Submatrix
+print(arr_2d[0:2, 1:3])
+
+# Step slicing
+print("\n--- Step Slicing ---")
+print(f"arr_2d[::2, ::2]:")              # Every other row and column
+print(arr_2d[::2, ::2])
+
+# Using slices for assignment
+arr_copy = arr_2d.copy()
+arr_copy[1:, 2:] = 99
+print("\n--- Assignment with Slicing ---")
+print("Modified array:")
+print(arr_copy)
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output3_1" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- Boolean Indexing -->
+                <div class="function-card" id="boolean-indexing">
+                    <div class="function-title">Boolean Indexing</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Filtering with Conditions</h4>
+                        <p class="mb-3">Select elements from an array using boolean conditions. This is one of NumPy's most powerful features for data filtering.</p>
+                        
+                        <div class="real-world-example">
+                            <p><strong>Real-World Application:</strong> Boolean indexing is extensively used in data analysis for filtering datasets based on conditions, such as selecting patients with specific medical conditions or filtering sensor readings above certain thresholds.</p>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor3_2" class="code-editor">
+import numpy as np
+
+# Create sample data
+data = np.array([12, 25, 8, 17, 32, 5, 21, 14, 29, 3])
+temperatures = np.array([98.6, 99.2, 97.8, 100.1, 98.9, 101.2, 97.5, 99.8, 100.5, 96.9])
+
+print("Data array:", data)
+print("Temperatures:", temperatures)
+
+# Simple boolean indexing
+print("\n--- Simple Boolean Indexing ---")
+print(f"data > 15: {data > 15}")                    # Boolean array
+print(f"data[data > 15]: {data[data > 15]}")        # Values > 15
+
+# Multiple conditions
+print("\n--- Multiple Conditions ---")
+condition = (data > 10) & (data < 25)               # AND condition
+print(f"Values between 10 and 25: {data[condition]}")
+
+condition2 = (data < 10) | (data > 25)              # OR condition
+print(f"Values < 10 OR > 25: {data[condition2]}")
+
+# Using boolean indexing for filtering
+print("\n--- Practical Example: Fever Detection ---")
+fever_threshold = 99.5
+fever_patients = temperatures > fever_threshold
+print(f"Patients with fever: {temperatures[fever_patients]}")
+
+# Boolean indexing with 2D arrays
+matrix = np.array([[1, 2, 3],
+                   [4, 5, 6],
+                   [7, 8, 9]])
+
+print(f"\n2D Array:")
+print(matrix)
+
+# Find elements greater than 5
+print(f"Elements > 5: {matrix[matrix > 5]}")
+
+# Modify elements based on condition
+matrix_copy = matrix.copy()
+matrix_copy[matrix_copy < 5] = 0
+print(f"\nArray with values < 5 set to 0:")
+print(matrix_copy)
+
+# Complex conditions
+print("\n--- Complex Conditions ---")
+# Create patient data: [age, blood_pressure, cholesterol]
+patients = np.array([[25, 120, 180],
+                     [45, 140, 220],
+                     [35, 130, 200],
+                     [60, 160, 240],
+                     [28, 110, 170]])
+
+print("Patient data [age, BP, cholesterol]:")
+print(patients)
+
+# Find patients with high BP (>130) OR high cholesterol (>200)
+high_risk = (patients[:, 1] > 130) | (patients[:, 2] > 200)
+print(f"\nHigh-risk patients:")
+print(patients[high_risk])
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output3_2" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <div class="chapter-progress">
+                    <button class="chapter-nav-btn" onclick="scrollToChapter('chapter-2')">
+                        <span>←</span>
+                        Previous
+                    </button>
+                    <span class="text-sm text-gray-500 dark:text-gray-400 flex items-center">Chapter 3 of 6</span>
+                    <button class="chapter-nav-btn" onclick="scrollToChapter('chapter-4')">
+                        Next
+                        <span>→</span>
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- Chapter 4: Array Operations and Mathematics -->
+            <section class="section-card" id="chapter-4">
+                <div class="chapter-title">Chapter 4: Array Operations and Mathematics</div>
+                
+                <div class="learning-objectives">
+                    <h3>Learning Objectives</h3>
+                    <ul>
+                        <li>Understand element-wise operations</li>
+                        <li>Learn broadcasting rules</li>
+                        <li>Master mathematical functions</li>
+                        <li>Practice statistical operations</li>
+                    </ul>
+                </div>
+
+                <!-- Element-wise Operations -->
+                <div class="function-card" id="element-wise-ops">
+                    <div class="function-title">Element-wise Operations</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Operations on Array Elements</h4>
+                        <p class="mb-3">NumPy performs operations element by element, making it much faster than Python loops for numerical computations.</p>
+                        
+                        <div class="info-box">
+                            <div>
+                                <strong>Key Advantages:</strong>
+                                <ul class="mt-2 space-y-1">
+                                    <li>Vectorized operations (no loops needed)</li>
+                                    <li>Automatic broadcasting for compatible shapes</li>
+                                    <li>Significant performance improvements</li>
+                                    <li>Clean, readable code</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor4_1" class="code-editor">
+import numpy as np
+
+# Create sample arrays
+a = np.array([1, 2, 3, 4, 5])
+b = np.array([10, 20, 30, 40, 50])
+
+print("Array a:", a)
+print("Array b:", b)
+
+# Basic arithmetic operations
+print("\n--- Basic Arithmetic ---")
+print(f"a + b: {a + b}")        # Addition
+print(f"a - b: {a - b}")        # Subtraction
+print(f"a * b: {a * b}")        # Multiplication
+print(f"b / a: {b / a}")        # Division
+print(f"b ** a: {b ** a}")      # Exponentiation
+print(f"b % a: {b % a}")        # Modulo
+
+# Operations with scalars
+print("\n--- Operations with Scalars ---")
+print(f"a + 10: {a + 10}")
+print(f"a * 2: {a * 2}")
+print(f"a ** 2: {a ** 2}")
+
+# Comparison operations
+print("\n--- Comparison Operations ---")
+print(f"a > 3: {a > 3}")
+print(f"a == b: {a == b}")
+print(f"a != b: {a != b}")
+
+# Logical operations
+print("\n--- Logical Operations ---")
+print(f"(a > 2) & (a < 5): {(a > 2) & (a < 5)}")  # AND
+print(f"(a < 2) | (a > 4): {(a < 2) | (a > 4)}")  # OR
+print(f"~(a > 3): {~(a > 3)}")                    # NOT
+
+# 2D array operations
+matrix1 = np.array([[1, 2], [3, 4]])
+matrix2 = np.array([[5, 6], [7, 8]])
+
+print(f"\n2D Array 1:")
+print(matrix1)
+print(f"2D Array 2:")
+print(matrix2)
+
+print(f"\nElement-wise multiplication:")
+print(matrix1 * matrix2)
+
+print(f"Element-wise addition:")
+print(matrix1 + matrix2)
+
+# Practical example: BMI calculation
+print("\n--- Practical Example: BMI Calculation ---")
+heights = np.array([1.75, 1.80, 1.65, 1.90, 1.72])  # meters
+weights = np.array([68, 75, 60, 85, 70])            # kilograms
+
+bmi = weights / (heights ** 2)
+print(f"Heights: {heights}")
+print(f"Weights: {weights}")
+print(f"BMI values: {bmi}")
+
+# Categorize BMI
+categories = np.where(bmi < 18.5, "Underweight",
+             np.where(bmi < 25, "Normal",
+             np.where(bmi < 30, "Overweight", "Obese")))
+
+print(f"BMI categories: {categories}")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output4_1" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- Broadcasting -->
+                <div class="function-card" id="broadcasting">
+                    <div class="function-title">Broadcasting</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Operations Between Different Shapes</h4>
+                        <p class="mb-3">Broadcasting allows NumPy to perform operations on arrays of different shapes by automatically expanding the smaller array.</p>
+                        
+                        <div class="info-box">
+                            <div>
+                                <strong>Broadcasting Rules:</strong>
+                                <ul class="mt-2 space-y-1">
+                                    <li>Dimensions are compared from right to left</li>
+                                    <li>Dimensions must be equal or one of them must be 1</li>
+                                    <li>Missing dimensions are treated as 1</li>
+                                    <li>Arrays with compatible shapes can be broadcast together</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor4_2" class="code-editor">
+import numpy as np
+
+# Basic broadcasting examples
+print("--- Basic Broadcasting ---")
+
+# Array + scalar
+arr = np.array([1, 2, 3, 4, 5])
+print(f"Array: {arr}")
+print(f"Array + 10: {arr + 10}")
+
+# 2D array + 1D array
+matrix = np.array([[1, 2, 3],
+                   [4, 5, 6],
+                   [7, 8, 9]])
+vector = np.array([10, 20, 30])
+
+print(f"\n2D Array:")
+print(matrix)
+print(f"1D Array: {vector}")
+print(f"2D + 1D (broadcast):")
+print(matrix + vector)
+
+# Broadcasting with different dimensions
+print("\n--- Advanced Broadcasting ---")
+
+# 3D array + 2D array
+cube = np.ones((2, 3, 4)) * 5
+matrix_2d = np.array([[1, 2, 3, 4]])
+
+print(f"3D array shape: {cube.shape}")
+print(f"2D array shape: {matrix_2d.shape}")
+print(f"Result shape: {(cube + matrix_2d).shape}")
+
+# Broadcasting rules in action
+print("\n--- Broadcasting Rules ---")
+
+# Example 1: Compatible shapes
+a = np.array([[1], [2], [3]])  # Shape (3, 1)
+b = np.array([4, 5, 6])        # Shape (3,)
+print(f"a shape: {a.shape}, b shape: {b.shape}")
+print(f"a + b shape: {(a + b).shape}")
+print(f"Result:")
+print(a + b)
+
+# Example 2: Incompatible shapes
+try:
+    c = np.array([[1, 2, 3]])    # Shape (1, 3)
+    d = np.array([[4], [5]])     # Shape (2, 1)
+    print(f"\nc shape: {c.shape}, d shape: {d.shape}")
+    print(f"c + d shape: {(c + d).shape}")
+    print(f"Result:")
+    print(c + d)
+except ValueError as e:
+    print(f"Error: {e}")
+
+# Practical example: Normalizing data
+print("\n--- Practical Example: Data Normalization ---")
+
+# Sample patient data: rows=patients, columns=measurements
+patient_data = np.array([[170, 72, 25],
+                         [165, 68, 30],
+                         [180, 80, 35],
+                         [155, 60, 28]])
+
+print("Original patient data:")
+print(patient_data)
+
+# Calculate mean and std for each measurement (column-wise)
+means = np.mean(patient_data, axis=0)
+stds = np.std(patient_data, axis=0)
+
+print(f"\nMeans: {means}")
+print(f"Standard deviations: {stds}")
+
+# Normalize data using broadcasting
+normalized_data = (patient_data - means) / stds
+print(f"\nNormalized data:")
+print(normalized_data)
+
+# Verify normalization
+print(f"\nNormalized data means: {np.mean(normalized_data, axis=0)}")
+print(f"Normalized data stds: {np.std(normalized_data, axis=0)}")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output4_2" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <div class="chapter-progress">
+                    <button class="chapter-nav-btn" onclick="scrollToChapter('chapter-3')">
+                        <span>←</span>
+                        Previous
+                    </button>
+                    <span class="text-sm text-gray-500 dark:text-gray-400 flex items-center">Chapter 4 of 6</span>
+                    <button class="chapter-nav-btn" onclick="scrollToChapter('chapter-5')">
+                        Next
+                        <span>→</span>
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- Chapter 5: Array Manipulation -->
+            <section class="section-card" id="chapter-5">
+                <div class="chapter-title">Chapter 5: Array Manipulation</div>
+                
+                <div class="learning-objectives">
+                    <h3>Learning Objectives</h3>
+                    <ul>
+                        <li>Learn sorting and searching arrays</li>
+                        <li>Understand set operations</li>
+                        <li>Master array aggregation methods</li>
+                        <li>Practice advanced manipulation techniques</li>
+                    </ul>
+                </div>
+
+                <!-- Sorting and Searching -->
+                <div class="function-card" id="sorting-searching">
+                    <div class="function-title">Sorting and Searching</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Organizing and Finding Data</h4>
+                        <p class="mb-3">NumPy provides efficient functions for sorting arrays and searching for elements within them.</p>
+                        
+                        <div class="info-box">
+                            <div>
+                                <strong>Key Functions:</strong>
+                                <ul class="mt-2 space-y-1">
+                                    <li><code>np.sort()</code> - Return sorted array</li>
+                                    <li><code>np.argsort()</code> - Return indices that would sort array</li>
+                                    <li><code>np.where()</code> - Find elements satisfying condition</li>
+                                    <li><code>np.argmax()/np.argmin()</code> - Find indices of max/min values</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor5_1" class="code-editor">
+import numpy as np
+
+# Sorting arrays
+print("--- Sorting Arrays ---")
+
+# 1D array sorting
+arr = np.array([3, 1, 4, 1, 5, 9, 2, 6, 5])
+print(f"Original array: {arr}")
+
+sorted_arr = np.sort(arr)
+print(f"Sorted array: {sorted_arr}")
+
+# In-place sorting
+arr_copy = arr.copy()
+arr_copy.sort()
+print(f"In-place sorted: {arr_copy}")
+
+# argsort - returns indices that would sort the array
+indices = np.argsort(arr)
+print(f"Sorting indices: {indices}")
+print(f"Using indices to sort: {arr[indices]}")
+
+# 2D array sorting
+matrix = np.array([[3, 1, 4],
+                   [1, 5, 9],
+                   [2, 6, 5]])
+
+print(f"\n2D Array:")
+print(matrix)
+
+# Sort along different axes
+print(f"Sorted along rows (axis=1):")
+print(np.sort(matrix, axis=1))
+
+print(f"Sorted along columns (axis=0):")
+print(np.sort(matrix, axis=0))
+
+# Searching in arrays
+print("\n--- Searching in Arrays ---")
+
+# where - find elements satisfying condition
+condition = arr > 4
+indices = np.where(condition)
+print(f"Indices where arr > 4: {indices}")
+print(f"Values where arr > 4: {arr[indices]}")
+
+# argmax and argmin
+print(f"Index of maximum value: {np.argmax(arr)}")
+print(f"Maximum value: {arr[np.argmax(arr)]}")
+print(f"Index of minimum value: {np.argmin(arr)}")
+print(f"Minimum value: {arr[np.argmin(arr)]}")
+
+# Practical example: Patient data analysis
+print("\n--- Practical Example: Patient Data Analysis ---")
+
+# Simulate patient ages and blood pressure readings
+patient_ages = np.array([25, 45, 32, 60, 28, 55, 38, 42, 29, 50])
+bp_readings = np.array([120, 140, 130, 160, 110, 150, 135, 145, 125, 155])
+
+print(f"Patient ages: {patient_ages}")
+print(f"Blood pressure readings: {bp_readings}")
+
+# Find patients with highest and lowest BP
+max_bp_idx = np.argmax(bp_readings)
+min_bp_idx = np.argmin(bp_readings)
+
+print(f"\nPatient with highest BP: Age {patient_ages[max_bp_idx]}, BP {bp_readings[max_bp_idx]}")
+print(f"Patient with lowest BP: Age {patient_ages[min_bp_idx]}, BP {bp_readings[min_bp_idx]}")
+
+# Sort patients by age
+sorted_indices = np.argsort(patient_ages)
+print(f"\nPatients sorted by age:")
+for idx in sorted_indices:
+    print(f"  Age {patient_ages[idx]}: BP {bp_readings[idx]}")
+
+# Find patients with BP in dangerous range (140+)
+dangerous_bp = np.where(bp_readings >= 140)[0]
+print(f"\nPatients with dangerous BP (140+):")
+for idx in dangerous_bp:
+    print(f"  Age {patient_ages[idx]}: BP {bp_readings[idx]}")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output5_1" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <!-- Set Operations -->
+                <div class="function-card" id="set-operations">
+                    <div class="function-title">Set Operations</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Working with Unique Elements</h4>
+                        <p class="mb-3">NumPy provides functions for set operations on arrays, useful for finding unique elements and performing set mathematics.</p>
+                        
+                        <div class="real-world-example">
+                            <p><strong>Real-World Application:</strong> Set operations are valuable in healthcare for identifying unique patient IDs, finding common diagnoses across different patient groups, or detecting overlapping medication prescriptions.</p>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor5_2" class="code-editor">
+import numpy as np
+
+# Basic set operations
+print("--- Basic Set Operations ---")
+
+# Create arrays with duplicate values
+arr1 = np.array([1, 2, 3, 2, 4, 1, 5, 3, 2])
+arr2 = np.array([3, 4, 5, 6, 7, 8, 4, 5])
+
+print(f"Array 1: {arr1}")
+print(f"Array 2: {arr2}")
+
+# Unique elements
+unique1 = np.unique(arr1)
+unique2 = np.unique(arr2)
+print(f"Unique in arr1: {unique1}")
+print(f"Unique in arr2: {unique2}")
+
+# Set operations
+print("\n--- Set Operations ---")
+
+# Intersection (common elements)
+intersection = np.intersect1d(arr1, arr2)
+print(f"Intersection (common elements): {intersection}")
+
+# Union (all unique elements from both)
+union = np.union1d(arr1, arr2)
+print(f"Union (all unique elements): {union}")
+
+# Set difference (elements in arr1 but not in arr2)
+difference = np.setdiff1d(arr1, arr2)
+print(f"Difference (in arr1 but not arr2): {difference}")
+
+# Set XOR (elements in either but not both)
+xor = np.setxor1d(arr1, arr2)
+print(f"XOR (in either but not both): {xor}")
+
+# Check if elements are in array
+test_elements = np.array([2, 6, 9])
+is_in_arr1 = np.isin(test_elements, arr1)
+print(f"\nElements {test_elements} in arr1: {is_in_arr1}")
+
+# Practical example: Patient diagnosis analysis
+print("\n--- Practical Example: Patient Diagnosis Analysis ---")
+
+# Simulate patient diagnoses (coded as integers)
+clinic_a_diagnoses = np.array([101, 102, 103, 104, 101, 105, 102, 106, 101, 103])
+clinic_b_diagnoses = np.array([103, 104, 105, 107, 108, 103, 104, 109, 105, 110])
+
+print(f"Clinic A diagnoses: {clinic_a_diagnoses}")
+print(f"Clinic B diagnoses: {clinic_b_diagnoses}")
+
+# Find unique diagnoses in each clinic
+unique_a = np.unique(clinic_a_diagnoses)
+unique_b = np.unique(clinic_b_diagnoses)
+
+print(f"\nUnique diagnoses in Clinic A: {unique_a}")
+print(f"Unique diagnoses in Clinic B: {unique_b}")
+
+# Common diagnoses between clinics
+common_diagnoses = np.intersect1d(unique_a, unique_b)
+print(f"\nCommon diagnoses: {common_diagnoses}")
+
+# Diagnoses unique to each clinic
+only_in_a = np.setdiff1d(unique_a, unique_b)
+only_in_b = np.setdiff1d(unique_b, unique_a)
+
+print(f"Diagnoses only in Clinic A: {only_in_a}")
+print(f"Diagnoses only in Clinic B: {only_in_b}")
+
+# All unique diagnoses across both clinics
+all_diagnoses = np.union1d(unique_a, unique_b)
+print(f"All unique diagnoses: {all_diagnoses}")
+
+# Check for specific rare diagnoses
+rare_diagnoses = np.array([107, 108, 109, 110])
+has_rare = np.isin(rare_diagnoses, all_diagnoses)
+print(f"\nRare diagnoses {rare_diagnoses} present: {has_rare}")
+
+# Count occurrences (using return_counts in unique)
+unique_diag, counts = np.unique(np.concatenate([clinic_a_diagnoses, clinic_b_diagnoses]), 
+                                return_counts=True)
+print(f"\nDiagnosis frequency across both clinics:")
+for diag, count in zip(unique_diag, counts):
+    print(f"  Diagnosis {diag}: {count} patients")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output5_2" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <div class="chapter-progress">
+                    <button class="chapter-nav-btn" onclick="scrollToChapter('chapter-4')">
+                        <span>←</span>
+                        Previous
+                    </button>
+                    <span class="text-sm text-gray-500 dark:text-gray-400 flex items-center">Chapter 5 of 6</span>
+                    <button class="chapter-nav-btn" onclick="scrollToChapter('chapter-6')">
+                        Next
+                        <span>→</span>
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- Chapter 6: Health Informatics Project -->
+            <section class="section-card" id="chapter-6">
+                <div class="chapter-title">Chapter 6: Health Informatics Project</div>
+                
+                <div class="learning-objectives">
+                    <h3>Learning Objectives</h3>
+                    <ul>
+                        <li>Apply NumPy skills to real healthcare data</li>
+                        <li>Analyze patient vital signs</li>
+                        <li>Detect anomalies in medical data</li>
+                        <li>Generate statistical reports</li>
+                    </ul>
+                </div>
+
+                <!-- Patient Data Analysis -->
+                <div class="function-card" id="patient-analysis">
+                    <div class="function-title">Patient Vital Signs Analysis</div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-bold mb-3 text-lg">Comprehensive Health Data Processing</h4>
+                        <p class="mb-3">This project demonstrates how to use NumPy for analyzing patient vital signs data, detecting anomalies, and generating insights for healthcare professionals.</p>
+                        
+                        <div class="info-box">
+                            <div>
+                                <strong>Project Features:</strong>
+                                <ul class="mt-2 space-y-1">
+                                    <li>Simulated patient vital signs data</li>
+                                    <li>Statistical analysis and anomaly detection</li>
+                                    <li>Data visualization preparation</li>
+                                    <li>Clinical insights generation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <textarea id="editor6_1" class="code-editor">
+import numpy as np
+import numpy.random as npr
+
+# Set seed for reproducible results
+npr.seed(42)
+
+print("=== PATIENT VITAL SIGNS ANALYSIS ===\n")
+
+# Generate synthetic patient data
+num_patients = 100
+
+# Vital signs ranges (realistic medical ranges)
+# [heart_rate, systolic_bp, diastolic_bp, temperature, oxygen_saturation]
+normal_ranges = {
+    'heart_rate': (60, 100),
+    'systolic_bp': (90, 120),
+    'diastolic_bp': (60, 80),
+    'temperature': (36.5, 37.5),
+    'oxygen_sat': (95, 100)
+}
+
+# Generate normal data with some anomalies
+patient_data = np.zeros((num_patients, 5))
+
+for i, (vital, (low, high)) in enumerate(normal_ranges.items()):
+    # Generate mostly normal data with some outliers
+    normal_values = npr.normal(loc=(low + high) / 2, scale=(high - low) / 6, size=num_patients)
+    
+    # Add some anomalies (5% of data)
+    anomaly_mask = npr.random(num_patients) < 0.05
+    if vital == 'heart_rate':
+        normal_values[anomaly_mask] = npr.choice([npr.randint(40, 55), npr.randint(110, 160)], 
+                                                np.sum(anomaly_mask))
+    elif vital == 'systolic_bp':
+        normal_values[anomaly_mask] = npr.choice([npr.randint(70, 89), npr.randint(121, 180)], 
+                                                np.sum(anomaly_mask))
+    elif vital == 'temperature':
+        normal_values[anomaly_mask] = npr.choice([npr.uniform(35.0, 36.4), npr.uniform(37.6, 40.0)], 
+                                                np.sum(anomaly_mask))
+    elif vital == 'oxygen_sat':
+        normal_values[anomaly_mask] = npr.uniform(85, 94, np.sum(anomaly_mask))
+    
+    patient_data[:, i] = normal_values
+
+# Add patient IDs
+patient_ids = np.arange(1000, 1000 + num_patients)
+
+print("Generated patient data for analysis:")
+print(f"Shape: {patient_data.shape}")
+print(f"First 5 patients:")
+print("Patient ID | HR  | SBP | DBP | Temp | O2Sat")
+print("-" * 50)
+for i in range(5):
+    print(f"{patient_ids[i]:^10} | {patient_data[i, 0]:3.0f} | {patient_data[i, 1]:3.0f} | {patient_data[i, 2]:3.0f} | {patient_data[i, 3]:4.1f} | {patient_data[i, 4]:5.1f}")
+
+# Statistical analysis
+print("\n=== STATISTICAL ANALYSIS ===")
+vital_names = ['Heart Rate', 'Systolic BP', 'Diastolic BP', 'Temperature', 'O2 Saturation']
+
+for i, name in enumerate(vital_names):
+    data = patient_data[:, i]
+    print(f"\n{name}:")
+    print(f"  Mean: {np.mean(data):.2f}")
+    print(f"  Std:  {np.std(data):.2f}")
+    print(f"  Min:  {np.min(data):.2f}")
+    print(f"  Max:  {np.max(data):.2f}")
+    print(f"  Median: {np.median(data):.2f}")
+
+# Anomaly detection
+print("\n=== ANOMALY DETECTION ===")
+
+# Define normal ranges for each vital sign
+normal_limits = np.array([
+    [60, 100],    # Heart rate
+    [90, 120],    # Systolic BP
+    [60, 80],     # Diastolic BP
+    [36.5, 37.5], # Temperature
+    [95, 100]     # O2 saturation
+])
+
+# Find patients with abnormal vitals
+abnormal_patients = {}
+
+for i, (name, limits) in enumerate(zip(vital_names, normal_limits)):
+    low, high = limits
+    abnormal_mask = (patient_data[:, i] < low) | (patient_data[:, i] > high)
+    abnormal_indices = np.where(abnormal_mask)[0]
+    
+    if len(abnormal_indices) > 0:
+        abnormal_patients[name] = {
+            'count': len(abnormal_indices),
+            'patient_ids': patient_ids[abnormal_indices],
+            'values': patient_data[abnormal_indices, i]
+        }
+        print(f"\n{name}: {len(abnormal_indices)} patients outside normal range")
+        for j, idx in enumerate(abnormal_indices[:5]):  # Show first 5
+            print(f"  Patient {patient_ids[idx]}: {patient_data[idx, i]:.1f}")
+
+# Patients with multiple abnormal vitals
+print("\n=== PATIENTS WITH MULTIPLE ABNORMAL VITALS ===")
+
+# Count abnormal vitals per patient
+abnormal_count = np.zeros(num_patients)
+for i in range(len(vital_names)):
+    low, high = normal_limits[i]
+    abnormal_count += (patient_data[:, i] < low) | (patient_data[:, i] > high)
+
+critical_patients = np.where(abnormal_count >= 2)[0]
+
+if len(critical_patients) > 0:
+    print(f"Found {len(critical_patients)} patients with 2+ abnormal vitals:")
+    for idx in critical_patients:
+        print(f"\nPatient {patient_ids[idx]} - {abnormal_count[idx]:.0f} abnormal vitals:")
+        for i, name in enumerate(vital_names):
+            value = patient_data[idx, i]
+            low, high = normal_limits[i]
+            status = "ABNORMAL" if value < low or value > high else "normal"
+            print(f"  {name}: {value:.1f} ({status})")
+else:
+    print("No patients found with multiple abnormal vital signs.")
+
+# Risk scoring
+print("\n=== RISK ASSESSMENT ===")
+
+# Simple risk score based on deviation from normal
+risk_scores = np.zeros(num_patients)
+
+for i in range(len(vital_names)):
+    low, high = normal_limits[i]
+    # Calculate how far outside normal range (if any)
+    deviation = np.maximum(0, np.maximum(low - patient_data[:, i], patient_data[:, i] - high))
+    # Normalize and add to risk score
+    if i == 0:  # Heart rate
+        risk_scores += deviation / 20  # 20 bpm deviation = 1 point
+    elif i == 1 or i == 2:  # BP
+        risk_scores += deviation / 15  # 15 mmHg deviation = 1 point
+    elif i == 3:  # Temperature
+        risk_scores += deviation / 1   # 1°C deviation = 1 point
+    elif i == 4:  # O2 saturation
+        risk_scores += deviation / 5   # 5% deviation = 1 point
+
+# Categorize risk
+risk_categories = np.where(risk_scores < 1, "Low",
+                  np.where(risk_scores < 2, "Medium",
+                  np.where(risk_scores < 3, "High", "Critical")))
+
+print("Risk distribution:")
+unique, counts = np.unique(risk_categories, return_counts=True)
+for category, count in zip(unique, counts):
+    print(f"  {category}: {count} patients")
+
+# High-risk patients
+high_risk_mask = risk_scores >= 2
+high_risk_patients = patient_ids[high_risk_mask]
+
+if len(high_risk_patients) > 0:
+    print(f"\nHigh/Critical risk patients (score >= 2):")
+    for i, pid in enumerate(high_risk_patients):
+        idx = np.where(patient_ids == pid)[0][0]
+        print(f"  Patient {pid}: {risk_categories[idx]} risk (score: {risk_scores[idx]:.2f})")
+
+print("\n=== ANALYSIS COMPLETE ===")
+print(f"Processed {num_patients} patient records")
+print("Generated risk assessments and anomaly detection reports")
+</textarea>
+                        <button class="copy-button">
+                            <span>📋</span>
+                            Copy
+                        </button>
+                        <button class="run-button btn-primary mt-3">
+                            <span>🚀</span>
+                            Run Code
+                        </button>
+                        <div id="output6_1" class="output-area">Click 'Run Code' to see output...</div>
+                    </div>
+                </div>
+
+                <div class="chapter-progress">
+                    <button class="chapter-nav-btn" onclick="scrollToChapter('chapter-5')">
+                        <span>←</span>
+                        Previous
+                    </button>
+                    <span class="text-sm text-gray-500 dark:text-gray-400 flex items-center">Chapter 6 of 6</span>
+                    <button class="chapter-nav-btn" disabled>
+                        Next
+                        <span>→</span>
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<script>
+// JavaScript for navigation functionality
+let currentTheme = 'dark';
+
+// Navigation functionality
+function setupNavigation() {
+    const dropdownToggle = document.getElementById('dropdown-toggle');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    // Toggle dropdown menu
+    if (dropdownToggle && dropdownMenu) {
+        dropdownToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', () => {
+            dropdownMenu.classList.remove('show');
+        });
+    }
+
+    // Toggle mobile menu
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('show');
+            });
+        });
+    }
+}
+
+function addToOutput(outputId, text) {
+    const outputElement = document.getElementById(outputId);
+    if (outputElement) {
+        outputElement.textContent += text;
+    }
+}
+
+function updateProgress(percentage) {
+    const progressFill = document.getElementById('progress-fill');
+    if (progressFill) {
+        progressFill.style.width = `${percentage}%`;
+    }
+}
+
+function toggleTheme() {
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    currentTheme = newTheme;
+    
+    const themeIcon = document.getElementById('theme-icon');
+    themeIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+    
+    // Update CodeMirror theme
+    document.querySelectorAll('.CodeMirror').forEach(cm => {
+        cm.CodeMirror.setOption('theme', newTheme === 'dark' ? 'monokai' : 'eclipse');
+    });
+    
+    // Save preference
+    localStorage.setItem('theme', newTheme);
+}
+
+function scrollToChapter(chapterId) {
+    document.getElementById(chapterId).scrollIntoView({ behavior: 'smooth' });
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function generateTableOfContents() {
+    const tocList = document.getElementById('toc-list');
+    const chapters = document.querySelectorAll('.section-card');
+    
+    chapters.forEach(chapter => {
+        const chapterId = chapter.id;
+        const chapterTitle = chapter.querySelector('.chapter-title').textContent;
+        
+        const tocItem = document.createElement('div');
+        tocItem.className = 'toc-item';
+        tocItem.textContent = chapterTitle;
+        tocItem.addEventListener('click', () => {
+            scrollToChapter(chapterId);
+        });
+        
+        tocList.appendChild(tocItem);
+    });
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        // Show success message
+        const successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.innerHTML = '<span>✅</span> Code copied to clipboard!';
+        
+        // Remove any existing success message
+        const existingMessage = document.querySelector('.success-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        // Add the new message
+        document.querySelector('.code-container').appendChild(successMessage);
+        
+        // Remove after 2 seconds
+        setTimeout(() => {
+            successMessage.remove();
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
+
+// Simulate Pyodide loading for demonstration
+function initializePyodide() {
+    const statusElement = document.getElementById('status-indicator');
+    
+    // Simulate loading steps
+    setTimeout(() => {
+        statusElement.innerHTML = '<span>🔄</span><span>Loading Pyodide runtime...</span>';
+        updateProgress(20);
+    }, 500);
+    
+    setTimeout(() => {
+        statusElement.innerHTML = '<span>📦</span><span>Loading NumPy package...</span>';
+        updateProgress(60);
+    }, 1500);
+    
+    setTimeout(() => {
+        statusElement.className = "status-indicator status-ready";
+        statusElement.innerHTML = '<span>✅</span><span>Pyodide and NumPy loaded successfully! You can now run the examples.</span>';
+        updateProgress(100);
+    }, 2500);
+}
+
+// Simulate code execution
+function runPythonCode(code, outputElement) {
+    outputElement.textContent = "Running code... (Note: This is a demonstration. In a real implementation, Pyodide would execute the Python code.)\n\n";
+    
+    // Extract the code between the first and last lines to simulate output
+    const lines = code.split('\n');
+    let output = "";
+    
+    // Simple simulation of what the output might look like
+    if (code.includes("arr_1d = np.array([1, 2, 3, 4, 5])")) {
+        output += "1D Array: [1 2 3 4 5]\n";
+        output += "Shape: (5,)\n";
+        output += "Data type: int64\n";
+        output += "Dimensions: 1\n";
+        output += "Size: 5\n\n";
+        output += "2D Array:\n[[1 2 3]\n [4 5 6]]\n";
+        output += "Shape: (2, 3)\n\n";
+        output += "Float array: [1. 2. 3.]\n";
+        output += "Data type: float64\n\n";
+        output += "Array with ndmin=3: [[[1 2 3]]]\n";
+        output += "Shape: (1, 1, 3)\n";
+    } else if (code.includes("zeros_1d = np.zeros(5)")) {
+        output += "1D zeros array: [0. 0. 0. 0. 0.]\n\n";
+        output += "2D zeros array (3x4):\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\n\n";
+        output += "Integer zeros (2x3):\n[[0 0 0]\n [0 0 0]]\n\n";
+        output += "3D zeros array shape: (2, 3, 4)\n";
+        output += "Total elements: 24\n";
+    } else if (code.includes("arr = np.arange(12)")) {
+        output += "Original 1D array: [ 0  1  2  3  4  5  6  7  8  9 10 11]\n\n";
+        output += "Reshaped to 3x4:\n[[ 0  1  2  3]\n [ 4  5  6  7]\n [ 8  9 10 11]]\n\n";
+        output += "Reshaped to 2x3x2:\n[[[ 0  1]\n  [ 2  3]\n  [ 4  5]]\n\n [[ 6  7]\n  [ 8  9]\n  [10 11]]]\n\n";
+        output += "Auto reshape (2, -1):\n[[ 0  1  2  3  4  5]\n [ 6  7  8  9 10 11]]\n\n";
+        output += "Using method syntax (4x3):\n[[ 0  1  2]\n [ 3  4  5]\n [ 6  7  8]\n [ 9 10 11]]\n\n";
+        output += "Original array ID: 139716123456789\n";
+        output += "Reshaped array ID: 139716123456790\n";
+        output += "Same memory? True\n";
+    } else {
+        output += "Simulated output for demonstration purposes.\n";
+        output += "In a real implementation, this would show the actual Python output.\n\n";
+        output += "The code appears to run successfully!\n";
+    }
+    
+    outputElement.textContent += output;
+}
+
+window.addToOutput = addToOutput;
+
+document.addEventListener('DOMContentLoaded', async () => {
+    // Set initial theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    currentTheme = savedTheme;
+    
+    const themeIcon = document.getElementById('theme-icon');
+    themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+    
+    // Setup navigation
+    setupNavigation();
+    
+    // Generate table of contents
+    generateTableOfContents();
+    
+    // Set up scroll to top button
+    document.getElementById('scroll-to-top').addEventListener('click', scrollToTop);
+    
+    // Initialize Pyodide simulation
+    initializePyodide();
+
+    // Set up code editors and event listeners
+    document.querySelectorAll('.code-container').forEach(container => {
+        const codeTextArea = container.querySelector('.code-editor');
+        const runButton = container.querySelector('.run-button');
+        const copyButton = container.querySelector('.copy-button');
+        const outputArea = container.querySelector('.output-area');
+
+        const codeEditor = CodeMirror.fromTextArea(codeTextArea, {
+            lineNumbers: true,
+            mode: 'python',
+            theme: currentTheme === 'dark' ? 'monokai' : 'eclipse',
+            value: codeTextArea.value,
+            indentUnit: 4,
+            smartIndent: true,
+            matchBrackets: true,
+            autoCloseBrackets: true
+        });
+
+        runButton.addEventListener('click', async () => {
+            const code = codeEditor.getValue();
+            await runPythonCode(code, outputArea);
+        });
+        
+        copyButton.addEventListener('click', () => {
+            const code = codeEditor.getValue();
+            copyToClipboard(code);
+        });
+    });
+    
+    // Set up theme toggle
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    
+    // Show scroll to top button when scrolling down
+    window.addEventListener('scroll', () => {
+        const scrollTopBtn = document.getElementById('scroll-to-top');
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.style.display = 'flex';
+        } else {
+            scrollTopBtn.style.display = 'none';
+        }
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures in Python</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/eclipse.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+        
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --section-bg: #1e293b;
+            --code-bg: #020617;
+            --border-color: #334155;
+            --header-color: #38bdf8;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f1f5f9;
+            --text-color: #1e293b;
+            --section-bg: #ffffff;
+            --code-bg: #f8fafc;
+            --border-color: #e2e8f0;
+            --header-color: #1d4ed8;
+            --accent-color: #4f46e5;
+            --accent-hover: #4338ca;
+            --success-color: #059669;
+            --error-color: #dc2626;
+            --warning-color: #d97706;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            line-height: 1.6;
+        }
+
+        .section-card {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            color: white;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .CodeMirror {
+            height: auto;
+            min-height: 150px;
+            border-radius: 0.5rem;
+            font-size: 14px;
+            margin: 0.5rem 0;
+            transition: background-color 0.3s;
+        }
+        
+        .output-area {
+            background-color: var(--code-bg);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+            font-family: monospace;
+            font-size: 14px;
+            min-height: 60px;
+            white-space: pre-wrap;
+            transition: background-color 0.3s;
+        }
+
+        .chapter-title {
+            color: var(--header-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--header-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .function-title {
+            color: var(--header-color);
+            font-weight: bold;
+            margin: 1.5rem 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .concept-box {
+            background-color: var(--section-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+            transition: background-color 0.3s;
+        }
+
+        .explanation-box {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .status-indicator {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .status-loading {
+            background-color: #fef3c7;
+            color: #92400e;
+            border: 1px solid #f59e0b;
+        }
+        
+        .status-ready {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid var(--success-color);
+        }
+
+        .status-error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid var(--error-color);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 100;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--border-color);
+        }
+
+        .table-of-contents {
+            position: sticky;
+            top: 1rem;
+            max-height: calc(100vh - 2rem);
+            overflow-y: auto;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+
+        .toc-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .toc-item:hover {
+            color: var(--header-color);
+        }
+
+        .toc-item:last-child {
+            border-bottom: none;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: var(--border-color);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .code-container {
+            position: relative;
+            margin: 1.5rem 0;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-color);
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s, background-color 0.2s;
+            z-index: 10;
+        }
+
+        .copy-button:hover {
+            opacity: 1;
+            background-color: var(--border-color);
+        }
+
+        .success-message {
+            color: var(--success-color);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .info-box {
+            background-color: var(--code-bg);
+            border-left: 4px solid var(--header-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .warning-box {
+            background-color: #fef3c7;
+            border-left: 4px solid var(--warning-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+            color: #92400e;
+        }
+
+        .key-point {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            font-weight: bold;
+            margin: 0 0.25rem;
+        }
+
+        .real-world-example {
+            background-color: var(--section-bg);
+            border: 2px dashed var(--success-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .learning-objectives {
+            background: linear-gradient(135deg, var(--accent-color), var(--header-color));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .prerequisites {
+            background-color: var(--code-bg);
+            border-left: 4px solid var(--warning-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .data-structure-comparison {
+            background-color: var(--section-bg);
+            border: 2px solid var(--accent-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .table-of-contents {
+                position: static;
+                max-height: none;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+
+<div class="theme-toggle" id="theme-toggle">
+    <span id="theme-icon">🌙</span>
+</div>
+
+<div class="max-w-6xl mx-auto">
+    <header class="text-center mb-8">
+        <h1 class="text-4xl font-extrabold mb-4" id="module-title">Module 3: Data Structures in Python</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-4" id="module-description">Master Python's built-in data structures - Lists, Tuples, Sets, Dictionaries, and more</p>
+        <div id="status-indicator" class="status-indicator status-loading">
+            ⏳ Loading Pyodide... This may take a few seconds.
+        </div>
+        <div id="progress-bar" class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Table of Contents -->
+        <div class="lg:col-span-1">
+            <div class="table-of-contents">
+                <h2 class="font-bold text-lg mb-4">Table of Contents</h2>
+                <div id="toc-list">
+                    <!-- TOC items will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="lg:col-span-3">
+            <!-- Module Overview Section -->
+            <section class="section-card" id="module-overview">
+                <div class="chapter-title">Module Overview</div>
+                
+                <div class="learning-objectives">
+                    <h3 class="font-bold text-lg mb-3">🎯 Learning Objectives</h3>
+                    <ul class="list-disc pl-6" id="learning-objectives-list">
+                        <li>Understand and use Python's built-in data structures effectively</li>
+                        <li>Differentiate between mutable and immutable data types</li>
+                        <li>Master list operations, comprehensions, and methods</li>
+                        <li>Work with tuples, sets, and dictionaries efficiently</li>
+                        <li>Understand string manipulation and iteration techniques</li>
+                        <li>Apply data structures to solve real-world problems</li>
+                    </ul>
+                </div>
+
+                <div class="prerequisites">
+                    <h3 class="font-bold mb-2">📋 Prerequisites</h3>
+                    <ul class="list-disc pl-6" id="prerequisites-list">
+                        <li>Basic Python syntax and variables</li>
+                        <li>Understanding of data types (integers, strings, booleans)</li>
+                        <li>Basic knowledge of functions and control flow</li>
+                    </ul>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">Why Data Structures Matter</h3>
+                    <p class="mb-3">
+                        Data structures are fundamental building blocks in programming that determine how data is organized, stored, and manipulated. Python provides several built-in data structures, each with unique characteristics and use cases. Choosing the right data structure can significantly impact your program's efficiency, readability, and performance.
+                    </p>
+                    <p>
+                        In this module, you'll explore <span class="key-point">Lists</span>, <span class="key-point">Tuples</span>, <span class="key-point">Sets</span>, <span class="key-point">Dictionaries</span>, <span class="key-point">Strings</span>, and other iterables, learning when and how to use each one effectively in your programs.
+                    </p>
+                </div>
+
+                <div class="data-structure-comparison">
+                    <h3 class="font-bold mb-3 text-lg">📊 Python Data Structures at a Glance</h3>
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b-2">
+                                <th class="text-left p-2">Structure</th>
+                                <th class="text-left p-2">Mutable</th>
+                                <th class="text-left p-2">Ordered</th>
+                                <th class="text-left p-2">Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="p-2 font-mono">List</td>
+                                <td class="p-2">✅ Yes</td>
+                                <td class="p-2">✅ Yes</td>
+                                <td class="p-2">Ordered collections, frequent modifications</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-2 font-mono">Tuple</td>
+                                <td class="p-2">❌ No</td>
+                                <td class="p-2">✅ Yes</td>
+                                <td class="p-2">Fixed collections, data integrity</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-2 font-mono">Set</td>
+                                <td class="p-2">✅ Yes</td>
+                                <td class="p-2">❌ No</td>
+                                <td class="p-2">Unique elements, membership testing</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 font-mono">Dictionary</td>
+                                <td class="p-2">✅ Yes</td>
+                                <td class="p-2">✅ Yes*</td>
+                                <td class="p-2">Key-value pairs, fast lookups</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="text-sm mt-2 text-gray-600 dark:text-gray-400">* Dictionaries maintain insertion order in Python 3.7+</p>
+                </div>
+            </section>
+
+            <!-- Section 1: Lists -->
+            <section class="section-card" id="section-1">
+                <div class="chapter-title">Section 1: Lists - Ordered Mutable Collections</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">Understanding Lists</h3>
+                    <p class="mb-3">
+                        Lists are ordered, mutable collections that can hold items of different data types. They are one of Python's most versatile and commonly used data structures, perfect for storing sequences of items that may need to be modified.
+                    </p>
+                </div>
+
+                <div class="function-title">1.1 Creating and Accessing Lists</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Basic List Operations</h4>
+                    <p class="mb-3">
+                        Lists are created using square brackets and can contain any data type. You can access elements using indexing and slicing operations.
+                    </p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor1_1" class="code-editor">
+# Creating lists
+fruits = ["apple", "banana", "cherry", "date"]
+numbers = [1, 2, 3, 4, 5]
+mixed = [1, "hello", 3.14, True]
+
+print("Fruits list:", fruits)
+print("First fruit:", fruits[0])
+print("Last fruit:", fruits[-1])
+print("Sliced fruits:", fruits[1:3])
+
+# List length
+print("Number of fruits:", len(fruits))
+
+# Modifying lists
+fruits[1] = "blueberry"
+print("Modified fruits:", fruits)</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output1_1" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+                <div class="function-title">1.2 List Methods and Operations</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Common List Methods</h4>
+                    <p class="mb-3">
+                        Python provides numerous built-in methods for list manipulation, including adding, removing, and searching for elements.
+                    </p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor1_2" class="code-editor">
+# List methods demonstration
+colors = ["red", "green", "blue"]
+
+# Adding elements
+colors.append("yellow")
+print("After append:", colors)
+
+colors.insert(1, "orange")
+print("After insert:", colors)
+
+# Removing elements
+removed = colors.pop()
+print("Removed:", removed, "List:", colors)
+
+colors.remove("green")
+print("After remove:", colors)
+
+# Other operations
+numbers = [3, 1, 4, 1, 5, 9, 2]
+print("Original numbers:", numbers)
+numbers.sort()
+print("Sorted numbers:", numbers)
+numbers.reverse()
+print("Reversed numbers:", numbers)
+
+# List concatenation and repetition
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+combined = list1 + list2
+repeated = list1 * 3
+print("Combined:", combined)
+print("Repeated:", repeated)</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output1_2" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+                <div class="function-title">1.3 List Comprehensions</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Efficient List Creation</h4>
+                    <p class="mb-3">
+                        List comprehensions provide a concise way to create lists based on existing lists or other iterables. They are more readable and often faster than traditional loops.
+                    </p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor1_3" class="code-editor">
+# Traditional approach
+squares = []
+for x in range(10):
+    squares.append(x**2)
+print("Squares (traditional):", squares)
+
+# List comprehension
+squares_comp = [x**2 for x in range(10)]
+print("Squares (comprehension):", squares_comp)
+
+# More examples
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Even numbers
+evens = [x for x in numbers if x % 2 == 0]
+print("Even numbers:", evens)
+
+# String manipulation
+words = ["hello", "world", "python", "programming"]
+upper_words = [word.upper() for word in words]
+print("Uppercase words:", upper_words)
+
+# Nested comprehensions
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened = [num for row in matrix for num in row]
+print("Flattened matrix:", flattened)</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output1_3" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+            </section>
+
+            <!-- Section 2: Tuples -->
+            <section class="section-card" id="section-2">
+                <div class="chapter-title">Section 2: Tuples - Immutable Sequences</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">Understanding Tuples</h3>
+                    <p class="mb-3">
+                        Tuples are ordered, immutable sequences. Once created, their elements cannot be changed, added, or removed. This immutability makes tuples faster than lists and suitable for fixed collections of items.
+                    </p>
+                </div>
+
+                <div class="function-title">2.1 Creating and Using Tuples</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Tuple Basics</h4>
+                    <p class="mb-3">
+                        Tuples are created using parentheses or simply by separating values with commas. They support similar operations to lists but cannot be modified after creation.
+                    </p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor2_1" class="code-editor">
+# Creating tuples
+coordinates = (10, 20)
+colors = "red", "green", "blue"  # Parentheses are optional
+single_element = (42,)  # Note the comma for single-element tuples
+
+print("Coordinates:", coordinates)
+print("Colors:", colors)
+print("Single element:", single_element)
+
+# Accessing elements
+print("First color:", colors[0])
+print("Last color:", colors[-1])
+print("Sliced colors:", colors[1:])
+
+# Tuple unpacking
+x, y = coordinates
+print(f"Unpacked: x={x}, y={y}")
+
+# Tuples are immutable - this will cause an error
+try:
+    colors[0] = "yellow"
+except TypeError as e:
+    print("Error:", e)</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output2_1" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+                <div class="function-title">2.2 Tuple Methods and Use Cases</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">When to Use Tuples</h4>
+                    <p class="mb-3">
+                        Tuples are ideal for representing fixed collections of items, such as coordinates, database records, or function return values. They provide data integrity and are hashable (can be used as dictionary keys).
+                    </p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor2_2" class="code-editor">
+# Tuple methods
+numbers = (1, 2, 3, 2, 4, 2, 5)
+
+print("Count of 2:", numbers.count(2))
+print("Index of 4:", numbers.index(4))
+
+# Use cases for tuples
+# 1. Returning multiple values from functions
+def get_user_info():
+    return "John", 30, "john@example.com"
+
+name, age, email = get_user_info()
+print(f"User: {name}, Age: {age}, Email: {email}")
+
+# 2. As dictionary keys (because they're immutable)
+locations = {
+    (40.7128, -74.0060): "New York",
+    (34.0522, -118.2437): "Los Angeles"
+}
+print("NY coordinates:", (40.7128, -74.0060), "->", locations[(40.7128, -74.0060)])
+
+# 3. String formatting
+person = ("Alice", 25)
+print("Hello, my name is {} and I'm {} years old".format(*person))
+
+# Converting between lists and tuples
+list_data = [1, 2, 3]
+tuple_data = tuple(list_data)
+print("List to tuple:", tuple_data)
+
+new_list = list(tuple_data)
+print("Tuple to list:", new_list)</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output2_2" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+            </section>
+
+            <!-- Section 3: Sets -->
+            <section class="section-card" id="section-3">
+                <div class="chapter-title">Section 3: Sets - Unique Element Collections</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">Understanding Sets</h3>
+                    <p class="mb-3">
+                        Sets are unordered collections of unique elements. They are mutable but cannot contain duplicate values. Sets are optimized for membership testing and mathematical set operations.
+                    </p>
+                </div>
+
+                <div class="function-title">3.1 Creating and Modifying Sets</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Set Operations</h4>
+                    <p class="mb-3">
+                        Sets are created using curly braces or the set() constructor. They automatically remove duplicates and support mathematical operations like union, intersection, and difference.
+                    </p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor3_1" class="code-editor">
+# Creating sets
+fruits = {"apple", "banana", "cherry", "apple"}  # Duplicates removed
+numbers = set([1, 2, 3, 4, 5, 2, 3])  # From list
+
+print("Fruits set:", fruits)  # Order may vary
+print("Numbers set:", numbers)
+
+# Set operations
+set_a = {1, 2, 3, 4, 5}
+set_b = {4, 5, 6, 7, 8}
+
+print("Set A:", set_a)
+print("Set B:", set_b)
+print("Union:", set_a | set_b)  # or set_a.union(set_b)
+print("Intersection:", set_a & set_b)  # or set_a.intersection(set_b)
+print("Difference (A - B):", set_a - set_b)  # or set_a.difference(set_b)
+print("Symmetric Difference:", set_a ^ set_b)  # or set_a.symmetric_difference(set_b)
+
+# Set methods
+colors = {"red", "green", "blue"}
+colors.add("yellow")
+print("After add:", colors)
+
+colors.remove("green")  # Raises error if not found
+print("After remove:", colors)
+
+colors.discard("purple")  # No error if not found
+print("After discard:", colors)
+
+popped = colors.pop()  # Removes arbitrary element
+print("Popped:", popped, "Remaining:", colors)</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output3_1" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+                <div class="function-title">3.2 Set Use Cases and Comprehensions</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Practical Set Applications</h4>
+                    <p class="mb-3">
+                        Sets are perfect for removing duplicates, membership testing, and mathematical operations. They're much faster than lists for checking if an element exists.
+                    </p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor3_2" class="code-editor">
+# Removing duplicates from a list
+numbers_with_duplicates = [1, 2, 2, 3, 4, 4, 4, 5, 5]
+unique_numbers = list(set(numbers_with_duplicates))
+print("Original:", numbers_with_duplicates)
+print("Unique:", unique_numbers)
+
+# Membership testing - sets are much faster than lists
+large_set = set(range(1000000))
+large_list = list(range(1000000))
+
+import time
+
+# Test with set
+start = time.time()
+print(999999 in large_set)
+set_time = time.time() - start
+
+# Test with list
+start = time.time()
+print(999999 in large_list)
+list_time = time.time() - start
+
+print(f"Set lookup time: {set_time:.6f} seconds")
+print(f"List lookup time: {list_time:.6f} seconds")
+
+# Set comprehensions
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_squares = {x**2 for x in numbers if x % 2 == 0}
+print("Even squares:", even_squares)
+
+# Frozenset - immutable version of set
+immutable_set = frozenset([1, 2, 3, 4])
+print("Frozenset:", immutable_set)
+# immutable_set.add(5)  # This would raise an AttributeError</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output3_2" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+            </section>
+
+            <!-- Section 4: Dictionaries -->
+            <section class="section-card" id="section-4">
+                <div class="chapter-title">Section 4: Dictionaries - Key-Value Pairs</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">Understanding Dictionaries</h3>
+                    <p class="mb-3">
+                        Dictionaries are unordered (but insertion-ordered in Python 3.7+) collections of key-value pairs. They provide fast lookups by key and are one of Python's most powerful data structures.
+                    </p>
+                </div>
+
+                <div class="function-title">4.1 Creating and Accessing Dictionaries</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Dictionary Basics</h4>
+                    <p class="mb-3">
+                        Dictionaries are created with curly braces containing key-value pairs separated by colons. Keys must be immutable types (strings, numbers, tuples), while values can be any type.
+                    </p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor4_1" class="code-editor">
+# Creating dictionaries
+student = {
+    "name": "Alice",
+    "age": 20,
+    "major": "Computer Science",
+    "grades": [85, 92, 78]
+}
+
+# Alternative creation
+colors = dict(red="#FF0000", green="#00FF00", blue="#0000FF")
+
+print("Student:", student)
+print("Colors:", colors)
+
+# Accessing values
+print("Student name:", student["name"])
+print("Student age:", student.get("age"))
+
+# Safe access with default
+print("Student GPA:", student.get("gpa", "Not available"))
+
+# Adding and modifying
+student["gpa"] = 3.8
+student["age"] = 21
+print("Updated student:", student)
+
+# Removing elements
+removed_grade = student.pop("grades")
+print("Removed grades:", removed_grade)
+print("Student after pop:", student)
+
+# Dictionary methods
+print("Keys:", student.keys())
+print("Values:", student.values())
+print("Items:", student.items())
+
+# Iterating through dictionaries
+print("\nStudent details:")
+for key, value in student.items():
+    print(f"  {key}: {value}")</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output4_1" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+                <div class="function-title">4.2 Dictionary Comprehensions and Advanced Usage</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Advanced Dictionary Techniques</h4>
+                    <p class="mb-3">
+                        Dictionary comprehensions provide a concise way to create dictionaries. Dictionaries are essential for counting, grouping, and organizing data efficiently.
+                    </p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor4_2" class="code-editor">
+# Dictionary comprehensions
+numbers = [1, 2, 3, 4, 5]
+squares = {x: x**2 for x in numbers}
+print("Squares dictionary:", squares)
+
+# From two lists
+keys = ['a', 'b', 'c']
+values = [1, 2, 3]
+combined = {k: v for k, v in zip(keys, values)}
+print("Combined:", combined)
+
+# Counting with dictionaries
+text = "hello world hello python world"
+words = text.split()
+word_count = {}
+
+for word in words:
+    word_count[word] = word_count.get(word, 0) + 1
+
+print("Word count:", word_count)
+
+# Using defaultdict for easier counting
+# Note: collections is built-in, no need to install
+word_count_default = {}
+for word in words:
+    word_count_default[word] = word_count_default.get(word, 0) + 1
+
+print("Word count (manual):", word_count_default)
+
+# Nested dictionaries
+students = {
+    "alice": {"age": 20, "major": "CS", "gpa": 3.8},
+    "bob": {"age": 22, "major": "Math", "gpa": 3.6},
+    "charlie": {"age": 21, "major": "Physics", "gpa": 3.9}
+}
+
+print("Alice's GPA:", students["alice"]["gpa"])
+
+# Dictionary merging (Python 3.9+)
+dict1 = {"a": 1, "b": 2}
+dict2 = {"b": 3, "c": 4}
+merged = {**dict1, **dict2}  # Alternative to dict1 | dict2
+print("Merged dictionaries:", merged)</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output4_2" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+            </section>
+
+            <!-- Section 5: Strings -->
+            <section class="section-card" id="section-5">
+                <div class="chapter-title">Section 5: Strings - Text Manipulation</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">Understanding Strings</h3>
+                    <p class="mb-3">
+                        Strings are immutable sequences of Unicode characters. They support numerous methods for text manipulation, formatting, and searching. Understanding strings is crucial for almost every Python program.
+                    </p>
+                </div>
+
+                <div class="function-title">5.1 String Operations and Methods</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">String Manipulation</h4>
+                    <p class="mb-3">
+                        Python provides a rich set of string operations including slicing, concatenation, and numerous methods for case conversion, searching, and replacement.
+                    </p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor5_1" class="code-editor">
+# Basic string operations
+text = "Hello, World!"
+name = "Python"
+
+print("Original text:", text)
+print("Uppercase:", text.upper())
+print("Lowercase:", text.lower())
+print("Title case:", text.title())
+
+# String searching and checking
+print("Starts with 'Hello':", text.startswith("Hello"))
+print("Ends with '!':", text.endswith("!"))
+print("Contains 'World':", "World" in text)
+print("Find 'World':", text.find("World"))
+print("Count 'l':", text.count("l"))
+
+# String modification
+print("Replace 'World' with 'Python':", text.replace("World", "Python"))
+print("Strip whitespace:", "   hello   ".strip())
+print("Split by comma:", text.split(","))
+
+# String formatting
+name = "Alice"
+age = 25
+# Old style
+print("Hello, %s! You are %d years old." % (name, age))
+# str.format()
+print("Hello, {}! You are {} years old.".format(name, age))
+# f-strings (Python 3.6+)
+print(f"Hello, {name}! You are {age} years old.")
+
+# String joining
+words = ["Python", "is", "awesome"]
+sentence = " ".join(words)
+print("Joined sentence:", sentence)
+
+# Multiline strings
+multiline = """This is a
+multiline string
+that spans several lines"""
+print("Multiline string:")
+print(multiline)</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output5_1" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+            </section>
+
+            <!-- Project Section -->
+            <section class="section-card" id="project-section">
+                <div class="chapter-title">Final Project: Student Management System</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">Comprehensive Data Structure Application</h3>
+                    <p class="mb-3">
+                        Apply all the data structures you've learned to build a complete student management system that demonstrates real-world usage of lists, dictionaries, sets, and tuples.
+                    </p>
+                </div>
+
+                <div class="function-title">Project Implementation</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Complete Student Management System</h4>
+                    <p class="mb-3">
+                        This project combines multiple data structures to create a functional student management system with course enrollment, grade tracking, and reporting capabilities.
+                    </p>
+                    
+                    <div class="real-world-example">
+                        <h5 class="font-semibold mb-2">💡 Real-World Application:</h5>
+                        <p>This type of system demonstrates how different data structures work together in practical applications like educational software, CRM systems, and data management tools.</p>
+                    </div>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor-project" class="code-editor">
+class StudentManagementSystem:
+    def __init__(self):
+        # Dictionary to store students by ID
+        self.students = {}
+        # Set of available courses
+        self.courses = {"Math", "Science", "History", "English", "Computer Science"}
+        # List to track enrollment history
+        self.enrollment_history = []
+    
+    def add_student(self, student_id, name, age):
+        """Add a new student to the system"""
+        if student_id in self.students:
+            print(f"Student ID {student_id} already exists!")
+            return False
+        
+        # Using a dictionary for student info and a list for grades
+        self.students[student_id] = {
+            "name": name,
+            "age": age,
+            "grades": {},  # Dictionary: course -> list of grades
+            "enrolled_courses": set()  # Set for fast membership testing
+        }
+        print(f"Student {name} added successfully!")
+        return True
+    
+    def enroll_student(self, student_id, course):
+        """Enroll a student in a course"""
+        if student_id not in self.students:
+            print(f"Student ID {student_id} not found!")
+            return False
+        
+        if course not in self.courses:
+            print(f"Course {course} not available!")
+            return False
+        
+        student = self.students[student_id]
+        
+        if course in student["enrolled_courses"]:
+            print(f"Student is already enrolled in {course}!")
+            return False
+        
+        # Add to enrolled courses set
+        student["enrolled_courses"].add(course)
+        # Initialize grades list for this course
+        student["grades"][course] = []
+        # Add to enrollment history
+        self.enrollment_history.append((student_id, course, "enrolled"))
+        
+        print(f"Student {student['name']} enrolled in {course}!")
+        return True
+    
+    def add_grade(self, student_id, course, grade):
+        """Add a grade for a student in a specific course"""
+        if student_id not in self.students:
+            print(f"Student ID {student_id} not found!")
+            return False
+        
+        student = self.students[student_id]
+        
+        if course not in student["enrolled_courses"]:
+            print(f"Student is not enrolled in {course}!")
+            return False
+        
+        # Add grade to the list for this course
+        student["grades"][course].append(grade)
+        print(f"Grade {grade} added for {student['name']} in {course}!")
+        return True
+    
+    def get_student_report(self, student_id):
+        """Generate a comprehensive report for a student"""
+        if student_id not in self.students:
+            print(f"Student ID {student_id} not found!")
+            return None
+        
+        student = self.students[student_id]
+        report = {
+            "student_id": student_id,
+            "name": student["name"],
+            "age": student["age"],
+            "courses": {},
+            "overall_gpa": 0.0
+        }
+        
+        total_points = 0
+        total_courses = 0
+        
+        for course, grades in student["grades"].items():
+            if grades:  # Only include courses with grades
+                avg_grade = sum(grades) / len(grades)
+                report["courses"][course] = {
+                    "grades": grades,
+                    "average": avg_grade
+                }
+                total_points += avg_grade
+                total_courses += 1
+        
+        if total_courses > 0:
+            report["overall_gpa"] = total_points / total_courses
+        
+        return report
+    
+    def get_course_statistics(self, course):
+        """Get statistics for a specific course"""
+        if course not in self.courses:
+            print(f"Course {course} not found!")
+            return None
+        
+        enrolled_students = []
+        all_grades = []
+        
+        for student_id, student_data in self.students.items():
+            if course in student_data["enrolled_courses"]:
+                enrolled_students.append(student_data["name"])
+                if course in student_data["grades"] and student_data["grades"][course]:
+                    all_grades.extend(student_data["grades"][course])
+        
+        statistics = {
+            "course": course,
+            "enrolled_students": enrolled_students,
+            "total_enrolled": len(enrolled_students),
+            "grades": all_grades
+        }
+        
+        if all_grades:
+            statistics.update({
+                "average_grade": sum(all_grades) / len(all_grades),
+                "highest_grade": max(all_grades),
+                "lowest_grade": min(all_grades)
+            })
+        
+        return statistics
+
+# Demonstration
+def main():
+    system = StudentManagementSystem()
+    
+    # Add students
+    system.add_student(1, "Alice Johnson", 20)
+    system.add_student(2, "Bob Smith", 21)
+    system.add_student(3, "Charlie Brown", 19)
+    
+    # Enroll students in courses
+    system.enroll_student(1, "Math")
+    system.enroll_student(1, "Computer Science")
+    system.enroll_student(2, "Science")
+    system.enroll_student(2, "Math")
+    system.enroll_student(3, "History")
+    system.enroll_student(3, "English")
+    
+    # Add grades
+    system.add_grade(1, "Math", 85)
+    system.add_grade(1, "Math", 90)
+    system.add_grade(1, "Computer Science", 95)
+    system.add_grade(2, "Science", 78)
+    system.add_grade(2, "Math", 82)
+    system.add_grade(3, "History", 88)
+    system.add_grade(3, "English", 92)
+    
+    # Generate reports
+    print("\n" + "="*50)
+    print("STUDENT REPORTS")
+    print("="*50)
+    
+    for student_id in [1, 2, 3]:
+        report = system.get_student_report(student_id)
+        if report:
+            print(f"\nReport for {report['name']} (ID: {report['student_id']}):")
+            print(f"Overall GPA: {report['overall_gpa']:.2f}")
+            for course, data in report['courses'].items():
+                print(f"  {course}: Grades {data['grades']}, Average: {data['average']:.1f}")
+    
+    # Course statistics
+    print("\n" + "="*50)
+    print("COURSE STATISTICS")
+    print("="*50)
+    
+    for course in ["Math", "Science"]:
+        stats = system.get_course_statistics(course)
+        if stats:
+            print(f"\nStatistics for {stats['course']}:")
+            print(f"Enrolled students: {stats['enrolled_students']}")
+            if 'average_grade' in stats:
+                print(f"Average grade: {stats['average_grade']:.1f}")
+                print(f"Highest grade: {stats['highest_grade']}")
+                print(f"Lowest grade: {stats['lowest_grade']}")
+
+# Run the system
+main()</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output-project" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+            </section>
+
+            <!-- Summary Section -->
+            <section class="section-card" id="summary">
+                <div class="chapter-title">Summary & Next Steps</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">What You've Learned</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">✅ Key Takeaways:</h4>
+                            <ul class="list-disc pl-6" id="key-takeaways">
+                                <li>Lists: Ordered, mutable collections for sequences</li>
+                                <li>Tuples: Immutable sequences for fixed data</li>
+                                <li>Sets: Unordered collections of unique elements</li>
+                                <li>Dictionaries: Key-value pairs for fast lookups</li>
+                                <li>Strings: Immutable sequences for text manipulation</li>
+                                <li>Comprehensions: Concise ways to create data structures</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">🚀 Next Steps:</h4>
+                            <ul class="list-disc pl-6" id="next-steps">
+                                <li>Practice with more complex data structure combinations</li>
+                                <li>Explore advanced Python modules like collections</li>
+                                <li>Learn about algorithms and time complexity</li>
+                                <li>Study data serialization (JSON, Pickle)</li>
+                                <li>Work on projects that require efficient data organization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box mt-6">
+                    <h4 class="font-bold mb-2">📚 Additional Resources</h4>
+                    <ul class="list-disc pl-6" id="additional-resources">
+                        <li>Python Official Documentation: Data Structures</li>
+                        <li>Real Python: Comprehensive data structure tutorials</li>
+                        <li>Python Cookbook: Advanced data structure patterns</li>
+                        <li>LeetCode: Practice problems with data structures</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<script>
+// Configuration
+const MODULE_CONFIG = {
+    title: "Module 3: Data Structures in Python",
+    description: "Master Python's built-in data structures - Lists, Tuples, Sets, Dictionaries, and more",
+    learningObjectives: [
+        "Understand and use Python's built-in data structures effectively",
+        "Differentiate between mutable and immutable data types",
+        "Master list operations, comprehensions, and methods",
+        "Work with tuples, sets, and dictionaries efficiently", 
+        "Understand string manipulation and iteration techniques",
+        "Apply data structures to solve real-world problems"
+    ],
+    prerequisites: [
+        "Basic Python syntax and variables",
+        "Understanding of data types (integers, strings, booleans)",
+        "Basic knowledge of functions and control flow"
+    ],
+    chapters: [
+        { id: "module-overview", title: "Module Overview" },
+        { id: "section-1", title: "Section 1: Lists" },
+        { id: "section-2", title: "Section 2: Tuples" },
+        { id: "section-3", title: "Section 3: Sets" },
+        { id: "section-4", title: "Section 4: Dictionaries" },
+        { id: "section-5", title: "Section 5: Strings" },
+        { id: "project-section", title: "Final Project" },
+        { id: "summary", title: "Summary & Next Steps" }
+    ]
+};
+
+let pyodide;
+let isPyodideReady = false;
+let currentTheme = 'dark';
+
+// Initialize module content
+function initializeModuleContent() {
+    // Set module title and description
+    document.getElementById('module-title').textContent = MODULE_CONFIG.title;
+    document.getElementById('module-description').textContent = MODULE_CONFIG.description;
+    
+    // Set learning objectives
+    const objectivesList = document.getElementById('learning-objectives-list');
+    objectivesList.innerHTML = '';
+    MODULE_CONFIG.learningObjectives.forEach(obj => {
+        const li = document.createElement('li');
+        li.textContent = obj;
+        objectivesList.appendChild(li);
+    });
+    
+    // Set prerequisites
+    const prereqList = document.getElementById('prerequisites-list');
+    prereqList.innerHTML = '';
+    MODULE_CONFIG.prerequisites.forEach(prereq => {
+        const li = document.createElement('li');
+        li.textContent = prereq;
+        prereqList.appendChild(li);
+    });
+}
+
+function addToOutput(outputId, text) {
+    const outputElement = document.getElementById(outputId);
+    if (outputElement) {
+        outputElement.textContent += text;
+    }
+}
+
+function updateProgress(percentage) {
+    const progressFill = document.getElementById('progress-fill');
+    if (progressFill) {
+        progressFill.style.width = `${percentage}%`;
+    }
+}
+
+function toggleTheme() {
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    currentTheme = newTheme;
+    
+    const themeIcon = document.getElementById('theme-icon');
+    themeIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+    
+    // Update CodeMirror theme
+    document.querySelectorAll('.CodeMirror').forEach(cm => {
+        cm.CodeMirror.setOption('theme', newTheme === 'dark' ? 'monokai' : 'eclipse');
+    });
+    
+    // Save preference
+    localStorage.setItem('theme', newTheme);
+}
+
+function generateTableOfContents() {
+    const tocList = document.getElementById('toc-list');
+    tocList.innerHTML = '';
+    
+    MODULE_CONFIG.chapters.forEach(chapter => {
+        const tocItem = document.createElement('div');
+        tocItem.className = 'toc-item';
+        tocItem.textContent = chapter.title;
+        tocItem.addEventListener('click', () => {
+            document.getElementById(chapter.id).scrollIntoView({ behavior: 'smooth' });
+        });
+        tocList.appendChild(tocItem);
+    });
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        // Show success message
+        const successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.textContent = 'Code copied to clipboard!';
+        
+        // Remove any existing success message
+        const existingMessage = document.querySelector('.success-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        // Add the new message
+        document.querySelector('.code-container').appendChild(successMessage);
+        
+        // Remove after 2 seconds
+        setTimeout(() => {
+            successMessage.remove();
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
+
+async function initializePyodide() {
+    try {
+        const statusElement = document.getElementById('status-indicator');
+        statusElement.textContent = "🔄 Loading Pyodide runtime...";
+        updateProgress(20);
+        
+        pyodide = await loadPyodide({
+            indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/"
+        });
+        
+        statusElement.textContent = "📦 Setting up environment...";
+        updateProgress(60);
+        
+        // No additional packages needed - collections is built-in
+        await pyodide.runPythonAsync(`
+import sys
+import js
+import collections  # This is built-in, no installation needed
+
+class OutputCapture:
+    def __init__(self, output_id):
+        self.output_id = output_id
+    def write(self, text):
+        js.addToOutput(self.output_id, text)
+    def flush(self):
+        pass
+original_stdout = sys.stdout
+`);
+
+        statusElement.className = "status-indicator status-ready";
+        statusElement.textContent = "✅ Environment loaded successfully! You can now run the examples.";
+        updateProgress(100);
+        isPyodideReady = true;
+        
+    } catch (error) {
+        console.error("Error:", error);
+        const statusElement = document.getElementById('status-indicator');
+        statusElement.className = "status-indicator status-error";
+        statusElement.textContent = "❌ Error loading environment: " + error.message;
+    }
+}
+
+async function runPythonCode(code, outputElement) {
+    if (!isPyodideReady) {
+        outputElement.textContent = "Environment not loaded yet. Please wait...";
+        return;
+    }
+
+    try {
+        outputElement.textContent = "Running...";
+        const outputId = outputElement.id;
+        
+        await pyodide.runPythonAsync(`
+import sys
+output_capture = OutputCapture("${outputId}")
+sys.stdout = output_capture
+`);
+
+        await pyodide.runPythonAsync(code);
+        
+        await pyodide.runPythonAsync(`sys.stdout = original_stdout`);
+        
+    } catch (error) {
+        outputElement.textContent = "Error: " + error.message;
+    }
+}
+
+window.addToOutput = addToOutput;
+
+document.addEventListener('DOMContentLoaded', async () => {
+    // Initialize module content
+    initializeModuleContent();
+    
+    // Set initial theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    currentTheme = savedTheme;
+    
+    const themeIcon = document.getElementById('theme-icon');
+    themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+    
+    // Generate table of contents
+    generateTableOfContents();
+    
+    // Initialize Pyodide
+    await initializePyodide();
+
+    // Set up code editors and event listeners
+    document.querySelectorAll('.code-container').forEach(container => {
+        const codeTextArea = container.querySelector('.code-editor');
+        const runButton = container.querySelector('.run-button');
+        const copyButton = container.querySelector('.copy-button');
+        const outputArea = container.querySelector('.output-area');
+
+        const codeEditor = CodeMirror.fromTextArea(codeTextArea, {
+            lineNumbers: true,
+            mode: 'python',
+            theme: currentTheme === 'dark' ? 'monokai' : 'eclipse',
+            value: codeTextArea.value
+        });
+
+        runButton.addEventListener('click', async () => {
+            const code = codeEditor.getValue();
+            await runPythonCode(code, outputArea);
+        });
+        
+        copyButton.addEventListener('click', () => {
+            const code = codeEditor.getValue();
+            copyToClipboard(code);
+        });
+    });
+    
+    // Set up theme toggle
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+});
+</script>
+</body>
+</html>

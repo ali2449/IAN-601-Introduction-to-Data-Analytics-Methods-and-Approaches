@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 8: Data Visualization & Preprocessing in Python</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/eclipse.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+        
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --section-bg: #1e293b;
+            --code-bg: #020617;
+            --border-color: #334155;
+            --header-color: #38bdf8;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f1f5f9;
+            --text-color: #1e293b;
+            --section-bg: #ffffff;
+            --code-bg: #f8fafc;
+            --border-color: #e2e8f0;
+            --header-color: #1d4ed8;
+            --accent-color: #4f46e5;
+            --accent-hover: #4338ca;
+            --success-color: #059669;
+            --error-color: #dc2626;
+            --warning-color: #d97706;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            line-height: 1.6;
+        }
+
+        .section-card {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            color: white;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .CodeMirror {
+            height: auto;
+            min-height: 150px;
+            border-radius: 0.5rem;
+            font-size: 14px;
+            margin: 0.5rem 0;
+            transition: background-color 0.3s;
+        }
+        
+        .output-area {
+            background-color: var(--code-bg);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+            font-family: monospace;
+            font-size: 14px;
+            min-height: 60px;
+            white-space: pre-wrap;
+            transition: background-color 0.3s;
+        }
+
+        .plot-area {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 1px solid var(--border-color);
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .plot-area img {
+            max-width: 100%;
+            max-height: 500px;
+        }
+
+        .chapter-title {
+            color: var(--header-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--header-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .function-title {
+            color: var(--header-color);
+            font-weight: bold;
+            margin: 1.5rem 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .concept-box {
+            background-color: var(--section-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+            transition: background-color 0.3s;
+        }
+
+        .explanation-box {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .status-indicator {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .status-loading {
+            background-color: #fef3c7;
+            color: #92400e;
+            border: 1px solid #f59e0b;
+        }
+        
+        .status-ready {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid var(--success-color);
+        }
+
+        .status-error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid var(--error-color);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 100;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .code-container {
+            position: relative;
+            margin: 1.5rem 0;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-color);
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s, background-color 0.2s;
+            z-index: 10;
+        }
+
+        .copy-button:hover {
+            opacity: 1;
+            background-color: var(--border-color);
+        }
+
+        .table-of-contents {
+            position: sticky;
+            top: 1rem;
+            max-height: calc(100vh - 2rem);
+            overflow-y: auto;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+
+        .toc-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .toc-item:hover {
+            color: var(--header-color);
+        }
+
+        .toc-item:last-child {
+            border-bottom: none;
+        }
+        
+        .learning-objective {
+            background: linear-gradient(135deg, var(--accent-color), var(--header-color));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        /* New styles for enhancements */
+        .exercise-box {
+            background-color: var(--section-bg);
+            border: 1px solid var(--success-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .hint-box {
+            background-color: var(--section-bg);
+            border: 1px solid var(--warning-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: none;
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background-color: var(--border-color);
+            border-radius: 3px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--success-color);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .code-suggestion {
+            background-color: var(--code-bg);
+            border-left: 3px solid var(--accent-color);
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        .preprocessing-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+
+<div class="theme-toggle" id="theme-toggle">
+    <span id="theme-icon">🌙</span>
+</div>
+
+<div class="max-w-6xl mx-auto">
+    <header class="text-center mb-8">
+        <h1 class="text-4xl font-extrabold mb-4">Module 8: Data Visualization & Preprocessing in Python</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-4">Complete Guide to Exploratory Data Analysis and Data Preparation</p>
+        <div id="status-indicator" class="status-indicator status-loading">
+            ⏳ Loading Pyodide and Python environment... This may take a few seconds.
+        </div>
+        
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <div class="text-sm text-gray-600 dark:text-gray-300 mb-4" id="progress-text">Progress: 0/10 sections completed</div>
+    </header>
+
+    <div class="learning-objective">
+        <h2 class="text-2xl font-bold mb-2">🎯 Learning Objectives</h2>
+        <ul class="list-disc list-inside">
+            <li>Master essential data visualization techniques for exploration</li>
+            <li>Learn preprocessing-specific visualizations for data cleaning</li>
+            <li>Identify patterns, outliers, and relationships in data</li>
+            <li>Make informed decisions about data transformation and feature engineering</li>
+        </ul>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Table of Contents -->
+        <div class="lg:col-span-1">
+            <div class="table-of-contents">
+                <h2 class="font-bold text-lg mb-4">Module Contents</h2>
+                <div id="toc-list">
+                    <!-- TOC will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="lg:col-span-3">
+            <!-- Introduction -->
+            <section class="section-card" id="introduction">
+                <div class="chapter-title">Introduction to Data Visualization & Preprocessing</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">The Data Science Workflow</h3>
+                    <p class="mb-3">Visualization is crucial at every stage of data preprocessing:</p>
+                    <ul class="list-disc list-inside mb-3">
+                        <li><strong>Exploration:</strong> Understand data structure and patterns</li>
+                        <li><strong>Cleaning:</strong> Identify missing values and outliers</li>
+                        <li><strong>Transformation:</strong> Visualize effects of scaling/normalization</li>
+                        <li><strong>Feature Engineering:</strong> Discover relationships and correlations</li>
+                    </ul>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor-intro" class="code-editor">
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+print("=== Module 8: Data Visualization & Preprocessing ===\\n")
+print("This comprehensive module covers:")
+print("✅ Essential plotting techniques for data exploration")
+print("✅ Preprocessing-specific visualizations for data cleaning") 
+print("✅ Advanced techniques for feature analysis\\n")
+
+# Basic setup for all examples
+plt.style.use('default')
+plt.rcParams['figure.figsize'] = [10, 6]
+plt.rcParams['font.size'] = 12
+
+# Sample data that will be used across examples
+x = np.linspace(0, 10, 100)
+y = 4 + 1 * np.sin(2 * x)
+
+print("✅ Environment ready!")
+print("Sample data created:")
+print(f"x values: {len(x)} points from {x[0]:.1f} to {x[-1]:.1f}")
+print(f"y = 4 + sin(2x)")
+</textarea>
+                    <button class="copy-button" onclick="copyCode('editor-intro')">Copy</button>
+                    <button class="run-button btn-primary mt-2" onclick="runCode('editor-intro')">Run Code</button>
+                    <div id="output-intro" class="output-area">Output will appear here...</div>
+                </div>
+            </section>
+
+            <!-- PART 1: BASIC VISUALIZATION -->
+            <div class="chapter-title mt-8 mb-4">Part 1: Basic Data Visualization</div>
+
+            <!-- Line Plot -->
+            <section class="section-card" id="line-plot">
+                <div class="chapter-title">1. Line Plot</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">📈 When to Use Line Plots:</h4>
+                    <ul class="list-disc list-inside mb-3">
+                        <li><strong>Time series analysis</strong> (stock prices, temperature trends)</li>
+                        <li><strong>Continuous data</strong> showing progression</li>
+                        <li><strong>Comparing multiple trends</strong> over same x-axis</li>
+                        <li><strong>Showing rates of change</strong> and patterns</li>
+                    </ul>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor-line" class="code-editor">
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Set larger figure size
+plt.figure(figsize=(12, 8))
+
+# Create sample data
+x = np.linspace(0, 10, 100)
+y1 = 4 + 1 * np.sin(2 * x)
+y2 = 4 + 1 * np.cos(2 * x)
+
+# Create line plot with multiple lines
+plt.plot(x, y1, linewidth=3.0, label='Sine Wave', color='blue', alpha=0.8)
+plt.plot(x, y2, linewidth=3.0, label='Cosine Wave', color='red', alpha=0.8)
+
+# Customize the plot
+plt.xlim(0, 10)
+plt.ylim(2, 6)
+plt.xlabel('X Values', fontsize=14)
+plt.ylabel('Y Values', fontsize=14)
+plt.title('Line Plot: Sine and Cosine Waves', fontsize=16, fontweight='bold')
+plt.grid(True, alpha=0.3)
+plt.legend(fontsize=12)
+
+# Add some annotations
+plt.axhline(y=4, color='gray', linestyle='--', alpha=0.7)
+plt.text(8, 4.1, 'Baseline (y=4)', fontsize=10)
+
+plt.tight_layout()
+plt.show()
+
+print("Line plot created successfully!")
+print("Perfect for showing continuous trends and patterns over intervals.")
+</textarea>
+                    <button class="copy-button" onclick="copyCode('editor-line')">Copy</button>
+                    <button class="run-button btn-primary mt-2" onclick="runCode('editor-line')">Run Code</button>
+                    <div id="output-line" class="output-area">Output will appear here...</div>
+                    <div id="plot-line" class="plot-area">
+                        <span class="text-gray-500">Plot will appear here after running code...</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scatter Plot -->
+            <section class="section-card" id="scatter-plot">
+                <div class="chapter-title">2. Scatter Plot</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">🔍 When to Use Scatter Plots:</h4>
+                    <ul class="list-disc list-inside mb-3">
+                        <li><strong>Identifying correlations</strong> between variables</li>
+                        <li><strong>Detecting clusters</strong> or groups in data</li>
+                        <li><strong>Spotting outliers</strong> and anomalies</li>
+                        <li><strong>Exploring relationships</strong> between two continuous variables</li>
+                    </ul>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor-scatter" class="code-editor">
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Set larger figure size
+plt.figure(figsize=(12, 8))
+
+# Create sample data with different clusters
+np.random.seed(42)
+
+# Cluster 1
+x1 = np.random.normal(2, 0.5, 50)
+y1 = np.random.normal(2, 0.5, 50)
+
+# Cluster 2  
+x2 = np.random.normal(6, 0.8, 50)
+y2 = np.random.normal(6, 0.8, 50)
+
+# Some outliers
+x_outliers = np.array([8, 1, 7, 0.5])
+y_outliers = np.array([1, 8, 0.5, 7])
+
+# Create scatter plot
+plt.scatter(x1, y1, s=80, alpha=0.7, label='Cluster 1', color='blue')
+plt.scatter(x2, y2, s=80, alpha=0.7, label='Cluster 2', color='green')
+plt.scatter(x_outliers, y_outliers, s=120, alpha=0.9, label='Outliers', color='red', marker='X')
+
+# Customize the plot
+plt.xlim(0, 9)
+plt.ylim(0, 9)
+plt.xlabel('Feature X', fontsize=14)
+plt.ylabel('Feature Y', fontsize=14)
+plt.title('Scatter Plot: Cluster Analysis with Outliers', fontsize=16, fontweight='bold')
+plt.grid(True, alpha=0.3)
+plt.legend(fontsize=12)
+
+# Add correlation line for demonstration
+x_line = np.array([0, 9])
+y_line = x_line  # Perfect correlation
+plt.plot(x_line, y_line, 'k--', alpha=0.5, label='Perfect Correlation')
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
+print("Scatter plot created successfully!")
+print("Ideal for exploring relationships and identifying patterns in multivariate data.")
+print("This plot shows two distinct clusters and several outliers.")
+</textarea>
+                    <button class="copy-button" onclick="copyCode('editor-scatter')">Copy</button>
+                    <button class="run-button btn-primary mt-2" onclick="runCode('editor-scatter')">Run Code</button>
+                    <div id="output-scatter" class="output-area">Output will appear here...</div>
+                    <div id="plot-scatter" class="plot-area">
+                        <span class="text-gray-500">Plot will appear here after running code...</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bar Chart -->
+            <section class="section-card" id="bar-chart">
+                <div class="chapter-title">3. Bar Chart</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">📊 When to Use Bar Charts:</h4>
+                    <ul class="list-disc list-inside mb-3">
+                        <li><strong>Comparing categories</strong> (product performance, survey results)</li>
+                        <li><strong>Showing discrete quantities</strong> across different groups</li>
+                        <li><strong>Ranking items</strong> by magnitude</li>
+                        <li><strong>Displaying counts or frequencies</strong> by category</li>
+                    </ul>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor-bar" class="code-editor">
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Set larger figure size
+plt.figure(figsize=(14, 8))
+
+# Create sample data for different products
+products = ['Laptops', 'Smartphones', 'Tablets', 'Monitors', 'Keyboards', 'Mice', 'Headphones']
+sales_2023 = [1200, 3500, 800, 600, 1500, 2200, 1800]
+sales_2024 = [1500, 4200, 950, 750, 1700, 2500, 2100]
+
+x_pos = np.arange(len(products))
+bar_width = 0.35
+
+# Create grouped bar chart
+plt.bar(x_pos - bar_width/2, sales_2023, bar_width, 
+        label='2023 Sales', alpha=0.8, color='skyblue', edgecolor='black')
+plt.bar(x_pos + bar_width/2, sales_2024, bar_width, 
+        label='2024 Sales', alpha=0.8, color='lightcoral', edgecolor='black')
+
+# Customize the plot
+plt.xlabel('Product Categories', fontsize=14)
+plt.ylabel('Number of Units Sold', fontsize=14)
+plt.title('Product Sales Comparison: 2023 vs 2024', fontsize=16, fontweight='bold')
+plt.xticks(x_pos, products, rotation=45, ha='right')
+plt.grid(True, alpha=0.3, axis='y')
+plt.legend(fontsize=12)
+
+# Add value labels on bars
+for i, (v1, v2) in enumerate(zip(sales_2023, sales_2024)):
+    plt.text(i - bar_width/2, v1 + 50, str(v1), ha='center', va='bottom', fontsize=10)
+    plt.text(i + bar_width/2, v2 + 50, str(v2), ha='center', va='bottom', fontsize=10)
+
+plt.tight_layout()
+plt.show()
+
+print("Bar chart created successfully!")
+print("Excellent for categorical comparisons and showing discrete values across groups.")
+print("This grouped bar chart compares sales performance across different product categories.")
+</textarea>
+                    <button class="copy-button" onclick="copyCode('editor-bar')">Copy</button>
+                    <button class="run-button btn-primary mt-2" onclick="runCode('editor-bar')">Run Code</button>
+                    <div id="output-bar" class="output-area">Output will appear here...</div>
+                    <div id="plot-bar" class="plot-area">
+                        <span class="text-gray-500">Plot will appear here after running code...</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Histogram -->
+            <section class="section-card" id="histogram">
+                <div class="chapter-title">4. Histogram</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">📋 When to Use Histograms:</h4>
+                    <ul class="list-disc list-inside mb-3">
+                        <li><strong>Understanding data distribution</strong> and shape</li>
+                        <li><strong>Identifying central tendency</strong> and spread</li>
+                        <li><strong>Spotting skewness</strong> and modality</li>
+                        <li><strong>Checking for normality</strong> in data</li>
+                    </ul>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor-hist" class="code-editor">
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy import stats
+
+# Set larger figure size
+plt.figure(figsize=(14, 10))
+
+# Create different types of distributions
+np.random.seed(42)
+
+# Normal distribution
+normal_data = np.random.normal(50, 15, 1000)
+
+# Skewed distribution  
+skewed_data = np.random.exponential(20, 1000) + 30
+
+# Bimodal distribution
+bimodal_data = np.concatenate([
+    np.random.normal(30, 8, 500),
+    np.random.normal(70, 8, 500)
+])
+
+# Create subplots
+fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+
+# Plot 1: Normal distribution
+axes[0, 0].hist(normal_data, bins=30, alpha=0.7, color='blue', edgecolor='black', density=True)
+axes[0, 0].axvline(normal_data.mean(), color='red', linestyle='--', linewidth=2, label=f'Mean: {normal_data.mean():.1f}')
+axes[0, 0].set_title('Normal Distribution', fontsize=14, fontweight='bold')
+axes[0, 0].set_xlabel('Values')
+axes[0, 0].set_ylabel('Density')
+axes[0, 0].legend()
+axes[0, 0].grid(True, alpha=0.3)
+
+# Plot 2: Skewed distribution
+axes[0, 1].hist(skewed_data, bins=30, alpha=0.7, color='green', edgecolor='black', density=True)
+axes[0, 1].axvline(skewed_data.mean(), color='red', linestyle='--', linewidth=2, label=f'Mean: {skewed_data.mean():.1f}')
+axes[0, 1].set_title('Right-Skewed Distribution', fontsize=14, fontweight='bold')
+axes[0, 1].set_xlabel('Values')
+axes[0, 1].set_ylabel('Density')
+axes[0, 1].legend()
+axes[0, 1].grid(True, alpha=0.3)
+
+# Plot 3: Bimodal distribution
+axes[1, 0].hist(bimodal_data, bins=40, alpha=0.7, color='purple', edgecolor='black', density=True)
+axes[1, 0].axvline(bimodal_data.mean(), color='red', linestyle='--', linewidth=2, label=f'Mean: {bimodal_data.mean():.1f}')
+axes[1, 0].set_title('Bimodal Distribution', fontsize=14, fontweight='bold')
+axes[1, 0].set_xlabel('Values')
+axes[1, 0].set_ylabel('Density')
+axes[1, 0].legend()
+axes[1, 0].grid(True, alpha=0.3)
+
+# Plot 4: All distributions comparison
+axes[1, 1].hist(normal_data, bins=30, alpha=0.5, label='Normal', color='blue', density=True)
+axes[1, 1].hist(skewed_data, bins=30, alpha=0.5, label='Skewed', color='green', density=True)
+axes[1, 1].hist(bimodal_data, bins=40, alpha=0.5, label='Bimodal', color='purple', density=True)
+axes[1, 1].set_title('Distribution Comparison', fontsize=14, fontweight='bold')
+axes[1, 1].set_xlabel('Values')
+axes[1, 1].set_ylabel('Density')
+axes[1, 1].legend()
+axes[1, 1].grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+
+print("Histogram analysis completed!")
+print(f"Normal Distribution: Mean={normal_data.mean():.2f}, Std={normal_data.std():.2f}")
+print(f"Skewed Distribution: Mean={skewed_data.mean():.2f}, Std={skewed_data.std():.2f}")
+print(f"Bimodal Distribution: Mean={bimodal_data.mean():.2f}, Std={bimodal_data.std():.2f}")
+print("Histograms are essential for understanding data distribution shape and characteristics.")
+</textarea>
+                    <button class="copy-button" onclick="copyCode('editor-hist')">Copy</button>
+                    <button class="run-button btn-primary mt-2" onclick="runCode('editor-hist')">Run Code</button>
+                    <div id="output-hist" class="output-area">Output will appear here...</div>
+                    <div id="plot-hist" class="plot-area">
+                        <span class="text-gray-500">Plot will appear here after running code...</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Box Plot -->
+            <section class="section-card" id="box-plot">
+                <div class="chapter-title">5. Box Plot</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">📦 When to Use Box Plots:</h4>
+                    <ul class="list-disc list-inside mb-3">
+                        <li><strong>Comparing distributions</strong> across groups</li>
+                        <li><strong>Identifying outliers</strong> in data</li>
+                        <li><strong>Showing median and quartiles</strong> clearly</li>
+                        <li><strong>Visualizing data spread</strong> and symmetry</li>
+                    </ul>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor-box" class="code-editor">
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Set larger figure size
+plt.figure(figsize=(14, 10))
+
+# Create sample data for different departments
+np.random.seed(42)
+
+# Sales department salaries
+sales_salaries = np.random.normal(65000, 15000, 100)
+sales_salaries = np.append(sales_salaries, [120000, 125000])  # Add outliers
+
+# Engineering department salaries  
+eng_salaries = np.random.normal(85000, 20000, 100)
+eng_salaries = np.append(eng_salaries, [150000, 155000])  # Add outliers
+
+# Marketing department salaries
+marketing_salaries = np.random.normal(60000, 12000, 100)
+
+# HR department salaries
+hr_salaries = np.random.normal(55000, 10000, 100)
+
+# Combine data
+data = [sales_salaries, eng_salaries, marketing_salaries, hr_salaries]
+labels = ['Sales', 'Engineering', 'Marketing', 'HR']
+colors = ['lightblue', 'lightgreen', 'lightcoral', 'lightsalmon']
+
+# Create box plot
+bp = plt.boxplot(data, labels=labels, patch_artist=True, 
+                notch=True, showmeans=True, meanline=True,
+                meanprops=dict(linestyle='--', linewidth=2.5, color='red'),
+                medianprops=dict(linestyle='-', linewidth=2.5, color='black'))
+
+# Customize boxes
+for patch, color in zip(bp['boxes'], colors):
+    patch.set_facecolor(color)
+    patch.set_alpha(0.7)
+
+# Customize the plot
+plt.title('Salary Distribution by Department with Outliers', fontsize=16, fontweight='bold')
+plt.ylabel('Annual Salary ($)', fontsize=14)
+plt.xlabel('Department', fontsize=14)
+plt.grid(True, alpha=0.3, axis='y')
+
+# Add some statistics
+for i, dept_data in enumerate(data):
+    median = np.median(dept_data)
+    q1 = np.percentile(dept_data, 25)
+    q3 = np.percentile(dept_data, 75)
+    plt.text(i + 1, q3 + 5000, f'Q3: ${q3:,.0f}', ha='center', va='bottom', fontsize=9)
+    plt.text(i + 1, median, f'Med: ${median:,.0f}', ha='center', va='center', 
+             fontsize=10, fontweight='bold', color='white')
+
+plt.tight_layout()
+plt.show()
+
+print("Box plot created successfully!")
+print("Excellent for comparing distributions and identifying outliers across multiple groups.")
+print("This plot shows salary distributions across departments with visible outliers.")
+</textarea>
+                    <button class="copy-button" onclick="copyCode('editor-box')">Copy</button>
+                    <button class="run-button btn-primary mt-2" onclick="runCode('editor-box')">Run Code</button>
+                    <div id="output-box" class="output-area">Output will appear here...</div>
+                    <div id="plot-box" class="plot-area">
+                        <span class="text-gray-500">Plot will appear here after running code...</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PART 2: PREPROCESSING VISUALIZATION -->
+            <div class="chapter-title mt-8 mb-4">Part 2: Preprocessing-Specific Visualizations</div>
+
+            <!-- Missing Data Visualization -->
+            <section class="section-card" id="missing-data">
+                <div class="chapter-title">6. Missing Data Analysis <span class="preprocessing-badge">PREPROCESSING</span></div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">🔍 When to Use Missing Data Visualizations:</h4>
+                    <ul class="list-disc list-inside mb-3">
+                        <li><strong>Identifying missing data patterns</strong> in your dataset</li>
+                        <li><strong>Planning imputation strategies</strong> (mean, median, mode)</li>
+                        <li><strong>Understanding data completeness</strong> across features</li>
+                        <li><strong>Deciding feature removal</strong> vs imputation</li>
+                    </ul>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor-missing" class="code-editor">
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+# Create larger figure
+plt.figure(figsize=(16, 12))
+
+# Create sample dataset with missing values
+np.random.seed(42)
+n_samples = 200
+
+data = {
+    'Age': np.random.normal(35, 10, n_samples),
+    'Income': np.random.normal(50000, 15000, n_samples),
+    'Credit_Score': np.random.normal(700, 50, n_samples),
+    'Loan_Amount': np.random.exponential(20000, n_samples),
+    'Employment_Years': np.random.exponential(5, n_samples)
+}
+
+# Introduce missing values with different patterns
+# Age: Random missing (5%)
+age_missing = np.random.choice(n_samples, size=int(n_samples*0.05), replace=False)
+data['Age'][age_missing] = np.nan
+
+# Income: Higher probability of missing for older ages (10%)
+income_missing = np.random.choice(n_samples, size=int(n_samples*0.1), replace=False)
+data['Income'][income_missing] = np.nan
+
+# Credit_Score: Random missing (8%)
+credit_missing = np.random.choice(n_samples, size=int(n_samples*0.08), replace=False)
+data['Credit_Score'][credit_missing] = np.nan
+
+# Loan_Amount: No missing values
+# Employment_Years: Higher missing rate for low income (12%)
+employment_missing = np.random.choice(n_samples, size=int(n_samples*0.12), replace=False)
+data['Employment_Years'][employment_missing] = np.nan
+
+df = pd.DataFrame(data)
+
+# Create subplots
+fig, axes = plt.subplots(2, 2, figsize=(16, 12))
+
+# Plot 1: Missing values bar chart
+missing_counts = df.isnull().sum()
+missing_percent = (missing_counts / len(df)) * 100
+
+bars = axes[0, 0].bar(missing_counts.index, missing_counts.values, 
+                      color=['red' if count > 0 else 'green' for count in missing_counts.values],
+                      alpha=0.7, edgecolor='black')
+axes[0, 0].set_title('Missing Values Count by Feature', fontsize=14, fontweight='bold')
+axes[0, 0].set_ylabel('Number of Missing Values', fontsize=12)
+axes[0, 0].tick_params(axis='x', rotation=45)
+
+# Add value labels on bars
+for bar, count, percent in zip(bars, missing_counts.values, missing_percent.values):
+    height = bar.get_height()
+    axes[0, 0].text(bar.get_x() + bar.get_width()/2., height + 0.5,
+                   f'{count} ({percent:.1f}%)', ha='center', va='bottom', fontsize=10)
+
+# Plot 2: Missing data pattern heatmap (using imshow)
+missing_matrix = df.isnull().astype(int).values
+im = axes[0, 1].imshow(missing_matrix, aspect='auto', cmap='RdYlBu_r', interpolation='nearest')
+axes[0, 1].set_title('Missing Data Pattern Heatmap', fontsize=14, fontweight='bold')
+axes[0, 1].set_xlabel('Features', fontsize=12)
+axes[0, 1].set_ylabel('Samples', fontsize=12)
+axes[0, 1].set_xticks(range(len(df.columns)))
+axes[0, 1].set_xticklabels(df.columns, rotation=45)
+plt.colorbar(im, ax=axes[0, 1], label='Missing (1) / Present (0)')
+
+# Plot 3: Missing data correlation
+missing_corr = df.isnull().corr()
+im2 = axes[1, 0].imshow(missing_corr, cmap='coolwarm', vmin=-1, vmax=1, aspect='auto')
+axes[1, 0].set_title('Missing Data Correlation Matrix', fontsize=14, fontweight='bold')
+axes[1, 0].set_xticks(range(len(df.columns)))
+axes[1, 0].set_yticks(range(len(df.columns)))
+axes[1, 0].set_xticklabels(df.columns, rotation=45)
+axes[1, 0].set_yticklabels(df.columns)
+plt.colorbar(im2, ax=axes[1, 0], label='Correlation')
+
+# Add correlation values as text
+for i in range(len(df.columns)):
+    for j in range(len(df.columns)):
+        text = axes[1, 0].text(j, i, f'{missing_corr.iloc[i, j]:.2f}',
+                              ha="center", va="center", color="black", fontsize=8)
+
+# Plot 4: Data completeness over samples
+completeness = 1 - (df.isnull().sum(axis=1) / len(df.columns))
+axes[1, 1].hist(completeness, bins=20, alpha=0.7, color='purple', edgecolor='black')
+axes[1, 1].set_title('Data Completeness Distribution Across Samples', fontsize=14, fontweight='bold')
+axes[1, 1].set_xlabel('Completeness Ratio', fontsize=12)
+axes[1, 1].set_ylabel('Number of Samples', fontsize=12)
+axes[1, 1].axvline(completeness.mean(), color='red', linestyle='--', 
+                  label=f'Mean: {completeness.mean():.2f}')
+axes[1, 1].legend()
+axes[1, 1].grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+
+print("Missing data analysis completed!")
+print("\nMissing Values Summary:")
+for feature in df.columns:
+    missing_count = df[feature].isnull().sum()
+    missing_percent = (missing_count / len(df)) * 100
+    print(f"{feature}: {missing_count} missing ({missing_percent:.1f}%)")
+
+print("\nInsights:")
+print("- Bar chart shows which features have most missing data")
+print("- Heatmap reveals patterns in missing data across samples")
+print("- Correlation matrix shows if missingness in features is related")
+print("- Completeness distribution helps decide if samples should be removed")
+</textarea>
+                    <button class="copy-button" onclick="copyCode('editor-missing')">Copy</button>
+                    <button class="run-button btn-primary mt-2" onclick="runCode('editor-missing')">Run Code</button>
+                    <div id="output-missing" class="output-area">Output will appear here...</div>
+                    <div id="plot-missing" class="plot-area">
+                        <span class="text-gray-500">Plot will appear here after running code...</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Correlation Matrix -->
+            <section class="section-card" id="correlation">
+                <div class="chapter-title">7. Correlation Analysis <span class="preprocessing-badge">PREPROCESSING</span></div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">📊 When to Use Correlation Analysis:</h4>
+                    <ul class="list-disc list-inside mb-3">
+                        <li><strong>Identifying redundant features</strong> (multicollinearity)</li>
+                        <li><strong>Feature selection</strong> for machine learning models</li>
+                        <li><strong>Understanding relationships</strong> between variables</li>
+                        <li><strong>Detecting highly correlated</strong> feature pairs</li>
+                    </ul>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor-corr" class="code-editor">
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+# Create larger figure
+plt.figure(figsize=(16, 14))
+
+# Create realistic correlated data
+np.random.seed(42)
+n_samples = 500
+
+# Base features with intentional correlations
+age = np.random.normal(45, 15, n_samples)
+income = age * 800 + np.random.normal(0, 5000, n_samples)  # Strong correlation with age
+credit_score = 300 + age * 5 + np.random.normal(0, 50, n_samples)  # Moderate correlation
+loan_amount = income * 0.3 + np.random.normal(0, 10000, n_samples)  # Strong correlation
+savings = income * 0.2 + np.random.normal(0, 5000, n_samples)  # Strong correlation
+debt = income * 0.1 + np.random.normal(0, 5000, n_samples)  # Moderate correlation
+# Uncorrelated feature
+random_feature = np.random.exponential(10, n_samples)
+
+data = {
+    'Age': age,
+    'Annual_Income': income,
+    'Credit_Score': credit_score,
+    'Loan_Amount': loan_amount,
+    'Savings': savings,
+    'Debt': debt,
+    'Random_Feature': random_feature
+}
+
+df = pd.DataFrame(data)
+
+# Calculate correlation matrix
+corr_matrix = df.corr()
+
+# Create enhanced correlation visualization
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(16, 14))
+
+# Plot 1: Correlation matrix as colored squares
+im = ax1.imshow(corr_matrix, cmap='RdBu_r', vmin=-1, vmax=1, aspect='auto')
+ax1.set_title('Feature Correlation Matrix Heatmap', fontsize=16, fontweight='bold')
+ax1.set_xticks(range(len(corr_matrix.columns)))
+ax1.set_yticks(range(len(corr_matrix.columns)))
+ax1.set_xticklabels(corr_matrix.columns, rotation=45, ha='right')
+ax1.set_yticklabels(corr_matrix.columns)
+
+# Add correlation values as text
+for i in range(len(corr_matrix.columns)):
+    for j in range(len(corr_matrix.columns)):
+        color = 'white' if abs(corr_matrix.iloc[i, j]) > 0.5 else 'black'
+        text = ax1.text(j, i, f'{corr_matrix.iloc[i, j]:.2f}',
+                       ha="center", va="center", color=color, 
+                       fontsize=10, fontweight='bold')
+
+# Add colorbar
+cbar = plt.colorbar(im, ax=ax1, shrink=0.8)
+cbar.set_label('Correlation Coefficient', rotation=270, labelpad=20)
+
+# Plot 2: Feature relationships scatter plot matrix (simplified)
+features_to_plot = ['Age', 'Annual_Income', 'Credit_Score', 'Loan_Amount']
+n_features = len(features_to_plot)
+
+# Create a grid of scatter plots
+for i, feat1 in enumerate(features_to_plot):
+    for j, feat2 in enumerate(features_to_plot):
+        if i >= j:  # Only plot lower triangle
+            continue
+            
+        # Create subplot position
+        pos = (i * (n_features-1) + j - 1) if i > 0 else (j - 1)
+        if i == 0:
+            ax = plt.subplot2grid((n_features-1, n_features-1), (i, j-1))
+        else:
+            ax = plt.subplot2grid((n_features-1, n_features-1), (i-1, j-1))
+            
+        # Plot scatter
+        ax.scatter(df[feat1], df[feat2], alpha=0.6, s=30)
+        ax.set_xlabel(feat1, fontsize=8)
+        ax.set_ylabel(feat2, fontsize=8)
+        
+        # Add correlation coefficient
+        corr = corr_matrix.loc[feat1, feat2]
+        ax.text(0.05, 0.95, f'r = {corr:.2f}', transform=ax.transAxes, 
+                fontsize=9, fontweight='bold', 
+                bbox=dict(boxstyle="round,pad=0.3", facecolor='white', alpha=0.8))
+
+plt.tight_layout()
+plt.show()
+
+print("Correlation analysis completed!")
+print("\nCorrelation Interpretation Guide:")
+print("🔴 +0.7 to +1.0: Strong positive correlation")
+print("🟠 +0.3 to +0.7: Moderate positive correlation") 
+print("🟡 -0.3 to +0.3: Weak or no correlation")
+print("🔵 -0.7 to -0.3: Moderate negative correlation")
+print("🟣 -1.0 to -0.7: Strong negative correlation")
+
+print("\nKey Insights:")
+high_corr_pairs = []
+for i in range(len(corr_matrix.columns)):
+    for j in range(i+1, len(corr_matrix.columns)):
+        corr_val = corr_matrix.iloc[i, j]
+        if abs(corr_val) > 0.7:
+            high_corr_pairs.append((corr_matrix.columns[i], corr_matrix.columns[j], corr_val))
+
+if high_corr_pairs:
+    print("Highly correlated feature pairs (|r| > 0.7):")
+    for feat1, feat2, corr in high_corr_pairs:
+        print(f"  {feat1} & {feat2}: {corr:.3f}")
+        print(f"    → Consider removing one to reduce multicollinearity")
+else:
+    print("No highly correlated feature pairs found.")
+
+print(f"\nRandom_Feature correlation with others:")
+for feat in corr_matrix.columns:
+    if feat != 'Random_Feature':
+        corr = corr_matrix.loc['Random_Feature', feat]
+        print(f"  {feat}: {corr:.3f} (should be close to 0)")
+</textarea>
+                    <button class="copy-button" onclick="copyCode('editor-corr')">Copy</button>
+                    <button class="run-button btn-primary mt-2" onclick="runCode('editor-corr')">Run Code</button>
+                    <div id="output-corr" class="output-area">Output will appear here...</div>
+                    <div id="plot-corr" class="plot-area">
+                        <span class="text-gray-500">Plot will appear here after running code...</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Transformation Visualization -->
+            <section class="section-card" id="transformation">
+                <div class="chapter-title">8. Data Transformation Analysis <span class="preprocessing-badge">PREPROCESSING</span></div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">🔄 When to Use Transformation Visualizations:</h4>
+                    <ul class="list-disc list-inside mb-3">
+                        <li><strong>Comparing distributions</strong> before/after transformation</li>
+                        <li><strong>Checking normalization</strong> effectiveness</li>
+                        <li><strong>Visualizing scaling impact</strong> on data distribution</li>
+                        <li><strong>Selecting appropriate</strong> transformation methods</li>
+                    </ul>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor-transform" class="code-editor">
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy import stats
+from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
+
+# Create larger figure
+plt.figure(figsize=(18, 14))
+
+# Create realistic skewed data (common in real datasets)
+np.random.seed(42)
+
+# Original data - right-skewed (like income, prices, etc.)
+original_data = np.random.exponential(50000, 1000) + 20000
+
+# Apply different transformations
+standardized_data = StandardScaler().fit_transform(original_data.reshape(-1, 1)).flatten()
+normalized_data = MinMaxScaler().fit_transform(original_data.reshape(-1, 1)).flatten()
+robust_scaled = RobustScaler().fit_transform(original_data.reshape(-1, 1)).flatten()
+log_transformed = np.log(original_data)  # log transform for right-skewed data
+sqrt_transformed = np.sqrt(original_data)  # square root transform
+
+# Create comprehensive comparison
+fig, axes = plt.subplots(3, 2, figsize=(18, 14))
+
+# Plot 1: Original data
+n1, bins1, patches1 = axes[0, 0].hist(original_data, bins=40, alpha=0.7, color='blue', 
+                                     edgecolor='black', density=True)
+axes[0, 0].axvline(original_data.mean(), color='red', linestyle='--', linewidth=2, 
+                  label=f'Mean: ${original_data.mean():,.0f}')
+axes[0, 0].axvline(np.median(original_data), color='green', linestyle='--', linewidth=2,
+                  label=f'Median: ${np.median(original_data):,.0f}')
+axes[0, 0].set_title('Original Data (Right-Skewed)\nTypical Income Distribution', 
+                    fontsize=14, fontweight='bold')
+axes[0, 0].set_xlabel('Income ($)')
+axes[0, 0].set_ylabel('Density')
+axes[0, 0].legend()
+axes[0, 0].grid(True, alpha=0.3)
+axes[0, 0].text(0.05, 0.95, f'Skewness: {stats.skew(original_data):.2f}', 
+               transform=axes[0, 0].transAxes, fontsize=12, 
+               bbox=dict(boxstyle="round,pad=0.3", facecolor='yellow', alpha=0.7))
+
+# Plot 2: Standardized data
+axes[0, 1].hist(standardized_data, bins=40, alpha=0.7, color='green', 
+               edgecolor='black', density=True)
+axes[0, 1].axvline(standardized_data.mean(), color='red', linestyle='--', linewidth=2,
+                  label=f'Mean: {standardized_data.mean():.2f}')
+axes[0, 1].axvline(1, color='orange', linestyle=':', linewidth=2, label='+1 Std Dev')
+axes[0, 1].axvline(-1, color='orange', linestyle=':', linewidth=2, label='-1 Std Dev')
+axes[0, 1].set_title('Standardized (Z-score)\nMean=0, Std=1', fontsize=14, fontweight='bold')
+axes[0, 1].set_xlabel('Standardized Values')
+axes[0, 1].set_ylabel('Density')
+axes[0, 1].legend()
+axes[0, 1].grid(True, alpha=0.3)
+
+# Plot 3: Normalized data
+axes[1, 0].hist(normalized_data, bins=40, alpha=0.7, color='orange', 
+               edgecolor='black', density=True)
+axes[1, 0].axvline(0, color='red', linestyle='--', linewidth=2, label='Min (0)')
+axes[1, 0].axvline(1, color='blue', linestyle='--', linewidth=2, label='Max (1)')
+axes[1, 0].set_title('Normalized (Min-Max)\nRange: [0, 1]', fontsize=14, fontweight='bold')
+axes[1, 0].set_xlabel('Normalized Values')
+axes[1, 0].set_ylabel('Density')
+axes[1, 0].legend()
+axes[1, 0].grid(True, alpha=0.3)
+
+# Plot 4: Robust scaled
+axes[1, 1].hist(robust_scaled, bins=40, alpha=0.7, color='purple', 
+               edgecolor='black', density=True)
+axes[1, 1].axvline(robust_scaled.mean(), color='red', linestyle='--', linewidth=2,
+                  label=f'Mean: {robust_scaled.mean():.2f}')
+axes[1, 1].set_title('Robust Scaled\n(Resistant to Outliers)', fontsize=14, fontweight='bold')
+axes[1, 1].set_xlabel('Robust Scaled Values')
+axes[1, 1].set_ylabel('Density')
+axes[1, 1].legend()
+axes[1, 1].grid(True, alpha=0.3)
+
+# Plot 5: Log transformed
+axes[2, 0].hist(log_transformed, bins=40, alpha=0.7, color='red', 
+               edgecolor='black', density=True)
+axes[2, 0].axvline(log_transformed.mean(), color='blue', linestyle='--', linewidth=2,
+                  label=f'Mean: {log_transformed.mean():.2f}')
+axes[2, 0].set_title('Log Transformed\n(Reduces Right-Skew)', fontsize=14, fontweight='bold')
+axes[2, 0].set_xlabel('Log(Income)')
+axes[2, 0].set_ylabel('Density')
+axes[2, 0].legend()
+axes[2, 0].grid(True, alpha=0.3)
+axes[2, 0].text(0.05, 0.95, f'Skewness: {stats.skew(log_transformed):.2f}', 
+               transform=axes[2, 0].transAxes, fontsize=12,
+               bbox=dict(boxstyle="round,pad=0.3", facecolor='lightgreen', alpha=0.7))
+
+# Plot 6: Square root transformed
+axes[2, 1].hist(sqrt_transformed, bins=40, alpha=0.7, color='brown', 
+               edgecolor='black', density=True)
+axes[2, 1].axvline(sqrt_transformed.mean(), color='blue', linestyle='--', linewidth=2,
+                  label=f'Mean: {sqrt_transformed.mean():.2f}')
+axes[2, 1].set_title('Square Root Transformed\n(Mild Skew Reduction)', fontsize=14, fontweight='bold')
+axes[2, 1].set_xlabel('√Income')
+axes[2, 1].set_ylabel('Density')
+axes[2, 1].legend()
+axes[2, 1].grid(True, alpha=0.3)
+axes[2, 1].text(0.05, 0.95, f'Skewness: {stats.skew(sqrt_transformed):.2f}', 
+               transform=axes[2, 1].transAxes, fontsize=12,
+               bbox=dict(boxstyle="round,pad=0.3", facecolor='lightgreen', alpha=0.7))
+
+plt.tight_layout()
+plt.show()
+
+print("Data transformation analysis completed!")
+print("\n📊 Transformation Summary:")
+print(f"Original Data:")
+print(f"   - Mean: ${original_data.mean():,.0f}, Std: ${original_data.std():,.0f}")
+print(f"   - Skewness: {stats.skew(original_data):.2f} (Right-skewed)")
+print(f"   - Range: [${original_data.min():,.0f}, ${original_data.max():,.0f}]")
+
+print(f"\n🔄 After Transformations:")
+print(f"   - Standardized: Mean={standardized_data.mean():.2f}, Std={standardized_data.std():.2f}")
+print(f"   - Normalized: Range=[{normalized_data.min():.3f}, {normalized_data.max():.3f}]")
+print(f"   - Log Transform: Skewness reduced to {stats.skew(log_transformed):.2f}")
+
+print(f"\n💡 When to use each transformation:")
+print("   - Standardization: Most ML algorithms, when data is ~normal")
+print("   - Normalization: Neural networks, image data, bounded ranges")
+print("   - Robust Scaling: Data with outliers")
+print("   - Log Transform: Right-skewed data (income, prices, etc.)")
+print("   - Square Root: Mild right-skewed data")
+</textarea>
+                    <button class="copy-button" onclick="copyCode('editor-transform')">Copy</button>
+                    <button class="run-button btn-primary mt-2" onclick="runCode('editor-transform')">Run Code</button>
+                    <div id="output-transform" class="output-area">Output will appear here...</div>
+                    <div id="plot-transform" class="plot-area">
+                        <span class="text-gray-500">Plot will appear here after running code...</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Outlier Detection -->
+            <section class="section-card" id="outlier-detection">
+                <div class="chapter-title">9. Advanced Outlier Detection <span class="preprocessing-badge">PREPROCESSING</span></div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">🚨 When to Use Outlier Detection:</h4>
+                    <ul class="list-disc list-inside mb-3">
+                        <li><strong>Identifying extreme values</strong> that may be errors</li>
+                        <li><strong>Understanding data quality</strong> and potential issues</li>
+                        <li><strong>Deciding on outlier treatment</strong> (remove, transform, keep)</li>
+                        <li><strong>Detecting anomalies</strong> in time series or spatial data</li>
+                    </ul>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor-outlier" class="code-editor">
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from scipy import stats
+
+# Create larger figure
+plt.figure(figsize=(18, 14))
+
+# Create realistic data with different types of outliers
+np.random.seed(42)
+
+# Main normal distribution
+main_data = np.random.normal(100, 15, 200)
+
+# Add different types of outliers
+point_outliers = np.array([25, 180, 190])  # Single extreme points
+cluster_outliers = np.random.normal(200, 5, 5)  # Small cluster of outliers
+low_outliers = np.random.normal(30, 3, 3)  # Low extreme values
+
+# Combine all data
+all_data = np.concatenate([main_data, point_outliers, cluster_outliers, low_outliers])
+
+# Create comprehensive outlier analysis
+fig, axes = plt.subplots(2, 2, figsize=(18, 14))
+
+# Plot 1: Box plot with outliers highlighted
+bp = axes[0, 0].boxplot(all_data, vert=True, patch_artist=True, 
+                       showmeans=True, meanline=True,
+                       meanprops=dict(linestyle='--', linewidth=2.5, color='red'),
+                       medianprops=dict(linestyle='-', linewidth=2.5, color='black'))
+bp['boxes'][0].set_facecolor('lightblue')
+bp['boxes'][0].set_alpha(0.7)
+
+axes[0, 0].set_title('Box Plot - Outlier Detection\n(Dots show individual outliers)', 
+                    fontsize=14, fontweight='bold')
+axes[0, 0].set_ylabel('Values')
+axes[0, 0].grid(True, alpha=0.3, axis='y')
+
+# Add IQR boundaries
+Q1 = np.percentile(all_data, 25)
+Q3 = np.percentile(all_data, 75)
+IQR = Q3 - Q1
+lower_bound = Q1 - 1.5 * IQR
+upper_bound = Q3 + 1.5 * IQR
+
+axes[0, 0].axhline(y=upper_bound, color='red', linestyle=':', alpha=0.7, 
+                  label=f'Upper Bound: {upper_bound:.1f}')
+axes[0, 0].axhline(y=lower_bound, color='red', linestyle=':', alpha=0.7,
+                  label=f'Lower Bound: {lower_bound:.1f}')
+axes[0, 0].legend()
+
+# Plot 2: Histogram with outlier zones
+n, bins, patches = axes[0, 1].hist(all_data, bins=30, alpha=0.7, color='lightgreen', 
+                                  edgecolor='black', density=True)
+
+# Color outlier zones
+for i, (bin_start, bin_end) in enumerate(zip(bins[:-1], bins[1:])):
+    if bin_end > upper_bound or bin_start < lower_bound:
+        patches[i].set_facecolor('red')
+        patches[i].set_alpha(0.8)
+
+axes[0, 1].axvline(upper_bound, color='red', linestyle=':', alpha=0.7, 
+                  label=f'Upper Bound: {upper_bound:.1f}')
+axes[0, 1].axvline(lower_bound, color='red', linestyle=':', alpha=0.7,
+                  label=f'Lower Bound: {lower_bound:.1f}')
+axes[0, 1].axvline(np.mean(all_data), color='blue', linestyle='--', 
+                  label=f'Mean: {np.mean(all_data):.1f}')
+axes[0, 1].axvline(np.median(all_data), color='green', linestyle='--',
+                  label=f'Median: {np.median(all_data):.1f}')
+
+axes[0, 1].set_title('Histogram with Outlier Zones Highlighted', 
+                    fontsize=14, fontweight='bold')
+axes[0, 1].set_xlabel('Values')
+axes[0, 1].set_ylabel('Density')
+axes[0, 1].legend()
+axes[0, 1].grid(True, alpha=0.3)
+
+# Plot 3: Z-score analysis
+z_scores = np.abs(stats.zscore(all_data))
+z_threshold = 2.5
+z_outlier_indices = np.where(z_scores > z_threshold)[0]
+
+scatter1 = axes[1, 0].scatter(range(len(all_data)), all_data, 
+                   c=z_scores, cmap='RdYlBu_r', s=50, alpha=0.7)
+axes[1, 0].axhline(y=np.mean(all_data) + z_threshold * np.std(all_data), 
+                   color='red', linestyle='--', linewidth=2, 
+                   label=f'Z-score > {z_threshold}')
+axes[1, 0].axhline(y=np.mean(all_data) - z_threshold * np.std(all_data), 
+                   color='red', linestyle='--', linewidth=2)
+
+# Highlight outliers
+axes[1, 0].scatter(z_outlier_indices, all_data[z_outlier_indices], 
+                   color='red', s=100, marker='X', label='Z-score Outliers')
+
+axes[1, 0].set_title('Z-score Outlier Detection\n(Color indicates Z-score magnitude)', 
+                    fontsize=14, fontweight='bold')
+axes[1, 0].set_xlabel('Data Index')
+axes[1, 0].set_ylabel('Values')
+axes[1, 0].legend()
+axes[1, 0].grid(True, alpha=0.3)
+
+# Add colorbar for Z-scores
+cbar1 = plt.colorbar(scatter1, ax=axes[1, 0])
+cbar1.set_label('Absolute Z-score', rotation=270, labelpad=20)
+
+# Plot 4: Modified Z-score (more robust)
+median = np.median(all_data)
+mad = np.median(np.abs(all_data - median))
+modified_z_scores = 0.6745 * (all_data - median) / mad
+mod_z_threshold = 3.5
+mod_z_outlier_indices = np.where(np.abs(modified_z_scores) > mod_z_threshold)[0]
+
+scatter2 = axes[1, 1].scatter(range(len(all_data)), all_data, 
+                   c=np.abs(modified_z_scores), cmap='RdYlBu_r', s=50, alpha=0.7)
+
+# Highlight outliers
+axes[1, 1].scatter(mod_z_outlier_indices, all_data[mod_z_outlier_indices], 
+                   color='red', s=100, marker='X', label='Modified Z-score Outliers')
+
+axes[1, 1].set_title('Modified Z-score Outlier Detection\n(Robust to extreme outliers)', 
+                    fontsize=14, fontweight='bold')
+axes[1, 1].set_xlabel('Data Index')
+axes[1, 1].set_ylabel('Values')
+axes[1, 1].legend()
+axes[1, 1].grid(True, alpha=0.3)
+
+# Add colorbar for modified Z-scores
+cbar2 = plt.colorbar(scatter2, ax=axes[1, 1])
+cbar2.set_label('Absolute Modified Z-score', rotation=270, labelpad=20)
+
+plt.tight_layout()
+plt.show()
+
+# Statistical summary
+print("Advanced Outlier Detection Analysis Completed!")
+print(f"Dataset: {len(all_data)} total values ({len(all_data) - len(main_data)} added outliers)")
+
+print(f"\n📊 Statistical Summary:")
+print(f"   Mean: {np.mean(all_data):.2f}")
+print(f"   Median: {np.median(all_data):.2f}")
+print(f"   Standard Deviation: {np.std(all_data):.2f}")
+print(f"   Q1 (25th percentile): {Q1:.2f}")
+print(f"   Q3 (75th percentile): {Q3:.2f}")
+print(f"   IQR: {IQR:.2f}")
+
+print(f"\n🚨 Outlier Detection Results:")
+print(f"   IQR method bounds: [{lower_bound:.2f}, {upper_bound:.2f}]")
+print(f"   IQR outliers: {np.sum((all_data < lower_bound) | (all_data > upper_bound))} points")
+
+print(f"   Z-score method (threshold={z_threshold}): {len(z_outlier_indices)} outliers")
+print(f"   Modified Z-score (threshold={mod_z_threshold}): {len(mod_z_outlier_indices)} outliers")
+
+print(f"\n💡 Outlier Treatment Recommendations:")
+print("   1. Investigate each outlier - are they errors or valid extreme values?")
+print("   2. Consider robust statistical methods (median, IQR) instead of mean/std")
+print("   3. For valid outliers: keep them, they might represent important information")
+print("   4. For erroneous outliers: remove or correct them")
+print("   5. Consider data transformation (log, sqrt) to reduce outlier impact")
+print("   6. Use robust scaling methods for machine learning")
+</textarea>
+                    <button class="copy-button" onclick="copyCode('editor-outlier')">Copy</button>
+                    <button class="run-button btn-primary mt-2" onclick="runCode('editor-outlier')">Run Code</button>
+                    <div id="output-outlier" class="output-area">Output will appear here...</div>
+                    <div id="plot-outlier" class="plot-area">
+                        <span class="text-gray-500">Plot will appear here after running code...</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Summary -->
+            <section class="section-card" id="summary">
+                <div class="chapter-title">10. Summary & Best Practices</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">📊 Complete Visualization Reference</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse border border-gray-300">
+                            <thead>
+                                <tr class="bg-gray-100 dark:bg-gray-700">
+                                    <th class="border border-gray-300 p-2 text-left">Plot Type</th>
+                                    <th class="border border-gray-300 p-2 text-left">Best For</th>
+                                    <th class="border border-gray-300 p-2 text-left">Preprocessing Use</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-gray-300 p-2">Line Plot</td>
+                                    <td class="border border-gray-300 p-2">Trends over time/continuous data</td>
+                                    <td class="border border-gray-300 p-2">Time series analysis, pattern detection</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-300 p-2">Scatter Plot</td>
+                                    <td class="border border-gray-300 p-2">Relationships between variables</td>
+                                    <td class="border border-gray-300 p-2">Correlation analysis, cluster detection</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-300 p-2">Bar Chart</td>
+                                    <td class="border border-gray-300 p-2">Categorical comparisons</td>
+                                    <td class="border border-gray-300 p-2">Category distribution analysis</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-300 p-2">Histogram</td>
+                                    <td class="border border-gray-300 p-2">Data distribution</td>
+                                    <td class="border border-gray-300 p-2">Understanding data shape, skewness</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-300 p-2">Box Plot</td>
+                                    <td class="border border-gray-300 p-2">Distribution comparison</td>
+                                    <td class="border border-gray-300 p-2">Outlier detection, spread analysis</td>
+                                </tr>
+                                <tr class="bg-green-50 dark:bg-green-900">
+                                    <td class="border border-gray-300 p-2 font-bold">Missing Data Heatmap</td>
+                                    <td class="border border-gray-300 p-2">Missing value patterns</td>
+                                    <td class="border border-gray-300 p-2">Data completeness assessment</td>
+                                </tr>
+                                <tr class="bg-green-50 dark:bg-green-900">
+                                    <td class="border border-gray-300 p-2 font-bold">Correlation Matrix</td>
+                                    <td class="border border-gray-300 p-2">Feature relationships</td>
+                                    <td class="border border-gray-300 p-2">Feature selection, multicollinearity</td>
+                                </tr>
+                                <tr class="bg-green-50 dark:bg-green-900">
+                                    <td class="border border-gray-300 p-2 font-bold">Transformation Comparison</td>
+                                    <td class="border border-gray-300 p-2">Before/after scaling</td>
+                                    <td class="border border-gray-300 p-2">Choosing preprocessing methods</td>
+                                </tr>
+                                <tr class="bg-green-50 dark:bg-green-900">
+                                    <td class="border border-gray-300 p-2 font-bold">Outlier Detection</td>
+                                    <td class="border border-gray-300 p-2">Extreme values</td>
+                                    <td class="border border-gray-300 p-2">Data quality, anomaly detection</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="explanation-box mt-4">
+                    <h4 class="font-bold mb-2">💡 Data Preprocessing Workflow:</h4>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li><strong>Explore:</strong> Use basic plots to understand data structure</li>
+                        <li><strong>Clean:</strong> Identify and handle missing values (heatmaps)</li>
+                        <li><strong>Analyze:</strong> Check correlations and relationships (correlation matrix)</li>
+                        <li><strong>Detect:</strong> Find outliers and anomalies (box plots, z-scores)</li>
+                        <li><strong>Transform:</strong> Apply appropriate scaling/normalization</li>
+                        <li><strong>Validate:</strong> Verify transformations improved data quality</li>
+                    </ol>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor-summary" class="code-editor">
+import matplotlib.pyplot as plt
+import numpy as np
+
+print("=== Module 8: Complete Data Visualization & Preprocessing ===\\n")
+print("🎉 Congratulations! You've completed the comprehensive visualization module!")
+print("\\n📈 You've mastered:")
+print("✅ Basic exploratory visualizations (Line, Scatter, Bar, Histogram, Box)")
+print("✅ Preprocessing-specific techniques (Missing data, Correlation, Transformation)")
+print("✅ Advanced analysis methods (Outlier detection, Distribution comparison)")
+print("✅ Real-world data interpretation and decision-making\\n")
+
+print("🚀 Next Steps:")
+print("1. Practice with your own datasets")
+print("2. Combine multiple visualization techniques")
+print("3. Learn advanced libraries like Plotly for interactive plots")
+print("4. Apply these skills to machine learning projects\\n")
+
+print("Remember: The right visualization helps you make informed data decisions!")
+print("Good luck with your data science journey! 🌟")
+</textarea>
+                    <button class="copy-button" onclick="copyCode('editor-summary')">Copy</button>
+                    <button class="run-button btn-primary mt-2" onclick="runCode('editor-summary')">Run Code</button>
+                    <div id="output-summary" class="output-area">Output will appear here...</div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script>
+let pyodide;
+let isPyodideReady = false;
+let currentTheme = 'dark';
+let completedSections = new Set();
+
+// Initialize Pyodide
+async function initializePyodide() {
+    try {
+        const statusElement = document.getElementById('status-indicator');
+        statusElement.textContent = "🔄 Loading Pyodide runtime...";
+        
+        pyodide = await loadPyodide({
+            indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/"
+        });
+        
+        statusElement.textContent = "📦 Loading Python packages...";
+        await pyodide.loadPackage(["numpy", "pandas", "matplotlib", "scipy", "scikit-learn"]);
+        
+        // Set up matplotlib to output images
+        await pyodide.runPythonAsync(`
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import io
+import base64
+import sys
+
+class OutputCapture:
+    def __init__(self):
+        self.content = ""
+    def write(self, text):
+        self.content += text
+    def flush(self):
+        pass
+
+def create_plot():
+    # Create a bytes buffer for the image
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png', dpi=100, bbox_inches='tight')
+    plt.close()
+    buf.seek(0)
+    
+    # Convert to base64 for HTML display
+    img_str = base64.b64encode(buf.read()).decode('utf-8')
+    return img_str
+
+output_capture = OutputCapture()
+sys.stdout = output_capture
+`);
+
+        statusElement.className = "status-indicator status-ready";
+        statusElement.textContent = "✅ Python environment ready! You can now run code.";
+        isPyodideReady = true;
+        
+    } catch (error) {
+        console.error("Error:", error);
+        const statusElement = document.getElementById('status-indicator');
+        statusElement.className = "status-indicator status-error";
+        statusElement.textContent = "❌ Error loading Pyodide: " + error.message;
+    }
+}
+
+// Run Python code
+async function runCode(editorId) {
+    if (!isPyodideReady) {
+        alert("Python environment not ready yet. Please wait...");
+        return;
+    }
+
+    const editor = document.getElementById(editorId);
+    const code = editor.value;
+    const outputId = 'output-' + editorId.split('-')[1];
+    const plotId = 'plot-' + editorId.split('-')[1];
+    
+    const outputElement = document.getElementById(outputId);
+    const plotElement = document.getElementById(plotId);
+
+    try {
+        outputElement.textContent = "Running code...";
+        if (plotElement) {
+            plotElement.innerHTML = '<span class="text-gray-500">Generating plot...</span>';
+        }
+
+        // Reset output capture
+        await pyodide.runPythonAsync(`output_capture.content = ""`);
+
+        // Run the Python code
+        const result = await pyodide.runPythonAsync(code + `
+
+# Capture the plot if one was created
+try:
+    plot_output = create_plot()
+    plot_html = f'<img src="data:image/png;base64,{plot_output}" style="max-width:100%; max-height:500px;">'
+except:
+    plot_html = "<span class='text-gray-500'>No plot generated</span>"
+
+# Return both text output and plot
+(output_capture.content, plot_html)
+`);
+
+        const [textOutput, plotHtml] = result.toJs();
+        
+        outputElement.textContent = textOutput || "Code executed successfully (no text output)";
+        if (plotElement) {
+            plotElement.innerHTML = plotHtml;
+        }
+        
+        // Mark section as completed
+        const sectionId = editorId.split('-')[1];
+        if (!completedSections.has(sectionId)) {
+            completedSections.add(sectionId);
+            updateProgress();
+        }
+        
+    } catch (error) {
+        outputElement.textContent = "Error: " + error.message;
+        if (plotElement) {
+            plotElement.innerHTML = '<span class="text-red-500">Error generating plot</span>';
+        }
+    }
+}
+
+// Copy code to clipboard
+function copyCode(editorId) {
+    const editor = document.getElementById(editorId);
+    const code = editor.value;
+    
+    navigator.clipboard.writeText(code).then(() => {
+        const button = event.target;
+        const originalText = button.textContent;
+        button.textContent = 'Copied!';
+        
+        setTimeout(() => {
+            button.textContent = originalText;
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
+
+// Theme toggle
+function toggleTheme() {
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    currentTheme = newTheme;
+    
+    const themeIcon = document.getElementById('theme-icon');
+    themeIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+    
+    // Update CodeMirror themes
+    document.querySelectorAll('.CodeMirror').forEach(cm => {
+        cm.CodeMirror.setOption('theme', newTheme === 'dark' ? 'monokai' : 'eclipse');
+    });
+    
+    // Save preference
+    localStorage.setItem('theme', newTheme);
+}
+
+// Generate table of contents
+function generateTableOfContents() {
+    const tocList = document.getElementById('toc-list');
+    
+    const tocItems = [
+        { id: 'introduction', title: 'Introduction' },
+        { id: 'line-plot', title: '1. Line Plot' },
+        { id: 'scatter-plot', title: '2. Scatter Plot' },
+        { id: 'bar-chart', title: '3. Bar Chart' },
+        { id: 'histogram', title: '4. Histogram' },
+        { id: 'box-plot', title: '5. Box Plot' },
+        { id: 'missing-data', title: '6. Missing Data Analysis' },
+        { id: 'correlation', title: '7. Correlation Analysis' },
+        { id: 'transformation', title: '8. Data Transformation' },
+        { id: 'outlier-detection', title: '9. Outlier Detection' },
+        { id: 'summary', title: '10. Summary' }
+    ];
+    
+    tocItems.forEach(item => {
+        const tocItem = document.createElement('div');
+        tocItem.className = 'toc-item';
+        tocItem.textContent = item.title;
+        tocItem.addEventListener('click', () => {
+            document.getElementById(item.id).scrollIntoView({ behavior: 'smooth' });
+        });
+        tocList.appendChild(tocItem);
+    });
+}
+
+// Initialize code editors
+function initializeEditors() {
+    const editors = [
+        'editor-intro', 'editor-line', 'editor-scatter', 'editor-bar',
+        'editor-hist', 'editor-box', 'editor-missing', 'editor-corr',
+        'editor-transform', 'editor-outlier', 'editor-summary'
+    ];
+    
+    editors.forEach(editorId => {
+        const textarea = document.getElementById(editorId);
+        if (textarea) {
+            CodeMirror.fromTextArea(textarea, {
+                lineNumbers: true,
+                mode: 'python',
+                theme: currentTheme === 'dark' ? 'monokai' : 'eclipse',
+                value: textarea.value
+            });
+        }
+    });
+}
+
+// Toggle hint visibility
+function toggleHint(hintId) {
+    const hintBox = document.getElementById(hintId);
+    if (hintBox.style.display === 'block') {
+        hintBox.style.display = 'none';
+    } else {
+        hintBox.style.display = 'block';
+    }
+}
+
+// Update progress bar
+function updateProgress() {
+    const progressFill = document.getElementById('progress-fill');
+    const progressText = document.getElementById('progress-text');
+    
+    const totalSections = 10;
+    const completed = completedSections.size;
+    const percentage = (completed / totalSections) * 100;
+    
+    progressFill.style.width = `${percentage}%`;
+    progressText.textContent = `Progress: ${completed}/${totalSections} sections completed`;
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', async () => {
+    // Set initial theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    currentTheme = savedTheme;
+    
+    const themeIcon = document.getElementById('theme-icon');
+    themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+    
+    // Generate table of contents
+    generateTableOfContents();
+    
+    // Initialize editors
+    initializeEditors();
+    
+    // Set up theme toggle
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    
+    // Initialize Pyodide
+    await initializePyodide();
+});
+</script>
+</body>
+</html>

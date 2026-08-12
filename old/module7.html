@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Pandas Tutorial: Module 7</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/eclipse.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    
+    <style>
+        /* Your existing CSS styles here */
+        /* I'll reuse the same styles from your NumPy tutorial */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+        
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --section-bg: #1e293b;
+            --code-bg: #020617;
+            --border-color: #334155;
+            --header-color: #38bdf8;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f1f5f9;
+            --text-color: #1e293b;
+            --section-bg: #ffffff;
+            --code-bg: #f8fafc;
+            --border-color: #e2e8f0;
+            --header-color: #1d4ed8;
+            --accent-color: #4f46e5;
+            --accent-hover: #4338ca;
+            --success-color: #059669;
+            --error-color: #dc2626;
+            --warning-color: #d97706;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            line-height: 1.6;
+        }
+
+        .section-card {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            color: white;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .CodeMirror {
+            height: auto;
+            min-height: 150px;
+            border-radius: 0.5rem;
+            font-size: 14px;
+            margin: 0.5rem 0;
+            transition: background-color 0.3s;
+        }
+        
+        .output-area {
+            background-color: var(--code-bg);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+            font-family: monospace;
+            font-size: 14px;
+            min-height: 60px;
+            white-space: pre-wrap;
+            transition: background-color 0.3s;
+        }
+
+        .chapter-title {
+            color: var(--header-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--header-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .function-title {
+            color: var(--header-color);
+            font-weight: bold;
+            margin: 1.5rem 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .concept-box {
+            background-color: var(--section-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+            transition: background-color 0.3s;
+        }
+
+        .explanation-box {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .status-indicator {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .status-loading {
+            background-color: #fef3c7;
+            color: #92400e;
+            border: 1px solid #f59e0b;
+        }
+        
+        .status-ready {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid var(--success-color);
+        }
+
+        .status-error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid var(--error-color);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 100;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--border-color);
+        }
+
+        .table-of-contents {
+            position: sticky;
+            top: 1rem;
+            max-height: calc(100vh - 2rem);
+            overflow-y: auto;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+
+        .toc-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .toc-item:hover {
+            color: var(--header-color);
+        }
+
+        .toc-item:last-child {
+            border-bottom: none;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: var(--border-color);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .code-container {
+            position: relative;
+            margin: 1.5rem 0;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-color);
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s, background-color 0.2s;
+            z-index: 10;
+        }
+
+        .copy-button:hover {
+            opacity: 1;
+            background-color: var(--border-color);
+        }
+
+        .success-message {
+            color: var(--success-color);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .info-box {
+            background-color: var(--code-bg);
+            border-left: 4px solid var(--header-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .warning-box {
+            background-color: #fef3c7;
+            border-left: 4px solid var(--warning-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+            color: #92400e;
+        }
+
+        .key-point {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            font-weight: bold;
+            margin: 0 0.25rem;
+        }
+
+        .real-world-example {
+            background-color: var(--section-bg);
+            border: 2px dashed var(--success-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .table-of-contents {
+                position: static;
+                max-height: none;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+
+<div class="theme-toggle" id="theme-toggle">
+    <span id="theme-icon">🌙</span>
+</div>
+
+<div class="max-w-6xl mx-auto">
+    <header class="text-center mb-8">
+        <h1 class="text-4xl font-extrabold mb-4">Complete Pandas Tutorial</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-4">Module 7: Data Analysis with Pandas for Health Informatics</p>
+        <div id="status-indicator" class="status-indicator status-loading">
+            ⏳ Loading Pyodide and Pandas... This may take a few seconds.
+        </div>
+        <div id="progress-bar" class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Table of Contents -->
+        <div class="lg:col-span-1">
+            <div class="table-of-contents">
+                <h2 class="font-bold text-lg mb-4">Table of Contents</h2>
+                <div id="toc-list">
+                    <!-- TOC items will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="lg:col-span-3">
+            <!-- Chapter 7.1: Introduction to Pandas -->
+            <section class="section-card" id="chapter-7-1">
+                <div class="chapter-title">Chapter 7.1: Introduction to Pandas</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">What is Pandas and Why Do We Need It?</h3>
+                    <p class="mb-3">Pandas is a powerful Python library for data manipulation and analysis. It provides data structures and operations for manipulating numerical tables and time series.</p>
+                    <p><strong>Why Pandas for Health Informatics?</strong> Pandas excels at handling structured data like patient records, clinical trials data, and medical measurements with intuitive indexing, powerful grouping capabilities, and seamless integration with other data science libraries.</p>
+                </div>
+
+                <!-- Example 7.1.1: Series and DataFrames -->
+                <div class="function-title">7.1.1 Series and DataFrames</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Understanding the Core Data Structures</h4>
+                    <p class="mb-3">Pandas has two primary data structures: Series (1D) and DataFrame (2D). These structures provide powerful indexing and data manipulation capabilities.</p>
+                    <div class="real-world-example">
+                        <h5 class="font-semibold mb-2">💡 Real-World Application:</h5>
+                        <p>In healthcare, you might use Series for tracking individual patient measurements over time and DataFrames for complete patient records with multiple attributes.</p>
+                    </div>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor7_1_1" class="code-editor">
+import pandas as pd
+import numpy as np
+
+# Create a Series (1D labeled array)
+patient_temperatures = pd.Series([98.6, 99.2, 97.8, 100.1, 98.9], 
+                                 index=['Patient_A', 'Patient_B', 'Patient_C', 'Patient_D', 'Patient_E'])
+print("Patient Temperatures Series:")
+print(patient_temperatures)
+print(f"\nData type: {patient_temperatures.dtype}")
+print(f"Shape: {patient_temperatures.shape}")
+
+# Create a DataFrame (2D labeled data structure)
+patient_data = pd.DataFrame({
+    'Age': [25, 34, 67, 52, 41],
+    'Heart_Rate': [72, 85, 63, 90, 78],
+    'Systolic_BP': [120, 135, 140, 128, 118],
+    'Diastolic_BP': [80, 85, 90, 82, 76],
+    'Temperature': [98.6, 99.2, 97.8, 100.1, 98.9]
+}, index=['Patient_A', 'Patient_B', 'Patient_C', 'Patient_D', 'Patient_E'])
+
+print("\nPatient Data DataFrame:")
+print(patient_data)
+print(f"\nDataFrame shape: {patient_data.shape}")
+print(f"Columns: {list(patient_data.columns)}")
+</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output7_1_1" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+                <!-- Example 7.1.2: DataFrame Attributes and Methods -->
+                <div class="function-title">7.1.2 DataFrame Attributes and Methods</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Exploring DataFrame Properties</h4>
+                    <p class="mb-3">Understanding DataFrame attributes and methods is crucial for effective data exploration and manipulation.</p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor7_1_2" class="code-editor">
+import pandas as pd
+import numpy as np
+
+# Create a sample healthcare DataFrame
+health_data = pd.DataFrame({
+    'Patient_ID': ['P001', 'P002', 'P003', 'P004', 'P005'],
+    'Age': [25, 34, 67, 52, 41],
+    'Gender': ['F', 'M', 'F', 'M', 'F'],
+    'BMI': [22.1, 27.8, 24.3, 31.2, 26.5],
+    'Blood_Pressure': ['120/80', '135/85', '140/90', '128/82', '118/76'],
+    'Cholesterol': [180, 220, 195, 240, 210],
+    'Smoker': [False, True, False, True, False]
+})
+
+print("Healthcare Data:")
+print(health_data)
+
+# Basic DataFrame attributes
+print(f"\nDataFrame Shape: {health_data.shape}")
+print(f"Columns: {list(health_data.columns)}")
+print(f"Index: {health_data.index}")
+print(f"Data Types:\n{health_data.dtypes}")
+
+# DataFrame methods for exploration
+print(f"\nFirst 3 rows:")
+print(health_data.head(3))
+
+print(f"\nDataFrame Info:")
+health_data.info()
+
+print(f"\nDescriptive Statistics:")
+print(health_data.describe())
+</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output7_1_2" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+            </section>
+
+            <!-- Chapter 7.2: Data Loading and Inspection -->
+            <section class="section-card" id="chapter-7-2">
+                <div class="chapter-title">Chapter 7.2: Data Loading and Inspection</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">Working with Real Healthcare Data</h3>
+                    <p class="mb-3">Pandas provides powerful tools for loading data from various sources and performing initial data inspection to understand data quality and structure.</p>
+                </div>
+
+                <!-- Example 7.2.1: Loading Data from Various Sources -->
+                <div class="function-title">7.2.1 Loading Data from Various Sources</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Importing Healthcare Data</h4>
+                    <p class="mb-3">Pandas can read data from CSV files, Excel spreadsheets, databases, and other formats commonly used in healthcare systems.</p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor7_2_1" class="code-editor">
+import pandas as pd
+import numpy as np
+import io
+
+# Simulate CSV data (in real scenarios, you'd use pd.read_csv('filename.csv'))
+csv_data = """PatientID,Age,Gender,BMI,HeartRate,SystolicBP,DiastolicBP,Temperature
+P001,25,F,22.1,72,120,80,98.6
+P002,34,M,27.8,85,135,85,99.2
+P003,67,F,24.3,63,140,90,97.8
+P004,52,M,31.2,90,128,82,100.1
+P005,41,F,26.5,78,118,76,98.9
+P006,29,M,23.7,75,122,78,98.4
+P007,58,F,28.9,82,138,88,99.8"""
+
+# Load data from CSV string
+patient_df = pd.read_csv(io.StringIO(csv_data))
+print("Loaded Patient Data:")
+print(patient_df)
+
+# Basic data inspection
+print(f"\nDataFrame Info:")
+patient_df.info()
+
+print(f"\nMissing Values:")
+print(patient_df.isnull().sum())
+
+print(f"\nBasic Statistics:")
+print(patient_df.describe())
+</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output7_2_1" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+                <!-- Example 7.2.2: Data Inspection and Cleaning -->
+                <div class="function-title">7.2.2 Data Inspection and Cleaning</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Healthcare Data Quality Assessment</h4>
+                    <p class="mb-3">Real-world healthcare data often contains missing values, outliers, and inconsistencies that need to be addressed before analysis.</p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor7_2_2" class="code-editor">
+import pandas as pd
+import numpy as np
+
+# Create sample healthcare data with some missing values and outliers
+data_with_issues = {
+    'PatientID': ['P001', 'P002', 'P003', 'P004', 'P005', 'P006', 'P007'],
+    'Age': [25, 34, 67, 52, 41, 29, 150],  # 150 is an outlier
+    'Gender': ['F', 'M', 'F', 'M', 'F', 'M', 'Unknown'],
+    'BMI': [22.1, 27.8, 24.3, np.nan, 26.5, 23.7, 28.9],  # Missing value
+    'HeartRate': [72, 85, 63, 90, 78, 75, 200],  # 200 is an outlier
+    'SystolicBP': [120, 135, 140, 128, 118, 122, 138],
+    'DiastolicBP': [80, 85, 90, 82, 76, 78, 88],
+    'Temperature': [98.6, 99.2, 97.8, 100.1, 98.9, 98.4, 99.8]
+}
+
+df_with_issues = pd.DataFrame(data_with_issues)
+print("Data with Issues:")
+print(df_with_issues)
+
+# Identify missing values
+print(f"\nMissing Values:")
+print(df_with_issues.isnull().sum())
+
+# Identify potential outliers (using simple statistical methods)
+numeric_columns = ['Age', 'BMI', 'HeartRate', 'SystolicBP', 'DiastolicBP', 'Temperature']
+print(f"\nPotential Outliers (values beyond 3 standard deviations):")
+for col in numeric_columns:
+    if col in df_with_issues.columns and df_with_issues[col].dtype in [np.int64, np.float64]:
+        mean = df_with_issues[col].mean()
+        std = df_with_issues[col].std()
+        outliers = df_with_issues[(df_with_issues[col] > mean + 3*std) | (df_with_issues[col] < mean - 3*std)]
+        if not outliers.empty:
+            print(f"{col}: {outliers[col].values}")
+
+# Data cleaning - handle missing values and outliers
+print(f"\n--- Data Cleaning ---")
+
+# Fill missing BMI with median
+df_cleaned = df_with_issues.copy()
+df_cleaned['BMI'] = df_cleaned['BMI'].fillna(df_cleaned['BMI'].median())
+print(f"After filling missing BMI: {df_cleaned['BMI'].isnull().sum()} missing values")
+
+# Cap outliers for Age and HeartRate
+df_cleaned['Age'] = np.where(df_cleaned['Age'] > 100, 100, df_cleaned['Age'])
+df_cleaned['HeartRate'] = np.where(df_cleaned['HeartRate'] > 180, 180, df_cleaned['HeartRate'])
+
+print(f"\nCleaned Data:")
+print(df_cleaned)
+</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output7_2_2" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+            </section>
+
+            <!-- Chapter 7.3: Data Selection and Filtering -->
+            <section class="section-card" id="chapter-7-3">
+                <div class="chapter-title">Chapter 7.3: Data Selection and Filtering</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">Targeted Data Extraction</h3>
+                    <p class="mb-3">Pandas provides multiple methods for selecting and filtering data, which is essential for focusing on specific patient groups or conditions in healthcare analysis.</p>
+                </div>
+
+                <!-- Example 7.3.1: Column and Row Selection -->
+                <div class="function-title">7.3.1 Column and Row Selection</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Accessing Specific Data Subsets</h4>
+                    <p class="mb-3">Learn different methods to select specific columns, rows, or individual elements from a DataFrame.</p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor7_3_1" class="code-editor">
+import pandas as pd
+import numpy as np
+
+# Create a comprehensive healthcare dataset
+health_data = pd.DataFrame({
+    'PatientID': [f'P{str(i).zfill(3)}' for i in range(1, 11)],
+    'Age': [25, 34, 67, 52, 41, 29, 58, 45, 38, 61],
+    'Gender': ['F', 'M', 'F', 'M', 'F', 'M', 'F', 'M', 'F', 'M'],
+    'BMI': [22.1, 27.8, 24.3, 31.2, 26.5, 23.7, 28.9, 25.4, 24.8, 29.6],
+    'HeartRate': [72, 85, 63, 90, 78, 75, 82, 88, 76, 70],
+    'SystolicBP': [120, 135, 140, 128, 118, 122, 138, 132, 125, 142],
+    'DiastolicBP': [80, 85, 90, 82, 76, 78, 88, 84, 80, 92],
+    'Temperature': [98.6, 99.2, 97.8, 100.1, 98.9, 98.4, 99.8, 98.7, 98.2, 97.9],
+    'Condition': ['Healthy', 'Hypertension', 'Diabetes', 'Hypertension', 'Healthy', 
+                  'Healthy', 'Diabetes', 'Hypertension', 'Healthy', 'Diabetes']
+})
+
+print("Complete Healthcare Dataset:")
+print(health_data)
+
+# Different methods for column selection
+print("\n--- Column Selection Methods ---")
+
+# Select single column
+ages = health_data['Age']
+print(f"Age column (Series):\n{ages}")
+
+# Select multiple columns
+vital_signs = health_data[['Age', 'HeartRate', 'SystolicBP', 'DiastolicBP']]
+print(f"\nVital signs (DataFrame):\n{vital_signs}")
+
+# Using .loc for label-based selection
+first_patient = health_data.loc[0]  # First row
+print(f"\nFirst patient data:\n{first_patient}")
+
+# Using .iloc for position-based selection
+first_three_patients = health_data.iloc[0:3]  # First three rows
+print(f"\nFirst three patients:\n{first_three_patients}")
+
+# Select specific rows and columns
+specific_data = health_data.loc[2:4, ['PatientID', 'Age', 'Condition']]
+print(f"\nPatients 2-4 with selected columns:\n{specific_data}")
+</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output7_3_1" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+                <!-- Example 7.3.2: Conditional Filtering -->
+                <div class="function-title">7.3.2 Conditional Filtering</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Filtering Patients by Health Conditions</h4>
+                    <p class="mb-3">Conditional filtering allows you to select patients based on specific health criteria, which is crucial for clinical analysis and research.</p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor7_3_2" class="code-editor">
+import pandas as pd
+import numpy as np
+
+# Using the health_data DataFrame from previous example
+health_data = pd.DataFrame({
+    'PatientID': [f'P{str(i).zfill(3)}' for i in range(1, 11)],
+    'Age': [25, 34, 67, 52, 41, 29, 58, 45, 38, 61],
+    'Gender': ['F', 'M', 'F', 'M', 'F', 'M', 'F', 'M', 'F', 'M'],
+    'BMI': [22.1, 27.8, 24.3, 31.2, 26.5, 23.7, 28.9, 25.4, 24.8, 29.6],
+    'HeartRate': [72, 85, 63, 90, 78, 75, 82, 88, 76, 70],
+    'SystolicBP': [120, 135, 140, 128, 118, 122, 138, 132, 125, 142],
+    'DiastolicBP': [80, 85, 90, 82, 76, 78, 88, 84, 80, 92],
+    'Temperature': [98.6, 99.2, 97.8, 100.1, 98.9, 98.4, 99.8, 98.7, 98.2, 97.9],
+    'Condition': ['Healthy', 'Hypertension', 'Diabetes', 'Hypertension', 'Healthy', 
+                  'Healthy', 'Diabetes', 'Hypertension', 'Healthy', 'Diabetes']
+})
+
+print("Complete Dataset:")
+print(health_data)
+
+print("\n--- Conditional Filtering Examples ---")
+
+# Filter patients with hypertension
+hypertension_patients = health_data[health_data['Condition'] == 'Hypertension']
+print("Patients with Hypertension:")
+print(hypertension_patients)
+
+# Filter patients with high blood pressure (Systolic > 130 or Diastolic > 85)
+high_bp_patients = health_data[(health_data['SystolicBP'] > 130) | (health_data['DiastolicBP'] > 85)]
+print("\nPatients with High Blood Pressure:")
+print(high_bp_patients)
+
+# Filter patients with BMI in overweight/obese range (BMI >= 25)
+overweight_patients = health_data[health_data['BMI'] >= 25]
+print("\nOverweight/Obese Patients (BMI >= 25):")
+print(overweight_patients)
+
+# Complex condition: Middle-aged patients with health conditions
+middle_aged_with_conditions = health_data[
+    (health_data['Age'] >= 40) & 
+    (health_data['Age'] <= 60) & 
+    (health_data['Condition'] != 'Healthy')
+]
+print("\nMiddle-aged Patients (40-60) with Health Conditions:")
+print(middle_aged_with_conditions)
+
+# Using query method for more complex conditions
+diabetes_patients_over_50 = health_data.query('Condition == "Diabetes" and Age > 50')
+print("\nDiabetes Patients Over 50 (using query):")
+print(diabetes_patients_over_50)
+
+# Filter using string methods
+female_patients = health_data[health_data['Gender'].str.upper() == 'F']
+print("\nFemale Patients:")
+print(female_patients)
+</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output7_3_2" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+            </section>
+
+            <!-- Chapter 7.4: Data Manipulation and Transformation -->
+            <section class="section-card" id="chapter-7-4">
+                <div class="chapter-title">Chapter 7.4: Data Manipulation and Transformation</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">Data Preprocessing for Analysis</h3>
+                    <p class="mb-3">Learn to transform and manipulate healthcare data to prepare it for analysis, including creating new features, handling missing values, and data normalization.</p>
+                </div>
+
+                <!-- Example 7.4.1: Creating New Columns and Data Transformation -->
+                <div class="function-title">7.4.1 Creating New Columns and Data Transformation</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Feature Engineering for Healthcare</h4>
+                    <p class="mb-3">Creating new features from existing data can provide valuable insights for healthcare analysis and predictive modeling.</p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor7_4_1" class="code-editor">
+import pandas as pd
+import numpy as np
+
+# Create healthcare dataset
+health_data = pd.DataFrame({
+    'PatientID': [f'P{str(i).zfill(3)}' for i in range(1, 11)],
+    'Age': [25, 34, 67, 52, 41, 29, 58, 45, 38, 61],
+    'Gender': ['F', 'M', 'F', 'M', 'F', 'M', 'F', 'M', 'F', 'M'],
+    'Height_cm': [165, 180, 155, 175, 160, 178, 162, 182, 158, 170],
+    'Weight_kg': [60, 90, 58, 96, 68, 75, 76, 84, 62, 86],
+    'SystolicBP': [120, 135, 140, 128, 118, 122, 138, 132, 125, 142],
+    'DiastolicBP': [80, 85, 90, 82, 76, 78, 88, 84, 80, 92],
+    'Cholesterol': [180, 220, 195, 240, 210, 190, 235, 205, 185, 250]
+})
+
+print("Original Healthcare Data:")
+print(health_data)
+
+print("\n--- Creating New Features ---")
+
+# Calculate BMI
+health_data['BMI'] = health_data['Weight_kg'] / ((health_data['Height_cm'] / 100) ** 2)
+print("After adding BMI:")
+print(health_data[['PatientID', 'Height_cm', 'Weight_kg', 'BMI']].head())
+
+# Create age groups
+bins = [0, 30, 45, 60, 100]
+labels = ['Young', 'Adult', 'Middle-aged', 'Senior']
+health_data['Age_Group'] = pd.cut(health_data['Age'], bins=bins, labels=labels)
+print("\nAfter adding Age Groups:")
+print(health_data[['PatientID', 'Age', 'Age_Group']].head())
+
+# Create blood pressure categories
+def bp_category(row):
+    if row['SystolicBP'] < 120 and row['DiastolicBP'] < 80:
+        return 'Normal'
+    elif row['SystolicBP'] >= 140 or row['DiastolicBP'] >= 90:
+        return 'High'
+    else:
+        return 'Elevated'
+
+health_data['BP_Category'] = health_data.apply(bp_category, axis=1)
+print("\nAfter adding BP Categories:")
+print(health_data[['PatientID', 'SystolicBP', 'DiastolicBP', 'BP_Category']])
+
+# Create cholesterol risk indicator
+health_data['High_Cholesterol'] = health_data['Cholesterol'] > 200
+print("\nAfter adding High Cholesterol Indicator:")
+print(health_data[['PatientID', 'Cholesterol', 'High_Cholesterol']])
+
+# Data transformation: Normalize numerical features
+from sklearn.preprocessing import StandardScaler
+
+numerical_features = ['Age', 'BMI', 'SystolicBP', 'DiastolicBP', 'Cholesterol']
+scaler = StandardScaler()
+health_data[numerical_features] = scaler.fit_transform(health_data[numerical_features])
+
+print("\nAfter Standardization (Z-score normalization):")
+print(health_data[numerical_features].head())
+</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output7_4_1" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+                <!-- Example 7.4.2: Handling Missing Data -->
+                <div class="function-title">7.4.2 Handling Missing Data</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Strategies for Incomplete Healthcare Records</h4>
+                    <p class="mb-3">Missing data is common in healthcare datasets. Learn various strategies to handle missing values appropriately.</p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor7_4_2" class="code-editor">
+import pandas as pd
+import numpy as np
+
+# Create healthcare dataset with missing values
+missing_data = pd.DataFrame({
+    'PatientID': [f'P{str(i).zfill(3)}' for i in range(1, 11)],
+    'Age': [25, 34, np.nan, 52, 41, 29, 58, 45, 38, 61],
+    'Gender': ['F', 'M', 'F', np.nan, 'F', 'M', 'F', 'M', 'F', 'M'],
+    'BMI': [22.1, 27.8, 24.3, np.nan, 26.5, 23.7, 28.9, 25.4, np.nan, 29.6],
+    'HeartRate': [72, 85, 63, 90, 78, 75, np.nan, 88, 76, 70],
+    'SystolicBP': [120, 135, 140, 128, 118, 122, 138, 132, 125, np.nan],
+    'DiastolicBP': [80, 85, 90, 82, 76, 78, 88, 84, 80, 92],
+    'Temperature': [98.6, 99.2, 97.8, 100.1, 98.9, 98.4, 99.8, 98.7, 98.2, 97.9]
+})
+
+print("Dataset with Missing Values:")
+print(missing_data)
+
+print("\n--- Missing Data Analysis ---")
+
+# Check for missing values
+print("Missing Values Summary:")
+print(missing_data.isnull().sum())
+
+print("\nPercentage of Missing Values:")
+print((missing_data.isnull().sum() / len(missing_data)) * 100)
+
+# Visualize missing data pattern
+print("\nMissing Data Pattern (True = Missing):")
+print(missing_data.isnull())
+
+print("\n--- Handling Missing Data ---")
+
+# Method 1: Remove rows with any missing values
+data_dropped = missing_data.dropna()
+print(f"After dropping rows with missing values: {len(data_dropped)} rows remaining")
+
+# Method 2: Remove rows where all values are missing
+data_dropped_all = missing_data.dropna(how='all')
+print(f"After dropping rows where all values are missing: {len(data_dropped_all)} rows remaining")
+
+# Method 3: Fill missing values with mean (for numerical columns)
+data_filled_mean = missing_data.copy()
+numerical_cols = ['Age', 'BMI', 'HeartRate', 'SystolicBP']
+for col in numerical_cols:
+    if col in data_filled_mean.columns:
+        data_filled_mean[col] = data_filled_mean[col].fillna(data_filled_mean[col].mean())
+
+print("\nAfter filling numerical missing values with mean:")
+print(data_filled_mean[numerical_cols].head())
+
+# Method 4: Fill missing values with median (more robust to outliers)
+data_filled_median = missing_data.copy()
+for col in numerical_cols:
+    if col in data_filled_median.columns:
+        data_filled_median[col] = data_filled_median[col].fillna(data_filled_median[col].median())
+
+# Method 5: Fill categorical missing values with mode
+data_filled_mode = data_filled_median.copy()
+categorical_cols = ['Gender']
+for col in categorical_cols:
+    if col in data_filled_mode.columns:
+        mode_value = data_filled_mode[col].mode()[0] if not data_filled_mode[col].mode().empty else 'Unknown'
+        data_filled_mode[col] = data_filled_mode[col].fillna(mode_value)
+
+print("\nAfter filling categorical missing values with mode:")
+print(data_filled_mode[['PatientID', 'Gender']].head())
+
+# Method 6: Forward fill (for time series data)
+# This is useful when you have sequential measurements
+data_ffill = missing_data.copy()
+data_ffill[numerical_cols] = data_ffill[numerical_cols].fillna(method='ffill')
+print("\nAfter forward filling:")
+print(data_ffill[numerical_cols].head())
+
+print("\nFinal Cleaned Dataset:")
+print(data_filled_mode)
+</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output7_4_2" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+            </section>
+
+            <!-- Chapter 7.5: Data Aggregation and Grouping -->
+            <section class="section-card" id="chapter-7-5">
+                <div class="chapter-title">Chapter 7.5: Data Aggregation and Grouping</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">Summarizing Healthcare Data</h3>
+                    <p class="mb-3">Grouping and aggregation are powerful techniques for summarizing healthcare data by patient demographics, conditions, or other categorical variables.</p>
+                </div>
+
+                <!-- Example 7.5.1: GroupBy Operations -->
+                <div class="function-title">7.5.1 GroupBy Operations</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Analyzing Patient Groups</h4>
+                    <p class="mb-3">GroupBy operations allow you to split data into groups based on criteria and apply aggregate functions to each group.</p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor7_5_1" class="code-editor">
+import pandas as pd
+import numpy as np
+
+# Create comprehensive healthcare dataset
+health_data = pd.DataFrame({
+    'PatientID': [f'P{str(i).zfill(3)}' for i in range(1, 21)],
+    'Age': [25, 34, 67, 52, 41, 29, 58, 45, 38, 61, 33, 47, 55, 39, 62, 28, 51, 44, 36, 59],
+    'Gender': ['F', 'M', 'F', 'M', 'F', 'M', 'F', 'M', 'F', 'M', 'F', 'M', 'F', 'M', 'F', 'M', 'F', 'M', 'F', 'M'],
+    'BMI': [22.1, 27.8, 24.3, 31.2, 26.5, 23.7, 28.9, 25.4, 24.8, 29.6, 
+            22.8, 26.9, 30.1, 24.2, 28.7, 23.1, 27.3, 25.8, 23.9, 29.2],
+    'HeartRate': [72, 85, 63, 90, 78, 75, 82, 88, 76, 70, 74, 86, 79, 77, 68, 73, 84, 87, 75, 71],
+    'SystolicBP': [120, 135, 140, 128, 118, 122, 138, 132, 125, 142, 
+                   121, 136, 139, 124, 141, 119, 134, 131, 123, 140],
+    'DiastolicBP': [80, 85, 90, 82, 76, 78, 88, 84, 80, 92, 
+                    79, 86, 89, 81, 91, 77, 85, 83, 78, 90],
+    'Condition': ['Healthy', 'Hypertension', 'Diabetes', 'Hypertension', 'Healthy', 
+                  'Healthy', 'Diabetes', 'Hypertension', 'Healthy', 'Diabetes',
+                  'Healthy', 'Hypertension', 'Diabetes', 'Healthy', 'Diabetes',
+                  'Healthy', 'Hypertension', 'Healthy', 'Healthy', 'Diabetes']
+})
+
+print("Healthcare Dataset:")
+print(health_data.head())
+
+print("\n--- Basic GroupBy Operations ---")
+
+# Group by Condition and calculate mean for numerical columns
+condition_stats = health_data.groupby('Condition').mean(numeric_only=True)
+print("Average Values by Condition:")
+print(condition_stats)
+
+# Group by Gender and calculate multiple statistics
+gender_stats = health_data.groupby('Gender').agg({
+    'Age': ['mean', 'std', 'min', 'max'],
+    'BMI': ['mean', 'std'],
+    'HeartRate': ['mean', 'std'],
+    'SystolicBP': ['mean', 'std'],
+    'DiastolicBP': ['mean', 'std']
+})
+print("\nDetailed Statistics by Gender:")
+print(gender_stats)
+
+# Group by multiple columns
+condition_gender_stats = health_data.groupby(['Condition', 'Gender']).agg({
+    'Age': 'mean',
+    'BMI': 'mean',
+    'SystolicBP': 'mean',
+    'DiastolicBP': 'mean',
+    'PatientID': 'count'  # Count patients in each group
+}).rename(columns={'PatientID': 'Patient_Count'})
+
+print("\nStatistics by Condition and Gender:")
+print(condition_gender_stats)
+
+# Create age groups and analyze
+bins = [0, 30, 45, 60, 100]
+labels = ['Young', 'Adult', 'Middle-aged', 'Senior']
+health_data['Age_Group'] = pd.cut(health_data['Age'], bins=bins, labels=labels)
+
+age_group_stats = health_data.groupby('Age_Group').agg({
+    'BMI': 'mean',
+    'SystolicBP': 'mean',
+    'DiastolicBP': 'mean',
+    'PatientID': 'count'
+}).rename(columns={'PatientID': 'Patient_Count'})
+
+print("\nStatistics by Age Group:")
+print(age_group_stats)
+
+# Pivot tables for cross-tabulation
+pivot_bp = pd.pivot_table(health_data, 
+                         values=['SystolicBP', 'DiastolicBP'], 
+                         index='Condition', 
+                         columns='Gender', 
+                         aggfunc='mean')
+print("\nBlood Pressure Pivot Table (Condition × Gender):")
+print(pivot_bp)
+
+# Cross tabulation for categorical variables
+cross_tab = pd.crosstab(health_data['Condition'], health_data['Gender'])
+print("\nCross Tabulation (Condition × Gender):")
+print(cross_tab)
+</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output7_5_1" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+            </section>
+
+            <!-- Chapter 7.6: Time Series Analysis in Healthcare -->
+            <section class="section-card" id="chapter-7-6">
+                <div class="chapter-title">Chapter 7.6: Time Series Analysis in Healthcare</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">Temporal Health Data Analysis</h3>
+                    <p class="mb-3">Time series analysis is crucial in healthcare for tracking patient vitals over time, monitoring disease progression, and analyzing treatment effectiveness.</p>
+                </div>
+
+                <!-- Example 7.6.1: Working with Time Series Data -->
+                <div class="function-title">7.6.1 Working with Time Series Data</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Patient Monitoring Over Time</h4>
+                    <p class="mb-3">Learn to handle datetime data, resample time series, and analyze temporal patterns in healthcare data.</p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor7_6_1" class="code-editor">
+import pandas as pd
+import numpy as np
+
+# Create time series healthcare data
+dates = pd.date_range('2024-01-01', '2024-01-31', freq='D')
+patient_ids = ['P001', 'P002', 'P003']
+
+# Generate synthetic time series data for multiple patients
+time_series_data = []
+for date in dates:
+    for patient_id in patient_ids:
+        # Simulate realistic variations in health metrics
+        base_bp = 120 if patient_id == 'P001' else 130 if patient_id == 'P002' else 140
+        base_hr = 70 if patient_id == 'P001' else 80 if patient_id == 'P002' else 75
+        
+        time_series_data.append({
+            'Date': date,
+            'PatientID': patient_id,
+            'HeartRate': np.random.normal(base_hr, 5),
+            'SystolicBP': np.random.normal(base_bp, 8),
+            'DiastolicBP': np.random.normal(base_bp * 0.66, 5),
+            'Temperature': np.random.normal(98.6, 0.5),
+            'OxygenSaturation': np.random.normal(98, 1)
+        })
+
+# Create DataFrame
+ts_df = pd.DataFrame(time_series_data)
+print("Time Series Healthcare Data (first 10 rows):")
+print(ts_df.head(10))
+
+print("\n--- Time Series Operations ---")
+
+# Set Date as index for time series analysis
+ts_df_indexed = ts_df.set_index('Date')
+print("DataFrame with Date as index:")
+print(ts_df_indexed.head())
+
+# Filter data for a specific date range
+jan_first_week = ts_df_indexed['2024-01-01':'2024-01-07']
+print("\nData for first week of January:")
+print(jan_first_week.head())
+
+# Resample data to weekly averages
+weekly_avg = ts_df_indexed.groupby('PatientID').resample('W').mean(numeric_only=True)
+print("\nWeekly Averages by Patient:")
+print(weekly_avg.head(15))
+
+# Calculate rolling averages (7-day moving average)
+ts_df_indexed['HR_7day_avg'] = ts_df_indexed.groupby('PatientID')['HeartRate'].transform(
+    lambda x: x.rolling(window=7, min_periods=1).mean()
+)
+ts_df_indexed['SBP_7day_avg'] = ts_df_indexed.groupby('PatientID')['SystolicBP'].transform(
+    lambda x: x.rolling(window=7, min_periods=1).mean()
+)
+
+print("\nData with 7-day Moving Averages (first 15 rows):")
+print(ts_df_indexed[['PatientID', 'HeartRate', 'HR_7day_avg', 'SystolicBP', 'SBP_7day_avg']].head(15))
+
+# Analyze trends over time
+print("\n--- Trend Analysis ---")
+
+# Calculate daily changes
+ts_df_indexed['HR_Daily_Change'] = ts_df_indexed.groupby('PatientID')['HeartRate'].diff()
+ts_df_indexed['SBP_Daily_Change'] = ts_df_indexed.groupby('PatientID')['SystolicBP'].diff()
+
+print("Data with Daily Changes (first 15 rows):")
+print(ts_df_indexed[['PatientID', 'HeartRate', 'HR_Daily_Change', 'SystolicBP', 'SBP_Daily_Change']].head(15))
+
+# Identify significant changes (beyond 2 standard deviations)
+def flag_significant_changes(group):
+    hr_std = group['HR_Daily_Change'].std()
+    sbp_std = group['SBP_Daily_Change'].std()
+    
+    group['HR_Significant_Change'] = abs(group['HR_Daily_Change']) > (2 * hr_std)
+    group['SBP_Significant_Change'] = abs(group['SBP_Daily_Change']) > (2 * sbp_std)
+    
+    return group
+
+ts_df_indexed = ts_df_indexed.groupby('PatientID').apply(flag_significant_changes)
+print("\nSignificant Changes Identified:")
+significant_changes = ts_df_indexed[
+    (ts_df_indexed['HR_Significant_Change'] == True) | 
+    (ts_df_indexed['SBP_Significant_Change'] == True)
+]
+print(significant_changes[['PatientID', 'HeartRate', 'HR_Daily_Change', 'SystolicBP', 'SBP_Daily_Change']])
+</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output7_6_1" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+            </section>
+
+            <!-- Chapter 7.7: Advanced Pandas for Health Informatics -->
+            <section class="section-card" id="chapter-7-7">
+                <div class="chapter-title">Chapter 7.7: Advanced Pandas for Health Informatics</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">Complex Healthcare Data Analysis</h3>
+                    <p class="mb-3">Explore advanced Pandas techniques for complex healthcare data analysis, including merging datasets, advanced filtering, and performance optimization.</p>
+                </div>
+
+                <!-- Example 7.7.1: Merging and Joining Healthcare Datasets -->
+                <div class="function-title">7.7.1 Merging and Joining Healthcare Datasets</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Integrating Multiple Data Sources</h4>
+                    <p class="mb-3">Healthcare analysis often requires combining data from multiple sources like patient records, lab results, and treatment histories.</p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor7_7_1" class="code-editor">
+import pandas as pd
+import numpy as np
+
+# Create patient demographics dataset
+demographics = pd.DataFrame({
+    'PatientID': ['P001', 'P002', 'P003', 'P004', 'P005'],
+    'Age': [25, 34, 67, 52, 41],
+    'Gender': ['F', 'M', 'F', 'M', 'F'],
+    'BMI': [22.1, 27.8, 24.3, 31.2, 26.5],
+    'Smoker': [False, True, False, True, False],
+    'Family_History': ['None', 'Hypertension', 'Diabetes', 'Hypertension', 'None']
+})
+
+# Create lab results dataset
+lab_results = pd.DataFrame({
+    'PatientID': ['P001', 'P002', 'P003', 'P004', 'P005', 'P006'],  # P006 doesn't exist in demographics
+    'Cholesterol': [180, 220, 195, 240, 210, 230],
+    'Glucose': [95, 110, 145, 102, 98, 135],
+    'HbA1c': [5.2, 5.8, 7.2, 5.9, 5.4, 6.8],
+    'Test_Date': ['2024-01-15', '2024-01-16', '2024-01-17', '2024-01-18', '2024-01-19', '2024-01-20']
+})
+
+# Create treatment history dataset
+treatments = pd.DataFrame({
+    'PatientID': ['P001', 'P002', 'P003', 'P004'],
+    'Medication': ['None', 'Lisinopril', 'Metformin', 'Amlodipine'],
+    'Dosage': ['None', '10mg', '500mg', '5mg'],
+    'Start_Date': ['None', '2023-06-01', '2023-08-15', '2023-11-20']
+})
+
+print("Demographics Data:")
+print(demographics)
+
+print("\nLab Results Data:")
+print(lab_results)
+
+print("\nTreatment History Data:")
+print(treatments)
+
+print("\n--- Merging Datasets ---")
+
+# Inner join (only patients present in both datasets)
+inner_merged = pd.merge(demographics, lab_results, on='PatientID', how='inner')
+print("Inner Join (Demographics + Lab Results):")
+print(inner_merged)
+
+# Left join (all patients from demographics, with lab results if available)
+left_merged = pd.merge(demographics, lab_results, on='PatientID', how='left')
+print("\nLeft Join (All Demographics Patients + Lab Results):")
+print(left_merged)
+
+# Multiple dataset merge
+complete_data = pd.merge(demographics, lab_results, on='PatientID', how='left')
+complete_data = pd.merge(complete_data, treatments, on='PatientID', how='left')
+print("\nComplete Merged Dataset:")
+print(complete_data)
+
+# Concatenating datasets (stacking vertically)
+additional_patients = pd.DataFrame({
+    'PatientID': ['P006', 'P007'],
+    'Age': [29, 58],
+    'Gender': ['M', 'F'],
+    'BMI': [23.7, 28.9],
+    'Smoker': [False, True],
+    'Family_History': ['None', 'Diabetes']
+})
+
+all_demographics = pd.concat([demographics, additional_patients], ignore_index=True)
+print("\nAll Demographics (After Concatenation):")
+print(all_demographics)
+
+# Complex merge with multiple keys (if we had visit dates)
+visits_demographics = pd.DataFrame({
+    'PatientID': ['P001', 'P001', 'P002', 'P002', 'P003'],
+    'VisitDate': ['2024-01-01', '2024-02-01', '2024-01-01', '2024-02-01', '2024-01-01'],
+    'Weight': [60, 61, 90, 89, 58],
+    'BloodPressure': ['120/80', '118/78', '135/85', '132/82', '140/90']
+})
+
+visits_labs = pd.DataFrame({
+    'PatientID': ['P001', 'P001', 'P002', 'P002', 'P003'],
+    'VisitDate': ['2024-01-01', '2024-02-01', '2024-01-01', '2024-02-01', '2024-01-01'],
+    'Cholesterol': [180, 175, 220, 215, 195],
+    'Glucose': [95, 92, 110, 108, 145]
+})
+
+visit_merged = pd.merge(visits_demographics, visits_labs, on=['PatientID', 'VisitDate'])
+print("\nVisit-based Merge (Multiple Keys):")
+print(visit_merged)
+</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output7_7_1" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+                <!-- Example 7.7.2: Advanced Data Analysis Techniques -->
+                <div class="function-title">7.7.2 Advanced Data Analysis Techniques</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">Sophisticated Healthcare Analytics</h4>
+                    <p class="mb-3">Apply advanced Pandas techniques for complex healthcare analysis including risk stratification, cohort analysis, and predictive feature engineering.</p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor7_7_2" class="code-editor">
+import pandas as pd
+import numpy as np
+
+# Create comprehensive healthcare dataset
+np.random.seed(42)
+n_patients = 1000
+
+health_data = pd.DataFrame({
+    'PatientID': [f'P{str(i).zfill(4)}' for i in range(1, n_patients + 1)],
+    'Age': np.random.randint(18, 90, n_patients),
+    'Gender': np.random.choice(['M', 'F'], n_patients, p=[0.48, 0.52]),
+    'BMI': np.random.normal(26, 4, n_patients),
+    'SystolicBP': np.random.normal(130, 15, n_patients),
+    'DiastolicBP': np.random.normal(82, 10, n_patients),
+    'Cholesterol': np.random.normal(200, 30, n_patients),
+    'Glucose': np.random.normal(105, 20, n_patients),
+    'Smoker': np.random.choice([True, False], n_patients, p=[0.25, 0.75]),
+    'Exercise_Frequency': np.random.choice(['None', 'Light', 'Moderate', 'Heavy'], 
+                                          n_patients, p=[0.3, 0.4, 0.2, 0.1])
+})
+
+# Ensure realistic ranges
+health_data['BMI'] = health_data['BMI'].clip(15, 45)
+health_data['SystolicBP'] = health_data['SystolicBP'].clip(80, 200)
+health_data['DiastolicBP'] = health_data['DiastolicBP'].clip(50, 120)
+health_data['Cholesterol'] = health_data['Cholesterol'].clip(100, 300)
+health_data['Glucose'] = health_data['Glucose'].clip(70, 200)
+
+print("Large Healthcare Dataset Sample:")
+print(health_data.head())
+
+print("\n--- Advanced Analysis Techniques ---")
+
+# 1. Risk Stratification
+def calculate_health_risk(row):
+    risk_score = 0
+    
+    # Age risk
+    if row['Age'] > 65:
+        risk_score += 3
+    elif row['Age'] > 50:
+        risk_score += 2
+    elif row['Age'] > 35:
+        risk_score += 1
+    
+    # BMI risk
+    if row['BMI'] > 30:
+        risk_score += 3
+    elif row['BMI'] > 25:
+        risk_score += 1
+    
+    # Blood pressure risk
+    if row['SystolicBP'] > 140 or row['DiastolicBP'] > 90:
+        risk_score += 2
+    
+    # Cholesterol risk
+    if row['Cholesterol'] > 240:
+        risk_score += 2
+    elif row['Cholesterol'] > 200:
+        risk_score += 1
+    
+    # Glucose risk
+    if row['Glucose'] > 126:
+        risk_score += 2
+    elif row['Glucose'] > 100:
+        risk_score += 1
+    
+    # Lifestyle risks
+    if row['Smoker']:
+        risk_score += 2
+    
+    if row['Exercise_Frequency'] == 'None':
+        risk_score += 1
+    
+    return risk_score
+
+health_data['Health_Risk_Score'] = health_data.apply(calculate_health_risk, axis=1)
+health_data['Risk_Category'] = pd.cut(health_data['Health_Risk_Score'], 
+                                     bins=[0, 3, 6, 10, 15], 
+                                     labels=['Low', 'Medium', 'High', 'Very High'])
+
+print("Health Risk Assessment:")
+print(health_data[['PatientID', 'Health_Risk_Score', 'Risk_Category']].head(10))
+
+risk_distribution = health_data['Risk_Category'].value_counts().sort_index()
+print(f"\nRisk Category Distribution:\n{risk_distribution}")
+
+# 2. Cohort Analysis (by age groups and gender)
+age_bins = [18, 30, 45, 60, 75, 90]
+age_labels = ['18-29', '30-44', '45-59', '60-74', '75+']
+health_data['Age_Group'] = pd.cut(health_data['Age'], bins=age_bins, labels=age_labels)
+
+cohort_analysis = health_data.groupby(['Age_Group', 'Gender']).agg({
+    'BMI': 'mean',
+    'SystolicBP': 'mean',
+    'Cholesterol': 'mean',
+    'Health_Risk_Score': 'mean',
+    'PatientID': 'count'
+}).rename(columns={'PatientID': 'Patient_Count'}).round(2)
+
+print("\nCohort Analysis (by Age Group and Gender):")
+print(cohort_analysis)
+
+# 3. Advanced Filtering with Query
+high_risk_smokers = health_data.query('Health_Risk_Score >= 8 and Smoker == True')
+print(f"\nHigh Risk Smokers (n={len(high_risk_smokers)}):")
+print(high_risk_smokers[['PatientID', 'Age', 'Gender', 'Health_Risk_Score']].head())
+
+# 4. Pivot Table for Detailed Analysis
+pivot_risk = pd.pivot_table(health_data,
+                           values=['Health_Risk_Score', 'SystolicBP', 'Cholesterol'],
+                           index='Age_Group',
+                           columns='Gender',
+                           aggfunc='mean').round(2)
+
+print("\nDetailed Pivot Table (Health Metrics by Age Group and Gender):")
+print(pivot_risk)
+
+# 5. Correlation Analysis
+numeric_columns = ['Age', 'BMI', 'SystolicBP', 'DiastolicBP', 'Cholesterol', 'Glucose', 'Health_Risk_Score']
+correlation_matrix = health_data[numeric_columns].corr()
+print("\nCorrelation Matrix:")
+print(correlation_matrix.round(3))
+
+# 6. Advanced Feature Engineering
+# Create composite health indicators
+health_data['BP_Risk'] = (health_data['SystolicBP'] > 140) | (health_data['DiastolicBP'] > 90)
+health_data['Cholesterol_Risk'] = health_data['Cholesterol'] > 200
+health_data['Glucose_Risk'] = health_data['Glucose'] > 100
+health_data['BMI_Risk'] = health_data['BMI'] > 25
+
+# Count total risk factors
+health_data['Total_Risk_Factors'] = (health_data['BP_Risk'].astype(int) + 
+                                    health_data['Cholesterol_Risk'].astype(int) + 
+                                    health_data['Glucose_Risk'].astype(int) + 
+                                    health_data['BMI_Risk'].astype(int) + 
+                                    health_data['Smoker'].astype(int))
+
+print("\nRisk Factor Analysis:")
+risk_factor_summary = health_data['Total_Risk_Factors'].value_counts().sort_index()
+print(f"Patients by Number of Risk Factors:\n{risk_factor_summary}")
+
+# 7. Performance Optimization with Categorical Data
+# Convert appropriate columns to category dtype for memory and performance
+categorical_columns = ['Gender', 'Exercise_Frequency', 'Risk_Category', 'Age_Group']
+for col in categorical_columns:
+    health_data[col] = health_data[col].astype('category')
+
+print(f"\nMemory Usage after Optimization:")
+print(health_data.info(memory_usage='deep'))
+</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output7_7_2" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+            </section>
+
+            <!-- Chapter 7.8: Health Informatics Project with Pandas -->
+            <section class="section-card" id="chapter-7-8">
+                <div class="chapter-title">Chapter 7.8: Health Informatics Project with Pandas</div>
+                
+                <div class="concept-box">
+                    <h3 class="font-bold mb-2 text-lg">Comprehensive Healthcare Data Analysis</h3>
+                    <p class="mb-3">Apply all Pandas skills learned in this module to a comprehensive health informatics project analyzing patient data, identifying risk factors, and generating clinical insights.</p>
+                </div>
+
+                <!-- Example 7.8.1: Comprehensive Patient Data Analysis -->
+                <div class="function-title">7.8.1 Comprehensive Patient Data Analysis</div>
+                
+                <div class="explanation-box">
+                    <h4 class="font-bold mb-2">End-to-End Healthcare Analytics</h4>
+                    <p class="mb-3">This project demonstrates a complete workflow from data loading and cleaning to advanced analysis and visualization preparation.</p>
+                </div>
+
+                <div class="code-container">
+                    <textarea id="editor7_8_1" class="code-editor">
+import pandas as pd
+import numpy as np
+
+class HealthDataAnalyzer:
+    def __init__(self):
+        self.patient_data = None
+        self.analysis_results = {}
+    
+    def generate_sample_data(self, n_patients=500):
+        """Generate realistic sample healthcare data"""
+        np.random.seed(42)
+        
+        data = {
+            'PatientID': [f'P{str(i).zfill(4)}' for i in range(1, n_patients + 1)],
+            'Age': np.random.randint(18, 90, n_patients),
+            'Gender': np.random.choice(['M', 'F'], n_patients, p=[0.48, 0.52]),
+            'BMI': np.random.normal(26, 4, n_patients),
+            'SystolicBP': np.random.normal(130, 15, n_patients),
+            'DiastolicBP': np.random.normal(82, 10, n_patients),
+            'HeartRate': np.random.normal(75, 10, n_patients),
+            'Cholesterol': np.random.normal(200, 30, n_patients),
+            'Glucose': np.random.normal(105, 20, n_patients),
+            'Temperature': np.random.normal(98.6, 0.5, n_patients),
+            'Smoker': np.random.choice([True, False], n_patients, p=[0.25, 0.75]),
+            'Alcohol_Consumption': np.random.choice(['None', 'Light', 'Moderate', 'Heavy'], 
+                                                  n_patients, p=[0.4, 0.3, 0.2, 0.1]),
+            'Exercise_Frequency': np.random.choice(['None', 'Light', 'Moderate', 'Heavy'], 
+                                                 n_patients, p=[0.3, 0.4, 0.2, 0.1]),
+            'Family_History': np.random.choice(['None', 'Hypertension', 'Diabetes', 'Heart Disease', 'Cancer'],
+                                             n_patients, p=[0.5, 0.2, 0.15, 0.1, 0.05])
+        }
+        
+        self.patient_data = pd.DataFrame(data)
+        
+        # Ensure realistic ranges
+        self._enforce_realistic_ranges()
+        
+        return self.patient_data
+    
+    def _enforce_realistic_ranges(self):
+        """Ensure all health metrics are within realistic ranges"""
+        ranges = {
+            'BMI': (15, 45),
+            'SystolicBP': (80, 200),
+            'DiastolicBP': (50, 120),
+            'HeartRate': (40, 180),
+            'Cholesterol': (100, 300),
+            'Glucose': (70, 200),
+            'Temperature': (95, 105)
+        }
+        
+        for col, (min_val, max_val) in ranges.items():
+            self.patient_data[col] = self.patient_data[col].clip(min_val, max_val)
+    
+    def data_quality_check(self):
+        """Perform comprehensive data quality assessment"""
+        print("=== DATA QUALITY REPORT ===")
+        
+        # Basic info
+        print(f"Dataset Shape: {self.patient_data.shape}")
+        print(f"Memory Usage: {self.patient_data.memory_usage(deep=True).sum() / 1024**2:.2f} MB")
+        
+        # Missing values
+        missing_data = self.patient_data.isnull().sum()
+        if missing_data.sum() > 0:
+            print(f"\nMissing Values:\n{missing_data[missing_data > 0]}")
+        else:
+            print("\nNo missing values found.")
+        
+        # Data types
+        print(f"\nData Types:\n{self.patient_data.dtypes}")
+        
+        # Basic statistics
+        print(f"\nDescriptive Statistics:")
+        print(self.patient_data.describe())
+    
+    def risk_assessment(self):
+        """Comprehensive health risk assessment"""
+        print("\n=== HEALTH RISK ASSESSMENT ===")
+        
+        # Define risk factors
+        self.patient_data['Hypertension_Risk'] = (self.patient_data['SystolicBP'] > 140) | (self.patient_data['DiastolicBP'] > 90)
+        self.patient_data['Obesity_Risk'] = self.patient_data['BMI'] > 30
+        self.patient_data['High_Cholesterol'] = self.patient_data['Cholesterol'] > 240
+        self.patient_data['Diabetes_Risk'] = self.patient_data['Glucose'] > 126
+        self.patient_data['Tachycardia_Risk'] = self.patient_data['HeartRate'] > 100
+        
+        # Calculate composite risk score
+        risk_factors = ['Hypertension_Risk', 'Obesity_Risk', 'High_Cholesterol', 'Diabetes_Risk', 'Tachycardia_Risk', 'Smoker']
+        self.patient_data['Total_Risk_Factors'] = self.patient_data[risk_factors].sum(axis=1)
+        
+        # Categorize risk levels
+        risk_categories = {
+            0: 'Very Low',
+            1: 'Low',
+            2: 'Moderate',
+            3: 'High',
+            4: 'Very High',
+            5: 'Critical',
+            6: 'Critical'
+        }
+        self.patient_data['Risk_Level'] = self.patient_data['Total_Risk_Factors'].map(risk_categories)
+        
+        # Risk distribution
+        risk_dist = self.patient_data['Risk_Level'].value_counts().sort_index()
+        print("Risk Level Distribution:")
+        for level, count in risk_dist.items():
+            percentage = (count / len(self.patient_data)) * 100
+            print(f"  {level}: {count} patients ({percentage:.1f}%)")
+        
+        return risk_dist
+    
+    def demographic_analysis(self):
+        """Analyze health metrics by demographic groups"""
+        print("\n=== DEMOGRAPHIC ANALYSIS ===")
+        
+        # Age groups
+        age_bins = [18, 30, 45, 60, 75, 90]
+        age_labels = ['18-29', '30-44', '45-59', '60-74', '75+']
+        self.patient_data['Age_Group'] = pd.cut(self.patient_data['Age'], bins=age_bins, labels=age_labels)
+        
+        # Analysis by age group and gender
+        demographic_analysis = self.patient_data.groupby(['Age_Group', 'Gender']).agg({
+            'BMI': 'mean',
+            'SystolicBP': 'mean',
+            'Cholesterol': 'mean',
+            'Glucose': 'mean',
+            'Total_Risk_Factors': 'mean',
+            'PatientID': 'count'
+        }).rename(columns={'PatientID': 'Patient_Count'}).round(2)
+        
+        print("Health Metrics by Age Group and Gender:")
+        print(demographic_analysis)
+        
+        return demographic_analysis
+    
+    def lifestyle_impact_analysis(self):
+        """Analyze impact of lifestyle factors on health"""
+        print("\n=== LIFESTYLE IMPACT ANALYSIS ===")
+        
+        # Exercise impact
+        exercise_impact = self.patient_data.groupby('Exercise_Frequency').agg({
+            'BMI': 'mean',
+            'SystolicBP': 'mean',
+            'Total_Risk_Factors': 'mean',
+            'PatientID': 'count'
+        }).rename(columns={'PatientID': 'Patient_Count'}).round(2)
+        
+        print("Impact of Exercise Frequency:")
+        print(exercise_impact)
+        
+        # Smoking impact
+        smoking_impact = self.patient_data.groupby('Smoker').agg({
+            'SystolicBP': 'mean',
+            'Cholesterol': 'mean',
+            'Total_Risk_Factors': 'mean',
+            'PatientID': 'count'
+        }).rename(columns={'PatientID': 'Patient_Count'}).round(2)
+        
+        print("\nImpact of Smoking:")
+        print(smoking_impact)
+        
+        return exercise_impact, smoking_impact
+    
+    def generate_clinical_insights(self):
+        """Generate actionable clinical insights"""
+        print("\n=== CLINICAL INSIGHTS ===")
+        
+        insights = []
+        
+        # High-risk patient identification
+        high_risk_patients = self.patient_data[self.patient_data['Risk_Level'].isin(['High', 'Very High', 'Critical'])]
+        insights.append(f"• {len(high_risk_patients)} patients identified as high-risk requiring immediate attention")
+        
+        # Age-specific insights
+        elderly_high_bp = self.patient_data[(self.patient_data['Age'] > 65) & (self.patient_data['SystolicBP'] > 140)]
+        insights.append(f"• {len(elderly_high_bp)} elderly patients with uncontrolled hypertension")
+        
+        # Lifestyle interventions
+        sedentary_high_risk = self.patient_data[
+            (self.patient_data['Exercise_Frequency'] == 'None') & 
+            (self.patient_data['Total_Risk_Factors'] >= 3)
+        ]
+        insights.append(f"• {len(sedentary_high_risk)} high-risk patients identified for exercise interventions")
+        
+        # Preventive care opportunities
+        young_pre_hypertensive = self.patient_data[
+            (self.patient_data['Age'] < 45) & 
+            (self.patient_data['SystolicBP'].between(120, 140))
+        ]
+        insights.append(f"• {len(young_pre_hypertensive)} young patients with pre-hypertension for preventive care")
+        
+        for insight in insights:
+            print(insight)
+        
+        return insights
+    
+    def export_analysis_results(self, filename='health_analysis_report.csv'):
+        """Export analysis results for further processing"""
+        # Create summary dataset
+        summary_data = self.patient_data[[
+            'PatientID', 'Age', 'Gender', 'BMI', 'SystolicBP', 'DiastolicBP',
+            'Cholesterol', 'Glucose', 'Total_Risk_Factors', 'Risk_Level'
+        ]].copy()
+        
+        # Add additional calculated fields
+        summary_data['Needs_Followup'] = summary_data['Risk_Level'].isin(['High', 'Very High', 'Critical'])
+        
+        # For demonstration, we'll just return the summary
+        print(f"\nAnalysis results prepared for {len(summary_data)} patients")
+        return summary_data
+
+# Run the comprehensive analysis
+analyzer = HealthDataAnalyzer()
+
+print("Generating sample healthcare data...")
+patient_data = analyzer.generate_sample_data(300)
+print(f"Generated data for {len(patient_data)} patients")
+
+print("\nSample of generated data:")
+print(patient_data.head())
+
+# Perform comprehensive analysis
+analyzer.data_quality_check()
+risk_distribution = analyzer.risk_assessment()
+demographic_analysis = analyzer.demographic_analysis()
+exercise_impact, smoking_impact = analyzer.lifestyle_impact_analysis()
+clinical_insights = analyzer.generate_clinical_insights()
+analysis_results = analyzer.export_analysis_results()
+
+print("\n=== ANALYSIS COMPLETE ===")
+print("The comprehensive health data analysis has been completed successfully!")
+print("Key findings have been generated and are ready for clinical review.")
+</textarea>
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button btn-primary mt-2">Run Code</button>
+                    <div id="output7_8_1" class="output-area">Click 'Run Code' to see output...</div>
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<script>
+// Reuse the same JavaScript from your NumPy tutorial
+let pyodide;
+let isPyodideReady = false;
+let currentTheme = 'dark';
+
+function addToOutput(outputId, text) {
+    const outputElement = document.getElementById(outputId);
+    if (outputElement) {
+        outputElement.textContent += text;
+    }
+}
+
+function updateProgress(percentage) {
+    const progressFill = document.getElementById('progress-fill');
+    if (progressFill) {
+        progressFill.style.width = `${percentage}%`;
+    }
+}
+
+function toggleTheme() {
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    currentTheme = newTheme;
+    
+    const themeIcon = document.getElementById('theme-icon');
+    themeIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+    
+    // Update CodeMirror theme
+    document.querySelectorAll('.CodeMirror').forEach(cm => {
+        cm.CodeMirror.setOption('theme', newTheme === 'dark' ? 'monokai' : 'eclipse');
+    });
+    
+    // Save preference
+    localStorage.setItem('theme', newTheme);
+}
+
+function generateTableOfContents() {
+    const tocList = document.getElementById('toc-list');
+    const chapters = document.querySelectorAll('.section-card');
+    
+    chapters.forEach(chapter => {
+        const chapterId = chapter.id;
+        const chapterTitle = chapter.querySelector('.chapter-title').textContent;
+        
+        const tocItem = document.createElement('div');
+        tocItem.className = 'toc-item';
+        tocItem.textContent = chapterTitle;
+        tocItem.addEventListener('click', () => {
+            chapter.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        tocList.appendChild(tocItem);
+    });
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        // Show success message
+        const successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.textContent = 'Code copied to clipboard!';
+        
+        // Remove any existing success message
+        const existingMessage = document.querySelector('.success-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        // Add the new message
+        document.querySelector('.code-container').appendChild(successMessage);
+        
+        // Remove after 2 seconds
+        setTimeout(() => {
+            successMessage.remove();
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
+
+async function initializePyodide() {
+    try {
+        const statusElement = document.getElementById('status-indicator');
+        statusElement.textContent = "🔄 Loading Pyodide runtime...";
+        updateProgress(20);
+        
+        pyodide = await loadPyodide({
+            indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/"
+        });
+        
+        statusElement.textContent = "📦 Loading NumPy and Pandas packages...";
+        updateProgress(60);
+        await pyodide.loadPackage(["numpy", "pandas", "scikit-learn"]);
+        
+        await pyodide.runPythonAsync(`
+import sys
+import js
+
+class OutputCapture:
+    def __init__(self, output_id):
+        self.output_id = output_id
+    def write(self, text):
+        js.addToOutput(self.output_id, text)
+    def flush(self):
+        pass
+original_stdout = sys.stdout
+`);
+
+        statusElement.className = "status-indicator status-ready";
+        statusElement.textContent = "✅ Pyodide, NumPy, and Pandas loaded successfully! You can now run the examples.";
+        updateProgress(100);
+        isPyodideReady = true;
+        
+    } catch (error) {
+        console.error("Error:", error);
+        const statusElement = document.getElementById('status-indicator');
+        statusElement.className = "status-indicator status-error";
+        statusElement.textContent = "❌ Error loading Pyodide: " + error.message;
+    }
+}
+
+async function runPythonCode(code, outputElement) {
+    if (!isPyodideReady) {
+        outputElement.textContent = "Pyodide not loaded yet. Please wait...";
+        return;
+    }
+
+    try {
+        outputElement.textContent = "Running...";
+        const outputId = outputElement.id;
+        
+        await pyodide.runPythonAsync(`
+import sys
+output_capture = OutputCapture("${outputId}")
+sys.stdout = output_capture
+`);
+
+        await pyodide.runPythonAsync(code);
+        
+        await pyodide.runPythonAsync(`sys.stdout = original_stdout`);
+        
+    } catch (error) {
+        outputElement.textContent = "Error: " + error.message;
+    }
+}
+
+window.addToOutput = addToOutput;
+
+document.addEventListener('DOMContentLoaded', async () => {
+    // Set initial theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    currentTheme = savedTheme;
+    
+    const themeIcon = document.getElementById('theme-icon');
+    themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+    
+    // Generate table of contents
+    generateTableOfContents();
+    
+    // Initialize Pyodide
+    await initializePyodide();
+
+    // Set up code editors and event listeners
+    document.querySelectorAll('.code-container').forEach(container => {
+        const codeTextArea = container.querySelector('.code-editor');
+        const runButton = container.querySelector('.run-button');
+        const copyButton = container.querySelector('.copy-button');
+        const outputArea = container.querySelector('.output-area');
+
+        const codeEditor = CodeMirror.fromTextArea(codeTextArea, {
+            lineNumbers: true,
+            mode: 'python',
+            theme: currentTheme === 'dark' ? 'monokai' : 'eclipse',
+            value: codeTextArea.value
+        });
+
+        runButton.addEventListener('click', async () => {
+            const code = codeEditor.getValue();
+            await runPythonCode(code, outputArea);
+        });
+        
+        copyButton.addEventListener('click', () => {
+            const code = codeEditor.getValue();
+            copyToClipboard(code);
+        });
+    });
+    
+    // Set up theme toggle
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+});
+</script>
+</body>
+</html>
