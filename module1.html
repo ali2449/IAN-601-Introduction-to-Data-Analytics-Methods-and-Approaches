@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="IAN 601 Module 1: interactive Python fundamentals in small executable code cells with business context."><title>Module 1: Python Fundamentals &amp; Business Context | IAN 601</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%8D%3C/text%3E%3C/svg%3E"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script><style>
+<!DOCTYPE html>
+<html data-theme="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="IAN 601 Module 1: Python fundamentals taught in small VS Code-style executable cells with business context, visuals, tables, and practice." name="description"/><title>Module 1: Python Fundamentals &amp; Business Context | IAN 601</title><link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%8D%3C/text%3E%3C/svg%3E" rel="icon"/><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Source+Code+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/><script src="https://cdn.jsdelivr.net/pyodide/v314.0.4/full/pyodide.js"></script><script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs/loader.js"></script><style>
     :root {
       --bg-color: #0f172a;
       --text-color: #e2e8f0;
@@ -789,51 +790,227 @@
     .visually-hidden { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
     @media(max-width:1050px){ .module-shell{grid-template-columns:1fr}.toc-panel{position:relative;top:auto}.toc-list{grid-template-columns:repeat(2,minmax(0,1fr))}.module-hero .hero-inner{grid-template-columns:1fr} }
     @media(max-width:760px){ .concept-grid,.exercise-grid,.explain-grid{grid-template-columns:1fr}.flow-visual{grid-template-columns:1fr}.flow-step:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-.75rem;transform:translateX(-50%)}.toc-list{grid-template-columns:1fr}.bar-row{grid-template-columns:72px 1fr 58px}.module-nav{flex-direction:column}.module-nav a:last-child{text-align:left} }
-</style></head><body><nav class="nav-container" aria-label="Primary navigation">
-  <div class="container"><div class="nav-menu">
-    <a href="index.html" class="nav-logo" aria-label="IAN 601 home"><span class="brand-mark" aria-hidden="true"><i class="fa-brands fa-python"></i></span><span>IAN 601 · Data Analytics</span></a>
-    <button class="mobile-menu-btn" id="mobile-menu-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation menu"><i class="fa-solid fa-bars"></i></button>
-    <ul class="nav-links-list" id="nav-links">
-      <li><a class="nav-link" href="index.html#overview"><i class="fa-solid fa-circle-info"></i> Overview</a></li>
-      <li><a class="nav-link" href="index.html#setup"><i class="fa-solid fa-laptop-code"></i> Setup</a></li>
-      <li class="dropdown" id="modules-dropdown"><a class="nav-link active" href="index.html#modules" id="modules-toggle" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-layer-group"></i> Modules <i class="fa-solid fa-chevron-down fa-xs"></i></a>
-        <div class="dropdown-content" aria-label="Course modules">
-          <a class="dropdown-link active" href="module1.html"><span class="module-number">1</span><span><strong>Python Fundamentals</strong><br><small>Business context &amp; core syntax</small></span></a>
-          <a class="dropdown-link" href="module2.html"><span class="module-number">2</span><span><strong>Control Flow</strong><br><small>Decisions &amp; repetition</small></span></a>
-          <a class="dropdown-link" href="module3.html"><span class="module-number">3</span><span><strong>Functions</strong><br><small>Reusable analytical code</small></span></a>
-          <a class="dropdown-link" href="module4.html"><span class="module-number">4</span><span><strong>Lists &amp; Tuples</strong><br><small>Sequential data organization</small></span></a>
-          <a class="dropdown-link" href="module5.html"><span class="module-number">5</span><span><strong>Dictionaries &amp; Sets</strong><br><small>Relationships &amp; uniqueness</small></span></a>
-          <a class="dropdown-link" href="module6.html"><span class="module-number">6</span><span><strong>Modules, Packages &amp; OOP</strong><br><small>Organizing larger programs</small></span></a>
-          <a class="dropdown-link" href="module7.html"><span class="module-number">7</span><span><strong>Advanced Python</strong><br><small>Comprehensions, lambdas &amp; generators</small></span></a>
-          <a class="dropdown-link" href="module8.html"><span class="module-number">8</span><span><strong>Professional Practices</strong><br><small>Errors, regex, Git &amp; testing</small></span></a>
-          <a class="dropdown-link" href="module9.html"><span class="module-number">9</span><span><strong>NumPy</strong><br><small>Numerical computing</small></span></a>
-          <a class="dropdown-link" href="module10.html"><span class="module-number">10</span><span><strong>Pandas</strong><br><small>Tabular data manipulation</small></span></a>
-          <a class="dropdown-link" href="module11.html"><span class="module-number">11</span><span><strong>Advanced Pandas</strong><br><small>Grouping, merging &amp; time series</small></span></a>
-          <a class="dropdown-link" href="module12.html"><span class="module-number">12</span><span><strong>Cleaning &amp; EDA</strong><br><small>Quality, validation &amp; exploration</small></span></a>
-          <a class="dropdown-link" href="module13.html"><span class="module-number">13</span><span><strong>Statistics &amp; Visualization</strong><br><small>Inference &amp; communication</small></span></a>
-          <a class="dropdown-link" href="module14.html"><span class="module-number">14</span><span><strong>Machine Learning &amp; External Data</strong><br><small>Prediction, APIs &amp; web data</small></span></a>
-        </div></li>
-      <li><a class="nav-link" href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
-      <li><button class="theme-toggle-btn" id="theme-toggle" type="button" aria-label="Switch color theme"></button></li>
-    </ul>
-  </div></div>
+
+
+    /* VS Code-style learning cells */
+    .editor-guide {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: .9rem;
+      align-items: start;
+      margin: 1rem 0 1.2rem;
+      padding: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      background: var(--section-alt-bg);
+    }
+    .editor-guide-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #007acc, #2563eb);
+      color: #fff;
+      font-size: 1.2rem;
+    }
+    .editor-guide h3 { margin: 0 0 .25rem; font-size: 1rem; }
+    .editor-guide p { margin: 0; color: var(--muted-color); font-size: .9rem; }
+    kbd {
+      font-family: "Source Code Pro", monospace;
+      border: 1px solid var(--border-color);
+      border-bottom-width: 2px;
+      border-radius: 5px;
+      padding: .05rem .32rem;
+      background: var(--section-bg);
+      color: var(--text-color);
+      font-size: .78em;
+    }
+
+    .python-cell {
+      border-radius: 15px;
+      background: var(--section-alt-bg);
+    }
+    .python-cell.complete { border-color: rgba(52,211,153,.65); }
+    .vscode-shell {
+      margin: 0;
+      overflow: hidden;
+      border-top: 1px solid #303031;
+      border-bottom: 1px solid #303031;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.015);
+    }
+    [data-theme="light"] .vscode-shell {
+      background: #ffffff;
+      color: #1f1f1f;
+      border-color: #d7d7d7;
+    }
+    .vscode-topbar {
+      height: 36px;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      background: #181818;
+      border-bottom: 1px solid #2b2b2b;
+      user-select: none;
+    }
+    [data-theme="light"] .vscode-topbar { background: #f3f3f3; border-bottom-color: #d8d8d8; }
+    .vscode-tab {
+      min-width: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: 0 .78rem;
+      border-right: 1px solid #2b2b2b;
+      color: #b7b7b7;
+      font: 500 .77rem "Inter", sans-serif;
+    }
+    .vscode-tab.active { background: #1e1e1e; color: #f1f1f1; border-top: 1px solid #007acc; }
+    [data-theme="light"] .vscode-tab { border-right-color: #d8d8d8; color: #555; }
+    [data-theme="light"] .vscode-tab.active { background: #fff; color: #222; }
+    .vscode-tab .fa-python { color: #4aa5f0; }
+    .vscode-dirty { color: #858585; font-size: .55rem; opacity: 0; transition: opacity .15s; }
+    .python-cell.edited .vscode-dirty { opacity: 1; }
+    .vscode-window-dots { display:flex; gap:.38rem; align-items:center; padding:0 .72rem; opacity:.6; }
+    .vscode-window-dots span { width:7px; height:7px; border-radius:50%; background:#777; }
+
+    .python-editor {
+      display: block;
+      width: 100%;
+      min-height: 118px;
+      resize: vertical;
+      border: 0;
+      outline: 0;
+      padding: .8rem 1rem .8rem 3.25rem;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      font-family: "Source Code Pro", Consolas, monospace;
+      font-size: .88rem;
+      line-height: 1.55;
+      tab-size: 4;
+      caret-color: #fff;
+    }
+    [data-theme="light"] .python-editor { background:#fff; color:#1f1f1f; caret-color:#111; }
+    .python-cell.monaco-ready .python-editor { display: none; }
+    .monaco-host { display: none; width:100%; }
+    .python-cell.monaco-ready .monaco-host { display: block; }
+
+    .vscode-statusbar {
+      min-height: 23px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:.65rem;
+      padding: 0 .62rem;
+      background:#007acc;
+      color:#fff;
+      font:500 .68rem "Inter",sans-serif;
+      user-select:none;
+    }
+    [data-theme="light"] .vscode-statusbar { background:#007acc; color:#fff; }
+    .vscode-status-left, .vscode-status-right { display:inline-flex; align-items:center; gap:.65rem; }
+    .vscode-status-right { margin-left:auto; }
+
+    .cell-actions {
+      border-top: 0;
+      padding: .72rem 1rem;
+      background: var(--section-alt-bg);
+    }
+    .cell-btn.run {
+      background: #0e639c;
+      border-color: #1177bb;
+      color: #fff;
+    }
+    .cell-btn.run:hover { background:#1177bb; color:#fff; }
+    .cell-btn.running { opacity:.7; pointer-events:none; }
+    .cell-output {
+      position: relative;
+      min-height: 78px;
+      padding: 2.05rem 1rem .85rem;
+      border-top: 1px solid #303031;
+      background: #0c0c0c;
+      color: #d4d4d4;
+      font-family: "Source Code Pro", Consolas, monospace;
+      font-size: .82rem;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      overflow:auto;
+    }
+    .cell-output::before {
+      content: "TERMINAL";
+      position:absolute;
+      left:1rem;
+      top:.48rem;
+      padding-bottom:.22rem;
+      border-bottom:1px solid #d4d4d4;
+      color:#d4d4d4;
+      font:600 .66rem "Inter",sans-serif;
+      letter-spacing:.06em;
+    }
+    [data-theme="light"] .cell-output { background:#f7f7f7; color:#1f1f1f; border-top-color:#d7d7d7; }
+    [data-theme="light"] .cell-output::before { color:#1f1f1f; border-bottom-color:#1f1f1f; }
+    .cell-output.success { border-top-color: rgba(52,211,153,.7); }
+    .cell-output.error { color:#fca5a5; border-top-color:rgba(248,113,113,.75); }
+    [data-theme="light"] .cell-output.error { color:#b91c1c; }
+
+    .chart-card { overflow:hidden; }
+    .bar-fill { transition: width .45s ease; }
+    .bar-value { transition: color .25s ease; }
+
+    @media (max-width: 640px) {
+      .vscode-status-right span:nth-child(2), .vscode-status-right span:nth-child(3) { display:none; }
+      .vscode-window-dots { display:none; }
+      .vscode-tab { max-width: 100%; }
+      .vscode-tab span:nth-child(2) { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+      .editor-guide { grid-template-columns:1fr; }
+    }
+</style></head><body><nav aria-label="Primary navigation" class="nav-container">
+<div class="container"><div class="nav-menu">
+<a aria-label="IAN 601 home" class="nav-logo" href="index.html"><span aria-hidden="true" class="brand-mark"><i class="fa-brands fa-python"></i></span><span>IAN 601 · Data Analytics</span></a>
+<button aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation menu" class="mobile-menu-btn" id="mobile-menu-toggle" type="button"><i class="fa-solid fa-bars"></i></button>
+<ul class="nav-links-list" id="nav-links">
+<li><a class="nav-link" href="index.html#overview"><i class="fa-solid fa-circle-info"></i> Overview</a></li>
+<li><a class="nav-link" href="index.html#setup"><i class="fa-solid fa-laptop-code"></i> Setup</a></li>
+<li class="dropdown" id="modules-dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link active" href="index.html#modules" id="modules-toggle"><i class="fa-solid fa-layer-group"></i> Modules <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+<div aria-label="Course modules" class="dropdown-content">
+<a class="dropdown-link active" href="module1.html"><span class="module-number">1</span><span><strong>Python Fundamentals</strong><br/><small>Business context &amp; core syntax</small></span></a>
+<a class="dropdown-link" href="module2.html"><span class="module-number">2</span><span><strong>Control Flow</strong><br/><small>Decisions &amp; repetition</small></span></a>
+<a class="dropdown-link" href="module3.html"><span class="module-number">3</span><span><strong>Functions</strong><br/><small>Reusable analytical code</small></span></a>
+<a class="dropdown-link" href="module4.html"><span class="module-number">4</span><span><strong>Lists &amp; Tuples</strong><br/><small>Sequential data organization</small></span></a>
+<a class="dropdown-link" href="module5.html"><span class="module-number">5</span><span><strong>Dictionaries &amp; Sets</strong><br/><small>Relationships &amp; uniqueness</small></span></a>
+<a class="dropdown-link" href="module6.html"><span class="module-number">6</span><span><strong>Modules, Packages &amp; OOP</strong><br/><small>Organizing larger programs</small></span></a>
+<a class="dropdown-link" href="module7.html"><span class="module-number">7</span><span><strong>Advanced Python</strong><br/><small>Comprehensions, lambdas &amp; generators</small></span></a>
+<a class="dropdown-link" href="module8.html"><span class="module-number">8</span><span><strong>Professional Practices</strong><br/><small>Errors, regex, Git &amp; testing</small></span></a>
+<a class="dropdown-link" href="module9.html"><span class="module-number">9</span><span><strong>NumPy</strong><br/><small>Numerical computing</small></span></a>
+<a class="dropdown-link" href="module10.html"><span class="module-number">10</span><span><strong>Pandas</strong><br/><small>Tabular data manipulation</small></span></a>
+<a class="dropdown-link" href="module11.html"><span class="module-number">11</span><span><strong>Advanced Pandas</strong><br/><small>Grouping, merging &amp; time series</small></span></a>
+<a class="dropdown-link" href="module12.html"><span class="module-number">12</span><span><strong>Cleaning &amp; EDA</strong><br/><small>Quality, validation &amp; exploration</small></span></a>
+<a class="dropdown-link" href="module13.html"><span class="module-number">13</span><span><strong>Statistics &amp; Visualization</strong><br/><small>Inference &amp; communication</small></span></a>
+<a class="dropdown-link" href="module14.html"><span class="module-number">14</span><span><strong>Machine Learning &amp; External Data</strong><br/><small>Prediction, APIs &amp; web data</small></span></a>
+</div></li>
+<li><a class="nav-link" href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+<li><button aria-label="Switch color theme" class="theme-toggle-btn" id="theme-toggle" type="button"></button></li>
+</ul>
+</div></div>
 </nav><header class="hero-section module-hero">
-  <div class="container hero-inner">
-    <div>
-      <span class="course-badge"><i class="fa-brands fa-python"></i> Module 1 · Python Foundations</span>
-      <h1>Python Fundamentals<br>&amp; Business Context</h1>
-      <p class="hero-subtitle">Learn Python in <strong>small, executable chunks</strong>. Each example focuses on one idea, explains why it matters, and gives you something simple to change and rerun.</p>
-      <div class="hero-actions"><a class="btn-course primary" href="#variables"><i class="fa-solid fa-play"></i> Start Learning</a><a class="btn-course" href="#practice"><i class="fa-solid fa-dumbbell"></i> Practice</a><a class="btn-course" href="index.html#modules"><i class="fa-solid fa-layer-group"></i> Course Modules</a></div>
-      <div class="runtime-strip"><div class="runtime-status" id="runtime-state"><span class="runtime-dot"></span><span id="runtime-text">Python loads when you run the first cell.</span></div><button class="btn-course" id="restart-python" type="button"><i class="fa-solid fa-rotate"></i> Restart Python</button></div>
-    </div>
-    <aside class="hero-panel" aria-label="Module learning path"><h2><i class="fa-solid fa-route me-2"></i>Module 1 Learning Path</h2>
-      <div class="path-row"><span class="path-icon"><i class="fa-solid fa-tag"></i></span><div><strong>Represent data</strong><br><small>Variables and fundamental data types.</small></div></div>
-      <div class="path-row"><span class="path-icon"><i class="fa-solid fa-calculator"></i></span><div><strong>Transform values</strong><br><small>Arithmetic, conversion, and derived metrics.</small></div></div>
-      <div class="path-row"><span class="path-icon"><i class="fa-solid fa-message"></i></span><div><strong>Communicate results</strong><br><small>Print statements and professional formatting.</small></div></div>
-      <div class="path-row"><span class="path-icon"><i class="fa-solid fa-briefcase"></i></span><div><strong>Apply the basics</strong><br><small>Healthcare and sales examples.</small></div></div>
-    </aside>
-  </div>
-</header><main id="main-content"><section class="section-wrap"><div class="container module-shell"><aside class="toc-panel" aria-label="Module contents"><h2>Module Contents</h2><ul class="toc-list">
+<div class="container hero-inner">
+<div>
+<span class="course-badge"><i class="fa-brands fa-python"></i> Module 1 · Python Foundations</span>
+<h1>Python Fundamentals<br/>&amp; Business Context</h1>
+<p class="hero-subtitle">Learn Python in <strong>small, executable chunks</strong> using a VS Code-style editor. Read one idea, predict the output, run real Python, then change the code and try again.</p>
+<div class="hero-actions"><a class="btn-course primary" href="#variables"><i class="fa-solid fa-play"></i> Start Learning</a><a class="btn-course" href="#practice"><i class="fa-solid fa-dumbbell"></i> Practice</a><a class="btn-course" href="index.html#modules"><i class="fa-solid fa-layer-group"></i> Course Modules</a></div>
+<div class="runtime-strip"><div class="runtime-status" id="runtime-state"><span class="runtime-dot"></span><span id="runtime-text">Python loads when you run the first cell. VS Code-style editors load automatically.</span></div><button class="btn-course" id="restart-python" type="button"><i class="fa-solid fa-rotate"></i> Restart Python</button></div>
+</div>
+<aside aria-label="Module learning path" class="hero-panel"><h2><i class="fa-solid fa-route me-2"></i>Module 1 Learning Path</h2>
+<div class="path-row"><span class="path-icon"><i class="fa-solid fa-tag"></i></span><div><strong>Represent data</strong><br/><small>Variables and fundamental data types.</small></div></div>
+<div class="path-row"><span class="path-icon"><i class="fa-solid fa-calculator"></i></span><div><strong>Transform values</strong><br/><small>Arithmetic, conversion, and derived metrics.</small></div></div>
+<div class="path-row"><span class="path-icon"><i class="fa-solid fa-message"></i></span><div><strong>Communicate results</strong><br/><small>Print statements and professional formatting.</small></div></div>
+<div class="path-row"><span class="path-icon"><i class="fa-solid fa-briefcase"></i></span><div><strong>Apply the basics</strong><br/><small>Healthcare and sales examples.</small></div></div>
+</aside>
+</div>
+</header><main id="main-content"><section class="section-wrap"><div class="container module-shell"><aside aria-label="Module contents" class="toc-panel"><h2>Module Contents</h2><ul class="toc-list">
 <li><a href="#start-here"><span class="toc-num">01</span><span>Start Here</span></a></li>
 <li><a href="#variables"><span class="toc-num">02</span><span>Variables</span></a></li>
 <li><a href="#data-types"><span class="toc-num">03</span><span>Data Types</span></a></li>
@@ -845,80 +1022,105 @@
 <li><a href="#capstone"><span class="toc-num">09</span><span>Capstone</span></a></li>
 <li><a href="#summary"><span class="toc-num">10</span><span>Summary</span></a></li>
 </ul></aside><div class="module-main">
-<section id="start-here" class="module-section surface-card">
-  <span class="eyebrow"><i class="fa-solid fa-circle-play"></i> Start Here</span><h2>Learn one Python idea at a time</h2>
-  <p class="lead-copy">This module assumes no prior programming experience. Instead of large code examples, the material is broken into short executable cells that you can read, predict, run, modify, and run again.</p>
-  <div class="concept-grid">
-    <div class="mini-card"><span class="mini-icon"><i class="fa-solid fa-bullseye"></i></span><h3>Learning objectives</h3><ul><li>Store and update values with variables.</li><li>Recognize <code>int</code>, <code>float</code>, <code>str</code>, and <code>bool</code>.</li><li>Perform arithmetic and create derived metrics.</li><li>Format output with <code>print()</code> and f-strings.</li><li>Convert text input into useful numeric values.</li><li>Apply fundamentals to business and healthcare scenarios.</li></ul></div>
-    <div class="mini-card"><span class="mini-icon"><i class="fa-solid fa-list-check"></i></span><h3>Prerequisites</h3><ul><li>Basic computer use.</li><li>A modern browser with internet access for the embedded Python runtime.</li><li>No prior Python experience required.</li><li>Jupyter/Anaconda remains the primary course workspace for larger assignments.</li></ul></div>
-  </div>
-  <div class="callout gold"><h3>Business context</h3><p>Python is useful because it gives analysts a repeatable way to represent data, transform it into metrics, and communicate results. The same fundamentals support profit calculations, patient summaries, scientific measurements, and many other informatics workflows.</p></div>
-  <div class="flow-visual"><div class="flow-step"><strong>1 · Read</strong><small>Understand the idea.</small></div><div class="flow-step"><strong>2 · Predict</strong><small>Guess the output.</small></div><div class="flow-step"><strong>3 · Run</strong><small>Execute real Python.</small></div><div class="flow-step"><strong>4 · Modify</strong><small>Change one thing.</small></div></div>
+<section class="module-section surface-card" id="start-here">
+<span class="eyebrow"><i class="fa-solid fa-circle-play"></i> Start Here</span><h2>Learn one Python idea at a time</h2>
+<p class="lead-copy">This module assumes no prior programming experience. Instead of large code examples, the material is broken into short executable cells that you can read, predict, run, modify, and run again.</p><div aria-label="Code editor guide" class="editor-guide">
+<div class="editor-guide-icon"><i class="fa-solid fa-code"></i></div>
+<div>
+<h3>How the code cells work</h3>
+<p>Each cell looks like a small VS Code file: syntax highlighting, line numbers, bracket matching, indentation, and a terminal-style output area. Use <strong>Run</strong>, <strong>Reset</strong>, or <strong>Copy</strong>. Press <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Enter</kbd> to run the active cell.</p>
+</div>
+</div>
+<div class="concept-grid">
+<div class="mini-card"><span class="mini-icon"><i class="fa-solid fa-bullseye"></i></span><h3>Learning objectives</h3><ul><li>Store and update values with variables.</li><li>Recognize <code>int</code>, <code>float</code>, <code>str</code>, and <code>bool</code>.</li><li>Perform arithmetic and create derived metrics.</li><li>Format output with <code>print()</code> and f-strings.</li><li>Convert text input into useful numeric values.</li><li>Apply fundamentals to business and healthcare scenarios.</li></ul></div>
+<div class="mini-card"><span class="mini-icon"><i class="fa-solid fa-list-check"></i></span><h3>Prerequisites</h3><ul><li>Basic computer use.</li><li>A modern browser with internet access for the embedded Python runtime.</li><li>No prior Python experience required.</li><li>Jupyter/Anaconda remains the primary course workspace for larger assignments.</li></ul></div>
+</div>
+<div class="callout gold"><h3>Business context</h3><p>Python is useful because it gives analysts a repeatable way to represent data, transform it into metrics, and communicate results. The same fundamentals support profit calculations, patient summaries, scientific measurements, and many other informatics workflows.</p></div>
+<div class="flow-visual"><div class="flow-step"><strong>1 · Read</strong><small>Understand the idea.</small></div><div class="flow-step"><strong>2 · Predict</strong><small>Guess the output.</small></div><div class="flow-step"><strong>3 · Run</strong><small>Execute real Python.</small></div><div class="flow-step"><strong>4 · Modify</strong><small>Change one thing.</small></div></div>
 </section>
-
-<section id="variables" class="module-section surface-card"><span class="eyebrow"><i class="fa-solid fa-box"></i> Section 1</span><h2>Variables and assignment</h2><p class="lead-copy">A variable is a name that refers to a value. Good variable names make analytical code easier to read, explain, and maintain.</p>
-  <div class="flow-visual"><div class="flow-step"><strong>Value</strong><small><code>1000</code></small></div><div class="flow-step"><strong>Variable</strong><small><code>sales</code></small></div><div class="flow-step"><strong>Calculation</strong><small><code>sales - costs</code></small></div><div class="flow-step"><strong>Insight</strong><small><code>profit</code></small></div></div>
-  <div class="python-cell" data-cell="1">
-      <div class="cell-head"><div><h3>Store values in variables</h3><p>Start with three named values and one calculation.</p></div><span class="cell-number">Cell 1</span></div>
-      <textarea class="python-editor" id="editor1" spellcheck="false" aria-label="Store values in variables Python editor" style="height:160px">sales = 1000
+<section class="module-section surface-card" id="variables"><span class="eyebrow"><i class="fa-solid fa-box"></i> Section 1</span><h2>Variables and assignment</h2><p class="lead-copy">A variable is a name that refers to a value. Good variable names make analytical code easier to read, explain, and maintain.</p>
+<div class="flow-visual"><div class="flow-step"><strong>Value</strong><small><code>1000</code></small></div><div class="flow-step"><strong>Variable</strong><small><code>sales</code></small></div><div class="flow-step"><strong>Calculation</strong><small><code>sales - costs</code></small></div><div class="flow-step"><strong>Insight</strong><small><code>profit</code></small></div></div>
+<div class="python-cell" data-cell="1" data-filename="store_values_in_variables.py">
+<div class="cell-head"><div><h3>Store values in variables</h3><p>Start with three named values and one calculation.</p></div><span class="cell-number">Cell 1</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>store_values_in_variables.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Store values in variables Python editor" class="python-editor" data-editor-height="160" id="editor1" spellcheck="false" style="height:160px">sales = 1000
 costs = 800
 profit = sales - costs
 
 print("Sales:", sales)
 print("Costs:", costs)
-print("Profit:", profit)</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output1" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>Python stores 1000 in <code>sales</code> and 800 in <code>costs</code>. The third assignment derives a new value.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Analytics code becomes easier to read when values have meaningful names instead of appearing as unexplained numbers.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Change <code>sales</code> to 1250 and predict the new profit before running the cell.</span></div>
-        </div><div class="python-cell" data-cell="2">
-      <div class="cell-head"><div><h3>Reassign a variable</h3><p>A variable name can point to a new value later.</p></div><span class="cell-number">Cell 2</span></div>
-      <textarea class="python-editor" id="editor2" spellcheck="false" aria-label="Reassign a variable Python editor" style="height:125px">sales = 1000
+print("Profit:", profit)</textarea><div aria-hidden="true" class="monaco-host" style="height:160px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output1">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>Python stores 1000 in <code>sales</code> and 800 in <code>costs</code>. The third assignment derives a new value.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Analytics code becomes easier to read when values have meaningful names instead of appearing as unexplained numbers.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Change <code>sales</code> to 1250 and predict the new profit before running the cell.</span></div>
+</div><div class="python-cell" data-cell="2" data-filename="reassign_a_variable.py">
+<div class="cell-head"><div><h3>Reassign a variable</h3><p>A variable name can point to a new value later.</p></div><span class="cell-number">Cell 2</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>reassign_a_variable.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Reassign a variable Python editor" class="python-editor" data-editor-height="125" id="editor2" spellcheck="false" style="height:125px">sales = 1000
 print("Before:", sales)
 
 sales = 1500
-print("After:", sales)</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output2" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>The second assignment replaces the previous value associated with <code>sales</code>.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Analytical workflows often update a value after cleaning, recalculation, or a new observation.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Reassign <code>sales</code> a third time and print the result.</span></div>
-        </div><div class="python-cell" data-cell="3">
-      <div class="cell-head"><div><h3>Assign several values at once</h3><p>Python can unpack several values into several variable names.</p></div><span class="cell-number">Cell 3</span></div>
-      <textarea class="python-editor" id="editor3" spellcheck="false" aria-label="Assign several values at once Python editor" style="height:125px">name, age, salary = "Alice", 30, 50000
+print("After:", sales)</textarea><div aria-hidden="true" class="monaco-host" style="height:125px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output2">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>The second assignment replaces the previous value associated with <code>sales</code>.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Analytical workflows often update a value after cleaning, recalculation, or a new observation.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Reassign <code>sales</code> a third time and print the result.</span></div>
+</div><div class="python-cell" data-cell="3" data-filename="assign_several_values_at_once.py">
+<div class="cell-head"><div><h3>Assign several values at once</h3><p>Python can unpack several values into several variable names.</p></div><span class="cell-number">Cell 3</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>assign_several_values_at_once.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Assign several values at once Python editor" class="python-editor" data-editor-height="125" id="editor3" spellcheck="false" style="height:125px">name, age, salary = "Alice", 30, 50000
 
 print(name)
 print(age)
-print(salary)</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output3" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>Three values are assigned to three names in the same order.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Multiple assignment can be concise when the relationship is obvious, but descriptive code is more important than saving lines.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Replace the employee values with your own fictional example.</span></div>
-        </div>
-  <div class="callout"><h3>Variable naming best practices</h3><ul><li>Prefer descriptive names such as <code>monthly_sales</code> instead of <code>ms</code>.</li><li>Use lowercase words separated by underscores: <code>patient_age</code>.</li><li>Start names with a letter or underscore, not a number.</li><li>Avoid Python keywords such as <code>if</code>, <code>for</code>, and <code>class</code>.</li></ul></div>
+print(salary)</textarea><div aria-hidden="true" class="monaco-host" style="height:125px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output3">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>Three values are assigned to three names in the same order.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Multiple assignment can be concise when the relationship is obvious, but descriptive code is more important than saving lines.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Replace the employee values with your own fictional example.</span></div>
+</div>
+<div class="callout"><h3>Variable naming best practices</h3><ul><li>Prefer descriptive names such as <code>monthly_sales</code> instead of <code>ms</code>.</li><li>Use lowercase words separated by underscores: <code>patient_age</code>.</li><li>Start names with a letter or underscore, not a number.</li><li>Avoid Python keywords such as <code>if</code>, <code>for</code>, and <code>class</code>.</li></ul></div>
 </section>
-
-<section id="data-types" class="module-section surface-card"><span class="eyebrow"><i class="fa-solid fa-shapes"></i> Section 2</span><h2>Fundamental data types</h2><p class="lead-copy">Data types tell Python what kind of value it is working with. The type affects which operations make sense.</p>
-  <div class="python-cell" data-cell="4">
-      <div class="cell-head"><div><h3>Inspect fundamental data types</h3><p>Use <code>type()</code> to see how Python classifies a value.</p></div><span class="cell-number">Cell 4</span></div>
-      <textarea class="python-editor" id="editor4" spellcheck="false" aria-label="Inspect fundamental data types Python editor" style="height:180px">age = 30
+<section class="module-section surface-card" id="data-types"><span class="eyebrow"><i class="fa-solid fa-shapes"></i> Section 2</span><h2>Fundamental data types</h2><p class="lead-copy">Data types tell Python what kind of value it is working with. The type affects which operations make sense.</p>
+<div class="python-cell" data-cell="4" data-filename="inspect_fundamental_data_types.py">
+<div class="cell-head"><div><h3>Inspect fundamental data types</h3><p>Use <code>type()</code> to see how Python classifies a value.</p></div><span class="cell-number">Cell 4</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>inspect_fundamental_data_types.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Inspect fundamental data types Python editor" class="python-editor" data-editor-height="180" id="editor4" spellcheck="false" style="height:180px">age = 30
 height = 5.9
 name = "Alice"
 is_student = True
@@ -926,48 +1128,59 @@ is_student = True
 print(type(age))
 print(type(height))
 print(type(name))
-print(type(is_student))</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output4" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>Python infers <code>int</code>, <code>float</code>, <code>str</code>, and <code>bool</code> from the assigned values.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Type determines which operations are valid and how data behaves during analysis.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Make <code>age = "30"</code>. What type does Python report now?</span></div>
-        </div><div class="python-cell" data-cell="5">
-      <div class="cell-head"><div><h3>Keep identifiers as text when appropriate</h3><p>A value that contains digits is not automatically numeric data.</p></div><span class="cell-number">Cell 5</span></div>
-      <textarea class="python-editor" id="editor5" spellcheck="false" aria-label="Keep identifiers as text when appropriate Python editor" style="height:120px">employee_id = "00125"
+print(type(is_student))</textarea><div aria-hidden="true" class="monaco-host" style="height:180px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output4">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>Python infers <code>int</code>, <code>float</code>, <code>str</code>, and <code>bool</code> from the assigned values.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Type determines which operations are valid and how data behaves during analysis.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Make <code>age = "30"</code>. What type does Python report now?</span></div>
+</div><div class="python-cell" data-cell="5" data-filename="keep_identifiers_as_text_when_appr.py">
+<div class="cell-head"><div><h3>Keep identifiers as text when appropriate</h3><p>A value that contains digits is not automatically numeric data.</p></div><span class="cell-number">Cell 5</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>keep_identifiers_as_text_when_appr.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Keep identifiers as text when appropriate Python editor" class="python-editor" data-editor-height="120" id="editor5" spellcheck="false" style="height:120px">employee_id = "00125"
 zip_code = "27412"
 
 print(employee_id, type(employee_id))
-print(zip_code, type(zip_code))</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output5" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>Both values remain strings, so leading zeros are preserved.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>IDs, ZIP codes, account numbers, and diagnosis codes are labels—not quantities to add or average.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Remove the quotes around <code>00125</code> and observe why that is not a useful representation.</span></div>
-        </div>
-  <table class="course-table"><caption>Four fundamental Python types and common analytical uses</caption><thead><tr><th>Type</th><th>Meaning</th><th>Example</th><th>Analytics use</th></tr></thead><tbody>
-    <tr><td><code>int</code></td><td>Whole number</td><td><code>visits = 12</code></td><td>Counts and whole units</td></tr>
-    <tr><td><code>float</code></td><td>Decimal number</td><td><code>price = 19.99</code></td><td>Measurements, averages, rates</td></tr>
-    <tr><td><code>str</code></td><td>Text</td><td><code>city = "Greensboro"</code></td><td>Names, labels, codes, categories</td></tr>
-    <tr><td><code>bool</code></td><td>True or False</td><td><code>is_active = True</code></td><td>Flags, rules, validation outcomes</td></tr>
-  </tbody></table>
-  <div class="callout warning"><h3>Important distinction</h3><p>A number-looking identifier is often still text. For example, ZIP code <code>"27412"</code> is a label, not a quantity you would normally add or average.</p></div>
+print(zip_code, type(zip_code))</textarea><div aria-hidden="true" class="monaco-host" style="height:120px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output5">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>Both values remain strings, so leading zeros are preserved.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>IDs, ZIP codes, account numbers, and diagnosis codes are labels—not quantities to add or average.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Remove the quotes around <code>00125</code> and observe why that is not a useful representation.</span></div>
+</div>
+<table class="course-table"><caption>Four fundamental Python types and common analytical uses</caption><thead><tr><th>Type</th><th>Meaning</th><th>Example</th><th>Analytics use</th></tr></thead><tbody>
+<tr><td><code>int</code></td><td>Whole number</td><td><code>visits = 12</code></td><td>Counts and whole units</td></tr>
+<tr><td><code>float</code></td><td>Decimal number</td><td><code>price = 19.99</code></td><td>Measurements, averages, rates</td></tr>
+<tr><td><code>str</code></td><td>Text</td><td><code>city = "Greensboro"</code></td><td>Names, labels, codes, categories</td></tr>
+<tr><td><code>bool</code></td><td>True or False</td><td><code>is_active = True</code></td><td>Flags, rules, validation outcomes</td></tr>
+</tbody></table>
+<div class="callout warning"><h3>Important distinction</h3><p>A number-looking identifier is often still text. For example, ZIP code <code>"27412"</code> is a label, not a quantity you would normally add or average.</p></div>
 </section>
-
-<section id="operations" class="module-section surface-card"><span class="eyebrow"><i class="fa-solid fa-calculator"></i> Section 3</span><h2>Basic and advanced operations</h2><p class="lead-copy">Arithmetic turns stored values into new measures. In analytics, these derived values often become the metrics that matter.</p>
-  <div class="python-cell" data-cell="6">
-      <div class="cell-head"><div><h3>Calculate profit and tax</h3><p>Build one metric from another in a small dependency chain.</p></div><span class="cell-number">Cell 6</span></div>
-      <textarea class="python-editor" id="editor6" spellcheck="false" aria-label="Calculate profit and tax Python editor" style="height:185px">sales = 1000
+<section class="module-section surface-card" id="operations"><span class="eyebrow"><i class="fa-solid fa-calculator"></i> Section 3</span><h2>Basic and advanced operations</h2><p class="lead-copy">Arithmetic turns stored values into new measures. In analytics, these derived values often become the metrics that matter.</p>
+<div class="python-cell" data-cell="6" data-filename="calculate_profit_and_tax.py">
+<div class="cell-head"><div><h3>Calculate profit and tax</h3><p>Build one metric from another in a small dependency chain.</p></div><span class="cell-number">Cell 6</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>calculate_profit_and_tax.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Calculate profit and tax Python editor" class="python-editor" data-editor-height="185" id="editor6" spellcheck="false" style="height:185px">sales = 1000
 costs = 800
 profit = sales - costs
 tax = profit * 0.05
@@ -975,233 +1188,302 @@ net_profit = profit - tax
 
 print("Profit:", profit)
 print("Tax:", tax)
-print("Net profit:", net_profit)</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output6" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>The code moves from raw measures (<code>sales</code>, <code>costs</code>) to derived measures (<code>profit</code>, <code>tax</code>, <code>net_profit</code>).</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Most analytics work transforms base variables into indicators that support decisions.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Set the tax rate to 10% by changing <code>0.05</code> to <code>0.10</code>.</span></div>
-        </div>
-  <div class="chart-card" role="img" aria-label="Bar chart comparing sales 1000 dollars, costs 800 dollars, and profit 200 dollars"><h3>Visual: from raw measures to a derived metric</h3><p>The same values from Cell 6 shown as relative bars.</p>
-    <div class="bar-row"><strong>Sales</strong><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-value">$1000</span></div>
-    <div class="bar-row"><strong>Costs</strong><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><span class="bar-value">$800</span></div>
-    <div class="bar-row"><strong>Profit</strong><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div><span class="bar-value">$200</span></div>
-  </div>
-  <div class="python-cell" data-cell="7">
-      <div class="cell-head"><div><h3>Use exponent, floor division, and modulo</h3><p>Three operators solve common analytical tasks.</p></div><span class="cell-number">Cell 7</span></div>
-      <textarea class="python-editor" id="editor7" spellcheck="false" aria-label="Use exponent, floor division, and modulo Python editor" style="height:105px">print("2 ** 3 =", 2 ** 3)
+print("Net profit:", net_profit)</textarea><div aria-hidden="true" class="monaco-host" style="height:185px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output6">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>The code moves from raw measures (<code>sales</code>, <code>costs</code>) to derived measures (<code>profit</code>, <code>tax</code>, <code>net_profit</code>).</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Most analytics work transforms base variables into indicators that support decisions.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Set the tax rate to 10% by changing <code>0.05</code> to <code>0.10</code>.</span></div>
+</div>
+<div aria-label="Bar chart comparing sales 1000 dollars, costs 800 dollars, and profit 200 dollars" class="chart-card" role="img"><h3>Visual: from raw measures to a derived metric</h3><p>Run Cell 6, change the values, and run it again. The bars update to match your Python variables.</p>
+<div class="bar-row"><strong>Sales</strong><div class="bar-track"><div class="bar-fill" id="chart-sales-bar" style="width:100%"></div></div><span class="bar-value" id="chart-sales-value">$1000</span></div>
+<div class="bar-row"><strong>Costs</strong><div class="bar-track"><div class="bar-fill" id="chart-costs-bar" style="width:80%"></div></div><span class="bar-value" id="chart-costs-value">$800</span></div>
+<div class="bar-row"><strong>Profit</strong><div class="bar-track"><div class="bar-fill" id="chart-profit-bar" style="width:20%"></div></div><span class="bar-value" id="chart-profit-value">$200</span></div>
+</div>
+<div class="python-cell" data-cell="7" data-filename="use_exponent_floor_division_and_mo.py">
+<div class="cell-head"><div><h3>Use exponent, floor division, and modulo</h3><p>Three operators solve common analytical tasks.</p></div><span class="cell-number">Cell 7</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>use_exponent_floor_division_and_mo.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Use exponent, floor division, and modulo Python editor" class="python-editor" data-editor-height="118" id="editor7" spellcheck="false" style="height:118px">print("2 ** 3 =", 2 ** 3)
 print("125 // 60 =", 125 // 60)
-print("125 % 60 =", 125 % 60)</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output7" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span><code>**</code> raises a power, <code>//</code> keeps the whole-number quotient, and <code>%</code> returns the remainder.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>These operators appear in growth calculations, bucketing, time conversion, and periodic logic.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Try converting 185 minutes into hours and remaining minutes.</span></div>
-        </div><div class="python-cell" data-cell="8">
-      <div class="cell-head"><div><h3>See order of operations</h3><p>Parentheses make calculation order explicit.</p></div><span class="cell-number">Cell 8</span></div>
-      <textarea class="python-editor" id="editor8" spellcheck="false" aria-label="See order of operations Python editor" style="height:115px">result1 = 10 + 5 * 2
+print("125 % 60 =", 125 % 60)</textarea><div aria-hidden="true" class="monaco-host" style="height:118px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output7">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span><code>**</code> raises a power, <code>//</code> keeps the whole-number quotient, and <code>%</code> returns the remainder.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>These operators appear in growth calculations, bucketing, time conversion, and periodic logic.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Try converting 185 minutes into hours and remaining minutes.</span></div>
+</div><div class="python-cell" data-cell="8" data-filename="see_order_of_operations.py">
+<div class="cell-head"><div><h3>See order of operations</h3><p>Parentheses make calculation order explicit.</p></div><span class="cell-number">Cell 8</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>see_order_of_operations.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="See order of operations Python editor" class="python-editor" data-editor-height="118" id="editor8" spellcheck="false" style="height:118px">result1 = 10 + 5 * 2
 result2 = (10 + 5) * 2
 
 print(result1)
-print(result2)</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output8" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>Multiplication happens before addition unless parentheses change the grouping.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>A small grouping mistake can change a financial or scientific result without causing a Python error.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Add another pair of parentheses and predict the result before running.</span></div>
-        </div>
-  <table class="course-table"><caption>Arithmetic operators introduced in Module 1</caption><thead><tr><th>Operator</th><th>Meaning</th><th>Example</th></tr></thead><tbody><tr><td><code>+</code></td><td>Addition</td><td><code>5 + 2</code></td></tr><tr><td><code>-</code></td><td>Subtraction</td><td><code>sales - costs</code></td></tr><tr><td><code>*</code></td><td>Multiplication</td><td><code>profit * 0.10</code></td></tr><tr><td><code>/</code></td><td>Division</td><td><code>profit / sales</code></td></tr><tr><td><code>//</code></td><td>Floor division</td><td><code>125 // 60</code></td></tr><tr><td><code>%</code></td><td>Remainder</td><td><code>125 % 60</code></td></tr><tr><td><code>**</code></td><td>Exponent</td><td><code>2 ** 3</code></td></tr></tbody></table>
+print(result2)</textarea><div aria-hidden="true" class="monaco-host" style="height:118px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output8">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>Multiplication happens before addition unless parentheses change the grouping.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>A small grouping mistake can change a financial or scientific result without causing a Python error.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Add another pair of parentheses and predict the result before running.</span></div>
+</div>
+<table class="course-table"><caption>Arithmetic operators introduced in Module 1</caption><thead><tr><th>Operator</th><th>Meaning</th><th>Example</th></tr></thead><tbody><tr><td><code>+</code></td><td>Addition</td><td><code>5 + 2</code></td></tr><tr><td><code>-</code></td><td>Subtraction</td><td><code>sales - costs</code></td></tr><tr><td><code>*</code></td><td>Multiplication</td><td><code>profit * 0.10</code></td></tr><tr><td><code>/</code></td><td>Division</td><td><code>profit / sales</code></td></tr><tr><td><code>//</code></td><td>Floor division</td><td><code>125 // 60</code></td></tr><tr><td><code>%</code></td><td>Remainder</td><td><code>125 % 60</code></td></tr><tr><td><code>**</code></td><td>Exponent</td><td><code>2 ** 3</code></td></tr></tbody></table>
 </section>
-
-<section id="formatting" class="module-section surface-card"><span class="eyebrow"><i class="fa-solid fa-terminal"></i> Section 4</span><h2>Print and formatting</h2><p class="lead-copy">Correct calculations still need readable output. Python gives you simple tools to label, format, and communicate results clearly.</p>
-  <div class="python-cell" data-cell="9">
-      <div class="cell-head"><div><h3>Print text, values, and calculations</h3><p>Use <code>print()</code> to inspect what your program is doing.</p></div><span class="cell-number">Cell 9</span></div>
-      <textarea class="python-editor" id="editor9" spellcheck="false" aria-label="Print text, values, and calculations Python editor" style="height:150px">name = "Alice"
+<section class="module-section surface-card" id="formatting"><span class="eyebrow"><i class="fa-solid fa-terminal"></i> Section 4</span><h2>Print and formatting</h2><p class="lead-copy">Correct calculations still need readable output. Python gives you simple tools to label, format, and communicate results clearly.</p>
+<div class="python-cell" data-cell="9" data-filename="print_text_values_and_calculations.py">
+<div class="cell-head"><div><h3>Print text, values, and calculations</h3><p>Use <code>print()</code> to inspect what your program is doing.</p></div><span class="cell-number">Cell 9</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>print_text_values_and_calculations.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Print text, values, and calculations Python editor" class="python-editor" data-editor-height="150" id="editor9" spellcheck="false" style="height:150px">name = "Alice"
 age = 30
 sales = 1000
 costs = 800
 
 print("Name:", name)
 print("Age:", age)
-print("Profit:", sales - costs)</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output9" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span><code>print()</code> can display text, variables, and expressions.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Visible output helps you verify intermediate results and communicate findings.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Add one more print statement that labels and displays <code>sales</code>.</span></div>
-        </div><div class="python-cell" data-cell="10">
-      <div class="cell-head"><div><h3>Build readable output with f-strings</h3><p>Place variable values directly inside text using braces.</p></div><span class="cell-number">Cell 10</span></div>
-      <textarea class="python-editor" id="editor10" spellcheck="false" aria-label="Build readable output with f-strings Python editor" style="height:145px">patient = "Alice"
+print("Profit:", sales - costs)</textarea><div aria-hidden="true" class="monaco-host" style="height:150px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output9">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span><code>print()</code> can display text, variables, and expressions.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Visible output helps you verify intermediate results and communicate findings.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Add one more print statement that labels and displays <code>sales</code>.</span></div>
+</div><div class="python-cell" data-cell="10" data-filename="build_readable_output_with_f_strin.py">
+<div class="cell-head"><div><h3>Build readable output with f-strings</h3><p>Place variable values directly inside text using braces.</p></div><span class="cell-number">Cell 10</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>build_readable_output_with_f_strin.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Build readable output with f-strings Python editor" class="python-editor" data-editor-height="145" id="editor10" spellcheck="false" style="height:145px">patient = "Alice"
 age = 45
 temperature = 98.6345
 
 print(f"Patient: {patient}")
 print(f"Age: {age}")
-print(f"Temperature: {temperature:.1f} F")</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output10" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>The expressions inside braces are evaluated and inserted into the string.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Analytical results are more useful when labels, units, and formatting travel with the numbers.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Change <code>.1f</code> to <code>.2f</code> and compare the temperature output.</span></div>
-        </div><div class="python-cell" data-cell="11">
-      <div class="cell-head"><div><h3>Format money, percentages, and large numbers</h3><p>Formatting changes presentation without changing the underlying value.</p></div><span class="cell-number">Cell 11</span></div>
-      <textarea class="python-editor" id="editor11" spellcheck="false" aria-label="Format money, percentages, and large numbers Python editor" style="height:115px">revenue = 1234567.89
+print(f"Temperature: {temperature:.1f} F")</textarea><div aria-hidden="true" class="monaco-host" style="height:145px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output10">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>The expressions inside braces are evaluated and inserted into the string.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Analytical results are more useful when labels, units, and formatting travel with the numbers.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Change <code>.1f</code> to <code>.2f</code> and compare the temperature output.</span></div>
+</div><div class="python-cell" data-cell="11" data-filename="format_money_percentages_and_large.py">
+<div class="cell-head"><div><h3>Format money, percentages, and large numbers</h3><p>Formatting changes presentation without changing the underlying value.</p></div><span class="cell-number">Cell 11</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>format_money_percentages_and_large.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Format money, percentages, and large numbers Python editor" class="python-editor" data-editor-height="118" id="editor11" spellcheck="false" style="height:118px">revenue = 1234567.89
 growth = 0.15678
 
 print(f"Revenue: ${revenue:,.2f}")
-print(f"Growth: {growth:.2%}")</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output11" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span><code>,.2f</code> adds separators and two decimals; <code>.2%</code> displays a decimal fraction as a percentage.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Consistent formatting improves reports and reduces misreading.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Display revenue with zero decimal places using <code>:,.0f</code>.</span></div>
-        </div>
-  <table class="course-table"><caption>Common f-string formatting patterns</caption><thead><tr><th>Pattern</th><th>Purpose</th><th>Example output</th></tr></thead><tbody><tr><td><code>{value:.1f}</code></td><td>One decimal place</td><td>98.6</td></tr><tr><td><code>{value:,.2f}</code></td><td>Thousands separators and two decimals</td><td>1,234.50</td></tr><tr><td><code>{rate:.1%}</code></td><td>Percentage display</td><td>15.7%</td></tr><tr><td><code>{value:.2e}</code></td><td>Scientific notation</td><td>3.46e-03</td></tr></tbody></table>
+print(f"Growth: {growth:.2%}")</textarea><div aria-hidden="true" class="monaco-host" style="height:118px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output11">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span><code>,.2f</code> adds separators and two decimals; <code>.2%</code> displays a decimal fraction as a percentage.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Consistent formatting improves reports and reduces misreading.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Display revenue with zero decimal places using <code>:,.0f</code>.</span></div>
+</div>
+<table class="course-table"><caption>Common f-string formatting patterns</caption><thead><tr><th>Pattern</th><th>Purpose</th><th>Example output</th></tr></thead><tbody><tr><td><code>{value:.1f}</code></td><td>One decimal place</td><td>98.6</td></tr><tr><td><code>{value:,.2f}</code></td><td>Thousands separators and two decimals</td><td>1,234.50</td></tr><tr><td><code>{rate:.1%}</code></td><td>Percentage display</td><td>15.7%</td></tr><tr><td><code>{value:.2e}</code></td><td>Scientific notation</td><td>3.46e-03</td></tr></tbody></table>
 </section>
-
-<section id="conversion-input" class="module-section surface-card"><span class="eyebrow"><i class="fa-solid fa-arrow-right-arrow-left"></i> Section 5</span><h2>Type conversion and user input</h2><p class="lead-copy">Input is text by default. Conversion tells Python when that text should become a number or another type.</p>
-  <div class="flow-visual"><div class="flow-step"><strong>User enters</strong><small><code>"2500.50"</code></small></div><div class="flow-step"><strong><code>input()</code></strong><small>Returns text.</small></div><div class="flow-step"><strong><code>float()</code></strong><small>Creates a number.</small></div><div class="flow-step"><strong>Arithmetic</strong><small>Now calculation works.</small></div></div>
-  <div class="python-cell" data-cell="12">
-      <div class="cell-head"><div><h3>Convert text into numbers</h3><p>Convert strings before using them in arithmetic.</p></div><span class="cell-number">Cell 12</span></div>
-      <textarea class="python-editor" id="editor12" spellcheck="false" aria-label="Convert text into numbers Python editor" style="height:165px">price_text = "29.99"
+<section class="module-section surface-card" id="conversion-input"><span class="eyebrow"><i class="fa-solid fa-arrow-right-arrow-left"></i> Section 5</span><h2>Type conversion and user input</h2><p class="lead-copy">Input is text by default. Conversion tells Python when that text should become a number or another type.</p>
+<div class="flow-visual"><div class="flow-step"><strong>User enters</strong><small><code>"2500.50"</code></small></div><div class="flow-step"><strong><code>input()</code></strong><small>Returns text.</small></div><div class="flow-step"><strong><code>float()</code></strong><small>Creates a number.</small></div><div class="flow-step"><strong>Arithmetic</strong><small>Now calculation works.</small></div></div>
+<div class="python-cell" data-cell="12" data-filename="convert_text_into_numbers.py">
+<div class="cell-head"><div><h3>Convert text into numbers</h3><p>Convert strings before using them in arithmetic.</p></div><span class="cell-number">Cell 12</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>convert_text_into_numbers.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Convert text into numbers Python editor" class="python-editor" data-editor-height="165" id="editor12" spellcheck="false" style="height:165px">price_text = "29.99"
 quantity_text = "5"
 
 price = float(price_text)
 quantity = int(quantity_text)
 total = price * quantity
 
-print(f"Total: ${total:.2f}")</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output12" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>The original values are text. <code>float()</code> and <code>int()</code> create numeric values that can be multiplied.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>CSV files, forms, APIs, and user input frequently arrive as text even when they represent numbers.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Change <code>quantity_text</code> to <code>"8"</code> and recalculate the total.</span></div>
-        </div><div class="python-cell" data-cell="13">
-      <div class="cell-head"><div><h3>Explore Boolean conversion</h3><p>Python treats some values as false-like and others as true-like.</p></div><span class="cell-number">Cell 13</span></div>
-      <textarea class="python-editor" id="editor13" spellcheck="false" aria-label="Explore Boolean conversion Python editor" style="height:110px">print(bool(0))
+print(f"Total: ${total:.2f}")</textarea><div aria-hidden="true" class="monaco-host" style="height:165px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output12">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>The original values are text. <code>float()</code> and <code>int()</code> create numeric values that can be multiplied.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>CSV files, forms, APIs, and user input frequently arrive as text even when they represent numbers.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Change <code>quantity_text</code> to <code>"8"</code> and recalculate the total.</span></div>
+</div><div class="python-cell" data-cell="13" data-filename="explore_boolean_conversion.py">
+<div class="cell-head"><div><h3>Explore Boolean conversion</h3><p>Python treats some values as false-like and others as true-like.</p></div><span class="cell-number">Cell 13</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>explore_boolean_conversion.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Explore Boolean conversion Python editor" class="python-editor" data-editor-height="118" id="editor13" spellcheck="false" style="height:118px">print(bool(0))
 print(bool(1))
 print(bool(""))
-print(bool("Hello"))</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output13" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>Zero and an empty string convert to <code>False</code>; nonzero numbers and nonempty strings convert to <code>True</code>.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Boolean values are the foundation of filters, validation rules, and decision logic.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Try <code>bool([])</code>. Lists are covered later, but you can preview the result.</span></div>
-        </div><div class="python-cell" data-cell="14">
-      <div class="cell-head"><div><h3>Collect one text input</h3><p>The simplest interactive program asks for a value and uses it.</p></div><span class="cell-number">Cell 14</span></div>
-      <textarea class="python-editor" id="editor14" spellcheck="false" aria-label="Collect one text input Python editor" style="height:105px">name = input("Enter your name: ")
-print(f"Welcome to IAN 601, {name}!")</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-keyboard"></i> input() opens a browser prompt.</span></div>
-      <div class="cell-output" id="output14" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>The browser prompt supplies text to Python <code>input()</code>.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Interactive input helps demonstrate the difference between source code and data supplied at run time.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Change the prompt and the welcome message.</span></div>
-        </div><div class="python-cell" data-cell="15">
-      <div class="cell-head"><div><h3>Collect numeric input safely</h3><p>Convert numeric-looking text before arithmetic.</p></div><span class="cell-number">Cell 15</span></div>
-      <textarea class="python-editor" id="editor15" spellcheck="false" aria-label="Collect numeric input safely Python editor" style="height:125px">sales = float(input("Enter sales: "))
+print(bool("Hello"))</textarea><div aria-hidden="true" class="monaco-host" style="height:118px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output13">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>Zero and an empty string convert to <code>False</code>; nonzero numbers and nonempty strings convert to <code>True</code>.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Boolean values are the foundation of filters, validation rules, and decision logic.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Try <code>bool([])</code>. Lists are covered later, but you can preview the result.</span></div>
+</div><div class="python-cell" data-cell="14" data-filename="collect_one_text_input.py">
+<div class="cell-head"><div><h3>Collect one text input</h3><p>The simplest interactive program asks for a value and uses it.</p></div><span class="cell-number">Cell 14</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>collect_one_text_input.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Collect one text input Python editor" class="python-editor" data-editor-height="118" id="editor14" spellcheck="false" style="height:118px">name = input("Enter your name: ")
+print(f"Welcome to IAN 601, {name}!")</textarea><div aria-hidden="true" class="monaco-host" style="height:118px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-keyboard"></i> input() opens a browser prompt.</span></div>
+<div aria-live="polite" class="cell-output" id="output14">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>The browser prompt supplies text to Python <code>input()</code>.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Interactive input helps demonstrate the difference between source code and data supplied at run time.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Change the prompt and the welcome message.</span></div>
+</div><div class="python-cell" data-cell="15" data-filename="collect_numeric_input_safely.py">
+<div class="cell-head"><div><h3>Collect numeric input safely</h3><p>Convert numeric-looking text before arithmetic.</p></div><span class="cell-number">Cell 15</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>collect_numeric_input_safely.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Collect numeric input safely Python editor" class="python-editor" data-editor-height="125" id="editor15" spellcheck="false" style="height:125px">sales = float(input("Enter sales: "))
 costs = float(input("Enter costs: "))
 profit = sales - costs
 
-print(f"Profit: ${profit:,.2f}")</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-keyboard"></i> input() opens a browser prompt.</span></div>
-      <div class="cell-output" id="output15" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>Each <code>input()</code> call returns text, and <code>float()</code> converts it before subtraction.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>The conversion step is essential whenever numeric data originates from a text interface.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Enter decimal values such as 1250.50 and 930.25.</span></div>
-        </div><div class="python-cell" data-cell="16">
-      <div class="cell-head"><div><h3>Preview a conversion error</h3><p>This small preview shows why validation is needed.</p></div><span class="cell-number">Cell 16</span></div>
-      <textarea class="python-editor" id="editor16" spellcheck="false" aria-label="Preview a conversion error Python editor" style="height:150px">text = "abc"
+print(f"Profit: ${profit:,.2f}")</textarea><div aria-hidden="true" class="monaco-host" style="height:125px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-keyboard"></i> input() opens a browser prompt.</span></div>
+<div aria-live="polite" class="cell-output" id="output15">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>Each <code>input()</code> call returns text, and <code>float()</code> converts it before subtraction.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>The conversion step is essential whenever numeric data originates from a text interface.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Enter decimal values such as 1250.50 and 930.25.</span></div>
+</div><div class="python-cell" data-cell="16" data-filename="preview_a_conversion_error.py">
+<div class="cell-head"><div><h3>Preview a conversion error</h3><p>This small preview shows why validation is needed.</p></div><span class="cell-number">Cell 16</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>preview_a_conversion_error.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Preview a conversion error Python editor" class="python-editor" data-editor-height="150" id="editor16" spellcheck="false" style="height:150px">text = "abc"
 
 try:
     number = float(text)
     print(number)
 except ValueError:
-    print("That text is not a valid number.")</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output16" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>The attempted conversion fails, and <code>except</code> handles the <code>ValueError</code> instead of stopping the program.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Real data is messy. Later modules will develop error handling and validation in more depth.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Replace <code>"abc"</code> with <code>"42.5"</code> and run again.</span></div>
-        </div>
-  <div class="callout gold"><h3>Why keep the examples small?</h3><p>Input validation can quickly grow into loops and reusable functions. Those concepts belong to later modules, so this page previews the problem without burying beginners in syntax they have not learned yet.</p></div>
+    print("That text is not a valid number.")</textarea><div aria-hidden="true" class="monaco-host" style="height:150px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output16">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>The attempted conversion fails, and <code>except</code> handles the <code>ValueError</code> instead of stopping the program.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Real data is messy. Later modules will develop error handling and validation in more depth.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Replace <code>"abc"</code> with <code>"42.5"</code> and run again.</span></div>
+</div>
+<div class="callout gold"><h3>Why keep the examples small?</h3><p>Input validation can quickly grow into loops and reusable functions. Those concepts belong to later modules, so this page previews the problem without burying beginners in syntax they have not learned yet.</p></div>
 </section>
-
-<section id="practice" class="module-section surface-card"><span class="eyebrow"><i class="fa-solid fa-dumbbell"></i> Practice</span><h2>Progress from foundation to mastery</h2><p class="lead-copy">Each exercise uses only a few ideas at a time. Modify the starter code, run it, and compare the result with your prediction.</p>
-  <div class="python-cell" data-cell="17">
-      <div class="cell-head"><div><h3>Foundation practice: patient variables</h3><p>Complete or modify this small patient record.</p></div><span class="cell-number">Cell 17</span></div>
-      <textarea class="python-editor" id="editor17" spellcheck="false" aria-label="Foundation practice: patient variables Python editor" style="height:115px">patient_name = "Bob"
+<section class="module-section surface-card" id="practice"><span class="eyebrow"><i class="fa-solid fa-dumbbell"></i> Practice</span><h2>Progress from foundation to mastery</h2><p class="lead-copy">Each exercise uses only a few ideas at a time. Modify the starter code, run it, and compare the result with your prediction.</p>
+<div class="python-cell" data-cell="17" data-filename="foundation_practice_patient_variab.py">
+<div class="cell-head"><div><h3>Foundation practice: patient variables</h3><p>Complete or modify this small patient record.</p></div><span class="cell-number">Cell 17</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>foundation_practice_patient_variab.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Foundation practice: patient variables Python editor" class="python-editor" data-editor-height="118" id="editor17" spellcheck="false" style="height:118px">patient_name = "Bob"
 patient_age = 25
 
 print(patient_name)
-print(patient_age)</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output17" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>Two variables store two pieces of information and are displayed independently.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>This is the same core pattern used in larger records: meaningful names attached to values.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Add a third variable named <code>condition</code> and print it.</span></div>
-        </div><div class="python-cell" data-cell="18">
-      <div class="cell-head"><div><h3>Building practice: verify types</h3><p>Create one example of each fundamental type.</p></div><span class="cell-number">Cell 18</span></div>
-      <textarea class="python-editor" id="editor18" spellcheck="false" aria-label="Building practice: verify types Python editor" style="height:170px">customer_id = "C102"
+print(patient_age)</textarea><div aria-hidden="true" class="monaco-host" style="height:118px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output17">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>Two variables store two pieces of information and are displayed independently.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>This is the same core pattern used in larger records: meaningful names attached to values.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Add a third variable named <code>condition</code> and print it.</span></div>
+</div><div class="python-cell" data-cell="18" data-filename="building_practice_verify_types.py">
+<div class="cell-head"><div><h3>Building practice: verify types</h3><p>Create one example of each fundamental type.</p></div><span class="cell-number">Cell 18</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>building_practice_verify_types.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Building practice: verify types Python editor" class="python-editor" data-editor-height="170" id="editor18" spellcheck="false" style="height:170px">customer_id = "C102"
 balance = 1250.75
 visits = 4
 is_active = True
@@ -1209,82 +1491,105 @@ is_active = True
 print(type(customer_id))
 print(type(balance))
 print(type(visits))
-print(type(is_active))</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output18" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>The cell combines a text identifier, a decimal measure, a whole-number count, and a Boolean flag.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Mixed data types are normal in real analytical datasets.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Change one value so its type changes, then verify with <code>type()</code>.</span></div>
-        </div><div class="python-cell" data-cell="19">
-      <div class="cell-head"><div><h3>Intermediate practice: rectangle metrics</h3><p>Use arithmetic to create two derived measures.</p></div><span class="cell-number">Cell 19</span></div>
-      <textarea class="python-editor" id="editor19" spellcheck="false" aria-label="Intermediate practice: rectangle metrics Python editor" style="height:150px">length = 10
+print(type(is_active))</textarea><div aria-hidden="true" class="monaco-host" style="height:170px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output18">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>The cell combines a text identifier, a decimal measure, a whole-number count, and a Boolean flag.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Mixed data types are normal in real analytical datasets.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Change one value so its type changes, then verify with <code>type()</code>.</span></div>
+</div><div class="python-cell" data-cell="19" data-filename="intermediate_practice_rectangle_me.py">
+<div class="cell-head"><div><h3>Intermediate practice: rectangle metrics</h3><p>Use arithmetic to create two derived measures.</p></div><span class="cell-number">Cell 19</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>intermediate_practice_rectangle_me.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Intermediate practice: rectangle metrics Python editor" class="python-editor" data-editor-height="150" id="editor19" spellcheck="false" style="height:150px">length = 10
 width = 5
 
 area = length * width
 perimeter = 2 * (length + width)
 
 print("Area:", area)
-print("Perimeter:", perimeter)</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output19" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>Area and perimeter are derived from the same two base inputs.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Feature engineering often creates multiple useful measures from the same source variables.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Use a different length and width, then predict both results first.</span></div>
-        </div><div class="python-cell" data-cell="20">
-      <div class="cell-head"><div><h3>Advanced practice: build a trend statement</h3><p>Combine text values into an analytical narrative.</p></div><span class="cell-number">Cell 20</span></div>
-      <textarea class="python-editor" id="editor20" spellcheck="false" aria-label="Advanced practice: build a trend statement Python editor" style="height:130px">year = 2026
+print("Perimeter:", perimeter)</textarea><div aria-hidden="true" class="monaco-host" style="height:150px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output19">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>Area and perimeter are derived from the same two base inputs.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Feature engineering often creates multiple useful measures from the same source variables.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Use a different length and width, then predict both results first.</span></div>
+</div><div class="python-cell" data-cell="20" data-filename="advanced_practice_build_a_trend_st.py">
+<div class="cell-head"><div><h3>Advanced practice: build a trend statement</h3><p>Combine text values into an analytical narrative.</p></div><span class="cell-number">Cell 20</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>advanced_practice_build_a_trend_st.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Advanced practice: build a trend statement Python editor" class="python-editor" data-editor-height="130" id="editor20" spellcheck="false" style="height:130px">year = 2026
 topic = "AI integration"
 industry = "healthcare"
 
 report = f"In {year}, {topic} continues to influence {industry}."
-print(report)</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output20" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>An f-string turns separate categorical values into a readable sentence.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Analysts often convert structured values into labels, annotations, or report text.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Replace the topic and industry with another analytical context.</span></div>
-        </div><div class="python-cell" data-cell="21">
-      <div class="cell-head"><div><h3>Mastery practice: profit and margin</h3><p>Combine input, conversion, arithmetic, and formatting.</p></div><span class="cell-number">Cell 21</span></div>
-      <textarea class="python-editor" id="editor21" spellcheck="false" aria-label="Mastery practice: profit and margin Python editor" style="height:155px">sales = float(input("Sales: "))
+print(report)</textarea><div aria-hidden="true" class="monaco-host" style="height:130px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output20">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>An f-string turns separate categorical values into a readable sentence.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Analysts often convert structured values into labels, annotations, or report text.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Replace the topic and industry with another analytical context.</span></div>
+</div><div class="python-cell" data-cell="21" data-filename="mastery_practice_profit_and_margin.py">
+<div class="cell-head"><div><h3>Mastery practice: profit and margin</h3><p>Combine input, conversion, arithmetic, and formatting.</p></div><span class="cell-number">Cell 21</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>mastery_practice_profit_and_margin.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Mastery practice: profit and margin Python editor" class="python-editor" data-editor-height="155" id="editor21" spellcheck="false" style="height:155px">sales = float(input("Sales: "))
 costs = float(input("Costs: "))
 
 profit = sales - costs
 margin = (profit / sales) * 100
 
 print(f"Profit: ${profit:,.2f}")
-print(f"Margin: {margin:.1f}%")</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-keyboard"></i> input() opens a browser prompt.</span></div>
-      <div class="cell-output" id="output21" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>Two inputs become two business metrics: an amount and a percentage.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>The cell integrates the entire Module 1 workflow from raw input to formatted analytical output.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Try values that produce a small margin, then values that produce a large margin.</span></div>
-        </div>
+print(f"Margin: {margin:.1f}%")</textarea><div aria-hidden="true" class="monaco-host" style="height:155px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-keyboard"></i> input() opens a browser prompt.</span></div>
+<div aria-live="polite" class="cell-output" id="output21">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>Two inputs become two business metrics: an amount and a percentage.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>The cell integrates the entire Module 1 workflow from raw input to formatted analytical output.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Try values that produce a small margin, then values that produce a large margin.</span></div>
+</div>
 </section>
-
-<section id="applications" class="module-section surface-card"><span class="eyebrow"><i class="fa-solid fa-briefcase"></i> Business Applications</span><h2>Use the same fundamentals in real contexts</h2><p class="lead-copy">The original long applications have been decomposed so students can understand the analytical logic before learning functions, loops, dictionaries, and larger program structures.</p>
-  <div class="python-cell" data-cell="22">
-      <div class="cell-head"><div><h3>Business application: patient summary</h3><p>Create a compact healthcare record using only Module 1 concepts.</p></div><span class="cell-number">Cell 22</span></div>
-      <textarea class="python-editor" id="editor22" spellcheck="false" aria-label="Business application: patient summary Python editor" style="height:180px">patient_name = "Alice"
+<section class="module-section surface-card" id="applications"><span class="eyebrow"><i class="fa-solid fa-briefcase"></i> Business Applications</span><h2>Use the same fundamentals in real contexts</h2><p class="lead-copy">The original long applications have been decomposed so students can understand the analytical logic before learning functions, loops, dictionaries, and larger program structures.</p>
+<div class="python-cell" data-cell="22" data-filename="business_application_patient_summa.py">
+<div class="cell-head"><div><h3>Business application: patient summary</h3><p>Create a compact healthcare record using only Module 1 concepts.</p></div><span class="cell-number">Cell 22</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>business_application_patient_summa.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Business application: patient summary Python editor" class="python-editor" data-editor-height="180" id="editor22" spellcheck="false" style="height:180px">patient_name = "Alice"
 age = 45
 temperature = 98.9
 condition = "Routine follow-up"
@@ -1292,20 +1597,26 @@ condition = "Routine follow-up"
 print(f"Patient: {patient_name}")
 print(f"Age: {age}")
 print(f"Temperature: {temperature:.1f} F")
-print(f"Visit: {condition}")</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output22" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>Simple variables of different types are combined into a readable record.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Healthcare analytics begins with correctly representing identifiers, measurements, categories, and labels.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Add a blood-pressure string such as <code>"120/80"</code>.</span></div>
-        </div><div class="python-cell" data-cell="23">
-      <div class="cell-head"><div><h3>Business application: sales snapshot</h3><p>Turn a few values into a small performance report.</p></div><span class="cell-number">Cell 23</span></div>
-      <textarea class="python-editor" id="editor23" spellcheck="false" aria-label="Business application: sales snapshot Python editor" style="height:165px">monthly_sales = 25000
+print(f"Visit: {condition}")</textarea><div aria-hidden="true" class="monaco-host" style="height:180px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output22">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>Simple variables of different types are combined into a readable record.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Healthcare analytics begins with correctly representing identifiers, measurements, categories, and labels.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Add a blood-pressure string such as <code>"120/80"</code>.</span></div>
+</div><div class="python-cell" data-cell="23" data-filename="business_application_sales_snapsho.py">
+<div class="cell-head"><div><h3>Business application: sales snapshot</h3><p>Turn a few values into a small performance report.</p></div><span class="cell-number">Cell 23</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>business_application_sales_snapsho.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Business application: sales snapshot Python editor" class="python-editor" data-editor-height="165" id="editor23" spellcheck="false" style="height:165px">monthly_sales = 25000
 monthly_costs = 18000
 previous_sales = 22000
 
@@ -1313,26 +1624,31 @@ profit = monthly_sales - monthly_costs
 growth = ((monthly_sales - previous_sales) / previous_sales) * 100
 
 print(f"Profit: ${profit:,.2f}")
-print(f"Monthly growth: {growth:.1f}%")</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
-      <div class="cell-output" id="output23" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>The cell derives profit and month-over-month growth from three measures.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>Business dashboards are built from small calculations like these, repeated consistently across records and periods.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Lower monthly sales below previous sales and observe the negative growth rate.</span></div>
-        </div>
-  <div class="callout success"><h3>Pattern to notice</h3><p>Both applications follow the same architecture: <strong>store values → calculate derived values → format output</strong>. Later modules will scale this pattern to collections of records and complete datasets.</p></div>
+print(f"Monthly growth: {growth:.1f}%")</textarea><div aria-hidden="true" class="monaco-host" style="height:165px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-play"></i> Edit the code, then run it.</span></div>
+<div aria-live="polite" class="cell-output" id="output23">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>The cell derives profit and month-over-month growth from three measures.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>Business dashboards are built from small calculations like these, repeated consistently across records and periods.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Lower monthly sales below previous sales and observe the negative growth rate.</span></div>
+</div>
+<div class="callout success"><h3>Pattern to notice</h3><p>Both applications follow the same architecture: <strong>store values → calculate derived values → format output</strong>. Later modules will scale this pattern to collections of records and complete datasets.</p></div>
 </section>
-
-<section id="capstone" class="module-section surface-card"><span class="eyebrow"><i class="fa-solid fa-flag-checkered"></i> Capstone Challenge</span><h2>Build a simple sales calculator</h2><p class="lead-copy">The reference material contains a very large calculator. For Module 1, this version keeps the same core goal—input, conversion, calculations, and reporting—but stays short enough to trace line by line.</p>
-  <div class="callout gold"><h3>Your task</h3><p>Run the program once. Then add a <code>profit_margin</code> calculation, print it as a percentage, and test at least two different scenarios.</p></div>
-  <div class="python-cell" data-cell="24">
-      <div class="cell-head"><div><h3>Capstone: simple sales calculator</h3><p>A compact final challenge that stays within Module 1 concepts.</p></div><span class="cell-number">Cell 24</span></div>
-      <textarea class="python-editor" id="editor24" spellcheck="false" aria-label="Capstone: simple sales calculator Python editor" style="height:225px">company = input("Company name: ")
+<section class="module-section surface-card" id="capstone"><span class="eyebrow"><i class="fa-solid fa-flag-checkered"></i> Capstone Challenge</span><h2>Build a simple sales calculator</h2><p class="lead-copy">The reference material contains a very large calculator. For Module 1, this version keeps the same core goal—input, conversion, calculations, and reporting—but stays short enough to trace line by line.</p>
+<div class="callout gold"><h3>Your task</h3><p>Run the program once. Then add a <code>profit_margin</code> calculation, print it as a percentage, and test at least two different scenarios.</p></div>
+<div class="python-cell" data-cell="24" data-filename="capstone_simple_sales_calculator.py">
+<div class="cell-head"><div><h3>Capstone: simple sales calculator</h3><p>A compact final challenge that stays within Module 1 concepts.</p></div><span class="cell-number">Cell 24</span></div>
+<div class="vscode-shell"><div class="vscode-topbar">
+<div class="vscode-tab active"><i aria-hidden="true" class="fa-brands fa-python"></i><span>capstone_simple_sales_calculator.py</span><span aria-hidden="true" class="vscode-dirty">●</span></div>
+<div aria-hidden="true" class="vscode-window-dots"><span></span><span></span><span></span></div>
+</div><textarea aria-label="Capstone: simple sales calculator Python editor" class="python-editor" data-editor-height="225" id="editor24" spellcheck="false" style="height:225px">company = input("Company name: ")
 sales = float(input("Sales: "))
 costs = float(input("Costs: "))
 tax_rate = 0.10
@@ -1344,57 +1660,96 @@ net_profit = profit - tax
 print(f"{company} Financial Report")
 print(f"Profit: ${profit:,.2f}")
 print(f"Tax: ${tax:,.2f}")
-print(f"Net profit: ${net_profit:,.2f}")</textarea>
-      <div class="cell-actions"><div class="cell-buttons">
-        <button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
-        <button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-        <button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
-      </div><span class="cell-hint"><i class="fa-solid fa-keyboard"></i> input() opens a browser prompt.</span></div>
-      <div class="cell-output" id="output24" aria-live="polite">Run this cell to see output.</div>
-    </div><div class="explain-grid">
-          <div class="explain-note"><strong>What happens</strong><span>The capstone combines text input, numeric conversion, arithmetic, variables, and formatted output in one short program.</span></div>
-          <div class="explain-note"><strong>Why it matters</strong><span>It demonstrates an end-to-end analytical pattern without introducing loops, functions, or data structures before those topics are taught.</span></div>
-          <div class="explain-note"><strong>Try changing</strong><span>Add a <code>profit_margin</code> calculation and print it as a percentage.</span></div>
-        </div>
-  <details class="solution-block"><summary>Extension idea: profit margin</summary><div class="solution-body"><p>Add <code>profit_margin = profit / sales</code>, then display it with <code>print(f"Profit margin: {profit_margin:.1%}")</code>. This extension reinforces arithmetic and f-string percentage formatting without introducing a new programming structure.</p></div></details>
+print(f"Net profit: ${net_profit:,.2f}")</textarea><div aria-hidden="true" class="monaco-host" style="height:225px"></div><div class="vscode-statusbar">
+<span class="vscode-status-left"><i aria-hidden="true" class="fa-solid fa-code-branch"></i> main</span>
+<span class="vscode-status-right"><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span><i aria-hidden="true" class="fa-brands fa-python"></i> Python</span></span>
+</div></div>
+<div class="cell-actions"><div class="cell-buttons">
+<button class="cell-btn run" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="cell-btn reset" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+<button class="cell-btn copy" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+</div><span class="cell-hint"><i class="fa-solid fa-keyboard"></i> input() opens a browser prompt.</span></div>
+<div aria-live="polite" class="cell-output" id="output24">Run this cell to see output.</div>
+</div><div class="explain-grid">
+<div class="explain-note"><strong>What happens</strong><span>The capstone combines text input, numeric conversion, arithmetic, variables, and formatted output in one short program.</span></div>
+<div class="explain-note"><strong>Why it matters</strong><span>It demonstrates an end-to-end analytical pattern without introducing loops, functions, or data structures before those topics are taught.</span></div>
+<div class="explain-note"><strong>Try changing</strong><span>Add a <code>profit_margin</code> calculation and print it as a percentage.</span></div>
+</div>
+<details class="solution-block"><summary>Extension idea: profit margin</summary><div class="solution-body"><p>Add <code>profit_margin = profit / sales</code>, then display it with <code>print(f"Profit margin: {profit_margin:.1%}")</code>. This extension reinforces arithmetic and f-string percentage formatting without introducing a new programming structure.</p></div></details>
 </section>
-
-<section id="summary" class="module-section surface-card"><span class="eyebrow"><i class="fa-solid fa-check-double"></i> Summary &amp; Next Steps</span><h2>What you should be able to do now</h2>
-  <div class="concept-grid"><div class="mini-card"><h3>Key takeaways</h3><ul><li>Variables give values meaningful names.</li><li>Data types shape valid operations.</li><li>Arithmetic creates derived analytical measures.</li><li>f-strings make output readable and professional.</li><li><code>input()</code> returns text, so conversion matters.</li><li>Small programs can already solve useful business problems.</li></ul></div><div class="mini-card"><h3>Next module</h3><p>Module 2 adds <strong>control flow</strong>: comparisons, <code>if/else</code>, <code>for</code> loops, <code>while</code> loops, and repetition. Those tools will let the short calculations from Module 1 make decisions and process multiple values.</p></div></div>
-  <table class="course-table"><caption>Module 1 glossary</caption><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>Variable</td><td>A name that refers to a value.</td></tr><tr><td>Assignment</td><td>Associating a value with a variable using <code>=</code>.</td></tr><tr><td>Data type</td><td>The category of a value, such as <code>int</code>, <code>float</code>, <code>str</code>, or <code>bool</code>.</td></tr><tr><td>Expression</td><td>Code that produces a value, such as <code>sales - costs</code>.</td></tr><tr><td>Type conversion</td><td>Changing a value from one type to another with tools such as <code>int()</code> or <code>float()</code>.</td></tr><tr><td>f-string</td><td>A formatted string literal that can embed values and formatting instructions.</td></tr></tbody></table>
-  <details class="solution-block"><summary>FAQ · What is the difference between <code>return</code> and <code>print()</code>?</summary><div class="solution-body"><p><code>print()</code> displays a value for a person to read. <code>return</code> belongs to functions and sends a value back to the calling code; functions are introduced later in the course.</p></div></details>
-  <details class="solution-block"><summary>FAQ · Why does <code>input()</code> return a string?</summary><div class="solution-body"><p>Keyboard and browser input arrives as characters. Your program decides whether those characters should remain text or be converted to a number.</p></div></details>
-  <div class="module-nav"><a href="index.html#modules"><small>Previous</small><br><strong>← Course Modules</strong></a><a href="module2.html"><small>Next</small><br><strong>Module 2 · Control Flow →</strong></a></div>
+<section class="module-section surface-card" id="summary"><span class="eyebrow"><i class="fa-solid fa-check-double"></i> Summary &amp; Next Steps</span><h2>What you should be able to do now</h2>
+<div class="concept-grid"><div class="mini-card"><h3>Key takeaways</h3><ul><li>Variables give values meaningful names.</li><li>Data types shape valid operations.</li><li>Arithmetic creates derived analytical measures.</li><li>f-strings make output readable and professional.</li><li><code>input()</code> returns text, so conversion matters.</li><li>Small programs can already solve useful business problems.</li></ul></div><div class="mini-card"><h3>Next module</h3><p>Module 2 adds <strong>control flow</strong>: comparisons, <code>if/else</code>, <code>for</code> loops, <code>while</code> loops, and repetition. Those tools will let the short calculations from Module 1 make decisions and process multiple values.</p></div></div>
+<table class="course-table"><caption>Module 1 glossary</caption><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>Variable</td><td>A name that refers to a value.</td></tr><tr><td>Assignment</td><td>Associating a value with a variable using <code>=</code>.</td></tr><tr><td>Data type</td><td>The category of a value, such as <code>int</code>, <code>float</code>, <code>str</code>, or <code>bool</code>.</td></tr><tr><td>Expression</td><td>Code that produces a value, such as <code>sales - costs</code>.</td></tr><tr><td>Type conversion</td><td>Changing a value from one type to another with tools such as <code>int()</code> or <code>float()</code>.</td></tr><tr><td>f-string</td><td>A formatted string literal that can embed values and formatting instructions.</td></tr></tbody></table>
+<details class="solution-block"><summary>FAQ · What is the difference between <code>return</code> and <code>print()</code>?</summary><div class="solution-body"><p><code>print()</code> displays a value for a person to read. <code>return</code> belongs to functions and sends a value back to the calling code; functions are introduced later in the course.</p></div></details>
+<details class="solution-block"><summary>FAQ · Why does <code>input()</code> return a string?</summary><div class="solution-body"><p>Keyboard and browser input arrives as characters. Your program decides whether those characters should remain text or be converted to a number.</p></div></details>
+<div class="module-nav"><a href="index.html#modules"><small>Previous</small><br/><strong>← Course Modules</strong></a><a href="module2.html"><small>Next</small><br/><strong>Module 2 · Control Flow →</strong></a></div>
 </section>
-</div></div></section></main><footer><div class="container footer-inner"><p>&copy; 2025 Ali Noori / UNCG. All rights reserved.</p><p>IAN 601 · Introduction to Data Analytics: Methods &amp; Approaches</p></div></footer><button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button><script>
+</div></div></section></main><footer><div class="container footer-inner"><p>© 2025 Ali Noori / UNCG. All rights reserved.</p><p>IAN 601 · Introduction to Data Analytics: Methods &amp; Approaches</p></div></footer><button aria-label="Back to top" class="back-to-top" id="back-to-top" type="button"><i class="fa-solid fa-arrow-up"></i></button><script>
 (() => {
+  'use strict';
   const root = document.documentElement;
   const themeToggle = document.getElementById('theme-toggle');
   const mobileToggle = document.getElementById('mobile-menu-toggle');
   const navLinks = document.getElementById('nav-links');
-  const modulesDropdown = document.getElementById('modules-dropdown');
   const modulesToggle = document.getElementById('modules-toggle');
+  const modulesDropdown = document.getElementById('modules-dropdown');
   const backToTop = document.getElementById('back-to-top');
   const runtimeState = document.getElementById('runtime-state');
   const runtimeText = document.getElementById('runtime-text');
   const restartPython = document.getElementById('restart-python');
+
+  const PYODIDE_BASE = 'https://cdn.jsdelivr.net/pyodide/v314.0.4/full/';
+  const MONACO_BASE = 'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs';
   const originalCode = new Map();
+  const editorInstances = new Map();
   let pyodide = null;
   let runtimePromise = null;
-  let currentOutput = null;
+  let monacoReady = false;
+  let testMode = new URLSearchParams(window.location.search).has('autotest');
 
   function updateThemeButton(theme) {
     const isDark = theme === 'dark';
     themeToggle.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i> Light' : '<i class="fa-solid fa-moon"></i> Dark';
     themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    if (monacoReady && window.monaco) monaco.editor.setTheme(isDark ? 'vs-dark' : 'vs');
   }
+
   const savedTheme = localStorage.getItem('ian601-theme');
   const initialTheme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'dark';
-  root.setAttribute('data-theme', initialTheme); updateThemeButton(initialTheme);
-  themeToggle.addEventListener('click', () => { const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; root.setAttribute('data-theme', next); localStorage.setItem('ian601-theme', next); updateThemeButton(next); });
-  mobileToggle.addEventListener('click', () => { const open = navLinks.classList.toggle('active'); mobileToggle.setAttribute('aria-expanded', String(open)); mobileToggle.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>'; });
-  modulesToggle.addEventListener('click', (event) => { if (window.matchMedia('(max-width: 900px)').matches) { event.preventDefault(); const open = modulesDropdown.classList.toggle('open'); modulesToggle.setAttribute('aria-expanded', String(open)); } });
-  window.addEventListener('resize', () => { if (!window.matchMedia('(max-width: 900px)').matches) { navLinks.classList.remove('active'); modulesDropdown.classList.remove('open'); mobileToggle.setAttribute('aria-expanded','false'); modulesToggle.setAttribute('aria-expanded','false'); mobileToggle.innerHTML='<i class="fa-solid fa-bars"></i>'; } });
+  root.setAttribute('data-theme', initialTheme);
+  updateThemeButton(initialTheme);
+
+  themeToggle.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('ian601-theme', next);
+    updateThemeButton(next);
+  });
+
+  mobileToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('active');
+    mobileToggle.setAttribute('aria-expanded', String(open));
+    mobileToggle.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+  });
+
+  modulesToggle.addEventListener('click', (event) => {
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      event.preventDefault();
+      const open = modulesDropdown.classList.toggle('open');
+      modulesToggle.setAttribute('aria-expanded', String(open));
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (!window.matchMedia('(max-width: 900px)').matches) {
+      navLinks.classList.remove('active');
+      modulesDropdown.classList.remove('open');
+      mobileToggle.setAttribute('aria-expanded','false');
+      modulesToggle.setAttribute('aria-expanded','false');
+      mobileToggle.innerHTML='<i class="fa-solid fa-bars"></i>';
+    }
+    editorInstances.forEach(editor => editor.layout());
+  });
   window.addEventListener('scroll', () => backToTop.classList.toggle('show', window.scrollY > 700), {passive:true});
   backToTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
 
@@ -1405,17 +1760,33 @@ print(f"Net profit: ${net_profit:,.2f}")</textarea>
     runtimeText.textContent = text;
   }
 
-  function appendOutput(text, isError=false) {
-    if (!currentOutput) return;
-    if (currentOutput.textContent === 'Running…') currentOutput.textContent = '';
-    currentOutput.textContent += String(text) + '\n';
-    if (isError) currentOutput.classList.add('error');
+  function getCode(cell) {
+    const editor = editorInstances.get(cell);
+    if (editor) return editor.getValue();
+    return cell.querySelector('.python-editor').value;
+  }
+
+  function setCode(cell, value) {
+    const editor = editorInstances.get(cell);
+    if (editor) editor.setValue(value);
+    const textarea = cell.querySelector('.python-editor');
+    textarea.value = value;
+  }
+
+  function syncEditedState(cell) {
+    const textarea = cell.querySelector('.python-editor');
+    const original = originalCode.get(textarea.id) ?? '';
+    cell.classList.toggle('edited', getCode(cell) !== original);
   }
 
   async function createRuntime() {
-    setRuntime('Loading Python…');
-    const runtime = await loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.27.7/full/'});
+    if (typeof loadPyodide !== 'function') {
+      throw new Error('Pyodide could not be loaded from the CDN. Check your internet connection and reload the page.');
+    }
+    setRuntime('Loading Python 3.14 in your browser…');
+    const runtime = await loadPyodide({ indexURL: PYODIDE_BASE });
     runtime.globals.set('__ian601_prompt', (promptText) => {
+      if (testMode) return '100';
       const value = window.prompt(String(promptText));
       return value === null ? '' : value;
     });
@@ -1423,64 +1794,275 @@ print(f"Net profit: ${net_profit:,.2f}")</textarea>
 import builtins
 
 def _ian601_input(prompt_text=''):
-    return str(__ian601_prompt(str(prompt_text)))
+    return __ian601_prompt(str(prompt_text))
 
 builtins.input = _ian601_input
 `);
     pyodide = runtime;
-    setRuntime('Python ready · run any cell', 'ready');
+    setRuntime('Python ready · run any VS Code-style cell', 'ready');
     return runtime;
   }
 
   async function ensureRuntime(force=false) {
-    if (force) { pyodide = null; runtimePromise = null; }
+    if (force) {
+      pyodide = null;
+      runtimePromise = null;
+    }
     if (pyodide) return pyodide;
-    if (!runtimePromise) runtimePromise = createRuntime().catch(err => { console.error(err); setRuntime('Python failed to load. Check the connection and reload.', 'error'); runtimePromise = null; throw err; });
+    if (!runtimePromise) {
+      runtimePromise = createRuntime().catch(err => {
+        console.error(err);
+        setRuntime('Python failed to load. Check the connection and reload.', 'error');
+        runtimePromise = null;
+        throw err;
+      });
+    }
     return runtimePromise;
   }
 
-  async function runCell(cell) {
-    const editor = cell.querySelector('.python-editor');
-    const output = cell.querySelector('.cell-output');
-    output.className = 'cell-output';
-    output.textContent = 'Running…';
+  async function executeCaptured(runtime, code) {
+    runtime.globals.set('__ian601_code', code);
+    const result = await runtime.runPythonAsync(`
+import contextlib
+import io
+import traceback
+
+__ian601_buffer = io.StringIO()
+__ian601_ok = True
+try:
+    with contextlib.redirect_stdout(__ian601_buffer), contextlib.redirect_stderr(__ian601_buffer):
+        exec(__ian601_code, globals())
+except Exception:
+    __ian601_ok = False
+    traceback.print_exc(file=__ian601_buffer)
+(__ian601_ok, __ian601_buffer.getvalue())
+`);
+    let converted;
     try {
-      const runtime = await ensureRuntime();
-      currentOutput = output;
-      runtime.setStdout({batched: text => appendOutput(text, false)});
-      runtime.setStderr({batched: text => appendOutput(text, true)});
-      await runtime.runPythonAsync(editor.value);
-      if (output.textContent === 'Running…' || !output.textContent.trim()) output.textContent = '✓ Code executed successfully (no printed output).';
-      if (!output.classList.contains('error')) output.classList.add('success');
-      cell.classList.add('complete');
-    } catch (err) {
-      output.className = 'cell-output error';
-      output.textContent = String(err);
+      converted = result.toJs({ create_proxies: false });
     } finally {
-      if (pyodide) { try { pyodide.setStdout(); pyodide.setStderr(); } catch (_) {} }
-      currentOutput = null;
+      if (result && typeof result.destroy === 'function') result.destroy();
+    }
+    return { ok: Boolean(converted[0]), text: String(converted[1] ?? '') };
+  }
+
+  function updateProfitChart(runtime) {
+    try {
+      const sales = Number(runtime.globals.get('sales'));
+      const costs = Number(runtime.globals.get('costs'));
+      const profit = Number(runtime.globals.get('profit'));
+      if (![sales,costs,profit].every(Number.isFinite)) return;
+      const values = {sales, costs, profit};
+      const max = Math.max(...Object.values(values).map(v => Math.abs(v)), 1);
+      for (const [key, value] of Object.entries(values)) {
+        const bar = document.getElementById(`chart-${key}-bar`);
+        const label = document.getElementById(`chart-${key}-value`);
+        if (bar) bar.style.width = `${Math.max(2, Math.abs(value) / max * 100)}%`;
+        if (label) label.textContent = `$${value.toLocaleString(undefined,{maximumFractionDigits:2})}`;
+      }
+    } catch (err) {
+      console.warn('Chart update skipped:', err);
     }
   }
 
-  async function copyCode(editor, button) {
-    try { await navigator.clipboard.writeText(editor.value); }
-    catch (_) { const temp=document.createElement('textarea'); temp.value=editor.value; document.body.appendChild(temp); temp.select(); document.execCommand('copy'); temp.remove(); }
-    const old=button.innerHTML; button.innerHTML='<i class="fa-solid fa-check"></i> Copied'; setTimeout(()=>button.innerHTML=old,1100);
+  async function runCell(cell) {
+    const output = cell.querySelector('.cell-output');
+    const runButton = cell.querySelector('.run');
+    output.className = 'cell-output';
+    output.textContent = 'Running…';
+    runButton.classList.add('running');
+    runButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Running';
+    try {
+      const runtime = await ensureRuntime();
+      const {ok, text} = await executeCaptured(runtime, getCode(cell));
+      if (text.trim()) output.textContent = text.replace(/\n+$/,'');
+      else output.textContent = ok ? '✓ Code executed successfully (no printed output).' : 'Python reported an error.';
+      output.classList.add(ok ? 'success' : 'error');
+      cell.classList.toggle('complete', ok);
+      if (ok && cell.dataset.cell === '6') updateProfitChart(runtime);
+      return ok;
+    } catch (err) {
+      output.className = 'cell-output error';
+      output.textContent = String(err && err.message ? err.message : err);
+      cell.classList.remove('complete');
+      return false;
+    } finally {
+      runButton.classList.remove('running');
+      runButton.innerHTML = '<i class="fa-solid fa-play"></i> Run';
+    }
   }
 
-  document.querySelectorAll('.python-cell').forEach(cell => {
-    const editor=cell.querySelector('.python-editor'); const output=cell.querySelector('.cell-output'); originalCode.set(editor.id,editor.value);
-    cell.querySelector('.run').addEventListener('click',()=>runCell(cell));
-    cell.querySelector('.reset').addEventListener('click',()=>{editor.value=originalCode.get(editor.id); output.className='cell-output'; output.textContent='Run this cell to see output.'; cell.classList.remove('complete');});
-    cell.querySelector('.copy').addEventListener('click',e=>copyCode(editor,e.currentTarget));
-    editor.addEventListener('keydown',event=>{ if((event.ctrlKey||event.metaKey)&&event.key==='Enter'){event.preventDefault();runCell(cell);} if(event.key==='Tab'){event.preventDefault();const s=editor.selectionStart,e=editor.selectionEnd;editor.value=editor.value.slice(0,s)+'    '+editor.value.slice(e);editor.selectionStart=editor.selectionEnd=s+4;} });
+  async function copyCode(cell, button) {
+    const text = getCode(cell);
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (_) {
+      const temp = document.createElement('textarea');
+      temp.value = text;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand('copy');
+      temp.remove();
+    }
+    const old = button.innerHTML;
+    button.innerHTML = '<i class="fa-solid fa-check"></i> Copied';
+    setTimeout(() => button.innerHTML = old, 1100);
+  }
+
+  function setupFallbackCell(cell) {
+    const textarea = cell.querySelector('.python-editor');
+    originalCode.set(textarea.id, textarea.value);
+    cell.querySelector('.run').addEventListener('click', () => runCell(cell));
+    cell.querySelector('.reset').addEventListener('click', () => {
+      setCode(cell, originalCode.get(textarea.id));
+      const output = cell.querySelector('.cell-output');
+      output.className = 'cell-output';
+      output.textContent = 'Run this cell to see output.';
+      cell.classList.remove('complete','edited');
+    });
+    cell.querySelector('.copy').addEventListener('click', e => copyCode(cell, e.currentTarget));
+    textarea.addEventListener('input', () => syncEditedState(cell));
+    textarea.addEventListener('keydown', event => {
+      if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+        event.preventDefault();
+        runCell(cell);
+      }
+      if (event.key === 'Tab') {
+        event.preventDefault();
+        const s = textarea.selectionStart, e = textarea.selectionEnd;
+        textarea.value = textarea.value.slice(0,s) + '    ' + textarea.value.slice(e);
+        textarea.selectionStart = textarea.selectionEnd = s + 4;
+        syncEditedState(cell);
+      }
+    });
+  }
+
+  function updateCursorStatus(cell, editor) {
+    const pos = editor.getPosition();
+    const label = cell.querySelector('.cursor-position');
+    if (pos && label) label.textContent = `Ln ${pos.lineNumber}, Col ${pos.column}`;
+  }
+
+  function initializeMonaco() {
+    return new Promise(resolve => {
+      if (typeof window.require !== 'function') {
+        console.warn('Monaco loader unavailable; using the built-in VS Code-style textarea fallback.');
+        resolve(false);
+        return;
+      }
+      // Monaco's AMD build. If web workers are blocked, the core editor still works.
+      window.MonacoEnvironment = {
+        getWorkerUrl: function() {
+          const workerMain = `${MONACO_BASE}/base/worker/workerMain.js`;
+          const source = `self.MonacoEnvironment={baseUrl:'${MONACO_BASE}/'};importScripts('${workerMain}');`;
+          return `data:text/javascript;charset=utf-8,${encodeURIComponent(source)}`;
+        }
+      };
+      try {
+        require.config({ paths: { vs: MONACO_BASE } });
+        require(['vs/editor/editor.main'], () => {
+          monacoReady = true;
+          monaco.editor.setTheme(root.getAttribute('data-theme') === 'dark' ? 'vs-dark' : 'vs');
+          document.querySelectorAll('.python-cell').forEach(cell => {
+            const textarea = cell.querySelector('.python-editor');
+            const host = cell.querySelector('.monaco-host');
+            if (!textarea || !host) return;
+            const editor = monaco.editor.create(host, {
+              value: textarea.value,
+              language: 'python',
+              theme: root.getAttribute('data-theme') === 'dark' ? 'vs-dark' : 'vs',
+              fontFamily: "'Source Code Pro', Consolas, 'Courier New', monospace",
+              fontSize: 14,
+              lineHeight: 22,
+              lineNumbers: 'on',
+              lineNumbersMinChars: 3,
+              minimap: { enabled: false },
+              scrollBeyondLastLine: false,
+              automaticLayout: true,
+              wordWrap: 'on',
+              folding: false,
+              glyphMargin: false,
+              renderLineHighlight: 'line',
+              bracketPairColorization: { enabled: true },
+              guides: { bracketPairs: true, indentation: true },
+              quickSuggestions: true,
+              suggestOnTriggerCharacters: true,
+              tabSize: 4,
+              insertSpaces: true,
+              padding: { top: 10, bottom: 10 },
+              overviewRulerBorder: false,
+              scrollbar: { verticalScrollbarSize: 10, horizontalScrollbarSize: 10 },
+              ariaLabel: textarea.getAttribute('aria-label') || 'Python code editor'
+            });
+            editorInstances.set(cell, editor);
+            cell.classList.add('monaco-ready');
+            editor.onDidChangeModelContent(() => {
+              textarea.value = editor.getValue();
+              syncEditedState(cell);
+            });
+            editor.onDidChangeCursorPosition(() => updateCursorStatus(cell, editor));
+            editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => runCell(cell));
+            updateCursorStatus(cell, editor);
+          });
+          resolve(true);
+        }, err => {
+          console.warn('Monaco failed to initialize; using fallback editors.', err);
+          resolve(false);
+        });
+      } catch (err) {
+        console.warn('Monaco setup failed; using fallback editors.', err);
+        resolve(false);
+      }
+    });
+  }
+
+  document.querySelectorAll('.python-cell').forEach(setupFallbackCell);
+  initializeMonaco();
+
+  restartPython.addEventListener('click', async () => {
+    try {
+      setRuntime('Restarting Python…');
+      await ensureRuntime(true);
+      document.querySelectorAll('.cell-output').forEach(o => {
+        o.className = 'cell-output';
+        o.textContent = 'Run this cell to see output.';
+      });
+      document.querySelectorAll('.python-cell').forEach(c => c.classList.remove('complete'));
+    } catch (_) {}
   });
-  restartPython.addEventListener('click',async()=>{ try{ await ensureRuntime(true); document.querySelectorAll('.cell-output').forEach(o=>{o.className='cell-output';o.textContent='Run this cell to see output.';}); document.querySelectorAll('.python-cell').forEach(c=>c.classList.remove('complete')); } catch(_){} });
 
-  const sections=[...document.querySelectorAll('.module-section[id]')]; const tocLinks=[...document.querySelectorAll('.toc-list a')];
-  const observer=new IntersectionObserver(entries=>{ const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0]; if(!visible)return; tocLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+visible.target.id)); },{rootMargin:'-20% 0px -65% 0px',threshold:[0,.25,.5]}); sections.forEach(s=>observer.observe(s));
+  const sections = [...document.querySelectorAll('.module-section[id]')];
+  const tocLinks = [...document.querySelectorAll('.toc-list a')];
+  const observer = new IntersectionObserver(entries => {
+    const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio-a.intersectionRatio)[0];
+    if (!visible) return;
+    tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + visible.target.id));
+  }, { rootMargin:'-20% 0px -65% 0px', threshold:[0,.25,.5] });
+  sections.forEach(s => observer.observe(s));
 
-  // Small testing hook for local validation; inert during normal use.
-  window.__ian601Test = { ensureRuntime, runCell };
+  // Browser test hook. Add ?autotest to run every cell with deterministic input values.
+  async function autoTest() {
+    const resultBox = document.createElement('div');
+    resultBox.id = 'autotest-result';
+    resultBox.hidden = true;
+    document.body.appendChild(resultBox);
+    const results = [];
+    try {
+      await ensureRuntime();
+      for (const cell of document.querySelectorAll('.python-cell')) {
+        const ok = await runCell(cell);
+        results.push({cell: cell.dataset.cell, ok});
+      }
+      const failures = results.filter(r => !r.ok);
+      resultBox.textContent = failures.length ? `FAIL:${failures.map(r=>r.cell).join(',')}` : `PASS:${results.length}`;
+      document.documentElement.dataset.autotest = failures.length ? 'fail' : 'pass';
+    } catch (err) {
+      resultBox.textContent = 'FAIL:RUNTIME:' + String(err);
+      document.documentElement.dataset.autotest = 'fail';
+    }
+  }
+  if (testMode) window.addEventListener('load', () => setTimeout(autoTest, 300));
+
+  window.__ian601Test = { ensureRuntime, runCell, editorInstances };
 })();
 </script></body></html>
