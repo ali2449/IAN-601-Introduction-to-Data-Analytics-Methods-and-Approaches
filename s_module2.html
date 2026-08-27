@@ -1,0 +1,1852 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="IAN 601 Module 2 slide-style HTML lesson with executable Python code cells." />
+<title>IAN 601 Module 2 · Control Flow Slide Lesson</title>
+<script src="https://cdn.jsdelivr.net/pyodide/v314.0.4/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs/loader.js"></script>
+<style>
+:root {
+  --bg: #eef3fb;
+  --slide: #ffffff;
+  --slide-2: #f7f9fd;
+  --text: #172033;
+  --muted: #64748b;
+  --border: #dbe4f0;
+  --primary: #2563eb;
+  --primary-2: #4f46e5;
+  --accent: #c78b16;
+  --success: #0f9f6e;
+  --danger: #dc2626;
+  --warning: #b45309;
+  --shadow: 0 22px 60px rgba(15, 23, 42, .16);
+  --code-bg: #1e1e1e;
+  --code-text: #d4d4d4;
+}
+[data-theme="dark"] {
+  --bg: #08111f;
+  --slide: #0f172a;
+  --slide-2: #162032;
+  --text: #e5edf8;
+  --muted: #9aa8bd;
+  --border: #334155;
+  --primary: #38bdf8;
+  --primary-2: #818cf8;
+  --accent: #fbbf24;
+  --success: #34d399;
+  --danger: #f87171;
+  --warning: #f59e0b;
+  --shadow: 0 28px 80px rgba(0,0,0,.42);
+  --code-bg: #0b1120;
+  --code-text: #e5e7eb;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, rgba(37,99,235,.18), transparent 32%), var(--bg);
+  color: var(--text);
+}
+button, textarea, select { font: inherit; }
+code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; background: rgba(37,99,235,.1); color: var(--primary); padding: .08em .25em; border-radius: .25rem; }
+.deck-app { height: 100%; display: grid; grid-template-rows: auto 1fr auto; }
+.topbar {
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--slide) 86%, transparent);
+  backdrop-filter: blur(12px);
+  z-index: 10;
+}
+.brand { display:flex; align-items:center; gap:.75rem; min-width: 0; }
+.brand-mark { width:40px; height:40px; display:grid; place-items:center; border-radius:12px; color:#fff; background: linear-gradient(135deg, var(--primary), var(--primary-2)); font-weight: 900; box-shadow: 0 10px 24px rgba(37,99,235,.25); }
+.brand h1 { font-size: 1rem; margin:0; line-height:1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.brand span { color: var(--muted); font-size:.8rem; }
+.toolbar { display:flex; align-items:center; gap:.5rem; flex-wrap: wrap; justify-content: flex-end; }
+.btn {
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  background: var(--primary);
+  color: #fff;
+  padding: .55rem .8rem;
+  cursor: pointer;
+  font-weight: 750;
+  box-shadow: 0 8px 18px rgba(37,99,235,.18);
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.ghost { background: var(--slide-2); color: var(--text); border-color: var(--border); box-shadow: none; }
+.btn.big { font-size: 1rem; padding: .8rem 1.05rem; border-radius: 1rem; }
+select { border: 1px solid var(--border); border-radius: .75rem; padding: .55rem .75rem; background: var(--slide-2); color: var(--text); font-weight: 650; max-width: 240px; }
+.runtime { display:flex; align-items:center; gap:.45rem; padding:.45rem .65rem; border:1px solid var(--border); border-radius:999px; background: var(--slide-2); color:var(--muted); font-size:.82rem; font-weight: 700; }
+.runtime-dot { width:10px; height:10px; border-radius:50%; background: var(--warning); box-shadow: 0 0 0 5px rgba(180,83,9,.12); }
+.runtime.ready .runtime-dot { background: var(--success); box-shadow: 0 0 0 5px rgba(15,159,110,.12); }
+.runtime.error .runtime-dot { background: var(--danger); box-shadow: 0 0 0 5px rgba(220,38,38,.12); }
+.stage { position: relative; min-height: 0; overflow: hidden; display: grid; place-items: center; padding: clamp(.6rem, 2vh, 1.2rem); }
+.slide {
+  position: absolute;
+  inset: clamp(.6rem, 2vh, 1.2rem);
+  display: none;
+}
+.slide.active { display: block; }
+.slide-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  background:
+    radial-gradient(circle at 96% 8%, color-mix(in srgb, var(--primary) 16%, transparent), transparent 28%),
+    linear-gradient(135deg, color-mix(in srgb, var(--slide) 96%, var(--primary) 4%), var(--slide));
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+}
+.slide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: clamp(1.1rem, 2vw, 1.8rem) clamp(1.2rem, 3vw, 2.2rem) .7rem;
+}
+.kicker { display:inline-flex; color: var(--accent); font-weight: 850; letter-spacing:.08em; text-transform:uppercase; font-size: .78rem; margin-bottom: .35rem; }
+.slide-header h2 { margin: 0; font-size: clamp(1.7rem, 3.2vw, 3.05rem); letter-spacing: -.035em; line-height: 1.03; color: var(--text); }
+.slide-badge { white-space: nowrap; padding:.45rem .7rem; border:1px solid var(--border); border-radius:999px; background: var(--slide-2); color:var(--muted); font-weight:800; font-size:.82rem; }
+.slide-content { padding: .5rem clamp(1.2rem, 3vw, 2.2rem) 1rem; overflow: auto; min-height: 0; }
+.slide-footer { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.65rem clamp(1.2rem, 3vw, 2.2rem); border-top:1px solid var(--border); color:var(--muted); font-size:.82rem; font-weight:700; background: color-mix(in srgb, var(--slide-2) 70%, transparent); }
+.speaker-notes { display: none; position: absolute; right: 1rem; bottom: 3.7rem; width: min(470px, calc(100% - 2rem)); max-height: 42%; overflow:auto; padding: 1rem; border:1px solid color-mix(in srgb, var(--accent) 55%, var(--border)); border-radius: 16px; background: color-mix(in srgb, var(--slide) 95%, transparent); box-shadow: 0 16px 40px rgba(0,0,0,.18); z-index: 6; }
+.show-notes .slide.active .speaker-notes { display:block; }
+.speaker-notes h4 { margin:0 0 .4rem; color: var(--accent); }
+.speaker-notes p { margin:0; color:var(--text); line-height:1.55; }
+.bottom-nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding:.65rem 1rem;
+  border-top: 1px solid var(--border);
+  background: color-mix(in srgb, var(--slide) 88%, transparent);
+  z-index:10;
+}
+.nav-left,.nav-right { display:flex; align-items:center; gap:.5rem; }
+.counter { color: var(--muted); font-weight: 850; min-width: 88px; text-align:center; }
+.progress { position:absolute; left:0; right:0; bottom:0; height:5px; background: rgba(148,163,184,.24); }
+.progress-bar { height:100%; width:0; background: linear-gradient(90deg, var(--primary), var(--accent)); transition: width .25s ease; }
+.lead { font-size: clamp(1.05rem, 1.8vw, 1.35rem); line-height:1.55; color: var(--muted); }
+.big-lead { font-size: clamp(1.35rem, 2.9vw, 2.2rem); line-height: 1.25; max-width: 760px; margin: 0 0 1.3rem; color: var(--text); font-weight: 750; letter-spacing: -.02em; }
+.narrow { max-width: 950px; }
+.title-grid, .two-col { display:grid; grid-template-columns: minmax(0,1.1fr) minmax(320px,.9fr); gap: clamp(1rem, 2.8vw, 2rem); align-items:center; }
+.two-col.tight { align-items:start; }
+.two-col.split-55 { grid-template-columns: minmax(0,1.2fr) minmax(310px,.8fr); align-items:start; }
+.pill-row { display:flex; flex-wrap:wrap; gap:.55rem; margin: 1rem 0 1.4rem; }
+.pill-row span { border:1px solid var(--border); background:var(--slide-2); color:var(--muted); padding:.45rem .7rem; border-radius:999px; font-weight:800; }
+.hero-actions-inline { display:flex; gap:.7rem; flex-wrap:wrap; }
+.hero-visual { display:flex; align-items:center; justify-content:center; gap:.8rem; padding: 2rem; min-height: 280px; border-radius: 28px; border:1px solid var(--border); background: var(--slide-2); }
+.diamond { width: 120px; height:120px; display:grid; place-items:center; transform: rotate(45deg); border:3px solid var(--accent); border-radius:24px; color:var(--accent); font-weight: 950; font-size:1.4rem; background:var(--slide); }
+.diamond span { transform: rotate(-45deg); display:block; text-align:center; }
+.diamond { position: relative; }
+.diamond.small { width:100px; height:100px; font-size:1rem; border-color:var(--primary); color:var(--primary); }
+.loop-icon { width:120px; height:120px; border-radius:50%; display:grid; place-items:center; border:3px solid var(--primary); color: var(--primary); font-weight:950; font-size:1.3rem; background: var(--slide); }
+.arrow { color: var(--accent); font-size: 2rem; font-weight:900; }
+.callout { margin-top:1rem; border:1px solid var(--border); border-left:5px solid var(--primary); border-radius:16px; padding:1rem; background:var(--slide-2); color:var(--text); line-height:1.55; }
+.callout.secondary { border-left-color: var(--accent); }
+.callout.warning { border-left-color: var(--warning); }
+.callout.success { border-left-color: var(--success); }
+.clean-list { list-style:none; padding:0; margin:1rem 0; display:grid; gap:.8rem; }
+.clean-list li { padding:.85rem 1rem; background:var(--slide-2); border:1px solid var(--border); border-radius:14px; }
+.fragment { opacity:0; transform: translateY(8px); transition:.2s; }
+.fragment.visible { opacity:1; transform: translateY(0); }
+.process-card { border:1px solid var(--border); background:var(--slide-2); border-radius:24px; padding:1.2rem; display:grid; gap:.55rem; text-align:center; }
+.process-step { padding:.85rem; border-radius:14px; border:1px solid var(--border); background:var(--slide); font-weight:850; }
+.process-step.accent { background: linear-gradient(135deg, var(--primary), var(--primary-2)); color:#fff; }
+.process-arrow { color:var(--accent); font-size:1.25rem; font-weight:900; }
+.timeline { display:grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap:.8rem; align-items:stretch; }
+.timeline-item { position:relative; padding:1rem; background:var(--slide-2); border:1px solid var(--border); border-radius:18px; min-height:220px; }
+.timeline-item span { width:42px; height:42px; border-radius:14px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,var(--primary),var(--primary-2)); font-weight:900; margin-bottom:.75rem; }
+.timeline-item h3 { margin:.2rem 0 .45rem; font-size:1.03rem; }
+.timeline-item p { margin:0; color:var(--muted); line-height:1.45; }
+.table-wrap { overflow:auto; border:1px solid var(--border); border-radius:16px; background:var(--slide-2); }
+table { width:100%; border-collapse:collapse; font-size:.94rem; }
+th, td { padding:.75rem .85rem; border-bottom:1px solid var(--border); text-align:left; vertical-align:top; }
+th { color:var(--primary); background: color-mix(in srgb, var(--slide-2) 75%, var(--primary) 6%); font-weight:850; }
+tr:last-child td { border-bottom:0; }
+.formula-card,.rule-box,.control-card { display:grid; gap:.35rem; padding:1rem; background:var(--slide-2); border:1px solid var(--border); border-radius:16px; margin:.75rem 0; }
+.formula-card span,.rule-box span,.control-card p { color:var(--muted); margin:0; }
+.logic-grid,.mistake-grid,.notes-grid,.practice-grid,.checklist-grid,.summary-grid { display:grid; gap:.85rem; }
+.logic-grid { grid-template-columns: repeat(3,1fr); margin-bottom:1rem; }
+.logic-grid div,.note-card,.practice-grid div,.check-card,.summary-grid div { padding:1rem; border:1px solid var(--border); background:var(--slide-2); border-radius:16px; }
+.logic-grid code { display:inline-block; font-size:1.1rem; font-weight:900; margin-bottom:.4rem; background:transparent; color:var(--accent); }
+.logic-grid p,.note-card span,.practice-grid p,.check-card p,.summary-grid p { color:var(--muted); margin:.25rem 0 0; line-height:1.45; }
+.notes-grid { grid-template-columns: repeat(3, 1fr); margin-top:.9rem; }
+.note-card strong { display:block; color: var(--primary); margin-bottom:.25rem; }
+.mistake-grid { grid-template-columns: repeat(4, 1fr); }
+.mistake-card { padding:1rem; border-radius:18px; border:1px solid var(--border); background: var(--slide-2); min-height: 190px; }
+.mistake-card h3 { margin-top:0; }
+.mistake-card.bad { border-top:5px solid var(--warning); }
+.mistake-card.good { border-top:5px solid var(--success); }
+.loop-strip { display:grid; grid-template-columns: repeat(4,1fr); gap:.55rem; margin-top:1.2rem; }
+.loop-strip div { padding:.9rem .65rem; border-radius:14px; background:var(--slide-2); border:1px solid var(--border); text-align:center; font-weight:850; position:relative; }
+.loop-strip div:not(:last-child)::after { content:'→'; position:absolute; right:-.55rem; top:50%; transform:translateY(-50%); color:var(--accent); z-index:2; }
+.decision-layout { display:grid; grid-template-columns: minmax(0,1fr) 140px minmax(0,1fr); gap:1rem; align-items:center; margin: .5rem 0 1rem; }
+.decision-diamond { width:120px; height:120px; transform:rotate(45deg); border:3px solid var(--accent); background:var(--slide-2); border-radius:22px; display:grid; place-items:center; justify-self:center; }
+.decision-diamond span { transform:rotate(-45deg); font-weight:900; color:var(--accent); }
+.branch { border:1px solid var(--border); border-radius:18px; padding:1rem; background:var(--slide-2); text-align:center; }
+.branch span { display:inline-flex; padding:.25rem .55rem; border-radius:999px; font-weight:900; margin-bottom:.55rem; }
+.branch.true span { background:rgba(15,159,110,.12); color:var(--success); }
+.branch.false span { background:rgba(220,38,38,.1); color:var(--danger); }
+.branch strong { display:block; margin-bottom:.25rem; }
+.branch small { color:var(--muted); }
+.grid-visual { display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem; padding:1rem; border:1px solid var(--border); border-radius:20px; background:var(--slide-2); }
+.grid-visual span { padding:1rem; text-align:center; border-radius:14px; background:var(--slide); border:1px solid var(--border); font-weight:850; color:var(--primary); }
+.chart-card { border:1px solid var(--border); background:var(--slide-2); border-radius:20px; padding:1.1rem; }
+.chart-card h3 { margin:.1rem 0 .35rem; }
+.chart-card p { color:var(--muted); margin-top:0; }
+.bar-row { display:grid; grid-template-columns:70px 1fr 40px; align-items:center; gap:.75rem; margin:.9rem 0; }
+.bar-track { height:20px; background:rgba(148,163,184,.18); border-radius:999px; overflow:hidden; }
+.bar-fill { height:100%; background:linear-gradient(90deg,var(--primary),var(--accent)); border-radius:999px; transition: width .4s ease; }
+.practice-grid { grid-template-columns: repeat(3, 1fr); }
+.practice-grid div span { width:34px; height:34px; display:grid; place-items:center; border-radius:12px; background:var(--primary); color:#fff; font-weight:900; margin-bottom:.55rem; }
+.checklist-grid { grid-template-columns: repeat(5, 1fr); }
+.check-card { min-height: 190px; }
+.check-card h3,.summary-grid h3,.practice-grid h3 { margin:.2rem 0 .4rem; font-size:1.03rem; }
+.summary-grid { grid-template-columns: repeat(3, 1fr); }
+.code-cell {
+  border:1px solid #2b2b2b;
+  border-radius:14px;
+  overflow:hidden;
+  background:#181818;
+  box-shadow:0 14px 34px rgba(15,23,42,.16);
+  margin:.75rem 0;
+}
+[data-theme="light"] .code-cell { border-color:#cfcfcf; background:#f3f3f3; }
+.cell-head {
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  align-items:flex-start;
+  padding:.75rem .9rem;
+  border-bottom:1px solid #2b2b2b;
+  background:#181818;
+  color:#f3f3f3;
+}
+[data-theme="light"] .cell-head { background:#f3f3f3; border-bottom-color:#d7d7d7; color:#1f1f1f; }
+.cell-label { color:#75beff; font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; font-weight:900; }
+[data-theme="light"] .cell-label { color:#0066b8; }
+.cell-head h3 { margin:.12rem 0 .15rem; font-size:.98rem; color:inherit; }
+.cell-head p { margin:0; color:#a7a7a7; font-size:.84rem; }
+[data-theme="light"] .cell-head p { color:#5f5f5f; }
+.file-pill {
+  color:#cccccc;
+  background:#252526;
+  border:1px solid #333333;
+  padding:.3rem .52rem;
+  border-radius:6px;
+  font-size:.72rem;
+  font-weight:750;
+  white-space:nowrap;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+}
+[data-theme="light"] .file-pill { color:#444; background:#fff; border-color:#d6d6d6; }
+.editor-shell { position:relative; background:#1e1e1e; color:#d4d4d4; }
+[data-theme="light"] .editor-shell { background:#fff; color:#1f1f1f; }
+.editor-topbar {
+  min-height:35px;
+  display:flex;
+  align-items:stretch;
+  justify-content:space-between;
+  gap:0;
+  padding:0;
+  border-bottom:1px solid #2b2b2b;
+  background:#181818;
+  user-select:none;
+}
+[data-theme="light"] .editor-topbar { background:#f3f3f3; border-bottom-color:#d8d8d8; }
+.editor-topbar .dot { display:none; }
+.tab-name {
+  margin:0;
+  min-width:180px;
+  max-width:72%;
+  display:inline-flex;
+  align-items:center;
+  gap:.48rem;
+  padding:0 .78rem;
+  background:#1e1e1e;
+  border-right:1px solid #2b2b2b;
+  border-top:1px solid #007acc;
+  color:#f1f1f1;
+  font-size:.76rem;
+  font-weight:600;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.tab-name::before {
+  content:'PY';
+  display:grid;
+  place-items:center;
+  width:18px;
+  height:18px;
+  border-radius:4px;
+  background:#3776ab;
+  color:#ffd343;
+  font:800 .54rem/1 Inter,sans-serif;
+  flex:0 0 auto;
+}
+.tab-name::after { content:'×'; margin-left:auto; color:#9d9d9d; font-size:.95rem; }
+[data-theme="light"] .tab-name { background:#fff; border-right-color:#d8d8d8; color:#222; }
+.code-input {
+  width:100%;
+  min-height:110px;
+  resize:vertical;
+  border:0;
+  outline:0;
+  padding:.8rem 1rem .8rem 3.2rem;
+  background:#1e1e1e;
+  color:#d4d4d4;
+  font:500 .88rem/1.55 "SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  tab-size:4;
+  caret-color:#fff;
+}
+[data-theme="light"] .code-input { background:#fff; color:#1f1f1f; caret-color:#111; }
+.monaco-host { display:none; width:100%; min-height:110px; }
+.code-cell.monaco-ready .code-input { display:none; }
+.code-cell.monaco-ready .monaco-host { display:block; }
+.editor-status {
+  min-height:23px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:.8rem;
+  padding:0 .62rem;
+  background:#007acc;
+  color:#fff;
+  font-size:.68rem;
+  font-weight:600;
+  user-select:none;
+}
+.editor-status .status-left,.editor-status .status-right { display:inline-flex; align-items:center; gap:.72rem; min-width:0; }
+.editor-status .status-right { margin-left:auto; }
+.status-python::before { content:'{}'; margin-right:.25rem; font-family:monospace; }
+.cell-actions {
+  display:flex;
+  gap:.5rem;
+  padding:.58rem .75rem;
+  border-top:1px solid #2b2b2b;
+  flex-wrap:wrap;
+  background:#181818;
+}
+[data-theme="light"] .cell-actions { background:#f3f3f3; border-top-color:#d7d7d7; }
+.cell-actions .btn { padding:.4rem .68rem; border-radius:5px; font-size:.8rem; box-shadow:none; }
+.cell-actions .run-cell { background:#0e639c; border-color:#1177bb; }
+.cell-actions .run-cell:hover { background:#1177bb; }
+.cell-actions .btn.ghost { background:#252526; color:#d4d4d4; border-color:#3a3a3a; }
+.cell-actions .btn.ghost:hover { background:#333333; }
+[data-theme="light"] .cell-actions .btn.ghost { background:#fff; color:#333; border-color:#d0d0d0; }
+[data-theme="light"] .cell-actions .btn.ghost:hover { background:#e8e8e8; }
+.output {
+  margin:0;
+  min-height:88px;
+  max-height:210px;
+  overflow:auto;
+  white-space:pre-wrap;
+  padding:2.25rem 1rem .9rem;
+  background:#0c0c0c;
+  color:#d4d4d4;
+  border-top:1px solid #2b2b2b;
+  position:relative;
+  font:500 .82rem/1.55 "SFMono-Regular",Consolas,"Liberation Mono",monospace;
+}
+.output::before {
+  content:'PROBLEMS   OUTPUT   DEBUG CONSOLE   TERMINAL';
+  position:absolute;
+  top:.48rem;
+  left:1rem;
+  color:#a7a7a7;
+  font:600 .62rem Inter,sans-serif;
+  letter-spacing:.04em;
+  word-spacing:.15rem;
+}
+.output::after {
+  content:'';
+  position:absolute;
+  top:1.55rem;
+  left:calc(1rem + 181px);
+  width:55px;
+  height:1px;
+  background:#d4d4d4;
+}
+[data-theme="light"] .output { background:#f7f7f7; color:#1f1f1f; border-top-color:#d7d7d7; }
+[data-theme="light"] .output::before { color:#5d5d5d; }
+[data-theme="light"] .output::after { background:#1f1f1f; }
+.output.success { border-top-color:rgba(52,211,153,.7); }
+.output.error { color:#fca5a5; border-top-color:rgba(248,113,113,.75); }
+[data-theme="light"] .output.error { color:#b91c1c; }
+.code-cell.running .editor-topbar::after {
+  content:'Running Python...';
+  display:flex;
+  align-items:center;
+  margin-left:auto;
+  padding:0 .75rem;
+  color:#c7c7c7;
+  font-size:.7rem;
+  font-weight:650;
+}
+[data-theme="light"] .code-cell.running .editor-topbar::after { color:#555; }
+@media (max-width:640px) {
+  .editor-status .status-right span:nth-child(2),
+  .editor-status .status-right span:nth-child(3) { display:none; }
+  .tab-name { min-width:0; max-width:100%; }
+  .output::before { font-size:.55rem; }
+  .output::after { display:none; }
+}
+@media (max-width: 1050px) {
+  .timeline,.mistake-grid,.checklist-grid { grid-template-columns: repeat(2, 1fr); }
+  .title-grid,.two-col,.two-col.split-55 { grid-template-columns:1fr; }
+  .slide-badge { display:none; }
+}
+@media (max-width: 760px) {
+  body { overflow:auto; }
+  .deck-app { min-height:100%; }
+  .topbar,.bottom-nav { position:sticky; left:0; right:0; }
+  .topbar { top:0; }
+  .bottom-nav { bottom:0; }
+  .stage { min-height: calc(100vh - 130px); padding:.5rem; }
+  .slide { inset:.5rem; }
+  .slide-header { display:block; }
+  .slide-header h2 { font-size:1.7rem; }
+  .timeline,.logic-grid,.notes-grid,.mistake-grid,.practice-grid,.checklist-grid,.summary-grid { grid-template-columns:1fr; }
+  .decision-layout { grid-template-columns:1fr; }
+  .hero-visual { min-height:180px; padding:1rem; }
+  .diamond,.loop-icon { width:84px; height:84px; font-size:.9rem; }
+  .diamond.small { width:76px; height:76px; }
+  .toolbar select,.runtime { display:none; }
+  .slide-footer { font-size:.72rem; }
+}
+@media print {
+  body { overflow: visible; background:#fff; }
+  .topbar,.bottom-nav,.progress,.speaker-notes { display:none !important; }
+  .deck-app { display:block; }
+  .stage { display:block; padding:0; }
+  .slide { position:relative; display:block !important; inset:auto; height:100vh; page-break-after:always; padding:0; }
+  .slide-inner { border-radius:0; box-shadow:none; }
+  .fragment { opacity:1 !important; transform:none !important; }
+}
+</style>
+</head>
+<body>
+<div class="deck-app" id="deck-app">
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">Py</div><div><h1>IAN 601 · Module 2 Slide Lesson</h1><span>Control Flow & Decision Making</span></div></div>
+    <div class="toolbar">
+      <div class="runtime" id="runtime"><span class="runtime-dot"></span><span id="runtime-text">Python not loaded</span></div>
+      <select id="slide-select" aria-label="Choose slide"></select>
+      <button class="btn ghost" id="theme-btn" type="button">Dark mode</button>
+      <button class="btn ghost" id="notes-btn" type="button">Notes</button>
+      <button class="btn ghost" id="fullscreen-btn" type="button">Fullscreen</button>
+      <button class="btn" id="run-slide-btn" type="button">Run slide</button>
+    </div>
+  </header>
+  <main class="stage" id="stage">
+    
+    <section class="slide standard" data-title="Control Flow &amp; Decision Making">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Module 2 · PowerPoint-style HTML lesson</span><h2>Control Flow &amp; Decision Making</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="title-grid">
+  <div>
+    <p class="big-lead">Python becomes useful for analytics when it can make decisions and repeat work automatically.</p>
+    <div class="pill-row"><span>One slide at a time</span><span>Executable Python cells</span><span>Instructor notes</span></div>
+    <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big notes-btn-inline" type="button">Show notes</button></div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="diamond"><span>IF</span></div>
+    <div class="arrow">→</div>
+    <div class="loop-icon">FOR</div>
+    <div class="arrow">→</div>
+    <div class="diamond small"><span>WHILE</span></div>
+  </div>
+</div>
+<div class="callout"><strong>Instructor use:</strong> Move through the slides with the arrow keys. Run each code cell directly on the slide.</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>Open by framing the module as the point where Python moves from simple calculations to automated decisions. Tell students they do not need to memorize everything today. They should focus on reading the structure: condition, indentation, repeated block.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 1</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="What changes after Module 1?">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Big picture</span><h2>What changes after Module 1?</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">In Module 1, code mostly ran from top to bottom. In Module 2, Python starts choosing paths.</p>
+    <ul class="clean-list">
+      <li class="fragment"><strong>Condition:</strong> a True or False question.</li>
+      <li class="fragment"><strong>Branch:</strong> the block that runs when the condition is true.</li>
+      <li class="fragment"><strong>Loop:</strong> a block that repeats.</li>
+      <li class="fragment"><strong>Control:</strong> changing when a loop stops or skips.</li>
+    </ul>
+  </div>
+  <div class="process-card">
+    <div class="process-step">Data value</div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step accent">Condition</div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step">Action</div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step">Next value</div>
+  </div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>This is a good warm-up slide. Ask students for an everyday rule, such as &#x27;if it rains, bring an umbrella.&#x27; Then connect that sentence to Python&#x27;s if statement.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 2</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="Learning path for this session">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Roadmap</span><h2>Learning path for this session</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="timeline">
+  <div class="timeline-item"><span>1</span><h3>Boolean conditions</h3><p>Compare values and produce True or False.</p></div>
+  <div class="timeline-item"><span>2</span><h3>if / elif / else</h3><p>Choose one path from several possible paths.</p></div>
+  <div class="timeline-item"><span>3</span><h3>for loops</h3><p>Repeat work for each item in a collection.</p></div>
+  <div class="timeline-item"><span>4</span><h3>while loops</h3><p>Repeat while a condition remains true.</p></div>
+  <div class="timeline-item"><span>5</span><h3>Analytics patterns</h3><p>Classify, count, summarize, and flag records.</p></div>
+</div>
+<div class="callout secondary">Each topic has a short explanation, a code cell, and a simple interpretation of the output.</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>Use this slide to set expectations. Students should know that loops and decisions are not separate ideas. Most real analytics code combines them.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 3</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="A condition asks a True/False question">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Boolean thinking</span><h2>A condition asks a True/False question</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="two-col tight">
+  <div>
+    <p class="lead">A condition is an expression that Python can evaluate as <code>True</code> or <code>False</code>.</p>
+    <div class="formula-card"><code>sales &gt; target</code><span>Is sales greater than target?</span></div>
+    <div class="formula-card"><code>status == "Open"</code><span>Is the status exactly Open?</span></div>
+    <div class="formula-card"><code>returns != 0</code><span>Are returns not equal to zero?</span></div>
+  </div>
+  <div>
+    <div class="table-wrap"><table><thead><tr><th>Operator</th><th>Meaning</th><th>Example</th></tr></thead><tbody><tr><td><code>==</code></td><td>Equal to</td><td><code>score == 90</code></td></tr><tr><td><code>!=</code></td><td>Not equal to</td><td><code>status != "Closed"</code></td></tr><tr><td><code>&gt;</code></td><td>Greater than</td><td><code>sales &gt; 800</code></td></tr><tr><td><code>&gt;=</code></td><td>Greater than or equal to</td><td><code>score &gt;= 80</code></td></tr><tr><td><code>&lt;</code></td><td>Less than</td><td><code>returns &lt; 50</code></td></tr><tr><td><code>&lt;=</code></td><td>Less than or equal to</td><td><code>age &lt;= 65</code></td></tr></tbody></table></div>
+  </div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>Spend time on the difference between equals in English and equality in Python. In Python, one equal sign assigns. Two equal signs compare.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 4</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="Code: compare values">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Executable example</span><h2>Code: compare values</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+
+    <div class="code-cell" data-cell="1" data-filename="compare_values.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 1</div>
+          <h3>Compare two values</h3>
+          <p>A comparison produces True or False.</p>
+        </div>
+        <span class="file-pill">compare_values.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">compare_values.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:170px" aria-label="Python editor 1">sales = 1000
+target = 800
+
+print(&quot;Is sales greater than target?&quot;, sales &gt; target)
+print(&quot;Is sales equal to target?&quot;, sales == target)
+print(&quot;Is sales different from target?&quot;, sales != target)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+<div class="notes-grid">
+  <div class="note-card"><strong>What happens</strong><span>Python evaluates each comparison and prints a Boolean result.</span></div>
+  <div class="note-card"><strong>Why it matters</strong><span>Every if statement begins with a Boolean condition.</span></div>
+  <div class="note-card"><strong>Try changing</strong><span>Set sales to 800 and run again. Which answers change?</span></div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>Before running, ask students to predict the three outputs. This helps them see that Boolean results are data too.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 5</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="The if statement runs only when true">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Decision structure</span><h2>The if statement runs only when true</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="decision-layout">
+  <div class="branch true"><span>True</span><strong>Run the indented block</strong><small>The rule is satisfied.</small></div>
+  <div class="decision-diamond"><span>Condition?</span></div>
+  <div class="branch false"><span>False</span><strong>Skip the indented block</strong><small>Continue after the if block.</small></div>
+</div>
+
+    <div class="code-cell" data-cell="2" data-filename="simple_if.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 2</div>
+          <h3>Simple if statement</h3>
+          <p>Only the indented line belongs to the if statement.</p>
+        </div>
+        <span class="file-pill">simple_if.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">simple_if.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:145px" aria-label="Python editor 2">sales = 1000
+
+if sales &gt; 800:
+    print(&quot;Good sales day&quot;)
+
+print(&quot;Analysis complete&quot;)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>Point to indentation. Explain that the final print statement always runs because it is not indented under the if.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 6</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="if / else chooses between two paths">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Two-way decision</span><h2>if / else chooses between two paths</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="two-col tight">
+  <div>
+    <p class="lead">Use <code>if</code> and <code>else</code> when exactly one of two outcomes should happen.</p>
+    <div class="rule-box"><code>if condition:</code><span>Run this block when the condition is true.</span></div>
+    <div class="rule-box"><code>else:</code><span>Run this block when the condition is false.</span></div>
+  </div>
+  <div>
+    
+    <div class="code-cell" data-cell="3" data-filename="if_else.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 3</div>
+          <h3>Choose between two outcomes</h3>
+          <p>Change sales and rerun to see a different branch.</p>
+        </div>
+        <span class="file-pill">if_else.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">if_else.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:140px" aria-label="Python editor 3">sales = 700
+
+if sales &gt; 800:
+    print(&quot;Good sales day&quot;)
+else:
+    print(&quot;Below target&quot;)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+  </div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>Use a threshold example. Ask what should happen when sales equals exactly 800. This prepares students to think carefully about greater-than versus greater-than-or-equal-to.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 7</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="elif handles several categories">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Multi-way decision</span><h2>elif handles several categories</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<p class="lead narrow">Use <code>elif</code> when there are multiple rules. Python checks the rules from top to bottom and stops at the first true condition.</p>
+
+    <div class="code-cell" data-cell="4" data-filename="if_elif_else.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 4</div>
+          <h3>Score category with elif</h3>
+          <p>The order of thresholds is important.</p>
+        </div>
+        <span class="file-pill">if_elif_else.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">if_elif_else.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:200px" aria-label="Python editor 4">score = 86
+
+if score &gt;= 90:
+    print(&quot;Excellent&quot;)
+elif score &gt;= 80:
+    print(&quot;Good&quot;)
+elif score &gt;= 70:
+    print(&quot;Needs practice&quot;)
+else:
+    print(&quot;Needs review&quot;)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+<div class="notes-grid">
+  <div class="note-card"><strong>Order matters</strong><span>The first true branch wins.</span></div>
+  <div class="note-card"><strong>Use high to low</strong><span>Threshold categories are usually easiest to read from highest to lowest.</span></div>
+  <div class="note-card"><strong>Try changing</strong><span>Test 95, 85, 75, and 60.</span></div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>This is a common place for beginner confusion. Emphasize that Python does not keep checking after it finds a true branch.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 8</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="Combine rules with Boolean logic">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">and · or · not</span><h2>Combine rules with Boolean logic</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="logic-grid">
+  <div><code>and</code><p>Both conditions must be true.</p></div>
+  <div><code>or</code><p>At least one condition must be true.</p></div>
+  <div><code>not</code><p>Reverse a Boolean result.</p></div>
+</div>
+
+    <div class="code-cell" data-cell="5" data-filename="logical_operators.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 5</div>
+          <h3>Logical operators in a business rule</h3>
+          <p>Build richer rules by combining conditions.</p>
+        </div>
+        <span class="file-pill">logical_operators.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">logical_operators.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:170px" aria-label="Python editor 5">sales = 1200
+returns = 40
+
+print(&quot;Bonus eligible:&quot;, sales &gt; 1000 and returns &lt; 50)
+print(&quot;Needs attention:&quot;, sales &lt; 800 or returns &gt; 100)
+print(&quot;Returns are not high:&quot;, not returns &gt; 100)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>Explain this as policy logic. For example, a bonus may require high sales and low returns. A warning may require one of several risk signals.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 9</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="Common beginner mistakes">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Debugging mindset</span><h2>Common beginner mistakes</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="mistake-grid">
+  <div class="mistake-card bad"><h3><code>=</code> vs <code>==</code></h3><p><code>=</code> assigns a value. <code>==</code> compares two values.</p></div>
+  <div class="mistake-card bad"><h3>Missing colon</h3><p><code>if sales &gt; 800:</code> needs a colon at the end.</p></div>
+  <div class="mistake-card bad"><h3>Wrong indentation</h3><p>The lines controlled by <code>if</code> must be indented consistently.</p></div>
+  <div class="mistake-card good"><h3>Simple check</h3><p>Read the code out loud: “If this is true, do this; otherwise, do that.”</p></div>
+</div>
+<div class="callout warning"><strong>Teaching tip:</strong> Most early errors are structure errors, not math errors.</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>Normalize errors. Students often think a syntax error means they are bad at programming. Remind them that Python is strict about symbols and spacing.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 10</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="For loops repeat over a sequence">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Known items</span><h2>For loops repeat over a sequence</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="two-col tight">
+  <div>
+    <p class="lead">A <code>for</code> loop is best when you have a sequence of items or when you know how many repetitions are needed.</p>
+    <div class="loop-strip"><div>Get item</div><div>Run block</div><div>Move next</div><div>Stop</div></div>
+  </div>
+  <div>
+    
+    <div class="code-cell" data-cell="6" data-filename="for_loop_sequence.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 6</div>
+          <h3>Loop through a small sequence</h3>
+          <p>Read this as: for each customer in customers.</p>
+        </div>
+        <span class="file-pill">for_loop_sequence.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">for_loop_sequence.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:140px" aria-label="Python editor 6">customers = [&quot;Ava&quot;, &quot;Ben&quot;, &quot;Carla&quot;]
+
+for customer in customers:
+    print(&quot;Process customer:&quot;, customer)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+  </div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>Students do not need a full list lecture yet. Tell them a list is a small collection. Lists get a deeper treatment later.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 11</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="range() creates a simple count">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Known repetitions</span><h2>range() creates a simple count</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="two-col tight">
+  <div>
+    <p class="lead">Use <code>range()</code> when you want to repeat a known number of times.</p>
+    <div class="table-wrap"><table><thead><tr><th>Expression</th><th>Values produced</th><th>Use</th></tr></thead><tbody><tr><td><code>range(5)</code></td><td>0, 1, 2, 3, 4</td><td>Repeat five times</td></tr><tr><td><code>range(1, 6)</code></td><td>1, 2, 3, 4, 5</td><td>Human-friendly numbering</td></tr><tr><td><code>range(0, 10, 2)</code></td><td>0, 2, 4, 6, 8</td><td>Step by 2</td></tr></tbody></table></div>
+  </div>
+  <div>
+    
+    <div class="code-cell" data-cell="7" data-filename="range_loop.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 7</div>
+          <h3>Repeat with range()</h3>
+          <p>Notice that range(5) starts at 0 and stops before 5.</p>
+        </div>
+        <span class="file-pill">range_loop.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">range_loop.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:115px" aria-label="Python editor 7">for number in range(5):
+    print(number)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+  </div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>Point out that range stops before the ending value. This feels unusual at first, but it is very common in Python.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 12</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="Running totals are a core analytics pattern">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Loop + accumulator</span><h2>Running totals are a core analytics pattern</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<p class="lead narrow">An accumulator is a variable that starts with a simple value, then updates during each loop repetition.</p>
+
+    <div class="code-cell" data-cell="8" data-filename="running_total.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 8</div>
+          <h3>Accumulate a total inside a loop</h3>
+          <p>This pattern appears often in summaries and reports.</p>
+        </div>
+        <span class="file-pill">running_total.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">running_total.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:185px" aria-label="Python editor 8">total = 0
+
+for amount in [100, 200, 150]:
+    total = total + amount
+    print(&quot;Running total:&quot;, total)
+
+print(&quot;Final total sales:&quot;, total)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+<div class="notes-grid">
+  <div class="note-card"><strong>Start</strong><span>The total begins at 0.</span></div>
+  <div class="note-card"><strong>Update</strong><span>Each amount is added to the previous total.</span></div>
+  <div class="note-card"><strong>Finish</strong><span>After the loop, total stores the final sum.</span></div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>Ask students why total must exist before the loop. This helps them understand variable initialization.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 13</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="enumerate() gives position and value">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Loop with a counter</span><h2>enumerate() gives position and value</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="two-col tight">
+  <div>
+    <p class="lead">Sometimes you need both the item and its position in the sequence.</p>
+    <div class="callout secondary"><code>enumerate(items, start=1)</code> is useful for reports, ranked lists, or numbered output.</div>
+  </div>
+  <div>
+    
+    <div class="code-cell" data-cell="9" data-filename="enumerate_loop.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 9</div>
+          <h3>Use a counter while looping</h3>
+          <p>The number and customer are returned together.</p>
+        </div>
+        <span class="file-pill">enumerate_loop.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">enumerate_loop.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:140px" aria-label="Python editor 9">customers = [&quot;Ava&quot;, &quot;Ben&quot;, &quot;Carla&quot;]
+
+for number, customer in enumerate(customers, start=1):
+    print(number, customer)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+  </div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>This is a small but useful professional pattern. It avoids manually creating and updating a counter variable.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 14</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="while loops repeat until a condition changes">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Condition-based repetition</span><h2>while loops repeat until a condition changes</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="two-col tight">
+  <div>
+    <p class="lead">A <code>while</code> loop repeats as long as its condition remains true.</p>
+    <div class="rule-box"><code>while condition:</code><span>Keep repeating while the condition is true.</span></div>
+    <div class="callout warning"><strong>Safety question:</strong> What changes inside the loop so it eventually stops?</div>
+  </div>
+  <div>
+    
+    <div class="code-cell" data-cell="10" data-filename="while_countdown.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 10</div>
+          <h3>Countdown with while</h3>
+          <p>The variable count changes inside the loop.</p>
+        </div>
+        <span class="file-pill">while_countdown.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">while_countdown.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:165px" aria-label="Python editor 10">count = 5
+
+while count &gt; 0:
+    print(count)
+    count = count - 1
+
+print(&quot;Done&quot;)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+  </div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>Emphasize that while loops can be dangerous if the condition never becomes false. This is why we always identify the variable that changes.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 15</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="while loops can model changing processes">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Threshold example</span><h2>while loops can model changing processes</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="two-col tight">
+  <div>
+    
+    <div class="code-cell" data-cell="11" data-filename="while_balance.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 11</div>
+          <h3>Track a changing balance</h3>
+          <p>The loop continues until the balance reaches zero.</p>
+        </div>
+        <span class="file-pill">while_balance.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">while_balance.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:145px" aria-label="Python editor 11">balance = 100
+
+while balance &gt; 0:
+    balance = balance - 20
+    print(&quot;Balance:&quot;, balance)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+  </div>
+  <div>
+    
+    <div class="code-cell" data-cell="12" data-filename="while_threshold.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 12</div>
+          <h3>Stop at a threshold</h3>
+          <p>The condition is about a changing analytical value.</p>
+        </div>
+        <span class="file-pill">while_threshold.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">while_threshold.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:145px" aria-label="Python editor 12">visits = 1
+
+while visits &lt; 8:
+    visits = visits * 2
+    print(&quot;Projected visits:&quot;, visits)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+  </div>
+</div>
+<div class="callout secondary"><strong>Rule of thumb:</strong> Use <code>for</code> when the items are known. Use <code>while</code> when stopping depends on a changing condition.</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>Use this slide to compare fixed repetition versus conditional repetition. The two examples are intentionally small.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 16</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="break and continue change loop behavior">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Loop control</span><h2>break and continue change loop behavior</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="two-col tight">
+  <div>
+    <div class="control-card"><h3><code>continue</code></h3><p>Skip the rest of the current repetition and move to the next one.</p></div>
+    
+    <div class="code-cell" data-cell="13" data-filename="continue_example.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 13</div>
+          <h3>Skip one value with continue</h3>
+          <p>The number 2 is skipped.</p>
+        </div>
+        <span class="file-pill">continue_example.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">continue_example.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:145px" aria-label="Python editor 13">for number in range(5):
+    if number == 2:
+        continue
+    print(number)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+  </div>
+  <div>
+    <div class="control-card"><h3><code>break</code></h3><p>Exit the nearest loop immediately.</p></div>
+    
+    <div class="code-cell" data-cell="14" data-filename="break_example.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 14</div>
+          <h3>Exit early with break</h3>
+          <p>The loop stops before printing 4.</p>
+        </div>
+        <span class="file-pill">break_example.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">break_example.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:145px" aria-label="Python editor 14">for number in range(10):
+    if number == 4:
+        break
+    print(number)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+  </div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>A helpful phrase: continue means &#x27;skip this one&#x27;; break means &#x27;stop the loop.&#x27;</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 17</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="Combine loops and decisions">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Classification pattern</span><h2>Combine loops and decisions</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<p class="lead narrow">Most useful control flow combines repetition with a decision inside the loop.</p>
+
+    <div class="code-cell" data-cell="15" data-filename="loop_with_if.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 15</div>
+          <h3>Place a decision inside a loop</h3>
+          <p>Each sale is classified using the same rule.</p>
+        </div>
+        <span class="file-pill">loop_with_if.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">loop_with_if.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:165px" aria-label="Python editor 15">for sale in [650, 1200, 900]:
+    if sale &gt;= 1000:
+        print(sale, &quot;-&gt; target met&quot;)
+    else:
+        print(sale, &quot;-&gt; below target&quot;)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+<div class="notes-grid">
+  <div class="note-card"><strong>Loop</strong><span>Move through one value at a time.</span></div>
+  <div class="note-card"><strong>Decision</strong><span>Apply the same threshold to each value.</span></div>
+  <div class="note-card"><strong>Output</strong><span>Print a category for each value.</span></div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>This is the bridge to analytics. We often have many rows and one rule that must be applied to each row.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 18</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="Nested loops: a loop inside a loop">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Use carefully</span><h2>Nested loops: a loop inside a loop</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="two-col tight">
+  <div>
+    <p class="lead">A nested loop is useful for grids or paired combinations, but too many layers become difficult to read.</p>
+    <div class="grid-visual"><span>r0 c0</span><span>r0 c1</span><span>r0 c2</span><span>r1 c0</span><span>r1 c1</span><span>r1 c2</span></div>
+  </div>
+  <div>
+    
+    <div class="code-cell" data-cell="16" data-filename="nested_loops.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 16</div>
+          <h3>Use nested loops carefully</h3>
+          <p>The inner loop finishes for each outer-loop row.</p>
+        </div>
+        <span class="file-pill">nested_loops.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">nested_loops.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:145px" aria-label="Python editor 16">for row in range(2):
+    for column in range(3):
+        print(&quot;row&quot;, row, &quot;column&quot;, column)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+  </div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>Use the grid to explain the execution order. Row 0 runs all columns before row 1 begins.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 19</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="Analytics example: classify sales days">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Mini report</span><h2>Analytics example: classify sales days</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<p class="lead narrow">This example counts how many sales days are low, target, or high. Run the cell, then change the sales values and run again.</p>
+<div class="two-col split-55">
+  <div>
+    
+    <div class="code-cell" data-cell="17" data-filename="classify_sales.py" data-chart="sales">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 17</div>
+          <h3>Classify sales into three groups</h3>
+          <p>Loop, compare, and update counters.</p>
+        </div>
+        <span class="file-pill">classify_sales.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">classify_sales.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:310px" aria-label="Python editor 17">daily_sales = [650, 1200, 1800, 950, 2200, 1400]
+low_count = 0
+target_count = 0
+high_count = 0
+
+for sale in daily_sales:
+    if sale &lt; 1000:
+        low_count += 1
+    elif sale &lt;= 1800:
+        target_count += 1
+    else:
+        high_count += 1
+
+print(&quot;Low:&quot;, low_count)
+print(&quot;Target:&quot;, target_count)
+print(&quot;High:&quot;, high_count)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+  </div>
+  <div>
+    <div class="chart-card">
+      <h3>Live category chart</h3>
+      <p>The bars update after the cell runs.</p>
+      <div class="bar-row"><span>Low</span><div class="bar-track"><div id="chart-low-bar" class="bar-fill" style="width:66%"></div></div><strong id="chart-low-value">2</strong></div>
+      <div class="bar-row"><span>Target</span><div class="bar-track"><div id="chart-target-bar" class="bar-fill" style="width:100%"></div></div><strong id="chart-target-value">3</strong></div>
+      <div class="bar-row"><span>High</span><div class="bar-track"><div id="chart-high-bar" class="bar-fill" style="width:33%"></div></div><strong id="chart-high-value">1</strong></div>
+    </div>
+    <div class="callout secondary"><strong>Pattern:</strong> initialize counters → loop through values → use if/elif/else → update the right counter.</div>
+  </div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>This slide is the key applied example. Ask students to identify the counters and explain when each one increases.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 20</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="Count values that meet a condition">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Flagging pattern</span><h2>Count values that meet a condition</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="two-col tight">
+  <div>
+    <p class="lead">A counter can summarize how many observations match a rule.</p>
+    <ul class="clean-list">
+      <li class="fragment">Start the counter at 0.</li>
+      <li class="fragment">Loop through each value.</li>
+      <li class="fragment">If the rule is true, add 1.</li>
+      <li class="fragment">Print the final count.</li>
+    </ul>
+  </div>
+  <div>
+    
+    <div class="code-cell" data-cell="18" data-filename="count_matches.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 18</div>
+          <h3>Count values above a threshold</h3>
+          <p>This could represent any measurement threshold.</p>
+        </div>
+        <span class="file-pill">count_matches.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">count_matches.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:185px" aria-label="Python editor 18">above_threshold_count = 0
+measurements = [98.1, 99.4, 97.9, 100.2]
+
+for value in measurements:
+    if value &gt; 98.6:
+        above_threshold_count += 1
+
+print(&quot;Measurements above threshold:&quot;, above_threshold_count)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+  </div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>This example avoids medical advice. Keep it generic: measurements above a threshold. The point is the code pattern, not the domain.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 21</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="Final activity: simple customer flags">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Put it together</span><h2>Final activity: simple customer flags</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<p class="lead narrow">This activity combines a loop, several conditions, a counter, and readable output.</p>
+
+    <div class="code-cell" data-cell="19" data-filename="customer_flags_activity.py">
+      <div class="cell-head">
+        <div>
+          <div class="cell-label">Python Cell 19</div>
+          <h3>Create simple customer flags</h3>
+          <p>Students can edit the spending and visit values.</p>
+        </div>
+        <span class="file-pill">customer_flags_activity.py</span>
+      </div>
+      <div class="editor-shell">
+        <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">customer_flags_activity.py</span></div>
+        <textarea class="code-input" spellcheck="false" style="height:330px" aria-label="Python editor 19">customers = [
+    {&quot;name&quot;: &quot;Ava&quot;, &quot;spend&quot;: 240, &quot;visits&quot;: 3},
+    {&quot;name&quot;: &quot;Ben&quot;, &quot;spend&quot;: 80, &quot;visits&quot;: 1},
+    {&quot;name&quot;: &quot;Carla&quot;, &quot;spend&quot;: 310, &quot;visits&quot;: 5},
+]
+
+priority_count = 0
+
+for customer in customers:
+    if customer[&quot;spend&quot;] &gt;= 250 and customer[&quot;visits&quot;] &gt;= 3:
+        flag = &quot;priority&quot;
+        priority_count += 1
+    elif customer[&quot;spend&quot;] &gt;= 100:
+        flag = &quot;standard&quot;
+    else:
+        flag = &quot;follow up&quot;
+
+    print(customer[&quot;name&quot;], &quot;-&gt;&quot;, flag)
+
+print(&quot;Priority customers:&quot;, priority_count)</textarea>
+        <div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+      </div>
+      <div class="cell-actions">
+        <button class="btn run-cell" type="button">▶ Run</button>
+        <button class="btn ghost reset-cell" type="button">Reset</button>
+        <button class="btn ghost copy-cell" type="button">Copy</button>
+      </div>
+      <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+    </div>
+    
+<div class="callout"><strong>Discuss:</strong> Which values control the final label? What happens if a customer spends 250 exactly?</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>This final activity previews dictionaries without teaching them deeply. Students only need to see that each customer has fields. Focus on the if/elif/else logic.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 22</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="Practice prompts for class">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">Guided exercises</span><h2>Practice prompts for class</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="practice-grid">
+  <div><span>1</span><h3>Threshold check</h3><p>Create a variable called <code>score</code>. Print “pass” when it is at least 70.</p></div>
+  <div><span>2</span><h3>Two-way decision</h3><p>Create a variable called <code>balance</code>. Print whether it is positive or zero/negative.</p></div>
+  <div><span>3</span><h3>Known repetition</h3><p>Use <code>range()</code> to print the numbers 1 through 5.</p></div>
+  <div><span>4</span><h3>Counter pattern</h3><p>Count how many values in <code>[4, 9, 12, 3, 15]</code> are greater than 10.</p></div>
+  <div><span>5</span><h3>Challenge</h3><p>Classify each number as low, medium, or high using <code>if</code>, <code>elif</code>, and <code>else</code>.</p></div>
+  <div><span>6</span><h3>Explain</h3><p>In one sentence, explain when you would choose a <code>while</code> loop instead of a <code>for</code> loop.</p></div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>These can be used as live practice or as a quick check before ending class. For beginners, keep the first attempts small.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 23</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="Instructor checklist">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">What to listen for</span><h2>Instructor checklist</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="checklist-grid">
+  <div class="check-card"><h3>Can students read a condition?</h3><p>They should explain what makes it true or false.</p></div>
+  <div class="check-card"><h3>Can students identify the block?</h3><p>They should point to the indented lines controlled by the statement.</p></div>
+  <div class="check-card"><h3>Can students trace a loop?</h3><p>They should follow one repetition at a time.</p></div>
+  <div class="check-card"><h3>Can students avoid infinite loops?</h3><p>They should identify the changing variable in a while loop.</p></div>
+  <div class="check-card"><h3>Can students connect to analytics?</h3><p>They should describe classify, count, flag, and summarize patterns.</p></div>
+</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>This slide is for instructor pacing. If students struggle, slow down on tracing rather than adding more code.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 24</span></footer>
+      </div>
+    </section>
+    
+
+    <section class="slide standard" data-title="Summary">
+      <div class="slide-inner">
+        <header class="slide-header">
+          <div><span class="kicker">End of Module 2</span><h2>Summary</h2></div>
+          <div class="slide-badge">IAN 601 · Module 2</div>
+        </header>
+        <div class="slide-content">
+<div class="summary-grid">
+  <div><h3>Conditions</h3><p>Python answers True/False questions.</p></div>
+  <div><h3>Branches</h3><p><code>if</code>, <code>elif</code>, and <code>else</code> choose paths.</p></div>
+  <div><h3>For loops</h3><p>Repeat over known items or known counts.</p></div>
+  <div><h3>While loops</h3><p>Repeat until a condition changes.</p></div>
+  <div><h3>Loop control</h3><p><code>break</code> stops; <code>continue</code> skips.</p></div>
+  <div><h3>Analytics use</h3><p>Classify, count, flag, and summarize observations.</p></div>
+</div>
+<div class="callout success"><strong>Next:</strong> Functions make repeated logic reusable and easier to organize.</div>
+</div>
+        <aside class="speaker-notes"><h4>Speaker notes</h4><p>End by connecting to functions. The same rule can be repeated today; next module, the rule can be packaged and reused.</p></aside>
+        <footer class="slide-footer"><span>Control Flow & Decision Making</span><span>Slide 25</span></footer>
+      </div>
+    </section>
+    
+  </main>
+  <footer class="bottom-nav">
+    <div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">← Previous</button><button class="btn ghost" id="show-all-btn" type="button">Show all points</button></div>
+    <div class="counter" id="counter">1 / 25</div>
+    <div class="nav-right"><button class="btn" id="next-btn" type="button">Next →</button></div>
+    <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
+  </footer>
+</div>
+<script>
+const slides = Array.from(document.querySelectorAll('.slide'));
+const select = document.getElementById('slide-select');
+const counter = document.getElementById('counter');
+const progressBar = document.getElementById('progress-bar');
+let current = 0;
+let pyodidePromise = null;
+const PYODIDE_URL = 'https://cdn.jsdelivr.net/pyodide/v314.0.4/full/';
+
+slides.forEach((slide, index) => {
+  const opt = document.createElement('option');
+  opt.value = index;
+  opt.textContent = `${index + 1}. ${slide.dataset.title || 'Slide'}`;
+  select.appendChild(opt);
+});
+
+document.querySelectorAll('.code-cell').forEach(cell => {
+  const textarea = cell.querySelector('.code-input');
+  cell.dataset.originalCode = textarea.value;
+  textarea.addEventListener('keydown', event => {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      const start = textarea.selectionStart;
+      const end = textarea.selectionEnd;
+      textarea.value = textarea.value.substring(0, start) + '    ' + textarea.value.substring(end);
+      textarea.selectionStart = textarea.selectionEnd = start + 4;
+    }
+    if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+      event.preventDefault();
+      runCell(cell);
+    }
+  });
+});
+
+function getCellCode(cell) {
+  return cell._monacoEditor ? cell._monacoEditor.getValue() : cell.querySelector('.code-input').value;
+}
+
+function setCellCode(cell, code) {
+  const textarea = cell.querySelector('.code-input');
+  textarea.value = code;
+  if (cell._monacoEditor && cell._monacoEditor.getValue() !== code) {
+    cell._monacoEditor.setValue(code);
+  }
+}
+
+function updateEditorStatus(cell, position) {
+  const status = cell.querySelector('.editor-status');
+  if (!status) return;
+  const pos = position || cell._monacoEditor?.getPosition() || { lineNumber: 1, column: 1 };
+  status.innerHTML = `
+    <span class="status-left"><span>main*</span><span>0 errors</span></span>
+    <span class="status-right"><span>Ln ${pos.lineNumber}, Col ${pos.column}</span><span>Spaces: 4</span><span>UTF-8</span><span class="status-python">Python</span></span>`;
+}
+
+function initializeMonacoEditors() {
+  if (typeof require !== 'function') return;
+  require.config({ paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs' } });
+  require(['vs/editor/editor.main'], function() {
+    document.querySelectorAll('.code-cell').forEach(cell => {
+      if (cell._monacoEditor) return;
+      const textarea = cell.querySelector('.code-input');
+      const host = document.createElement('div');
+      host.className = 'monaco-host';
+      host.style.height = textarea.style.height || `${Math.max(120, textarea.scrollHeight)}px`;
+      textarea.insertAdjacentElement('afterend', host);
+
+      const editor = monaco.editor.create(host, {
+        value: textarea.value,
+        language: 'python',
+        theme: document.documentElement.dataset.theme === 'dark' ? 'vs-dark' : 'vs-dark',
+        automaticLayout: true,
+        fontFamily: 'Consolas, "Courier New", monospace',
+        fontSize: 14,
+        lineHeight: 21,
+        lineNumbers: 'on',
+        lineNumbersMinChars: 3,
+        glyphMargin: false,
+        folding: true,
+        minimap: { enabled: false },
+        scrollBeyondLastLine: false,
+        smoothScrolling: true,
+        renderLineHighlight: 'line',
+        wordWrap: 'off',
+        tabSize: 4,
+        insertSpaces: true,
+        roundedSelection: false,
+        padding: { top: 9, bottom: 9 },
+        overviewRulerBorder: false,
+        scrollbar: { verticalScrollbarSize: 9, horizontalScrollbarSize: 9 },
+        suggestOnTriggerCharacters: true,
+        quickSuggestions: true,
+        contextmenu: true
+      });
+
+      cell._monacoEditor = editor;
+      cell.classList.add('monaco-ready');
+      updateEditorStatus(cell, editor.getPosition());
+
+      editor.onDidChangeModelContent(() => {
+        textarea.value = editor.getValue();
+      });
+      editor.onDidChangeCursorPosition(e => updateEditorStatus(cell, e.position));
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => runCell(cell));
+    });
+
+    requestAnimationFrame(() => {
+      slides[current].querySelectorAll('.code-cell').forEach(cell => cell._monacoEditor?.layout());
+    });
+  }, function() {
+    // Monaco is an enhancement; the textarea editors remain fully usable if the CDN is unavailable.
+  });
+}
+
+function setRuntime(state, text) {
+  const rt = document.getElementById('runtime');
+  const rtText = document.getElementById('runtime-text');
+  rt.classList.remove('ready','error');
+  if (state === 'ready') rt.classList.add('ready');
+  if (state === 'error') rt.classList.add('error');
+  rtText.textContent = text;
+}
+
+async function getPyodideRuntime() {
+  if (!pyodidePromise) {
+    setRuntime('loading', 'Loading Python...');
+    pyodidePromise = loadPyodide({ indexURL: PYODIDE_URL }).then(py => {
+      setRuntime('ready', 'Python ready');
+      return py;
+    }).catch(err => {
+      setRuntime('error', 'Python failed to load');
+      throw err;
+    });
+  }
+  return pyodidePromise;
+}
+
+async function runCell(cell) {
+  const btn = cell.querySelector('.run-cell');
+  const output = cell.querySelector('.output');
+  const code = getCellCode(cell);
+  btn.disabled = true;
+  cell.classList.add('running');
+  btn.textContent = 'Running...';
+  output.classList.remove('success','error');
+  output.textContent = 'Running...';
+  try {
+    const py = await getPyodideRuntime();
+    const stdout = [];
+    const stderr = [];
+    if (py.setStdout) py.setStdout({ batched: msg => stdout.push(msg) });
+    if (py.setStderr) py.setStderr({ batched: msg => stderr.push(msg) });
+    const result = await py.runPythonAsync(code);
+    let text = stdout.join('\n');
+    if (stderr.length) text += (text ? '\n' : '') + stderr.join('\n');
+    if ((result !== undefined) && (result !== null) && String(result) !== 'undefined') {
+      text += (text ? '\n' : '') + String(result);
+    }
+    output.textContent = text || 'Code ran successfully. No printed output.';
+    output.classList.add('success');
+    if (cell.dataset.chart === 'sales') updateSalesChart(py);
+  } catch (err) {
+    output.textContent = String(err);
+    output.classList.add('error');
+  } finally {
+    btn.disabled = false;
+    cell.classList.remove('running');
+    btn.textContent = '▶ Run';
+  }
+}
+
+function updateSalesChart(py) {
+  const names = [
+    ['low', 'low_count'],
+    ['target', 'target_count'],
+    ['high', 'high_count']
+  ];
+  const counts = names.map(pair => {
+    try { return Number(py.globals.get(pair[1])); } catch { return 0; }
+  });
+  const max = Math.max(1, ...counts);
+  names.forEach((pair, idx) => {
+    const key = pair[0];
+    const value = counts[idx];
+    const bar = document.getElementById(`chart-${key}-bar`);
+    const label = document.getElementById(`chart-${key}-value`);
+    if (bar) bar.style.width = `${Math.round((value / max) * 100)}%`;
+    if (label) label.textContent = value;
+  });
+}
+
+function resetCell(cell) {
+  const code = cell.dataset.originalCode || getCellCode(cell);
+  setCellCode(cell, code);
+  const output = cell.querySelector('.output');
+  output.classList.remove('success','error');
+  output.textContent = 'Run this cell to see output.';
+}
+
+function copyCell(cell) {
+  const code = getCellCode(cell);
+  navigator.clipboard?.writeText(code);
+}
+
+function showSlide(index, resetFragments=true) {
+  current = Math.max(0, Math.min(index, slides.length - 1));
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === current);
+    if (i === current && resetFragments) {
+      slide.querySelectorAll('.fragment').forEach(fragment => fragment.classList.remove('visible'));
+    }
+  });
+  select.value = current;
+  counter.textContent = `${current + 1} / ${slides.length}`;
+  progressBar.style.width = `${((current + 1) / slides.length) * 100}%`;
+  requestAnimationFrame(() => {
+    slides[current].querySelectorAll('.code-cell').forEach(cell => cell._monacoEditor?.layout());
+  });
+}
+
+function next() {
+  const active = slides[current];
+  const hidden = Array.from(active.querySelectorAll('.fragment:not(.visible)'));
+  if (hidden.length) {
+    hidden[0].classList.add('visible');
+    return;
+  }
+  showSlide(current + 1);
+}
+function prev() { showSlide(current - 1); }
+function showAllPoints() { slides[current].querySelectorAll('.fragment').forEach(f => f.classList.add('visible')); }
+
+async function runActiveSlide() {
+  const cells = Array.from(slides[current].querySelectorAll('.code-cell'));
+  for (const cell of cells) await runCell(cell);
+}
+
+document.getElementById('next-btn').addEventListener('click', next);
+document.getElementById('prev-btn').addEventListener('click', prev);
+document.getElementById('show-all-btn').addEventListener('click', showAllPoints);
+document.getElementById('run-slide-btn').addEventListener('click', runActiveSlide);
+document.querySelector('.start-btn')?.addEventListener('click', () => showSlide(1));
+document.querySelector('.notes-btn-inline')?.addEventListener('click', () => document.body.classList.toggle('show-notes'));
+select.addEventListener('change', e => showSlide(Number(e.target.value)));
+
+document.querySelectorAll('.run-cell').forEach(btn => btn.addEventListener('click', e => runCell(e.target.closest('.code-cell'))));
+document.querySelectorAll('.reset-cell').forEach(btn => btn.addEventListener('click', e => resetCell(e.target.closest('.code-cell'))));
+document.querySelectorAll('.copy-cell').forEach(btn => btn.addEventListener('click', e => copyCell(e.target.closest('.code-cell'))));
+
+document.getElementById('theme-btn').addEventListener('click', () => {
+  const root = document.documentElement;
+  const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+  root.dataset.theme = nextTheme;
+  document.getElementById('theme-btn').textContent = nextTheme === 'dark' ? 'Light mode' : 'Dark mode';
+  if (window.monaco?.editor) monaco.editor.setTheme('vs-dark');
+});
+document.getElementById('notes-btn').addEventListener('click', () => document.body.classList.toggle('show-notes'));
+document.getElementById('fullscreen-btn').addEventListener('click', () => {
+  if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+  else document.exitFullscreen?.();
+});
+
+document.addEventListener('keydown', event => {
+  const tag = event.target.tagName.toLowerCase();
+  if (tag === 'textarea' || tag === 'input' || tag === 'select') return;
+  if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') { event.preventDefault(); next(); }
+  if (event.key === 'ArrowLeft' || event.key === 'PageUp') { event.preventDefault(); prev(); }
+  if (event.key.toLowerCase() === 'n') document.body.classList.toggle('show-notes');
+  if (event.key.toLowerCase() === 'r') runActiveSlide();
+});
+
+showSlide(0);
+initializeMonacoEditors();
+</script>
+</body>
+</html>
