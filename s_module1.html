@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="IAN 601 Module 1 slide-style HTML lesson with executable VS Code-style Python code cells." name="description"/>
+<title>IAN 601 Module 1 · Python Fundamentals Slide Lesson</title>
+<script src="https://cdn.jsdelivr.net/pyodide/v314.0.4/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs/loader.js"></script>
+<style>
+:root {
+  --bg: #eef3fb;
+  --slide: #ffffff;
+  --slide-2: #f7f9fd;
+  --text: #172033;
+  --muted: #64748b;
+  --border: #dbe4f0;
+  --primary: #2563eb;
+  --primary-2: #4f46e5;
+  --accent: #c78b16;
+  --success: #0f9f6e;
+  --danger: #dc2626;
+  --warning: #b45309;
+  --shadow: 0 22px 60px rgba(15, 23, 42, .16);
+  --code-bg: #1e1e1e;
+  --code-text: #d4d4d4;
+}
+[data-theme="dark"] {
+  --bg: #08111f;
+  --slide: #0f172a;
+  --slide-2: #162032;
+  --text: #e5edf8;
+  --muted: #9aa8bd;
+  --border: #334155;
+  --primary: #38bdf8;
+  --primary-2: #818cf8;
+  --accent: #fbbf24;
+  --success: #34d399;
+  --danger: #f87171;
+  --warning: #f59e0b;
+  --shadow: 0 28px 80px rgba(0,0,0,.42);
+  --code-bg: #0b1120;
+  --code-text: #e5e7eb;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, rgba(37,99,235,.18), transparent 32%), var(--bg);
+  color: var(--text);
+}
+button, textarea, select { font: inherit; }
+code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; background: rgba(37,99,235,.1); color: var(--primary); padding: .08em .25em; border-radius: .25rem; }
+.deck-app { height: 100%; display: grid; grid-template-rows: auto 1fr auto; }
+.topbar {
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--slide) 86%, transparent);
+  backdrop-filter: blur(12px);
+  z-index: 10;
+}
+.brand { display:flex; align-items:center; gap:.75rem; min-width: 0; }
+.brand-mark { width:40px; height:40px; display:grid; place-items:center; border-radius:12px; color:#fff; background: linear-gradient(135deg, var(--primary), var(--primary-2)); font-weight: 900; box-shadow: 0 10px 24px rgba(37,99,235,.25); }
+.brand h1 { font-size: 1rem; margin:0; line-height:1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.brand span { color: var(--muted); font-size:.8rem; }
+.toolbar { display:flex; align-items:center; gap:.5rem; flex-wrap: wrap; justify-content: flex-end; }
+.btn {
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  background: var(--primary);
+  color: #fff;
+  padding: .55rem .8rem;
+  cursor: pointer;
+  font-weight: 750;
+  box-shadow: 0 8px 18px rgba(37,99,235,.18);
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.ghost { background: var(--slide-2); color: var(--text); border-color: var(--border); box-shadow: none; }
+.btn.big { font-size: 1rem; padding: .8rem 1.05rem; border-radius: 1rem; }
+select { border: 1px solid var(--border); border-radius: .75rem; padding: .55rem .75rem; background: var(--slide-2); color: var(--text); font-weight: 650; max-width: 240px; }
+.runtime { display:flex; align-items:center; gap:.45rem; padding:.45rem .65rem; border:1px solid var(--border); border-radius:999px; background: var(--slide-2); color:var(--muted); font-size:.82rem; font-weight: 700; }
+.runtime-dot { width:10px; height:10px; border-radius:50%; background: var(--warning); box-shadow: 0 0 0 5px rgba(180,83,9,.12); }
+.runtime.ready .runtime-dot { background: var(--success); box-shadow: 0 0 0 5px rgba(15,159,110,.12); }
+.runtime.error .runtime-dot { background: var(--danger); box-shadow: 0 0 0 5px rgba(220,38,38,.12); }
+.stage { position: relative; min-height: 0; overflow: hidden; display: grid; place-items: center; padding: clamp(.6rem, 2vh, 1.2rem); }
+.slide {
+  position: absolute;
+  inset: clamp(.6rem, 2vh, 1.2rem);
+  display: none;
+}
+.slide.active { display: block; }
+.slide-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  background:
+    radial-gradient(circle at 96% 8%, color-mix(in srgb, var(--primary) 16%, transparent), transparent 28%),
+    linear-gradient(135deg, color-mix(in srgb, var(--slide) 96%, var(--primary) 4%), var(--slide));
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+}
+.slide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: clamp(1.1rem, 2vw, 1.8rem) clamp(1.2rem, 3vw, 2.2rem) .7rem;
+}
+.kicker { display:inline-flex; color: var(--accent); font-weight: 850; letter-spacing:.08em; text-transform:uppercase; font-size: .78rem; margin-bottom: .35rem; }
+.slide-header h2 { margin: 0; font-size: clamp(1.7rem, 3.2vw, 3.05rem); letter-spacing: -.035em; line-height: 1.03; color: var(--text); }
+.slide-badge { white-space: nowrap; padding:.45rem .7rem; border:1px solid var(--border); border-radius:999px; background: var(--slide-2); color:var(--muted); font-weight:800; font-size:.82rem; }
+.slide-content { padding: .5rem clamp(1.2rem, 3vw, 2.2rem) 1rem; overflow: auto; min-height: 0; }
+.slide-footer { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.65rem clamp(1.2rem, 3vw, 2.2rem); border-top:1px solid var(--border); color:var(--muted); font-size:.82rem; font-weight:700; background: color-mix(in srgb, var(--slide-2) 70%, transparent); }
+.nav-left,.nav-right { display:flex; align-items:center; gap:.5rem; }
+.counter { color: var(--muted); font-weight: 850; min-width: 88px; text-align:center; }
+.progress { position:absolute; left:0; right:0; bottom:0; height:5px; background: rgba(148,163,184,.24); }
+.progress-bar { height:100%; width:0; background: linear-gradient(90deg, var(--primary), var(--accent)); transition: width .25s ease; }
+.lead { font-size: clamp(1.05rem, 1.8vw, 1.35rem); line-height:1.55; color: var(--muted); }
+.big-lead { font-size: clamp(1.35rem, 2.9vw, 2.2rem); line-height: 1.25; max-width: 760px; margin: 0 0 1.3rem; color: var(--text); font-weight: 750; letter-spacing: -.02em; }
+.narrow { max-width: 950px; }
+.title-grid, .two-col { display:grid; grid-template-columns: minmax(0,1.1fr) minmax(320px,.9fr); gap: clamp(1rem, 2.8vw, 2rem); align-items:center; }
+.two-col.tight { align-items:start; }
+.two-col.split-55 { grid-template-columns: minmax(0,1.2fr) minmax(310px,.8fr); align-items:start; }
+.pill-row { display:flex; flex-wrap:wrap; gap:.55rem; margin: 1rem 0 1.4rem; }
+.pill-row span { border:1px solid var(--border); background:var(--slide-2); color:var(--muted); padding:.45rem .7rem; border-radius:999px; font-weight:800; }
+.hero-actions-inline { display:flex; gap:.7rem; flex-wrap:wrap; }
+.hero-visual { display:flex; align-items:center; justify-content:center; gap:.8rem; padding: 2rem; min-height: 280px; border-radius: 28px; border:1px solid var(--border); background: var(--slide-2); }
+.diamond { width: 120px; height:120px; display:grid; place-items:center; transform: rotate(45deg); border:3px solid var(--accent); border-radius:24px; color:var(--accent); font-weight: 950; font-size:1.4rem; background:var(--slide); }
+.diamond span { transform: rotate(-45deg); display:block; text-align:center; }
+.diamond { position: relative; }
+.diamond.small { width:100px; height:100px; font-size:1rem; border-color:var(--primary); color:var(--primary); }
+.loop-icon { width:120px; height:120px; border-radius:50%; display:grid; place-items:center; border:3px solid var(--primary); color: var(--primary); font-weight:950; font-size:1.3rem; background: var(--slide); }
+.arrow { color: var(--accent); font-size: 2rem; font-weight:900; }
+.callout { margin-top:1rem; border:1px solid var(--border); border-left:5px solid var(--primary); border-radius:16px; padding:1rem; background:var(--slide-2); color:var(--text); line-height:1.55; }
+.callout.secondary { border-left-color: var(--accent); }
+.callout.warning { border-left-color: var(--warning); }
+.callout.success { border-left-color: var(--success); }
+.clean-list { list-style:none; padding:0; margin:1rem 0; display:grid; gap:.8rem; }
+.clean-list li { padding:.85rem 1rem; background:var(--slide-2); border:1px solid var(--border); border-radius:14px; }
+
+.process-card { border:1px solid var(--border); background:var(--slide-2); border-radius:24px; padding:1.2rem; display:grid; gap:.55rem; text-align:center; }
+.process-step { padding:.85rem; border-radius:14px; border:1px solid var(--border); background:var(--slide); font-weight:850; }
+.process-step.accent { background: linear-gradient(135deg, var(--primary), var(--primary-2)); color:#fff; }
+.process-arrow { color:var(--accent); font-size:1.25rem; font-weight:900; }
+.timeline { display:grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap:.8rem; align-items:stretch; }
+.timeline-item { position:relative; padding:1rem; background:var(--slide-2); border:1px solid var(--border); border-radius:18px; min-height:220px; }
+.timeline-item span { width:42px; height:42px; border-radius:14px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,var(--primary),var(--primary-2)); font-weight:900; margin-bottom:.75rem; }
+.timeline-item h3 { margin:.2rem 0 .45rem; font-size:1.03rem; }
+.timeline-item p { margin:0; color:var(--muted); line-height:1.45; }
+.table-wrap { overflow:auto; border:1px solid var(--border); border-radius:16px; background:var(--slide-2); }
+table { width:100%; border-collapse:collapse; font-size:.94rem; }
+th, td { padding:.75rem .85rem; border-bottom:1px solid var(--border); text-align:left; vertical-align:top; }
+th { color:var(--primary); background: color-mix(in srgb, var(--slide-2) 75%, var(--primary) 6%); font-weight:850; }
+tr:last-child td { border-bottom:0; }
+.formula-card,.rule-box,.control-card { display:grid; gap:.35rem; padding:1rem; background:var(--slide-2); border:1px solid var(--border); border-radius:16px; margin:.75rem 0; }
+.formula-card span,.rule-box span,.control-card p { color:var(--muted); margin:0; }
+.logic-grid,.mistake-grid,.notes-grid,.practice-grid,.checklist-grid,.summary-grid { display:grid; gap:.85rem; }
+.logic-grid { grid-template-columns: repeat(3,1fr); margin-bottom:1rem; }
+.logic-grid div,.note-card,.practice-grid div,.check-card,.summary-grid div { padding:1rem; border:1px solid var(--border); background:var(--slide-2); border-radius:16px; }
+.logic-grid code { display:inline-block; font-size:1.1rem; font-weight:900; margin-bottom:.4rem; background:transparent; color:var(--accent); }
+.logic-grid p,.note-card span,.practice-grid p,.check-card p,.summary-grid p { color:var(--muted); margin:.25rem 0 0; line-height:1.45; }
+.notes-grid { grid-template-columns: repeat(3, 1fr); margin-top:.9rem; }
+.note-card strong { display:block; color: var(--primary); margin-bottom:.25rem; }
+.mistake-grid { grid-template-columns: repeat(4, 1fr); }
+.mistake-card { padding:1rem; border-radius:18px; border:1px solid var(--border); background: var(--slide-2); min-height: 190px; }
+.mistake-card h3 { margin-top:0; }
+.mistake-card.bad { border-top:5px solid var(--warning); }
+.mistake-card.good { border-top:5px solid var(--success); }
+.loop-strip { display:grid; grid-template-columns: repeat(4,1fr); gap:.55rem; margin-top:1.2rem; }
+.loop-strip div { padding:.9rem .65rem; border-radius:14px; background:var(--slide-2); border:1px solid var(--border); text-align:center; font-weight:850; position:relative; }
+.loop-strip div:not(:last-child)::after { content:'→'; position:absolute; right:-.55rem; top:50%; transform:translateY(-50%); color:var(--accent); z-index:2; }
+.decision-layout { display:grid; grid-template-columns: minmax(0,1fr) 140px minmax(0,1fr); gap:1rem; align-items:center; margin: .5rem 0 1rem; }
+.decision-diamond { width:120px; height:120px; transform:rotate(45deg); border:3px solid var(--accent); background:var(--slide-2); border-radius:22px; display:grid; place-items:center; justify-self:center; }
+.decision-diamond span { transform:rotate(-45deg); font-weight:900; color:var(--accent); }
+.branch { border:1px solid var(--border); border-radius:18px; padding:1rem; background:var(--slide-2); text-align:center; }
+.branch span { display:inline-flex; padding:.25rem .55rem; border-radius:999px; font-weight:900; margin-bottom:.55rem; }
+.branch.true span { background:rgba(15,159,110,.12); color:var(--success); }
+.branch.false span { background:rgba(220,38,38,.1); color:var(--danger); }
+.branch strong { display:block; margin-bottom:.25rem; }
+.branch small { color:var(--muted); }
+.grid-visual { display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem; padding:1rem; border:1px solid var(--border); border-radius:20px; background:var(--slide-2); }
+.grid-visual span { padding:1rem; text-align:center; border-radius:14px; background:var(--slide); border:1px solid var(--border); font-weight:850; color:var(--primary); }
+.chart-card { border:1px solid var(--border); background:var(--slide-2); border-radius:20px; padding:1.1rem; }
+.chart-card h3 { margin:.1rem 0 .35rem; }
+.chart-card p { color:var(--muted); margin-top:0; }
+.bar-row { display:grid; grid-template-columns:70px 1fr 40px; align-items:center; gap:.75rem; margin:.9rem 0; }
+.bar-track { height:20px; background:rgba(148,163,184,.18); border-radius:999px; overflow:hidden; }
+.bar-fill { height:100%; background:linear-gradient(90deg,var(--primary),var(--accent)); border-radius:999px; transition: width .4s ease; }
+.practice-grid { grid-template-columns: repeat(3, 1fr); }
+.practice-grid div span { width:34px; height:34px; display:grid; place-items:center; border-radius:12px; background:var(--primary); color:#fff; font-weight:900; margin-bottom:.55rem; }
+.checklist-grid { grid-template-columns: repeat(5, 1fr); }
+.check-card { min-height: 190px; }
+.check-card h3,.summary-grid h3,.practice-grid h3 { margin:.2rem 0 .4rem; font-size:1.03rem; }
+.summary-grid { grid-template-columns: repeat(3, 1fr); }
+.code-cell {
+  border:1px solid #2b2b2b;
+  border-radius:14px;
+  overflow:hidden;
+  background:#181818;
+  box-shadow:0 14px 34px rgba(15,23,42,.16);
+  margin:.75rem 0;
+}
+[data-theme="light"] .code-cell { border-color:#cfcfcf; background:#f3f3f3; }
+.cell-head {
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  align-items:flex-start;
+  padding:.75rem .9rem;
+  border-bottom:1px solid #2b2b2b;
+  background:#181818;
+  color:#f3f3f3;
+}
+[data-theme="light"] .cell-head { background:#f3f3f3; border-bottom-color:#d7d7d7; color:#1f1f1f; }
+.cell-label { color:#75beff; font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; font-weight:900; }
+[data-theme="light"] .cell-label { color:#0066b8; }
+.cell-head h3 { margin:.12rem 0 .15rem; font-size:.98rem; color:inherit; }
+.cell-head p { margin:0; color:#a7a7a7; font-size:.84rem; }
+[data-theme="light"] .cell-head p { color:#5f5f5f; }
+.file-pill {
+  color:#cccccc;
+  background:#252526;
+  border:1px solid #333333;
+  padding:.3rem .52rem;
+  border-radius:6px;
+  font-size:.72rem;
+  font-weight:750;
+  white-space:nowrap;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+}
+[data-theme="light"] .file-pill { color:#444; background:#fff; border-color:#d6d6d6; }
+.editor-shell { position:relative; background:#1e1e1e; color:#d4d4d4; }
+[data-theme="light"] .editor-shell { background:#fff; color:#1f1f1f; }
+.editor-topbar {
+  min-height:35px;
+  display:flex;
+  align-items:stretch;
+  justify-content:space-between;
+  gap:0;
+  padding:0;
+  border-bottom:1px solid #2b2b2b;
+  background:#181818;
+  user-select:none;
+}
+[data-theme="light"] .editor-topbar { background:#f3f3f3; border-bottom-color:#d8d8d8; }
+.editor-topbar .dot { display:none; }
+.tab-name {
+  margin:0;
+  min-width:180px;
+  max-width:72%;
+  display:inline-flex;
+  align-items:center;
+  gap:.48rem;
+  padding:0 .78rem;
+  background:#1e1e1e;
+  border-right:1px solid #2b2b2b;
+  border-top:1px solid #007acc;
+  color:#f1f1f1;
+  font-size:.76rem;
+  font-weight:600;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.tab-name::before {
+  content:'PY';
+  display:grid;
+  place-items:center;
+  width:18px;
+  height:18px;
+  border-radius:4px;
+  background:#3776ab;
+  color:#ffd343;
+  font:800 .54rem/1 Inter,sans-serif;
+  flex:0 0 auto;
+}
+.tab-name::after { content:'×'; margin-left:auto; color:#9d9d9d; font-size:.95rem; }
+[data-theme="light"] .tab-name { background:#fff; border-right-color:#d8d8d8; color:#222; }
+.code-input {
+  width:100%;
+  min-height:110px;
+  resize:vertical;
+  border:0;
+  outline:0;
+  padding:.8rem 1rem .8rem 3.2rem;
+  background:#1e1e1e;
+  color:#d4d4d4;
+  font:500 .88rem/1.55 "SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  tab-size:4;
+  caret-color:#fff;
+}
+[data-theme="light"] .code-input { background:#fff; color:#1f1f1f; caret-color:#111; }
+.monaco-host { display:none; width:100%; min-height:110px; }
+.code-cell.monaco-ready .code-input { display:none; }
+.code-cell.monaco-ready .monaco-host { display:block; }
+.editor-status {
+  min-height:23px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:.8rem;
+  padding:0 .62rem;
+  background:#007acc;
+  color:#fff;
+  font-size:.68rem;
+  font-weight:600;
+  user-select:none;
+}
+.editor-status .status-left,.editor-status .status-right { display:inline-flex; align-items:center; gap:.72rem; min-width:0; }
+.editor-status .status-right { margin-left:auto; }
+.status-python::before { content:'{}'; margin-right:.25rem; font-family:monospace; }
+.cell-actions {
+  display:flex;
+  gap:.5rem;
+  padding:.58rem .75rem;
+  border-top:1px solid #2b2b2b;
+  flex-wrap:wrap;
+  background:#181818;
+}
+[data-theme="light"] .cell-actions { background:#f3f3f3; border-top-color:#d7d7d7; }
+.cell-actions .btn { padding:.4rem .68rem; border-radius:5px; font-size:.8rem; box-shadow:none; }
+.cell-actions .run-cell { background:#0e639c; border-color:#1177bb; }
+.cell-actions .run-cell:hover { background:#1177bb; }
+.cell-actions .btn.ghost { background:#252526; color:#d4d4d4; border-color:#3a3a3a; }
+.cell-actions .btn.ghost:hover { background:#333333; }
+[data-theme="light"] .cell-actions .btn.ghost { background:#fff; color:#333; border-color:#d0d0d0; }
+[data-theme="light"] .cell-actions .btn.ghost:hover { background:#e8e8e8; }
+.output {
+  margin:0;
+  min-height:88px;
+  max-height:210px;
+  overflow:auto;
+  white-space:pre-wrap;
+  padding:2.25rem 1rem .9rem;
+  background:#0c0c0c;
+  color:#d4d4d4;
+  border-top:1px solid #2b2b2b;
+  position:relative;
+  font:500 .82rem/1.55 "SFMono-Regular",Consolas,"Liberation Mono",monospace;
+}
+.output::before {
+  content:'PROBLEMS   OUTPUT   DEBUG CONSOLE   TERMINAL';
+  position:absolute;
+  top:.48rem;
+  left:1rem;
+  color:#a7a7a7;
+  font:600 .62rem Inter,sans-serif;
+  letter-spacing:.04em;
+  word-spacing:.15rem;
+}
+.output::after {
+  content:'';
+  position:absolute;
+  top:1.55rem;
+  left:calc(1rem + 181px);
+  width:55px;
+  height:1px;
+  background:#d4d4d4;
+}
+[data-theme="light"] .output { background:#f7f7f7; color:#1f1f1f; border-top-color:#d7d7d7; }
+[data-theme="light"] .output::before { color:#5d5d5d; }
+[data-theme="light"] .output::after { background:#1f1f1f; }
+.output.success { border-top-color:rgba(52,211,153,.7); }
+.output.error { color:#fca5a5; border-top-color:rgba(248,113,113,.75); }
+[data-theme="light"] .output.error { color:#b91c1c; }
+.code-cell.running .editor-topbar::after {
+  content:'Running Python...';
+  display:flex;
+  align-items:center;
+  margin-left:auto;
+  padding:0 .75rem;
+  color:#c7c7c7;
+  font-size:.7rem;
+  font-weight:650;
+}
+[data-theme="light"] .code-cell.running .editor-topbar::after { color:#555; }
+@media (max-width:640px) {
+  .editor-status .status-right span:nth-child(2),
+  .editor-status .status-right span:nth-child(3) { display:none; }
+  .tab-name { min-width:0; max-width:100%; }
+  .output::before { font-size:.55rem; }
+  .output::after { display:none; }
+}
+@media (max-width: 1050px) {
+  .timeline,.mistake-grid,.checklist-grid { grid-template-columns: repeat(2, 1fr); }
+  .title-grid,.two-col,.two-col.split-55 { grid-template-columns:1fr; }
+  .slide-badge { display:none; }
+}
+@media (max-width: 760px) {
+  body { overflow:auto; }
+  .deck-app { min-height:100%; }
+  .topbar,.bottom-nav { position:sticky; left:0; right:0; }
+  .topbar { top:0; }
+  .bottom-nav { bottom:0; }
+  .stage { min-height: calc(100vh - 130px); padding:.5rem; }
+  .slide { inset:.5rem; }
+  .slide-header { display:block; }
+  .slide-header h2 { font-size:1.7rem; }
+  .timeline,.logic-grid,.notes-grid,.mistake-grid,.practice-grid,.checklist-grid,.summary-grid { grid-template-columns:1fr; }
+  .decision-layout { grid-template-columns:1fr; }
+  .hero-visual { min-height:180px; padding:1rem; }
+  .diamond,.loop-icon { width:84px; height:84px; font-size:.9rem; }
+  .diamond.small { width:76px; height:76px; }
+  .toolbar select,.runtime { display:none; }
+  .slide-footer { font-size:.72rem; }
+}
+@media print {
+  body { overflow: visible; background:#fff; }
+  .topbar,.bottom-nav,.progress,
+  .deck-app { display:block; }
+  .stage { display:block; padding:0; }
+  .slide { position:relative; display:block !important; inset:auto; height:100vh; page-break-after:always; padding:0; }
+  .slide-inner { border-radius:0; box-shadow:none; }
+}
+</style>
+</head>
+<body>
+<div class="deck-app" id="deck-app">
+<header class="topbar">
+<div class="brand"><div class="brand-mark">Py</div><div><h1>IAN 601 · Module 1 Slide Lesson</h1><span>Python Fundamentals &amp; Business Context</span></div></div>
+<div class="toolbar">
+<div class="runtime" id="runtime"><span class="runtime-dot"></span><span id="runtime-text">Python not loaded</span></div>
+<select aria-label="Choose slide" id="slide-select"></select>
+<button class="btn ghost" id="theme-btn" type="button">Dark mode</button>
+
+<button class="btn ghost" id="fullscreen-btn" type="button">Fullscreen</button>
+<button class="btn" id="run-slide-btn" type="button">Run slide</button>
+</div>
+</header>
+<main class="stage" id="stage">
+<section class="slide standard" data-title="Python Fundamentals &amp; Business Context">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Module 1 · PowerPoint-style HTML lesson</span><h2>Python Fundamentals &amp; Business Context</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="title-grid">
+<div>
+<p class="big-lead">Learn Python one small idea at a time: store values, inspect data types, calculate metrics, and communicate results.</p>
+<div class="pill-row"><span>One slide at a time</span><span>Executable Python cells</span><span>VS Code-style editor</span><span>Self-paced version</span></div>
+<div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button></div>
+</div>
+<div aria-hidden="true" class="hero-visual">
+<div class="diamond"><span>DATA</span></div>
+<div class="arrow">→</div>
+<div class="loop-icon">CODE</div>
+<div class="arrow">→</div>
+<div class="diamond small"><span>RESULT</span></div>
+</div>
+</div>
+<div class="callout"><strong>How to use:</strong> Use the Next button or arrow keys to move through the lesson. Run code directly inside any slide whenever you want to test an example.</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 1</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="How to use this slide lesson">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Presentation workflow</span><h2>How to use this slide lesson</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="timeline">
+<div class="timeline-item"><span>1</span><h3>Read</h3><p>Start with the idea on the slide.</p></div>
+<div class="timeline-item"><span>2</span><h3>Predict</h3><p>Before running a cell, pause and guess what the output will be.</p></div>
+<div class="timeline-item"><span>3</span><h3>Run</h3><p>Run the Python cell in the browser.</p></div>
+<div class="timeline-item"><span>4</span><h3>Modify</h3><p>Change one value and run again.</p></div>
+<div class="timeline-item"><span>5</span><h3>Explain</h3><p>Connect the output to analytics work.</p></div>
+</div>
+<div class="callout secondary"><strong>Tip:</strong> The editor is intentionally styled like VS Code. You can also use Jupyter, Colab, or a local IDE for assignments.</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 2</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Learning path for Module 1">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Roadmap</span><h2>Learning path for Module 1</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="timeline">
+<div class="timeline-item"><span>1</span><h3>Variables</h3><p>Give meaningful names to values.</p></div>
+<div class="timeline-item"><span>2</span><h3>Data types</h3><p>Understand numbers, text, and True/False values.</p></div>
+<div class="timeline-item"><span>3</span><h3>Operations</h3><p>Turn raw values into useful metrics.</p></div>
+<div class="timeline-item"><span>4</span><h3>Formatting</h3><p>Make results readable for people.</p></div>
+<div class="timeline-item"><span>5</span><h3>Conversion</h3><p>Convert text into numbers when needed.</p></div>
+</div>
+<div class="callout">By the end, you should be able to build a small sales calculator and explain each line.</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 3</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="What is Python doing for us?">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Big picture</span><h2>What is Python doing for us?</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="two-col">
+<div>
+<p class="lead">Python is a tool for writing repeatable instructions. In analytics, those instructions usually follow a simple pattern.</p>
+<ul class="clean-list">
+<li><strong>Represent:</strong> store values in variables.</li>
+<li><strong>Transform:</strong> calculate new values.</li>
+<li><strong>Communicate:</strong> print or format results clearly.</li>
+<li><strong>Reuse later:</strong> apply the same logic again.</li>
+</ul>
+</div>
+<div class="process-card">
+<div class="process-step">Raw value</div><div class="process-arrow">↓</div>
+<div class="process-step accent">Python code</div><div class="process-arrow">↓</div>
+<div class="process-step">Derived metric</div><div class="process-arrow">↓</div>
+<div class="process-step">Readable result</div>
+</div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 4</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Variables store values">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Section 1 · Variables</span><h2>Variables store values</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="two-col split-55">
+<div>
+<p class="lead">A variable is a name that points to a value. Good variable names make code easier to read.</p>
+<div class="formula-card"><code>sales = 1000</code><span>Put the value 1000 in a variable named sales.</span></div>
+<div class="formula-card"><code>costs = 800</code><span>Put the value 800 in a variable named costs.</span></div>
+<div class="formula-card"><code>profit = sales - costs</code><span>Use previous values to create a new value.</span></div>
+</div>
+<div class="process-card"><div class="process-step">Value</div><div class="process-arrow">↓</div><div class="process-step accent">Variable name</div><div class="process-arrow">↓</div><div class="process-step">Calculation</div><div class="process-arrow">↓</div><div class="process-step">Result</div></div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 5</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Code: store values in variables">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Executable example</span><h2>Code: store values in variables</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="code-cell" data-cell="1" data-chart="profit" data-filename="store_values.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 1</div>
+<h3>Store values in variables</h3>
+<p>Start with named values and one calculation.</p>
+</div>
+<span class="file-pill">store_values.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">store_values.py</span></div>
+<textarea aria-label="Python editor 1" class="code-input" spellcheck="false" style="height:175px">sales = 1000
+costs = 800
+profit = sales - costs
+
+print("Sales:", sales)
+print("Costs:", costs)
+print("Profit:", profit)</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+<div class="notes-grid">
+<div class="note-card"><strong>What happens</strong><span>Python stores values in sales and costs, then calculates profit.</span></div>
+<div class="note-card"><strong>Why it matters</strong><span>Variables make calculations readable and reusable.</span></div>
+<div class="note-card"><strong>Try changing</strong><span>Change sales to 1250 and run again.</span></div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 6</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Visual: variables become metrics">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Sales, costs, profit</span><h2>Visual: variables become metrics</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="two-col">
+<div>
+<p class="lead">When Cell 1 runs, the chart reads values from Python variables and updates the bars.</p>
+<div class="chart-card"><h3>Metric bars from the Python cell</h3><p>Run the previous slide, or run it again after changing sales and costs.</p>
+<div class="bar-row"><strong>Sales</strong><div class="bar-track"><div class="bar-fill" id="chart-sales-bar" style="width:100%"></div></div><span class="bar-value" id="chart-sales-value">$1000</span></div>
+<div class="bar-row"><strong>Costs</strong><div class="bar-track"><div class="bar-fill" id="chart-costs-bar" style="width:80%"></div></div><span class="bar-value" id="chart-costs-value">$800</span></div>
+<div class="bar-row"><strong>Profit</strong><div class="bar-track"><div class="bar-fill" id="chart-profit-bar" style="width:20%"></div></div><span class="bar-value" id="chart-profit-value">$200</span></div>
+</div>
+</div>
+<div class="callout success"><strong>Teaching point:</strong> Analytics often means turning raw values into derived metrics. A metric such as profit does not exist until we define it.</div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 7</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Variables can be reassigned">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Updating a value</span><h2>Variables can be reassigned</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="two-col tight">
+<div>
+<p class="lead">A variable can point to a new value later. Python uses the latest assignment.</p>
+<div class="callout warning"><strong>Important:</strong> Reassignment is common, but avoid reusing names in a confusing way. Clear names help readers understand your workflow.</div>
+</div>
+<div>
+<div class="code-cell" data-cell="2" data-filename="reassign_variable.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 2</div>
+<h3>Reassign a variable</h3>
+<p>The second assignment replaces the first value.</p>
+</div>
+<span class="file-pill">reassign_variable.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">reassign_variable.py</span></div>
+<textarea aria-label="Python editor 2" class="code-input" spellcheck="false" style="height:140px">sales = 1000
+print("Before update:", sales)
+
+sales = 1500
+print("After update:", sales)</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 8</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Assign several values at once">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Multiple assignment</span><h2>Assign several values at once</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="code-cell" data-cell="3" data-filename="multiple_assignment.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 3</div>
+<h3>Assign several values at once</h3>
+<p>Python can unpack values into multiple names.</p>
+</div>
+<span class="file-pill">multiple_assignment.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">multiple_assignment.py</span></div>
+<textarea aria-label="Python editor 3" class="code-input" spellcheck="false" style="height:145px">employee_name, age, salary = "Jordan", 30, 50000
+
+print(employee_name)
+print(age)
+print(salary)</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+<div class="notes-grid">
+<div class="note-card"><strong>What happens</strong><span>Three values are assigned to three variable names in the same order.</span></div>
+<div class="note-card"><strong>When to use</strong><span>Use it when the relationship is obvious and the line stays readable.</span></div>
+<div class="note-card"><strong>Try changing</strong><span>Replace the values with another fictional example.</span></div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 9</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Variable naming rules and habits">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Readable code</span><h2>Variable naming rules and habits</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="mistake-grid">
+<div class="mistake-card good"><h3>Good</h3><p><code>monthly_sales</code></p><p>Descriptive and readable.</p></div>
+<div class="mistake-card good"><h3>Good</h3><p><code>patient_age</code></p><p>Uses lowercase and underscores.</p></div>
+<div class="mistake-card bad"><h3>Avoid</h3><p><code>ms</code></p><p>Too short for beginners and collaborators.</p></div>
+<div class="mistake-card bad"><h3>Invalid</h3><p><code>2sales</code></p><p>Variable names cannot start with a number.</p></div>
+</div>
+<div class="callout"><strong>Rule of thumb:</strong> If another person can guess what the value represents, the name is probably useful.</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 10</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Data types tell Python what values mean">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Section 2 · Data types</span><h2>Data types tell Python what values mean</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="two-col tight">
+<div>
+<p class="lead">The type controls what operations make sense. A number can be averaged. A label should usually stay as text.</p>
+<div class="logic-grid">
+<div><code>int</code><p>Whole numbers: counts and units.</p></div>
+<div><code>float</code><p>Decimal numbers: rates and measurements.</p></div>
+<div><code>str</code><p>Text: labels, names, and codes.</p></div>
+</div>
+</div>
+<div>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Meaning</th><th>Example</th><th>Analytics use</th></tr></thead><tbody><tr><td><code>int</code></td><td>Whole number</td><td><code>visits = 12</code></td><td>Counts</td></tr><tr><td><code>float</code></td><td>Decimal number</td><td><code>price = 19.99</code></td><td>Measurements</td></tr><tr><td><code>str</code></td><td>Text</td><td><code>city = "Riverton"</code></td><td>Labels</td></tr><tr><td><code>bool</code></td><td>True or False</td><td><code>is_active = True</code></td><td>Flags</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 11</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Code: inspect data types">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Executable example</span><h2>Code: inspect data types</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="code-cell" data-cell="4" data-filename="inspect_types.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 4</div>
+<h3>Inspect fundamental data types</h3>
+<p>Use type() to see how Python classifies a value.</p>
+</div>
+<span class="file-pill">inspect_types.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">inspect_types.py</span></div>
+<textarea aria-label="Python editor 4" class="code-input" spellcheck="false" style="height:185px">age = 30
+height = 5.9
+name = "Jordan"
+is_active = True
+
+print(type(age))
+print(type(height))
+print(type(name))
+print(type(is_active))</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+<div class="notes-grid">
+<div class="note-card"><strong>What happens</strong><span>Python reports int, float, str, and bool.</span></div>
+<div class="note-card"><strong>Why it matters</strong><span>Operations depend on type.</span></div>
+<div class="note-card"><strong>Try changing</strong><span>Set age = "30" and inspect the type again.</span></div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 12</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Some numbers should stay as text">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Identifiers and codes</span><h2>Some numbers should stay as text</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="two-col tight">
+<div>
+<p class="lead">Identifiers are labels, not quantities. Keep them as strings when leading zeros or exact formatting matter.</p>
+<div class="callout warning"><strong>Example:</strong> You would not add, average, or multiply an ID code. It is used to identify a record.</div>
+</div>
+<div>
+<div class="code-cell" data-cell="5" data-filename="identifiers_as_text.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 5</div>
+<h3>Keep identifiers as text</h3>
+<p>Digit-looking values are not always numeric data.</p>
+</div>
+<span class="file-pill">identifiers_as_text.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">identifiers_as_text.py</span></div>
+<textarea aria-label="Python editor 5" class="code-input" spellcheck="false" style="height:135px">employee_id = "00125"
+area_code = "27412"
+
+print(employee_id, type(employee_id))
+print(area_code, type(area_code))</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 13</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Arithmetic creates derived metrics">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Section 3 · Operations</span><h2>Arithmetic creates derived metrics</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="two-col split-55">
+<div>
+<p class="lead">Arithmetic turns raw variables into metrics that support decisions.</p>
+<div class="formula-card"><code>profit = sales - costs</code><span>How much remains after costs?</span></div>
+<div class="formula-card"><code>margin = profit / sales</code><span>What share of sales became profit?</span></div>
+<div class="formula-card"><code>net_profit = profit - tax</code><span>What remains after tax?</span></div>
+</div>
+<div>
+<div class="table-wrap"><table><thead><tr><th>Operator</th><th>Meaning</th><th>Example</th></tr></thead><tbody><tr><td><code>+</code></td><td>Addition</td><td><code>5 + 2</code></td></tr><tr><td><code>-</code></td><td>Subtraction</td><td><code>sales - costs</code></td></tr><tr><td><code>*</code></td><td>Multiplication</td><td><code>profit * 0.10</code></td></tr><tr><td><code>/</code></td><td>Division</td><td><code>profit / sales</code></td></tr><tr><td><code>**</code></td><td>Exponent</td><td><code>2 ** 3</code></td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 14</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Code: calculate profit and tax">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Executable example</span><h2>Code: calculate profit and tax</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="code-cell" data-cell="6" data-chart="profit" data-filename="profit_and_tax.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 6</div>
+<h3>Calculate profit and tax</h3>
+<p>Build one metric from another.</p>
+</div>
+<span class="file-pill">profit_and_tax.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">profit_and_tax.py</span></div>
+<textarea aria-label="Python editor 6" class="code-input" spellcheck="false" style="height:210px">sales = 1000
+costs = 800
+profit = sales - costs
+tax = profit * 0.05
+net_profit = profit - tax
+
+print("Profit:", profit)
+print("Tax:", tax)
+print("Net profit:", net_profit)</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+<div class="notes-grid">
+<div class="note-card"><strong>Dependency chain</strong><span>net_profit depends on tax, and tax depends on profit.</span></div>
+<div class="note-card"><strong>Why it matters</strong><span>Many analytics calculations are built step by step.</span></div>
+<div class="note-card"><strong>Try changing</strong><span>Change the tax rate from 0.05 to 0.10.</span></div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 15</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Three useful operators">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Exponent, floor division, modulo</span><h2>Three useful operators</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="logic-grid">
+<div><code>**</code><p>Power or exponent. Example: growth and squared values.</p></div>
+<div><code>//</code><p>Whole-number division. Example: full hours from minutes.</p></div>
+<div><code>%</code><p>Remainder. Example: leftover minutes after hours.</p></div>
+</div>
+<div class="code-cell" data-cell="7" data-filename="special_operators.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 7</div>
+<h3>Use exponent, floor division, and modulo</h3>
+<p>These operators solve common analytics tasks.</p>
+</div>
+<span class="file-pill">special_operators.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">special_operators.py</span></div>
+<textarea aria-label="Python editor 7" class="code-input" spellcheck="false" style="height:130px">print("2 ** 3 =", 2 ** 3)
+print("125 // 60 =", 125 // 60)
+print("125 % 60 =", 125 % 60)</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 16</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Parentheses control calculation order">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Order of operations</span><h2>Parentheses control calculation order</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="two-col tight">
+<div>
+<p class="lead">Python follows normal arithmetic order. Parentheses make the intended grouping clear.</p>
+<div class="callout warning"><strong>Teaching point:</strong> A grouping mistake can produce a wrong answer without producing a Python error.</div>
+</div>
+<div>
+<div class="code-cell" data-cell="8" data-filename="order_of_operations.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 8</div>
+<h3>See order of operations</h3>
+<p>Compare the two results and explain why they differ.</p>
+</div>
+<span class="file-pill">order_of_operations.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">order_of_operations.py</span></div>
+<textarea aria-label="Python editor 8" class="code-input" spellcheck="false" style="height:135px">result1 = 10 + 5 * 2
+result2 = (10 + 5) * 2
+
+print(result1)
+print(result2)</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 17</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Print makes results visible">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Section 4 · Output</span><h2>Print makes results visible</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="two-col tight">
+<div>
+<p class="lead">Correct calculations still need readable output. <code>print()</code> helps you inspect and explain what the program is doing.</p>
+<div class="rule-box"><code>print("Profit:", profit)</code><span>Combines a label and a value.</span></div>
+</div>
+<div>
+<div class="code-cell" data-cell="9" data-filename="print_outputs.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 9</div>
+<h3>Print text, values, and calculations</h3>
+<p>Use print() to inspect your program output.</p>
+</div>
+<span class="file-pill">print_outputs.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">print_outputs.py</span></div>
+<textarea aria-label="Python editor 9" class="code-input" spellcheck="false" style="height:165px">name = "Jordan"
+age = 30
+sales = 1000
+costs = 800
+
+print("Name:", name)
+print("Age:", age)
+print("Profit:", sales - costs)</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 18</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="f-strings create readable messages">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Professional formatting</span><h2>f-strings create readable messages</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="code-cell" data-cell="10" data-filename="f_strings.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 10</div>
+<h3>Build readable output with f-strings</h3>
+<p>Use braces to insert variable values into text.</p>
+</div>
+<span class="file-pill">f_strings.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">f_strings.py</span></div>
+<textarea aria-label="Python editor 10" class="code-input" spellcheck="false" style="height:155px">patient = "Patient A"
+age = 45
+temperature = 98.6345
+
+print(f"Patient: {patient}")
+print(f"Age: {age}")
+print(f"Temperature: {temperature:.1f} F")</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+<div class="notes-grid">
+<div class="note-card"><strong>What happens</strong><span>The expressions inside braces are evaluated and inserted into the string.</span></div>
+<div class="note-card"><strong>Why it matters</strong><span>Labels, units, and rounding make output more useful.</span></div>
+<div class="note-card"><strong>Try changing</strong><span>Change .1f to .2f and compare the result.</span></div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 19</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Format money and percentages">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Readable reports</span><h2>Format money and percentages</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="two-col tight">
+<div>
+<p class="lead">Formatting changes how a value is displayed, not the value itself.</p>
+<div class="table-wrap"><table><thead><tr><th>Pattern</th><th>Purpose</th><th>Example output</th></tr></thead><tbody><tr><td><code>{value:.1f}</code></td><td>One decimal place</td><td>98.6</td></tr><tr><td><code>{value:,.2f}</code></td><td>Commas and two decimals</td><td>1,234.50</td></tr><tr><td><code>{rate:.1%}</code></td><td>Display a decimal as percent</td><td>15.7%</td></tr><tr><td><code>{value:.2e}</code></td><td>Scientific notation</td><td>3.46e-03</td></tr></tbody></table></div>
+</div>
+<div>
+<div class="code-cell" data-cell="11" data-filename="format_values.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 11</div>
+<h3>Format money, percentages, and large numbers</h3>
+<p>Make report values easier to read.</p>
+</div>
+<span class="file-pill">format_values.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">format_values.py</span></div>
+<textarea aria-label="Python editor 11" class="code-input" spellcheck="false" style="height:135px">revenue = 1234567.89
+growth = 0.15678
+
+print(f"Revenue: ${revenue:,.2f}")
+print(f"Growth: {growth:.2%}")</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 20</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Input usually starts as text">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Section 5 · Conversion</span><h2>Input usually starts as text</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="two-col">
+<div>
+<p class="lead">Data often arrives as text from forms, CSV files, APIs, or user entry. Convert it before arithmetic.</p>
+<div class="process-card"><div class="process-step">Text value</div><div class="process-arrow">↓</div><div class="process-step accent"><code>float()</code> or <code>int()</code></div><div class="process-arrow">↓</div><div class="process-step">Numeric value</div><div class="process-arrow">↓</div><div class="process-step">Calculation works</div></div>
+</div>
+<div>
+<div class="callout warning"><strong>Browser note:</strong> These slide examples simulate input with text variables so every cell can run without a popup prompt.</div>
+</div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 21</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Code: convert text into numbers">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Executable example</span><h2>Code: convert text into numbers</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="code-cell" data-cell="12" data-filename="convert_text_numbers.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 12</div>
+<h3>Convert text into numbers</h3>
+<p>Convert strings before using them in arithmetic.</p>
+</div>
+<span class="file-pill">convert_text_numbers.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">convert_text_numbers.py</span></div>
+<textarea aria-label="Python editor 12" class="code-input" spellcheck="false" style="height:175px">price_text = "29.99"
+quantity_text = "5"
+
+price = float(price_text)
+quantity = int(quantity_text)
+total = price * quantity
+
+print(f"Total: ${total:.2f}")</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+<div class="notes-grid">
+<div class="note-card"><strong>What happens</strong><span>float() and int() create numeric values from text.</span></div>
+<div class="note-card"><strong>Why it matters</strong><span>Text cannot be used correctly in numeric calculations until it is converted.</span></div>
+<div class="note-card"><strong>Try changing</strong><span>Change quantity_text to "8" and rerun.</span></div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 22</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Boolean conversion previews decision logic">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">True and False values</span><h2>Boolean conversion previews decision logic</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="two-col tight">
+<div>
+<p class="lead">Boolean values are the foundation for filters and decision rules. You will use them more in Module 2.</p>
+<div class="logic-grid"><div><code>False</code><p>0 and empty text.</p></div><div><code>True</code><p>Nonzero numbers and nonempty text.</p></div><div><code>Rule</code><p>Used later in if statements.</p></div></div>
+</div>
+<div>
+<div class="code-cell" data-cell="13" data-filename="boolean_conversion.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 13</div>
+<h3>Explore Boolean conversion</h3>
+<p>See which values become True or False.</p>
+</div>
+<span class="file-pill">boolean_conversion.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">boolean_conversion.py</span></div>
+<textarea aria-label="Python editor 13" class="code-input" spellcheck="false" style="height:130px">print(bool(0))
+print(bool(1))
+print(bool(""))
+print(bool("Hello"))</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 23</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Preview a conversion error">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Common beginner issue</span><h2>Preview a conversion error</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="two-col tight">
+<div>
+<p class="lead">Conversion only works when the text is compatible with the target type.</p>
+<div class="callout warning"><strong>Common error:</strong> <code>float("abc")</code> fails because the text does not represent a number.</div>
+</div>
+<div>
+<div class="code-cell" data-cell="14" data-filename="safe_conversion_preview.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 14</div>
+<h3>Preview a conversion error safely</h3>
+<p>Use a simple check before converting.</p>
+</div>
+<span class="file-pill">safe_conversion_preview.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">safe_conversion_preview.py</span></div>
+<textarea aria-label="Python editor 14" class="code-input" spellcheck="false" style="height:175px">text = "abc"
+
+if text.replace(".", "", 1).isdigit():
+    value = float(text)
+    print(value)
+else:
+    print("Cannot convert this text to a number:", text)</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 24</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Practice: small tasks">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Progress from foundation to mastery</span><h2>Practice: small tasks</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="practice-grid">
+<div><span>1</span><h3>Foundation</h3><p>Create variables for a fictional patient and print them.</p></div>
+<div><span>2</span><h3>Building</h3><p>Inspect the types of an ID, amount, and active flag.</p></div>
+<div><span>3</span><h3>Intermediate</h3><p>Calculate rectangle area and perimeter.</p></div>
+<div><span>4</span><h3>Applied</h3><p>Create a revenue statement with formatted money.</p></div>
+<div><span>5</span><h3>Mastery</h3><p>Calculate profit and margin from sales and costs.</p></div>
+<div><span>6</span><h3>Explain</h3><p>Describe what each variable represents.</p></div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 25</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Practice code: patient variables">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Foundation practice</span><h2>Practice code: patient variables</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="code-cell" data-cell="15" data-filename="practice_patient_variables.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 15</div>
+<h3>Patient variables</h3>
+<p>Create and print simple variables using generic values.</p>
+</div>
+<span class="file-pill">practice_patient_variables.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">practice_patient_variables.py</span></div>
+<textarea aria-label="Python editor 15" class="code-input" spellcheck="false" style="height:185px">patient_label = "Patient A"
+age = 42
+temperature = 98.7
+is_follow_up = False
+
+print(f"Patient: {patient_label}")
+print(f"Age: {age}")
+print(f"Temperature: {temperature} F")
+print(f"Follow-up visit: {is_follow_up}")</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+<div class="notes-grid">
+<div class="note-card"><strong>Task</strong><span>Change the values but keep the variable names clear.</span></div>
+<div class="note-card"><strong>Check</strong><span>Can you identify each data type?</span></div>
+<div class="note-card"><strong>Explain</strong><span>What does each variable represent?</span></div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 26</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Practice code: profit and margin">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Mastery practice</span><h2>Practice code: profit and margin</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="code-cell" data-cell="16" data-chart="profit" data-filename="practice_profit_margin.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 16</div>
+<h3>Profit and margin calculator</h3>
+<p>Combine variables, arithmetic, and formatted output.</p>
+</div>
+<span class="file-pill">practice_profit_margin.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">practice_profit_margin.py</span></div>
+<textarea aria-label="Python editor 16" class="code-input" spellcheck="false" style="height:195px">sales = 2500
+costs = 1750
+profit = sales - costs
+margin = profit / sales
+
+print(f"Sales: ${sales:,.2f}")
+print(f"Costs: ${costs:,.2f}")
+print(f"Profit: ${profit:,.2f}")
+print(f"Margin: {margin:.1%}")</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+<div class="notes-grid">
+<div class="note-card"><strong>Pattern</strong><span>Raw values → derived values → formatted result.</span></div>
+<div class="note-card"><strong>Try changing</strong><span>Increase costs and observe what happens to margin.</span></div>
+<div class="note-card"><strong>Explain</strong><span>Why is margin a percentage but profit is dollars?</span></div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 27</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Mini project: simple sales calculator">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Apply the full module</span><h2>Mini project: simple sales calculator</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="two-col tight">
+<div>
+<p class="lead">Build a small calculator that starts with sales and costs, then reports profit, tax, net profit, and margin.</p>
+<ul class="clean-list">
+<li>Create clear variables.</li>
+<li>Use arithmetic to derive metrics.</li>
+<li>Use f-strings for readable output.</li>
+<li>Use dollar and percentage formatting.</li>
+</ul>
+</div>
+<div>
+<div class="code-cell" data-cell="17" data-chart="profit" data-filename="mini_project_sales_calculator.py">
+<div class="cell-head">
+<div>
+<div class="cell-label">Python Cell 17</div>
+<h3>Simple sales calculator</h3>
+<p>A complete Module 1 example.</p>
+</div>
+<span class="file-pill">mini_project_sales_calculator.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">mini_project_sales_calculator.py</span></div>
+<textarea aria-label="Python editor 17" class="code-input" spellcheck="false" style="height:235px">sales = 4200
+costs = 3100
+tax_rate = 0.06
+
+profit = sales - costs
+tax = profit * tax_rate
+net_profit = profit - tax
+margin = net_profit / sales
+
+print(f"Sales: ${sales:,.2f}")
+print(f"Costs: ${costs:,.2f}")
+print(f"Net profit: ${net_profit:,.2f}")
+print(f"Net margin: {margin:.1%}")</textarea>
+<div class="editor-status"><span>Python</span><span>Ctrl/Cmd + Enter runs this cell</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button">▶ Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 28</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Self-check">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">Check your understanding</span><h2>Self-check</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="checklist-grid">
+<div class="check-card"><h3>Variables</h3><p>Can you explain what each name stores?</p></div>
+<div class="check-card"><h3>Types</h3><p>Can they tell numbers, text, and Boolean values apart?</p></div>
+<div class="check-card"><h3>Arithmetic</h3><p>Can they trace a calculation step by step?</p></div>
+<div class="check-card"><h3>Formatting</h3><p>Can they label and format output clearly?</p></div>
+<div class="check-card"><h3>Conversion</h3><p>Can they explain why text sometimes must become a number?</p></div>
+</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 29</span></footer>
+</div>
+</section>
+<section class="slide standard" data-title="Summary">
+<div class="slide-inner">
+<header class="slide-header">
+<div><span class="kicker">End of Module 1</span><h2>Summary</h2></div>
+<div class="slide-badge">IAN 601 · Module 1</div>
+</header>
+<div class="slide-content">
+<div class="summary-grid">
+<div><h3>Variables</h3><p>Names store values so code is readable.</p></div>
+<div><h3>Types</h3><p>Python distinguishes numbers, text, and True/False values.</p></div>
+<div><h3>Operations</h3><p>Arithmetic creates derived metrics.</p></div>
+<div><h3>Formatting</h3><p>Readable output supports communication.</p></div>
+<div><h3>Conversion</h3><p>Text input must be converted before numeric work.</p></div>
+<div><h3>Analytics use</h3><p>Small code patterns become repeatable workflows.</p></div>
+</div>
+<div class="callout success"><strong>Next:</strong> Module 2 adds decisions and repetition with <code>if</code>, <code>for</code>, and <code>while</code>.</div>
+</div>
+
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 30</span></footer>
+</div>
+</section>
+</main>
+<footer class="bottom-nav">
+<div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">← Previous</button></div>
+<div class="counter" id="counter">1 / 30</div>
+<div class="nav-right"><button class="btn" id="next-btn" type="button">Next →</button></div>
+<div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
+</footer>
+</div>
+<script>const slides = Array.from(document.querySelectorAll('.slide'));
+const select = document.getElementById('slide-select');
+const counter = document.getElementById('counter');
+const progressBar = document.getElementById('progress-bar');
+let current = 0;
+let pyodidePromise = null;
+const PYODIDE_URL = 'https://cdn.jsdelivr.net/pyodide/v314.0.4/full/';
+
+slides.forEach((slide, index) => {
+  const opt = document.createElement('option');
+  opt.value = index;
+  opt.textContent = `${index + 1}. ${slide.dataset.title || 'Slide'}`;
+  select.appendChild(opt);
+});
+
+document.querySelectorAll('.code-cell').forEach(cell => {
+  const textarea = cell.querySelector('.code-input');
+  cell.dataset.originalCode = textarea.value;
+  textarea.addEventListener('keydown', event => {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      const start = textarea.selectionStart;
+      const end = textarea.selectionEnd;
+      textarea.value = textarea.value.substring(0, start) + '    ' + textarea.value.substring(end);
+      textarea.selectionStart = textarea.selectionEnd = start + 4;
+    }
+    if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+      event.preventDefault();
+      runCell(cell);
+    }
+  });
+});
+
+function getCellCode(cell) {
+  return cell._monacoEditor ? cell._monacoEditor.getValue() : cell.querySelector('.code-input').value;
+}
+
+function setCellCode(cell, code) {
+  const textarea = cell.querySelector('.code-input');
+  textarea.value = code;
+  if (cell._monacoEditor && cell._monacoEditor.getValue() !== code) {
+    cell._monacoEditor.setValue(code);
+  }
+}
+
+function updateEditorStatus(cell, position) {
+  const status = cell.querySelector('.editor-status');
+  if (!status) return;
+  const pos = position || cell._monacoEditor?.getPosition() || { lineNumber: 1, column: 1 };
+  status.innerHTML = `
+    <span class="status-left"><span>main*</span><span>0 errors</span></span>
+    <span class="status-right"><span>Ln ${pos.lineNumber}, Col ${pos.column}</span><span>Spaces: 4</span><span>UTF-8</span><span class="status-python">Python</span></span>`;
+}
+
+function initializeMonacoEditors() {
+  if (typeof require !== 'function') return;
+  require.config({ paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs' } });
+  require(['vs/editor/editor.main'], function() {
+    document.querySelectorAll('.code-cell').forEach(cell => {
+      if (cell._monacoEditor) return;
+      const textarea = cell.querySelector('.code-input');
+      const host = document.createElement('div');
+      host.className = 'monaco-host';
+      host.style.height = textarea.style.height || `${Math.max(120, textarea.scrollHeight)}px`;
+      textarea.insertAdjacentElement('afterend', host);
+
+      const editor = monaco.editor.create(host, {
+        value: textarea.value,
+        language: 'python',
+        theme: document.documentElement.dataset.theme === 'dark' ? 'vs-dark' : 'vs-dark',
+        automaticLayout: true,
+        fontFamily: 'Consolas, "Courier New", monospace',
+        fontSize: 14,
+        lineHeight: 21,
+        lineNumbers: 'on',
+        lineNumbersMinChars: 3,
+        glyphMargin: false,
+        folding: true,
+        minimap: { enabled: false },
+        scrollBeyondLastLine: false,
+        smoothScrolling: true,
+        renderLineHighlight: 'line',
+        wordWrap: 'off',
+        tabSize: 4,
+        insertSpaces: true,
+        roundedSelection: false,
+        padding: { top: 9, bottom: 9 },
+        overviewRulerBorder: false,
+        scrollbar: { verticalScrollbarSize: 9, horizontalScrollbarSize: 9 },
+        suggestOnTriggerCharacters: true,
+        quickSuggestions: true,
+        contextmenu: true
+      });
+
+      cell._monacoEditor = editor;
+      cell.classList.add('monaco-ready');
+      updateEditorStatus(cell, editor.getPosition());
+
+      editor.onDidChangeModelContent(() => {
+        textarea.value = editor.getValue();
+      });
+      editor.onDidChangeCursorPosition(e => updateEditorStatus(cell, e.position));
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => runCell(cell));
+    });
+
+    requestAnimationFrame(() => {
+      slides[current].querySelectorAll('.code-cell').forEach(cell => cell._monacoEditor?.layout());
+    });
+  }, function() {
+    // Monaco is an enhancement; the textarea editors remain fully usable if the CDN is unavailable.
+  });
+}
+
+function setRuntime(state, text) {
+  const rt = document.getElementById('runtime');
+  const rtText = document.getElementById('runtime-text');
+  rt.classList.remove('ready','error');
+  if (state === 'ready') rt.classList.add('ready');
+  if (state === 'error') rt.classList.add('error');
+  rtText.textContent = text;
+}
+
+async function getPyodideRuntime() {
+  if (!pyodidePromise) {
+    setRuntime('loading', 'Loading Python...');
+    pyodidePromise = loadPyodide({ indexURL: PYODIDE_URL }).then(py => {
+      setRuntime('ready', 'Python ready');
+      return py;
+    }).catch(err => {
+      setRuntime('error', 'Python failed to load');
+      throw err;
+    });
+  }
+  return pyodidePromise;
+}
+
+async function runCell(cell) {
+  const btn = cell.querySelector('.run-cell');
+  const output = cell.querySelector('.output');
+  const code = getCellCode(cell);
+  btn.disabled = true;
+  cell.classList.add('running');
+  btn.textContent = 'Running...';
+  output.classList.remove('success','error');
+  output.textContent = 'Running...';
+  try {
+    const py = await getPyodideRuntime();
+    const stdout = [];
+    const stderr = [];
+    if (py.setStdout) py.setStdout({ batched: msg => stdout.push(msg) });
+    if (py.setStderr) py.setStderr({ batched: msg => stderr.push(msg) });
+    const result = await py.runPythonAsync(code);
+    let text = stdout.join('\n');
+    if (stderr.length) text += (text ? '\n' : '') + stderr.join('\n');
+    if ((result !== undefined) && (result !== null) && String(result) !== 'undefined') {
+      text += (text ? '\n' : '') + String(result);
+    }
+    output.textContent = text || 'Code ran successfully. No printed output.';
+    output.classList.add('success');
+    if (cell.dataset.chart === 'sales') updateSalesChart(py);
+    if (cell.dataset.chart === 'profit') updateProfitChart(py);
+  } catch (err) {
+    output.textContent = String(err);
+    output.classList.add('error');
+  } finally {
+    btn.disabled = false;
+    cell.classList.remove('running');
+    btn.textContent = '▶ Run';
+  }
+}
+
+function updateSalesChart(py) {
+  const names = [
+    ['low', 'low_count'],
+    ['target', 'target_count'],
+    ['high', 'high_count']
+  ];
+  const counts = names.map(pair => {
+    try { return Number(py.globals.get(pair[1])); } catch { return 0; }
+  });
+  const max = Math.max(1, ...counts);
+  names.forEach((pair, idx) => {
+    const key = pair[0];
+    const value = counts[idx];
+    const bar = document.getElementById(`chart-${key}-bar`);
+    const label = document.getElementById(`chart-${key}-value`);
+    if (bar) bar.style.width = `${Math.round((value / max) * 100)}%`;
+    if (label) label.textContent = value;
+  });
+}
+
+function updateProfitChart(py) {
+  const names = [
+    ['sales', 'sales'],
+    ['costs', 'costs'],
+    ['profit', 'profit']
+  ];
+  const values = names.map(pair => {
+    try { return Number(py.globals.get(pair[1])); } catch { return 0; }
+  });
+  const max = Math.max(1, ...values.map(v => Math.abs(v)));
+  names.forEach((pair, idx) => {
+    const key = pair[0];
+    const value = values[idx];
+    const bar = document.getElementById(`chart-${key}-bar`);
+    const label = document.getElementById(`chart-${key}-value`);
+    if (bar) bar.style.width = `${Math.max(3, Math.round((Math.abs(value) / max) * 100))}%`;
+    if (label) label.textContent = `$${Math.round(value)}`;
+  });
+}
+
+
+function resetCell(cell) {
+  const code = cell.dataset.originalCode || getCellCode(cell);
+  setCellCode(cell, code);
+  const output = cell.querySelector('.output');
+  output.classList.remove('success','error');
+  output.textContent = 'Run this cell to see output.';
+}
+
+function copyCell(cell) {
+  const code = getCellCode(cell);
+  navigator.clipboard?.writeText(code);
+}
+
+function showSlide(index, resetFragments=true) {
+  current = Math.max(0, Math.min(index, slides.length - 1));
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === current);
+  });
+  select.value = current;
+  counter.textContent = `${current + 1} / ${slides.length}`;
+  progressBar.style.width = `${((current + 1) / slides.length) * 100}%`;
+  requestAnimationFrame(() => {
+    slides[current].querySelectorAll('.code-cell').forEach(cell => cell._monacoEditor?.layout());
+  });
+}
+
+function next() { showSlide(current + 1); }
+function prev() { showSlide(current - 1); }
+function showAllPoints() { /* All points are already visible. */ }
+
+async function runActiveSlide() {
+  const cells = Array.from(slides[current].querySelectorAll('.code-cell'));
+  for (const cell of cells) await runCell(cell);
+}
+
+document.getElementById('next-btn').addEventListener('click', next);
+document.getElementById('prev-btn').addEventListener('click', prev);
+document.getElementById('show-all-btn')?.addEventListener('click', showAllPoints);
+document.getElementById('run-slide-btn').addEventListener('click', runActiveSlide);
+document.querySelector('.start-btn')?.addEventListener('click', () => showSlide(1));
+select.addEventListener('change', e => showSlide(Number(e.target.value)));
+
+document.querySelectorAll('.run-cell').forEach(btn => btn.addEventListener('click', e => runCell(e.target.closest('.code-cell'))));
+document.querySelectorAll('.reset-cell').forEach(btn => btn.addEventListener('click', e => resetCell(e.target.closest('.code-cell'))));
+document.querySelectorAll('.copy-cell').forEach(btn => btn.addEventListener('click', e => copyCell(e.target.closest('.code-cell'))));
+
+document.getElementById('theme-btn').addEventListener('click', () => {
+  const root = document.documentElement;
+  const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+  root.dataset.theme = nextTheme;
+  document.getElementById('theme-btn').textContent = nextTheme === 'dark' ? 'Light mode' : 'Dark mode';
+  if (window.monaco?.editor) monaco.editor.setTheme('vs-dark');
+});
+document.getElementById('fullscreen-btn').addEventListener('click', () => {
+  if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+  else document.exitFullscreen?.();
+});
+
+document.addEventListener('keydown', event => {
+  const tag = event.target.tagName.toLowerCase();
+  if (tag === 'textarea' || tag === 'input' || tag === 'select') return;
+  if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') { event.preventDefault(); next(); }
+  if (event.key === 'ArrowLeft' || event.key === 'PageUp') { event.preventDefault(); prev(); }
+  if (event.key.toLowerCase() === 'r') runActiveSlide();
+});
+
+showSlide(0);
+initializeMonacoEditors();
+</script>
+</body>
+</html>
