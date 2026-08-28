@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="IAN 601 Module 3 Functions slide-style HTML lesson with executable VS Code-style Python cells." />
+<title>Module 3: Functions | IAN 601</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs/loader.js"></script>
+<style>
+:root{--bg:#0f172a;--panel:#111827;--panel2:#1e293b;--text:#e5e7eb;--muted:#94a3b8;--line:#334155;--accent:#38bdf8;--accent2:#6366f1;--good:#34d399;--warn:#fbbf24;--bad:#f87171;--gold:#cf9b2f;--shadow:rgba(0,0,0,.28);--code:#1e1e1e;--code2:#181818;--terminal:#0c0c0c;--hero:linear-gradient(135deg,#07182d 0%,#0c2340 55%,#26365e 100%)}
+[data-theme="light"]{--bg:#f1f5f9;--panel:#ffffff;--panel2:#f8fafc;--text:#1e293b;--muted:#64748b;--line:#d7e0eb;--accent:#1d4ed8;--accent2:#4f46e5;--good:#047857;--warn:#b45309;--bad:#b91c1c;--gold:#936b1e;--shadow:rgba(15,23,42,.12);--code:#ffffff;--code2:#f3f3f3;--terminal:#f7f7f7;--hero:linear-gradient(135deg,#dbeafe 0%,#e0e7ff 60%,#fef3c7 100%)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text);overflow:hidden}code,pre,textarea{font-family:"Source Code Pro",Consolas,monospace}.deck{height:100vh;display:grid;grid-template-rows:auto 1fr auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 18px;background:var(--panel);border-bottom:1px solid var(--line);box-shadow:0 2px 16px var(--shadow);z-index:10}.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--accent)}.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#0c2340,var(--accent2));border:2px solid var(--gold);color:#fff}.controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.btn,select{appearance:none;border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:10px;padding:9px 12px;font-weight:700;cursor:pointer}.btn:hover,select:hover{border-color:var(--accent)}.btn.big{font-size:1rem;padding:12px 16px}.btn.ghost{background:transparent}.btn.run-cell,.btn.primary{background:#0e639c;border-color:#1177bb;color:#fff}.btn.run-cell:hover,.btn.primary:hover{background:#1177bb}.btn.running{opacity:.7;pointer-events:none}select{min-width:270px}.status{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.86rem}.status-dot{width:10px;height:10px;border-radius:999px;background:var(--warn);box-shadow:0 0 0 5px rgba(251,191,36,.12)}.status.ready .status-dot{background:var(--good);box-shadow:0 0 0 5px rgba(52,211,153,.12)}.status.error .status-dot{background:var(--bad)}.slides{position:relative;overflow:hidden}.slide{display:none;height:100%;padding:24px}.slide.active{display:block}.slide-inner{height:100%;max-width:1280px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:22px;box-shadow:0 18px 52px var(--shadow);display:grid;grid-template-rows:auto 1fr auto;overflow:hidden}.slide-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:26px 30px 16px;border-bottom:1px solid var(--line)}.slide-header h2{margin:4px 0 0;font-size:clamp(2rem,3.7vw,3.25rem);line-height:1.02;letter-spacing:-.035em;color:var(--accent)}.kicker{color:var(--gold);font-size:.8rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em}.slide-badge{white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:var(--muted);font-weight:800;background:var(--panel2)}.slide-content{padding:24px 30px;overflow:auto}.slide-footer{display:flex;justify-content:space-between;gap:18px;padding:12px 30px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}.bottom-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:12px 18px;background:var(--panel);border-top:1px solid var(--line)}.nav-left,.nav-right{display:flex;gap:8px}.nav-right{justify-content:flex-end}.counter{font-weight:800;color:var(--muted)}.progress{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(148,163,184,.2)}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .2s}.lead{font-size:1.28rem;color:var(--text);line-height:1.55}.big-lead{font-size:clamp(1.8rem,3.2vw,3.1rem);line-height:1.12;font-weight:800;letter-spacing:-.035em;color:#fff;margin:0 0 20px}[data-theme="light"] .big-lead{color:#13243a}.title-grid{height:100%;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;background:var(--hero);margin:-24px -30px;padding:46px;border-radius:0}.pill-row{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.pill-row span{border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.08);border-radius:999px;padding:8px 12px;color:#fff;font-weight:800}[data-theme="light"] .pill-row span{color:#13243a;background:rgba(255,255,255,.5)}.hero-actions-inline{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.function-visual{min-height:290px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.18);border-radius:24px;display:grid;grid-template-columns:1fr auto 1.2fr auto 1fr;align-items:center;gap:16px;padding:24px}.input-stack,.output-stack{display:grid;gap:12px}.input-stack span,.output-stack span{display:block;text-align:center;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);border-radius:14px;padding:16px;color:#fff;font-weight:800}.function-box{display:grid;place-items:center;min-height:150px;border-radius:24px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 18px 42px rgba(0,0,0,.2)}.function-box strong{font-size:1.35rem}.function-box code{color:#fff;font-size:1rem}.arrow-big{font-size:2.6rem;color:var(--gold);font-weight:900}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.two-col.tight{gap:18px}.clean-list{list-style:none;padding:0;margin:18px 0;display:grid;gap:12px}.clean-list li{padding:14px 16px;border:1px solid var(--line);background:var(--panel2);border-radius:14px}.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.timeline.wide{grid-template-columns:repeat(3,1fr)}.timeline-item{position:relative;border:1px solid var(--line);border-radius:18px;background:var(--panel2);padding:18px;min-height:160px}.timeline-item span{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:900;margin-bottom:12px}.timeline-item h3{margin:0 0 8px;color:var(--accent)}.timeline-item p{margin:0;color:var(--muted)}.callout{border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:16px;background:var(--panel2);padding:16px 18px;margin:18px 0;color:var(--text)}.callout.secondary{border-left-color:var(--gold)}.callout.warning{border-left-color:var(--warn)}.callout.success{border-left-color:var(--good)}.formula-card,.rule-box{border:1px solid var(--line);border-radius:16px;background:var(--panel2);padding:16px;margin:12px 0}.formula-card code,.rule-box code{display:block;color:var(--accent);font-size:1.05rem;font-weight:800;margin-bottom:6px}.formula-card span,.rule-box span{color:var(--muted)}.process-card{border:1px solid var(--line);border-radius:20px;background:var(--panel2);padding:20px;text-align:center;display:grid;gap:10px}.process-step{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:14px;font-weight:800}.process-step.accent{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}.process-arrow{color:var(--gold);font-weight:900}.before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px}.before-after>div,.compare-card,.check-card{border:1px solid var(--line);border-radius:18px;background:var(--panel2);padding:18px}.before-after code{display:block;margin:10px 0;padding:10px;border-radius:10px;background:var(--code);color:var(--accent)}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px}table{width:100%;border-collapse:collapse}th,td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}th{background:var(--panel2);color:var(--accent);text-align:left}tr:last-child td{border-bottom:0}td{color:var(--text)}.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.compare-card h3{margin-top:0;color:var(--accent)}.logic-grid,.summary-grid,.checklist-grid,.practice-grid,.notes-grid{display:grid;gap:14px}.logic-grid{grid-template-columns:repeat(3,1fr)}.logic-grid>div{border:1px solid var(--line);border-radius:18px;background:var(--panel2);padding:22px;text-align:center}.logic-grid code{display:inline-block;font-size:1.3rem;color:var(--accent);font-weight:800}.notes-grid{grid-template-columns:repeat(3,1fr);margin-top:14px}.note-card{border:1px solid var(--line);background:var(--panel2);border-radius:14px;padding:14px}.note-card strong{display:block;color:var(--accent);margin-bottom:6px}.note-card span{color:var(--muted)}.summary-grid{grid-template-columns:repeat(3,1fr)}.summary-grid>div{border:1px solid var(--line);background:var(--panel2);border-radius:16px;padding:16px}.summary-grid h3,.check-card h3,.practice-grid h3{margin:0 0 6px;color:var(--accent)}.summary-grid p,.check-card p,.practice-grid p{margin:0;color:var(--muted)}.checklist-grid{grid-template-columns:repeat(3,1fr)}.practice-grid{grid-template-columns:repeat(3,1fr)}.practice-grid>div{border:1px solid var(--line);border-radius:18px;background:var(--panel2);padding:18px}.practice-grid span{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:900;margin-bottom:10px}.code-cell{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--panel2);box-shadow:0 8px 24px rgba(0,0,0,.12);margin:0 0 14px}.cell-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding:16px 18px;border-bottom:1px solid var(--line)}.cell-label{color:var(--gold);text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;font-weight:900}.cell-head h3{margin:4px 0;color:var(--accent)}.cell-head p{margin:0;color:var(--muted)}.file-pill{border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-size:.8rem;color:var(--muted);white-space:nowrap}.editor-shell{background:var(--code);color:#d4d4d4}.editor-topbar{height:36px;display:flex;align-items:center;gap:8px;background:var(--code2);border-bottom:1px solid #2b2b2b;padding:0 12px}.dot{width:10px;height:10px;border-radius:50%;display:inline-block}.red{background:#ff5f57}.yellow{background:#ffbd2e}.green{background:#28c840}.tab-name{font-size:.78rem;color:#d4d4d4}.code-input{display:block;width:100%;resize:vertical;border:0;outline:0;padding:14px 16px;background:var(--code);color:#d4d4d4;font-size:.9rem;line-height:1.55;tab-size:4}.monaco-host{display:none}.code-cell.monaco-ready .code-input{display:none}.code-cell.monaco-ready .monaco-host{display:block}.editor-status{min-height:24px;display:flex;justify-content:flex-end;gap:14px;align-items:center;background:#007acc;color:#fff;padding:3px 10px;font-size:.72rem;font-weight:600}.cell-actions{display:flex;gap:8px;padding:12px 16px;background:var(--panel2);border-top:1px solid var(--line)}.output{position:relative;min-height:72px;max-height:220px;overflow:auto;margin:0;padding:32px 16px 14px;background:var(--terminal);color:#d4d4d4;border-top:1px solid #303031;font-size:.86rem;line-height:1.55;white-space:pre-wrap}.output::before{content:"TERMINAL";position:absolute;left:16px;top:8px;color:#d4d4d4;border-bottom:1px solid currentColor;font:700 .68rem Inter,sans-serif;letter-spacing:.08em}.output.success{border-top-color:var(--good)}.output.error{color:#fca5a5;border-top-color:var(--bad)}[data-theme="light"] .output.error{color:#b91c1c}[data-theme="light"] .tab-name,[data-theme="light"] .code-input{color:#1f1f1f}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+@media(max-width:980px){body{overflow:auto}.deck{min-height:100vh;height:auto}.slide{height:auto;min-height:calc(100vh - 122px);padding:12px}.slide-inner{min-height:calc(100vh - 146px)}.title-grid,.two-col,.compare-grid,.before-after{grid-template-columns:1fr}.timeline,.timeline.wide,.summary-grid,.checklist-grid,.practice-grid,.notes-grid,.logic-grid{grid-template-columns:1fr 1fr}.function-visual{grid-template-columns:1fr}.arrow-big{transform:rotate(90deg);text-align:center}.bottom-nav{grid-template-columns:1fr}.nav-right{justify-content:flex-start}.controls{width:100%}select{flex:1;min-width:180px}}
+@media(max-width:640px){.topbar{align-items:flex-start;flex-direction:column}.slide-header{display:block}.slide-badge{display:inline-block;margin-top:12px}.timeline,.summary-grid,.checklist-grid,.practice-grid,.notes-grid,.logic-grid{grid-template-columns:1fr}.editor-status span:nth-child(3),.editor-status span:nth-child(4){display:none}}
+</style>
+</head>
+<body>
+<div class="deck">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><i class="fa-brands fa-python"></i></span><span>IAN 601 · Module 3 · Functions</span></div>
+    <div class="controls">
+      <select id="slide-select" aria-label="Choose slide"></select>
+      <button class="btn ghost" id="theme-toggle" type="button">Light</button>
+      <button class="btn ghost" id="restart-python" type="button"><i class="fa-solid fa-rotate"></i> Restart Python</button>
+      <button class="btn primary" id="run-slide-btn" type="button"><i class="fa-solid fa-play"></i> Run code on slide</button>
+      <div class="status" id="runtime-status"><span class="status-dot"></span><span id="runtime-text">Python loads when a code cell runs.</span></div>
+    </div>
+  </header>
+  <main class="slides" id="slides"><section class="slide standard" data-title="Functions">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Module 3 · PowerPoint-style HTML lesson</span><h2>Functions</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="title-grid">
+      <div>
+        <p class="big-lead">Functions help turn repeated steps into named, reusable analytical tasks.</p>
+        <div class="pill-row"><span>Self-paced slides</span><span>Executable Python cells</span><span>VS Code-style editor</span><span>Separate study notes</span></div>
+        <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div>
+      </div>
+      <div class="function-visual" aria-hidden="true">
+        <div class="input-stack"><span>sales</span><span>costs</span></div><div class="arrow-big">→</div>
+        <div class="function-box"><strong>function</strong><code>profit()</code></div><div class="arrow-big">→</div>
+        <div class="output-stack"><span>metric</span><span>report</span></div>
+      </div>
+    </div>
+    <div class="callout"><strong>Goal:</strong> Define a function, pass values into it, return values from it, and reuse it in small analytics examples.</div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 1</span></footer>
+  </div>
+</section><section class="slide standard" data-title="How to use this page">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Self-paced workflow</span><h2>How to use this page</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="timeline">
+      <div class="timeline-item"><span>1</span><h3>Read</h3><p>Start with the concept on the slide.</p></div>
+      <div class="timeline-item"><span>2</span><h3>Run</h3><p>Execute the code in the browser.</p></div>
+      <div class="timeline-item"><span>3</span><h3>Compare</h3><p>Connect the output to the explanation.</p></div>
+      <div class="timeline-item"><span>4</span><h3>Modify</h3><p>Change one value or line at a time.</p></div>
+      <div class="timeline-item"><span>5</span><h3>Reuse</h3><p>Apply the pattern in a new example.</p></div>
+    </div>
+    <div class="callout secondary">All slide points are visible. Use the Next and Previous buttons, arrow keys, or the slide menu.</div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 2</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Learning path for Module 3">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Roadmap</span><h2>Learning path for Module 3</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="timeline wide">
+      <div class="timeline-item"><span>1</span><h3>Define and call</h3><p>Create a reusable block with <code>def</code>.</p></div>
+      <div class="timeline-item"><span>2</span><h3>Parameters</h3><p>Send values into a function.</p></div>
+      <div class="timeline-item"><span>3</span><h3>Return values</h3><p>Send results back to the program.</p></div>
+      <div class="timeline-item"><span>4</span><h3>Documentation</h3><p>Make the purpose clear with docstrings.</p></div>
+      <div class="timeline-item"><span>5</span><h3>Composition</h3><p>Connect small functions into a workflow.</p></div>
+      <div class="timeline-item"><span>6</span><h3>Applications</h3><p>Classify, calculate, and build a mini calculator.</p></div>
+    </div>
+    <div class="callout">By the end, a function should feel like a named analytical step: input values go in, useful results come out.</div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 3</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Why functions matter in analytics">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Big picture</span><h2>Why functions matter in analytics</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="two-col">
+      <div>
+        <p class="lead">Without functions, repeated logic is copied again and again. With functions, the logic has one clear home.</p>
+        <ul class="clean-list">
+          <li><strong>Less repetition:</strong> write the calculation once.</li>
+          <li><strong>Clearer names:</strong> describe the purpose of each task.</li>
+          <li><strong>Easier changes:</strong> update the function instead of many copies.</li>
+          <li><strong>Better testing:</strong> check a small unit of work.</li>
+        </ul>
+      </div>
+      <div class="before-after">
+        <div><h3>Copied logic</h3><p>Same formula repeated in many places.</p><code>sales - costs</code><code>sales - costs</code><code>sales - costs</code></div>
+        <div><h3>Function logic</h3><p>One clear reusable step.</p><code>get_profit(sales, costs)</code></div>
+      </div>
+    </div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 4</span></footer>
+  </div>
+</section><section class="slide standard" data-title="A function has a definition and a call">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Core structure</span><h2>A function has a definition and a call</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="two-col tight">
+      <div>
+        <p class="lead">A function definition tells Python what the function should do. A function call tells Python to run it.</p>
+        <div class="formula-card"><code>def show_welcome():</code><span>Define a function named <strong>show_welcome</strong>.</span></div>
+        <div class="formula-card"><code>show_welcome()</code><span>Call the function and execute its body.</span></div>
+        <div class="callout secondary"><strong>Indentation:</strong> the indented lines are the body of the function.</div>
+      </div>
+      <div class="process-card"><div class="process-step accent">Define</div><div class="process-arrow">↓</div><div class="process-step">Store instructions</div><div class="process-arrow">↓</div><div class="process-step accent">Call</div><div class="process-arrow">↓</div><div class="process-step">Run body</div></div>
+    </div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 5</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Code: a function with no parameters">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Executable example</span><h2>Code: a function with no parameters</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="code-cell" data-cell="1" data-filename="welcome.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 1</div><h3>A function with no parameters</h3><p>Start with the smallest possible function: define one action, then call it.</p></div>
+    <span class="file-pill">welcome.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> welcome.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:150px" aria-label="Python editor 1">def show_welcome():
+    print(&quot;Welcome to IAN 601!&quot;)
+
+show_welcome()</textarea>
+    <div class="monaco-host" style="height:150px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>Python stores the function body, then runs it when show_welcome() is called.</span></div><div class="note-card"><strong>Key detail</strong><span>The colon and indentation show where the function body begins.</span></div><div class="note-card"><strong>Change to try</strong><span>Change the message inside print() and run again.</span></div></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 6</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Code: put a calculation inside a function">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Reusable task</span><h2>Code: put a calculation inside a function</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="code-cell" data-cell="2" data-filename="profit_basic.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 2</div><h3>Put a calculation inside a function</h3><p>The calculation is now stored as a reusable task.</p></div>
+    <span class="file-pill">profit_basic.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> profit_basic.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:175px" aria-label="Python editor 2">def calculate_profit():
+    sales = 1000
+    costs = 800
+    print(sales - costs)
+
+calculate_profit()</textarea>
+    <div class="monaco-host" style="height:175px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The function calculates profit and prints the result.</span></div><div class="note-card"><strong>Limitation</strong><span>The numbers are fixed inside the function, so it is not flexible yet.</span></div><div class="note-card"><strong>Next step</strong><span>Parameters will let the same function work with different inputs.</span></div></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 7</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Parameters receive values">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Inputs to functions</span><h2>Parameters receive values</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="two-col tight">
+      <div>
+        <p class="lead">A parameter is a name inside the function definition. An argument is the value supplied when the function is called.</p>
+        <div class="formula-card"><code>def greet(name):</code><span><strong>name</strong> is a parameter.</span></div>
+        <div class="formula-card"><code>greet("Avery")</code><span><strong>"Avery"</strong> is an argument.</span></div>
+      </div>
+      <div><div class="table-wrap"><table><thead><tr><th>Term</th><th>Meaning</th><th>Example</th></tr></thead><tbody><tr><td>Parameter</td><td>A placeholder name inside the function.</td><td><code>name</code> in <code>def greet(name)</code></td></tr><tr><td>Argument</td><td>The actual value passed into the function.</td><td><code>"Avery"</code> in <code>greet("Avery")</code></td></tr><tr><td>Call</td><td>The statement that runs the function.</td><td><code>greet("Avery")</code></td></tr></tbody></table></div></div>
+    </div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 8</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Code: pass one argument">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Single input</span><h2>Code: pass one argument</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="code-cell" data-cell="3" data-filename="greet.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 3</div><h3>Pass one argument</h3><p>Change the argument and run again.</p></div>
+    <span class="file-pill">greet.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> greet.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:145px" aria-label="Python editor 3">def greet(name):
+    print(f&quot;Hello, {name}!&quot;)
+
+greet(&quot;Avery&quot;)</textarea>
+    <div class="monaco-host" style="height:145px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The argument &quot;Avery&quot; is assigned to the parameter name while the function runs.</span></div><div class="note-card"><strong>Why it matters</strong><span>The same function can greet any value supplied to it.</span></div><div class="note-card"><strong>Change to try</strong><span>Replace &quot;Avery&quot; with another fictional name or label.</span></div></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 9</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Code: pass two analytical inputs">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Multiple inputs</span><h2>Code: pass two analytical inputs</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="code-cell" data-cell="4" data-filename="parameters.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 4</div><h3>Pass two analytical inputs</h3><p>Parameters make the same calculation work with different data.</p></div>
+    <span class="file-pill">parameters.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> parameters.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:175px" aria-label="Python editor 4">def profit_report(sales, costs):
+    profit = sales - costs
+    print(f&quot;Profit: ${profit:,.2f}&quot;)
+
+profit_report(1250, 900)</textarea>
+    <div class="monaco-host" style="height:175px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>sales receives 1250 and costs receives 900.</span></div><div class="note-card"><strong>Analytics pattern</strong><span>A function can package a repeated metric calculation.</span></div><div class="note-card"><strong>Change to try</strong><span>Call profit_report(2000, 1600) on a new line.</span></div></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 10</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Default parameters supply common values">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Optional inputs</span><h2>Default parameters supply common values</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="two-col tight">
+      <div>
+        <p class="lead">A default parameter gives a value when the call does not provide one.</p>
+        <div class="formula-card"><code>rate=0.10</code><span>Use 10% unless another rate is supplied.</span></div>
+        <div class="callout secondary">Defaults are helpful for common assumptions, but the function can still be customized.</div>
+      </div>
+      <div><div class="code-cell" data-cell="5" data-filename="defaults.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 5</div><h3>Use a default parameter</h3><p>A default is used only when the caller does not supply that argument.</p></div>
+    <span class="file-pill">defaults.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> defaults.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:175px" aria-label="Python editor 5">def calculate_tax(profit, rate=0.10):
+    return profit * rate
+
+print(calculate_tax(500))
+print(calculate_tax(500, 0.15))</textarea>
+    <div class="monaco-host" style="height:175px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div></div>
+    </div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 11</span></footer>
+  </div>
+</section><section class="slide standard" data-title="return is different from print">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Output vs reusable result</span><h2>return is different from print</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="compare-grid">
+      <div class="compare-card"><h3><code>print()</code></h3><p>Shows a value in the output area. Useful for checking and communication.</p></div>
+      <div class="compare-card"><h3><code>return</code></h3><p>Sends a value back so another line of code can store it, format it, or use it in another calculation.</p></div>
+    </div>
+    <div class="callout warning"><strong>Rule of thumb:</strong> use <code>return</code> when the result should be reused later.</div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 12</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Code: return a value">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Reusable result</span><h2>Code: return a value</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="code-cell" data-cell="6" data-filename="return_value.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 6</div><h3>Return a value</h3><p>Unlike print(), return gives the value back to the program.</p></div>
+    <span class="file-pill">return_value.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> return_value.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:160px" aria-label="Python editor 6">def get_profit(sales, costs):
+    return sales - costs
+
+profit = get_profit(1000, 800)
+print(profit)</textarea>
+    <div class="monaco-host" style="height:160px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The returned value is stored in the variable profit.</span></div><div class="note-card"><strong>Why it matters</strong><span>The result can now be used in later calculations or reports.</span></div><div class="note-card"><strong>Change to try</strong><span>Use get_profit(2500, 2100) and print the result.</span></div></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 13</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Code: return more than one value">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Multiple results</span><h2>Code: return more than one value</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="code-cell" data-cell="7" data-filename="multiple_returns.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 7</div><h3>Return more than one value</h3><p>Python can unpack multiple returned values into separate variables.</p></div>
+    <span class="file-pill">multiple_returns.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> multiple_returns.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:180px" aria-label="Python editor 7">def summarize(values):
+    return min(values), max(values)
+
+low, high = summarize([14, 9, 21, 18])
+print(&quot;Low:&quot;, low)
+print(&quot;High:&quot;, high)</textarea>
+    <div class="monaco-host" style="height:180px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The function returns two results, and Python unpacks them into low and high.</span></div><div class="note-card"><strong>Use case</strong><span>A summary function may return several useful metrics.</span></div><div class="note-card"><strong>Change to try</strong><span>Add another number to the list and run again.</span></div></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 14</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Variables inside functions are local">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Scope preview</span><h2>Variables inside functions are local</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="two-col tight">
+      <div>
+        <p class="lead">A variable created inside a function usually belongs to that function call.</p>
+        <ul class="clean-list">
+          <li><strong>Local variable:</strong> created inside the function body.</li>
+          <li><strong>Outside code:</strong> does not automatically see local names.</li>
+          <li><strong>Return:</strong> the clean way to send useful results out.</li>
+        </ul>
+      </div>
+      <div class="process-card"><div class="process-step">Outside code</div><div class="process-arrow">↓ call</div><div class="process-step accent">Function workspace</div><div class="process-arrow">↓ return</div><div class="process-step">Reusable result</div></div>
+    </div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 15</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Code: catch a conversion error">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Safer functions</span><h2>Code: catch a conversion error</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="code-cell" data-cell="8" data-filename="safe_integer.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 8</div><h3>Catch a conversion error</h3><p>try/except lets the function respond to predictable errors.</p></div>
+    <span class="file-pill">safe_integer.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> safe_integer.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:210px" aria-label="Python editor 8">def safe_integer(text):
+    try:
+        return int(text)
+    except ValueError:
+        return None
+
+print(safe_integer(&quot;42&quot;))
+print(safe_integer(&quot;forty-two&quot;))</textarea>
+    <div class="monaco-host" style="height:210px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The first value converts to 42. The second cannot convert, so the function returns None.</span></div><div class="note-card"><strong>Why it matters</strong><span>Real data often contains unexpected text or missing values.</span></div><div class="note-card"><strong>Change to try</strong><span>Try &quot;007&quot;, &quot;3.5&quot;, and an empty string.</span></div></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 16</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Code: add a docstring">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Documentation</span><h2>Code: add a docstring</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="code-cell" data-cell="9" data-filename="docstrings.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 9</div><h3>Add a docstring</h3><p>A docstring documents what a function is designed to do.</p></div>
+    <span class="file-pill">docstrings.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> docstrings.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:185px" aria-label="Python editor 9">def average(a, b):
+    &quot;&quot;&quot;Return the arithmetic mean of two numbers.&quot;&quot;&quot;
+    return (a + b) / 2
+
+print(average.__doc__)
+print(average(80, 90))</textarea>
+    <div class="monaco-host" style="height:185px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The text inside triple quotes becomes documentation for the function.</span></div><div class="note-card"><strong>Why it matters</strong><span>A clear docstring helps future readers know the function purpose.</span></div><div class="note-card"><strong>Change to try</strong><span>Rewrite the docstring in your own words.</span></div></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 17</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Code: compose small functions">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Build a workflow</span><h2>Code: compose small functions</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="code-cell" data-cell="10" data-filename="compose.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 10</div><h3>Compose two small functions</h3><p>One function computes profit; another converts it into a margin.</p></div>
+    <span class="file-pill">compose.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> compose.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:230px" aria-label="Python editor 10">def profit(sales, costs):
+    return sales - costs
+
+def margin(profit_value, sales):
+    return profit_value / sales
+
+p = profit(1500, 1050)
+print(f&quot;Margin: {margin(p, 1500):.1%}&quot;)</textarea>
+    <div class="monaco-host" style="height:230px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The first function produces a profit value. The second function uses that value to calculate margin.</span></div><div class="note-card"><strong>Why it matters</strong><span>Small functions are easier to test and combine.</span></div><div class="note-card"><strong>Change to try</strong><span>Change the sales and costs and compare the new margin.</span></div></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 18</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Practice ladder">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Small executable steps</span><h2>Practice ladder</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="practice-grid">
+      <div><span>1</span><h3>Foundation</h3><p>Define and call a no-parameter function.</p></div>
+      <div><span>2</span><h3>Building</h3><p>Add one parameter and pass an argument.</p></div>
+      <div><span>3</span><h3>Intermediate</h3><p>Return a value and store the result.</p></div>
+      <div><span>4</span><h3>Advanced</h3><p>Handle a predictable conversion error.</p></div>
+      <div><span>5</span><h3>Mastery</h3><p>Use defaults, return, and documentation together.</p></div>
+      <div><span>6</span><h3>Explain</h3><p>Describe input, process, and output.</p></div>
+    </div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 19</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Practice code: foundation and building">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Executable practice</span><h2>Practice code: foundation and building</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="two-col tight"><div class="code-cell" data-cell="11" data-filename="practice_hello.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 11</div><h3>Foundation: say hello</h3><p>Define and call a simple function.</p></div>
+    <span class="file-pill">practice_hello.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> practice_hello.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:140px" aria-label="Python editor 11">def say_hello():
+    print(&quot;Hello&quot;)
+
+say_hello()</textarea>
+    <div class="monaco-host" style="height:140px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div><div class="code-cell" data-cell="12" data-filename="practice_greet.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 12</div><h3>Building: personalized greeting</h3><p>Add one parameter.</p></div>
+    <span class="file-pill">practice_greet.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> practice_greet.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:140px" aria-label="Python editor 12">def greet(name):
+    print(f&quot;Welcome, {name}&quot;)
+
+greet(&quot;Jordan&quot;)</textarea>
+    <div class="monaco-host" style="height:140px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 20</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Practice code: return and error handling">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Executable practice</span><h2>Practice code: return and error handling</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="two-col tight"><div class="code-cell" data-cell="13" data-filename="practice_sum.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 13</div><h3>Intermediate: return a sum</h3><p>Use a returned value.</p></div>
+    <span class="file-pill">practice_sum.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> practice_sum.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:150px" aria-label="Python editor 13">def add(a, b):
+    return a + b
+
+result = add(12, 8)
+print(result)</textarea>
+    <div class="monaco-host" style="height:150px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div><div class="code-cell" data-cell="14" data-filename="practice_error.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 14</div><h3>Advanced: safe age conversion</h3><p>Practice controlled error handling.</p></div>
+    <span class="file-pill">practice_error.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> practice_error.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:185px" aria-label="Python editor 14">def parse_age(text):
+    try:
+        return int(text)
+    except ValueError:
+        return &quot;Invalid age&quot;
+
+print(parse_age(&quot;35&quot;))</textarea>
+    <div class="monaco-host" style="height:185px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 21</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Practice code: defaults and documentation">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Mastery pattern</span><h2>Practice code: defaults and documentation</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="code-cell" data-cell="15" data-filename="practice_mastery.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 15</div><h3>Mastery: tax function</h3><p>Combine parameters, defaults, return, and documentation.</p></div>
+    <span class="file-pill">practice_mastery.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> practice_mastery.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:170px" aria-label="Python editor 15">def tax(amount, rate=0.08):
+    &quot;&quot;&quot;Return tax for an amount.&quot;&quot;&quot;
+    return amount * rate
+
+print(f&quot;${tax(250):.2f}&quot;)</textarea>
+    <div class="monaco-host" style="height:170px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>Includes</strong><span>A parameter, a default value, a docstring, a return statement, and formatted output.</span></div><div class="note-card"><strong>Change to try</strong><span>Call tax(250, 0.10) to override the default rate.</span></div><div class="note-card"><strong>Reusable idea</strong><span>This pattern can be adapted to fees, discounts, or rates.</span></div></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 22</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Applied example: classify a temperature">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Reusable rule</span><h2>Applied example: classify a temperature</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="code-cell" data-cell="16" data-filename="health_function.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 16</div><h3>Classify a temperature</h3><p>The function can be reused for every temperature in a dataset.</p></div>
+    <span class="file-pill">health_function.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> health_function.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:220px" aria-label="Python editor 16">def check_fever(temp):
+    if temp &gt; 98.6:
+        return &quot;Fever&quot;
+    return &quot;Normal&quot;
+
+for temp in [98.2, 99.4, 97.9]:
+    print(temp, &quot;-&gt;&quot;, check_fever(temp))</textarea>
+    <div class="monaco-host" style="height:220px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The same rule is applied to each value in the list.</span></div><div class="note-card"><strong>Important note</strong><span>This is a coding example only, not medical guidance.</span></div><div class="note-card"><strong>Change to try</strong><span>Change the threshold or add another temperature.</span></div></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 23</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Mini project: reusable calculator function">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Capstone example</span><h2>Mini project: reusable calculator function</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="code-cell" data-cell="17" data-filename="calculator.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Python Cell 17</div><h3>Mini calculator capstone</h3><p>Change the operation or values and test the function.</p></div>
+    <span class="file-pill">calculator.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> calculator.py</span></div>
+    <textarea class="code-input" spellcheck="false" style="height:280px" aria-label="Python editor 17">def calculate(operation, a, b):
+    if operation == &quot;add&quot;:
+        return a + b
+    if operation == &quot;subtract&quot;:
+        return a - b
+    if operation == &quot;multiply&quot;:
+        return a * b
+    if operation == &quot;divide&quot;:
+        return &quot;Cannot divide by zero&quot; if b == 0 else a / b
+    return &quot;Unknown operation&quot;
+
+print(calculate(&quot;divide&quot;, 20, 4))</textarea>
+    <div class="monaco-host" style="height:280px" aria-hidden="true"></div>
+    <div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions">
+    <button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+    <button class="btn ghost reset-cell" type="button">Reset</button>
+    <button class="btn ghost copy-cell" type="button">Copy</button>
+  </div>
+  <pre class="output" aria-live="polite">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>Combines</strong><span>Parameters, return values, conditionals, and a safety check.</span></div><div class="note-card"><strong>Extend it</strong><span>Add an operation such as exponent or modulo.</span></div><div class="note-card"><strong>Test it</strong><span>Run divide by zero and an unknown operation.</span></div></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 24</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Function design checklist">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Self-check</span><h2>Function design checklist</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="checklist-grid">
+      <div class="check-card"><h3>Name</h3><p>Does the function name describe the task?</p></div>
+      <div class="check-card"><h3>Inputs</h3><p>Are parameters clear and necessary?</p></div>
+      <div class="check-card"><h3>Process</h3><p>Is the body focused on one job?</p></div>
+      <div class="check-card"><h3>Output</h3><p>Does the function return a reusable value when needed?</p></div>
+      <div class="check-card"><h3>Safety</h3><p>Does it handle predictable problems?</p></div>
+      <div class="check-card"><h3>Documentation</h3><p>Would a future reader understand its purpose?</p></div>
+    </div>
+    <div class="callout success"><strong>Good functions are small, named clearly, and easy to reuse.</strong></div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 25</span></footer>
+  </div>
+</section><section class="slide standard" data-title="Summary">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">End of Module 3</span><h2>Summary</h2></div>
+      <div class="slide-badge">IAN 601 · Module 3</div>
+    </header>
+    <div class="slide-content"><div class="summary-grid">
+      <div><h3>Define</h3><p><code>def</code> creates a reusable function.</p></div>
+      <div><h3>Call</h3><p>Parentheses run the function body.</p></div>
+      <div><h3>Parameters</h3><p>Inputs make functions flexible.</p></div>
+      <div><h3>Return</h3><p>Returned values can be reused later.</p></div>
+      <div><h3>Docstrings</h3><p>Documentation explains the purpose.</p></div>
+      <div><h3>Composition</h3><p>Small functions can form larger workflows.</p></div>
+    </div>
+    <div class="callout success"><strong>Next:</strong> Module 4 moves deeper into lists and tuples, which give functions more structured data to work with.</div></div>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 26</span></footer>
+  </div>
+</section></main>
+  <footer class="bottom-nav">
+    <div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">← Previous</button></div>
+    <div class="counter" id="counter">1 / 26</div>
+    <div class="nav-right"><button class="btn" id="next-btn" type="button">Next →</button></div>
+    <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
+  </footer>
+</div>
+<script>
+const slides = Array.from(document.querySelectorAll('.slide'));
+const select = document.getElementById('slide-select');
+const counter = document.getElementById('counter');
+const progressBar = document.getElementById('progress-bar');
+const statusEl = document.getElementById('runtime-status');
+const statusText = document.getElementById('runtime-text');
+let current = 0;
+let pyodidePromise = null;
+let monacoAvailable = false;
+const editors = new Map();
+const PYODIDE_URL = 'https://cdn.jsdelivr.net/pyodide/v0.27.7/full/';
+
+slides.forEach((slide, index) => {
+  const opt = document.createElement('option');
+  opt.value = index;
+  opt.textContent = `${index + 1}. ${slide.dataset.title || 'Slide'}`;
+  select.appendChild(opt);
+});
+
+function updateStatus(state, text) {
+  statusEl.classList.remove('ready','error');
+  if (state) statusEl.classList.add(state);
+  statusText.textContent = text;
+}
+
+function showSlide(index) {
+  if (index < 0 || index >= slides.length) return;
+  current = index;
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  select.value = String(current);
+  counter.textContent = `${current + 1} / ${slides.length}`;
+  progressBar.style.width = `${((current + 1) / slides.length) * 100}%`;
+  setTimeout(() => resizeEditors(), 50);
+}
+
+function next() { showSlide(Math.min(current + 1, slides.length - 1)); }
+function prev() { showSlide(Math.max(current - 1, 0)); }
+
+function getCellEditor(cell) { return editors.get(cell.querySelector('.code-input')); }
+function getCellCode(cell) {
+  const area = cell.querySelector('.code-input');
+  const editor = getCellEditor(cell);
+  return editor ? editor.getValue() : area.value;
+}
+function setCellCode(cell, code) {
+  const area = cell.querySelector('.code-input');
+  const editor = getCellEditor(cell);
+  if (editor) editor.setValue(code);
+  area.value = code;
+}
+
+async function loadPython() {
+  if (!pyodidePromise) {
+    updateStatus('', 'Loading Python runtime...');
+    pyodidePromise = loadPyodide({ indexURL: PYODIDE_URL }).then(py => {
+      updateStatus('ready', 'Python runtime ready.');
+      return py;
+    }).catch(err => {
+      updateStatus('error', 'Python runtime could not load. Check internet access.');
+      pyodidePromise = null;
+      throw err;
+    });
+  }
+  return pyodidePromise;
+}
+
+async function runCell(cell) {
+  const btn = cell.querySelector('.run-cell');
+  const output = cell.querySelector('.output');
+  const code = getCellCode(cell);
+  output.classList.remove('success','error');
+  output.textContent = 'Running...';
+  btn.classList.add('running');
+  btn.disabled = true;
+  try {
+    const py = await loadPython();
+    const stdout = [];
+    const stderr = [];
+    if (py.setStdout) py.setStdout({ batched: msg => stdout.push(msg) });
+    if (py.setStderr) py.setStderr({ batched: msg => stderr.push(msg) });
+    const result = await py.runPythonAsync(code);
+    let text = stdout.join('\n');
+    if (stderr.length) text += (text ? '\n' : '') + stderr.join('\n');
+    if (result !== undefined && result !== null && String(result) !== 'undefined') {
+      text += (text ? '\n' : '') + String(result);
+    }
+    output.textContent = text || 'Code ran successfully. No printed output.';
+    output.classList.add('success');
+  } catch (err) {
+    output.textContent = String(err);
+    output.classList.add('error');
+  } finally {
+    btn.classList.remove('running');
+    btn.disabled = false;
+  }
+}
+
+async function runActiveSlide() {
+  const cells = Array.from(slides[current].querySelectorAll('.code-cell'));
+  for (const cell of cells) await runCell(cell);
+}
+
+async function runAllVisibleCode() { await runActiveSlide(); }
+
+function resetCell(cell) {
+  const original = cell.dataset.originalCode || '';
+  setCellCode(cell, original);
+  const output = cell.querySelector('.output');
+  output.classList.remove('success','error');
+  output.textContent = 'Run this cell to see output.';
+}
+
+function copyCell(cell) {
+  navigator.clipboard?.writeText(getCellCode(cell));
+}
+
+function initCodeCells() {
+  document.querySelectorAll('.code-cell').forEach(cell => {
+    const area = cell.querySelector('.code-input');
+    cell.dataset.originalCode = area.value;
+    cell.querySelector('.run-cell').addEventListener('click', () => runCell(cell));
+    cell.querySelector('.reset-cell').addEventListener('click', () => resetCell(cell));
+    cell.querySelector('.copy-cell').addEventListener('click', () => copyCell(cell));
+    area.addEventListener('keydown', e => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        e.preventDefault();
+        runCell(cell);
+      }
+    });
+  });
+}
+
+function initMonaco() {
+  if (!window.require) return;
+  try {
+    require.config({ paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs' } });
+    require(['vs/editor/editor.main'], function () {
+      monacoAvailable = true;
+      const theme = document.documentElement.dataset.theme === 'light' ? 'vs' : 'vs-dark';
+      monaco.editor.setTheme(theme);
+      document.querySelectorAll('.code-cell').forEach(cell => {
+        const area = cell.querySelector('.code-input');
+        const host = cell.querySelector('.monaco-host');
+        const editor = monaco.editor.create(host, {
+          value: area.value,
+          language: 'python',
+          theme,
+          automaticLayout: true,
+          minimap: { enabled: false },
+          fontFamily: 'Source Code Pro, Consolas, monospace',
+          fontSize: 14,
+          lineNumbers: 'on',
+          scrollBeyondLastLine: false,
+          tabSize: 4,
+          wordWrap: 'on'
+        });
+        editor.onDidChangeModelContent(() => { area.value = editor.getValue(); });
+        editor.onDidChangeCursorPosition(e => {
+          const pos = cell.querySelector('.cursor-position');
+          if (pos) pos.textContent = `Ln ${e.position.lineNumber}, Col ${e.position.column}`;
+        });
+        editors.set(area, editor);
+        cell.classList.add('monaco-ready');
+      });
+      resizeEditors();
+    });
+  } catch (err) {
+    monacoAvailable = false;
+  }
+}
+
+function resizeEditors() {
+  if (!monacoAvailable) return;
+  editors.forEach(editor => editor.layout());
+}
+
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem('ian601_theme', theme);
+  document.getElementById('theme-toggle').innerHTML = theme === 'light' ? '<i class="fa-solid fa-moon"></i> Dark' : '<i class="fa-solid fa-sun"></i> Light';
+  if (window.monaco) monaco.editor.setTheme(theme === 'light' ? 'vs' : 'vs-dark');
+}
+
+select.addEventListener('change', e => showSlide(Number(e.target.value)));
+document.getElementById('next-btn').addEventListener('click', next);
+document.getElementById('prev-btn').addEventListener('click', prev);
+document.getElementById('run-slide-btn').addEventListener('click', runActiveSlide);
+document.querySelectorAll('.run-all-btn').forEach(btn => btn.addEventListener('click', runAllVisibleCode));
+document.querySelectorAll('.start-btn').forEach(btn => btn.addEventListener('click', () => showSlide(1)));
+document.getElementById('restart-python').addEventListener('click', () => {
+  pyodidePromise = null;
+  updateStatus('', 'Python will reload when you run the next cell.');
+});
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  setTheme(nextTheme);
+});
+document.addEventListener('keydown', e => {
+  const tag = document.activeElement?.tagName?.toLowerCase();
+  const inEditor = tag === 'textarea' || document.activeElement?.classList?.contains('monaco-mouse-cursor-text');
+  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+    const activeCell = slides[current].querySelector('.code-cell');
+    if (activeCell) { e.preventDefault(); runCell(activeCell); }
+    return;
+  }
+  if (inEditor) return;
+  if (e.key === 'ArrowRight' || e.key === 'PageDown') next();
+  if (e.key === 'ArrowLeft' || e.key === 'PageUp') prev();
+});
+
+initCodeCells();
+setTheme(localStorage.getItem('ian601_theme') || 'dark');
+initMonaco();
+showSlide(0);
+</script>
+</body>
+</html>
