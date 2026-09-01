@@ -1785,13 +1785,43 @@ document.getElementById('fullscreen-btn').addEventListener('click', () => {
 });
 
 document.addEventListener('keydown', event => {
-  const tag = event.target.tagName.toLowerCase();
-  if (tag === 'textarea' || tag === 'input' || tag === 'select') return;
-  if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') { event.preventDefault(); next(); }
-  if (event.key === 'ArrowLeft' || event.key === 'PageUp') { event.preventDefault(); prev(); }
-  if (event.key.toLowerCase() === 'r') runActiveSlide();
-});
+  const target = event.target;
 
+  // Disable presentation shortcuts while editing code
+  // or interacting with page controls.
+  const isInteractive =
+    target.closest?.('.monaco-editor') ||
+    target.closest?.('.code-cell') ||
+    target.closest?.(
+      'textarea, input, select, button, a, [contenteditable="true"]'
+    ) ||
+    target.isContentEditable;
+
+  if (isInteractive) return;
+
+  // Presentation shortcuts only when NOT editing
+  if (
+    event.key === 'ArrowRight' ||
+    event.key === 'PageDown' ||
+    event.key === ' '
+  ) {
+    event.preventDefault();
+    next();
+  }
+
+  if (
+    event.key === 'ArrowLeft' ||
+    event.key === 'PageUp'
+  ) {
+    event.preventDefault();
+    prev();
+  }
+
+  if (event.key.toLowerCase() === 'r') {
+    event.preventDefault();
+    runActiveSlide();
+  }
+});
 showSlide(0);
 initializeMonacoEditors();
 </script>
