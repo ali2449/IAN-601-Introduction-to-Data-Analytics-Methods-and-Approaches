@@ -944,17 +944,43 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
   const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
   setTheme(nextTheme);
 });
-document.addEventListener('keydown', e => {
-  const tag = document.activeElement?.tagName?.toLowerCase();
-  const inEditor = tag === 'textarea' || document.activeElement?.classList?.contains('monaco-mouse-cursor-text');
-  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-    const activeCell = slides[current].querySelector('.code-cell');
-    if (activeCell) { e.preventDefault(); runCell(activeCell); }
-    return;
+document.addEventListener('keydown', event => {
+  const target = event.target;
+
+  // Disable presentation shortcuts while editing code
+  // or interacting with page controls.
+  const isInteractive =
+    target.closest?.('.monaco-editor') ||
+    target.closest?.('.code-cell') ||
+    target.closest?.(
+      'textarea, input, select, button, a, [contenteditable="true"]'
+    ) ||
+    target.isContentEditable;
+
+  if (isInteractive) return;
+
+  // Presentation shortcuts only when NOT editing
+  if (
+    event.key === 'ArrowRight' ||
+    event.key === 'PageDown' ||
+    event.key === ' '
+  ) {
+    event.preventDefault();
+    next();
   }
-  if (inEditor) return;
-  if (e.key === 'ArrowRight' || e.key === 'PageDown') next();
-  if (e.key === 'ArrowLeft' || e.key === 'PageUp') prev();
+
+  if (
+    event.key === 'ArrowLeft' ||
+    event.key === 'PageUp'
+  ) {
+    event.preventDefault();
+    prev();
+  }
+
+  if (event.key.toLowerCase() === 'r') {
+    event.preventDefault();
+    runActiveSlide();
+  }
 });
 
 initCodeCells();
