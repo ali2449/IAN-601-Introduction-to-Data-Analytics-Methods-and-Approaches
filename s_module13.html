@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="IAN 601 Module 13 Statistics &amp; Visualization slide-style HTML lesson with executable VS Code-style Python cells." />
+<title>Module 13: Statistics &amp; Visualization | IAN 601</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%8D%3C/text%3E%3C/svg%3E" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs/loader.js"></script>
+<style>
+:root{--bg:#0f172a;--panel:#1e293b;--panel2:#172033;--line:#334155;--text:#e2e8f0;--muted:#94a3b8;--accent:#38bdf8;--accent2:#6366f1;--gold:#fbbf24;--good:#34d399;--bad:#fb7185;--shadow:rgba(0,0,0,.28);--code:#0b1120;--terminal:#06111f;}
+[data-theme="light"]{--bg:#f1f5f9;--panel:#ffffff;--panel2:#f8fafc;--line:#d7e0eb;--text:#1e293b;--muted:#64748b;--accent:#1d4ed8;--accent2:#4f46e5;--gold:#b45309;--good:#047857;--bad:#be123c;--shadow:rgba(15,23,42,.12);--code:#f8fafc;--terminal:#f8fafc;}
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at 20% 0%,rgba(56,189,248,.12),transparent 25%),var(--bg);color:var(--text);overflow:hidden;line-height:1.55}button,select,textarea{font:inherit}code,pre{font-family:"Source Code Pro",Consolas,monospace}.deck{height:100vh;display:grid;grid-template-rows:auto 1fr auto}.topbar{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(30,41,59,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}[data-theme="light"] .topbar{background:rgba(255,255,255,.9)}.brand{display:flex;align-items:center;gap:12px;font-weight:900;color:var(--accent);letter-spacing:-.02em}.brand-mark{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,#0c2340,var(--accent2));color:#fff;border:2px solid var(--gold)}.top-controls{display:flex;gap:10px;align-items:center}.btn{border:1px solid var(--line);background:linear-gradient(135deg,rgba(56,189,248,.14),rgba(99,102,241,.12));color:var(--text);border-radius:10px;padding:9px 13px;font-weight:800;cursor:pointer;display:inline-flex;gap:8px;align-items:center}.btn:hover{border-color:var(--accent);transform:translateY(-1px)}.btn.ghost{background:transparent}.btn.big{padding:12px 18px}.runtime{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.9rem}.runtime-dot{width:10px;height:10px;border-radius:50%;background:var(--muted)}.runtime.ready .runtime-dot{background:var(--good)}.runtime.error .runtime-dot{background:var(--bad)}.stage{min-height:0;display:grid;place-items:center;padding:18px 24px}.slide{display:none;width:min(1280px,100%);height:100%;max-height:calc(100vh - 138px);border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,var(--panel),var(--panel2));box-shadow:0 22px 70px var(--shadow);overflow:hidden}.slide.active{display:block}.slide-inner{height:100%;display:grid;grid-template-rows:auto 1fr auto}.slide-header{display:flex;justify-content:space-between;gap:20px;padding:26px 30px 18px;border-bottom:1px solid var(--line);background:rgba(15,23,42,.22)}.kicker{text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;font-weight:900;color:var(--gold)}.slide h2{font-size:clamp(2rem,4.5vw,4.2rem);line-height:.98;margin:6px 0 0;color:var(--accent);letter-spacing:-.05em}.slide-badge{height:max-content;border:1px solid var(--line);padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:800;white-space:nowrap}.slide-content{min-height:0;overflow-y:auto;padding:28px 46px}.slide-footer{display:flex;justify-content:space-between;color:var(--muted);font-size:.86rem;padding:12px 30px;border-top:1px solid var(--line);background:rgba(15,23,42,.18)}.title-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:44px;align-items:center;height:100%}.big-lead{font-size:clamp(2.2rem,4.2vw,4.35rem);line-height:1.08;font-weight:900;letter-spacing:-.055em;margin:0 0 22px;color:#fff}[data-theme="light"] .big-lead{color:#0f172a}.lead{font-size:1.35rem;color:var(--text);font-weight:650}.pill-row{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.pill-row span{border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:rgba(255,255,255,.05);font-weight:800}.hero-actions-inline{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.callout{border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:16px;padding:16px 18px;background:rgba(15,23,42,.24);margin-top:24px;font-size:1.06rem}.callout.secondary{border-left-color:var(--gold)}.callout.success{border-left-color:var(--good)}.two-col{display:grid;grid-template-columns:minmax(0,.9fr) minmax(380px,1.1fr);gap:28px;align-items:start}.two-col.tight{grid-template-columns:minmax(0,.8fr) minmax(430px,1.2fr)}.clean-list{font-size:1.08rem;padding-left:1.25rem}.clean-list li{margin:.65rem 0}.summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.summary-grid>div,.concept-card,.timeline-item,.formula-card,.process-step{border:1px solid var(--line);border-radius:16px;padding:18px;background:rgba(255,255,255,.045)}.summary-grid h3,.timeline-item h3,.concept-card h3{margin:0 0 8px;color:var(--accent)}.summary-grid p,.timeline-item p,.concept-card p{margin:0;color:var(--muted)}.timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.timeline-item span{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--accent2);color:#fff;font-weight:900;margin-bottom:12px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:15px}table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.04)}th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left}th{color:var(--accent)}.formula-card code{font-size:1.25rem;color:var(--gold)}.formula-card span{display:block;margin-top:10px;color:var(--muted)}.flow-visual,.quality-visual,.object-visual,.privacy-card,.leakage-visual{border:1px solid var(--line);border-radius:24px;padding:26px;background:linear-gradient(145deg,rgba(56,189,248,.12),rgba(99,102,241,.12));display:grid;gap:14px;text-align:center;font-weight:900}.flow-visual div,.quality-visual div,.privacy-card span,.leakage-visual div{border:1px solid var(--line);border-radius:14px;padding:15px;background:rgba(255,255,255,.06)}.flow-visual span,.leakage-visual span{color:var(--gold);font-size:.88rem}.array-visual,.table-visual,.chart-visual{border:1px solid var(--line);border-radius:24px;padding:26px;background:rgba(255,255,255,.045);display:grid;gap:12px}.array-visual{grid-template-columns:repeat(3,1fr)}.array-visual div,.table-visual div{border:1px solid var(--line);border-radius:14px;padding:22px;text-align:center;font-size:1.8rem;font-weight:900}.array-visual span,.table-visual span,.chart-visual span{grid-column:1/-1;text-align:center;color:var(--muted);font-weight:800}.table-visual{grid-template-columns:repeat(3,1fr)}.table-visual div{font-size:1.1rem;padding:14px}.chart-visual{grid-template-columns:repeat(4,1fr);align-items:end;height:260px}.chart-visual div{background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:12px 12px 4px 4px}.code-cell{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:rgba(2,6,23,.36);box-shadow:0 14px 36px var(--shadow)}.cell-head{display:flex;justify-content:space-between;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line)}.cell-label{text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-size:.72rem;font-weight:900}.cell-head h3{margin:3px 0;color:var(--text);font-size:1.05rem}.cell-head p{margin:0;color:var(--muted);font-size:.9rem}.file-pill{align-self:start;border:1px solid var(--line);border-radius:999px;padding:5px 9px;color:var(--muted);font-family:"Source Code Pro",monospace;font-size:.78rem}.editor-shell{border-bottom:1px solid var(--line);background:#1e1e1e}.editor-topbar{height:36px;display:flex;align-items:center;gap:8px;padding:0 13px;background:#252526;color:#d4d4d4}.dot{width:11px;height:11px;border-radius:50%;display:inline-block}.dot.red{background:#ff5f56}.dot.yellow{background:#ffbd2e}.dot.green{background:#27c93f}.tab-name{margin-left:8px;background:#1e1e1e;padding:8px 12px 7px;border-top:2px solid #3794ff;font-family:"Source Code Pro",monospace;font-size:.82rem}.code-input{display:block;width:100%;min-height:190px;border:0;background:#1e1e1e;color:#d4d4d4;padding:14px 16px;font-family:"Source Code Pro",monospace;font-size:14px;line-height:1.55;resize:vertical}.monaco-host{display:none;height:230px}.monaco-ready .code-input{display:none}.monaco-ready .monaco-host{display:block}.editor-status{height:28px;display:flex;justify-content:flex-end;gap:18px;align-items:center;background:#007acc;color:#fff;font-size:.76rem;padding:0 12px}.cell-actions{display:flex;gap:10px;padding:12px 14px;background:rgba(15,23,42,.38)}.output{margin:0;padding:14px 16px;min-height:82px;max-height:220px;overflow:auto;background:var(--terminal);color:#d1fae5;white-space:pre-wrap;font-size:.9rem}.output.error{color:#fecdd3}.output.success{color:#d1fae5}.bottom-nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 24px;background:rgba(30,41,59,.92);border-top:1px solid var(--line)}[data-theme="light"] .bottom-nav{background:rgba(255,255,255,.9)}.nav-left,.nav-right{display:flex;gap:10px;align-items:center}.slide-select{max-width:360px;min-width:220px;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:9px 12px}.progress{width:180px;height:10px;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(255,255,255,.08)}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2))}.slide-count{color:var(--muted);font-weight:800;white-space:nowrap}@media(max-width:900px){body{overflow:auto}.deck{min-height:100vh;height:auto}.topbar,.bottom-nav{height:auto;flex-wrap:wrap;padding:12px}.stage{padding:10px}.slide{height:auto;min-height:calc(100vh - 120px);max-height:none}.slide-inner{min-height:calc(100vh - 120px)}.slide-content{padding:22px}.title-grid,.two-col,.two-col.tight{grid-template-columns:1fr}.timeline,.summary-grid{grid-template-columns:1fr}.big-lead{font-size:2.2rem}.slide h2{font-size:2.3rem}.slide-badge{display:none}.monaco-host{height:260px}}
+
+
+/* Readable Python terminal output in both light and dark themes */
+.output,
+.output.success {
+  color: #e5e7eb !important;
+  font-weight: 600;
+  text-shadow: none !important;
+}
+.output::before {
+  color: #93c5fd !important;
+}
+[data-theme="light"] .output,
+[data-theme="light"] .output.success {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+  border-top-color: #334155 !important;
+}
+[data-theme="light"] .output::before {
+  color: #93c5fd !important;
+}
+[data-theme="light"] .output.error,
+.output.error {
+  background: #450a0a !important;
+  color: #fecaca !important;
+  border-top-color: #7f1d1d !important;
+}
+[data-theme="light"] .output a,
+.output a {
+  color: #bfdbfe !important;
+}
+</style>
+</head>
+<body>
+<div class="deck">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">13</span><span>IAN 601 · Module 13</span></div>
+    <div class="top-controls"><div id="runtime" class="runtime"><span class="runtime-dot"></span><span id="runtime-text">Python not loaded yet</span></div><button class="btn ghost" id="theme-btn" type="button"><i class="fa-solid fa-moon"></i> Theme</button><button class="btn ghost" id="restart-python" type="button">Reset Python</button></div>
+  </header>
+  <main class="stage" id="stage"><section class="slide" data-title="Statistics &amp; Visualization">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Module 13 · PowerPoint-style HTML lesson</span><h2>Statistics &amp; Visualization</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content"><div class="title-grid">
+               <div><p class="big-lead">Statistics and visualization help summarize variation, compare groups, describe relationships, and communicate findings clearly.</p><div class="pill-row"><span>Self-paced slides</span><span>Executable Python cells</span><span>VS Code-style editor</span><span>Separate study notes</span></div>
+               <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div></div>
+               <div><div class="chart-visual"><div style="height:34%"></div><div style="height:58%"></div><div style="height:82%"></div><div style="height:48%"></div><span>summary → visual → interpretation</span></div></div>
+             </div><div class="callout"><strong>Goal:</strong> Calculate descriptive statistics, compare groups, understand distributions, build text-based visuals, and connect evidence to interpretation.</div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>Slide 1</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="How to use this page">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Self-paced workflow</span><h2>How to use this page</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Read</h3><p>Start with the main idea on the slide.</p></div><div class="timeline-item"><span>2</span><h3>Run</h3><p>Execute the Python code in the browser.</p></div><div class="timeline-item"><span>3</span><h3>Compare</h3><p>Connect the output to the concept.</p></div><div class="timeline-item"><span>4</span><h3>Edit</h3><p>Change one value, variable, or condition.</p></div><div class="timeline-item"><span>5</span><h3>Reuse</h3><p>Apply the pattern to a new example.</p></div></div><div class="callout secondary">All slide points are visible. Use Next, Previous, arrow keys, or the slide menu.</div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>Slide 2</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Learning path for Module 13">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Roadmap</span><h2>Learning path for Module 13</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Describe</h3><p>Mean, median, spread.</p></div><div class="timeline-item"><span>2</span><h3>Distribution</h3><p>See shape and frequency.</p></div><div class="timeline-item"><span>3</span><h3>Compare</h3><p>Summarize groups.</p></div><div class="timeline-item"><span>4</span><h3>Relationship</h3><p>Correlation and association.</p></div><div class="timeline-item"><span>5</span><h3>Uncertainty</h3><p>Sample estimates vary.</p></div><div class="timeline-item"><span>6</span><h3>Communicate</h3><p>Choose visual forms carefully.</p></div></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>Slide 3</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Descriptive statistics">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Summary numbers</span><h2>Descriptive statistics</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Descriptive statistics summarize the center and spread of values.</p></div><div><div class="code-cell" data-filename="module13_descriptive.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Calculate summary statistics</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <span class="file-pill">module13_descriptive.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_descriptive.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+scores = pd.Series([82, 91, 76, 88, 95, 79, 84])
+
+print(&quot;Mean:&quot;, round(scores.mean(), 2))
+print(&quot;Median:&quot;, scores.median())
+print(&quot;Minimum:&quot;, scores.min())
+print(&quot;Maximum:&quot;, scores.max())
+print(&quot;Standard deviation:&quot;, round(scores.std(), 2))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>Slide 4</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Distribution with bins">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Frequency</span><h2>Distribution with bins</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A distribution shows how often values fall into ranges.</p></div><div><div class="code-cell" data-filename="module13_histogram.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Create a text histogram</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <span class="file-pill">module13_histogram.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_histogram.py</span></div>
+    <textarea class="code-input" spellcheck="false">values = [42, 48, 51, 55, 57, 62, 66, 71, 78, 83]
+bins = {&quot;40-49&quot;: 0, &quot;50-59&quot;: 0, &quot;60-69&quot;: 0, &quot;70-79&quot;: 0, &quot;80-89&quot;: 0}
+
+for value in values:
+    if value &lt; 50:
+        bins[&quot;40-49&quot;] += 1
+    elif value &lt; 60:
+        bins[&quot;50-59&quot;] += 1
+    elif value &lt; 70:
+        bins[&quot;60-69&quot;] += 1
+    elif value &lt; 80:
+        bins[&quot;70-79&quot;] += 1
+    else:
+        bins[&quot;80-89&quot;] += 1
+
+for label, count in bins.items():
+    print(label, &quot;|&quot;, &quot;#&quot; * count)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>Slide 5</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Compare groups">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Grouped statistics</span><h2>Compare groups</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Group summaries help compare categories.</p></div><div><div class="code-cell" data-filename="module13_group_compare.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Summarize by group</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <span class="file-pill">module13_group_compare.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_group_compare.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+data = pd.DataFrame({
+    &quot;group&quot;: [&quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;],
+    &quot;score&quot;: [82, 88, 91, 76, 79, 84]
+})
+
+summary = data.groupby(&quot;group&quot;)[&quot;score&quot;].agg([&quot;count&quot;, &quot;mean&quot;, &quot;median&quot;, &quot;std&quot;])
+print(summary.round(2))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>Slide 6</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Correlation">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Relationship</span><h2>Correlation</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Correlation measures the strength and direction of a linear relationship. It does not prove causation.</p></div><div><div class="code-cell" data-filename="module13_correlation.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Calculate correlation</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <span class="file-pill">module13_correlation.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_correlation.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+data = pd.DataFrame({
+    &quot;hours_studied&quot;: [1, 2, 3, 4, 5, 6],
+    &quot;score&quot;: [60, 65, 72, 78, 85, 88]
+})
+
+correlation = data[&quot;hours_studied&quot;].corr(data[&quot;score&quot;])
+print(&quot;Correlation:&quot;, round(correlation, 3))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>Slide 7</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Simple confidence interval idea">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Uncertainty</span><h2>Simple confidence interval idea</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A sample mean is an estimate. A confidence interval communicates uncertainty around the estimate.</p></div><div><div class="code-cell" data-filename="module13_interval.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Approximate interval for a mean</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <span class="file-pill">module13_interval.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_interval.py</span></div>
+    <textarea class="code-input" spellcheck="false">import math
+import statistics as stats
+
+sample = [82, 88, 91, 76, 79, 84, 90, 86]
+mean = stats.mean(sample)
+sd = stats.stdev(sample)
+n = len(sample)
+standard_error = sd / math.sqrt(n)
+margin = 1.96 * standard_error
+
+print(&quot;Mean:&quot;, round(mean, 2))
+print(&quot;Approximate 95% interval:&quot;, round(mean - margin, 2), &quot;to&quot;, round(mean + margin, 2))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>Slide 8</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Choose the right visual">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Communication</span><h2>Choose the right visual</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content"><div class="summary-grid"><div><h3>Bar chart</h3><p>Compare categories.</p></div><div><h3>Line chart</h3><p>Show change over time.</p></div><div><h3>Histogram</h3><p>Show distribution shape.</p></div><div><h3>Box plot</h3><p>Compare spread across groups.</p></div><div><h3>Scatter plot</h3><p>Show relationship between two numeric variables.</p></div><div><h3>Table</h3><p>Show exact values.</p></div></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>Slide 9</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Text-based bar chart">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Visual logic</span><h2>Text-based bar chart</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Even without a plotting library, a text chart can show the logic of visual comparison.</p></div><div><div class="code-cell" data-filename="module13_text_bars.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Print a small bar chart</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <span class="file-pill">module13_text_bars.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_text_bars.py</span></div>
+    <textarea class="code-input" spellcheck="false">channel_counts = {&quot;web&quot;: 12, &quot;email&quot;: 7, &quot;store&quot;: 4}
+
+for channel, count in channel_counts.items():
+    bar = &quot;█&quot; * count
+    print(f&quot;{channel:&gt;6} | {bar} {count}&quot;)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>Slide 10</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Mini statistics report">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Applied summary</span><h2>Mini statistics report</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A short report combines data summaries with a plain-language interpretation.</p></div><div><div class="code-cell" data-filename="module13_report.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Create a report sentence</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <span class="file-pill">module13_report.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_report.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+scores = pd.Series([82, 91, 76, 88, 95, 79, 84])
+mean = scores.mean()
+median = scores.median()
+spread = scores.max() - scores.min()
+
+print(f&quot;The average score was {mean:.1f}, with a median of {median:.1f}.&quot;)
+print(f&quot;Scores ranged from {scores.min()} to {scores.max()}, a spread of {spread} points.&quot;)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>Slide 11</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Module 13 wrap-up">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">What you can now do</span><h2>Module 13 wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content"><div class="summary-grid"><div><h3>Center</h3><p>Use mean and median.</p></div><div><h3>Spread</h3><p>Use range and standard deviation.</p></div><div><h3>Distribution</h3><p>Describe shape with frequencies.</p></div><div><h3>Groups</h3><p>Compare category summaries.</p></div><div><h3>Relationships</h3><p>Use correlation carefully.</p></div><div><h3>Communication</h3><p>Select visuals for the question.</p></div></div><div class="callout success">You can now summarize data and communicate evidence more clearly.</div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>Slide 12</span></footer>
+  </div>
+</section></main>
+  <footer class="bottom-nav">
+    <div class="nav-left"><button class="btn ghost" id="prev-btn" type="button"><i class="fa-solid fa-arrow-left"></i> Previous</button><button class="btn" id="next-btn" type="button">Next <i class="fa-solid fa-arrow-right"></i></button><select class="slide-select" id="slide-select"><option value="0">1. Statistics &amp; Visualization</option>
+<option value="1">2. How to use this page</option>
+<option value="2">3. Learning path for Module 13</option>
+<option value="3">4. Descriptive statistics</option>
+<option value="4">5. Distribution with bins</option>
+<option value="5">6. Compare groups</option>
+<option value="6">7. Correlation</option>
+<option value="7">8. Simple confidence interval idea</option>
+<option value="8">9. Choose the right visual</option>
+<option value="9">10. Text-based bar chart</option>
+<option value="10">11. Mini statistics report</option>
+<option value="11">12. Module 13 wrap-up</option></select></div>
+    <div class="nav-right"><button class="btn ghost" id="run-slide-btn" type="button"><i class="fa-solid fa-play"></i> Run code on slide</button><div class="progress"><div class="progress-fill" id="progress-fill"></div></div><span class="slide-count" id="slide-count"></span></div>
+  </footer>
+</div>
+<script>
+const slides=[...document.querySelectorAll('.slide')];let current=0;const select=document.getElementById('slide-select');const count=document.getElementById('slide-count');const progress=document.getElementById('progress-fill');const runtime=document.getElementById('runtime');const runtimeText=document.getElementById('runtime-text');let pyodide=null;let pyodideLoading=null;const originalCode=new Map();const monacoEditors=new Map();
+function setRuntime(status,text){runtime.className='runtime '+(status||'');runtimeText.textContent=text;}
+function showSlide(index){current=(index+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===current));select.value=current;count.textContent=`Slide ${current+1} of ${slides.length}`;progress.style.width=`${((current+1)/slides.length)*100}%`;slides[current].querySelectorAll('.monaco-host').forEach(host=>{const ed=monacoEditors.get(host);if(ed)setTimeout(()=>ed.layout(),40);});}
+document.getElementById('prev-btn').onclick=()=>showSlide(current-1);document.getElementById('next-btn').onclick=()=>showSlide(current+1);select.onchange=e=>showSlide(parseInt(e.target.value,10));document.querySelectorAll('.start-btn').forEach(b=>b.onclick=()=>showSlide(1));document.addEventListener('keydown',e=>{if(e.target.matches('textarea,input,select')||e.target.closest('.monaco-editor'))return;if(e.key==='ArrowRight'||e.key==='PageDown')showSlide(current+1);if(e.key==='ArrowLeft'||e.key==='PageUp')showSlide(current-1);});
+document.getElementById('theme-btn').onclick=()=>{const root=document.documentElement;root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';if(window.monaco){monaco.editor.setTheme(root.dataset.theme==='dark'?'vs-dark':'vs');}};
+function packagesFor(code){const pkgs=[];if(/(^|\n)\s*(import|from)\s+numpy\b/.test(code))pkgs.push('numpy');if(/(^|\n)\s*(import|from)\s+pandas\b/.test(code))pkgs.push('pandas');if(/(^|\n)\s*(import|from)\s+matplotlib\b/.test(code))pkgs.push('matplotlib');if(/(^|\n)\s*(import|from)\s+sklearn\b/.test(code))pkgs.push('scikit-learn');return [...new Set(pkgs)];}
+async function loadPython(){if(!pyodideLoading){setRuntime('','Loading Python...');pyodideLoading=loadPyodide().then(async py=>{await py.runPythonAsync(`
+import sys, io, traceback
+
+def _run_user_code(code):
+    stdout = io.StringIO()
+    stderr = io.StringIO()
+    old_stdout, old_stderr = sys.stdout, sys.stderr
+    sys.stdout, sys.stderr = stdout, stderr
+    ns = globals()
+    try:
+        exec(code, ns, ns)
+        ok = True
+    except Exception:
+        ok = False
+        stderr.write(traceback.format_exc())
+    finally:
+        sys.stdout, sys.stderr = old_stdout, old_stderr
+    return {"ok": ok, "stdout": stdout.getvalue(), "stderr": stderr.getvalue()}
+`);pyodide=py;setRuntime('ready','Python ready');return py;}).catch(err=>{setRuntime('error','Python failed to load');throw err;});}return pyodideLoading;}
+function getCellCode(cell){const host=cell.querySelector('.monaco-host');const ed=monacoEditors.get(host);return ed?ed.getValue():cell.querySelector('.code-input').value;}
+function setCellCode(cell,code){const host=cell.querySelector('.monaco-host');const ed=monacoEditors.get(host);if(ed)ed.setValue(code);cell.querySelector('.code-input').value=code;}
+async function runCell(cell){if(!cell)return;const btn=cell.querySelector('.run-cell');const output=cell.querySelector('.output');btn.classList.add('running');btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Running';output.className='output';output.textContent='Running...';try{const py=await loadPython();const code=getCellCode(cell);const pkgs=packagesFor(code);if(pkgs.length){setRuntime('', 'Loading package: '+pkgs.join(', '));for(const pkg of pkgs){await py.loadPackage(pkg);}setRuntime('ready','Python ready');}const result=py.globals.get('_run_user_code')(code).toJs({dict_converter:Object.fromEntries});const text=(result.stdout||'')+(result.stderr?('\n'+result.stderr):'');output.textContent=text.trim()||'Code ran successfully with no printed output.';output.className='output '+(result.ok?'success':'error');setRuntime(result.ok?'ready':'error',result.ok?'Python ready':'Python error');}catch(err){output.textContent=String(err);output.className='output error';setRuntime('error','Python error');}finally{btn.classList.remove('running');btn.innerHTML='<i class="fa-solid fa-play"></i> Run';}}
+async function runActiveSlide(){const cells=[...slides[current].querySelectorAll('.code-cell')];for(const cell of cells)await runCell(cell);}
+document.getElementById('run-slide-btn').onclick=runActiveSlide;document.querySelectorAll('.run-all-btn').forEach(b=>b.onclick=runActiveSlide);document.getElementById('restart-python').onclick=()=>{pyodide=null;pyodideLoading=null;setRuntime('', 'Python reset. It will reload when a code cell runs.');document.querySelectorAll('.output').forEach(o=>{o.className='output';o.textContent='Python reset. Click Run to execute this cell.';});};
+document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');originalCode.set(cell,textarea.value);cell.querySelector('.run-cell').onclick=()=>runCell(cell);cell.querySelector('.reset-cell').onclick=()=>{setCellCode(cell,originalCode.get(cell));cell.querySelector('.output').className='output';cell.querySelector('.output').textContent='Code reset. Click Run to execute this cell.';};cell.querySelector('.copy-cell').onclick=async()=>{try{await navigator.clipboard.writeText(getCellCode(cell));const b=cell.querySelector('.copy-cell');b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1000);}catch(e){cell.querySelector('.output').textContent='Copy failed. You can select and copy manually.';}};});
+function initMonaco(){if(!window.require)return;try{require.config({paths:{vs:'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs'}});require(['vs/editor/editor.main'],function(){monaco.editor.setTheme(document.documentElement.dataset.theme==='dark'?'vs-dark':'vs');document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');const host=cell.querySelector('.monaco-host');const editor=monaco.editor.create(host,{value:textarea.value,language:'python',theme:document.documentElement.dataset.theme==='dark'?'vs-dark':'vs',fontFamily:'Source Code Pro, Consolas, monospace',fontSize:14,lineNumbers:'on',minimap:{enabled:false},automaticLayout:true,scrollBeyondLastLine:false,tabSize:4,wordWrap:'on'});monacoEditors.set(host,editor);cell.classList.add('monaco-ready');editor.onDidChangeCursorPosition(e=>{const status=cell.querySelector('.editor-status span');if(status)status.textContent=`Ln ${e.position.lineNumber}, Col ${e.position.column}`;});});});}catch(e){console.warn('Monaco editor not available, using textarea fallback.',e);}}
+initMonaco();showSlide(0);
+</script>
+</body>
+</html>
