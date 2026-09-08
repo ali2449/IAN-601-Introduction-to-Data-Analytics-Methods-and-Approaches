@@ -1,0 +1,640 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="IAN 601 Module 4 Lists and Tuples slide-style HTML lesson with executable VS Code-style Python cells." />
+<title>Module 4: Lists & Tuples | IAN 601</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%8D%3C/text%3E%3C/svg%3E" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs/loader.js"></script>
+<style>
+:root {--bg:#0f172a;--panel:#1e293b;--panel2:#172033;--line:#334155;--text:#e2e8f0;--muted:#94a3b8;--accent:#38bdf8;--accent2:#6366f1;--gold:#cf9b2f;--good:#34d399;--warn:#fbbf24;--bad:#f87171;--code:#1e1e1e;--code2:#252526;--terminal:#181818;--shadow:rgba(0,0,0,.28);--hero:linear-gradient(135deg,#07182d 0%,#0c2340 52%,#26365e 100%);}
+[data-theme="light"]{--bg:#f1f5f9;--panel:#fff;--panel2:#f8fafc;--line:#d7e0eb;--text:#1e293b;--muted:#64748b;--accent:#1d4ed8;--accent2:#4f46e5;--gold:#a16207;--good:#047857;--warn:#b45309;--bad:#b91c1c;--code:#f8fafc;--code2:#e5e7eb;--terminal:#ffffff;--shadow:rgba(15,23,42,.13);--hero:linear-gradient(135deg,#dbeafe 0%,#e0e7ff 55%,#fef3c7 100%);}
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text);overflow:hidden}code,pre,textarea{font-family:"Source Code Pro",Consolas,monospace}.deck{height:100vh;display:grid;grid-template-rows:auto 1fr auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 18px;background:var(--panel);border-bottom:1px solid var(--line);box-shadow:0 2px 16px var(--shadow);z-index:10}.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--accent)}.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#0c2340,var(--accent2));border:2px solid var(--gold);color:#fff}.controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.btn,select{appearance:none;border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:10px;padding:9px 12px;font-weight:700;cursor:pointer}.btn:hover,select:hover{border-color:var(--accent)}.btn.big{font-size:1rem;padding:12px 16px}.btn.ghost{background:transparent}.btn.run-cell,.btn.primary{background:#0e639c;border-color:#1177bb;color:#fff}.btn.run-cell:hover,.btn.primary:hover{background:#1177bb}.btn.running{opacity:.7;pointer-events:none}select{min-width:270px}.status{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.86rem}.status-dot{width:10px;height:10px;border-radius:999px;background:var(--warn);box-shadow:0 0 0 5px rgba(251,191,36,.12)}.status.ready .status-dot{background:var(--good);box-shadow:0 0 0 5px rgba(52,211,153,.12)}.status.error .status-dot{background:var(--bad)}.slides{position:relative;overflow:hidden}.slide{display:none;height:100%;padding:24px}.slide.active{display:block}.slide-inner{height:100%;max-width:1280px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:22px;box-shadow:0 18px 52px var(--shadow);display:grid;grid-template-rows:auto 1fr auto;overflow:hidden}.slide-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:26px 30px 16px;border-bottom:1px solid var(--line)}.slide-header h2{margin:4px 0 0;font-size:clamp(2rem,3.7vw,3.25rem);line-height:1.02;letter-spacing:-.035em;color:var(--accent)}.kicker{color:var(--gold);font-size:.8rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em}.slide-badge{white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:var(--muted);font-weight:800;background:var(--panel2)}.slide-content{padding:20px 30px;overflow:auto;scrollbar-width:thin;scrollbar-color:rgba(148,163,184,.55) transparent}.slide-footer{display:flex;justify-content:space-between;gap:18px;padding:12px 30px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}.bottom-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:12px 18px;background:var(--panel);border-top:1px solid var(--line)}.nav-left,.nav-right{display:flex;gap:8px}.nav-right{justify-content:flex-end}.counter{font-weight:800;color:var(--muted)}.progress{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(148,163,184,.2)}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .2s}.lead{font-size:1.28rem;color:var(--text);line-height:1.55}.big-lead{font-size:clamp(1.8rem,3.2vw,3.1rem);line-height:1.12;font-weight:800;letter-spacing:-.035em;color:#fff;margin:0 0 20px}[data-theme="light"] .big-lead{color:#13243a}.title-grid{min-height:0;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;background:var(--hero);margin:-20px -30px 0;padding:42px 46px;border-radius:0}.pill-row{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.pill-row span{border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.08);border-radius:999px;padding:8px 12px;color:#fff;font-weight:800}[data-theme="light"] .pill-row span{color:#13243a;background:rgba(255,255,255,.5)}.hero-actions-inline{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.sequence-visual{min-height:290px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.18);border-radius:24px;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;gap:12px;padding:24px}.mini-array{border:1px solid rgba(255,255,255,.2);border-radius:18px;background:rgba(255,255,255,.1);min-height:140px;display:grid;place-items:center;color:#fff}.mini-array span{font-size:.8rem;color:var(--gold);font-weight:900}.mini-array strong{font-size:2rem}.visual-caption{grid-column:1 / -1;text-align:center;color:#fff;font-weight:800}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.two-col.tight{gap:18px}.clean-list{list-style:none;padding:0;margin:18px 0;display:grid;gap:12px}.clean-list li{padding:14px 16px;border:1px solid var(--line);background:var(--panel2);border-radius:14px}.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.timeline.wide{grid-template-columns:repeat(3,1fr)}.timeline-item{position:relative;border:1px solid var(--line);border-radius:18px;background:var(--panel2);padding:18px;min-height:160px}.timeline-item span{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:900;margin-bottom:12px}.timeline-item h3{margin:0 0 8px;color:var(--accent)}.timeline-item p{margin:0;color:var(--muted)}.callout{border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:16px;background:var(--panel2);padding:16px 18px;margin:18px 0;color:var(--text)}.callout.secondary{border-left-color:var(--gold)}.callout.success{border-left-color:var(--good)}.formula-card,.rule-box{border:1px solid var(--line);border-radius:16px;background:var(--panel2);padding:16px;margin:12px 0}.formula-card code,.rule-box code{display:block;color:var(--accent);font-size:1.05rem;font-weight:800;margin-bottom:6px}.formula-card span,.rule-box span{color:var(--muted)}.process-card{border:1px solid var(--line);border-radius:20px;background:var(--panel2);padding:20px;text-align:center;display:grid;gap:10px}.process-card.small{max-width:420px;margin:0 auto}.process-step{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:14px;font-weight:800}.process-step.accent{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}.process-arrow{color:var(--gold);font-weight:900}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px}table{width:100%;border-collapse:collapse}th,td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}th{background:var(--panel2);color:var(--accent);text-align:left}tr:last-child td{border-bottom:0}td{color:var(--text)}.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.compare-card{border:1px solid var(--line);border-radius:18px;background:var(--panel2);padding:18px}.compare-card h3{margin-top:0;color:var(--accent)}.summary-grid,.practice-grid{display:grid;gap:14px}.summary-grid{grid-template-columns:repeat(3,1fr)}.summary-grid.compact{grid-template-columns:1fr}.summary-grid>div,.practice-grid>div{border:1px solid var(--line);background:var(--panel2);border-radius:16px;padding:16px}.summary-grid h3,.practice-grid h3{margin:0 0 6px;color:var(--accent)}.summary-grid p,.practice-grid p{margin:0;color:var(--muted)}.practice-grid{grid-template-columns:repeat(3,1fr)}.practice-grid.compact{grid-template-columns:1fr}.practice-grid span{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:900;margin-bottom:10px}.code-cell{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--panel2);box-shadow:0 8px 24px rgba(0,0,0,.12);margin:0 0 14px}.cell-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding:16px 18px;border-bottom:1px solid var(--line)}.cell-label{color:var(--gold);text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;font-weight:900}.cell-head h3{margin:4px 0;color:var(--accent)}.cell-head p{margin:0;color:var(--muted)}.file-pill{border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-size:.8rem;color:var(--muted);white-space:nowrap}.editor-shell{background:var(--code);color:#d4d4d4}.editor-topbar{height:36px;display:flex;align-items:center;gap:8px;background:var(--code2);border-bottom:1px solid #2b2b2b;padding:0 12px}.dot{width:10px;height:10px;border-radius:50%;display:inline-block}.red{background:#ff5f57}.yellow{background:#ffbd2e}.green{background:#28c840}.tab-name{font-size:.78rem;color:#d4d4d4}.code-input{display:block;width:100%;resize:vertical;border:0;outline:0;padding:14px 16px;background:var(--code);color:#d4d4d4;font-size:.9rem;line-height:1.55;tab-size:4;min-height:190px}.monaco-host{display:none;height:260px}.code-cell.monaco-ready .code-input{display:none}.code-cell.monaco-ready .monaco-host{display:block}.editor-status{min-height:24px;display:flex;justify-content:flex-end;gap:14px;align-items:center;background:#007acc;color:#fff;padding:3px 10px;font-size:.72rem;font-weight:600}.cell-actions{display:flex;gap:8px;padding:12px 16px;background:var(--panel2);border-top:1px solid var(--line)}.output{position:relative;min-height:72px;max-height:220px;overflow:auto;margin:0;padding:32px 16px 14px;background:var(--terminal);color:#d4d4d4;border-top:1px solid #303031;font-size:.86rem;line-height:1.55;white-space:pre-wrap}.output::before{content:"TERMINAL";position:absolute;left:16px;top:8px;color:#d4d4d4;border-bottom:1px solid currentColor;font:700 .68rem Inter,sans-serif;letter-spacing:.08em}.output.success{border-top-color:var(--good)}.output.error{color:#fca5a5;border-top-color:var(--bad)}[data-theme="light"] .output.error{color:#b91c1c}[data-theme="light"] .tab-name,[data-theme="light"] .code-input{color:#1f1f1f}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.slide-content::-webkit-scrollbar,.output::-webkit-scrollbar,.table-wrap::-webkit-scrollbar{width:10px;height:10px}.slide-content::-webkit-scrollbar-thumb,.output::-webkit-scrollbar-thumb,.table-wrap::-webkit-scrollbar-thumb{background:rgba(148,163,184,.45);border-radius:999px}.slide-content::-webkit-scrollbar-track,.output::-webkit-scrollbar-track,.table-wrap::-webkit-scrollbar-track{background:transparent}@media(max-height:820px) and (min-width:981px){.topbar{padding:8px 18px}.brand-mark{width:32px;height:32px}.slide{padding:14px 24px}.slide-header{padding:20px 30px 12px}.slide-header h2{font-size:clamp(1.85rem,3.2vw,3rem)}.slide-content{padding:16px 30px}.slide-footer{padding:9px 30px}.bottom-nav{padding:8px 18px}.big-lead{font-size:clamp(1.65rem,3vw,2.75rem);line-height:1.08}.title-grid{margin:-16px -30px 0;padding:34px 46px}.sequence-visual{min-height:240px;padding:18px}.mini-array{min-height:112px}.callout{margin:12px 0;padding:13px 16px}.timeline-item{min-height:132px;padding:14px}.lead{font-size:1.13rem}.clean-list{gap:9px;margin:12px 0}.clean-list li{padding:11px 14px}.code-input{min-height:150px}.monaco-host{height:205px}.output{max-height:155px}}
+@media(max-width:980px){body{overflow:auto}.deck{min-height:100vh;height:auto}.slide{height:auto;min-height:calc(100vh - 122px);padding:12px}.slide-inner{min-height:calc(100vh - 146px)}.title-grid,.two-col,.compare-grid{grid-template-columns:1fr}.timeline,.timeline.wide,.summary-grid,.practice-grid{grid-template-columns:1fr 1fr}.bottom-nav{grid-template-columns:1fr}.nav-right{justify-content:flex-start}.controls{width:100%}select{flex:1;min-width:180px}}
+@media(max-width:640px){.topbar{align-items:flex-start;flex-direction:column}.slide-header{display:block}.slide-badge{display:inline-block;margin-top:12px}.timeline,.summary-grid,.practice-grid{grid-template-columns:1fr}.editor-status span:nth-child(3),.editor-status span:nth-child(4){display:none}}
+
+
+/* Readable Python terminal output in both light and dark themes */
+.output,
+.output.success {
+  color: #e5e7eb !important;
+  font-weight: 600;
+  text-shadow: none !important;
+}
+.output::before {
+  color: #93c5fd !important;
+}
+[data-theme="light"] .output,
+[data-theme="light"] .output.success {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+  border-top-color: #334155 !important;
+}
+[data-theme="light"] .output::before {
+  color: #93c5fd !important;
+}
+[data-theme="light"] .output.error,
+.output.error {
+  background: #450a0a !important;
+  color: #fecaca !important;
+  border-top-color: #7f1d1d !important;
+}
+[data-theme="light"] .output a,
+.output a {
+  color: #bfdbfe !important;
+}
+</style>
+</head>
+<body>
+<div class="deck">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><i class="fa-brands fa-python"></i></span><span>IAN 601 · Module 4 · Lists & Tuples</span></div>
+    <div class="controls">
+      <select id="slide-select" aria-label="Choose slide"></select>
+      <button class="btn ghost" id="theme-toggle" type="button">Light</button>
+      <button class="btn ghost" id="restart-python" type="button"><i class="fa-solid fa-rotate"></i> Restart Python</button>
+      <button class="btn primary" id="run-slide-btn" type="button"><i class="fa-solid fa-play"></i> Run code on slide</button>
+      <div class="status" id="runtime-status"><span class="status-dot"></span><span id="runtime-text">Python loads when a code cell runs.</span></div>
+    </div>
+  </header>
+  <main class="slides" id="slides"><section class="slide" data-title="Lists &amp; Tuples">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Module 4 · PowerPoint-style HTML lesson</span><h2>Lists &amp; Tuples</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="title-grid">
+          <div>
+            <p class="big-lead">Lists and tuples help organize more than one value so Python can analyze a collection instead of a single item.</p>
+            <div class="pill-row"><span>Self-paced slides</span><span>Executable Python cells</span><span>VS Code-style editor</span><span>Separate study notes</span></div>
+            <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div>
+          </div>
+          <div class="sequence-visual" aria-hidden="true">
+            <div class="mini-array"><span>0</span><strong>82</strong></div>
+            <div class="mini-array"><span>1</span><strong>76</strong></div>
+            <div class="mini-array"><span>2</span><strong>91</strong></div>
+            <div class="mini-array"><span>3</span><strong>88</strong></div>
+            <div class="visual-caption">One variable can hold many related values.</div>
+          </div>
+        </div>
+        <div class="callout"><strong>Goal:</strong> Create lists and tuples, access values, update lists, loop through values, and choose the right structure for a data task.</div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 1</span></footer>
+  </div>
+</section><section class="slide" data-title="How to use this page">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Self-paced workflow</span><h2>How to use this page</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="timeline">
+          <div class="timeline-item"><span>1</span><h3>Read</h3><p>Start with the idea on the slide.</p></div>
+          <div class="timeline-item"><span>2</span><h3>Run</h3><p>Execute the code in the browser.</p></div>
+          <div class="timeline-item"><span>3</span><h3>Compare</h3><p>Match the output with the explanation.</p></div>
+          <div class="timeline-item"><span>4</span><h3>Edit</h3><p>Change one value or line at a time.</p></div>
+          <div class="timeline-item"><span>5</span><h3>Reuse</h3><p>Apply the pattern to a new list.</p></div>
+        </div>
+        <div class="callout secondary">All slide points are visible. Use Next, Previous, arrow keys, or the slide menu. Code runs in the browser using Pyodide.</div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 2</span></footer>
+  </div>
+</section><section class="slide" data-title="Learning path for Module 4">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Roadmap</span><h2>Learning path for Module 4</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="timeline wide">
+          <div class="timeline-item"><span>1</span><h3>Lists</h3><p>Store multiple values in order.</p></div>
+          <div class="timeline-item"><span>2</span><h3>Indexing</h3><p>Retrieve one value or a slice of values.</p></div>
+          <div class="timeline-item"><span>3</span><h3>Updating</h3><p>Add, remove, and change values in a list.</p></div>
+          <div class="timeline-item"><span>4</span><h3>Loops</h3><p>Process each value one at a time.</p></div>
+          <div class="timeline-item"><span>5</span><h3>Tuples</h3><p>Keep fixed records safe from accidental edits.</p></div>
+          <div class="timeline-item"><span>6</span><h3>Use cases</h3><p>Apply sequences to small analytics examples.</p></div>
+        </div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 3</span></footer>
+  </div>
+</section><section class="slide" data-title="Why sequences matter in analytics">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Concept</span><h2>Why sequences matter in analytics</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="two-col">
+          <div>
+            <p class="lead">In analytics, one observation is rarely enough. Lists and tuples let us group related values and work with them as one object.</p>
+            <ul class="clean-list">
+              <li><strong>List:</strong> an ordered collection that can be changed.</li>
+              <li><strong>Tuple:</strong> an ordered collection that should stay fixed.</li>
+              <li><strong>Index:</strong> a position number used to access a value.</li>
+            </ul>
+          </div>
+          <div class="process-card">
+            <div class="process-step">Raw values</div><div class="process-arrow">↓</div>
+            <div class="process-step accent">List or tuple</div><div class="process-arrow">↓</div>
+            <div class="process-step">Summary, decision, report</div>
+          </div>
+        </div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 4</span></footer>
+  </div>
+</section><section class="slide" data-title="Create a list">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Lists</span><h2>Create a list</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="two-col tight">
+          <div>
+            <p class="lead">A list uses square brackets. Values stay in the same order unless we change the list.</p>
+            <div class="callout"><strong>Use a list when:</strong> you expect to add, remove, sort, or update values.</div>
+          </div>
+          <div><div class="code-cell" data-filename="module4_list_basics.py">
+  <div class="cell-head"><div><div class="cell-label">Executable Python</div><h3>Create and inspect a list</h3><p>Run, edit, reset, or copy this code.</p></div><span class="file-pill">module4_list_basics.py</span></div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module4_list_basics.py</span></div>
+    <textarea class="code-input" spellcheck="false">scores = [82, 76, 91, 88, 69]
+
+print(scores)
+print(&quot;Number of scores:&quot;, len(scores))
+print(&quot;Highest score:&quot;, max(scores))
+print(&quot;Lowest score:&quot;, min(scores))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+        </div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 5</span></footer>
+  </div>
+</section><section class="slide" data-title="Index and slice a list">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Accessing values</span><h2>Index and slice a list</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="two-col tight">
+          <div>
+            <p class="lead">Python uses zero-based indexing. The first value is position <code>0</code>, not position <code>1</code>.</p>
+            <div class="table-wrap"><table><thead><tr><th>Expression</th><th>Meaning</th></tr></thead><tbody><tr><td><code>scores[0]</code></td><td>first value</td></tr><tr><td><code>scores[-1]</code></td><td>last value</td></tr><tr><td><code>scores[1:4]</code></td><td>values from index 1 up to, but not including, index 4</td></tr></tbody></table></div>
+          </div>
+          <div><div class="code-cell" data-filename="module4_index_slice.py">
+  <div class="cell-head"><div><div class="cell-label">Executable Python</div><h3>Indexing and slicing</h3><p>Run, edit, reset, or copy this code.</p></div><span class="file-pill">module4_index_slice.py</span></div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module4_index_slice.py</span></div>
+    <textarea class="code-input" spellcheck="false">scores = [82, 76, 91, 88, 69]
+
+print(&quot;First score:&quot;, scores[0])
+print(&quot;Second score:&quot;, scores[1])
+print(&quot;Last score:&quot;, scores[-1])
+print(&quot;Middle three scores:&quot;, scores[1:4])
+print(&quot;First three scores:&quot;, scores[:3])</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+        </div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 6</span></footer>
+  </div>
+</section><section class="slide" data-title="Change a list">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Mutable structure</span><h2>Change a list</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="two-col tight">
+          <div>
+            <p class="lead">Lists are mutable, which means Python lets us change them after creation.</p>
+            <ul class="clean-list">
+              <li><code>append()</code> adds one value to the end.</li>
+              <li><code>pop()</code> removes a value by position and returns it.</li>
+              <li>Assignment changes an existing position.</li>
+            </ul>
+          </div>
+          <div><div class="code-cell" data-filename="module4_change_list.py">
+  <div class="cell-head"><div><div class="cell-label">Executable Python</div><h3>Append, update, and remove</h3><p>Run, edit, reset, or copy this code.</p></div><span class="file-pill">module4_change_list.py</span></div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module4_change_list.py</span></div>
+    <textarea class="code-input" spellcheck="false">daily_visits = [21, 19, 24]
+print(&quot;Starting list:&quot;, daily_visits)
+
+daily_visits.append(27)
+print(&quot;After append:&quot;, daily_visits)
+
+daily_visits[1] = 20
+print(&quot;After updating index 1:&quot;, daily_visits)
+
+removed_value = daily_visits.pop(0)
+print(&quot;Removed value:&quot;, removed_value)
+print(&quot;Final list:&quot;, daily_visits)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+        </div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 7</span></footer>
+  </div>
+</section><section class="slide" data-title="Loop through a list">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Repeated processing</span><h2>Loop through a list</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="two-col tight">
+          <div>
+            <p class="lead">A loop lets Python repeat the same action for every value in a collection.</p>
+            <div class="callout secondary">This is the bridge from storing data to analyzing data.</div>
+            <div class="formula-card"><code>for value in list_name:</code><span>Run the indented code once for each value.</span></div>
+          </div>
+          <div><div class="code-cell" data-filename="module4_loop_list.py">
+  <div class="cell-head"><div><div class="cell-label">Executable Python</div><h3>Loop and classify values</h3><p>Run, edit, reset, or copy this code.</p></div><span class="file-pill">module4_loop_list.py</span></div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module4_loop_list.py</span></div>
+    <textarea class="code-input" spellcheck="false">wait_times = [4, 11, 7, 18, 6]
+
+for minutes in wait_times:
+    if minutes &gt; 10:
+        print(minutes, &quot;minutes: review&quot;)
+    else:
+        print(minutes, &quot;minutes: acceptable&quot;)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+        </div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 8</span></footer>
+  </div>
+</section><section class="slide" data-title="Summarize values in a list">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Built-in summaries</span><h2>Summarize values in a list</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="two-col tight">
+          <div>
+            <p class="lead">Python gives us simple functions for quick summaries.</p>
+            <div class="summary-grid compact">
+              <div><h3><code>sum()</code></h3><p>Total of numeric values.</p></div>
+              <div><h3><code>len()</code></h3><p>Number of values.</p></div>
+              <div><h3><code>round()</code></h3><p>Cleaner printed result.</p></div>
+            </div>
+          </div>
+          <div><div class="code-cell" data-filename="module4_summarize_list.py">
+  <div class="cell-head"><div><div class="cell-label">Executable Python</div><h3>Average from a list</h3><p>Run, edit, reset, or copy this code.</p></div><span class="file-pill">module4_summarize_list.py</span></div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module4_summarize_list.py</span></div>
+    <textarea class="code-input" spellcheck="false">monthly_sales = [12000, 13500, 12800, 14900]
+
+total_sales = sum(monthly_sales)
+average_sales = total_sales / len(monthly_sales)
+
+print(&quot;Total sales:&quot;, total_sales)
+print(&quot;Average sales:&quot;, round(average_sales, 2))
+print(&quot;Best month:&quot;, max(monthly_sales))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+        </div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 9</span></footer>
+  </div>
+</section><section class="slide" data-title="Create and unpack a tuple">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Tuples</span><h2>Create and unpack a tuple</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="two-col tight">
+          <div>
+            <p class="lead">A tuple uses parentheses. It is ordered like a list, but it is not designed to be changed.</p>
+            <div class="callout"><strong>Use a tuple when:</strong> the values belong together as one fixed record, such as coordinates or a labeled summary.</div>
+          </div>
+          <div><div class="code-cell" data-filename="module4_tuple_basics.py">
+  <div class="cell-head"><div><div class="cell-label">Executable Python</div><h3>Tuple basics</h3><p>Run, edit, reset, or copy this code.</p></div><span class="file-pill">module4_tuple_basics.py</span></div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module4_tuple_basics.py</span></div>
+    <textarea class="code-input" spellcheck="false">store_location = (35.3, -80.8)
+latitude, longitude = store_location
+
+print(&quot;Tuple:&quot;, store_location)
+print(&quot;Latitude:&quot;, latitude)
+print(&quot;Longitude:&quot;, longitude)
+print(&quot;First value:&quot;, store_location[0])</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+        </div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 10</span></footer>
+  </div>
+</section><section class="slide" data-title="Lists can hold tuples">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Combining structures</span><h2>Lists can hold tuples</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="two-col tight">
+          <div>
+            <p class="lead">A common pattern is a list of records. Each record can be a tuple.</p>
+            <div class="callout secondary">This gives us a simple table-like structure before we learn pandas.</div>
+          </div>
+          <div><div class="code-cell" data-filename="module4_list_of_tuples.py">
+  <div class="cell-head"><div><div class="cell-label">Executable Python</div><h3>List of tuple records</h3><p>Run, edit, reset, or copy this code.</p></div><span class="file-pill">module4_list_of_tuples.py</span></div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module4_list_of_tuples.py</span></div>
+    <textarea class="code-input" spellcheck="false">transactions = [
+    (&quot;A100&quot;, 35.50),
+    (&quot;A101&quot;, 18.25),
+    (&quot;A102&quot;, 67.90)
+]
+
+for transaction_id, amount in transactions:
+    print(transaction_id, &quot;=&gt; $&quot;, amount)
+
+amounts = [amount for transaction_id, amount in transactions]
+print(&quot;Total:&quot;, round(sum(amounts), 2))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+        </div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 11</span></footer>
+  </div>
+</section><section class="slide" data-title="Small practice steps">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Build confidence</span><h2>Small practice steps</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="two-col tight">
+          <div>
+            <p class="lead">This example combines creation, indexing, appending, removing, and summarizing.</p>
+            <div class="practice-grid compact">
+              <div><span>1</span><h3>Create</h3><p>Start with a list.</p></div>
+              <div><span>2</span><h3>Modify</h3><p>Add and remove values.</p></div>
+              <div><span>3</span><h3>Summarize</h3><p>Calculate a simple metric.</p></div>
+            </div>
+          </div>
+          <div><div class="code-cell" data-filename="module4_practice_steps.py">
+  <div class="cell-head"><div><div class="cell-label">Executable Python</div><h3>Combined list practice</h3><p>Run, edit, reset, or copy this code.</p></div><span class="file-pill">module4_practice_steps.py</span></div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module4_practice_steps.py</span></div>
+    <textarea class="code-input" spellcheck="false">ages = [23, 31, 29]
+print(&quot;Original:&quot;, ages)
+
+ages.append(42)
+print(&quot;After append:&quot;, ages)
+
+removed = ages.pop()
+print(&quot;Removed:&quot;, removed)
+print(&quot;Now:&quot;, ages)
+
+average_age = sum(ages) / len(ages)
+print(&quot;Average age:&quot;, round(average_age, 1))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+        </div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 12</span></footer>
+  </div>
+</section><section class="slide" data-title="Patient-age list management">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Analytics mini-case</span><h2>Patient-age list management</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="two-col tight">
+          <div>
+            <p class="lead">Lists are useful when a collection grows as new records arrive.</p>
+            <div class="callout">The example uses generic patient records and does not use real personal information.</div>
+          </div>
+          <div><div class="code-cell" data-filename="module4_patient_ages.py">
+  <div class="cell-head"><div><div class="cell-label">Executable Python</div><h3>Add and summarize generic patient ages</h3><p>Run, edit, reset, or copy this code.</p></div><span class="file-pill">module4_patient_ages.py</span></div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module4_patient_ages.py</span></div>
+    <textarea class="code-input" spellcheck="false">patient_ages = [44, 57, 39, 63]
+new_patient_age = 51
+
+patient_ages.append(new_patient_age)
+
+print(&quot;Ages:&quot;, patient_ages)
+print(&quot;Number of patients:&quot;, len(patient_ages))
+print(&quot;Average age:&quot;, round(sum(patient_ages) / len(patient_ages), 1))
+
+older_than_50 = []
+for age in patient_ages:
+    if age &gt; 50:
+        older_than_50.append(age)
+
+print(&quot;Ages over 50:&quot;, older_than_50)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+        </div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 13</span></footer>
+  </div>
+</section><section class="slide" data-title="List + tuple capstone">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Sales range function</span><h2>List + tuple capstone</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="two-col tight">
+          <div>
+            <p class="lead">A function can receive a list and return a tuple. This lets us package multiple results in one clean return value.</p>
+            <div class="process-card small"><div class="process-step">List of sales</div><div class="process-arrow">↓</div><div class="process-step accent">summarize_range()</div><div class="process-arrow">↓</div><div class="process-step">Tuple: low, high, range</div></div>
+          </div>
+          <div><div class="code-cell" data-filename="module4_capstone.py">
+  <div class="cell-head"><div><div class="cell-label">Executable Python</div><h3>Return a tuple from a function</h3><p>Run, edit, reset, or copy this code.</p></div><span class="file-pill">module4_capstone.py</span></div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module4_capstone.py</span></div>
+    <textarea class="code-input" spellcheck="false">def summarize_range(values):
+    low = min(values)
+    high = max(values)
+    spread = high - low
+    return (low, high, spread)
+
+weekly_sales = [4200, 5100, 3900, 6100, 5800]
+low, high, spread = summarize_range(weekly_sales)
+
+print(&quot;Lowest sales:&quot;, low)
+print(&quot;Highest sales:&quot;, high)
+print(&quot;Range:&quot;, spread)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+        </div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 14</span></footer>
+  </div>
+</section><section class="slide" data-title="Choose the right sequence">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Decision guide</span><h2>Choose the right sequence</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="compare-grid">
+          <div class="compare-card"><h3>Use a list when...</h3><ul class="clean-list"><li>Values may change.</li><li>You need to append or remove items.</li><li>You need to sort, filter, or build a collection over time.</li></ul></div>
+          <div class="compare-card"><h3>Use a tuple when...</h3><ul class="clean-list"><li>Values should stay fixed.</li><li>The values form one record.</li><li>You want to return multiple results from a function.</li></ul></div>
+        </div>
+        <div class="callout secondary"><strong>Simple rule:</strong> lists are flexible collections; tuples are fixed records.</div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 15</span></footer>
+  </div>
+</section><section class="slide" data-title="Key takeaways">
+  <div class="slide-inner">
+    <header class="slide-header">
+      <div><span class="kicker">Wrap-up</span><h2>Key takeaways</h2></div>
+      <div class="slide-badge">IAN 601 · Module 4</div>
+    </header>
+    <div class="slide-content">
+        <div class="summary-grid">
+          <div><h3>Lists</h3><p>Ordered, mutable collections for values that can change.</p></div>
+          <div><h3>Indexes</h3><p>Position numbers that let us access specific values.</p></div>
+          <div><h3>Slices</h3><p>Ranges of values taken from a list.</p></div>
+          <div><h3>Loops</h3><p>Repeat analysis steps for every item.</p></div>
+          <div><h3>Tuples</h3><p>Ordered, fixed records that protect structure.</p></div>
+          <div><h3>Next</h3><p>Module 5 uses dictionaries and sets for labeled and unique data.</p></div>
+        </div>
+        <div class="callout success">You can now organize multiple values and begin writing small analysis workflows with collections.</div></div>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 16</span></footer>
+  </div>
+</section></main>
+  <footer class="bottom-nav">
+    <div class="nav-left"><button class="btn" id="prev-btn" type="button"><i class="fa-solid fa-arrow-left"></i> Previous</button><button class="btn" id="next-btn" type="button">Next <i class="fa-solid fa-arrow-right"></i></button></div>
+    <div class="counter" id="counter">Slide 1 / 16</div>
+    <div class="nav-right"><button class="btn ghost" id="first-btn" type="button">First</button><button class="btn ghost" id="last-btn" type="button">Last</button></div>
+    <div class="progress" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+  </footer>
+</div>
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+const select=document.getElementById('slide-select');
+let current=0;let pyodide=null;let pyodideLoading=null;const originalCode=new Map();const monacoEditors=new Map();
+slides.forEach((slide,i)=>{
+  const option=document.createElement('option');
+  option.value=i;option.textContent=`${i+1}. ${slide.dataset.title||'Slide'}`;select.appendChild(option);
+});
+function showSlide(index){
+  current=Math.max(0,Math.min(slides.length-1,index));
+  slides.forEach((s,i)=>s.classList.toggle('active',i===current));
+  select.value=current;document.getElementById('counter').textContent=`Slide ${current+1} / ${slides.length}`;
+  document.getElementById('progress-bar').style.width=`${((current+1)/slides.length)*100}%`;
+  setTimeout(()=>{slides[current].querySelectorAll('.monaco-host').forEach(host=>{const ed=monacoEditors.get(host);if(ed) ed.layout();})},80);
+}
+document.getElementById('prev-btn').onclick=()=>showSlide(current-1);
+document.getElementById('next-btn').onclick=()=>showSlide(current+1);
+document.getElementById('first-btn').onclick=()=>showSlide(0);
+document.getElementById('last-btn').onclick=()=>showSlide(slides.length-1);
+select.onchange=e=>showSlide(Number(e.target.value));
+document.querySelectorAll('.start-btn').forEach(b=>b.onclick=()=>showSlide(1));
+document.addEventListener('keydown',e=>{
+  if(e.target.closest('textarea')||e.target.closest('.monaco-host')){ if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();runCell(e.target.closest('.code-cell'));} return; }
+  if(e.key==='ArrowRight'||e.key==='PageDown') showSlide(current+1);
+  if(e.key==='ArrowLeft'||e.key==='PageUp') showSlide(current-1);
+  if(e.key==='Home') showSlide(0);
+  if(e.key==='End') showSlide(slides.length-1);
+});
+document.getElementById('theme-toggle').onclick=()=>{
+  const root=document.documentElement;const next=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=next;document.getElementById('theme-toggle').textContent=next==='dark'?'Light':'Dark';
+  monacoEditors.forEach(ed=>monaco.editor.setTheme(next==='dark'?'vs-dark':'vs'));
+};
+function setRuntime(status,text){const box=document.getElementById('runtime-status');box.className='status '+(status||'');document.getElementById('runtime-text').textContent=text;}
+async function loadPython(){
+  if(pyodide) return pyodide;
+  if(!pyodideLoading){
+    setRuntime('', 'Loading Python runtime...');
+    pyodideLoading=loadPyodide().then(async py=>{
+      await py.runPythonAsync(`
+import sys, io, contextlib, traceback
+_namespace = {}
+def _run_user_code(code):
+    stdout = io.StringIO()
+    stderr = io.StringIO()
+    try:
+        with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+            exec(code, _namespace)
+        return {"ok": True, "stdout": stdout.getvalue(), "stderr": stderr.getvalue()}
+    except Exception:
+        return {"ok": False, "stdout": stdout.getvalue(), "stderr": stderr.getvalue() + traceback.format_exc()}
+`);
+      pyodide=py;setRuntime('ready','Python ready.');return py;
+    }).catch(err=>{setRuntime('error','Python failed to load.');throw err;});
+  }
+  return pyodideLoading;
+}
+function getCellCode(cell){const host=cell.querySelector('.monaco-host');const ed=monacoEditors.get(host);return ed?ed.getValue():cell.querySelector('.code-input').value;}
+function setCellCode(cell,code){const host=cell.querySelector('.monaco-host');const ed=monacoEditors.get(host);if(ed)ed.setValue(code);cell.querySelector('.code-input').value=code;}
+async function runCell(cell){
+  if(!cell) return; const btn=cell.querySelector('.run-cell');const output=cell.querySelector('.output');
+  btn.classList.add('running');btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Running';output.className='output';output.textContent='Running...';
+  try{const py=await loadPython();const code=getCellCode(cell);const result=py.globals.get('_run_user_code')(code).toJs({dict_converter:Object.fromEntries});const text=(result.stdout||'')+(result.stderr?('\n'+result.stderr):'');output.textContent=text.trim()||'Code ran successfully with no printed output.';output.className='output '+(result.ok?'success':'error');setRuntime(result.ok?'ready':'error',result.ok?'Python ready.':'Python error.');}
+  catch(err){output.textContent=String(err);output.className='output error';setRuntime('error','Python error.');}
+  finally{btn.classList.remove('running');btn.innerHTML='<i class="fa-solid fa-play"></i> Run';}
+}
+async function runActiveSlide(){const cells=[...slides[current].querySelectorAll('.code-cell')];for(const cell of cells) await runCell(cell);}
+document.getElementById('run-slide-btn').onclick=runActiveSlide;document.querySelectorAll('.run-all-btn').forEach(b=>b.onclick=runActiveSlide);
+document.getElementById('restart-python').onclick=()=>{pyodide=null;pyodideLoading=null;setRuntime('', 'Python reset. It will reload when a code cell runs.');document.querySelectorAll('.output').forEach(o=>{o.className='output';o.textContent='Python reset. Click Run to execute this cell.';})};
+document.querySelectorAll('.code-cell').forEach((cell,idx)=>{
+  const textarea=cell.querySelector('.code-input');originalCode.set(cell,textarea.value);
+  cell.querySelector('.run-cell').onclick=()=>runCell(cell);
+  cell.querySelector('.reset-cell').onclick=()=>{setCellCode(cell,originalCode.get(cell));cell.querySelector('.output').className='output';cell.querySelector('.output').textContent='Code reset. Click Run to execute this cell.';};
+  cell.querySelector('.copy-cell').onclick=async()=>{await navigator.clipboard.writeText(getCellCode(cell));cell.querySelector('.copy-cell').textContent='Copied';setTimeout(()=>cell.querySelector('.copy-cell').textContent='Copy',1000);};
+});
+function initMonaco(){
+  if(!window.require) return;
+  try{
+    require.config({ paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs' } });
+    require(['vs/editor/editor.main'], function(){
+      monaco.editor.setTheme(document.documentElement.dataset.theme==='dark'?'vs-dark':'vs');
+      document.querySelectorAll('.code-cell').forEach(cell=>{
+        const textarea=cell.querySelector('.code-input');const host=cell.querySelector('.monaco-host');
+        const editor=monaco.editor.create(host,{value:textarea.value,language:'python',theme:document.documentElement.dataset.theme==='dark'?'vs-dark':'vs',fontFamily:'Source Code Pro, Consolas, monospace',fontSize:14,lineNumbers:'on',minimap:{enabled:false},automaticLayout:true,scrollBeyondLastLine:false,tabSize:4,wordWrap:'on'});
+        monacoEditors.set(host,editor);cell.classList.add('monaco-ready');
+        editor.onDidChangeCursorPosition(e=>{const status=cell.querySelector('.editor-status span');if(status) status.textContent=`Ln ${e.position.lineNumber}, Col ${e.position.column}`;});
+      });
+    });
+  }catch(e){console.warn('Monaco editor not available, using textarea fallback.',e);}
+}
+initMonaco();showSlide(0);
+</script>
+</body>
+</html>
