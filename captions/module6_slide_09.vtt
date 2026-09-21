@@ -1,0 +1,101 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:02.379
+So far we have imported modules that
+
+00:00:02.405 --> 00:00:05.316
+already exist Now we will look at
+
+00:00:05.342 --> 00:00:07.553
+the idea of creating our own module
+
+00:00:08.474 --> 00:00:10.605
+Suppose we are working on an analytics
+
+00:00:10.632 --> 00:00:13.618
+project that repeatedly calculates profit and profit
+
+00:00:13.645 --> 00:00:16.842
+margin We could write those formulas again
+
+00:00:16.855 --> 00:00:18.750
+and again in the main program but
+
+00:00:18.776 --> 00:00:22.092
+that creates repetition A better approach is
+
+00:00:22.118 --> 00:00:24.474
+to create a separate file called calculations
+
+00:00:24.500 --> 00:00:26.658
+dot P Y Inside that file we
+
+00:00:26.671 --> 00:00:28.974
+can define functions such as calculate profit
+
+00:00:29.000 --> 00:00:32.000
+and profit margin Then we create another
+
+00:00:32.026 --> 00:00:35.158
+file perhaps main dot P Y The
+
+00:00:35.171 --> 00:00:37.790
+main file imports the calculations module and
+
+00:00:37.816 --> 00:00:41.145
+uses those functions when needed This creates
+
+00:00:41.158 --> 00:00:45.434
+a clear separation of responsibilities The
+calculations
+
+00:00:45.461 --> 00:00:49.237
+file stores reusable formulas The main file
+
+00:00:49.263 --> 00:00:52.526
+focuses on the current analysis This is
+
+00:00:52.553 --> 00:00:55.013
+useful because the main program becomes shorter
+
+00:00:55.026 --> 00:00:57.737
+and easier to read It is also
+
+00:00:57.763 --> 00:01:01.079
+easier to update the formula later If
+
+00:01:01.105 --> 00:01:03.289
+we change the calculation in one module
+
+00:01:03.539 --> 00:01:05.618
+every script that imports that module can
+
+00:01:05.645 --> 00:01:09.276
+use the updated logic A beginner-friendly rule
+
+00:01:09.289 --> 00:01:12.053
+is this When one script starts to
+
+00:01:12.079 --> 00:01:15.092
+contain many useful helper functions consider moving
+
+00:01:15.105 --> 00:01:18.355
+related functions into their own module You
+
+00:01:18.368 --> 00:01:19.974
+do not need to create a separate
+
+00:01:20.000 --> 00:01:23.118
+file for every tiny function The goal
+
+00:01:23.145 --> 00:01:24.697
+is not to break a project into
+
+00:01:24.724 --> 00:01:28.079
+dozens of unnecessary files The goal is
+
+00:01:28.105 --> 00:01:29.645
+to group related code in a way
+
+00:01:29.658 --> 00:01:32.053
+that makes the project easier to understand

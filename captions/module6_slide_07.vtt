@@ -1,0 +1,103 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:01.813
+Python gives us more than one way
+
+00:00:01.839 --> 00:00:04.605
+to import code The first style is
+
+00:00:04.632 --> 00:00:08.171
+to import the entire module For example
+
+00:00:08.342 --> 00:00:11.303
+import math When we use this style
+
+00:00:11.500 --> 00:00:13.395
+we usually write the module name before
+
+00:00:13.408 --> 00:00:15.408
+the function such as math dot square
+
+00:00:15.434 --> 00:00:18.171
+root The second style is to use
+
+00:00:18.197 --> 00:00:21.329
+an alias An alias gives a module
+
+00:00:21.355 --> 00:00:25.224
+a shorter name For example import statistics
+
+00:00:25.237 --> 00:00:28.276
+as stats After that we can write
+
+00:00:28.303 --> 00:00:30.539
+stats dot mean instead of statistics dot
+
+00:00:30.553 --> 00:00:34.118
+mean Aliases are especially common in data
+
+00:00:34.132 --> 00:00:37.276
+analytics Later in the course you will
+
+00:00:37.303 --> 00:00:39.710
+often see NumPy imported as N P
+
+00:00:39.737 --> 00:00:42.763
+and Pandas imported as P D These
+
+00:00:42.789 --> 00:00:45.789
+aliases are widely recognized by Python users
+
+00:00:46.711 --> 00:00:48.895
+The third style is a selective import
+
+00:00:49.816 --> 00:00:52.500
+For example from math import square root
+
+00:00:53.421 --> 00:00:57.408
+This imports one specific function directly After
+
+00:00:57.434 --> 00:00:59.434
+that we can call square root without
+
+00:00:59.447 --> 00:01:02.316
+writing the module name first There is
+
+00:01:02.342 --> 00:01:04.355
+no single import style that is always
+
+00:01:04.382 --> 00:01:08.921
+best The choice depends on readability If
+
+00:01:08.947 --> 00:01:10.645
+you need several tools from the same
+
+00:01:10.671 --> 00:01:13.184
+module importing the whole module is often
+
+00:01:13.197 --> 00:01:16.197
+clear If a short alias is standard
+
+00:01:16.224 --> 00:01:18.329
+and easy to recognize an alias can
+
+00:01:18.355 --> 00:01:20.934
+make the code easier to read If
+
+00:01:20.961 --> 00:01:23.105
+you only need one specific function a
+
+00:01:23.132 --> 00:01:26.750
+selective import can be convenient The important
+
+00:01:26.776 --> 00:01:28.987
+rule is to keep the code understandable
+
+00:01:29.921 --> 00:01:32.329
+Do not create unusual aliases just to
+
+00:01:32.355 --> 00:01:35.447
+save a few characters Shorter code is
+
+00:01:35.461 --> 00:01:37.263
+not automatically better code

@@ -1,0 +1,97 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:01.932
+At this point you may be wondering
+
+00:00:01.945 --> 00:00:03.366
+when you should use a function a
+
+00:00:03.392 --> 00:00:06.526
+dictionary or a class There is no
+
+00:00:06.539 --> 00:00:08.079
+need to use a class for every
+
+00:00:08.092 --> 00:00:11.618
+problem In fact the simplest structure that
+
+00:00:11.645 --> 00:00:13.724
+clearly solves the problem is usually the
+
+00:00:13.737 --> 00:00:16.540
+best choice Use a function when you
+
+00:00:16.566 --> 00:00:19.118
+mainly need to perform one reusable task
+
+00:00:20.039 --> 00:00:22.382
+For example a function called get profit
+
+00:00:22.408 --> 00:00:24.526
+can receive sales and costs and return
+
+00:00:24.553 --> 00:00:27.355
+the profit Use a dictionary when you
+
+00:00:27.382 --> 00:00:30.645
+mainly need to store related values For
+
+00:00:30.658 --> 00:00:33.026
+example a product dictionary might store a
+
+00:00:33.053 --> 00:00:36.592
+product name price and category Use a
+
+00:00:36.605 --> 00:00:38.500
+class when the data and the behavior
+
+00:00:38.526 --> 00:00:42.395
+naturally belong together For example a Product
+
+00:00:42.421 --> 00:00:44.053
+class can store a name and price
+
+00:00:44.066 --> 00:00:46.092
+and also provide a sale price method
+
+00:00:47.013 --> 00:00:48.816
+A class is especially useful when you
+
+00:00:48.842 --> 00:00:50.711
+expect to create many objects of the
+
+00:00:50.724 --> 00:00:52.658
+same type or when several methods need
+
+00:00:52.671 --> 00:00:54.342
+to work with the same stored data
+
+00:00:55.276 --> 00:00:57.382
+But classes also add structure so do
+
+00:00:57.395 --> 00:00:59.184
+not use them simply because they look
+
+00:00:59.197 --> 00:01:02.237
+more advanced A good beginner rule is
+
+00:01:02.263 --> 00:01:04.987
+to start simple If a function is
+
+00:01:05.013 --> 00:01:08.105
+enough use a function If you only
+
+00:01:08.132 --> 00:01:10.658
+need to store related values a dictionary
+
+00:01:10.684 --> 00:01:13.342
+may be enough Move to a class
+
+00:01:13.368 --> 00:01:15.579
+when one concept clearly has both stored
+
+00:01:15.605 --> 00:01:18.724
+data and repeated actions The goal is
+
+00:01:18.737 --> 00:01:21.460
+readable code not the most complicated code

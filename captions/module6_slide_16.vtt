@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:02.326
+A class becomes especially useful when we
+
+00:00:02.353 --> 00:00:04.932
+create multiple objects from the same blueprint
+
+00:00:05.855 --> 00:00:09.408
+Imagine a Product class The Product class
+
+00:00:09.421 --> 00:00:12.066
+might define two attributes name and price
+
+00:00:13.000 --> 00:00:14.763
+It might also define a method that
+
+00:00:14.789 --> 00:00:17.908
+calculates a sale price From that one
+
+00:00:17.934 --> 00:00:21.434
+class we can create many objects One
+
+00:00:21.461 --> 00:00:23.553
+object could represent a laptop with a
+
+00:00:23.566 --> 00:00:26.987
+price of nine hundred dollars Another object
+
+00:00:27.013 --> 00:00:28.974
+could represent a monitor with a price
+
+00:00:28.987 --> 00:00:32.066
+of three hundred dollars A third object
+
+00:00:32.092 --> 00:00:34.289
+could represent a keyboard and so on
+
+00:00:35.211 --> 00:00:36.934
+All of these objects follow the same
+
+00:00:36.961 --> 00:00:38.842
+structure because they come from the same
+
+00:00:38.855 --> 00:00:42.605
+Product class However each object stores its
+
+00:00:42.618 --> 00:00:45.618
+own values This is similar to using
+
+00:00:45.645 --> 00:00:47.789
+the same blank form for many records
+
+00:00:48.711 --> 00:00:50.658
+The form has the same fields but
+
+00:00:50.684 --> 00:00:54.842
+each completed form contains different information
+Methods
+
+00:00:54.855 --> 00:00:56.592
+also work with the values stored in
+
+00:00:56.618 --> 00:00:59.592
+each object If the Product class has
+
+00:00:59.618 --> 00:01:01.934
+a sale price method the laptop object
+
+00:01:01.961 --> 00:01:04.382
+uses the laptop's price while the monitor
+
+00:01:04.395 --> 00:01:08.289
+object uses the monitor's price This separation
+
+00:01:08.303 --> 00:01:11.645
+is important The class provides the common
+
+00:01:11.658 --> 00:01:17.263
+blueprint The objects represent individual instances
+In
+
+00:01:17.289 --> 00:01:19.474
+analytics this pattern can be useful when
+
+00:01:19.500 --> 00:01:21.382
+we want to model repeated entities such
+
+00:01:21.395 --> 00:01:25.947
+as customers products patients locations
+transactions experiments
+
+00:01:26.132 --> 00:01:27.605
+or model configurations

@@ -1,0 +1,112 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:02.550
+Before we begin the technical material let
+
+00:00:02.563 --> 00:00:04.340
+us quickly review how to use this
+
+00:00:04.353 --> 00:00:08.053
+interactive lesson Each slide contains one main
+
+00:00:08.079 --> 00:00:11.645
+idea Some slides explain a concept and
+
+00:00:11.671 --> 00:00:15.461
+other slides contain executable Python code You
+
+00:00:15.474 --> 00:00:17.105
+can move through the lesson by using
+
+00:00:17.132 --> 00:00:19.316
+the Next and Previous buttons the arrow
+
+00:00:19.342 --> 00:00:21.132
+keys or the slide menu at the
+
+00:00:21.158 --> 00:00:23.618
+top of the page When you reach
+
+00:00:23.632 --> 00:00:26.197
+a code example first read the explanation
+
+00:00:26.224 --> 00:00:28.974
+above the editor Then look through the
+
+00:00:29.000 --> 00:00:31.750
+code from top to bottom Try to
+
+00:00:31.763 --> 00:00:33.553
+predict what the code will do before
+
+00:00:33.579 --> 00:00:35.961
+you run it When you are ready
+
+00:00:36.171 --> 00:00:39.250
+click the Run button The result appears
+
+00:00:39.276 --> 00:00:41.303
+in the terminal area below the code
+
+00:00:42.224 --> 00:00:44.368
+Compare the terminal output with what you
+
+00:00:44.382 --> 00:00:47.947
+expected After that make a small change
+
+00:00:48.855 --> 00:00:51.382
+For example change one number one name
+
+00:00:51.566 --> 00:00:54.355
+or one input value Then run the
+
+00:00:54.368 --> 00:00:56.079
+cell again and see how the output
+
+00:00:56.105 --> 00:00:59.342
+changes Small experiments are one of the
+
+00:00:59.368 --> 00:01:02.276
+best ways to learn programming If you
+
+00:01:02.289 --> 00:01:04.711
+accidentally change the code too much you
+
+00:01:04.737 --> 00:01:06.671
+can use the Reset button to restore
+
+00:01:06.697 --> 00:01:09.789
+the original example You can also use
+
+00:01:09.816 --> 00:01:11.237
+the Copy button if you want to
+
+00:01:11.263 --> 00:01:13.947
+paste the example into Jupyter Notebook Google
+
+00:01:13.974 --> 00:01:17.842
+Colab or Visual Studio Code One important
+
+00:01:17.868 --> 00:01:19.776
+detail is that the spacebar will not
+
+00:01:19.803 --> 00:01:21.276
+move to the next slide while you
+
+00:01:21.303 --> 00:01:23.974
+are editing code This means you can
+
+00:01:24.000 --> 00:01:27.303
+type normally inside the editor The basic
+
+00:01:27.329 --> 00:01:30.632
+workflow for this module is simple Read
+
+00:01:30.658 --> 00:01:34.789
+the idea Run the code Check the
+
+00:01:34.803 --> 00:01:39.289
+output Change something small Then apply the
+
+00:01:39.303 --> 00:01:41.132
+same pattern to a new example

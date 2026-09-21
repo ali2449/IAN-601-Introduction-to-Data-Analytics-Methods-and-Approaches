@@ -1,0 +1,107 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:02.458
+This is our first complete class example
+
+00:00:03.382 --> 00:00:07.132
+The class is named CustomerRecord By convention
+
+00:00:07.316 --> 00:00:09.513
+Python class names are often written using
+
+00:00:09.526 --> 00:00:11.382
+capital letters at the beginning of each
+
+00:00:11.408 --> 00:00:14.553
+word Inside the class we define a
+
+00:00:14.579 --> 00:00:17.724
+special method called dunder init Its written
+
+00:00:17.737 --> 00:00:20.132
+form uses two underscores before init and
+
+00:00:20.158 --> 00:00:23.224
+two underscores after it You will often
+
+00:00:23.250 --> 00:00:25.921
+hear Python developers simply say dunder init
+
+00:00:26.855 --> 00:00:28.605
+The dunder init method runs when a
+
+00:00:28.632 --> 00:00:31.895
+new object is created In this example
+
+00:00:32.092 --> 00:00:35.184
+it receives self customer ID and segment
+
+00:00:36.105 --> 00:00:38.039
+The word self refers to the current
+
+00:00:38.066 --> 00:00:41.224
+object When we write self dot customer
+
+00:00:41.250 --> 00:00:43.934
+ID equals customer ID we are storing
+
+00:00:43.947 --> 00:00:46.566
+the provided customer ID inside the object
+
+00:00:47.500 --> 00:00:49.592
+The same idea applies to self dot
+
+00:00:49.618 --> 00:00:53.553
+segment Next the line that creates CustomerRecord
+
+00:00:53.579 --> 00:00:55.421
+with C one zero one and Retail
+
+00:00:55.447 --> 00:00:58.816
+creates one object That object is stored
+
+00:00:58.842 --> 00:01:01.895
+in the variable customer The final two
+
+00:01:01.921 --> 00:01:04.658
+print statements access the object's attributes
+using
+
+00:01:04.684 --> 00:01:07.290
+customer dot customer ID and customer dot
+
+00:01:07.316 --> 00:01:10.579
+segment Before you run the code predict
+
+00:01:10.605 --> 00:01:13.539
+the output The customer ID should be
+
+00:01:13.566 --> 00:01:15.605
+C one zero one and the segment
+
+00:01:15.632 --> 00:01:19.553
+should be Retail Click Run now The
+
+00:01:19.579 --> 00:01:23.013
+terminal should display those two values Now
+
+00:01:23.026 --> 00:01:26.592
+try creating a second object For example
+
+00:01:26.776 --> 00:01:29.026
+you could create another CustomerRecord with the
+
+00:01:29.039 --> 00:01:30.908
+ID C one zero two and the
+
+00:01:30.921 --> 00:01:34.447
+segment Business Then print the second object's
+
+00:01:34.461 --> 00:01:37.408
+attributes The key idea is that the
+
+00:01:37.421 --> 00:01:39.868
+class defines the structure while each object
+
+00:01:39.895 --> 00:01:41.197
+stores its own values
