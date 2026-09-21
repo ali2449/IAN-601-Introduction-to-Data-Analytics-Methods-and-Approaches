@@ -605,6 +605,18 @@ th,td{padding:10px 12px}
 [data-theme="light"] .side-caption-item[data-cue-index]:focus-visible{border-color:#2563eb!important;box-shadow:0 0 0 3px rgba(37,99,235,.18)!important;}
 .audio-control:disabled,.audio-skip:disabled{opacity:.45;cursor:not-allowed;}
 </style>
+
+<style id="module6-caption-scroll-ux-final">
+/* Keep the narration panel user-scrollable while audio continues playing. */
+.side-caption-status{display:none!important;}
+.side-caption-list{
+  scroll-behavior:smooth;
+  overscroll-behavior:contain;
+  scrollbar-gutter:stable;
+}
+.side-caption-list.user-browsing{scroll-behavior:auto;}
+.side-caption-item[aria-current="true"]{position:relative;}
+</style>
 </head>
 <body>
 <div class="deck">
@@ -1249,7 +1261,7 @@ print("Sales at least 200:", report.high_sales_count(200))</textarea>
     </div>
     <button class="side-caption-toggle" id="side-caption-toggle" type="button">CC On</button>
   </div>
-  <div class="side-caption-status" id="side-caption-status">Narration is ready. Timed VTT captions are used automatically when available.</div>
+  <div class="side-caption-status" id="side-caption-status" aria-hidden="true"></div>
   <div class="side-caption-list" id="side-caption-list"></div>
 </aside>
 </main>
@@ -1332,6 +1344,11 @@ let audioCandidates = [];
 let audioCandidateIndex = 0;
 let captionSyncTimer = null;
 let pendingNarrationCueIndex = null;
+let captionAutoScrollSuspended = false;
+let captionScrollIdleTimer = null;
+let captionPointerActive = false;
+let lastActiveCaptionIndex = -1;
+const CAPTION_SCROLL_IDLE_MS = 2400;
 
 let narrationManifest = null;
 let narrationManifestLoadStarted = false;
@@ -1635,8 +1652,12 @@ function expectedCaptionPath(){
 function renderSideCaptions(cues, statusText=''){
   if(!sideCaptionList) return;
   sideCaptionList.innerHTML = '';
+  lastActiveCaptionIndex = -1;
+  captionAutoScrollSuspended = false;
+  if(captionScrollIdleTimer){ clearTimeout(captionScrollIdleTimer); captionScrollIdleTimer = null; }
+  sideCaptionList.classList.remove('user-browsing');
   if(sideCaptionSubtitle) sideCaptionSubtitle.textContent = `Slide ${current + 1} of ${slides.length}`;
-  if(sideCaptionStatus) sideCaptionStatus.textContent = statusText || '';
+  if(sideCaptionStatus) sideCaptionStatus.textContent = '';
 
   if(!captionsEnabled){
     if(sideCaptionStatus) sideCaptionStatus.textContent = 'Captions are off.';
@@ -1684,28 +1705,69 @@ function getActiveCueIndex(cues, timeValue){
   return -1;
 }
 
+function scrollActiveCaptionIntoView(behavior='smooth'){
+  if(!sideCaptionList) return;
+  const active = sideCaptionList.querySelector('.side-caption-item.active');
+  if(!active) return;
+  const listRect = sideCaptionList.getBoundingClientRect();
+  const itemRect = active.getBoundingClientRect();
+  const edgePadding = 18;
+  const fullyVisible = itemRect.top >= listRect.top + edgePadding && itemRect.bottom <= listRect.bottom - edgePadding;
+  if(fullyVisible) return;
+  const target = active.offsetTop - (sideCaptionList.clientHeight / 2) + (active.offsetHeight / 2);
+  sideCaptionList.scrollTo({top: Math.max(0, target), behavior});
+}
+
+function resumeCaptionAutoFollowAfterIdle(){
+  if(captionScrollIdleTimer) clearTimeout(captionScrollIdleTimer);
+  captionScrollIdleTimer = setTimeout(()=>{
+    if(captionPointerActive) return resumeCaptionAutoFollowAfterIdle();
+    captionAutoScrollSuspended = false;
+    if(sideCaptionList) sideCaptionList.classList.remove('user-browsing');
+    scrollActiveCaptionIntoView('smooth');
+  }, CAPTION_SCROLL_IDLE_MS);
+}
+
+function markCaptionUserBrowsing(){
+  captionAutoScrollSuspended = true;
+  if(sideCaptionList) sideCaptionList.classList.add('user-browsing');
+  resumeCaptionAutoFollowAfterIdle();
+}
+
 function highlightSideCaptionByTime(){
   if(!sideCaptionList) return;
   const items = Array.from(sideCaptionList.querySelectorAll('.side-caption-item'));
-  items.forEach(item => item.classList.remove('active','dimmed'));
-  if(!currentCues.length || !items.length) return;
+  items.forEach(item => {
+    item.classList.remove('active','dimmed');
+    item.removeAttribute('aria-current');
+  });
+  if(!currentCues.length || !items.length){
+    lastActiveCaptionIndex = -1;
+    return;
+  }
 
   const index = getActiveCueIndex(currentCues, narrationAudio.currentTime);
   if(index < 0 || !items[index]) return;
+  const activeChanged = index !== lastActiveCaptionIndex;
+  lastActiveCaptionIndex = index;
 
   items.forEach((item, i)=>{
     if(i === index){
       item.classList.add('active');
-      try{ item.scrollIntoView({block:'center', behavior:'smooth'}); }
-      catch(e){ item.scrollIntoView({block:'nearest'}); }
+      item.setAttribute('aria-current','true');
     }else if(Math.abs(i - index) > 2){
       item.classList.add('dimmed');
     }
   });
 
-  if(sideCaptionStatus){
-    sideCaptionStatus.textContent = `Caption sentence ${index + 1} of ${currentCues.length}`;
+  // Follow the narration only when the student is not browsing the panel.
+  // Manual scrolling gets a short grace period; after the student stops,
+  // the panel gently returns to the sentence currently being narrated.
+  if(!captionAutoScrollSuspended && activeChanged){
+    scrollActiveCaptionIntoView('smooth');
   }
+
+  if(sideCaptionStatus) sideCaptionStatus.textContent = '';
 }
 
 function findBestCueForCurrentTime(cues, timeValue){
@@ -1881,9 +1943,7 @@ function setPauseButtonLabel(label){
 function clearCaptionHighlight(){
   if(!sideCaptionList) return;
   sideCaptionList.querySelectorAll('.side-caption-item').forEach(item => item.classList.remove('active','dimmed'));
-  if(sideCaptionStatus && currentCues.length){
-    sideCaptionStatus.textContent = `${currentCues.length} narration sentences`;
-  }
+  if(sideCaptionStatus) sideCaptionStatus.textContent = '';
 }
 function applyPendingNarrationSeek(){
   if(pendingNarrationCueIndex === null) return false;
@@ -2138,6 +2198,17 @@ if(narrationPauseBtn) narrationPauseBtn.addEventListener('click', pauseOrResumeN
 if(narrationStopBtn) narrationStopBtn.addEventListener('click', stopNarrationSession);
 if(narrationReplayBtn) narrationReplayBtn.addEventListener('click',()=>{ if(requestLocalAudioFolder(false)) return; narrationStarted=true; narrationEnabled=true; narrationPaused=false; pendingNarrationCueIndex=null; setPauseButtonLabel('Pause'); playCurrentNarration(); });
 if(sideCaptionList){
+  // Let students browse ahead/back in the narration without fighting auto-follow.
+  // Auto-follow resumes after a brief period of no manual scrolling.
+  sideCaptionList.addEventListener('wheel', markCaptionUserBrowsing, {passive:true});
+  sideCaptionList.addEventListener('touchstart', markCaptionUserBrowsing, {passive:true});
+  sideCaptionList.addEventListener('touchmove', markCaptionUserBrowsing, {passive:true});
+  sideCaptionList.addEventListener('pointerdown', ()=>{ captionPointerActive = true; markCaptionUserBrowsing(); });
+  window.addEventListener('pointerup', ()=>{ if(captionPointerActive){ captionPointerActive = false; resumeCaptionAutoFollowAfterIdle(); } });
+  sideCaptionList.addEventListener('keydown', event => {
+    if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End'].includes(event.key)) markCaptionUserBrowsing();
+  });
+
   sideCaptionList.addEventListener('click', event => {
     const item = event.target.closest('.side-caption-item[data-cue-index]');
     if(!item || !sideCaptionList.contains(item)) return;
