@@ -598,25 +598,6 @@ th,td{padding:10px 12px}
 }
 </style>
 
-
-<style id="module6-caption-seek-polish">
-.side-caption-item[data-cue-index]{cursor:pointer;outline:none;}
-.side-caption-item[data-cue-index]:focus-visible{border-color:#38bdf8!important;box-shadow:0 0 0 3px rgba(56,189,248,.24)!important;}
-[data-theme="light"] .side-caption-item[data-cue-index]:focus-visible{border-color:#2563eb!important;box-shadow:0 0 0 3px rgba(37,99,235,.18)!important;}
-.audio-control:disabled,.audio-skip:disabled{opacity:.45;cursor:not-allowed;}
-</style>
-
-<style id="module6-caption-scroll-ux-final">
-/* Keep the narration panel user-scrollable while audio continues playing. */
-.side-caption-status{display:none!important;}
-.side-caption-list{
-  scroll-behavior:smooth;
-  overscroll-behavior:contain;
-  scrollbar-gutter:stable;
-}
-.side-caption-list.user-browsing{scroll-behavior:auto;}
-.side-caption-item[aria-current="true"]{position:relative;}
-</style>
 </head>
 <body>
 <div class="deck">
@@ -1261,7 +1242,7 @@ print("Sales at least 200:", report.high_sales_count(200))</textarea>
     </div>
     <button class="side-caption-toggle" id="side-caption-toggle" type="button">CC On</button>
   </div>
-  <div class="side-caption-status" id="side-caption-status" aria-hidden="true"></div>
+  <div class="side-caption-status" id="side-caption-status">Narration is ready. Timed VTT captions are used automatically when available.</div>
   <div class="side-caption-list" id="side-caption-list"></div>
 </aside>
 </main>
@@ -1284,6 +1265,7 @@ print("Sales at least 200:", report.high_sales_count(200))</textarea>
       <select aria-label="Narration speed" class="narr-speed" id="narration-speed"><option value="0.8">0.8x</option><option selected="" value="1">1.0x</option><option value="1.15">1.15x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option></select>
       <button class="option-chip" id="narration-toggle" type="button">Narration On</button>
       <button class="option-chip" id="captions-toggle" type="button">CC On</button>
+      <button class="option-chip" id="narration-transcript-toggle" type="button">Transcript</button>
       <span class="narr-status" id="narration-status">Audio and narration are ready.</span>
     </div>
   </div>
@@ -1304,7 +1286,6 @@ narrationAudio.style.display = 'none';
 document.body.appendChild(narrationAudio);
 const narrationStartBtn = document.getElementById('narration-start');
 const narrationPauseBtn = document.getElementById('narration-pause');
-const narrationStopBtn = document.getElementById('narration-stop');
 const narrationReplayBtn = document.getElementById('narration-replay');
 const narrationToggleBtn = document.getElementById('narration-toggle');
 const narrationSpeed = document.getElementById('narration-speed');
@@ -1343,12 +1324,6 @@ let currentCueSource = 'text';
 let audioCandidates = [];
 let audioCandidateIndex = 0;
 let captionSyncTimer = null;
-let pendingNarrationCueIndex = null;
-let captionAutoScrollSuspended = false;
-let captionScrollIdleTimer = null;
-let captionPointerActive = false;
-let lastActiveCaptionIndex = -1;
-const CAPTION_SCROLL_IDLE_MS = 2400;
 
 let narrationManifest = null;
 let narrationManifestLoadStarted = false;
@@ -1652,12 +1627,8 @@ function expectedCaptionPath(){
 function renderSideCaptions(cues, statusText=''){
   if(!sideCaptionList) return;
   sideCaptionList.innerHTML = '';
-  lastActiveCaptionIndex = -1;
-  captionAutoScrollSuspended = false;
-  if(captionScrollIdleTimer){ clearTimeout(captionScrollIdleTimer); captionScrollIdleTimer = null; }
-  sideCaptionList.classList.remove('user-browsing');
   if(sideCaptionSubtitle) sideCaptionSubtitle.textContent = `Slide ${current + 1} of ${slides.length}`;
-  if(sideCaptionStatus) sideCaptionStatus.textContent = '';
+  if(sideCaptionStatus) sideCaptionStatus.textContent = statusText || '';
 
   if(!captionsEnabled){
     if(sideCaptionStatus) sideCaptionStatus.textContent = 'Captions are off.';
@@ -1679,10 +1650,6 @@ function renderSideCaptions(cues, statusText=''){
     div.dataset.start = String(cue.start);
     div.dataset.end = String(cue.end);
     div.textContent = cue.text;
-    div.setAttribute('role', 'button');
-    div.setAttribute('tabindex', '0');
-    div.setAttribute('aria-label', `Play narration from sentence ${index + 1}`);
-    div.title = 'Play narration from this sentence';
     sideCaptionList.appendChild(div);
   });
 
@@ -1705,69 +1672,28 @@ function getActiveCueIndex(cues, timeValue){
   return -1;
 }
 
-function scrollActiveCaptionIntoView(behavior='smooth'){
-  if(!sideCaptionList) return;
-  const active = sideCaptionList.querySelector('.side-caption-item.active');
-  if(!active) return;
-  const listRect = sideCaptionList.getBoundingClientRect();
-  const itemRect = active.getBoundingClientRect();
-  const edgePadding = 18;
-  const fullyVisible = itemRect.top >= listRect.top + edgePadding && itemRect.bottom <= listRect.bottom - edgePadding;
-  if(fullyVisible) return;
-  const target = active.offsetTop - (sideCaptionList.clientHeight / 2) + (active.offsetHeight / 2);
-  sideCaptionList.scrollTo({top: Math.max(0, target), behavior});
-}
-
-function resumeCaptionAutoFollowAfterIdle(){
-  if(captionScrollIdleTimer) clearTimeout(captionScrollIdleTimer);
-  captionScrollIdleTimer = setTimeout(()=>{
-    if(captionPointerActive) return resumeCaptionAutoFollowAfterIdle();
-    captionAutoScrollSuspended = false;
-    if(sideCaptionList) sideCaptionList.classList.remove('user-browsing');
-    scrollActiveCaptionIntoView('smooth');
-  }, CAPTION_SCROLL_IDLE_MS);
-}
-
-function markCaptionUserBrowsing(){
-  captionAutoScrollSuspended = true;
-  if(sideCaptionList) sideCaptionList.classList.add('user-browsing');
-  resumeCaptionAutoFollowAfterIdle();
-}
-
 function highlightSideCaptionByTime(){
   if(!sideCaptionList) return;
   const items = Array.from(sideCaptionList.querySelectorAll('.side-caption-item'));
-  items.forEach(item => {
-    item.classList.remove('active','dimmed');
-    item.removeAttribute('aria-current');
-  });
-  if(!currentCues.length || !items.length){
-    lastActiveCaptionIndex = -1;
-    return;
-  }
+  items.forEach(item => item.classList.remove('active','dimmed'));
+  if(!currentCues.length || !items.length) return;
 
   const index = getActiveCueIndex(currentCues, narrationAudio.currentTime);
   if(index < 0 || !items[index]) return;
-  const activeChanged = index !== lastActiveCaptionIndex;
-  lastActiveCaptionIndex = index;
 
   items.forEach((item, i)=>{
     if(i === index){
       item.classList.add('active');
-      item.setAttribute('aria-current','true');
+      try{ item.scrollIntoView({block:'center', behavior:'smooth'}); }
+      catch(e){ item.scrollIntoView({block:'nearest'}); }
     }else if(Math.abs(i - index) > 2){
       item.classList.add('dimmed');
     }
   });
 
-  // Follow the narration only when the student is not browsing the panel.
-  // Manual scrolling gets a short grace period; after the student stops,
-  // the panel gently returns to the sentence currently being narrated.
-  if(!captionAutoScrollSuspended && activeChanged){
-    scrollActiveCaptionIntoView('smooth');
+  if(sideCaptionStatus){
+    sideCaptionStatus.textContent = `Caption sentence ${index + 1} of ${currentCues.length}`;
   }
-
-  if(sideCaptionStatus) sideCaptionStatus.textContent = '';
 }
 
 function findBestCueForCurrentTime(cues, timeValue){
@@ -1929,80 +1855,6 @@ function updateTranscript(){
   if(transcriptBody) transcriptBody.textContent = text;
 }
 
-function setPauseButtonLabel(label){
-  if(!narrationPauseBtn) return;
-  const span = narrationPauseBtn.querySelector('span');
-  if(span) span.textContent = label;
-  const icon = narrationPauseBtn.querySelector('i');
-  if(icon){
-    icon.classList.toggle('fa-pause', label === 'Pause');
-    icon.classList.toggle('fa-play', label !== 'Pause');
-  }
-  narrationPauseBtn.title = label === 'Pause' ? 'Pause narration' : 'Resume narration';
-}
-function clearCaptionHighlight(){
-  if(!sideCaptionList) return;
-  sideCaptionList.querySelectorAll('.side-caption-item').forEach(item => item.classList.remove('active','dimmed'));
-  if(sideCaptionStatus) sideCaptionStatus.textContent = '';
-}
-function applyPendingNarrationSeek(){
-  if(pendingNarrationCueIndex === null) return false;
-  const index = Number(pendingNarrationCueIndex);
-  if(currentCueSource === 'narration-text') resyncNarrationTextCuesToAudio();
-  const cue = currentCues[index];
-  if(!cue || !Number.isFinite(cue.start)) return false;
-  let target = Math.max(0, cue.start + 0.02);
-  if(Number.isFinite(narrationAudio.duration) && narrationAudio.duration > 0){
-    target = Math.min(target, Math.max(0, narrationAudio.duration - 0.05));
-  }
-  try{ narrationAudio.currentTime = target; }catch(e){ return false; }
-  pendingNarrationCueIndex = null;
-  updateAudioProgress();
-  updateSubtitleFromAudio();
-  return true;
-}
-function seekNarrationToCue(index){
-  index = Number(index);
-  if(!Number.isInteger(index) || index < 0 || index >= currentCues.length) return;
-  pendingNarrationCueIndex = index;
-  narrationEnabled = true;
-  narrationStarted = true;
-  narrationPaused = false;
-  if(narrationToggleBtn) narrationToggleBtn.textContent = 'Narration On';
-  setPauseButtonLabel('Pause');
-
-  if(narrationAudio.src && narrationAudio.readyState >= 1){
-    applyPendingNarrationSeek();
-    narrationAudio.playbackRate = Number(narrationSpeed ? narrationSpeed.value : 1) || 1;
-    narrationAudio.play().then(()=>{
-      setNarrationStatus(`Playing from sentence ${index + 1}`);
-      setAudioPlayerState('playing', `Playing slide ${current + 1}`);
-      startCaptionSyncTimer();
-    }).catch(()=>speakWithBrowser());
-    return;
-  }
-
-  const slide = slides[current];
-  audioCandidates = getAudioCandidatesForSlide(slide);
-  audioCandidateIndex = 0;
-  tryAudioCandidate();
-}
-function stopNarrationSession(){
-  stopCaptionSyncTimer();
-  pendingNarrationCueIndex = null;
-  narrationAudio.pause();
-  try{ narrationAudio.currentTime = 0; }catch(e){}
-  stopBrowserNarration();
-  narrationStarted = false;
-  narrationPaused = false;
-  setPauseButtonLabel('Pause');
-  updateAudioProgress();
-  hideSubtitle();
-  clearCaptionHighlight();
-  setNarrationStatus(`Narration stopped on slide ${current + 1}`);
-  setAudioPlayerState('', `Stopped · slide ${current + 1}`);
-}
-
 function stopBrowserNarration(){
   if('speechSynthesis' in window){ window.speechSynthesis.cancel(); }
   narrationFallbackUtterance = null;
@@ -2013,7 +1865,7 @@ function stopNarrationOnly(){
   try{ narrationAudio.currentTime = 0; }catch(e){}
   stopBrowserNarration();
   narrationPaused = false;
-  setPauseButtonLabel('Pause');
+  if(narrationPauseBtn) narrationPauseBtn.textContent = 'Pause';
   updateAudioProgress();
   hideSubtitle();
   setAudioPlayerState('', 'Audio ready');
@@ -2061,14 +1913,14 @@ function pauseOrResumeNarration(){
   if(!narrationStarted){ startNarrationMode(); return; }
   if(narrationPaused){
     narrationPaused = false;
-    setPauseButtonLabel('Pause');
+    if(narrationPauseBtn) narrationPauseBtn.textContent = 'Pause';
     if(narrationAudio.src && narrationAudio.paused){ narrationAudio.play().catch(()=>speakWithBrowser()); }
     else if('speechSynthesis' in window){ window.speechSynthesis.resume(); }
     setNarrationStatus('Narration resumed');
     setAudioPlayerState('playing', `Playing slide ${current + 1}`);
   }else{
     narrationPaused = true;
-    setPauseButtonLabel('Resume');
+    if(narrationPauseBtn) narrationPauseBtn.textContent = 'Resume';
     narrationAudio.pause();
     if('speechSynthesis' in window){ window.speechSynthesis.pause(); }
     setNarrationStatus('Narration paused');
@@ -2078,7 +1930,6 @@ function pauseOrResumeNarration(){
 narrationAudio.addEventListener('loadedmetadata',()=>{
   updateAudioProgress();
   resyncNarrationTextCuesToAudio();
-  applyPendingNarrationSeek();
   updateSubtitleFromAudio();
 });
 narrationAudio.addEventListener('durationchange',()=>{
@@ -2174,7 +2025,7 @@ function startNarrationFromFirstSlide(){
   narrationStarted = true;
   narrationPaused = false;
   if(narrationToggleBtn) narrationToggleBtn.textContent = 'Narration On';
-  setPauseButtonLabel('Pause');
+  if(narrationPauseBtn) narrationPauseBtn.textContent = 'Pause';
   showSlide(0);
 }
 document.querySelectorAll('.start-narration-btn').forEach(btn=>btn.addEventListener('click', startNarrationFromFirstSlide));
@@ -2195,33 +2046,7 @@ document.getElementById('theme-btn').addEventListener('click',()=>{
 if(narrationStartBtn) narrationStartBtn.addEventListener('click', startNarrationMode);
 if(narrationToggleBtn) narrationToggleBtn.addEventListener('click', toggleNarrationMode);
 if(narrationPauseBtn) narrationPauseBtn.addEventListener('click', pauseOrResumeNarration);
-if(narrationStopBtn) narrationStopBtn.addEventListener('click', stopNarrationSession);
-if(narrationReplayBtn) narrationReplayBtn.addEventListener('click',()=>{ if(requestLocalAudioFolder(false)) return; narrationStarted=true; narrationEnabled=true; narrationPaused=false; pendingNarrationCueIndex=null; setPauseButtonLabel('Pause'); playCurrentNarration(); });
-if(sideCaptionList){
-  // Let students browse ahead/back in the narration without fighting auto-follow.
-  // Auto-follow resumes after a brief period of no manual scrolling.
-  sideCaptionList.addEventListener('wheel', markCaptionUserBrowsing, {passive:true});
-  sideCaptionList.addEventListener('touchstart', markCaptionUserBrowsing, {passive:true});
-  sideCaptionList.addEventListener('touchmove', markCaptionUserBrowsing, {passive:true});
-  sideCaptionList.addEventListener('pointerdown', ()=>{ captionPointerActive = true; markCaptionUserBrowsing(); });
-  window.addEventListener('pointerup', ()=>{ if(captionPointerActive){ captionPointerActive = false; resumeCaptionAutoFollowAfterIdle(); } });
-  sideCaptionList.addEventListener('keydown', event => {
-    if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End'].includes(event.key)) markCaptionUserBrowsing();
-  });
-
-  sideCaptionList.addEventListener('click', event => {
-    const item = event.target.closest('.side-caption-item[data-cue-index]');
-    if(!item || !sideCaptionList.contains(item)) return;
-    seekNarrationToCue(Number(item.dataset.cueIndex));
-  });
-  sideCaptionList.addEventListener('keydown', event => {
-    if(event.key !== 'Enter' && event.key !== ' ') return;
-    const item = event.target.closest('.side-caption-item[data-cue-index]');
-    if(!item || !sideCaptionList.contains(item)) return;
-    event.preventDefault();
-    seekNarrationToCue(Number(item.dataset.cueIndex));
-  });
-}
+if(narrationReplayBtn) narrationReplayBtn.addEventListener('click',()=>{ if(requestLocalAudioFolder(false)) return; narrationStarted=true; narrationEnabled=true; playCurrentNarration(); });
 if(narrationSpeed) narrationSpeed.addEventListener('change',()=>{
   narrationAudio.playbackRate = Number(narrationSpeed.value) || 1;
   setNarrationStatus(`Speed changed to ${narrationSpeed.value}x`);
@@ -2232,6 +2057,10 @@ if(narrationSpeed) narrationSpeed.addEventListener('change',()=>{
 });
 if(captionsToggleBtn) captionsToggleBtn.addEventListener('click', toggleCaptions);
 if(sideCaptionToggle) sideCaptionToggle.addEventListener('click', toggleCaptions);
+const transcriptToggle = document.getElementById('narration-transcript-toggle');
+if(transcriptToggle) transcriptToggle.addEventListener('click',()=>{ updateTranscript(); transcriptPanel && transcriptPanel.classList.toggle('open'); });
+const transcriptClose = document.getElementById('transcript-close');
+if(transcriptClose) transcriptClose.addEventListener('click',()=>transcriptPanel && transcriptPanel.classList.remove('open'));
 document.getElementById('restart-python').addEventListener('click',()=>{
   pyodide = null; pyodideLoading = null;
   setRuntime('Python reset. It will load again when a cell runs.');
@@ -2354,5 +2183,5 @@ if(window.require){
 showSlide(0);
 updateTranscript();
 </script>
-</body>
+<aside aria-label="Slide narration transcript" class="transcript-panel" id="transcript-panel"><div class="transcript-head"><strong id="transcript-title">Narration Transcript</strong><button aria-label="Close transcript" class="transcript-close" id="transcript-close" type="button">×</button></div><div class="transcript-body" id="transcript-body"></div><div class="transcript-note">Tip: the page uses only the pre-recorded audio files in the audio folder. If audio does not play, check that the matching slide audio file is uploaded with this HTML page.</div></aside></body>
 </html>
