@@ -1,0 +1,107 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:02.024
+This slide compares three terms that are
+
+00:00:02.050 --> 00:00:05.379
+sometimes used loosely module package and library
+
+00:00:06.316 --> 00:00:07.960
+A module is the smallest of the
+
+00:00:07.987 --> 00:00:11.118
+three concepts in this comparison It is
+
+00:00:11.145 --> 00:00:13.947
+usually one Python file that contains reusable
+
+00:00:13.974 --> 00:00:17.605
+code Examples include the built-in math module
+
+00:00:17.632 --> 00:00:19.421
+or a file that we create ourselves
+
+00:00:19.618 --> 00:00:22.658
+such as calculations dot P Y A
+
+00:00:22.684 --> 00:00:24.763
+package is a folder that groups related
+
+00:00:24.789 --> 00:00:28.618
+modules For example a package named analytics
+
+00:00:28.645 --> 00:00:30.895
+could contain finance dot P Y health
+
+00:00:30.921 --> 00:00:32.763
+dot P Y and reporting dot P
+
+00:00:32.789 --> 00:00:35.947
+Y A library is a larger collection
+
+00:00:35.974 --> 00:00:39.895
+of reusable tools Libraries may contain several
+
+00:00:39.908 --> 00:00:43.868
+packages and many modules NumPy and Pandas
+
+00:00:43.895 --> 00:00:46.289
+are good examples of widely used libraries
+
+00:00:46.316 --> 00:00:49.276
+in data analytics A simple way to
+
+00:00:49.289 --> 00:00:52.934
+remember the relationship is this Module means
+
+00:00:52.961 --> 00:00:57.553
+file Package means folder Library means a
+
+00:00:57.579 --> 00:01:01.368
+larger reusable collection of tools The exact
+
+00:01:01.395 --> 00:01:04.039
+technical details can become more complicated in
+
+00:01:04.053 --> 00:01:07.118
+professional software development but this simple
+model
+
+00:01:07.145 --> 00:01:09.684
+is enough for our course Use a
+
+00:01:09.697 --> 00:01:11.408
+module when one file can hold a
+
+00:01:11.421 --> 00:01:14.803
+related set of functions or constants Use
+
+00:01:14.829 --> 00:01:16.987
+a package when the project contains several
+
+00:01:17.013 --> 00:01:19.355
+related modules that should be grouped together
+
+00:01:20.289 --> 00:01:22.382
+Use a library when a larger collection
+
+00:01:22.408 --> 00:01:24.592
+of reusable tools is shared across many
+
+00:01:24.618 --> 00:01:27.566
+tasks or projects As we move into
+
+00:01:27.592 --> 00:01:29.816
+NumPy and Pandas later in the course
+
+00:01:30.105 --> 00:01:31.763
+you will see that importing a library
+
+00:01:31.789 --> 00:01:33.961
+gives us access to many organized tools
+
+00:01:33.987 --> 00:01:36.250
+that other developers have already created and
+
+00:01:36.276 --> 00:01:36.763
+tested

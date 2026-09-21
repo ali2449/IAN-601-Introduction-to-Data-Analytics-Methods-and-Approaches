@@ -1,0 +1,127 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:03.497
+This example brings several object-oriented ideas
+together
+
+00:00:03.524 --> 00:00:06.645
+in a small analytics class The class
+
+00:00:06.658 --> 00:00:09.868
+is named SalesReport Its purpose is to
+
+00:00:09.895 --> 00:00:11.895
+store a collection of sales values and
+
+00:00:11.921 --> 00:00:16.079
+provide several related summary calculations The
+dunder
+
+00:00:16.092 --> 00:00:18.013
+init method receives a list of sales
+
+00:00:18.039 --> 00:00:19.816
+and stores it in self dot sales
+
+00:00:20.750 --> 00:00:23.868
+The first method is total sales It
+
+00:00:23.895 --> 00:00:25.816
+returns the sum of all values in
+
+00:00:25.842 --> 00:00:28.776
+the list The second method is average
+
+00:00:28.803 --> 00:00:31.895
+sale It adds all sales values and
+
+00:00:31.921 --> 00:00:34.882
+divides by the number of values The
+
+00:00:34.908 --> 00:00:37.961
+third method is high sales count This
+
+00:00:37.974 --> 00:00:41.158
+method receives a cutoff value It starts
+
+00:00:41.184 --> 00:00:42.961
+a counter at zero loops through each
+
+00:00:42.987 --> 00:00:45.316
+sale and increases the counter whenever a
+
+00:00:45.342 --> 00:00:46.921
+sale is greater than or equal to
+
+00:00:46.947 --> 00:00:50.592
+the cutoff Finally it returns the count
+
+00:00:51.500 --> 00:00:54.289
+Next we create one SalesReport object using
+
+00:00:54.316 --> 00:00:56.513
+the values one hundred twenty two hundred
+
+00:00:56.539 --> 00:00:59.605
+fifty one hundred seventy-five three hundred twenty
+
+00:00:59.776 --> 00:01:02.658
+and ninety Before you run the cell
+
+00:01:02.908 --> 00:01:05.776
+let us predict the output The total
+
+00:01:05.789 --> 00:01:07.711
+of these five values is nine hundred
+
+00:01:07.737 --> 00:01:11.658
+fifty-five The average is one hundred ninety-one
+
+00:01:12.592 --> 00:01:14.447
+If the cutoff is two hundred only
+
+00:01:14.474 --> 00:01:16.553
+two values meet or exceed the cutoff
+
+00:01:16.803 --> 00:01:18.934
+two hundred fifty and three hundred twenty
+
+00:01:19.868 --> 00:01:22.816
+Click Run now The terminal should show
+
+00:01:22.842 --> 00:01:25.263
+total sales of nine hundred fifty-five an
+
+00:01:25.289 --> 00:01:27.355
+average sale of one hundred ninety-one point
+
+00:01:27.368 --> 00:01:29.197
+zero and two sales at least two
+
+00:01:29.224 --> 00:01:31.960
+hundred Now change the cutoff in the
+
+00:01:31.987 --> 00:01:33.776
+final line from two hundred to one
+
+00:01:33.803 --> 00:01:38.105
+hundred fifty Run the cell again More
+
+00:01:38.132 --> 00:01:41.211
+values should now meet the threshold This
+
+00:01:41.237 --> 00:01:43.026
+example shows when a class can be
+
+00:01:43.053 --> 00:01:46.434
+useful in analytics The data and several
+
+00:01:46.461 --> 00:01:50.697
+repeated actions belong together The SalesReport
+object
+
+00:01:50.711 --> 00:01:53.039
+stores the sales values and provides methods
+
+00:01:53.066 --> 00:01:54.645
+that summarize those values

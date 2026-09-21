@@ -1,0 +1,113 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:01.866
+This code shows how one class can
+
+00:00:01.892 --> 00:00:05.132
+create two separate objects We define a
+
+00:00:05.145 --> 00:00:08.421
+class named Product The dunder init method
+
+00:00:08.447 --> 00:00:09.908
+receives a name and a price and
+
+00:00:09.934 --> 00:00:11.526
+stores them as self dot name and
+
+00:00:11.553 --> 00:00:14.868
+self dot price The class also contains
+
+00:00:14.895 --> 00:00:17.829
+a method named sale price A method
+
+00:00:17.855 --> 00:00:19.671
+is simply a function that belongs to
+
+00:00:19.697 --> 00:00:22.895
+a class The sale price method receives
+
+00:00:22.921 --> 00:00:26.145
+a discount rate It multiplies the object's
+
+00:00:26.158 --> 00:00:28.316
+price by one minus the discount rate
+
+00:00:29.237 --> 00:00:32.658
+Next we create item one Item one
+
+00:00:32.671 --> 00:00:35.079
+is a Product object representing a laptop
+
+00:00:35.105 --> 00:00:36.868
+with a regular price of nine hundred
+
+00:00:36.895 --> 00:00:41.276
+dollars Then we create item two Item
+
+00:00:41.303 --> 00:00:43.513
+two represents a monitor with a regular
+
+00:00:43.526 --> 00:00:46.763
+price of three hundred dollars Notice that
+
+00:00:46.789 --> 00:00:49.079
+both objects use the same Product class
+
+00:00:49.316 --> 00:00:52.303
+but they store different values The print
+
+00:00:52.329 --> 00:00:55.000
+statements display each product's regular price and
+
+00:00:55.026 --> 00:00:56.882
+its sale price using a ten percent
+
+00:00:56.895 --> 00:01:00.197
+discount Before running the code let us
+
+00:01:00.224 --> 00:01:03.210
+predict the results Ten percent of nine
+
+00:01:03.237 --> 00:01:05.461
+hundred is ninety so the laptop sale
+
+00:01:05.474 --> 00:01:07.447
+price should be eight hundred ten dollars
+
+00:01:08.368 --> 00:01:10.210
+Ten percent of three hundred is thirty
+
+00:01:10.447 --> 00:01:12.079
+so the monitor sale price should be
+
+00:01:12.105 --> 00:01:15.408
+two hundred seventy dollars Click Run now
+
+00:01:15.421 --> 00:01:17.566
+and confirm those results in the terminal
+
+00:01:18.500 --> 00:01:22.105
+Next try creating a third object For
+
+00:01:22.118 --> 00:01:24.632
+example create a Product named Keyboard with
+
+00:01:24.658 --> 00:01:27.382
+a price of one hundred Then print
+
+00:01:27.408 --> 00:01:29.184
+its sale price using the same ten
+
+00:01:29.197 --> 00:01:32.553
+percent discount This demonstrates one of the
+
+00:01:32.579 --> 00:01:36.763
+central ideas of object-oriented programming We
+define
+
+00:01:36.789 --> 00:01:38.500
+the behavior once in the class and
+
+00:01:38.526 --> 00:01:40.355
+reuse it across many objects

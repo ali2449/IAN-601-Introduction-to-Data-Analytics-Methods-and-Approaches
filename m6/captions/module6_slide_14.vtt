@@ -1,0 +1,91 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:02.208
+Now we move from modules and packages
+
+00:00:02.234 --> 00:00:05.776
+into the basics of object-oriented programming The
+
+00:00:05.789 --> 00:00:08.829
+most important new term is class A
+
+00:00:08.842 --> 00:00:11.960
+class is a blueprint It describes what
+
+00:00:11.974 --> 00:00:14.026
+information an object should store and what
+
+00:00:14.053 --> 00:00:15.763
+actions that object should be able to
+
+00:00:15.789 --> 00:00:18.724
+perform Think about a product in an
+
+00:00:18.750 --> 00:00:22.026
+analytics system Every product may have a
+
+00:00:22.053 --> 00:00:25.408
+name a price and a category A
+
+00:00:25.434 --> 00:00:27.342
+product may also need actions such as
+
+00:00:27.368 --> 00:00:30.447
+calculating a discounted price or updating inventory
+
+00:00:31.382 --> 00:00:33.092
+Instead of storing the data in one
+
+00:00:33.118 --> 00:00:35.276
+place and the related functions somewhere else
+
+00:00:35.566 --> 00:00:36.987
+a class can keep the data and
+
+00:00:37.013 --> 00:00:40.724
+behavior together For example we might define
+
+00:00:40.750 --> 00:00:43.816
+a class named Sale The class describes
+
+00:00:43.842 --> 00:00:47.132
+what every Sale object should contain After
+
+00:00:47.158 --> 00:00:49.303
+defining the class we can create an
+
+00:00:49.316 --> 00:00:52.500
+object from that blueprint An object is
+
+00:00:52.526 --> 00:00:55.487
+one actual instance If the class is
+
+00:00:55.513 --> 00:00:57.908
+Sale one object might represent the sale
+
+00:00:57.921 --> 00:01:00.066
+of a notebook while another object might
+
+00:01:00.092 --> 00:01:02.895
+represent the sale of a laptop The
+
+00:01:02.921 --> 00:01:05.053
+class itself is not the data record
+
+00:01:05.974 --> 00:01:09.158
+It is the definition or blueprint The
+
+00:01:09.184 --> 00:01:11.237
+objects created from the class hold their
+
+00:01:11.263 --> 00:01:14.263
+own values For this course we will
+
+00:01:14.289 --> 00:01:17.290
+keep classes simple We will focus on
+
+00:01:17.316 --> 00:01:20.197
+attributes which store data and methods which
+
+00:01:20.211 --> 00:01:22.053
+perform actions using that data

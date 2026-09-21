@@ -1,0 +1,103 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:02.234
+This example creates a Sale class that
+
+00:00:02.261 --> 00:00:05.566
+combines stored data with a calculation The
+
+00:00:05.592 --> 00:00:07.711
+dunder init method receives an item a
+
+00:00:07.737 --> 00:00:10.947
+price and a quantity These values are
+
+00:00:10.974 --> 00:00:13.053
+stored as self dot item self dot
+
+00:00:13.066 --> 00:00:16.421
+price and self dot quantity The class
+
+00:00:16.447 --> 00:00:19.434
+also defines a method named total The
+
+00:00:19.447 --> 00:00:22.066
+total method returns self dot price multiplied
+
+00:00:22.092 --> 00:00:25.408
+by self dot quantity Notice that total
+
+00:00:25.434 --> 00:00:27.158
+does not need the price and quantity
+
+00:00:27.171 --> 00:00:30.066
+to be passed again Those values are
+
+00:00:30.092 --> 00:00:33.711
+already stored inside the object Next we
+
+00:00:33.737 --> 00:00:36.829
+create one Sale object The item is
+
+00:00:36.855 --> 00:00:39.000
+Notebook the price is twelve dollars and
+
+00:00:39.026 --> 00:00:41.342
+fifty cents and the quantity is four
+
+00:00:42.276 --> 00:00:44.316
+The print statements display the item name
+
+00:00:44.487 --> 00:00:46.447
+the quantity and the result of calling
+
+00:00:46.474 --> 00:00:49.724
+sale dot total Before running the cell
+
+00:00:49.961 --> 00:00:53.618
+calculate the total yourself Twelve dollars and
+
+00:00:53.645 --> 00:00:56.184
+fifty cents multiplied by four equals fifty
+
+00:00:56.211 --> 00:01:00.368
+dollars Click Run now The terminal should
+
+00:01:00.382 --> 00:01:02.171
+show Notebook as the item four as
+
+00:01:02.197 --> 00:01:04.039
+the quantity and a total of fifty
+
+00:01:04.053 --> 00:01:07.579
+dollars formatted with two decimal places Now
+
+00:01:07.605 --> 00:01:09.605
+change the quantity from four to six
+
+00:01:09.632 --> 00:01:12.303
+and run the cell again The total
+
+00:01:12.329 --> 00:01:14.908
+should change automatically because the method uses
+
+00:01:14.934 --> 00:01:18.171
+the object's current price and quantity You
+
+00:01:18.197 --> 00:01:20.197
+can also change the price and observe
+
+00:01:20.224 --> 00:01:23.079
+the result The main idea is that
+
+00:01:23.092 --> 00:01:26.526
+related data and behavior stay together The
+
+00:01:26.553 --> 00:01:28.434
+Sale object stores the details of the
+
+00:01:28.447 --> 00:01:30.618
+sale and its total method performs a
+
+00:01:30.645 --> 00:01:33.316
+calculation that belongs naturally to that sale

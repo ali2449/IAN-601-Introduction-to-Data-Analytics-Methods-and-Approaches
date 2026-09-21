@@ -1,0 +1,97 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:01.734
+A package is the next level of
+
+00:00:01.761 --> 00:00:05.171
+organization above a module Remember that a
+
+00:00:05.197 --> 00:00:08.592
+module is usually one Python file A
+
+00:00:08.618 --> 00:00:10.671
+package is usually a folder that groups
+
+00:00:10.697 --> 00:00:14.632
+related Python modules together Imagine that you
+
+00:00:14.658 --> 00:00:18.013
+are building a larger analytics project You
+
+00:00:18.026 --> 00:00:20.539
+might have one module for finance calculations
+
+00:00:20.750 --> 00:00:23.658
+one module for health-related calculations and one
+
+00:00:23.684 --> 00:00:27.013
+module for reporting tools Instead of leaving
+
+00:00:27.039 --> 00:00:28.395
+all of those files loose in the
+
+00:00:28.421 --> 00:00:30.474
+main project folder you can group them
+
+00:00:30.500 --> 00:00:33.526
+inside a package folder This makes the
+
+00:00:33.553 --> 00:00:37.487
+project structure easier to understand When someone
+
+00:00:37.513 --> 00:00:39.526
+looks at the folder they can immediately
+
+00:00:39.553 --> 00:00:43.566
+see which files belong together Traditionally Python
+
+00:00:43.592 --> 00:00:45.829
+packages often contain a special file named
+
+00:00:45.842 --> 00:00:48.066
+dunder init dot P Y Modern Python
+
+00:00:48.092 --> 00:00:50.303
+can support some package structures without that
+
+00:00:50.329 --> 00:00:52.145
+file but you will still see dunder
+
+00:00:52.158 --> 00:00:53.763
+init dot P Y in many real
+
+00:00:53.789 --> 00:00:57.355
+projects For this introductory module you do
+
+00:00:57.368 --> 00:00:59.618
+not need to build a complicated package
+
+00:01:00.553 --> 00:01:02.382
+The main goal is to understand the
+
+00:01:02.395 --> 00:01:06.118
+hierarchy A module is generally one file
+
+00:01:07.039 --> 00:01:08.934
+A package is a folder of related
+
+00:01:08.961 --> 00:01:12.329
+modules A library is a broader collection
+
+00:01:12.355 --> 00:01:14.816
+of reusable tools that may contain multiple
+
+00:01:14.829 --> 00:01:18.092
+packages and modules Later when we use
+
+00:01:18.118 --> 00:01:20.711
+libraries such as NumPy and Pandas this
+
+00:01:20.724 --> 00:01:22.842
+terminology will make more sense because you
+
+00:01:22.868 --> 00:01:24.816
+will see how large collections of Python
+
+00:01:24.842 --> 00:01:25.921
+tools are organized

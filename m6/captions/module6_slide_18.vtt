@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:01.918
+Now let us focus more closely on
+
+00:00:01.945 --> 00:00:05.066
+methods and the word self An attribute
+
+00:00:05.079 --> 00:00:08.158
+is data stored inside an object For
+
+00:00:08.171 --> 00:00:10.553
+example self dot price stores a price
+
+00:00:10.579 --> 00:00:13.408
+that belongs to the current object A
+
+00:00:13.421 --> 00:00:15.289
+method is a function that belongs to
+
+00:00:15.316 --> 00:00:18.539
+a class For example a method named
+
+00:00:18.566 --> 00:00:22.026
+total might multiply price by quantity The
+
+00:00:22.053 --> 00:00:24.197
+word self refers to the current object
+
+00:00:24.224 --> 00:00:27.132
+that is using the method Suppose we
+
+00:00:27.158 --> 00:00:30.579
+have two Sale objects One sale contains
+
+00:00:30.592 --> 00:00:32.408
+a notebook with a quantity of four
+
+00:00:33.342 --> 00:00:35.289
+Another sale contains a pen with a
+
+00:00:35.303 --> 00:00:38.013
+quantity of ten When we call the
+
+00:00:38.026 --> 00:00:40.237
+total method on the notebook sale self
+
+00:00:40.263 --> 00:00:43.303
+refers to the notebook sale object When
+
+00:00:43.316 --> 00:00:44.645
+we call the same method on the
+
+00:00:44.671 --> 00:00:46.763
+pen sale self refers to the pen
+
+00:00:46.776 --> 00:00:49.789
+sale object This is why one method
+
+00:00:49.816 --> 00:00:52.789
+can work with many different objects The
+
+00:00:52.803 --> 00:00:55.474
+method definition is shared but self connects
+
+00:00:55.500 --> 00:00:57.895
+the calculation to the correct object's data
+
+00:00:58.803 --> 00:01:02.408
+At first self may feel unusual A
+
+00:01:02.434 --> 00:01:04.355
+useful way to read self dot price
+
+00:01:04.368 --> 00:01:07.500
+is this object's price Read self dot
+
+00:01:07.526 --> 00:01:10.803
+quantity as this object's quantity When you
+
+00:01:10.829 --> 00:01:12.447
+see a method such as total with
+
+00:01:12.474 --> 00:01:14.289
+self inside it think of the method
+
+00:01:14.316 --> 00:01:16.250
+as saying use the values stored in
+
+00:01:16.276 --> 00:01:19.355
+this particular object You will see this
+
+00:01:19.382 --> 00:01:21.553
+idea again in the next code example
