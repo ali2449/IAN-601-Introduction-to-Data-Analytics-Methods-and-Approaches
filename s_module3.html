@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -49,6 +49,17 @@
 .output a {
   color: #bfdbfe !important;
 }
+
+/* Narration, captions, transcript, and fixed 16:9 presentation controls */
+.stage{padding:.55rem}.slide{inset:0;padding:.55rem}.slide.active{display:grid;place-items:center}
+.slide-inner{height:100%;width:auto;max-width:100%;max-height:100%;aspect-ratio:16/9;margin:auto}
+.bottom-nav{position:relative;z-index:30;display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"prev narr next" "sub sub sub" "audio audio audio";align-items:center;gap:.42rem .7rem;padding:.48rem .85rem .7rem;border-top:1px solid var(--border,var(--line,#cbd5e1));background:var(--slide,var(--panel,#fff))}
+.nav-left{grid-area:prev}.nav-right{grid-area:next}.narration-controls{grid-area:narr;display:flex;align-items:center;justify-content:center;gap:.38rem;flex-wrap:wrap;min-width:0}.narration-controls .btn{padding:.42rem .62rem;font-size:.78rem}
+.narration-controls select{max-width:92px;padding:.4rem .5rem;font-size:.78rem}.subtitle-bar{grid-area:sub;min-height:34px;max-height:62px;overflow:auto;display:flex;align-items:center;justify-content:center;padding:.38rem .8rem;border:1px solid var(--border,var(--line,#cbd5e1));border-radius:.65rem;background:var(--slide-2,var(--panel2,#f8fafc));color:var(--text);font-size:.9rem;line-height:1.35;text-align:center}.subtitle-bar[hidden]{display:none}
+.audio-row{grid-area:audio;display:grid;grid-template-columns:minmax(170px,1.25fr) auto minmax(180px,2fr) auto auto minmax(150px,.9fr);gap:.5rem;align-items:center;min-width:0}.audio-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:.78rem;font-weight:750}.audio-time{color:var(--muted);font-size:.75rem;white-space:nowrap}.seek-slider{width:100%}.bottom-slide-select{max-width:240px;width:100%;padding:.4rem .55rem;font-size:.78rem}.counter{min-width:70px;font-size:.82rem}.progress{height:4px}#narration-audio{display:none}
+.transcript-panel{position:fixed;top:0;right:0;bottom:0;z-index:1000;width:min(430px,92vw);display:grid;grid-template-rows:auto 1fr;background:var(--slide,var(--panel,#fff));border-left:1px solid var(--border,var(--line,#cbd5e1));box-shadow:-18px 0 42px rgba(15,23,42,.22);transform:translateX(105%);transition:transform .22s ease}.transcript-panel.open{transform:translateX(0)}.transcript-head{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1rem;border-bottom:1px solid var(--border,var(--line,#cbd5e1))}.transcript-head h2{margin:0;font-size:1rem}.transcript-body{overflow:auto;padding:1rem 1.1rem 2rem;line-height:1.65;white-space:pre-wrap}.audio-error{color:var(--danger,var(--bad,#b91c1c))}
+@media(max-width:950px){.audio-row{grid-template-columns:1fr auto 1.4fr auto}.audio-row .audio-time{display:none}.bottom-slide-select{max-width:none}}@media(max-width:760px){.bottom-nav{position:sticky;bottom:0;grid-template-columns:auto 1fr auto;grid-template-areas:"prev narr next" "sub sub sub" "audio audio audio";padding:.4rem .45rem .65rem}.narration-controls{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.audio-row{grid-template-columns:1fr auto}.audio-row .seek-slider,.audio-row .audio-time{grid-column:1/-1}.bottom-slide-select{grid-column:1/-1}.slide-inner{width:100%;height:auto;aspect-ratio:16/9}}@media print{.subtitle-bar,.audio-row,.narration-controls,.transcript-panel{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -82,7 +93,7 @@
       </div>
     </div>
     <div class="callout"><strong>Goal:</strong> Define a function, pass values into it, return values from it, and reuse it in small analytics examples.</div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 1</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 1</span></footer>
   </div>
 </section><section class="slide standard" data-title="How to use this page">
   <div class="slide-inner">
@@ -98,7 +109,7 @@
       <div class="timeline-item"><span>5</span><h3>Reuse</h3><p>Apply the pattern in a new example.</p></div>
     </div>
     <div class="callout secondary">All slide points are visible. Use the Next and Previous buttons, arrow keys, or the slide menu.</div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 2</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 2</span></footer>
   </div>
 </section><section class="slide standard" data-title="Learning path for Module 3">
   <div class="slide-inner">
@@ -115,7 +126,7 @@
       <div class="timeline-item"><span>6</span><h3>Applications</h3><p>Classify, calculate, and build a mini calculator.</p></div>
     </div>
     <div class="callout">By the end, a function should feel like a named analytical step: input values go in, useful results come out.</div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 3</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 3</span></footer>
   </div>
 </section><section class="slide standard" data-title="Why functions matter in analytics">
   <div class="slide-inner">
@@ -138,7 +149,7 @@
         <div><h3>Function logic</h3><p>One clear reusable step.</p><code>get_profit(sales, costs)</code></div>
       </div>
     </div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 4</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 4</span></footer>
   </div>
 </section><section class="slide standard" data-title="A function has a definition and a call">
   <div class="slide-inner">
@@ -155,7 +166,7 @@
       </div>
       <div class="process-card"><div class="process-step accent">Define</div><div class="process-arrow">↓</div><div class="process-step">Store instructions</div><div class="process-arrow">↓</div><div class="process-step accent">Call</div><div class="process-arrow">↓</div><div class="process-step">Run body</div></div>
     </div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 5</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 5</span></footer>
   </div>
 </section><section class="slide standard" data-title="Code: a function with no parameters">
   <div class="slide-inner">
@@ -184,7 +195,7 @@ show_welcome()</textarea>
   </div>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>Python stores the function body, then runs it when show_welcome() is called.</span></div><div class="note-card"><strong>Key detail</strong><span>The colon and indentation show where the function body begins.</span></div><div class="note-card"><strong>Change to try</strong><span>Change the message inside print() and run again.</span></div></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 6</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 6</span></footer>
   </div>
 </section><section class="slide standard" data-title="Code: put a calculation inside a function">
   <div class="slide-inner">
@@ -215,7 +226,7 @@ calculate_profit()</textarea>
   </div>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The function calculates profit and prints the result.</span></div><div class="note-card"><strong>Limitation</strong><span>The numbers are fixed inside the function, so it is not flexible yet.</span></div><div class="note-card"><strong>Next step</strong><span>Parameters will let the same function work with different inputs.</span></div></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 7</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 7</span></footer>
   </div>
 </section><section class="slide standard" data-title="Parameters receive values">
   <div class="slide-inner">
@@ -231,7 +242,7 @@ calculate_profit()</textarea>
       </div>
       <div><div class="table-wrap"><table><thead><tr><th>Term</th><th>Meaning</th><th>Example</th></tr></thead><tbody><tr><td>Parameter</td><td>A placeholder name inside the function.</td><td><code>name</code> in <code>def greet(name)</code></td></tr><tr><td>Argument</td><td>The actual value passed into the function.</td><td><code>"Avery"</code> in <code>greet("Avery")</code></td></tr><tr><td>Call</td><td>The statement that runs the function.</td><td><code>greet("Avery")</code></td></tr></tbody></table></div></div>
     </div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 8</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 8</span></footer>
   </div>
 </section><section class="slide standard" data-title="Code: pass one argument">
   <div class="slide-inner">
@@ -260,7 +271,7 @@ greet(&quot;Avery&quot;)</textarea>
   </div>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The argument &quot;Avery&quot; is assigned to the parameter name while the function runs.</span></div><div class="note-card"><strong>Why it matters</strong><span>The same function can greet any value supplied to it.</span></div><div class="note-card"><strong>Change to try</strong><span>Replace &quot;Avery&quot; with another fictional name or label.</span></div></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 9</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 9</span></footer>
   </div>
 </section><section class="slide standard" data-title="Code: pass two analytical inputs">
   <div class="slide-inner">
@@ -290,7 +301,7 @@ profit_report(1250, 900)</textarea>
   </div>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>sales receives 1250 and costs receives 900.</span></div><div class="note-card"><strong>Analytics pattern</strong><span>A function can package a repeated metric calculation.</span></div><div class="note-card"><strong>Change to try</strong><span>Call profit_report(2000, 1600) on a new line.</span></div></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 10</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 10</span></footer>
   </div>
 </section><section class="slide standard" data-title="Default parameters supply common values">
   <div class="slide-inner">
@@ -327,7 +338,7 @@ print(calculate_tax(500, 0.15))</textarea>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div></div>
     </div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 11</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 11</span></footer>
   </div>
 </section><section class="slide standard" data-title="return is different from print">
   <div class="slide-inner">
@@ -340,7 +351,7 @@ print(calculate_tax(500, 0.15))</textarea>
       <div class="compare-card"><h3><code>return</code></h3><p>Sends a value back so another line of code can store it, format it, or use it in another calculation.</p></div>
     </div>
     <div class="callout warning"><strong>Rule of thumb:</strong> use <code>return</code> when the result should be reused later.</div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 12</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 12</span></footer>
   </div>
 </section><section class="slide standard" data-title="Code: return a value">
   <div class="slide-inner">
@@ -370,7 +381,7 @@ print(profit)</textarea>
   </div>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The returned value is stored in the variable profit.</span></div><div class="note-card"><strong>Why it matters</strong><span>The result can now be used in later calculations or reports.</span></div><div class="note-card"><strong>Change to try</strong><span>Use get_profit(2500, 2100) and print the result.</span></div></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 13</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 13</span></footer>
   </div>
 </section><section class="slide standard" data-title="Code: return more than one value">
   <div class="slide-inner">
@@ -401,7 +412,7 @@ print(&quot;High:&quot;, high)</textarea>
   </div>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The function returns two results, and Python unpacks them into low and high.</span></div><div class="note-card"><strong>Use case</strong><span>A summary function may return several useful metrics.</span></div><div class="note-card"><strong>Change to try</strong><span>Add another number to the list and run again.</span></div></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 14</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 14</span></footer>
   </div>
 </section><section class="slide standard" data-title="Variables inside functions are local">
   <div class="slide-inner">
@@ -420,7 +431,7 @@ print(&quot;High:&quot;, high)</textarea>
       </div>
       <div class="process-card"><div class="process-step">Outside code</div><div class="process-arrow">↓ call</div><div class="process-step accent">Function workspace</div><div class="process-arrow">↓ return</div><div class="process-step">Reusable result</div></div>
     </div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 15</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 15</span></footer>
   </div>
 </section><section class="slide standard" data-title="Code: catch a conversion error">
   <div class="slide-inner">
@@ -453,7 +464,7 @@ print(safe_integer(&quot;forty-two&quot;))</textarea>
   </div>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The first value converts to 42. The second cannot convert, so the function returns None.</span></div><div class="note-card"><strong>Why it matters</strong><span>Real data often contains unexpected text or missing values.</span></div><div class="note-card"><strong>Change to try</strong><span>Try &quot;007&quot;, &quot;3.5&quot;, and an empty string.</span></div></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 16</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 16</span></footer>
   </div>
 </section><section class="slide standard" data-title="Code: add a docstring">
   <div class="slide-inner">
@@ -484,7 +495,7 @@ print(average(80, 90))</textarea>
   </div>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The text inside triple quotes becomes documentation for the function.</span></div><div class="note-card"><strong>Why it matters</strong><span>A clear docstring helps future readers know the function purpose.</span></div><div class="note-card"><strong>Change to try</strong><span>Rewrite the docstring in your own words.</span></div></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 17</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 17</span></footer>
   </div>
 </section><section class="slide standard" data-title="Code: compose small functions">
   <div class="slide-inner">
@@ -517,7 +528,7 @@ print(f&quot;Margin: {margin(p, 1500):.1%}&quot;)</textarea>
   </div>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The first function produces a profit value. The second function uses that value to calculate margin.</span></div><div class="note-card"><strong>Why it matters</strong><span>Small functions are easier to test and combine.</span></div><div class="note-card"><strong>Change to try</strong><span>Change the sales and costs and compare the new margin.</span></div></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 18</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 18</span></footer>
   </div>
 </section><section class="slide standard" data-title="Practice ladder">
   <div class="slide-inner">
@@ -533,7 +544,7 @@ print(f&quot;Margin: {margin(p, 1500):.1%}&quot;)</textarea>
       <div><span>5</span><h3>Mastery</h3><p>Use defaults, return, and documentation together.</p></div>
       <div><span>6</span><h3>Explain</h3><p>Describe input, process, and output.</p></div>
     </div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 19</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 19</span></footer>
   </div>
 </section><section class="slide standard" data-title="Practice code: foundation and building">
   <div class="slide-inner">
@@ -582,7 +593,7 @@ greet(&quot;Jordan&quot;)</textarea>
   </div>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 20</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 20</span></footer>
   </div>
 </section><section class="slide standard" data-title="Practice code: return and error handling">
   <div class="slide-inner">
@@ -635,7 +646,7 @@ print(parse_age(&quot;35&quot;))</textarea>
   </div>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 21</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 21</span></footer>
   </div>
 </section><section class="slide standard" data-title="Practice code: defaults and documentation">
   <div class="slide-inner">
@@ -665,7 +676,7 @@ print(f&quot;${tax(250):.2f}&quot;)</textarea>
   </div>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div><div class="notes-grid"><div class="note-card"><strong>Includes</strong><span>A parameter, a default value, a docstring, a return statement, and formatted output.</span></div><div class="note-card"><strong>Change to try</strong><span>Call tax(250, 0.10) to override the default rate.</span></div><div class="note-card"><strong>Reusable idea</strong><span>This pattern can be adapted to fees, discounts, or rates.</span></div></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 22</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 22</span></footer>
   </div>
 </section><section class="slide standard" data-title="Applied example: classify a temperature">
   <div class="slide-inner">
@@ -697,7 +708,7 @@ for temp in [98.2, 99.4, 97.9]:
   </div>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The same rule is applied to each value in the list.</span></div><div class="note-card"><strong>Important note</strong><span>This is a coding example only, not medical guidance.</span></div><div class="note-card"><strong>Change to try</strong><span>Change the threshold or add another temperature.</span></div></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 23</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 23</span></footer>
   </div>
 </section><section class="slide standard" data-title="Mini project: reusable calculator function">
   <div class="slide-inner">
@@ -734,7 +745,7 @@ print(calculate(&quot;divide&quot;, 20, 4))</textarea>
   </div>
   <pre class="output" aria-live="polite">Run this cell to see output.</pre>
 </div><div class="notes-grid"><div class="note-card"><strong>Combines</strong><span>Parameters, return values, conditionals, and a safety check.</span></div><div class="note-card"><strong>Extend it</strong><span>Add an operation such as exponent or modulo.</span></div><div class="note-card"><strong>Test it</strong><span>Run divide by zero and an unknown operation.</span></div></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 24</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 24</span></footer>
   </div>
 </section><section class="slide standard" data-title="Function design checklist">
   <div class="slide-inner">
@@ -751,7 +762,7 @@ print(calculate(&quot;divide&quot;, 20, 4))</textarea>
       <div class="check-card"><h3>Documentation</h3><p>Would a future reader understand its purpose?</p></div>
     </div>
     <div class="callout success"><strong>Good functions are small, named clearly, and easy to reuse.</strong></div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 25</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 25</span></footer>
   </div>
 </section><section class="slide standard" data-title="Summary">
   <div class="slide-inner">
@@ -768,17 +779,207 @@ print(calculate(&quot;divide&quot;, 20, 4))</textarea>
       <div><h3>Composition</h3><p>Small functions can form larger workflows.</p></div>
     </div>
     <div class="callout success"><strong>Next:</strong> Module 4 moves deeper into lists and tuples, which give functions more structured data to work with.</div></div>
-    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>Slide 26</span></footer>
+    <footer class="slide-footer"><span>Functions · Reusable Analytical Code</span><span>IAN 601 · Module 3 · Slide 26</span></footer>
   </div>
 </section></main>
   <footer class="bottom-nav">
-    <div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">← Previous</button></div>
-    <div class="counter" id="counter">1 / 26</div>
-    <div class="nav-right"><button class="btn" id="next-btn" type="button">Next →</button></div>
-    <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
-  </footer>
+<div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">← Previous</button></div>
+<div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div>
+<div class="nav-right"><button class="btn" id="next-btn" type="button">Next →</button></div>
+<div class="subtitle-bar" id="subtitle-bar" hidden></div>
+<div class="audio-row"><div class="audio-title" id="audio-title">Slide 1 narration</div><button class="btn ghost" id="audio-play-btn" type="button">Play</button><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><div class="audio-time" id="audio-time">0:00 / 0:00</div><div class="counter" id="counter">1 / 26</div><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"></select></div>
+<audio id="narration-audio" preload="metadata"></audio><div class="progress"><div class="progress-bar" id="progress-bar"></div></div></footer>
+<aside class="transcript-panel" id="transcript-panel" aria-hidden="true"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn" type="button">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
 </div>
 <script>
+const MANIFEST = {
+  "prefix": "module3",
+  "slide_count": 26,
+  "slides": [
+    {
+      "slide": 1,
+      "title": "Functions",
+      "audio": "audio/module3_slide_01.mp3",
+      "captions": "captions/module3_slide_01.vtt",
+      "text": "Welcome to Module 3. This module focuses on Functions. We will build the topic in small steps and connect each idea to practical analytics work. Functions help turn repeated steps into named, reusable analytical tasks. Connect this idea to the larger workflow: how data is organized, transformed, checked, or communicated."
+    },
+    {
+      "slide": 2,
+      "title": "How to use this page",
+      "audio": "audio/module3_slide_02.mp3",
+      "captions": "captions/module3_slide_02.vtt",
+      "text": "Use this lesson actively. Read the idea, predict what should happen, run the example when code is available, then modify one small part and compare the result. Start with the concept on the slide. Execute the code in the browser. Connect the output to the explanation. Change one value or line at a time. Apply the pattern in a new example."
+    },
+    {
+      "slide": 3,
+      "title": "Learning path for Module 3",
+      "audio": "audio/module3_slide_03.mp3",
+      "captions": "captions/module3_slide_03.vtt",
+      "text": "This slide is the roadmap for Module 3. It shows how the ideas progress and how the later examples build on the earlier concepts. Define and call Create a reusable block with def. Send values into a function. Send results back to the program. Make the purpose clear with docstrings. Connect small functions into a workflow."
+    },
+    {
+      "slide": 4,
+      "title": "Why functions matter in analytics",
+      "audio": "audio/module3_slide_04.mp3",
+      "captions": "captions/module3_slide_04.vtt",
+      "text": "This slide focuses on Why functions matter in analytics. Start with the meaning of the idea, then connect it to the example and to analytical work. Without functions, repeated logic is copied again and again. With functions, the logic has one clear home. Less repetition: write the calculation once. Clearer names: describe the purpose of each task. Easier changes: update the function instead of many copies. Better testing: check a small unit of work. Same formula repeated in many places."
+    },
+    {
+      "slide": 5,
+      "title": "A function has a definition and a call",
+      "audio": "audio/module3_slide_05.mp3",
+      "captions": "captions/module3_slide_05.vtt",
+      "text": "This slide focuses on A function has a definition and a call. Start with the meaning of the idea, then connect it to the example and to analytical work. A function definition tells Python what the function should do. A function call tells Python to run it. Connect this idea to the larger workflow: how data is organized, transformed, checked, or communicated."
+    },
+    {
+      "slide": 6,
+      "title": "Code: a function with no parameters",
+      "audio": "audio/module3_slide_06.mp3",
+      "captions": "captions/module3_slide_06.vtt",
+      "text": "This slide focuses on Code: a function with no parameters. Start with the meaning of the idea, then connect it to the example and to analytical work. A function with no parameters Start with the smallest possible function: define one action, then call it. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 7,
+      "title": "Code: put a calculation inside a function",
+      "audio": "audio/module3_slide_07.mp3",
+      "captions": "captions/module3_slide_07.vtt",
+      "text": "This slide focuses on Code: put a calculation inside a function. Start with the meaning of the idea, then connect it to the example and to analytical work. Put a calculation inside a function The calculation is now stored as a reusable task. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 8,
+      "title": "Parameters receive values",
+      "audio": "audio/module3_slide_08.mp3",
+      "captions": "captions/module3_slide_08.vtt",
+      "text": "This slide focuses on Parameters receive values. Start with the meaning of the idea, then connect it to the example and to analytical work. A parameter is a name inside the function definition. An argument is the value supplied when the function is called. Connect this idea to the larger workflow: how data is organized, transformed, checked, or communicated."
+    },
+    {
+      "slide": 9,
+      "title": "Code: pass one argument",
+      "audio": "audio/module3_slide_09.mp3",
+      "captions": "captions/module3_slide_09.vtt",
+      "text": "This slide focuses on Code: pass one argument. Start with the meaning of the idea, then connect it to the example and to analytical work. Pass one argument Change the argument and run again. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 10,
+      "title": "Code: pass two analytical inputs",
+      "audio": "audio/module3_slide_10.mp3",
+      "captions": "captions/module3_slide_10.vtt",
+      "text": "This slide focuses on Code: pass two analytical inputs. Start with the meaning of the idea, then connect it to the example and to analytical work. Pass two analytical inputs Parameters make the same calculation work with different data. Analytics pattern Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 11,
+      "title": "Default parameters supply common values",
+      "audio": "audio/module3_slide_11.mp3",
+      "captions": "captions/module3_slide_11.vtt",
+      "text": "This slide focuses on Default parameters supply common values. Start with the meaning of the idea, then connect it to the example and to analytical work. A default parameter gives a value when the call does not provide one. Use a default parameter A default is used only when the caller does not supply that argument. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 12,
+      "title": "return is different from print",
+      "audio": "audio/module3_slide_12.mp3",
+      "captions": "captions/module3_slide_12.vtt",
+      "text": "This slide focuses on return is different from print. Start with the meaning of the idea, then connect it to the example and to analytical work. Shows a value in the output area. Useful for checking and communication. Sends a value back so another line of code can store it, format it, or use it in another calculation. Connect this idea to the larger workflow: how data is organized, transformed, checked, or communicated."
+    },
+    {
+      "slide": 13,
+      "title": "Code: return a value",
+      "audio": "audio/module3_slide_13.mp3",
+      "captions": "captions/module3_slide_13.vtt",
+      "text": "This slide focuses on Code: return a value. Start with the meaning of the idea, then connect it to the example and to analytical work. Unlike print(), return gives the value back to the program. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 14,
+      "title": "Code: return more than one value",
+      "audio": "audio/module3_slide_14.mp3",
+      "captions": "captions/module3_slide_14.vtt",
+      "text": "This slide focuses on Code: return more than one value. Start with the meaning of the idea, then connect it to the example and to analytical work. Return more than one value Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 15,
+      "title": "Variables inside functions are local",
+      "audio": "audio/module3_slide_15.mp3",
+      "captions": "captions/module3_slide_15.vtt",
+      "text": "This slide focuses on Variables inside functions are local. Start with the meaning of the idea, then connect it to the example and to analytical work. A variable created inside a function usually belongs to that function call. Local variable: created inside the function body. Outside code: does not automatically see local names. Return: the clean way to send useful results out."
+    },
+    {
+      "slide": 16,
+      "title": "Code: catch a conversion error",
+      "audio": "audio/module3_slide_16.mp3",
+      "captions": "captions/module3_slide_16.vtt",
+      "text": "This slide focuses on Code: catch a conversion error. Start with the meaning of the idea, then connect it to the example and to analytical work. Catch a conversion error try/except lets the function respond to predictable errors. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 17,
+      "title": "Code: add a docstring",
+      "audio": "audio/module3_slide_17.mp3",
+      "captions": "captions/module3_slide_17.vtt",
+      "text": "This slide focuses on Code: add a docstring. Start with the meaning of the idea, then connect it to the example and to analytical work. Add a docstring A docstring documents what a function is designed to do. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 18,
+      "title": "Code: compose small functions",
+      "audio": "audio/module3_slide_18.mp3",
+      "captions": "captions/module3_slide_18.vtt",
+      "text": "This slide focuses on Code: compose small functions. Start with the meaning of the idea, then connect it to the example and to analytical work. Compose two small functions One function computes profit; another converts it into a margin. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 19,
+      "title": "Practice ladder",
+      "audio": "audio/module3_slide_19.mp3",
+      "captions": "captions/module3_slide_19.vtt",
+      "text": "Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense. Define and call a no-parameter function. Add one parameter and pass an argument. Return a value and store the result. Handle a predictable conversion error. Use defaults, return, and documentation together. Describe input, process, and output."
+    },
+    {
+      "slide": 20,
+      "title": "Practice code: foundation and building",
+      "audio": "audio/module3_slide_20.mp3",
+      "captions": "captions/module3_slide_20.vtt",
+      "text": "Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense. Foundation: say hello Define and call a simple function. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 21,
+      "title": "Practice code: return and error handling",
+      "audio": "audio/module3_slide_21.mp3",
+      "captions": "captions/module3_slide_21.vtt",
+      "text": "Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense. Intermediate: return a sum Use a returned value. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 22,
+      "title": "Practice code: defaults and documentation",
+      "audio": "audio/module3_slide_22.mp3",
+      "captions": "captions/module3_slide_22.vtt",
+      "text": "Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense. Mastery: tax function Combine parameters, defaults, return, and documentation. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 23,
+      "title": "Applied example: classify a temperature",
+      "audio": "audio/module3_slide_23.mp3",
+      "captions": "captions/module3_slide_23.vtt",
+      "text": "This slide focuses on Applied example: classify a temperature. Start with the meaning of the idea, then connect it to the example and to analytical work. Classify a temperature The function can be reused for every temperature in a dataset. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 24,
+      "title": "Mini project: reusable calculator function",
+      "audio": "audio/module3_slide_24.mp3",
+      "captions": "captions/module3_slide_24.vtt",
+      "text": "This slide focuses on Mini project: reusable calculator function. Start with the meaning of the idea, then connect it to the example and to analytical work. Mini calculator capstone Change the operation or values and test the function. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character."
+    },
+    {
+      "slide": 25,
+      "title": "Function design checklist",
+      "audio": "audio/module3_slide_25.mp3",
+      "captions": "captions/module3_slide_25.vtt",
+      "text": "Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense. Does the function name describe the task? Are parameters clear and necessary? Is the body focused on one job? Does the function return a reusable value when needed? Does it handle predictable problems? Would a future reader understand its purpose?"
+    },
+    {
+      "slide": 26,
+      "title": "Summary",
+      "audio": "audio/module3_slide_26.mp3",
+      "captions": "captions/module3_slide_26.vtt",
+      "text": "This slide summarizes Module 3. Focus on the patterns you should be able to explain and reuse after completing the lesson. def creates a reusable function. Parentheses run the function body. Inputs make functions flexible. Returned values can be reused later. Documentation explains the purpose. Small functions can form larger workflows."
+    }
+  ]
+};
 const slides = Array.from(document.querySelectorAll('.slide'));
 const select = document.getElementById('slide-select');
 const counter = document.getElementById('counter');
@@ -790,6 +991,27 @@ let pyodidePromise = null;
 let monacoAvailable = false;
 const editors = new Map();
 const PYODIDE_URL = 'https://cdn.jsdelivr.net/pyodide/v0.27.7/full/';
+
+const STORAGE_KEY='ian601_module3_presentation';
+const narrationAudio=document.getElementById('narration-audio'),narrationToggleBtn=document.getElementById('narration-toggle-btn'),ccToggleBtn=document.getElementById('cc-toggle-btn'),startNarrationBtn=document.getElementById('start-narration-btn'),transcriptBtn=document.getElementById('transcript-btn'),transcriptPanel=document.getElementById('transcript-panel'),transcriptCloseBtn=document.getElementById('transcript-close-btn'),transcriptTitle=document.getElementById('transcript-title'),transcriptBody=document.getElementById('transcript-body'),subtitleBar=document.getElementById('subtitle-bar'),audioTitle=document.getElementById('audio-title'),audioPlayBtn=document.getElementById('audio-play-btn'),audioSeek=document.getElementById('audio-seek'),audioTime=document.getElementById('audio-time'),speedSelect=document.getElementById('speed-select');
+let narrationEnabled=false,narrationStarted=false,ccEnabled=false,captionCues=[],vttTranscript='',loadedSlideNumber=null;
+function readDeckState(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}')}catch{return {}}}
+function saveDeckState(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify({slide:current,narrationEnabled,ccEnabled,speed:narrationAudio.playbackRate||1,theme:document.documentElement.dataset.theme||'light'}))}catch{}}
+function currentManifestItem(){return MANIFEST.slides[current]}
+function formatClock(v){if(!Number.isFinite(v)||v<0)return'0:00';return Math.floor(v/60)+':'+String(Math.floor(v%60)).padStart(2,'0')}
+function vttTimeToSeconds(v){const p=v.trim().replace(',','.').split(':').map(Number);return p.length===3?p[0]*3600+p[1]*60+p[2]:p.length===2?p[0]*60+p[1]:Number(p[0])||0}
+function parseVtt(text){const cues=[];for(const block of text.replace(/\r/g,'').split(/\n{2,}/)){const lines=block.split('\n').filter(Boolean),i=lines.findIndex(x=>x.includes('-->'));if(i<0)continue;const t=lines[i].split('-->'),start=vttTimeToSeconds(t[0]),end=vttTimeToSeconds(t[1].trim().split(/\s+/)[0]),tx=lines.slice(i+1).join(' ').replace(/<[^>]+>/g,'').trim();if(tx)cues.push({start,end,text:tx})}return cues}
+async function loadCaptionsForCurrent(){const item=currentManifestItem();captionCues=[];vttTranscript='';try{const r=await fetch(item.captions,{cache:'no-store'});if(!r.ok)throw 0;captionCues=parseVtt(await r.text());vttTranscript=captionCues.map(c=>c.text).join(' ')}catch{}renderTranscript();updateSubtitle()}
+function fallbackCaption(){const item=currentManifestItem();if(!item?.text)return'';const p=item.text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)||[item.text],d=narrationAudio.duration;if(!Number.isFinite(d)||d<=0)return p[0].trim();return p[Math.min(p.length-1,Math.floor((narrationAudio.currentTime/d)*p.length))].trim()}
+function updateSubtitle(){if(!ccEnabled){subtitleBar.hidden=true;subtitleBar.textContent='';return}subtitleBar.hidden=false;const t=narrationAudio.currentTime||0,c=captionCues.find(x=>t>=x.start&&t<=x.end);subtitleBar.textContent=c?.text||fallbackCaption()||'Captions will appear here when narration plays.'}
+function renderTranscript(){const i=currentManifestItem();if(!i)return;transcriptTitle.textContent='Slide '+i.slide+': '+i.title;transcriptBody.textContent=vttTranscript||i.text||'Transcript unavailable.'}
+function updateNarrationButtons(){narrationToggleBtn.textContent=narrationEnabled?'Narration On':'Narration Off';ccToggleBtn.textContent=ccEnabled?'CC On':'CC Off';subtitleBar.hidden=!ccEnabled}
+function loadAudioForCurrent(){const i=currentManifestItem();if(!i)return;audioTitle.classList.remove('audio-error');audioTitle.textContent='Slide '+i.slide+': '+i.title;if(loadedSlideNumber!==i.slide){loadedSlideNumber=i.slide;narrationAudio.pause();narrationAudio.src=i.audio;narrationAudio.load();audioSeek.value='0';audioTime.textContent='0:00 / 0:00';loadCaptionsForCurrent()}}
+async function playCurrentNarration(restart=false){loadAudioForCurrent();if(restart)narrationAudio.currentTime=0;narrationAudio.playbackRate=Number(speedSelect.value)||1;try{await narrationAudio.play()}catch{}}
+function syncNarrationForSlide(){loadAudioForCurrent();renderTranscript();if(narrationEnabled&&narrationStarted){narrationAudio.currentTime=0;playCurrentNarration(false)}}
+function initializeNarrationUI(){const s=readDeckState();narrationEnabled=Boolean(s.narrationEnabled);ccEnabled=Boolean(s.ccEnabled);speedSelect.value=String([.75,1,1.25,1.5,2].includes(Number(s.speed))?Number(s.speed):1);narrationAudio.playbackRate=Number(speedSelect.value);updateNarrationButtons();return Number.isInteger(s.slide)?Math.max(0,Math.min(s.slide,MANIFEST.slide_count-1)):0}
+startNarrationBtn.addEventListener('click',()=>{narrationEnabled=true;narrationStarted=true;updateNarrationButtons();saveDeckState();playCurrentNarration(true)});narrationToggleBtn.addEventListener('click',()=>{narrationEnabled=!narrationEnabled;narrationStarted=narrationEnabled;updateNarrationButtons();saveDeckState();if(narrationEnabled)playCurrentNarration(false);else narrationAudio.pause()});ccToggleBtn.addEventListener('click',()=>{ccEnabled=!ccEnabled;updateNarrationButtons();updateSubtitle();saveDeckState()});transcriptBtn.addEventListener('click',()=>{renderTranscript();transcriptPanel.classList.add('open');transcriptPanel.setAttribute('aria-hidden','false')});transcriptCloseBtn.addEventListener('click',()=>{transcriptPanel.classList.remove('open');transcriptPanel.setAttribute('aria-hidden','true')});speedSelect.addEventListener('change',()=>{narrationAudio.playbackRate=Number(speedSelect.value)||1;saveDeckState()});audioPlayBtn.addEventListener('click',()=>{narrationStarted=true;narrationAudio.paused?playCurrentNarration(false):narrationAudio.pause()});audioSeek.addEventListener('input',()=>{if(Number.isFinite(narrationAudio.duration)&&narrationAudio.duration>0)narrationAudio.currentTime=Number(audioSeek.value)/1000*narrationAudio.duration});narrationAudio.addEventListener('play',()=>audioPlayBtn.textContent='Pause');narrationAudio.addEventListener('pause',()=>audioPlayBtn.textContent='Play');narrationAudio.addEventListener('timeupdate',()=>{const d=narrationAudio.duration;if(Number.isFinite(d)&&d>0)audioSeek.value=String(Math.round(narrationAudio.currentTime/d*1000));audioTime.textContent=formatClock(narrationAudio.currentTime)+' / '+formatClock(d);updateSubtitle()});narrationAudio.addEventListener('ended',()=>{audioPlayBtn.textContent='Play';updateSubtitle();/* no automatic slide advance */});narrationAudio.addEventListener('error',()=>{audioTitle.textContent='Audio not found yet: '+(currentManifestItem()?.audio||'');audioTitle.classList.add('audio-error')});
+
 
 slides.forEach((slide, index) => {
   const opt = document.createElement('option');
@@ -806,14 +1028,12 @@ function updateStatus(state, text) {
 
 function showSlide(index) {
   if (index < 0 || index >= slides.length) return;
-  current = index;
-  slides.forEach((s, i) => s.classList.toggle('active', i === current));
-  select.value = String(current);
-  counter.textContent = `${current + 1} / ${slides.length}`;
-  progressBar.style.width = `${((current + 1) / slides.length) * 100}%`;
-  setTimeout(() => resizeEditors(), 50);
+  current=index; slides.forEach((s,i)=>s.classList.toggle('active',i===current));
+  select.value=String(current); counter.textContent=`${current+1} / ${slides.length}`;
+  progressBar.style.width=`${((current+1)/slides.length)*100}%`;
+  if (typeof resizeEditors === 'function') setTimeout(()=>resizeEditors(),50);
+  syncNarrationForSlide(); saveDeckState();
 }
-
 function next() { showSlide(Math.min(current + 1, slides.length - 1)); }
 function prev() { showSlide(Math.max(current - 1, 0)); }
 
@@ -992,7 +1212,8 @@ document.addEventListener('keydown', e => {
 initCodeCells();
 setTheme(localStorage.getItem('ian601_theme') || 'dark');
 initMonaco();
-showSlide(0);
+const initialSlide=initializeNarrationUI();
+showSlide(initialSlide);
 </script>
 </body>
 </html>
