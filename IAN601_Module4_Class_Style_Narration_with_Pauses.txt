@@ -1,0 +1,231 @@
+Slide 1: Lists & Tuples
+
+Welcome to Module 4. This module focuses on Lists & Tuples. We will organize multiple values with Python sequences and connect the examples to analytics work.
+
+[pause=0.7]
+
+Lists and tuples help organize more than one value so Python can analyze a collection instead of a single item.
+
+[pause=1.0]
+
+Slide 2: How to use this page
+
+Use this page interactively. Read the idea, predict the result, run the code, and then modify one small part so you can see how the sequence changes.
+
+[pause=0.7]
+
+Start with the idea on the slide. Execute the code in the browser. Match the output with the explanation.
+
+[pause=0.7]
+
+Change one value or line at a time. Apply the pattern to a new list.
+
+[pause=1.0]
+
+Slide 3: Learning path for Module 4
+
+This is the learning path for Module 4. We move from creating sequences to accessing, changing, summarizing, and choosing the right structure for a task.
+
+[pause=0.7]
+
+Store multiple values in order. Retrieve one value or a slice of values. Add, remove, and change values in a list.
+
+[pause=0.7]
+
+Process each value one at a time. Keep fixed records safe from accidental edits. Apply sequences to small analytics examples.
+
+[pause=1.0]
+
+Slide 4: Why sequences matter in analytics
+
+This slide focuses on Why sequences matter in analytics. Start with what the structure represents, then connect that idea to the example on the slide.
+
+[pause=0.7]
+
+In analytics, one observation is rarely enough. Lists and tuples let us group related values and work with them as one object. List: an ordered collection that can be changed. Tuple: an ordered collection that should stay fixed.
+
+[pause=0.7]
+
+Index: a position number used to access a value.
+
+[pause=1.0]
+
+Slide 5: Create a list
+
+This slide focuses on Create a list. Start with what the structure represents, then connect that idea to the example on the slide.
+
+[pause=0.7]
+
+A list uses square brackets. Values stay in the same order unless we change the list. Use a list when: Create and inspect a list
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.
+
+[pause=1.0]
+
+Slide 6: Index and slice a list
+
+This slide focuses on Index and slice a list. Start with what the structure represents, then connect that idea to the example on the slide.
+
+[pause=0.7]
+
+Indexing and slicing
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.
+
+[pause=1.0]
+
+Slide 7: Change a list
+
+This slide focuses on Change a list. Start with what the structure represents, then connect that idea to the example on the slide.
+
+[pause=0.7]
+
+Lists are mutable, which means Python lets us change them after creation. append() adds one value to the end. pop() removes a value by position and returns it.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.
+
+[pause=0.7]
+
+Assignment changes an existing position. Append, update, and remove
+
+[pause=1.0]
+
+Slide 8: Loop through a list
+
+This slide focuses on Loop through a list. Start with what the structure represents, then connect that idea to the example on the slide.
+
+[pause=0.7]
+
+A loop lets Python repeat the same action for every value in a collection. Loop and classify values
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.
+
+[pause=1.0]
+
+Slide 9: Summarize values in a list
+
+This slide focuses on Summarize values in a list. Start with what the structure represents, then connect that idea to the example on the slide.
+
+[pause=0.7]
+
+Total of numeric values. Number of values. Cleaner printed result.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.
+
+[pause=0.7]
+
+Average from a list
+
+[pause=1.0]
+
+Slide 10: Create and unpack a tuple
+
+This slide focuses on Create and unpack a tuple. Start with what the structure represents, then connect that idea to the example on the slide.
+
+[pause=0.7]
+
+A tuple uses parentheses. It is ordered like a list, but it is not designed to be changed. Use a tuple when:
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.
+
+[pause=1.0]
+
+Slide 11: Lists can hold tuples
+
+This slide focuses on Lists can hold tuples. Start with what the structure represents, then connect that idea to the example on the slide.
+
+[pause=0.7]
+
+A common pattern is a list of records. Each record can be a tuple. List of tuple records
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.
+
+[pause=1.0]
+
+Slide 12: Small practice steps
+
+Use this slide as practice. Work through the task in small steps and explain what each list or tuple operation changes.
+
+[pause=0.7]
+
+This example combines creation, indexing, appending, removing, and summarizing. Start with a list. Add and remove values.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.
+
+[pause=0.7]
+
+Calculate a simple metric. Combined list practice
+
+[pause=1.0]
+
+Slide 13: Patient-age list management
+
+This slide focuses on Patient-age list management. Start with what the structure represents, then connect that idea to the example on the slide.
+
+[pause=0.7]
+
+Lists are useful when a collection grows as new records arrive. Add and summarize generic patient ages
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.
+
+[pause=1.0]
+
+Slide 14: List + tuple capstone
+
+This slide focuses on List + tuple capstone. Start with what the structure represents, then connect that idea to the example on the slide.
+
+[pause=0.7]
+
+A function can receive a list and return a tuple. This lets us package multiple results in one clean return value. Return a tuple from a function
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.
+
+[pause=1.0]
+
+Slide 15: Choose the right sequence
+
+This slide focuses on Choose the right sequence. Start with what the structure represents, then connect that idea to the example on the slide.
+
+[pause=0.7]
+
+Use a list when... Values may change. You need to append or remove items.
+
+[pause=0.7]
+
+You need to sort, filter, or build a collection over time. Use a tuple when... Values should stay fixed.
+
+[pause=1.0]
+
+Slide 16: Key takeaways
+
+This slide summarizes Module 4. Focus on when lists are useful, when tuples are useful, and how sequence operations support simple analytical workflows.
+
+[pause=0.7]
+
+Ordered, mutable collections for values that can change. Position numbers that let us access specific values. Ranges of values taken from a list.
+
+[pause=0.7]
+
+Repeat analysis steps for every item. Ordered, fixed records that protect structure. Module 5 uses dictionaries and sets for labeled and unique data.
+
+[pause=1.0]
