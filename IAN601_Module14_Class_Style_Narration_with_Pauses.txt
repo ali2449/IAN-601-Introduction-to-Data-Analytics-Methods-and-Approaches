@@ -1,0 +1,177 @@
+Slide 1: Machine Learning & External Data
+
+Welcome to Module 14. This module focuses on Machine Learning & External Data. We will connect the methods to careful analytical interpretation and practical decision making.
+
+[pause=0.7]
+
+Machine learning uses data to train models that make predictions, but good results depend on clean data, careful evaluation, and responsible interpretation.
+
+[pause=1.0]
+
+Slide 2: How to use this page
+
+Use this lesson interactively. Read the question first, predict the result, run the example, and then explain what the output does and does not tell you.
+
+[pause=0.7]
+
+Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.
+
+[pause=0.7]
+
+Change one value, variable, or condition. Apply the pattern to a new example.
+
+[pause=1.0]
+
+Slide 3: Learning path for Module 14
+
+This slide is the roadmap for Module 14. Follow the progression from the core idea to evaluation and the final integrated workflow.
+
+[pause=0.7]
+
+Read CSV-style data. Choose inputs and target. Separate training and testing.
+
+[pause=0.7]
+
+Train a simple classifier. Use accuracy and confusion matrix. Compare to baseline and explain limits.
+
+[pause=1.0]
+
+Slide 4: Read external-style data
+
+This slide focuses on Read external-style data. Start with the analytical question and the meaning of the output before focusing on the syntax.
+
+[pause=0.7]
+
+Many analytics projects begin by reading data from a CSV file. In this browser example, the CSV is stored as text. Read CSV text with pandas
+
+[pause=0.8]
+
+Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.
+
+[pause=1.0]
+
+Slide 5: Inputs and target
+
+This slide focuses on Inputs and target. Start with the analytical question and the meaning of the output before focusing on the syntax.
+
+[pause=0.7]
+
+Features are input columns. The target is what the model learns to predict. Separate X and y
+
+[pause=0.8]
+
+Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.
+
+[pause=1.0]
+
+Slide 6: Train/test split
+
+This slide focuses on Train/test split. Start with the analytical question and the meaning of the output before focusing on the syntax.
+
+[pause=0.7]
+
+A model should be evaluated on data it did not use for learning. Split a dataset
+
+[pause=0.8]
+
+Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.
+
+[pause=1.0]
+
+Slide 7: Train a simple classifier
+
+This slide focuses on Train a simple classifier. Start with the analytical question and the meaning of the output before focusing on the syntax.
+
+[pause=0.7]
+
+A classifier learns patterns from features and predicts a category. Train logistic regression
+
+[pause=0.8]
+
+Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.
+
+[pause=1.0]
+
+Slide 8: Evaluate predictions
+
+This slide focuses on Evaluate predictions. Start with the analytical question and the meaning of the output before focusing on the syntax.
+
+[pause=0.7]
+
+Accuracy is the percent of correct predictions. A confusion matrix shows correct and incorrect predictions by class. Accuracy and confusion matrix
+
+[pause=0.8]
+
+Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.
+
+[pause=1.0]
+
+Slide 9: Compare with a baseline
+
+This slide focuses on Compare with a baseline. Start with the analytical question and the meaning of the output before focusing on the syntax.
+
+[pause=0.7]
+
+A model should beat a simple baseline. Otherwise, it may not be useful. Baseline accuracy
+
+[pause=0.8]
+
+Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.
+
+[pause=1.0]
+
+Slide 10: Predict a new case
+
+This slide focuses on Predict a new case. Start with the analytical question and the meaning of the output before focusing on the syntax.
+
+[pause=0.7]
+
+After training, a model can predict new rows with the same feature structure. Make one prediction
+
+[pause=0.8]
+
+Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.
+
+[pause=1.0]
+
+Slide 11: Avoid leakage
+
+This slide focuses on Avoid leakage. Start with the analytical question and the meaning of the output before focusing on the syntax.
+
+[pause=0.7]
+
+Data leakage happens when training uses information that would not be available at prediction time. Split data before final evaluation. Do not let the target leak into features.
+
+[pause=0.7]
+
+Clean training data and test data consistently. Report limitations clearly.
+
+[pause=1.0]
+
+Slide 12: Mini ML workflow
+
+This slide focuses on Mini ML workflow. Start with the analytical question and the meaning of the output before focusing on the syntax.
+
+[pause=0.7]
+
+This final example joins the main steps: data, split, train, evaluate, and report. End-to-end classifier
+
+[pause=0.8]
+
+Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.
+
+[pause=1.0]
+
+Slide 13: Module 14 wrap-up
+
+This slide summarizes Module 14. Focus on the main analytical decisions, interpretation limits, and reusable workflow patterns.
+
+[pause=0.7]
+
+Load CSV-style data. Separate features and target. Evaluate on unseen rows.
+
+[pause=0.7]
+
+Fit a classifier. Use accuracy and confusion matrix. Interpret responsibly
+
+[pause=1.0]
