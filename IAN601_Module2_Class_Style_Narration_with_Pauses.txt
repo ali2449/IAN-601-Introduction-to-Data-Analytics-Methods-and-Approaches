@@ -1,0 +1,417 @@
+Slide 1: Control Flow & Decision Making
+
+Welcome to Module 2. This module focuses on Control Flow & Decision Making. We will build the ideas gradually and connect them to practical analytics work.
+
+[pause=0.7]
+
+One slide at a time Executable Python cells Self-paced version
+
+[pause=0.7]
+
+As you review the slide, connect the concept to the larger analytics workflow: how data is represented, transformed, checked, or communicated.
+
+[pause=1.0]
+
+Slide 2: What changes after Module 1?
+
+This slide focuses on What changes after Module 1?. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+In Module 1, code mostly ran from top to bottom. In Module 2, Python starts choosing paths. Condition: a True or False question. Branch: the block that runs when the condition is true.
+
+[pause=0.7]
+
+Loop: a block that repeats. Control: changing when a loop stops or skips. Control Flow & Decision Making
+
+[pause=1.0]
+
+Slide 3: Learning path for this session
+
+This slide gives us the learning path for Module 2. Use it as a map for how the ideas connect from the beginning of the module to the final practice.
+
+[pause=0.7]
+
+Boolean conditions Compare values and produce True or False. if / elif / else
+
+[pause=0.7]
+
+Choose one path from several possible paths. Repeat work for each item in a collection. Repeat while a condition remains true.
+
+[pause=1.0]
+
+Slide 4: A condition asks a True/False question
+
+This slide focuses on A condition asks a True/False question. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Boolean thinking A condition is an expression that Python can evaluate as True or False. Is sales greater than target?
+
+[pause=0.7]
+
+Is the status exactly Open? Are returns not equal to zero? Control Flow & Decision Making
+
+[pause=1.0]
+
+Slide 5: Code: compare values
+
+This slide focuses on Code: compare values. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Executable example Compare two values A comparison produces True or False.
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+compare_values.py What happens Why it matters
+
+[pause=1.0]
+
+Slide 6: The if statement runs only when true
+
+This slide focuses on The if statement runs only when true. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Decision structure Skip the indented block Simple if statement
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+Only the indented line belongs to the if statement. simple_if.py Control Flow & Decision Making
+
+[pause=1.0]
+
+Slide 7: if / else chooses between two paths
+
+This slide focuses on if / else chooses between two paths. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Two-way decision Use if and else when exactly one of two outcomes should happen. Choose between two outcomes
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+Change sales and rerun to see a different branch. Control Flow & Decision Making
+
+[pause=1.0]
+
+Slide 8: elif handles several categories
+
+This slide focuses on elif handles several categories. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Multi-way decision Use elif when there are multiple rules. Python checks the rules from top to bottom and stops at the first true condition. Score category with elif
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+The order of thresholds is important. if_elif_else.py Order matters
+
+[pause=1.0]
+
+Slide 9: Combine rules with Boolean logic
+
+This slide focuses on Combine rules with Boolean logic. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+and · or · not Both conditions must be true. At least one condition must be true.
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+Reverse a Boolean result. Logical operators in a business rule Build richer rules by combining conditions.
+
+[pause=1.0]
+
+Slide 10: Common beginner mistakes
+
+This slide focuses on Common beginner mistakes. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Debugging mindset = assigns a value. == compares two values. Missing colon
+
+[pause=0.7]
+
+if sales > 800: needs a colon at the end. Wrong indentation The lines controlled by if must be indented consistently.
+
+[pause=1.0]
+
+Slide 11: For loops repeat over a sequence
+
+This slide focuses on For loops repeat over a sequence. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+A for loop is best when you have a sequence of items or when you know how many repetitions are needed. Loop through a small sequence Read this as: for each customer in customers.
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+for_loop_sequence.py Control Flow & Decision Making
+
+[pause=1.0]
+
+Slide 12: range() creates a simple count
+
+This slide focuses on range() creates a simple count. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Known repetitions Use range() when you want to repeat a known number of times. Repeat with range()
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+Notice that range(5) starts at 0 and stops before 5. range_loop.py Control Flow & Decision Making
+
+[pause=1.0]
+
+Slide 13: Running totals are a core analytics pattern
+
+This slide focuses on Running totals are a core analytics pattern. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Loop + accumulator An accumulator is a variable that starts with a simple value, then updates during each loop repetition. Accumulate a total inside a loop
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+This pattern appears often in summaries and reports. The total begins at 0. Each amount is added to the previous total.
+
+[pause=1.0]
+
+Slide 14: enumerate() gives position and value
+
+This slide focuses on enumerate() gives position and value. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Loop with a counter Sometimes you need both the item and its position in the sequence. Use a counter while looping
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+The number and customer are returned together. enumerate_loop.py Control Flow & Decision Making
+
+[pause=1.0]
+
+Slide 15: while loops repeat until a condition changes
+
+This slide focuses on while loops repeat until a condition changes. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Condition-based repetition A while loop repeats as long as its condition remains true. Keep repeating while the condition is true.
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+Safety question: Countdown with while The variable count changes inside the loop.
+
+[pause=1.0]
+
+Slide 16: while loops can model changing processes
+
+This slide focuses on while loops can model changing processes. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Threshold example Track a changing balance The loop continues until the balance reaches zero.
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+while_balance.py while_threshold.py Rule of thumb:
+
+[pause=1.0]
+
+Slide 17: break and continue change loop behavior
+
+This slide focuses on break and continue change loop behavior. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Loop control Skip the rest of the current repetition and move to the next one. Skip one value with continue
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+The number 2 is skipped. continue_example.py Exit early with break
+
+[pause=1.0]
+
+Slide 18: Combine loops and decisions
+
+This slide focuses on Combine loops and decisions. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Classification pattern Most useful control flow combines repetition with a decision inside the loop. Place a decision inside a loop
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+Each sale is classified using the same rule. loop_with_if.py Move through one value at a time.
+
+[pause=1.0]
+
+Slide 19: Nested loops: a loop inside a loop
+
+This slide focuses on Nested loops: a loop inside a loop. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Use carefully A nested loop is useful for grids or paired combinations, but too many layers become difficult to read. Use nested loops carefully
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+The inner loop finishes for each outer-loop row. nested_loops.py Control Flow & Decision Making
+
+[pause=1.0]
+
+Slide 20: Analytics example: classify sales days
+
+This slide focuses on Analytics example: classify sales days. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+This example counts how many sales days are low, target, or high. Run the cell, then change the sales values and run again. Classify sales into three groups Loop, compare, and update counters.
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+classify_sales.py Control Flow & Decision Making
+
+[pause=1.0]
+
+Slide 21: Count values that meet a condition
+
+This slide focuses on Count values that meet a condition. The goal is to understand the idea in plain language before connecting it to code or analytical use.
+
+[pause=0.7]
+
+Flagging pattern A counter can summarize how many observations match a rule. Start the counter at 0.
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+Loop through each value. If the rule is true, add 1. Print the final count.
+
+[pause=1.0]
+
+Slide 22: Final activity: simple customer flags
+
+Use this slide as guided practice. Work through the task in small steps and explain why each step produces the result you see.
+
+[pause=0.7]
+
+Put it together This activity combines a loop, several conditions, a counter, and readable output. Create simple customer flags
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.
+
+[pause=0.7]
+
+You can edit the spending and visit values. customer_flags_activity.py Control Flow & Decision Making
+
+[pause=1.0]
+
+Slide 23: Practice prompts for class
+
+Use this slide as guided practice. Work through the task in small steps and explain why each step produces the result you see.
+
+[pause=0.7]
+
+Guided exercises Threshold check Create a variable called score. Print “pass” when it is at least 70.
+
+[pause=0.7]
+
+Two-way decision Create a variable called balance. Print whether it is positive or zero/negative. Known repetition
+
+[pause=1.0]
+
+Slide 24: Self-check
+
+Use this slide as guided practice. Work through the task in small steps and explain why each step produces the result you see.
+
+[pause=0.7]
+
+Check your understanding Can you read a condition? Explain what makes it true or false.
+
+[pause=0.7]
+
+Can you identify the block? Point to the indented lines controlled by the statement. Can you trace a loop?
+
+[pause=1.0]
+
+Slide 25: Summary
+
+This slide brings Module 2 together. Focus on the main patterns you should be able to explain and reuse after completing the examples.
+
+[pause=0.7]
+
+End of Module 2 if, elif, and else choose paths. Repeat over known items or known counts.
+
+[pause=0.7]
+
+Repeat until a condition changes. Loop control break stops; continue skips.
+
+[pause=1.0]
