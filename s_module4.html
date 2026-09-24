@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -49,6 +49,7 @@
 .output a {
   color: #bfdbfe !important;
 }
+.stage{padding:.55rem}.slide{inset:0;padding:.55rem}.slide.active{display:grid;place-items:center}.slide-inner{height:100%;width:auto;max-width:100%;max-height:100%;aspect-ratio:16/9;margin:auto}.bottom-nav{position:relative;z-index:30;display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"prev narr next" "sub sub sub" "audio audio audio";align-items:center;gap:.42rem .7rem;padding:.48rem .85rem .7rem;border-top:1px solid var(--line);background:var(--panel)}.nav-left{grid-area:prev}.nav-right{grid-area:next}.narration-controls{grid-area:narr;display:flex;align-items:center;justify-content:center;gap:.38rem;flex-wrap:wrap}.narration-controls .btn{padding:.42rem .62rem;font-size:.78rem}.narration-controls select{max-width:92px;padding:.4rem .5rem;font-size:.78rem}.subtitle-bar{grid-area:sub;min-height:34px;max-height:62px;overflow:auto;display:flex;align-items:center;justify-content:center;padding:.38rem .8rem;border:1px solid var(--line);border-radius:.65rem;background:var(--panel2);font-size:.9rem;text-align:center}.subtitle-bar[hidden]{display:none}.audio-row{grid-area:audio;display:grid;grid-template-columns:minmax(170px,1.25fr) auto minmax(180px,2fr) auto auto minmax(150px,.9fr);gap:.5rem;align-items:center}.audio-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:.78rem;font-weight:750}.audio-time{color:var(--muted);font-size:.75rem}.seek-slider{width:100%}.bottom-slide-select{max-width:240px;width:100%;padding:.4rem .55rem;font-size:.78rem}#narration-audio{display:none}.transcript-panel{position:fixed;top:0;right:0;bottom:0;z-index:1000;width:min(430px,92vw);display:grid;grid-template-rows:auto 1fr;background:var(--panel);border-left:1px solid var(--line);transform:translateX(105%);transition:transform .22s ease;box-shadow:-18px 0 42px rgba(15,23,42,.22)}.transcript-panel.open{transform:translateX(0)}.transcript-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem;border-bottom:1px solid var(--line)}.transcript-head h2{margin:0;font-size:1rem}.transcript-body{overflow:auto;padding:1rem 1.1rem 2rem;line-height:1.65;white-space:pre-wrap}.audio-error{color:var(--bad)}@media(max-width:760px){.bottom-nav{position:sticky;bottom:0}.narration-controls{overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start}.audio-row{grid-template-columns:1fr auto}.audio-row .seek-slider,.bottom-slide-select{grid-column:1/-1}.slide-inner{width:100%;height:auto}}
 </style>
 </head>
 <body>
@@ -85,7 +86,7 @@
           </div>
         </div>
         <div class="callout"><strong>Goal:</strong> Create lists and tuples, access values, update lists, loop through values, and choose the right structure for a data task.</div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 1</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 1</span></footer>
   </div>
 </section><section class="slide" data-title="How to use this page">
   <div class="slide-inner">
@@ -102,7 +103,7 @@
           <div class="timeline-item"><span>5</span><h3>Reuse</h3><p>Apply the pattern to a new list.</p></div>
         </div>
         <div class="callout secondary">All slide points are visible. Use Next, Previous, arrow keys, or the slide menu. Code runs in the browser using Pyodide.</div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 2</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 2</span></footer>
   </div>
 </section><section class="slide" data-title="Learning path for Module 4">
   <div class="slide-inner">
@@ -119,7 +120,7 @@
           <div class="timeline-item"><span>5</span><h3>Tuples</h3><p>Keep fixed records safe from accidental edits.</p></div>
           <div class="timeline-item"><span>6</span><h3>Use cases</h3><p>Apply sequences to small analytics examples.</p></div>
         </div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 3</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 3</span></footer>
   </div>
 </section><section class="slide" data-title="Why sequences matter in analytics">
   <div class="slide-inner">
@@ -143,7 +144,7 @@
             <div class="process-step">Summary, decision, report</div>
           </div>
         </div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 4</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 4</span></footer>
   </div>
 </section><section class="slide" data-title="Create a list">
   <div class="slide-inner">
@@ -174,7 +175,7 @@ print(&quot;Lowest score:&quot;, min(scores))</textarea>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div>
         </div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 5</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 5</span></footer>
   </div>
 </section><section class="slide" data-title="Index and slice a list">
   <div class="slide-inner">
@@ -206,7 +207,7 @@ print(&quot;First three scores:&quot;, scores[:3])</textarea>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div>
         </div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 6</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 6</span></footer>
   </div>
 </section><section class="slide" data-title="Change a list">
   <div class="slide-inner">
@@ -247,7 +248,7 @@ print(&quot;Final list:&quot;, daily_visits)</textarea>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div>
         </div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 7</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 7</span></footer>
   </div>
 </section><section class="slide" data-title="Loop through a list">
   <div class="slide-inner">
@@ -280,7 +281,7 @@ for minutes in wait_times:
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div>
         </div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 8</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 8</span></footer>
   </div>
 </section><section class="slide" data-title="Summarize values in a list">
   <div class="slide-inner">
@@ -317,7 +318,7 @@ print(&quot;Best month:&quot;, max(monthly_sales))</textarea>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div>
         </div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 9</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 9</span></footer>
   </div>
 </section><section class="slide" data-title="Create and unpack a tuple">
   <div class="slide-inner">
@@ -349,7 +350,7 @@ print(&quot;First value:&quot;, store_location[0])</textarea>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div>
         </div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 10</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 10</span></footer>
   </div>
 </section><section class="slide" data-title="Lists can hold tuples">
   <div class="slide-inner">
@@ -385,7 +386,7 @@ print(&quot;Total:&quot;, round(sum(amounts), 2))</textarea>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div>
         </div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 11</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 11</span></footer>
   </div>
 </section><section class="slide" data-title="Small practice steps">
   <div class="slide-inner">
@@ -426,7 +427,7 @@ print(&quot;Average age:&quot;, round(average_age, 1))</textarea>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div>
         </div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 12</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 12</span></footer>
   </div>
 </section><section class="slide" data-title="Patient-age list management">
   <div class="slide-inner">
@@ -466,7 +467,7 @@ print(&quot;Ages over 50:&quot;, older_than_50)</textarea>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div>
         </div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 13</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 13</span></footer>
   </div>
 </section><section class="slide" data-title="List + tuple capstone">
   <div class="slide-inner">
@@ -503,7 +504,7 @@ print(&quot;Range:&quot;, spread)</textarea>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div>
         </div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 14</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 14</span></footer>
   </div>
 </section><section class="slide" data-title="Choose the right sequence">
   <div class="slide-inner">
@@ -517,7 +518,7 @@ print(&quot;Range:&quot;, spread)</textarea>
           <div class="compare-card"><h3>Use a tuple when...</h3><ul class="clean-list"><li>Values should stay fixed.</li><li>The values form one record.</li><li>You want to return multiple results from a function.</li></ul></div>
         </div>
         <div class="callout secondary"><strong>Simple rule:</strong> lists are flexible collections; tuples are fixed records.</div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 15</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 15</span></footer>
   </div>
 </section><section class="slide" data-title="Key takeaways">
   <div class="slide-inner">
@@ -535,31 +536,139 @@ print(&quot;Range:&quot;, spread)</textarea>
           <div><h3>Next</h3><p>Module 5 uses dictionaries and sets for labeled and unique data.</p></div>
         </div>
         <div class="callout success">You can now organize multiple values and begin writing small analysis workflows with collections.</div></div>
-    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>Slide 16</span></footer>
+    <footer class="slide-footer"><span>Lists & Tuples · Data Organization</span><span>IAN 601 · Module 4 · Slide 16</span></footer>
   </div>
 </section></main>
-  <footer class="bottom-nav">
-    <div class="nav-left"><button class="btn" id="prev-btn" type="button"><i class="fa-solid fa-arrow-left"></i> Previous</button><button class="btn" id="next-btn" type="button">Next <i class="fa-solid fa-arrow-right"></i></button></div>
-    <div class="counter" id="counter">Slide 1 / 16</div>
-    <div class="nav-right"><button class="btn ghost" id="first-btn" type="button">First</button><button class="btn ghost" id="last-btn" type="button">Last</button></div>
-    <div class="progress" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
-  </footer>
+  <footer class="bottom-nav"><div class="nav-left"><button class="btn ghost" id="first-btn" type="button">First</button><button class="btn ghost" id="prev-btn" type="button">← Previous</button></div><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next →</button><button class="btn ghost" id="last-btn" type="button">Last</button></div><div class="subtitle-bar" id="subtitle-bar" hidden></div><div class="audio-row"><div class="audio-title" id="audio-title">Slide 1 narration</div><button class="btn ghost" id="audio-play-btn" type="button">Play</button><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><div class="audio-time" id="audio-time">0:00 / 0:00</div><div class="counter" id="counter">Slide 1 / 16</div><select class="bottom-slide-select" id="slide-select"></select></div><audio id="narration-audio" preload="metadata"></audio><div class="progress"><div class="progress-bar" id="progress-bar"></div></div></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
 </div>
 <script>
+const MANIFEST = {
+  "prefix": "module4",
+  "slide_count": 16,
+  "slides": [
+    {
+      "slide": 1,
+      "title": "Lists & Tuples",
+      "audio": "audio/module4_slide_01.mp3",
+      "captions": "captions/module4_slide_01.vtt",
+      "text": "Welcome to Module 4. This module focuses on Lists & Tuples. We will organize multiple values with Python sequences and connect the examples to analytics work. Lists and tuples help organize more than one value so Python can analyze a collection instead of a single item."
+    },
+    {
+      "slide": 2,
+      "title": "How to use this page",
+      "audio": "audio/module4_slide_02.mp3",
+      "captions": "captions/module4_slide_02.vtt",
+      "text": "Use this page interactively. Read the idea, predict the result, run the code, and then modify one small part so you can see how the sequence changes. Start with the idea on the slide. Execute the code in the browser. Match the output with the explanation. Change one value or line at a time. Apply the pattern to a new list."
+    },
+    {
+      "slide": 3,
+      "title": "Learning path for Module 4",
+      "audio": "audio/module4_slide_03.mp3",
+      "captions": "captions/module4_slide_03.vtt",
+      "text": "This is the learning path for Module 4. We move from creating sequences to accessing, changing, summarizing, and choosing the right structure for a task. Store multiple values in order. Retrieve one value or a slice of values. Add, remove, and change values in a list. Process each value one at a time. Keep fixed records safe from accidental edits. Apply sequences to small analytics examples."
+    },
+    {
+      "slide": 4,
+      "title": "Why sequences matter in analytics",
+      "audio": "audio/module4_slide_04.mp3",
+      "captions": "captions/module4_slide_04.vtt",
+      "text": "This slide focuses on Why sequences matter in analytics. Start with what the structure represents, then connect that idea to the example on the slide. In analytics, one observation is rarely enough. Lists and tuples let us group related values and work with them as one object. List: an ordered collection that can be changed. Tuple: an ordered collection that should stay fixed. Index: a position number used to access a value."
+    },
+    {
+      "slide": 5,
+      "title": "Create a list",
+      "audio": "audio/module4_slide_05.mp3",
+      "captions": "captions/module4_slide_05.vtt",
+      "text": "This slide focuses on Create a list. Start with what the structure represents, then connect that idea to the example on the slide. A list uses square brackets. Values stay in the same order unless we change the list. Use a list when: Create and inspect a list Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it."
+    },
+    {
+      "slide": 6,
+      "title": "Index and slice a list",
+      "audio": "audio/module4_slide_06.mp3",
+      "captions": "captions/module4_slide_06.vtt",
+      "text": "This slide focuses on Index and slice a list. Start with what the structure represents, then connect that idea to the example on the slide. Indexing and slicing Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it."
+    },
+    {
+      "slide": 7,
+      "title": "Change a list",
+      "audio": "audio/module4_slide_07.mp3",
+      "captions": "captions/module4_slide_07.vtt",
+      "text": "This slide focuses on Change a list. Start with what the structure represents, then connect that idea to the example on the slide. Lists are mutable, which means Python lets us change them after creation. append() adds one value to the end. pop() removes a value by position and returns it. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it. Assignment changes an existing position. Append, update, and remove"
+    },
+    {
+      "slide": 8,
+      "title": "Loop through a list",
+      "audio": "audio/module4_slide_08.mp3",
+      "captions": "captions/module4_slide_08.vtt",
+      "text": "This slide focuses on Loop through a list. Start with what the structure represents, then connect that idea to the example on the slide. A loop lets Python repeat the same action for every value in a collection. Loop and classify values Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it."
+    },
+    {
+      "slide": 9,
+      "title": "Summarize values in a list",
+      "audio": "audio/module4_slide_09.mp3",
+      "captions": "captions/module4_slide_09.vtt",
+      "text": "This slide focuses on Summarize values in a list. Start with what the structure represents, then connect that idea to the example on the slide. Total of numeric values. Number of values. Cleaner printed result. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it. Average from a list"
+    },
+    {
+      "slide": 10,
+      "title": "Create and unpack a tuple",
+      "audio": "audio/module4_slide_10.mp3",
+      "captions": "captions/module4_slide_10.vtt",
+      "text": "This slide focuses on Create and unpack a tuple. Start with what the structure represents, then connect that idea to the example on the slide. A tuple uses parentheses. It is ordered like a list, but it is not designed to be changed. Use a tuple when: Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it."
+    },
+    {
+      "slide": 11,
+      "title": "Lists can hold tuples",
+      "audio": "audio/module4_slide_11.mp3",
+      "captions": "captions/module4_slide_11.vtt",
+      "text": "This slide focuses on Lists can hold tuples. Start with what the structure represents, then connect that idea to the example on the slide. A common pattern is a list of records. Each record can be a tuple. List of tuple records Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it."
+    },
+    {
+      "slide": 12,
+      "title": "Small practice steps",
+      "audio": "audio/module4_slide_12.mp3",
+      "captions": "captions/module4_slide_12.vtt",
+      "text": "Use this slide as practice. Work through the task in small steps and explain what each list or tuple operation changes. This example combines creation, indexing, appending, removing, and summarizing. Start with a list. Add and remove values. Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it. Calculate a simple metric. Combined list practice"
+    },
+    {
+      "slide": 13,
+      "title": "Patient-age list management",
+      "audio": "audio/module4_slide_13.mp3",
+      "captions": "captions/module4_slide_13.vtt",
+      "text": "This slide focuses on Patient-age list management. Start with what the structure represents, then connect that idea to the example on the slide. Lists are useful when a collection grows as new records arrive. Add and summarize generic patient ages Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it."
+    },
+    {
+      "slide": 14,
+      "title": "List + tuple capstone",
+      "audio": "audio/module4_slide_14.mp3",
+      "captions": "captions/module4_slide_14.vtt",
+      "text": "This slide focuses on List + tuple capstone. Start with what the structure represents, then connect that idea to the example on the slide. A function can receive a list and return a tuple. This lets us package multiple results in one clean return value. Return a tuple from a function Before running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it."
+    },
+    {
+      "slide": 15,
+      "title": "Choose the right sequence",
+      "audio": "audio/module4_slide_15.mp3",
+      "captions": "captions/module4_slide_15.vtt",
+      "text": "This slide focuses on Choose the right sequence. Start with what the structure represents, then connect that idea to the example on the slide. Use a list when... Values may change. You need to append or remove items. You need to sort, filter, or build a collection over time. Use a tuple when... Values should stay fixed."
+    },
+    {
+      "slide": 16,
+      "title": "Key takeaways",
+      "audio": "audio/module4_slide_16.mp3",
+      "captions": "captions/module4_slide_16.vtt",
+      "text": "This slide summarizes Module 4. Focus on when lists are useful, when tuples are useful, and how sequence operations support simple analytical workflows. Ordered, mutable collections for values that can change. Position numbers that let us access specific values. Ranges of values taken from a list. Repeat analysis steps for every item. Ordered, fixed records that protect structure. Module 5 uses dictionaries and sets for labeled and unique data."
+    }
+  ]
+};
 const slides=[...document.querySelectorAll('.slide')];
 const select=document.getElementById('slide-select');
 let current=0;let pyodide=null;let pyodideLoading=null;const originalCode=new Map();const monacoEditors=new Map();
+const STORAGE_KEY='ian601_module4_presentation';const narrationAudio=document.getElementById('narration-audio'),narrationToggleBtn=document.getElementById('narration-toggle-btn'),ccToggleBtn=document.getElementById('cc-toggle-btn'),startNarrationBtn=document.getElementById('start-narration-btn'),transcriptBtn=document.getElementById('transcript-btn'),transcriptPanel=document.getElementById('transcript-panel'),transcriptCloseBtn=document.getElementById('transcript-close-btn'),transcriptTitle=document.getElementById('transcript-title'),transcriptBody=document.getElementById('transcript-body'),subtitleBar=document.getElementById('subtitle-bar'),audioTitle=document.getElementById('audio-title'),audioPlayBtn=document.getElementById('audio-play-btn'),audioSeek=document.getElementById('audio-seek'),audioTime=document.getElementById('audio-time'),speedSelect=document.getElementById('speed-select');let narrationEnabled=false,narrationStarted=false,ccEnabled=false,captionCues=[],vttTranscript='',loadedSlideNumber=null;function saveDeckState(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify({slide:current,narrationEnabled,ccEnabled,speed:narrationAudio.playbackRate||1}))}catch{}}function readDeckState(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}')}catch{return{}}}function item(){return MANIFEST.slides[current]}function clock(v){if(!Number.isFinite(v))return'0:00';return Math.floor(v/60)+':'+String(Math.floor(v%60)).padStart(2,'0')}function sec(v){const p=v.trim().replace(',','.').split(':').map(Number);return p.length===3?p[0]*3600+p[1]*60+p[2]:p[0]*60+p[1]}function parseVtt(t){const c=[];for(const b of t.replace(/\r/g,'').split(/\n{2,}/)){const l=b.split('\n').filter(Boolean),i=l.findIndex(x=>x.includes('-->'));if(i<0)continue;const q=l[i].split('-->'),tx=l.slice(i+1).join(' ').replace(/<[^>]+>/g,'').trim();if(tx)c.push({start:sec(q[0]),end:sec(q[1].trim().split(/\s+/)[0]),text:tx})}return c}async function captions(){captionCues=[];vttTranscript='';try{const r=await fetch(item().captions,{cache:'no-store'});if(!r.ok)throw 0;captionCues=parseVtt(await r.text());vttTranscript=captionCues.map(x=>x.text).join(' ')}catch{}renderTranscript();subtitle()}function fallback(){const p=item().text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)||[item().text],d=narrationAudio.duration;if(!Number.isFinite(d)||d<=0)return p[0];return p[Math.min(p.length-1,Math.floor(narrationAudio.currentTime/d*p.length))]}function subtitle(){if(!ccEnabled){subtitleBar.hidden=true;return}subtitleBar.hidden=false;const t=narrationAudio.currentTime||0,c=captionCues.find(x=>t>=x.start&&t<=x.end);subtitleBar.textContent=c?.text||fallback()}function renderTranscript(){transcriptTitle.textContent='Slide '+item().slide+': '+item().title;transcriptBody.textContent=vttTranscript||item().text}function loadAudio(){const i=item();audioTitle.classList.remove('audio-error');audioTitle.textContent='Slide '+i.slide+': '+i.title;if(loadedSlideNumber!==i.slide){loadedSlideNumber=i.slide;narrationAudio.pause();narrationAudio.src=i.audio;narrationAudio.load();audioSeek.value='0';captions()}}async function play(restart=false){loadAudio();if(restart)narrationAudio.currentTime=0;narrationAudio.playbackRate=Number(speedSelect.value)||1;try{await narrationAudio.play()}catch{}}function syncNarrationForSlide(){loadAudio();renderTranscript();if(narrationEnabled&&narrationStarted){narrationAudio.currentTime=0;play(false)}}function initNarr(){const s=readDeckState();narrationEnabled=!!s.narrationEnabled;ccEnabled=!!s.ccEnabled;speedSelect.value=String([.75,1,1.25,1.5,2].includes(+s.speed)?+s.speed:1);narrationToggleBtn.textContent=narrationEnabled?'Narration On':'Narration Off';ccToggleBtn.textContent=ccEnabled?'CC On':'CC Off';subtitleBar.hidden=!ccEnabled;return Number.isInteger(s.slide)?Math.max(0,Math.min(s.slide,MANIFEST.slide_count-1)):0}startNarrationBtn.onclick=()=>{narrationEnabled=true;narrationStarted=true;narrationToggleBtn.textContent='Narration On';saveDeckState();play(true)};narrationToggleBtn.onclick=()=>{narrationEnabled=!narrationEnabled;narrationStarted=narrationEnabled;narrationToggleBtn.textContent=narrationEnabled?'Narration On':'Narration Off';saveDeckState();narrationEnabled?play(false):narrationAudio.pause()};ccToggleBtn.onclick=()=>{ccEnabled=!ccEnabled;ccToggleBtn.textContent=ccEnabled?'CC On':'CC Off';subtitle();saveDeckState()};transcriptBtn.onclick=()=>{renderTranscript();transcriptPanel.classList.add('open')};transcriptCloseBtn.onclick=()=>transcriptPanel.classList.remove('open');speedSelect.onchange=()=>{narrationAudio.playbackRate=+speedSelect.value;saveDeckState()};audioPlayBtn.onclick=()=>narrationAudio.paused?play(false):narrationAudio.pause();audioSeek.oninput=()=>{if(Number.isFinite(narrationAudio.duration))narrationAudio.currentTime=+audioSeek.value/1000*narrationAudio.duration};narrationAudio.ontimeupdate=()=>{const d=narrationAudio.duration;if(Number.isFinite(d)&&d>0)audioSeek.value=String(Math.round(narrationAudio.currentTime/d*1000));audioTime.textContent=clock(narrationAudio.currentTime)+' / '+clock(d);subtitle()};narrationAudio.onplay=()=>audioPlayBtn.textContent='Pause';narrationAudio.onpause=()=>audioPlayBtn.textContent='Play';narrationAudio.onended=()=>{audioPlayBtn.textContent='Play';/* no automatic slide advance */};narrationAudio.onerror=()=>{audioTitle.textContent='Audio not found yet: '+item().audio;audioTitle.classList.add('audio-error')};
 slides.forEach((slide,i)=>{
   const option=document.createElement('option');
   option.value=i;option.textContent=`${i+1}. ${slide.dataset.title||'Slide'}`;select.appendChild(option);
 });
-function showSlide(index){
-  current=Math.max(0,Math.min(slides.length-1,index));
-  slides.forEach((s,i)=>s.classList.toggle('active',i===current));
-  select.value=current;document.getElementById('counter').textContent=`Slide ${current+1} / ${slides.length}`;
-  document.getElementById('progress-bar').style.width=`${((current+1)/slides.length)*100}%`;
-  setTimeout(()=>{slides[current].querySelectorAll('.monaco-host').forEach(host=>{const ed=monacoEditors.get(host);if(ed) ed.layout();})},80);
-}
+function showSlide(index){current=Math.max(0,Math.min(slides.length-1,index));slides.forEach((s,i)=>s.classList.toggle('active',i===current));select.value=current;document.getElementById('counter').textContent=`Slide ${current+1} / ${slides.length}`;document.getElementById('progress-bar').style.width=`${((current+1)/slides.length)*100}%`;setTimeout(()=>{slides[current].querySelectorAll('.monaco-host').forEach(host=>{const ed=monacoEditors.get(host);if(ed)ed.layout();})},80);syncNarrationForSlide();saveDeckState();}
 document.getElementById('prev-btn').onclick=()=>showSlide(current-1);
 document.getElementById('next-btn').onclick=()=>showSlide(current+1);
 document.getElementById('first-btn').onclick=()=>showSlide(0);
@@ -634,7 +743,8 @@ function initMonaco(){
     });
   }catch(e){console.warn('Monaco editor not available, using textarea fallback.',e);}
 }
-initMonaco();showSlide(0);
+initMonaco();const initialSlide=initNarr();
+showSlide(initialSlide);
 </script>
 </body>
 </html>
