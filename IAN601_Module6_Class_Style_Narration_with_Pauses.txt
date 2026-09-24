@@ -1,0 +1,177 @@
+Slide 1: Modules, Packages & OOP
+
+Welcome to Module 6. This module focuses on Modules, Packages & OOP. We will build the ideas in small steps and connect them to practical analytics work.
+
+[pause=0.7]
+
+Modules, packages, and classes help Python projects grow from short scripts into organized analytics tools.
+
+[pause=1.0]
+
+Slide 2: How to use this page
+
+Use this lesson actively. Read the concept, predict the result, run the example when code is available, then change one part and compare what happens.
+
+[pause=0.7]
+
+Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.
+
+[pause=0.7]
+
+Change one value, variable, or condition. Apply the pattern to a new example.
+
+[pause=1.0]
+
+Slide 3: Learning path for Module 6
+
+This slide is the roadmap for Module 6. It shows how the concepts progress and how the later examples build on the earlier ones.
+
+[pause=0.7]
+
+Use built-in modules and aliases. Understand why libraries matter. Know where names come from.
+
+[pause=0.7]
+
+Create blueprints for objects. Attach actions to data. Analytics class
+
+[pause=1.0]
+
+Slide 4: Why organize code?
+
+This slide focuses on Why organize code?. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+As programs get longer, organization becomes part of the solution. Imports reuse code that already exists. Packages group many modules together.
+
+[pause=0.7]
+
+Classes group related data and actions. Well-organized code is easier to test, share, and update. Good for one quick task.
+
+[pause=1.0]
+
+Slide 5: Import built-in modules
+
+This slide focuses on Import built-in modules. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+Use built-in modules
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=1.0]
+
+Slide 6: Use aliases for readability
+
+This slide focuses on Use aliases for readability. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+An alias is a shorter name for a module. It makes code easier to type and read.
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=1.0]
+
+Slide 7: Think like a module
+
+This slide focuses on Think like a module. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A module is often just a file that contains reusable functions. In the browser, we can still practice the same idea by grouping related functions. Reusable helper functions
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=1.0]
+
+Slide 8: What is a class?
+
+This slide focuses on What is a class?. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A class is a blueprint. An object is one item created from that blueprint. Attributes store information. Methods perform actions.
+
+[pause=0.7]
+
+The word self means this specific object.
+
+[pause=1.0]
+
+Slide 9: Create a simple class
+
+This slide focuses on Create a simple class. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+This class stores information about one customer and includes a method that describes the customer. Create objects from a class
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=1.0]
+
+Slide 10: Add behavior with methods
+
+This slide focuses on Add behavior with methods. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A method can update the object. This lets data and behavior stay together. Update an object with a method
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=1.0]
+
+Slide 11: Small analytics class
+
+This slide focuses on Small analytics class. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+Classes can package a small analytics workflow so the same logic can be reused with different data. Build a report class
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=1.0]
+
+Slide 12: When to use each organization tool
+
+This slide focuses on When to use each organization tool. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+Use for one reusable action. Use for related functions in one file. Use for a larger collection of modules.
+
+[pause=0.7]
+
+Use when data and behavior belong together. Use for one working instance of a class. Use to bring outside tools into your script.
+
+[pause=1.0]
+
+Slide 13: Module 6 wrap-up
+
+This slide summarizes Module 6. Focus on the patterns you should be able to explain and reuse after completing the examples.
+
+[pause=0.7]
+
+Use built-in tools and aliases. Read namespaces Understand where names come from.
+
+[pause=0.7]
+
+Group repeated logic. Make simple blueprints. Attach actions to data.
+
+[pause=1.0]
