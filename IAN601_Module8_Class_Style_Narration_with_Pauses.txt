@@ -1,0 +1,163 @@
+Slide 1: Professional Practices
+
+Welcome to Module 8. This module focuses on Professional Practices. We will build the ideas gradually and connect them to practical analytics work.
+
+[pause=0.7]
+
+Professional analytics code should be readable, reproducible, tested, documented, and respectful of data privacy.
+
+[pause=1.0]
+
+Slide 2: How to use this page
+
+Use this lesson actively. Read the concept, predict what should happen, run the example when code is available, then change one small part and compare the result.
+
+[pause=0.7]
+
+Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.
+
+[pause=0.7]
+
+Change one value, variable, or condition. Apply the pattern to a new example.
+
+[pause=1.0]
+
+Slide 3: Learning path for Module 8
+
+This slide is the learning path for Module 8. It shows how the topic progresses from foundational ideas to applied practice.
+
+[pause=0.7]
+
+Use names that explain the data. Write helpful comments and docstrings. Reproducibility
+
+[pause=0.7]
+
+Control randomness with seeds. Check important functions. Record useful events.
+
+[pause=1.0]
+
+Slide 4: Readable code starts with names
+
+This slide focuses on Readable code starts with names. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+Names should describe the role of a value. This makes code easier for future readers, including you. Use descriptive names
+
+[pause=0.8]
+
+Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+
+[pause=1.0]
+
+Slide 5: Write docstrings for functions
+
+This slide focuses on Write docstrings for functions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A docstring explains what a function does, what it expects, and what it returns. Function with a docstring
+
+[pause=0.8]
+
+Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+
+[pause=1.0]
+
+Slide 6: Make random work reproducible
+
+This slide focuses on Make random work reproducible. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A random seed makes random examples repeatable. This matters for debugging, teaching, and reports. Use a random seed
+
+[pause=0.8]
+
+Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+
+[pause=1.0]
+
+Slide 7: Test important functions
+
+This slide focuses on Test important functions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A small test checks whether a function gives the expected result for a known input. Use simple assertions
+
+[pause=0.8]
+
+Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+
+[pause=1.0]
+
+Slide 8: Use logging instead of only print
+
+This slide focuses on Use logging instead of only print. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+Logging records what happened. It can include messages for progress, warnings, and errors.
+
+[pause=0.8]
+
+Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+
+[pause=1.0]
+
+Slide 9: Keep settings in one place
+
+This slide focuses on Keep settings in one place. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A configuration dictionary keeps important settings visible and easy to change. Use a configuration dictionary
+
+[pause=0.8]
+
+Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+
+[pause=1.0]
+
+Slide 10: Responsible example data
+
+This slide focuses on Responsible example data. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+Teaching and sample datasets should use fictional or generic values unless real data is clearly permitted. Use fictional names, IDs, emails, and organizations. Remove direct identifiers from examples.
+
+[pause=0.7]
+
+Do not publish private data in code outputs. Explain assumptions and limitations clearly.
+
+[pause=1.0]
+
+Slide 11: Professional checklist
+
+Use this slide as guided practice. Work in small steps and explain why each result makes sense.
+
+[pause=0.7]
+
+Cells execute in order. Variables describe meaning. No private data
+
+[pause=0.7]
+
+Examples are fictional. Notes explain why, not every line. Outputs make sense
+
+[pause=1.0]
+
+Slide 12: Module 8 wrap-up
+
+This slide summarizes Module 8. Focus on the patterns you should be able to explain and reuse after completing the examples.
+
+[pause=0.7]
+
+Use clear names and structure. Write useful docstrings. Reproducibility
+
+[pause=0.7]
+
+Control randomness with seeds. Use small checks for functions. Track what the program does.
+
+[pause=1.0]
