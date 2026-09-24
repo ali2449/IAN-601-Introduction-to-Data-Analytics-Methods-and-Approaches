@@ -26,7 +26,7 @@
   --code-bg: #1e1e1e;
   --code-text: #d4d4d4;
 }
-[data-theme="dark"] {
+[data-theme="light"] {
   --bg: #08111f;
   --slide: #0f172a;
   --slide-2: #162032;
@@ -426,6 +426,38 @@ tr:last-child td { border-bottom:0; }
   .slide { position:relative; display:block !important; inset:auto; height:100vh; page-break-after:always; padding:0; }
   .slide-inner { border-radius:0; box-shadow:none; }
 }
+
+/* Narrated IAN 601 presentation controls */
+.stage { padding:.55rem; }
+.slide { inset:0; padding:.55rem; }
+.slide.active { display:grid; place-items:center; }
+.slide-inner { height:100%; width:auto; max-width:100%; max-height:100%; aspect-ratio:16/9; margin:auto; }
+.bottom-nav {
+  position:relative; z-index:30; display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  grid-template-areas:"prev narr next" "sub sub sub" "audio audio audio";
+  align-items:center; gap:.42rem .7rem; padding:.48rem .85rem .7rem;
+  border-top:1px solid var(--border);
+  background:color-mix(in srgb,var(--slide) 94%,transparent); backdrop-filter:blur(12px);
+}
+.nav-left{grid-area:prev}.nav-right{grid-area:next}
+.narration-controls{grid-area:narr;display:flex;align-items:center;justify-content:center;gap:.38rem;flex-wrap:wrap;min-width:0}
+.narration-controls .btn{padding:.42rem .62rem;font-size:.78rem}
+.narration-controls select{max-width:92px;padding:.4rem .5rem;font-size:.78rem}
+.subtitle-bar{grid-area:sub;min-height:34px;max-height:62px;overflow:auto;display:flex;align-items:center;justify-content:center;padding:.38rem .8rem;border:1px solid var(--border);border-radius:.65rem;background:color-mix(in srgb,var(--slide-2) 88%,transparent);color:var(--text);font-size:.9rem;line-height:1.35;text-align:center}
+.subtitle-bar[hidden]{display:none}
+.audio-row{grid-area:audio;display:grid;grid-template-columns:minmax(170px,1.25fr) auto minmax(180px,2fr) auto auto minmax(150px,.9fr);gap:.5rem;align-items:center;min-width:0}
+.audio-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:.78rem;font-weight:750}
+.audio-time{color:var(--muted);font-size:.75rem;white-space:nowrap}.seek-slider{width:100%;accent-color:var(--primary)}
+.bottom-slide-select{max-width:240px;width:100%;padding:.4rem .55rem;font-size:.78rem}.counter{min-width:70px;font-size:.82rem}.progress{height:4px}
+#narration-audio{display:none}
+.transcript-panel{position:fixed;top:0;right:0;bottom:0;z-index:1000;width:min(430px,92vw);display:grid;grid-template-rows:auto 1fr;background:var(--slide);border-left:1px solid var(--border);box-shadow:-18px 0 42px rgba(15,23,42,.22);transform:translateX(105%);transition:transform .22s ease}
+.transcript-panel.open{transform:translateX(0)}.transcript-head{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1rem;border-bottom:1px solid var(--border)}
+.transcript-head h2{margin:0;font-size:1rem}.transcript-body{overflow:auto;padding:1rem 1.1rem 2rem;line-height:1.65;white-space:pre-wrap}.audio-error{color:var(--danger)}
+@media(max-width:950px){.audio-row{grid-template-columns:1fr auto 1.4fr auto}.audio-row .audio-time{display:none}.bottom-slide-select{max-width:none}}
+@media(max-width:760px){.bottom-nav{position:sticky;bottom:0;grid-template-columns:auto 1fr auto;grid-template-areas:"prev narr next" "sub sub sub" "audio audio audio";padding:.4rem .45rem .65rem}.narration-controls{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.audio-row{grid-template-columns:1fr auto}.audio-row .seek-slider,.audio-row .audio-time{grid-column:1/-1}.bottom-slide-select{grid-column:1/-1}.stage{min-height:56vw}.slide-inner{width:100%;height:auto;aspect-ratio:16/9}}
+@media print{.subtitle-bar,.audio-row,.narration-controls,.transcript-panel{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -434,7 +466,7 @@ tr:last-child td { border-bottom:0; }
 <div class="brand"><div class="brand-mark">Py</div><div><h1>IAN 601 · Module 2 Slide Lesson</h1><span>Control Flow &amp; Decision Making</span></div></div>
 <div class="toolbar">
 <div class="runtime" id="runtime"><span class="runtime-dot"></span><span id="runtime-text">Python not loaded</span></div>
-<select aria-label="Choose slide" id="slide-select"></select>
+
 <button class="btn ghost" id="theme-btn" type="button">Dark mode</button>
 
 <button class="btn ghost" id="fullscreen-btn" type="button">Fullscreen</button>
@@ -1466,12 +1498,214 @@ print("Priority customers:", priority_count)</textarea>
 </main>
 <footer class="bottom-nav">
 <div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">← Previous</button></div>
-<div class="counter" id="counter">1 / 25</div>
+<div class="narration-controls" aria-label="Narration controls">
+<button class="btn" id="start-narration-btn" type="button">Start Narration</button>
+<button class="btn ghost" id="narration-toggle-btn" type="button" aria-pressed="false">Narration Off</button>
+<button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button>
+<button class="btn ghost" id="transcript-btn" type="button">Transcript</button>
+<label for="speed-select" class="audio-time">Speed</label>
+<select id="speed-select" aria-label="Narration playback speed"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select>
+</div>
 <div class="nav-right"><button class="btn" id="next-btn" type="button">Next →</button></div>
+<div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div>
+<div class="audio-row">
+<div class="audio-title" id="audio-title">Slide 1 narration</div>
+<button class="btn ghost" id="audio-play-btn" type="button">Play</button>
+<input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0" aria-label="Narration position">
+<div class="audio-time" id="audio-time">0:00 / 0:00</div>
+<div class="counter" id="counter">1 / 25</div>
+<select class="bottom-slide-select" aria-label="Choose slide" id="slide-select"></select>
+</div>
+<audio id="narration-audio" preload="metadata"></audio>
 <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
 </footer>
+<aside class="transcript-panel" id="transcript-panel" aria-hidden="true">
+<div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn" type="button">Close</button></div>
+<div class="transcript-body" id="transcript-body"></div>
+</aside>
 </div>
 <script>
+const MANIFEST = {
+  "prefix": "module2",
+  "slide_count": 25,
+  "slides": [
+    {
+      "slide": 1,
+      "title": "Control Flow & Decision Making",
+      "audio": "audio/module2_slide_01.mp3",
+      "captions": "captions/module2_slide_01.vtt",
+      "text": "Welcome to Module 2. This module focuses on Control Flow & Decision Making. We will build the ideas gradually and connect them to practical analytics work. One slide at a time Executable Python cells Self-paced version As you review the slide, connect the concept to the larger analytics workflow: how data is represented, transformed, checked, or communicated."
+    },
+    {
+      "slide": 2,
+      "title": "What changes after Module 1?",
+      "audio": "audio/module2_slide_02.mp3",
+      "captions": "captions/module2_slide_02.vtt",
+      "text": "This slide focuses on What changes after Module 1?. The goal is to understand the idea in plain language before connecting it to code or analytical use. In Module 1, code mostly ran from top to bottom. In Module 2, Python starts choosing paths. Condition: a True or False question. Branch: the block that runs when the condition is true. Loop: a block that repeats. Control: changing when a loop stops or skips. Control Flow & Decision Making"
+    },
+    {
+      "slide": 3,
+      "title": "Learning path for this session",
+      "audio": "audio/module2_slide_03.mp3",
+      "captions": "captions/module2_slide_03.vtt",
+      "text": "This slide gives us the learning path for Module 2. Use it as a map for how the ideas connect from the beginning of the module to the final practice. Boolean conditions Compare values and produce True or False. if / elif / else Choose one path from several possible paths. Repeat work for each item in a collection. Repeat while a condition remains true."
+    },
+    {
+      "slide": 4,
+      "title": "A condition asks a True/False question",
+      "audio": "audio/module2_slide_04.mp3",
+      "captions": "captions/module2_slide_04.vtt",
+      "text": "This slide focuses on A condition asks a True/False question. The goal is to understand the idea in plain language before connecting it to code or analytical use. Boolean thinking A condition is an expression that Python can evaluate as True or False. Is sales greater than target? Is the status exactly Open? Are returns not equal to zero? Control Flow & Decision Making"
+    },
+    {
+      "slide": 5,
+      "title": "Code: compare values",
+      "audio": "audio/module2_slide_05.mp3",
+      "captions": "captions/module2_slide_05.vtt",
+      "text": "This slide focuses on Code: compare values. The goal is to understand the idea in plain language before connecting it to code or analytical use. Executable example Compare two values A comparison produces True or False. Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. compare_values.py What happens Why it matters"
+    },
+    {
+      "slide": 6,
+      "title": "The if statement runs only when true",
+      "audio": "audio/module2_slide_06.mp3",
+      "captions": "captions/module2_slide_06.vtt",
+      "text": "This slide focuses on The if statement runs only when true. The goal is to understand the idea in plain language before connecting it to code or analytical use. Decision structure Skip the indented block Simple if statement Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. Only the indented line belongs to the if statement. simple_if.py Control Flow & Decision Making"
+    },
+    {
+      "slide": 7,
+      "title": "if / else chooses between two paths",
+      "audio": "audio/module2_slide_07.mp3",
+      "captions": "captions/module2_slide_07.vtt",
+      "text": "This slide focuses on if / else chooses between two paths. The goal is to understand the idea in plain language before connecting it to code or analytical use. Two-way decision Use if and else when exactly one of two outcomes should happen. Choose between two outcomes Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. Change sales and rerun to see a different branch. Control Flow & Decision Making"
+    },
+    {
+      "slide": 8,
+      "title": "elif handles several categories",
+      "audio": "audio/module2_slide_08.mp3",
+      "captions": "captions/module2_slide_08.vtt",
+      "text": "This slide focuses on elif handles several categories. The goal is to understand the idea in plain language before connecting it to code or analytical use. Multi-way decision Use elif when there are multiple rules. Python checks the rules from top to bottom and stops at the first true condition. Score category with elif Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. The order of thresholds is important. if_elif_else.py Order matters"
+    },
+    {
+      "slide": 9,
+      "title": "Combine rules with Boolean logic",
+      "audio": "audio/module2_slide_09.mp3",
+      "captions": "captions/module2_slide_09.vtt",
+      "text": "This slide focuses on Combine rules with Boolean logic. The goal is to understand the idea in plain language before connecting it to code or analytical use. and · or · not Both conditions must be true. At least one condition must be true. Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. Reverse a Boolean result. Logical operators in a business rule Build richer rules by combining conditions."
+    },
+    {
+      "slide": 10,
+      "title": "Common beginner mistakes",
+      "audio": "audio/module2_slide_10.mp3",
+      "captions": "captions/module2_slide_10.vtt",
+      "text": "This slide focuses on Common beginner mistakes. The goal is to understand the idea in plain language before connecting it to code or analytical use. Debugging mindset = assigns a value. == compares two values. Missing colon if sales > 800: needs a colon at the end. Wrong indentation The lines controlled by if must be indented consistently."
+    },
+    {
+      "slide": 11,
+      "title": "For loops repeat over a sequence",
+      "audio": "audio/module2_slide_11.mp3",
+      "captions": "captions/module2_slide_11.vtt",
+      "text": "This slide focuses on For loops repeat over a sequence. The goal is to understand the idea in plain language before connecting it to code or analytical use. A for loop is best when you have a sequence of items or when you know how many repetitions are needed. Loop through a small sequence Read this as: for each customer in customers. Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. for_loop_sequence.py Control Flow & Decision Making"
+    },
+    {
+      "slide": 12,
+      "title": "range() creates a simple count",
+      "audio": "audio/module2_slide_12.mp3",
+      "captions": "captions/module2_slide_12.vtt",
+      "text": "This slide focuses on range() creates a simple count. The goal is to understand the idea in plain language before connecting it to code or analytical use. Known repetitions Use range() when you want to repeat a known number of times. Repeat with range() Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. Notice that range(5) starts at 0 and stops before 5. range_loop.py Control Flow & Decision Making"
+    },
+    {
+      "slide": 13,
+      "title": "Running totals are a core analytics pattern",
+      "audio": "audio/module2_slide_13.mp3",
+      "captions": "captions/module2_slide_13.vtt",
+      "text": "This slide focuses on Running totals are a core analytics pattern. The goal is to understand the idea in plain language before connecting it to code or analytical use. Loop + accumulator An accumulator is a variable that starts with a simple value, then updates during each loop repetition. Accumulate a total inside a loop Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. This pattern appears often in summaries and reports. The total begins at 0. Each amount is added to the previous total."
+    },
+    {
+      "slide": 14,
+      "title": "enumerate() gives position and value",
+      "audio": "audio/module2_slide_14.mp3",
+      "captions": "captions/module2_slide_14.vtt",
+      "text": "This slide focuses on enumerate() gives position and value. The goal is to understand the idea in plain language before connecting it to code or analytical use. Loop with a counter Sometimes you need both the item and its position in the sequence. Use a counter while looping Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. The number and customer are returned together. enumerate_loop.py Control Flow & Decision Making"
+    },
+    {
+      "slide": 15,
+      "title": "while loops repeat until a condition changes",
+      "audio": "audio/module2_slide_15.mp3",
+      "captions": "captions/module2_slide_15.vtt",
+      "text": "This slide focuses on while loops repeat until a condition changes. The goal is to understand the idea in plain language before connecting it to code or analytical use. Condition-based repetition A while loop repeats as long as its condition remains true. Keep repeating while the condition is true. Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. Safety question: Countdown with while The variable count changes inside the loop."
+    },
+    {
+      "slide": 16,
+      "title": "while loops can model changing processes",
+      "audio": "audio/module2_slide_16.mp3",
+      "captions": "captions/module2_slide_16.vtt",
+      "text": "This slide focuses on while loops can model changing processes. The goal is to understand the idea in plain language before connecting it to code or analytical use. Threshold example Track a changing balance The loop continues until the balance reaches zero. Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. while_balance.py while_threshold.py Rule of thumb:"
+    },
+    {
+      "slide": 17,
+      "title": "break and continue change loop behavior",
+      "audio": "audio/module2_slide_17.mp3",
+      "captions": "captions/module2_slide_17.vtt",
+      "text": "This slide focuses on break and continue change loop behavior. The goal is to understand the idea in plain language before connecting it to code or analytical use. Loop control Skip the rest of the current repetition and move to the next one. Skip one value with continue Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. The number 2 is skipped. continue_example.py Exit early with break"
+    },
+    {
+      "slide": 18,
+      "title": "Combine loops and decisions",
+      "audio": "audio/module2_slide_18.mp3",
+      "captions": "captions/module2_slide_18.vtt",
+      "text": "This slide focuses on Combine loops and decisions. The goal is to understand the idea in plain language before connecting it to code or analytical use. Classification pattern Most useful control flow combines repetition with a decision inside the loop. Place a decision inside a loop Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. Each sale is classified using the same rule. loop_with_if.py Move through one value at a time."
+    },
+    {
+      "slide": 19,
+      "title": "Nested loops: a loop inside a loop",
+      "audio": "audio/module2_slide_19.mp3",
+      "captions": "captions/module2_slide_19.vtt",
+      "text": "This slide focuses on Nested loops: a loop inside a loop. The goal is to understand the idea in plain language before connecting it to code or analytical use. Use carefully A nested loop is useful for grids or paired combinations, but too many layers become difficult to read. Use nested loops carefully Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. The inner loop finishes for each outer-loop row. nested_loops.py Control Flow & Decision Making"
+    },
+    {
+      "slide": 20,
+      "title": "Analytics example: classify sales days",
+      "audio": "audio/module2_slide_20.mp3",
+      "captions": "captions/module2_slide_20.vtt",
+      "text": "This slide focuses on Analytics example: classify sales days. The goal is to understand the idea in plain language before connecting it to code or analytical use. This example counts how many sales days are low, target, or high. Run the cell, then change the sales values and run again. Classify sales into three groups Loop, compare, and update counters. Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. classify_sales.py Control Flow & Decision Making"
+    },
+    {
+      "slide": 21,
+      "title": "Count values that meet a condition",
+      "audio": "audio/module2_slide_21.mp3",
+      "captions": "captions/module2_slide_21.vtt",
+      "text": "This slide focuses on Count values that meet a condition. The goal is to understand the idea in plain language before connecting it to code or analytical use. Flagging pattern A counter can summarize how many observations match a rule. Start the counter at 0. Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. Loop through each value. If the rule is true, add 1. Print the final count."
+    },
+    {
+      "slide": 22,
+      "title": "Final activity: simple customer flags",
+      "audio": "audio/module2_slide_22.mp3",
+      "captions": "captions/module2_slide_22.vtt",
+      "text": "Use this slide as guided practice. Work through the task in small steps and explain why each step produces the result you see. Put it together This activity combines a loop, several conditions, a counter, and readable output. Create simple customer flags Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why. You can edit the spending and visit values. customer_flags_activity.py Control Flow & Decision Making"
+    },
+    {
+      "slide": 23,
+      "title": "Practice prompts for class",
+      "audio": "audio/module2_slide_23.mp3",
+      "captions": "captions/module2_slide_23.vtt",
+      "text": "Use this slide as guided practice. Work through the task in small steps and explain why each step produces the result you see. Guided exercises Threshold check Create a variable called score. Print “pass” when it is at least 70. Two-way decision Create a variable called balance. Print whether it is positive or zero/negative. Known repetition"
+    },
+    {
+      "slide": 24,
+      "title": "Self-check",
+      "audio": "audio/module2_slide_24.mp3",
+      "captions": "captions/module2_slide_24.vtt",
+      "text": "Use this slide as guided practice. Work through the task in small steps and explain why each step produces the result you see. Check your understanding Can you read a condition? Explain what makes it true or false. Can you identify the block? Point to the indented lines controlled by the statement. Can you trace a loop?"
+    },
+    {
+      "slide": 25,
+      "title": "Summary",
+      "audio": "audio/module2_slide_25.mp3",
+      "captions": "captions/module2_slide_25.vtt",
+      "text": "This slide brings Module 2 together. Focus on the main patterns you should be able to explain and reuse after completing the examples. End of Module 2 if, elif, and else choose paths. Repeat over known items or known counts. Repeat until a condition changes. Loop control break stops; continue skips."
+    }
+  ]
+};
 const slides = Array.from(document.querySelectorAll('.slide'));
 const select = document.getElementById('slide-select');
 const counter = document.getElementById('counter');
@@ -1479,6 +1713,41 @@ const progressBar = document.getElementById('progress-bar');
 let current = 0;
 let pyodidePromise = null;
 const PYODIDE_URL = 'https://cdn.jsdelivr.net/pyodide/v314.0.4/full/';
+
+const STORAGE_KEY = 'ian601_module2_presentation';
+const narrationAudio=document.getElementById('narration-audio'), narrationToggleBtn=document.getElementById('narration-toggle-btn'), ccToggleBtn=document.getElementById('cc-toggle-btn'), startNarrationBtn=document.getElementById('start-narration-btn'), transcriptBtn=document.getElementById('transcript-btn'), transcriptPanel=document.getElementById('transcript-panel'), transcriptCloseBtn=document.getElementById('transcript-close-btn'), transcriptTitle=document.getElementById('transcript-title'), transcriptBody=document.getElementById('transcript-body'), subtitleBar=document.getElementById('subtitle-bar'), audioTitle=document.getElementById('audio-title'), audioPlayBtn=document.getElementById('audio-play-btn'), audioSeek=document.getElementById('audio-seek'), audioTime=document.getElementById('audio-time'), speedSelect=document.getElementById('speed-select');
+let narrationEnabled=false,narrationStarted=false,ccEnabled=false,captionCues=[],vttTranscript='',loadedSlideNumber=null;
+function readDeckState(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}')}catch{return {}}}
+function saveDeckState(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify({slide:current,narrationEnabled,ccEnabled,speed:narrationAudio.playbackRate||1,theme:document.documentElement.dataset.theme||'light'}))}catch{}}
+function currentManifestItem(){return MANIFEST.slides[current]}
+function formatClock(seconds){if(!Number.isFinite(seconds)||seconds<0)return'0:00';const mm=Math.floor(seconds/60),ss=Math.floor(seconds%60);return mm+':'+String(ss).padStart(2,'0')}
+function vttTimeToSeconds(value){const parts=value.trim().replace(',','.').split(':').map(Number);if(parts.length===3)return parts[0]*3600+parts[1]*60+parts[2];if(parts.length===2)return parts[0]*60+parts[1];return Number(parts[0])||0}
+function parseVtt(text){const cues=[];const blocks=text.replace(/\r/g,'').split(/\n{2,}/);for(const block of blocks){const lines=block.split('\n').filter(Boolean);const timingIndex=lines.findIndex(line=>line.includes('-->'));if(timingIndex<0)continue;const timing=lines[timingIndex].split('-->');const start=vttTimeToSeconds(timing[0]);const end=vttTimeToSeconds((timing[1].trim().split(/\s+/)[0]||timing[1]));const cueText=lines.slice(timingIndex+1).join(' ').replace(/<[^>]+>/g,'').trim();if(cueText)cues.push({start,end,text:cueText})}return cues}
+async function loadCaptionsForCurrent(){const item=currentManifestItem();captionCues=[];vttTranscript='';if(!item)return;try{const response=await fetch(item.captions,{cache:'no-store'});if(!response.ok)throw new Error('Caption file unavailable');const raw=await response.text();captionCues=parseVtt(raw);vttTranscript=captionCues.map(c=>c.text).join(' ')}catch{captionCues=[];vttTranscript=''}renderTranscript();updateSubtitle()}
+function fallbackCaption(){const item=currentManifestItem();if(!item?.text)return'';const parts=item.text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)||[item.text];const duration=narrationAudio.duration;if(!Number.isFinite(duration)||duration<=0||parts.length===1)return parts[0].trim();const idx=Math.min(parts.length-1,Math.floor((narrationAudio.currentTime/duration)*parts.length));return parts[idx].trim()}
+function updateSubtitle(){if(!ccEnabled){subtitleBar.hidden=true;subtitleBar.textContent='';return}subtitleBar.hidden=false;const t=narrationAudio.currentTime||0;const cue=captionCues.find(c=>t>=c.start&&t<=c.end);subtitleBar.textContent=cue?.text||fallbackCaption()||'Captions will appear here when narration plays.'}
+function renderTranscript(){const item=currentManifestItem();if(!item)return;transcriptTitle.textContent='Slide '+item.slide+': '+item.title;transcriptBody.textContent=vttTranscript||item.text||'Transcript unavailable.'}
+function updateNarrationButtons(){narrationToggleBtn.textContent=narrationEnabled?'Narration On':'Narration Off';narrationToggleBtn.setAttribute('aria-pressed',String(narrationEnabled));ccToggleBtn.textContent=ccEnabled?'CC On':'CC Off';ccToggleBtn.setAttribute('aria-pressed',String(ccEnabled));subtitleBar.hidden=!ccEnabled}
+function loadAudioForCurrent(){const item=currentManifestItem();if(!item)return;audioTitle.classList.remove('audio-error');audioTitle.textContent='Slide '+item.slide+': '+item.title;if(loadedSlideNumber!==item.slide){loadedSlideNumber=item.slide;narrationAudio.pause();narrationAudio.src=item.audio;narrationAudio.load();audioSeek.value='0';audioTime.textContent='0:00 / 0:00';audioPlayBtn.textContent='Play';loadCaptionsForCurrent()}}
+async function playCurrentNarration(restart=false){loadAudioForCurrent();if(restart)narrationAudio.currentTime=0;narrationAudio.playbackRate=Number(speedSelect.value)||1;try{await narrationAudio.play();audioPlayBtn.textContent='Pause'}catch{audioPlayBtn.textContent='Play'}}
+function syncNarrationForSlide(){loadAudioForCurrent();renderTranscript();if(narrationEnabled&&narrationStarted){narrationAudio.currentTime=0;playCurrentNarration(false)}}
+function openTranscript(){renderTranscript();transcriptPanel.classList.add('open');transcriptPanel.setAttribute('aria-hidden','false')}
+function closeTranscript(){transcriptPanel.classList.remove('open');transcriptPanel.setAttribute('aria-hidden','true')}
+function initializeNarrationUI(){const saved=readDeckState();narrationEnabled=Boolean(saved.narrationEnabled);ccEnabled=Boolean(saved.ccEnabled);const speed=[0.75,1,1.25,1.5,2].includes(Number(saved.speed))?Number(saved.speed):1;speedSelect.value=String(speed);narrationAudio.playbackRate=speed;if(saved.theme==='dark'||saved.theme==='light')document.documentElement.dataset.theme=saved.theme;document.getElementById('theme-btn').textContent=document.documentElement.dataset.theme==='dark'?'Light mode':'Dark mode';updateNarrationButtons();return Number.isInteger(saved.slide)?Math.max(0,Math.min(saved.slide,MANIFEST.slide_count-1)):0}
+startNarrationBtn.addEventListener('click',()=>{narrationEnabled=true;narrationStarted=true;updateNarrationButtons();saveDeckState();playCurrentNarration(true)});
+narrationToggleBtn.addEventListener('click',()=>{narrationEnabled=!narrationEnabled;narrationStarted=narrationEnabled;updateNarrationButtons();saveDeckState();if(narrationEnabled)playCurrentNarration(false);else narrationAudio.pause()});
+ccToggleBtn.addEventListener('click',()=>{ccEnabled=!ccEnabled;updateNarrationButtons();updateSubtitle();saveDeckState()});
+transcriptBtn.addEventListener('click',openTranscript);transcriptCloseBtn.addEventListener('click',closeTranscript);
+speedSelect.addEventListener('change',()=>{narrationAudio.playbackRate=Number(speedSelect.value)||1;saveDeckState()});
+audioPlayBtn.addEventListener('click',()=>{narrationStarted=true;if(narrationAudio.paused)playCurrentNarration(false);else narrationAudio.pause()});
+audioSeek.addEventListener('input',()=>{if(Number.isFinite(narrationAudio.duration)&&narrationAudio.duration>0)narrationAudio.currentTime=(Number(audioSeek.value)/1000)*narrationAudio.duration});
+narrationAudio.addEventListener('play',()=>audioPlayBtn.textContent='Pause');narrationAudio.addEventListener('pause',()=>audioPlayBtn.textContent='Play');
+narrationAudio.addEventListener('loadedmetadata',()=>{audioTime.textContent=formatClock(narrationAudio.currentTime)+' / '+formatClock(narrationAudio.duration);updateSubtitle()});
+narrationAudio.addEventListener('timeupdate',()=>{const duration=narrationAudio.duration;if(Number.isFinite(duration)&&duration>0)audioSeek.value=String(Math.round((narrationAudio.currentTime/duration)*1000));audioTime.textContent=formatClock(narrationAudio.currentTime)+' / '+formatClock(duration);updateSubtitle()});
+narrationAudio.addEventListener('ended',()=>{audioPlayBtn.textContent='Play';audioSeek.value='1000';updateSubtitle();/* no slide auto-advance */});
+narrationAudio.addEventListener('error',()=>{audioTitle.textContent='Audio not found yet: '+(currentManifestItem()?.audio||'');audioTitle.classList.add('audio-error')});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&transcriptPanel.classList.contains('open'))closeTranscript()});
+
 
 slides.forEach((slide, index) => {
   const opt = document.createElement('option');
@@ -1677,17 +1946,14 @@ function copyCell(cell) {
 
 function showSlide(index, resetFragments=true) {
   current = Math.max(0, Math.min(index, slides.length - 1));
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === current);
-  });
+  slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
   select.value = current;
   counter.textContent = `${current + 1} / ${slides.length}`;
   progressBar.style.width = `${((current + 1) / slides.length) * 100}%`;
-  requestAnimationFrame(() => {
-    slides[current].querySelectorAll('.code-cell').forEach(cell => cell._monacoEditor?.layout());
-  });
+  requestAnimationFrame(() => { slides[current].querySelectorAll('.code-cell').forEach(cell => cell._monacoEditor?.layout()); });
+  syncNarrationForSlide();
+  saveDeckState();
 }
-
 function next() { showSlide(current + 1); }
 function prev() { showSlide(current - 1); }
 function showAllPoints() { /* All points are already visible. */ }
@@ -1759,7 +2025,8 @@ document.addEventListener('keydown', event => {
   }
 });
 
-showSlide(0);
+const initialSlide = initializeNarrationUI();
+showSlide(initialSlide);
 initializeMonacoEditors();
 </script>
 </body>
