@@ -1,0 +1,36 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:04.553
+A variable is a name that refers to a value You can
+think of it
+
+00:00:04.579 --> 00:00:09.921
+as a clear label attached to a piece of information
+For example the name sales
+
+00:00:09.947 --> 00:00:15.958
+can refer to the value one thousand while costs can
+refer to eight hundred The
+
+00:00:15.985 --> 00:00:20.221
+assignment symbol tells Python to associate the name
+on the left with the value on
+
+00:00:20.248 --> 00:00:25.777
+the right It is important not to think of assignment
+exactly like an algebra equation
+
+00:00:26.711 --> 00:00:32.708
+In Python assignment means store this value under
+this name Meaningful
+
+00:00:32.721 --> 00:00:38.250
+names make code easier to read A calculation such as
+sales minus costs is
+
+00:00:38.276 --> 00:00:43.789
+immediately understandable A calculation using
+unexplained numbers is much harder
+
+00:00:43.816 --> 00:00:46.316
+to maintain and much easier to misinterpret

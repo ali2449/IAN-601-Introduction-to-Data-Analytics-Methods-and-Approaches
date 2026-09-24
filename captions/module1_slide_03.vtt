@@ -1,0 +1,41 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.132
+Module 1 follows a simple learning path First we
+learn how to represent information
+
+00:00:06.145 --> 00:00:11.513
+with variables A variable lets us attach a
+meaningful name to a value such as
+
+00:00:11.539 --> 00:00:17.485
+sales cost age or temperature Second we learn how
+Python
+
+00:00:17.512 --> 00:00:23.067
+understands different kinds of values Whole numbers
+decimal numbers text and
+
+00:00:23.093 --> 00:00:28.910
+true or false values behave differently so data type
+matters Third
+
+00:00:29.095 --> 00:00:34.782
+we transform values with arithmetic and type
+conversion This is where raw values become
+
+00:00:34.808 --> 00:00:40.755
+useful metrics such as profit tax growth or margin
+Then we learn how to communicate
+
+00:00:40.782 --> 00:00:46.518
+those results with print statements and formatted
+strings At the end we
+
+00:00:46.544 --> 00:00:51.968
+combine these ideas in small business and healthcare
+examples The goal is to see one
+
+00:00:51.981 --> 00:00:57.468
+repeatable analytical pattern store values transform
+them and present the result clearly

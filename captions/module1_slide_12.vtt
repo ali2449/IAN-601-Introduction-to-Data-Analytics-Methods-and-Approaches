@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:04.458
+Python provides the type function so we can inspect
+how it has classified a value
+
+00:00:05.382 --> 00:00:09.566
+In this example age is an integer height is a float
+name is a string
+
+00:00:09.816 --> 00:00:15.448
+and the student flag is Boolean Run the example and
+compare the result
+
+00:00:15.474 --> 00:00:21.068
+with the values that were assigned Then place
+quotation marks around the age value and run
+
+00:00:21.095 --> 00:00:26.384
+it again Even though the characters still look like
+the number thirty Python will now
+
+00:00:26.397 --> 00:00:31.983
+treat the value as text This distinction becomes
+very important when we
+
+00:00:31.996 --> 00:00:37.775
+import data from CSV files forms or APIs A value may
+look numeric
+
+00:00:37.801 --> 00:00:40.301
+to us but still arrive in Python as a string

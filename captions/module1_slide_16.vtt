@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.513
+Three operators that may be less familiar are
+exponent floor division and modulo Exponent
+
+00:00:06.526 --> 00:00:12.355
+raises a value to a power Floor division gives the
+whole-number quotient and modulo
+
+00:00:12.382 --> 00:00:18.699
+gives the remainder A practical example is time
+conversion If
+
+00:00:18.725 --> 00:00:23.028
+we have one hundred eighty five minutes floor
+division by sixty tells us the number
+
+00:00:23.054 --> 00:00:29.752
+of complete hours Modulo sixty tells us the minutes
+that remain Run
+
+00:00:29.778 --> 00:00:35.163
+the example on the slide then try the one hundred
+eighty five minute example These
+
+00:00:35.189 --> 00:00:40.886
+operators also appear in bucketing periodic rules
+indexing patterns and many other programming
+
+00:00:40.913 --> 00:00:41.465
+tasks

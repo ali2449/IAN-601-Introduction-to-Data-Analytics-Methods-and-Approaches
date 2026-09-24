@@ -1,0 +1,223 @@
+{
+  "prefix": "module1",
+  "voice": "en-US-GuyNeural",
+  "rate": "-5%",
+  "volume": "+0%",
+  "pitch": "+0Hz",
+  "caption_words": 15,
+  "slide_count": 30,
+  "slide_markers_found": true,
+  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "slides": [
+    {
+      "slide": 1,
+      "audio": "module1_slide_01.mp3",
+      "captions": "module1_slide_01.vtt",
+      "text": "Welcome to Module 1 of IAN 601. In this module, we are going to build the Python foundation that we will use throughout the course. You do not need prior programming experience. The goal is to work with small pieces of code, understand what each line is doing, and connect the code to analytical work.\n\n[pause=0.7]\n\nA useful mental model for this module is simple. We start with data, we give that data meaningful names, we perform calculations or transformations, and then we communicate the result. That basic pattern appears again and again in business analytics, healthcare analytics, data cleaning, visualization, statistics, and machine learning.\n\n[pause=0.7]\n\nAs you move through the slides, try to predict the result before you run a Python example. Then change one value and run it again. That small habit will help you understand the code instead of only copying it.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 2,
+      "audio": "module1_slide_02.mp3",
+      "captions": "module1_slide_02.vtt",
+      "text": "This lesson is designed to be interactive. For each idea, first read the explanation and look at the example. Before you run the code, make a quick prediction about what Python will produce.\n\n[pause=0.7]\n\nNext, run the example in the browser. After you see the output, change one small part of the code, such as a number or a text value, and run it again. Finally, explain to yourself what changed and why.\n\n[pause=0.7]\n\nThe code editor is styled like VS Code so the environment feels familiar when you later work in a local editor. For larger assignments, you may also use Jupyter Notebook, JupyterLab, Colab, or another Python environment. The important part is not the tool. The important part is understanding the relationship between the code, the data, and the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 3,
+      "audio": "module1_slide_03.mp3",
+      "captions": "module1_slide_03.vtt",
+      "text": "Module 1 follows a simple learning path. First, we learn how to represent information with variables. A variable lets us attach a meaningful name to a value, such as sales, cost, age, or temperature.\n\n[pause=0.7]\n\nSecond, we learn how Python understands different kinds of values. Whole numbers, decimal numbers, text, and true or false values behave differently, so data type matters.\n\n[pause=0.7]\n\nThird, we transform values with arithmetic and type conversion. This is where raw values become useful metrics such as profit, tax, growth, or margin. Then we learn how to communicate those results with print statements and formatted strings.\n\n[pause=0.7]\n\nAt the end, we combine these ideas in small business and healthcare examples. The goal is to see one repeatable analytical pattern: store values, transform them, and present the result clearly.\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 4,
+      "audio": "module1_slide_04.mp3",
+      "captions": "module1_slide_04.vtt",
+      "text": "At this stage, think of Python as a tool that follows instructions in order. We provide values, Python stores them, performs operations on them, and gives us a result.\n\n[pause=0.7]\n\nFor example, imagine that we have sales of one thousand dollars and costs of eight hundred dollars. Python can store those two values and calculate profit by subtracting costs from sales. The calculation is simple, but the important idea is that the process is repeatable.\n\n[pause=0.7]\n\nIn real analytics work, the same pattern can be applied to thousands or millions of records. Later in the course, libraries such as NumPy and Pandas will help us work with larger datasets. For now, we are learning the small building blocks that those larger workflows depend on.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 5,
+      "audio": "module1_slide_05.mp3",
+      "captions": "module1_slide_05.vtt",
+      "text": "A variable is a name that refers to a value. You can think of it as a clear label attached to a piece of information. For example, the name sales can refer to the value one thousand, while costs can refer to eight hundred.\n\n[pause=0.7]\n\nThe assignment symbol tells Python to associate the name on the left with the value on the right. It is important not to think of assignment exactly like an algebra equation. In Python, assignment means store this value under this name.\n\n[pause=0.7]\n\nMeaningful names make code easier to read. A calculation such as sales minus costs is immediately understandable. A calculation using unexplained numbers is much harder to maintain and much easier to misinterpret.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 6,
+      "audio": "module1_slide_06.mp3",
+      "captions": "module1_slide_06.vtt",
+      "text": "This example creates three variables. Sales stores one thousand, costs stores eight hundred, and profit is calculated from sales minus costs.\n\n[pause=0.7]\n\nRun the example in the browser and look at the printed output. Notice that Python evaluates the assignments before it reaches the print statements. The profit variable does not contain a number that we typed directly. It contains a value derived from the other two variables.\n\n[pause=0.8]\n\nNow change sales to twelve hundred and fifty and predict the new profit before you run the code again. This is a small exercise, but it demonstrates an important analytical idea. When an input changes, every metric that depends on that input may change as well.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 7,
+      "audio": "module1_slide_07.mp3",
+      "captions": "module1_slide_07.vtt",
+      "text": "This visual shows the relationship between raw values and a derived metric. Sales and costs are the starting measures. Profit is produced from those measures.\n\n[pause=0.7]\n\nThis kind of dependency is common in analytics. A dashboard may display profit, margin, growth, or utilization, but those final indicators are usually calculated from more basic values underneath.\n\n[pause=0.7]\n\nWhen you change the values in the runnable example, pay attention to how the resulting metric changes. Also remember that an error in a starting value can flow into every calculation that depends on it. Understanding these dependencies becomes very important when we later clean and validate data.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 8,
+      "audio": "module1_slide_08.mp3",
+      "captions": "module1_slide_08.vtt",
+      "text": "A variable can be given a new value later in a program. If sales first stores one thousand and then we assign fifteen hundred to sales, the variable now refers to the newer value.\n\n[pause=0.7]\n\nThis is called reassignment. It is useful because analytical values often change during a workflow. We may clean a value, convert its units, apply a correction, or replace an old observation with a new one.\n\n[pause=0.7]\n\nWhen you run this example, compare the value printed before the reassignment with the value printed after it. Python processes the lines in order, so the point at which a value changes matters.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 9,
+      "audio": "module1_slide_09.mp3",
+      "captions": "module1_slide_09.vtt",
+      "text": "Python can assign several values to several variables in one statement. The values are matched to the variable names by position.\n\n[pause=0.7]\n\nFor example, a name, an age, and a salary can be assigned in one line. This can be convenient when the relationship is obvious and the line remains easy to read.\n\n[pause=0.7]\n\nThe main caution is that order matters. If the values are rearranged without rearranging the variable names, the program may still run but the meaning will be wrong. Concise code is useful, but readable and correct code is more important than using fewer lines.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 10,
+      "audio": "module1_slide_10.mp3",
+      "captions": "module1_slide_10.vtt",
+      "text": "Good variable names make analytical code easier to understand. Prefer descriptive names such as monthly sales, patient age, or previous revenue instead of short names that only make sense to the person who wrote the code.\n\n[pause=0.7]\n\nIn Python, a common style is lowercase words separated by underscores. Names cannot begin with a number, and Python keywords such as if, for, and class should not be used as variable names.\n\n[pause=0.7]\n\nAlso remember that Python is case sensitive. Sales with a capital S and sales with a lowercase s are different names. Consistent naming reduces errors and makes collaboration much easier.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 11,
+      "audio": "module1_slide_11.mp3",
+      "captions": "module1_slide_11.vtt",
+      "text": "A data type describes what kind of value Python is working with. In this module, we focus on four fundamental types: integer, float, string, and Boolean.\n\n[pause=0.7]\n\nAn integer is a whole number, such as twelve visits. A float is a decimal number, such as nineteen point ninety nine. A string stores text, labels, and codes. A Boolean stores either true or false.\n\n[pause=0.7]\n\nThe type matters because it affects which operations make sense. Adding two numeric measurements may be reasonable. Adding an employee identifier to a ZIP code is not. Good analytics begins by representing each value in a way that matches its real meaning.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 12,
+      "audio": "module1_slide_12.mp3",
+      "captions": "module1_slide_12.vtt",
+      "text": "Python provides the type function so we can inspect how it has classified a value. In this example, age is an integer, height is a float, name is a string, and the student flag is Boolean.\n\n[pause=0.7]\n\nRun the example and compare the result with the values that were assigned. Then place quotation marks around the age value and run it again. Even though the characters still look like the number thirty, Python will now treat the value as text.\n\n[pause=0.8]\n\nThis distinction becomes very important when we import data from CSV files, forms, or APIs. A value may look numeric to us but still arrive in Python as a string.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 13,
+      "audio": "module1_slide_13.mp3",
+      "captions": "module1_slide_13.vtt",
+      "text": "Not every value made of digits should be stored as a number. Identifiers are a good example. An employee ID, ZIP code, account code, or diagnosis code may contain digits, but we normally do not add or average those values.\n\n[pause=0.7]\n\nKeeping an identifier as text also protects important formatting. An ID such as zero zero one two five has leading zeros. If we treat it as a numeric quantity, those leading zeros may be lost.\n\n[pause=0.7]\n\nWhen choosing a data type, ask what the value means, not only what it looks like. If it represents a label rather than a quantity, a string is often the better choice.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 14,
+      "audio": "module1_slide_14.mp3",
+      "captions": "module1_slide_14.vtt",
+      "text": "Arithmetic lets us turn stored values into new analytical measures. Addition, subtraction, multiplication, and division are the most familiar operators, but Python also supports powers, floor division, and remainders.\n\n[pause=0.7]\n\nIn analytics, the result of a calculation is often more useful than the raw input. Sales and costs are useful, but profit gives us another view of performance. Profit divided by sales can become a margin. A current value compared with a previous value can become a growth rate.\n\n[pause=0.7]\n\nAs you create derived metrics, keep the units in mind. Dollars, counts, percentages, and rates have different meanings, even when they are all stored as numbers.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 15,
+      "audio": "module1_slide_15.mp3",
+      "captions": "module1_slide_15.vtt",
+      "text": "This code creates a small chain of calculations. We begin with sales and costs. Profit is sales minus costs. Tax is calculated from profit, and net profit is what remains after subtracting the tax.\n\n[pause=0.7]\n\nRun the example and follow the dependency from top to bottom. The later values depend on the earlier ones, so the order of the statements matters.\n\n[pause=0.8]\n\nTry changing the tax rate from five percent to ten percent. Profit should stay the same because the profit calculation does not use the tax rate. Tax and net profit should change because they do depend on it. This is a good way to practice reasoning about which variables influence which results.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 16,
+      "audio": "module1_slide_16.mp3",
+      "captions": "module1_slide_16.vtt",
+      "text": "Three operators that may be less familiar are exponent, floor division, and modulo. Exponent raises a value to a power. Floor division gives the whole-number quotient, and modulo gives the remainder.\n\n[pause=0.7]\n\nA practical example is time conversion. If we have one hundred eighty five minutes, floor division by sixty tells us the number of complete hours. Modulo sixty tells us the minutes that remain.\n\n[pause=0.7]\n\nRun the example on the slide, then try the one hundred eighty five minute example. These operators also appear in bucketing, periodic rules, indexing patterns, and many other programming tasks.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 17,
+      "audio": "module1_slide_17.mp3",
+      "captions": "module1_slide_17.vtt",
+      "text": "Python follows an order of operations, just like standard arithmetic. Multiplication and division are evaluated before addition and subtraction unless parentheses change the grouping.\n\n[pause=0.7]\n\nThis matters because a calculation can be syntactically valid but still produce the wrong analytical result. Python may not give you an error message if your formula is grouped incorrectly.\n\n[pause=0.7]\n\nCompare ten plus five times two with the same values placed inside parentheses before the multiplication. Predict both results first, then run the example. In analytical code, parentheses can make both the intended calculation and the code itself easier to understand.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 18,
+      "audio": "module1_slide_18.mp3",
+      "captions": "module1_slide_18.vtt",
+      "text": "A variable can contain a correct value without showing anything on the screen. The print function gives us a simple way to display text, variables, and calculations.\n\n[pause=0.7]\n\nDuring analysis, print statements are useful for checking intermediate results. If a final metric looks wrong, we can inspect earlier values and see where the problem may have started.\n\n[pause=0.7]\n\nPrinting is also a basic communication tool. Instead of displaying an unexplained number, we can attach a label such as profit, age, or sales. Later we will use tables and visualizations, but clear labels remain important in every form of analytical communication.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 19,
+      "audio": "module1_slide_19.mp3",
+      "captions": "module1_slide_19.vtt",
+      "text": "An f-string lets us combine text and values in a readable way. We place the variable or expression inside braces, and Python inserts its value into the message.\n\n[pause=0.7]\n\nIn the example, a patient name, age, and temperature are combined into labeled output. The temperature is also formatted to one decimal place. Run the example and then change the formatting to two decimal places so you can see the difference.\n\n[pause=0.8]\n\nF-strings are especially useful in analytics because the label, value, unit, and formatting can travel together. That makes results easier to interpret and reduces the chance that someone will misunderstand what a number represents.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 20,
+      "audio": "module1_slide_20.mp3",
+      "captions": "module1_slide_20.vtt",
+      "text": "Formatting changes how a value is displayed without changing the underlying value stored in Python. For financial results, we often want thousands separators and a fixed number of decimal places. For rates, we often want percentage formatting.\n\n[pause=0.7]\n\nIn the example, revenue is displayed as money with commas and two decimal places. Growth is stored as a decimal fraction but displayed as a percentage.\n\n[pause=0.7]\n\nThat distinction is important. A growth value of zero point one five represents fifteen percent. The stored value and the displayed value are related, but they are not written the same way. Consistent formatting makes analytical reports easier to scan and reduces ambiguity.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 21,
+      "audio": "module1_slide_21.mp3",
+      "captions": "module1_slide_21.vtt",
+      "text": "When a user types into an input prompt, Python receives the response as text. This is true even if the person typed digits that look like a number.\n\n[pause=0.7]\n\nIf we want to use that input in arithmetic, we usually need to convert it. The integer function creates a whole number, and the float function creates a numeric value that can include decimals.\n\n[pause=0.7]\n\nThis pattern appears far beyond keyboard input. Data from forms, CSV files, web pages, and APIs can also arrive as text. One of the first tasks in data preparation is often checking whether values have the correct type for the work we want to do.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 22,
+      "audio": "module1_slide_22.mp3",
+      "captions": "module1_slide_22.vtt",
+      "text": "This example begins with price and quantity stored as strings. They look like numbers to us, but Python still sees text because the values are inside quotation marks.\n\n[pause=0.7]\n\nThe float conversion turns the price into a decimal number, and the integer conversion turns the quantity into a whole number. After conversion, Python can multiply them to calculate the total.\n\n[pause=0.8]\n\nRun the example and then change the quantity text from five to eight. Notice that conversion is not only a technical detail. It determines whether the data can participate correctly in a numerical calculation.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 23,
+      "audio": "module1_slide_23.mp3",
+      "captions": "module1_slide_23.vtt",
+      "text": "A Boolean value is either true or false. Python can also convert other values into Boolean form. Zero and an empty string behave like false, while nonzero numbers and nonempty strings behave like true.\n\n[pause=0.7]\n\nFor now, the important goal is simply to observe the pattern. In the next module, Boolean values will become the basis for conditions such as if sales are above a target or if a record is missing a required value.\n\n[pause=0.7]\n\nRun the examples and compare zero with one, and an empty string with a string that contains text. This gives you an early preview of how Python will later make decisions.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 24,
+      "audio": "module1_slide_24.mp3",
+      "captions": "module1_slide_24.vtt",
+      "text": "Real data does not always contain valid values. If Python tries to convert the text abc into a number, the conversion fails because the text does not represent a numeric value.\n\n[pause=0.7]\n\nThe example uses a small try and except structure so the program can respond to the problem instead of stopping unexpectedly. We will study error handling in more detail later, so you do not need to memorize this syntax now.\n\n[pause=0.7]\n\nThe main lesson is analytical rather than syntactic: never assume every incoming value is valid. Data validation is part of reliable analysis. Try replacing abc with forty two point five and notice that the conversion then succeeds.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 25,
+      "audio": "module1_slide_25.mp3",
+      "captions": "module1_slide_25.vtt",
+      "text": "The practice section moves from simple tasks toward small integrated problems. The goal is not to write a large program. The goal is to combine a few ideas at a time and be able to explain what each line does.\n\n[pause=0.7]\n\nAs you work, use the same cycle we have used throughout the module. Read the task, predict what the code should do, run it, modify one part, and explain the result.\n\n[pause=0.7]\n\nIf your answer is different from what you expected, do not immediately replace your code. First inspect the variables and intermediate calculations. Learning to trace a small program is one of the best foundations for debugging larger analytical workflows later.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 26,
+      "audio": "module1_slide_26.mp3",
+      "captions": "module1_slide_26.vtt",
+      "text": "This practice example stores a small patient record using separate variables. The values can include text, numbers, and a Boolean flag depending on what we want to represent.\n\n[pause=0.7]\n\nRun the code and identify the type and meaning of each variable. Then change the values while keeping the variable names clear. You can also add another variable, such as a condition or a blood pressure label.\n\n[pause=0.8]\n\nThe important idea is that healthcare data, like business data, contains different kinds of information. Identifiers, measurements, categories, and status flags should be represented in ways that match their meaning.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 27,
+      "audio": "module1_slide_27.mp3",
+      "captions": "module1_slide_27.vtt",
+      "text": "This practice combines raw values with derived metrics. Sales and costs are the inputs. Profit is the dollar amount remaining after costs. Margin compares profit with sales, so it is naturally expressed as a percentage.\n\n[pause=0.7]\n\nRun the example and then increase the costs. Watch what happens to both profit and margin. One value is an amount, while the other is a ratio, so they communicate different aspects of performance.\n\n[pause=0.8]\n\nAlso notice that the margin calculation divides by sales. In real analytical code, we would eventually need to consider what happens if sales are zero. That kind of validation will become easier after we learn conditions in the next module.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 28,
+      "audio": "module1_slide_28.mp3",
+      "captions": "module1_slide_28.vtt",
+      "text": "This mini project brings the main Module 1 ideas together. We start with sales, costs, and a tax rate. Then we calculate profit, tax, net profit, and a margin, and finally we format the results so they are easy to read.\n\n[pause=0.7]\n\nRun the program once with the starting values. Then change the sales and costs to create at least two different scenarios. For example, try a strong profit scenario and then a much smaller profit scenario.\n\n[pause=0.8]\n\nAs you work, trace the calculation from the raw inputs to the final output. This is a small program, but it represents a complete analytical workflow: define the data, transform the data, and communicate the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 29,
+      "audio": "module1_slide_29.mp3",
+      "captions": "module1_slide_29.vtt",
+      "text": "Before finishing the module, use this slide as a self-check. You should be able to explain what a variable stores, recognize the four basic data types we used, and trace a simple arithmetic calculation from the inputs to the result.\n\n[pause=0.7]\n\nYou should also be able to explain why formatting matters and why input sometimes needs to be converted before we can use it numerically.\n\n[pause=0.7]\n\nTry to answer these questions in your own words rather than only remembering syntax. If you can explain what the code is doing and why, you are in a good position to move forward. If one area still feels unclear, return to the related runnable example and change a few values.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 30,
+      "audio": "module1_slide_30.mp3",
+      "captions": "module1_slide_30.vtt",
+      "text": "In Module 1, we built the core Python pattern that will support the rest of the course. Variables give values meaningful names. Data types tell Python what kind of information it is working with. Arithmetic turns raw values into derived measures, and formatted output helps us communicate those measures clearly.\n\n[pause=0.7]\n\nWe also saw that user input commonly begins as text, so type conversion is an important part of preparing data for calculation. Most importantly, we practiced reading, predicting, running, modifying, and explaining small pieces of code.\n\n[pause=0.7]\n\nIn Module 2, we will add control flow. Comparisons, if and else statements, for loops, and while loops will allow our programs to make decisions and repeat work. The small calculations from this module will become the building blocks for more flexible analytical programs.\n\n[pause=1.0]",
+      "pause_markers": 3
+    }
+  ]
+}

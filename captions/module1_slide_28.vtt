@@ -1,0 +1,36 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.645
+This mini project brings the main Module 1 ideas
+together We start with sales
+
+00:00:05.789 --> 00:00:11.697
+costs and a tax rate Then we calculate profit tax
+net profit and a margin
+
+00:00:11.882 --> 00:00:17.529
+and finally we format the results so they are easy
+to read Run the program
+
+00:00:17.555 --> 00:00:22.755
+once with the starting values Then change the sales
+and costs to create at least
+
+00:00:22.768 --> 00:00:28.334
+two different scenarios For example try a strong
+profit scenario and then a much
+
+00:00:28.347 --> 00:00:33.901
+smaller profit scenario As you work trace the
+calculation
+
+00:00:33.927 --> 00:00:38.811
+from the raw inputs to the final output This is a
+small program but it
+
+00:00:38.824 --> 00:00:44.416
+represents a complete analytical workflow define the
+data transform the data and communicate
+
+00:00:44.443 --> 00:00:45.087
+the result

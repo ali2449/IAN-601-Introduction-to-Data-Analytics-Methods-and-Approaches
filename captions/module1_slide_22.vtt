@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.566
+This example begins with price and quantity stored
+as strings They look like numbers to
+
+00:00:05.579 --> 00:00:11.987
+us but Python still sees text because the values are
+inside quotation marks The
+
+00:00:12.001 --> 00:00:16.922
+float conversion turns the price into a decimal
+number and the integer conversion turns the
+
+00:00:16.948 --> 00:00:22.806
+quantity into a whole number After conversion Python
+can multiply them to calculate
+
+00:00:22.832 --> 00:00:28.479
+the total Run the example and then change the
+quantity text from five
+
+00:00:28.506 --> 00:00:34.193
+to eight Notice that conversion is not only a
+technical detail It
+
+00:00:34.219 --> 00:00:38.732
+determines whether the data can participate
+correctly in a numerical calculation

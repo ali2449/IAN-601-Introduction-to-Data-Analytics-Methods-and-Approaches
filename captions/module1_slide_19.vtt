@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.763
+An f-string lets us combine text and values in a
+readable way We place the variable
+
+00:00:05.789 --> 00:00:12.099
+or expression inside braces and Python inserts its
+value into the message In
+
+00:00:12.125 --> 00:00:18.180
+the example a patient name age and temperature are
+combined into labeled output The
+
+00:00:18.207 --> 00:00:23.878
+temperature is also formatted to one decimal place
+Run the example and then change
+
+00:00:23.904 --> 00:00:29.784
+the formatting to two decimal places so you can see
+the difference F-strings
+
+00:00:29.810 --> 00:00:35.692
+are especially useful in analytics because the label
+value unit and formatting can travel together
+
+00:00:36.629 --> 00:00:41.734
+That makes results easier to interpret and reduces
+the chance that someone will misunderstand what
+
+00:00:41.760 --> 00:00:42.944
+a number represents

@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.711
+Good variable names make analytical code easier to
+understand Prefer descriptive
+
+00:00:05.724 --> 00:00:10.605
+names such as monthly sales patient age or previous
+revenue instead of short names that
+
+00:00:10.632 --> 00:00:16.453
+only make sense to the person who wrote the code In
+Python a common style
+
+00:00:16.480 --> 00:00:22.022
+is lowercase words separated by underscores Names
+cannot begin with a number and
+
+00:00:22.035 --> 00:00:26.627
+Python keywords such as if for and class should not
+be used as variable names
+
+00:00:28.383 --> 00:00:34.017
+Also remember that Python is case sensitive Sales
+with a capital S and sales with
+
+00:00:34.043 --> 00:00:40.175
+a lowercase s are different names Consistent naming
+reduces errors and makes collaboration
+
+00:00:40.201 --> 00:00:41.004
+much easier

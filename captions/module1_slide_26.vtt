@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.658
+This practice example stores a small patient record
+using separate variables The
+
+00:00:05.671 --> 00:00:10.224
+values can include text numbers and a Boolean flag
+depending on what we want to
+
+00:00:10.250 --> 00:00:16.183
+represent Run the code and identify the type and
+meaning of each variable
+
+00:00:17.106 --> 00:00:22.619
+Then change the values while keeping the variable
+names clear You can also add another
+
+00:00:22.646 --> 00:00:28.274
+variable such as a condition or a blood pressure
+label The important
+
+00:00:28.301 --> 00:00:35.185
+idea is that healthcare data like business data
+contains different kinds of information Identifiers
+
+00:00:35.277 --> 00:00:40.316
+measurements categories and status flags should be
+represented in ways that match their meaning

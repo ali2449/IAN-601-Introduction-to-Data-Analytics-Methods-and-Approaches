@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.882
+When a user types into an input prompt Python
+receives the response as text This
+
+00:00:05.895 --> 00:00:11.262
+is true even if the person typed digits that look
+like a number If we
+
+00:00:11.288 --> 00:00:16.672
+want to use that input in arithmetic we usually need
+to convert it The integer
+
+00:00:16.699 --> 00:00:21.172
+function creates a whole number and the float
+function creates a numeric value that can
+
+00:00:21.199 --> 00:00:27.901
+include decimals This pattern appears far beyond
+keyboard input Data
+
+00:00:27.927 --> 00:00:33.862
+from forms CSV files web pages and APIs can also
+arrive as text One
+
+00:00:33.875 --> 00:00:38.283
+of the first tasks in data preparation is often
+checking whether values have the correct
+
+00:00:38.309 --> 00:00:39.849
+type for the work we want to do

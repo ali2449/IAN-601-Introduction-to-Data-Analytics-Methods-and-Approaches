@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.763
+This code creates a small chain of calculations We
+begin with sales and costs
+
+00:00:06.684 --> 00:00:12.434
+Profit is sales minus costs Tax is calculated from
+profit and net profit
+
+00:00:12.461 --> 00:00:18.108
+is what remains after subtracting the tax Run the
+example and follow
+
+00:00:18.134 --> 00:00:23.900
+the dependency from top to bottom The later values
+depend on the earlier ones so
+
+00:00:23.926 --> 00:00:29.876
+the order of the statements matters Try changing the
+tax rate from five percent
+
+00:00:29.902 --> 00:00:35.457
+to ten percent Profit should stay the same because
+the profit calculation does not use
+
+00:00:35.483 --> 00:00:40.483
+the tax rate Tax and net profit should change
+because they do depend on it
+
+00:00:41.418 --> 00:00:46.010
+This is a good way to practice reasoning about which
+variables influence which results

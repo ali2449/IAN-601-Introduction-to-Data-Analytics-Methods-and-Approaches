@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.711
+A Boolean value is either true or false Python can
+also convert other values
+
+00:00:05.737 --> 00:00:11.395
+into Boolean form Zero and an empty string behave
+like false while nonzero numbers
+
+00:00:11.421 --> 00:00:17.309
+and nonempty strings behave like true For now the
+important goal is simply
+
+00:00:17.335 --> 00:00:22.785
+to observe the pattern In the next module Boolean
+values will become the basis for
+
+00:00:22.811 --> 00:00:26.482
+conditions such as if sales are above a target or if
+a record is missing
+
+00:00:26.509 --> 00:00:32.152
+a required value Run the examples and compare zero
+with one and an
+
+00:00:32.179 --> 00:00:37.102
+empty string with a string that contains text This
+gives you an early preview of
+
+00:00:37.129 --> 00:00:39.181
+how Python will later make decisions

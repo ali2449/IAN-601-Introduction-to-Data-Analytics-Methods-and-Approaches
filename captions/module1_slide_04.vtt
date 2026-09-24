@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.447
+At this stage think of Python as a tool that follows
+instructions in order We
+
+00:00:05.474 --> 00:00:12.677
+provide values Python stores them performs
+operations on them and gives us a result For
+
+00:00:12.690 --> 00:00:17.032
+example imagine that we have sales of one thousand
+dollars and costs of eight hundred
+
+00:00:17.059 --> 00:00:22.680
+dollars Python can store those two values and
+calculate profit by subtracting costs
+
+00:00:22.706 --> 00:00:28.246
+from sales The calculation is simple but the
+important idea is that the process
+
+00:00:28.272 --> 00:00:33.997
+is repeatable In real analytics work the same
+pattern can be applied
+
+00:00:34.010 --> 00:00:39.618
+to thousands or millions of records Later in the
+course libraries such as NumPy
+
+00:00:39.644 --> 00:00:44.750
+and Pandas will help us work with larger datasets
+For now we are learning the
+
+00:00:44.763 --> 00:00:48.000
+small building blocks that those larger workflows
+depend on

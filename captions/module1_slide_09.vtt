@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.684
+Python can assign several values to several
+variables in one statement The values
+
+00:00:05.711 --> 00:00:11.223
+are matched to the variable names by position For
+example a name
+
+00:00:11.433 --> 00:00:16.357
+an age and a salary can be assigned in one line This
+can be convenient
+
+00:00:16.383 --> 00:00:21.916
+when the relationship is obvious and the line
+remains easy to read The main
+
+00:00:21.942 --> 00:00:27.760
+caution is that order matters If the values are
+rearranged without rearranging the variable
+
+00:00:27.787 --> 00:00:32.945
+names the program may still run but the meaning will
+be wrong Concise code is
+
+00:00:32.971 --> 00:00:37.260
+useful but readable and correct code is more
+important than using fewer lines

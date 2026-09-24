@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.461
+Not every value made of digits should be stored as a
+number Identifiers are a
+
+00:00:05.487 --> 00:00:11.158
+good example An employee ID ZIP code account code or
+diagnosis code
+
+00:00:11.184 --> 00:00:17.194
+may contain digits but we normally do not add or
+average those values Keeping
+
+00:00:17.221 --> 00:00:22.855
+an identifier as text also protects important
+formatting An ID such as zero
+
+00:00:22.881 --> 00:00:27.960
+zero one two five has leading zeros If we treat it
+as a numeric quantity
+
+00:00:28.131 --> 00:00:33.635
+those leading zeros may be lost When choosing a data
+type ask
+
+00:00:33.661 --> 00:00:38.467
+what the value means not only what it looks like If
+it represents a label
+
+00:00:38.493 --> 00:00:41.664
+rather than a quantity a string is often the better
+choice

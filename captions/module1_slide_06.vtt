@@ -1,0 +1,36 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.737
+This example creates three variables Sales stores
+one thousand costs stores
+
+00:00:05.763 --> 00:00:11.412
+eight hundred and profit is calculated from sales
+minus costs Run
+
+00:00:11.438 --> 00:00:17.165
+the example in the browser and look at the printed
+output Notice that Python evaluates
+
+00:00:17.191 --> 00:00:22.783
+the assignments before it reaches the print
+statements The profit variable does not contain
+
+00:00:22.809 --> 00:00:27.928
+a number that we typed directly It contains a value
+derived from the other two
+
+00:00:27.954 --> 00:00:33.575
+variables Now change sales to twelve hundred and
+fifty and predict the new
+
+00:00:33.588 --> 00:00:39.170
+profit before you run the code again This is a small
+exercise but it demonstrates
+
+00:00:39.183 --> 00:00:44.788
+an important analytical idea When an input changes
+every metric that depends on
+
+00:00:44.815 --> 00:00:46.433
+that input may change as well

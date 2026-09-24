@@ -1,0 +1,40 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.105
+This lesson is designed to be interactive For each
+idea first read the explanation
+
+00:00:06.132 --> 00:00:11.053
+and look at the example Before you run the code make
+a quick prediction about
+
+00:00:11.079 --> 00:00:16.648
+what Python will produce Next run the example in the
+browser
+
+00:00:17.585 --> 00:00:21.374
+After you see the output change one small part of
+the code such as a
+
+00:00:21.401 --> 00:00:27.164
+number or a text value and run it again Finally
+explain to yourself what changed
+
+00:00:27.190 --> 00:00:32.963
+and why The code editor is styled like VS Code so
+the environment feels
+
+00:00:32.989 --> 00:00:38.426
+familiar when you later work in a local editor For
+larger assignments you may also
+
+00:00:38.452 --> 00:00:44.149
+use Jupyter Notebook JupyterLab Colab or another
+Python environment The
+
+00:00:44.163 --> 00:00:49.939
+important part is not the tool The important part is
+understanding the relationship between
+
+00:00:49.965 --> 00:00:52.228
+the code the data and the result

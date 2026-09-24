@@ -1,0 +1,41 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:04.155
+In Module 1 we built the core Python pattern that
+will support the rest of
+
+00:00:04.182 --> 00:00:09.776
+the course Variables give values meaningful names
+Data types
+
+00:00:09.803 --> 00:00:15.408
+tell Python what kind of information it is working
+with Arithmetic turns raw values
+
+00:00:15.434 --> 00:00:22.072
+into derived measures and formatted output helps us
+communicate those measures clearly We
+
+00:00:22.098 --> 00:00:27.059
+also saw that user input commonly begins as text so
+type conversion is an important
+
+00:00:27.072 --> 00:00:33.180
+part of preparing data for calculation Most
+importantly we practiced reading predicting
+
+00:00:33.390 --> 00:00:39.046
+running modifying and explaining small pieces of
+code In Module
+
+00:00:39.073 --> 00:00:44.733
+2 we will add control flow Comparisons if and else
+statements for loops and
+
+00:00:44.759 --> 00:00:50.312
+while loops will allow our programs to make
+decisions and repeat work The small calculations
+
+00:00:50.338 --> 00:00:54.917
+from this module will become the building blocks for
+more flexible analytical programs

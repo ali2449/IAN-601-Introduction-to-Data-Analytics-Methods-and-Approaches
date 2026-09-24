@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.658
+This visual shows the relationship between raw
+values and a derived metric Sales
+
+00:00:05.671 --> 00:00:12.525
+and costs are the starting measures Profit is
+produced from those measures This
+
+00:00:12.538 --> 00:00:18.185
+kind of dependency is common in analytics A
+dashboard may display profit margin
+
+00:00:18.304 --> 00:00:23.922
+growth or utilization but those final indicators are
+usually calculated from more basic values
+
+00:00:23.948 --> 00:00:29.726
+underneath When you change the values in the
+runnable example pay attention
+
+00:00:29.753 --> 00:00:35.177
+to how the resulting metric changes Also remember
+that an error in a starting value
+
+00:00:35.203 --> 00:00:41.071
+can flow into every calculation that depends on it
+Understanding these dependencies becomes
+
+00:00:41.098 --> 00:00:43.992
+very important when we later clean and validate data

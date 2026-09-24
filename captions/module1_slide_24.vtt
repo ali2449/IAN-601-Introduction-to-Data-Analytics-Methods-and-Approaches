@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.632
+Real data does not always contain valid values If
+Python tries to convert the
+
+00:00:05.658 --> 00:00:10.211
+text abc into a number the conversion fails because
+the text does not represent a
+
+00:00:10.224 --> 00:00:15.780
+numeric value The example uses a small try and
+except structure so
+
+00:00:15.807 --> 00:00:21.467
+the program can respond to the problem instead of
+stopping unexpectedly We will study error
+
+00:00:21.493 --> 00:00:25.888
+handling in more detail later so you do not need to
+memorize this syntax now
+
+00:00:27.615 --> 00:00:33.115
+The main lesson is analytical rather than syntactic
+never assume every incoming value is valid
+
+00:00:34.051 --> 00:00:39.709
+Data validation is part of reliable analysis Try
+replacing abc with forty
+
+00:00:39.736 --> 00:00:42.749
+two point five and notice that the conversion then
+succeeds

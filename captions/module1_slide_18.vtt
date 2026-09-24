@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.697
+A variable can contain a correct value without
+showing anything on the screen The print
+
+00:00:05.724 --> 00:00:12.320
+function gives us a simple way to display text
+variables and calculations During
+
+00:00:12.347 --> 00:00:18.073
+analysis print statements are useful for checking
+intermediate results If a final
+
+00:00:18.086 --> 00:00:22.270
+metric looks wrong we can inspect earlier values and
+see where the problem may have
+
+00:00:22.297 --> 00:00:28.598
+started Printing is also a basic communication tool
+Instead
+
+00:00:28.611 --> 00:00:33.216
+of displaying an unexplained number we can attach a
+label such as profit age or
+
+00:00:33.243 --> 00:00:39.256
+sales Later we will use tables and visualizations
+but clear labels remain important
+
+00:00:39.269 --> 00:00:41.716
+in every form of analytical communication

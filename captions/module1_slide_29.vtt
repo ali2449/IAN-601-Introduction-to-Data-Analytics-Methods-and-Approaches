@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.342
+Before finishing the module use this slide as a
+self-check You should be able to
+
+00:00:05.355 --> 00:00:10.382
+explain what a variable stores recognize the four
+basic data types we used and trace
+
+00:00:10.408 --> 00:00:16.074
+a simple arithmetic calculation from the inputs to
+the result You should also
+
+00:00:16.101 --> 00:00:20.587
+be able to explain why formatting matters and why
+input sometimes needs to be converted
+
+00:00:20.601 --> 00:00:26.405
+before we can use it numerically Try to answer these
+questions in your own words
+
+00:00:26.418 --> 00:00:31.460
+rather than only remembering syntax If you can
+explain what the code is doing and
+
+00:00:31.486 --> 00:00:36.342
+why you are in a good position to move forward If
+one area still feels
+
+00:00:36.368 --> 00:00:40.526
+unclear return to the related runnable example and
+change a few values

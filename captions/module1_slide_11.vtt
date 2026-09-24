@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.434
+A data type describes what kind of value Python is
+working with In this module
+
+00:00:05.645 --> 00:00:12.267
+we focus on four fundamental types integer float
+string and Boolean An
+
+00:00:12.293 --> 00:00:17.506
+integer is a whole number such as twelve visits A
+float is a decimal number
+
+00:00:17.769 --> 00:00:23.269
+such as nineteen point ninety nine A string stores
+text labels and codes
+
+00:00:24.177 --> 00:00:29.840
+A Boolean stores either true or false The type
+matters because it affects
+
+00:00:29.866 --> 00:00:36.580
+which operations make sense Adding two numeric
+measurements may be reasonable Adding
+
+00:00:36.606 --> 00:00:42.461
+an employee identifier to a ZIP code is not Good
+analytics begins by representing
+
+00:00:42.487 --> 00:00:44.974
+each value in a way that matches its real meaning

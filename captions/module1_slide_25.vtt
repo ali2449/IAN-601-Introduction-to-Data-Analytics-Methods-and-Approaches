@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.882
+The practice section moves from simple tasks toward
+small integrated problems The goal
+
+00:00:05.908 --> 00:00:10.434
+is not to write a large program The goal is to
+combine a few ideas
+
+00:00:10.461 --> 00:00:15.614
+at a time and be able to explain what each line does
+As you work
+
+00:00:15.917 --> 00:00:21.196
+use the same cycle we have used throughout the
+module Read the task predict what
+
+00:00:21.222 --> 00:00:27.260
+the code should do run it modify one part and
+explain the result If
+
+00:00:27.286 --> 00:00:32.973
+your answer is different from what you expected do
+not immediately replace your code First
+
+00:00:32.999 --> 00:00:38.644
+inspect the variables and intermediate calculations
+Learning to trace a small program
+
+00:00:38.657 --> 00:00:43.013
+is one of the best foundations for debugging larger
+analytical workflows later

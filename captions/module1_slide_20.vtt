@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.287
+Formatting changes how a value is displayed without
+changing the underlying value stored in Python
+
+00:00:06.211 --> 00:00:11.855
+For financial results we often want thousands
+separators and a fixed number of decimal places
+
+00:00:12.789 --> 00:00:18.753
+For rates we often want percentage formatting In the
+example revenue
+
+00:00:18.767 --> 00:00:23.940
+is displayed as money with commas and two decimal
+places Growth is stored as a
+
+00:00:23.953 --> 00:00:30.063
+decimal fraction but displayed as a percentage That
+distinction is important
+
+00:00:31.000 --> 00:00:36.697
+A growth value of zero point one five represents
+fifteen percent The stored value
+
+00:00:36.710 --> 00:00:42.039
+and the displayed value are related but they are not
+written the same way Consistent
+
+00:00:42.066 --> 00:00:46.460
+formatting makes analytical reports easier to scan
+and reduces ambiguity

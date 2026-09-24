@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.263
+Arithmetic lets us turn stored values into new
+analytical measures Addition subtraction
+
+00:00:06.434 --> 00:00:12.224
+multiplication and division are the most familiar
+operators but Python also supports powers floor
+
+00:00:12.237 --> 00:00:17.879
+division and remainders In analytics the result of a
+calculation
+
+00:00:17.905 --> 00:00:23.356
+is often more useful than the raw input Sales and
+costs are useful but profit
+
+00:00:23.382 --> 00:00:28.882
+gives us another view of performance Profit divided
+by sales can become a margin
+
+00:00:29.816 --> 00:00:35.577
+A current value compared with a previous value can
+become a growth rate As
+
+00:00:35.603 --> 00:00:41.330
+you create derived metrics keep the units in mind
+Dollars counts percentages
+
+00:00:41.501 --> 00:00:45.132
+and rates have different meanings even when they are
+all stored as numbers

@@ -1,0 +1,30 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.974
+Python follows an order of operations just like
+standard arithmetic Multiplication
+
+00:00:06.000 --> 00:00:13.039
+and division are evaluated before addition and
+subtraction unless parentheses change the grouping
+This
+
+00:00:13.066 --> 00:00:18.671
+matters because a calculation can be syntactically
+valid but still produce the wrong analytical result
+
+00:00:19.595 --> 00:00:25.921
+Python may not give you an error message if your
+formula is grouped incorrectly Compare
+
+00:00:25.948 --> 00:00:31.198
+ten plus five times two with the same values placed
+inside parentheses before the multiplication
+
+00:00:32.135 --> 00:00:38.266
+Predict both results first then run the example In
+analytical code parentheses
+
+00:00:38.292 --> 00:00:42.608
+can make both the intended calculation and the code
+itself easier to understand

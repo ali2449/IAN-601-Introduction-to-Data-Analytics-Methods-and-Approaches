@@ -1,0 +1,36 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.118
+This practice combines raw values with derived
+metrics Sales and costs are the inputs
+
+00:00:07.026 --> 00:00:12.934
+Profit is the dollar amount remaining after costs
+Margin compares profit with sales
+
+00:00:13.184 --> 00:00:18.810
+so it is naturally expressed as a percentage Run the
+example and then
+
+00:00:18.836 --> 00:00:24.668
+increase the costs Watch what happens to both profit
+and margin One
+
+00:00:24.694 --> 00:00:29.523
+value is an amount while the other is a ratio so
+they communicate different aspects
+
+00:00:29.536 --> 00:00:35.587
+of performance Also notice that the margin
+calculation divides by sales
+
+00:00:36.510 --> 00:00:40.997
+In real analytical code we would eventually need to
+consider what happens if sales are
+
+00:00:41.023 --> 00:00:46.484
+zero That kind of validation will become easier
+after we learn conditions in the next
+
+00:00:46.497 --> 00:00:47.063
+module
