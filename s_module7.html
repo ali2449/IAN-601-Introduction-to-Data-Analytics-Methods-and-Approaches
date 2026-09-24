@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -45,6 +45,7 @@
 .output a {
   color: #bfdbfe !important;
 }
+.stage{padding:.55rem}.slide{inset:0;padding:.55rem}.slide.active{display:grid;place-items:center}.slide-inner{height:100%;width:auto;max-width:100%;max-height:100%;aspect-ratio:16/9;margin:auto}.bottom-nav{position:relative;z-index:30;display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"prev narr next" "sub sub sub" "audio audio audio";align-items:center;gap:.42rem .7rem;padding:.48rem .85rem .7rem;border-top:1px solid var(--border,var(--line,#cbd5e1));background:var(--slide,var(--panel,#fff))}.nav-left{grid-area:prev}.nav-right{grid-area:next}.narration-controls{grid-area:narr;display:flex;justify-content:center;align-items:center;gap:.38rem;flex-wrap:wrap}.narration-controls .btn{padding:.42rem .62rem;font-size:.78rem}.narration-controls select{max-width:92px;padding:.4rem .5rem;font-size:.78rem}.subtitle-bar{grid-area:sub;min-height:34px;max-height:62px;overflow:auto;display:flex;align-items:center;justify-content:center;padding:.38rem .8rem;border:1px solid var(--border,var(--line,#cbd5e1));border-radius:.65rem;background:var(--slide-2,var(--panel2,#f8fafc));font-size:.9rem;text-align:center}.subtitle-bar[hidden]{display:none}.audio-row{grid-area:audio;display:grid;grid-template-columns:minmax(170px,1.25fr) auto minmax(180px,2fr) auto auto minmax(150px,.9fr);gap:.5rem;align-items:center}.audio-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:.78rem;font-weight:750}.audio-time{color:var(--muted);font-size:.75rem}.seek-slider{width:100%}.bottom-slide-select{max-width:240px;width:100%;padding:.4rem .55rem;font-size:.78rem}#narration-audio{display:none}.transcript-panel{position:fixed;top:0;right:0;bottom:0;z-index:1000;width:min(430px,92vw);display:grid;grid-template-rows:auto 1fr;background:var(--slide,var(--panel,#fff));border-left:1px solid var(--border,var(--line,#cbd5e1));transform:translateX(105%);transition:transform .22s ease;box-shadow:-18px 0 42px rgba(15,23,42,.22)}.transcript-panel.open{transform:translateX(0)}.transcript-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem;border-bottom:1px solid var(--border,var(--line,#cbd5e1))}.transcript-head h2{margin:0;font-size:1rem}.transcript-body{overflow:auto;padding:1rem 1.1rem 2rem;line-height:1.65;white-space:pre-wrap}.audio-error{color:var(--danger,var(--bad,#b91c1c))}@media(max-width:760px){.bottom-nav{position:sticky;bottom:0}.narration-controls{overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start}.audio-row{grid-template-columns:1fr auto}.audio-row .seek-slider,.bottom-slide-select{grid-column:1/-1}.slide-inner{width:100%;height:auto}}
 </style>
 </head>
 <body>
@@ -61,21 +62,21 @@
                <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div></div>
                <div><div class="flow-visual"><div>Loop</div><span>becomes</span><div>Comprehension</div><span>with</span><div>Validation</div><span>and</span><div>Pipeline</div></div></div>
              </div><div class="callout"><strong>Goal:</strong> Use comprehensions, sorting, zip, enumerate, validation, generators, and small pipeline patterns.</div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>Slide 1</span></footer>
+    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 1</span></footer>
   </div>
 </section>
 <section class="slide" data-title="How to use this page">
   <div class="slide-inner">
     <header class="slide-header"><div><span class="kicker">Self-paced workflow</span><h2>How to use this page</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
     <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Read</h3><p>Start with the main idea on the slide.</p></div><div class="timeline-item"><span>2</span><h3>Run</h3><p>Execute the Python code in the browser.</p></div><div class="timeline-item"><span>3</span><h3>Compare</h3><p>Connect the output to the concept.</p></div><div class="timeline-item"><span>4</span><h3>Edit</h3><p>Change one value, variable, or condition.</p></div><div class="timeline-item"><span>5</span><h3>Reuse</h3><p>Apply the pattern to a new example.</p></div></div><div class="callout secondary">All slide points are visible. Use Next, Previous, arrow keys, or the slide menu.</div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>Slide 2</span></footer>
+    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 2</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Learning path for Module 7">
   <div class="slide-inner">
     <header class="slide-header"><div><span class="kicker">Roadmap</span><h2>Learning path for Module 7</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
     <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Comprehensions</h3><p>Build lists and dictionaries clearly.</p></div><div class="timeline-item"><span>2</span><h3>Sorting</h3><p>Rank values using custom rules.</p></div><div class="timeline-item"><span>3</span><h3>Pairing</h3><p>Use zip and enumerate.</p></div><div class="timeline-item"><span>4</span><h3>Validation</h3><p>Handle expected problems.</p></div><div class="timeline-item"><span>5</span><h3>Generators</h3><p>Produce values as needed.</p></div><div class="timeline-item"><span>6</span><h3>Pipelines</h3><p>Connect small steps.</p></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>Slide 3</span></footer>
+    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 3</span></footer>
   </div>
 </section>
 <section class="slide" data-title="List comprehensions">
@@ -101,7 +102,7 @@ print(&quot;Curved scores:&quot;, curved_scores)</textarea>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>Slide 4</span></footer>
+    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 4</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Dictionary comprehensions">
@@ -129,7 +130,7 @@ print(status)</textarea>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>Slide 5</span></footer>
+    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 5</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Sort with a custom key">
@@ -158,7 +159,7 @@ for order in ranked:
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>Slide 6</span></footer>
+    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 6</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Use enumerate and zip">
@@ -182,7 +183,7 @@ for row_number, (name, score) in enumerate(zip(names, scores), start=1):
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>Slide 7</span></footer>
+    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 7</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Validate data before analysis">
@@ -209,7 +210,7 @@ print(safe_average([&quot;missing&quot;, None]))</textarea>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>Slide 8</span></footer>
+    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 8</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Handle expected errors">
@@ -239,7 +240,7 @@ print(&quot;Total:&quot;, sum(clean_values))</textarea>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>Slide 9</span></footer>
+    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 9</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Generator expressions">
@@ -264,7 +265,7 @@ for amount in large_transactions:
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>Slide 10</span></footer>
+    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 10</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Build a small pipeline">
@@ -300,36 +301,112 @@ print(counts)</textarea>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>Slide 11</span></footer>
+    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 11</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Advanced Python wrap-up">
   <div class="slide-inner">
     <header class="slide-header"><div><span class="kicker">What you can now do</span><h2>Advanced Python wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
     <div class="slide-content"><div class="summary-grid"><div><h3>Comprehensions</h3><p>Create lists and dictionaries clearly.</p></div><div><h3>Sorting</h3><p>Rank records with custom keys.</p></div><div><h3>Pairing</h3><p>Use zip and enumerate safely.</p></div><div><h3>Validation</h3><p>Check inputs before analysis.</p></div><div><h3>Errors</h3><p>Handle expected conversion problems.</p></div><div><h3>Pipelines</h3><p>Connect small reusable functions.</p></div></div><div class="callout success">You can now write more compact and reusable Python for analytics tasks.</div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>Slide 12</span></footer>
+    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 12</span></footer>
   </div>
 </section></main>
-  <footer class="bottom-nav">
-    <div class="nav-left"><button class="btn ghost" id="prev-btn" type="button"><i class="fa-solid fa-arrow-left"></i> Previous</button><button class="btn" id="next-btn" type="button">Next <i class="fa-solid fa-arrow-right"></i></button><select class="slide-select" id="slide-select"><option value="0">1. Advanced Python</option>
-<option value="1">2. How to use this page</option>
-<option value="2">3. Learning path for Module 7</option>
-<option value="3">4. List comprehensions</option>
-<option value="4">5. Dictionary comprehensions</option>
-<option value="5">6. Sort with a custom key</option>
-<option value="6">7. Use enumerate and zip</option>
-<option value="7">8. Validate data before analysis</option>
-<option value="8">9. Handle expected errors</option>
-<option value="9">10. Generator expressions</option>
-<option value="10">11. Build a small pipeline</option>
-<option value="11">12. Advanced Python wrap-up</option></select></div>
-    <div class="nav-right"><button class="btn ghost" id="run-slide-btn" type="button"><i class="fa-solid fa-play"></i> Run code on slide</button><div class="progress"><div class="progress-fill" id="progress-fill"></div></div><span class="slide-count" id="slide-count"></span></div>
-  </footer>
+  <footer class="bottom-nav"><div class="nav-left"><button class="btn ghost" id="prev-btn">← Previous</button></div><div class="narration-controls"><button class="btn" id="start-narration-btn">Start Narration</button><button class="btn ghost" id="narration-toggle-btn">Narration Off</button><button class="btn ghost" id="cc-toggle-btn">CC Off</button><button class="btn ghost" id="transcript-btn">Transcript</button><label class="audio-time">Speed</label><select id="speed-select"><option value=".75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div><div class="nav-right"><button class="btn" id="next-btn">Next →</button></div><div class="subtitle-bar" id="subtitle-bar" hidden></div><div class="audio-row"><div class="audio-title" id="audio-title">Slide 1 narration</div><button class="btn ghost" id="audio-play-btn">Play</button><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><div class="audio-time" id="audio-time">0:00 / 0:00</div><div class="counter" id="counter">1 / 12</div><select class="bottom-slide-select" id="slide-select"></select></div><audio id="narration-audio" preload="metadata"></audio><div class="progress"><div class="progress-bar" id="progress-bar"></div></div></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
 </div>
 <script>
+const MANIFEST = {
+  "prefix": "module7",
+  "slide_count": 12,
+  "slides": [
+    {
+      "slide": 1,
+      "title": "Advanced Python",
+      "audio": "audio/module7_slide_01.mp3",
+      "captions": "captions/module7_slide_01.vtt",
+      "text": "Welcome to Module 7. This module focuses on Advanced Python. We will build the ideas gradually and connect them to practical analytics work. Advanced Python patterns make code shorter, clearer, and easier to reuse in data analytics work."
+    },
+    {
+      "slide": 2,
+      "title": "How to use this page",
+      "audio": "audio/module7_slide_02.mp3",
+      "captions": "captions/module7_slide_02.vtt",
+      "text": "Use this lesson actively. Read the concept, predict what should happen, run the example when code is available, then change one small part and compare the result. Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept. Change one value, variable, or condition. Apply the pattern to a new example."
+    },
+    {
+      "slide": 3,
+      "title": "Learning path for Module 7",
+      "audio": "audio/module7_slide_03.mp3",
+      "captions": "captions/module7_slide_03.vtt",
+      "text": "This slide is the learning path for Module 7. It shows how the topic progresses from foundational ideas to applied practice. Build lists and dictionaries clearly. Rank values using custom rules. Use zip and enumerate. Handle expected problems. Produce values as needed. Connect small steps."
+    },
+    {
+      "slide": 4,
+      "title": "List comprehensions",
+      "audio": "audio/module7_slide_04.mp3",
+      "captions": "captions/module7_slide_04.vtt",
+      "text": "This slide focuses on List comprehensions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. A list comprehension creates a new list from an existing collection. Create cleaned scores Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
+    },
+    {
+      "slide": 5,
+      "title": "Dictionary comprehensions",
+      "audio": "audio/module7_slide_05.mp3",
+      "captions": "captions/module7_slide_05.vtt",
+      "text": "This slide focuses on Dictionary comprehensions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. A dictionary comprehension creates key-value pairs in one expression. Create a status map Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
+    },
+    {
+      "slide": 6,
+      "title": "Sort with a custom key",
+      "audio": "audio/module7_slide_06.mp3",
+      "captions": "captions/module7_slide_06.vtt",
+      "text": "This slide focuses on Sort with a custom key. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. The key argument tells Python what part of each item should control the sort order. Sort records by amount Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
+    },
+    {
+      "slide": 7,
+      "title": "Use enumerate and zip",
+      "audio": "audio/module7_slide_07.mp3",
+      "captions": "captions/module7_slide_07.vtt",
+      "text": "This slide focuses on Use enumerate and zip. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. enumerate() gives position numbers. zip() combines related lists. Pair names and scores Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
+    },
+    {
+      "slide": 8,
+      "title": "Validate data before analysis",
+      "audio": "audio/module7_slide_08.mp3",
+      "captions": "captions/module7_slide_08.vtt",
+      "text": "This slide focuses on Validate data before analysis. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. Good code checks for common data problems before calculating results. Validate numeric inputs Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
+    },
+    {
+      "slide": 9,
+      "title": "Handle expected errors",
+      "audio": "audio/module7_slide_09.mp3",
+      "captions": "captions/module7_slide_09.vtt",
+      "text": "This slide focuses on Handle expected errors. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. Error handling is useful when a problem is expected and the program should continue safely. Convert values safely Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
+    },
+    {
+      "slide": 10,
+      "title": "Generator expressions",
+      "audio": "audio/module7_slide_10.mp3",
+      "captions": "captions/module7_slide_10.vtt",
+      "text": "This slide focuses on Generator expressions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. A generator expression produces values one at a time. It can be useful for large data streams. Use a generator expression Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
+    },
+    {
+      "slide": 11,
+      "title": "Build a small pipeline",
+      "audio": "audio/module7_slide_11.mp3",
+      "captions": "captions/module7_slide_11.vtt",
+      "text": "This slide focuses on Build a small pipeline. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. A pipeline connects small functions. Each step has one clear job. Clean and summarize text labels Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
+    },
+    {
+      "slide": 12,
+      "title": "Advanced Python wrap-up",
+      "audio": "audio/module7_slide_12.mp3",
+      "captions": "captions/module7_slide_12.vtt",
+      "text": "This slide summarizes Module 7. Focus on the patterns you should be able to explain and reuse after completing the examples. Create lists and dictionaries clearly. Rank records with custom keys. Use zip and enumerate safely. Check inputs before analysis. Handle expected conversion problems. Connect small reusable functions."
+    }
+  ]
+};
 const slides=[...document.querySelectorAll('.slide')];let current=0;const select=document.getElementById('slide-select');const count=document.getElementById('slide-count');const progress=document.getElementById('progress-fill');const runtime=document.getElementById('runtime');const runtimeText=document.getElementById('runtime-text');let pyodide=null;let pyodideLoading=null;const originalCode=new Map();const monacoEditors=new Map();
 function setRuntime(status,text){runtime.className='runtime '+(status||'');runtimeText.textContent=text;}
-function showSlide(index){current=(index+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===current));select.value=current;count.textContent=`Slide ${current+1} of ${slides.length}`;progress.style.width=`${((current+1)/slides.length)*100}%`;slides[current].querySelectorAll('.monaco-host').forEach(host=>{const ed=monacoEditors.get(host);if(ed)setTimeout(()=>ed.layout(),40);});}
+function showSlide(index){current=Math.max(0,Math.min(slides.length-1,index));slides.forEach((s,i)=>s.classList.toggle('active',i===current));select.value=String(current);document.getElementById('counter').textContent=`${current+1} / ${slides.length}`;document.getElementById('progress-bar').style.width=`${((current+1)/slides.length)*100}%`;if(typeof resizeEditors==='function')setTimeout(()=>resizeEditors(),50);setTimeout(()=>{slides[current].querySelectorAll('.monaco-host').forEach(host=>{const ed=typeof monacoEditors!=='undefined'?monacoEditors.get(host):null;if(ed)ed.layout()})},80);syncNarrationForSlide();saveDeckState();}
 document.getElementById('prev-btn').onclick=()=>showSlide(current-1);document.getElementById('next-btn').onclick=()=>showSlide(current+1);select.onchange=e=>showSlide(parseInt(e.target.value,10));document.querySelectorAll('.start-btn').forEach(b=>b.onclick=()=>showSlide(1));document.addEventListener('keydown',e=>{if(e.target.matches('textarea,input,select')||e.target.closest('.monaco-editor'))return;if(e.key==='ArrowRight'||e.key==='PageDown')showSlide(current+1);if(e.key==='ArrowLeft'||e.key==='PageUp')showSlide(current-1);});
 document.getElementById('theme-btn').onclick=()=>{const root=document.documentElement;root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';if(window.monaco){monaco.editor.setTheme(root.dataset.theme==='dark'?'vs-dark':'vs');}};
 function packagesFor(code){const pkgs=[];if(/(^|\n)\s*(import|from)\s+numpy\b/.test(code))pkgs.push('numpy');if(/(^|\n)\s*(import|from)\s+pandas\b/.test(code))pkgs.push('pandas');if(/(^|\n)\s*(import|from)\s+matplotlib\b/.test(code))pkgs.push('matplotlib');if(/(^|\n)\s*(import|from)\s+sklearn\b/.test(code))pkgs.push('scikit-learn');return [...new Set(pkgs)];}
@@ -359,7 +436,8 @@ async function runActiveSlide(){const cells=[...slides[current].querySelectorAll
 document.getElementById('run-slide-btn').onclick=runActiveSlide;document.querySelectorAll('.run-all-btn').forEach(b=>b.onclick=runActiveSlide);document.getElementById('restart-python').onclick=()=>{pyodide=null;pyodideLoading=null;setRuntime('', 'Python reset. It will reload when a code cell runs.');document.querySelectorAll('.output').forEach(o=>{o.className='output';o.textContent='Python reset. Click Run to execute this cell.';});};
 document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');originalCode.set(cell,textarea.value);cell.querySelector('.run-cell').onclick=()=>runCell(cell);cell.querySelector('.reset-cell').onclick=()=>{setCellCode(cell,originalCode.get(cell));cell.querySelector('.output').className='output';cell.querySelector('.output').textContent='Code reset. Click Run to execute this cell.';};cell.querySelector('.copy-cell').onclick=async()=>{try{await navigator.clipboard.writeText(getCellCode(cell));const b=cell.querySelector('.copy-cell');b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1000);}catch(e){cell.querySelector('.output').textContent='Copy failed. You can select and copy manually.';}};});
 function initMonaco(){if(!window.require)return;try{require.config({paths:{vs:'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs'}});require(['vs/editor/editor.main'],function(){monaco.editor.setTheme(document.documentElement.dataset.theme==='dark'?'vs-dark':'vs');document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');const host=cell.querySelector('.monaco-host');const editor=monaco.editor.create(host,{value:textarea.value,language:'python',theme:document.documentElement.dataset.theme==='dark'?'vs-dark':'vs',fontFamily:'Source Code Pro, Consolas, monospace',fontSize:14,lineNumbers:'on',minimap:{enabled:false},automaticLayout:true,scrollBeyondLastLine:false,tabSize:4,wordWrap:'on'});monacoEditors.set(host,editor);cell.classList.add('monaco-ready');editor.onDidChangeCursorPosition(e=>{const status=cell.querySelector('.editor-status span');if(status)status.textContent=`Ln ${e.position.lineNumber}, Col ${e.position.column}`;});});});}catch(e){console.warn('Monaco editor not available, using textarea fallback.',e);}}
-initMonaco();showSlide(0);
+initMonaco();const initialSlide=initNarr();
+showSlide(initialSlide);
 </script>
 </body>
 </html>
