@@ -1,0 +1,363 @@
+Slide 1: Functions
+
+Welcome to Module 3. This module focuses on Functions. We will build the topic in small steps and connect each idea to practical analytics work.
+
+[pause=0.7]
+
+Functions help turn repeated steps into named, reusable analytical tasks.
+
+[pause=0.7]
+
+Connect this idea to the larger workflow: how data is organized, transformed, checked, or communicated.
+
+[pause=1.0]
+
+Slide 2: How to use this page
+
+Use this lesson actively. Read the idea, predict what should happen, run the example when code is available, then modify one small part and compare the result.
+
+[pause=0.7]
+
+Start with the concept on the slide. Execute the code in the browser. Connect the output to the explanation.
+
+[pause=0.7]
+
+Change one value or line at a time. Apply the pattern in a new example.
+
+[pause=1.0]
+
+Slide 3: Learning path for Module 3
+
+This slide is the roadmap for Module 3. It shows how the ideas progress and how the later examples build on the earlier concepts.
+
+[pause=0.7]
+
+Define and call Create a reusable block with def. Send values into a function.
+
+[pause=0.7]
+
+Send results back to the program. Make the purpose clear with docstrings. Connect small functions into a workflow.
+
+[pause=1.0]
+
+Slide 4: Why functions matter in analytics
+
+This slide focuses on Why functions matter in analytics. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+Without functions, repeated logic is copied again and again. With functions, the logic has one clear home. Less repetition: write the calculation once. Clearer names: describe the purpose of each task.
+
+[pause=0.7]
+
+Easier changes: update the function instead of many copies. Better testing: check a small unit of work. Same formula repeated in many places.
+
+[pause=1.0]
+
+Slide 5: A function has a definition and a call
+
+This slide focuses on A function has a definition and a call. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+A function definition tells Python what the function should do. A function call tells Python to run it.
+
+[pause=0.7]
+
+Connect this idea to the larger workflow: how data is organized, transformed, checked, or communicated.
+
+[pause=1.0]
+
+Slide 6: Code: a function with no parameters
+
+This slide focuses on Code: a function with no parameters. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+A function with no parameters Start with the smallest possible function: define one action, then call it.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 7: Code: put a calculation inside a function
+
+This slide focuses on Code: put a calculation inside a function. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+Put a calculation inside a function The calculation is now stored as a reusable task.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 8: Parameters receive values
+
+This slide focuses on Parameters receive values. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+A parameter is a name inside the function definition. An argument is the value supplied when the function is called.
+
+[pause=0.7]
+
+Connect this idea to the larger workflow: how data is organized, transformed, checked, or communicated.
+
+[pause=1.0]
+
+Slide 9: Code: pass one argument
+
+This slide focuses on Code: pass one argument. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+Pass one argument Change the argument and run again.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 10: Code: pass two analytical inputs
+
+This slide focuses on Code: pass two analytical inputs. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+Pass two analytical inputs Parameters make the same calculation work with different data. Analytics pattern
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 11: Default parameters supply common values
+
+This slide focuses on Default parameters supply common values. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+A default parameter gives a value when the call does not provide one. Use a default parameter A default is used only when the caller does not supply that argument.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 12: return is different from print
+
+This slide focuses on return is different from print. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+Shows a value in the output area. Useful for checking and communication. Sends a value back so another line of code can store it, format it, or use it in another calculation.
+
+[pause=0.7]
+
+Connect this idea to the larger workflow: how data is organized, transformed, checked, or communicated.
+
+[pause=1.0]
+
+Slide 13: Code: return a value
+
+This slide focuses on Code: return a value. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+Unlike print(), return gives the value back to the program.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 14: Code: return more than one value
+
+This slide focuses on Code: return more than one value. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+Return more than one value
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 15: Variables inside functions are local
+
+This slide focuses on Variables inside functions are local. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+A variable created inside a function usually belongs to that function call. Local variable: created inside the function body. Outside code: does not automatically see local names.
+
+[pause=0.7]
+
+Return: the clean way to send useful results out.
+
+[pause=1.0]
+
+Slide 16: Code: catch a conversion error
+
+This slide focuses on Code: catch a conversion error. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+Catch a conversion error try/except lets the function respond to predictable errors.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 17: Code: add a docstring
+
+This slide focuses on Code: add a docstring. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+Add a docstring A docstring documents what a function is designed to do.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 18: Code: compose small functions
+
+This slide focuses on Code: compose small functions. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+Compose two small functions One function computes profit; another converts it into a margin.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 19: Practice ladder
+
+Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense.
+
+[pause=0.7]
+
+Define and call a no-parameter function. Add one parameter and pass an argument. Return a value and store the result.
+
+[pause=0.7]
+
+Handle a predictable conversion error. Use defaults, return, and documentation together. Describe input, process, and output.
+
+[pause=1.0]
+
+Slide 20: Practice code: foundation and building
+
+Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense.
+
+[pause=0.7]
+
+Foundation: say hello Define and call a simple function.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 21: Practice code: return and error handling
+
+Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense.
+
+[pause=0.7]
+
+Intermediate: return a sum Use a returned value.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 22: Practice code: defaults and documentation
+
+Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense.
+
+[pause=0.7]
+
+Mastery: tax function Combine parameters, defaults, return, and documentation.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 23: Applied example: classify a temperature
+
+This slide focuses on Applied example: classify a temperature. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+Classify a temperature The function can be reused for every temperature in a dataset.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 24: Mini project: reusable calculator function
+
+This slide focuses on Mini project: reusable calculator function. Start with the meaning of the idea, then connect it to the example and to analytical work.
+
+[pause=0.7]
+
+Mini calculator capstone Change the operation or values and test the function.
+
+[pause=0.8]
+
+Before running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.
+
+[pause=1.0]
+
+Slide 25: Function design checklist
+
+Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense.
+
+[pause=0.7]
+
+Does the function name describe the task? Are parameters clear and necessary? Is the body focused on one job?
+
+[pause=0.7]
+
+Does the function return a reusable value when needed? Does it handle predictable problems? Would a future reader understand its purpose?
+
+[pause=1.0]
+
+Slide 26: Summary
+
+This slide summarizes Module 3. Focus on the patterns you should be able to explain and reuse after completing the lesson.
+
+[pause=0.7]
+
+def creates a reusable function. Parentheses run the function body. Inputs make functions flexible.
+
+[pause=0.7]
+
+Returned values can be reused later. Documentation explains the purpose. Small functions can form larger workflows.
+
+[pause=1.0]
