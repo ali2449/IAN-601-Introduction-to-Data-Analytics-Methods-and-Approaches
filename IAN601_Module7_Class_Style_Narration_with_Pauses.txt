@@ -1,0 +1,163 @@
+Slide 1: Advanced Python
+
+Welcome to Module 7. This module focuses on Advanced Python. We will build the ideas gradually and connect them to practical analytics work.
+
+[pause=0.7]
+
+Advanced Python patterns make code shorter, clearer, and easier to reuse in data analytics work.
+
+[pause=1.0]
+
+Slide 2: How to use this page
+
+Use this lesson actively. Read the concept, predict what should happen, run the example when code is available, then change one small part and compare the result.
+
+[pause=0.7]
+
+Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.
+
+[pause=0.7]
+
+Change one value, variable, or condition. Apply the pattern to a new example.
+
+[pause=1.0]
+
+Slide 3: Learning path for Module 7
+
+This slide is the learning path for Module 7. It shows how the topic progresses from foundational ideas to applied practice.
+
+[pause=0.7]
+
+Build lists and dictionaries clearly. Rank values using custom rules. Use zip and enumerate.
+
+[pause=0.7]
+
+Handle expected problems. Produce values as needed. Connect small steps.
+
+[pause=1.0]
+
+Slide 4: List comprehensions
+
+This slide focuses on List comprehensions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A list comprehension creates a new list from an existing collection. Create cleaned scores
+
+[pause=0.8]
+
+Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+
+[pause=1.0]
+
+Slide 5: Dictionary comprehensions
+
+This slide focuses on Dictionary comprehensions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A dictionary comprehension creates key-value pairs in one expression. Create a status map
+
+[pause=0.8]
+
+Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+
+[pause=1.0]
+
+Slide 6: Sort with a custom key
+
+This slide focuses on Sort with a custom key. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+The key argument tells Python what part of each item should control the sort order. Sort records by amount
+
+[pause=0.8]
+
+Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+
+[pause=1.0]
+
+Slide 7: Use enumerate and zip
+
+This slide focuses on Use enumerate and zip. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+enumerate() gives position numbers. zip() combines related lists. Pair names and scores
+
+[pause=0.8]
+
+Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+
+[pause=1.0]
+
+Slide 8: Validate data before analysis
+
+This slide focuses on Validate data before analysis. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+Good code checks for common data problems before calculating results. Validate numeric inputs
+
+[pause=0.8]
+
+Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+
+[pause=1.0]
+
+Slide 9: Handle expected errors
+
+This slide focuses on Handle expected errors. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+Error handling is useful when a problem is expected and the program should continue safely. Convert values safely
+
+[pause=0.8]
+
+Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+
+[pause=1.0]
+
+Slide 10: Generator expressions
+
+This slide focuses on Generator expressions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A generator expression produces values one at a time. It can be useful for large data streams. Use a generator expression
+
+[pause=0.8]
+
+Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+
+[pause=1.0]
+
+Slide 11: Build a small pipeline
+
+This slide focuses on Build a small pipeline. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A pipeline connects small functions. Each step has one clear job. Clean and summarize text labels
+
+[pause=0.8]
+
+Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+
+[pause=1.0]
+
+Slide 12: Advanced Python wrap-up
+
+This slide summarizes Module 7. Focus on the patterns you should be able to explain and reuse after completing the examples.
+
+[pause=0.7]
+
+Create lists and dictionaries clearly. Rank records with custom keys. Use zip and enumerate safely.
+
+[pause=0.7]
+
+Check inputs before analysis. Handle expected conversion problems. Connect small reusable functions.
+
+[pause=1.0]
