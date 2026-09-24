@@ -1,0 +1,163 @@
+Slide 1: Cleaning & EDA
+
+Welcome to Module 12. This module focuses on Cleaning & EDA. We will connect the techniques to realistic analytical workflows and careful interpretation.
+
+[pause=0.7]
+
+Cleaning and exploratory data analysis help you understand data quality, patterns, missingness, outliers, and relationships before modeling.
+
+[pause=1.0]
+
+Slide 2: How to use this page
+
+Use this lesson interactively. Read the idea, predict the result, run the example, then change one input and compare the output.
+
+[pause=0.7]
+
+Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.
+
+[pause=0.7]
+
+Change one value, variable, or condition. Apply the pattern to a new example.
+
+[pause=1.0]
+
+Slide 3: Learning path for Module 12
+
+This slide is the roadmap for Module 12. Follow how the workflow moves from individual operations toward a complete analytical process.
+
+[pause=0.7]
+
+Find data quality issues. Count and fill missing values. Detect repeated records.
+
+[pause=0.7]
+
+Convert columns safely. Flag unusual values. Summarize patterns before decisions.
+
+[pause=1.0]
+
+Slide 4: Create a messy dataset
+
+This slide focuses on Create a messy dataset. Start with what the operation changes in the data, then connect that change to the analytical question.
+
+[pause=0.7]
+
+Messy data can include missing values, duplicate rows, inconsistent labels, and values stored as text. Build a small messy DataFrame
+
+[pause=0.8]
+
+Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.
+
+[pause=1.0]
+
+Slide 5: Check missing values
+
+This slide focuses on Check missing values. Start with what the operation changes in the data, then connect that change to the analytical question.
+
+[pause=0.7]
+
+Missing values can change summaries. First count them, then decide what to do. Count and fill missing values
+
+[pause=0.8]
+
+Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.
+
+[pause=1.0]
+
+Slide 6: Find duplicate records
+
+This slide focuses on Find duplicate records. Start with what the operation changes in the data, then connect that change to the analytical question.
+
+[pause=0.7]
+
+Duplicates can inflate counts and totals. Check before summarizing. Detect and remove duplicates
+
+[pause=0.8]
+
+Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.
+
+[pause=1.0]
+
+Slide 7: Convert data types
+
+This slide focuses on Convert data types. Start with what the operation changes in the data, then connect that change to the analytical question.
+
+[pause=0.7]
+
+Numbers stored as text cannot be analyzed correctly until converted. Convert text to numeric
+
+[pause=0.8]
+
+Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.
+
+[pause=1.0]
+
+Slide 8: Clean categories
+
+This slide focuses on Clean categories. Start with what the operation changes in the data, then connect that change to the analytical question.
+
+[pause=0.7]
+
+Text categories often need case, spacing, and spelling cleanup. Standardize category labels
+
+[pause=0.8]
+
+Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.
+
+[pause=1.0]
+
+Slide 9: Flag outliers with IQR
+
+This slide focuses on Flag outliers with IQR. Start with what the operation changes in the data, then connect that change to the analytical question.
+
+[pause=0.7]
+
+The IQR rule is one simple way to flag unusually high or low values. Flag possible outliers
+
+[pause=0.8]
+
+Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.
+
+[pause=1.0]
+
+Slide 10: Basic EDA summary
+
+This slide summarizes Module 12. Focus on the decisions and checks that make the workflow reliable and reusable.
+
+[pause=0.7]
+
+EDA uses summaries to understand what is in the data before formal analysis. Create an EDA summary
+
+[pause=0.8]
+
+Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.
+
+[pause=1.0]
+
+Slide 11: Mini cleaning pipeline
+
+This slide focuses on Mini cleaning pipeline. Start with what the operation changes in the data, then connect that change to the analytical question.
+
+[pause=0.7]
+
+A cleaning pipeline applies several checks in a consistent order. Clean and summarize
+
+[pause=0.8]
+
+Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.
+
+[pause=1.0]
+
+Slide 12: Module 12 wrap-up
+
+This slide summarizes Module 12. Focus on the decisions and checks that make the workflow reliable and reusable.
+
+[pause=0.7]
+
+Count and handle blanks. Find repeated records. Convert values safely.
+
+[pause=0.7]
+
+Standardize labels. Flag unusual values. Summarize before deciding.
+
+[pause=1.0]
