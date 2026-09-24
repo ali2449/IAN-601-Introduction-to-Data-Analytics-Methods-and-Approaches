@@ -1,0 +1,179 @@
+Slide 1: Python Fundamentals & Business Context
+
+Welcome to Module 1. We will learn Python fundamentals in small steps and connect each idea to analytics work.
+
+[pause=1.0]
+
+Slide 2: How to use this slide lesson
+
+Use a read, predict, run, modify, and explain cycle. The goal is to understand each example rather than only copy code.
+
+[pause=1.0]
+
+Slide 3: Learning path for Module 1
+
+The module moves from variables and data types to calculations, formatting, conversion, practice, and a small application.
+
+[pause=1.0]
+
+Slide 4: What is Python doing for us?
+
+Think of Python as a tool that stores values, transforms them, and produces repeatable results.
+
+[pause=1.0]
+
+Slide 5: Variables store values
+
+A variable is a meaningful name attached to a value. Clear names make analytical code easier to understand.
+
+[pause=1.0]
+
+Slide 6: Code: store values in variables
+
+This example stores sales and costs, calculates profit, and prints the result. Change an input and observe the dependent metric.
+
+[pause=1.0]
+
+Slide 7: Visual: variables become metrics
+
+Raw values such as sales and costs can be transformed into derived measures such as profit.
+
+[pause=1.0]
+
+Slide 8: Variables can be reassigned
+
+Variables can be reassigned. Python uses the most recent value when later statements refer to that variable.
+
+[pause=1.0]
+
+Slide 9: Assign several values at once
+
+Python can assign several values at once. The order of the values must match the order of the variable names.
+
+[pause=1.0]
+
+Slide 10: Variable naming rules and habits
+
+Use descriptive lowercase names with underscores, avoid reserved keywords, and remember that Python is case sensitive.
+
+[pause=1.0]
+
+Slide 11: Data types tell Python what values mean
+
+The fundamental types in this module are integer, float, string, and Boolean. Type affects which operations are meaningful.
+
+[pause=1.0]
+
+Slide 12: Code: inspect data types
+
+Use the type function to inspect a value. Quoting a number changes it from a numeric value into text.
+
+[pause=1.0]
+
+Slide 13: Some numbers should stay as text
+
+Identifiers can contain digits and still belong as text. Keeping them as strings preserves meaning and leading zeros.
+
+[pause=1.0]
+
+Slide 14: Arithmetic creates derived metrics
+
+Arithmetic turns raw values into analytical metrics such as profit, margin, tax, and growth.
+
+[pause=1.0]
+
+Slide 15: Code: calculate profit and tax
+
+Follow the calculation from sales and costs to profit, tax, and net profit. Changing a tax rate should affect only dependent results.
+
+[pause=1.0]
+
+Slide 16: Three useful operators
+
+Exponent, floor division, and modulo solve useful tasks such as powers, complete groups, and remainders.
+
+[pause=1.0]
+
+Slide 17: Parentheses control calculation order
+
+Parentheses change calculation order. A formula can run without an error and still be analytically wrong if it is grouped incorrectly.
+
+[pause=1.0]
+
+Slide 18: Print makes results visible
+
+Print statements make stored values and intermediate calculations visible so we can inspect and communicate results.
+
+[pause=1.0]
+
+Slide 19: f-strings create readable messages
+
+F-strings combine labels, values, units, and formatting in readable output.
+
+[pause=1.0]
+
+Slide 20: Format money and percentages
+
+Formatting can display money, percentages, and large values clearly without changing the underlying stored number.
+
+[pause=1.0]
+
+Slide 21: Input usually starts as text
+
+Keyboard and form input usually arrives as text. Convert it before performing numeric arithmetic.
+
+[pause=1.0]
+
+Slide 22: Code: convert text into numbers
+
+This example converts price and quantity strings into numbers and then calculates a total.
+
+[pause=1.0]
+
+Slide 23: Boolean conversion previews decision logic
+
+Boolean conversion previews decision logic. Zero and empty text behave like false, while many nonempty values behave like true.
+
+[pause=1.0]
+
+Slide 24: Preview a conversion error
+
+Invalid numeric text can cause a conversion error. This preview introduces the idea of validating messy real-world input.
+
+[pause=1.0]
+
+Slide 25: Practice: small tasks
+
+Practice with small tasks and trace each step. Predict the output before running and inspect intermediate values when results differ.
+
+[pause=1.0]
+
+Slide 26: Practice code: patient variables
+
+Use variables to represent a small patient record and identify the meaning and type of each value.
+
+[pause=1.0]
+
+Slide 27: Practice code: profit and margin
+
+Compare profit as a dollar amount with margin as a percentage. Change costs and observe how both measures respond.
+
+[pause=1.0]
+
+Slide 28: Mini project: simple sales calculator
+
+The mini project combines variables, arithmetic, tax, net profit, margin, and formatted reporting in one small analytical workflow.
+
+[pause=1.0]
+
+Slide 29: Self-check
+
+Use the self-check to explain variables, types, calculations, formatting, and conversion in your own words.
+
+[pause=1.0]
+
+Slide 30: Summary
+
+Module 1 established the Python foundation. Module 2 adds decisions and repetition with comparisons, conditions, and loops.
+
+[pause=1.0]
