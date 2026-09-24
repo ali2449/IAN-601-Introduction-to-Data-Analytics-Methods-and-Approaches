@@ -26,7 +26,7 @@
   --code-bg: #1e1e1e;
   --code-text: #d4d4d4;
 }
-[data-theme="dark"] {
+[data-theme="light"] {
   --bg: #08111f;
   --slide: #0f172a;
   --slide-2: #162032;
@@ -426,6 +426,152 @@ tr:last-child td { border-bottom:0; }
   .slide { position:relative; display:block !important; inset:auto; height:100vh; page-break-after:always; padding:0; }
   .slide-inner { border-radius:0; box-shadow:none; }
 }
+
+/* Narrated presentation system */
+.stage { padding: .55rem; }
+.slide { inset: 0; padding: .55rem; }
+.slide.active { display: grid; place-items: center; }
+.slide-inner {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 16 / 9;
+  margin: auto;
+}
+.bottom-nav {
+  position: relative;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "prev narr next"
+    "sub sub sub"
+    "audio audio audio";
+  align-items: center;
+  gap: .42rem .7rem;
+  padding: .48rem .85rem .7rem;
+  border-top: 1px solid var(--border);
+  background: color-mix(in srgb, var(--slide) 94%, transparent);
+  backdrop-filter: blur(12px);
+}
+.nav-left { grid-area: prev; }
+.nav-right { grid-area: next; }
+.narration-controls {
+  grid-area: narr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .38rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+.narration-controls .btn { padding: .42rem .62rem; font-size: .78rem; }
+.narration-controls select {
+  max-width: 92px;
+  padding: .4rem .5rem;
+  font-size: .78rem;
+}
+.subtitle-bar {
+  grid-area: sub;
+  min-height: 34px;
+  max-height: 62px;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .38rem .8rem;
+  border: 1px solid var(--border);
+  border-radius: .65rem;
+  background: color-mix(in srgb, var(--slide-2) 88%, transparent);
+  color: var(--text);
+  font-size: .9rem;
+  line-height: 1.35;
+  text-align: center;
+}
+.subtitle-bar[hidden] { display: none; }
+.audio-row {
+  grid-area: audio;
+  display: grid;
+  grid-template-columns: minmax(170px, 1.25fr) auto minmax(180px, 2fr) auto auto minmax(150px, .9fr);
+  gap: .5rem;
+  align-items: center;
+  min-width: 0;
+}
+.audio-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 750;
+}
+.audio-time { color: var(--muted); font-size: .75rem; white-space: nowrap; }
+.seek-slider { width: 100%; accent-color: var(--primary); }
+.bottom-slide-select { max-width: 240px; width: 100%; padding: .4rem .55rem; font-size: .78rem; }
+.counter { min-width: 70px; font-size: .82rem; }
+.progress { height: 4px; }
+#narration-audio { display:none; }
+.transcript-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  width: min(430px, 92vw);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: var(--slide);
+  border-left: 1px solid var(--border);
+  box-shadow: -18px 0 42px rgba(15,23,42,.22);
+  transform: translateX(105%);
+  transition: transform .22s ease;
+}
+.transcript-panel.open { transform: translateX(0); }
+.transcript-head {
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  align-items:center;
+  padding: 1rem;
+  border-bottom:1px solid var(--border);
+}
+.transcript-head h2 { margin:0; font-size:1rem; }
+.transcript-body {
+  overflow:auto;
+  padding:1rem 1.1rem 2rem;
+  line-height:1.65;
+  white-space:pre-wrap;
+}
+.audio-error { color: var(--danger); }
+@media (max-width: 950px) {
+  .audio-row { grid-template-columns: 1fr auto 1.4fr auto; }
+  .audio-row .audio-time { display:none; }
+  .bottom-slide-select { max-width:none; }
+}
+@media (max-width: 760px) {
+  .bottom-nav {
+    position: sticky;
+    bottom: 0;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "prev narr next"
+      "sub sub sub"
+      "audio audio audio";
+    padding: .4rem .45rem .65rem;
+  }
+  .narration-controls { justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; }
+  .audio-row { grid-template-columns: 1fr auto; }
+  .audio-row .seek-slider, .audio-row .audio-time { grid-column: 1 / -1; }
+  .bottom-slide-select { grid-column: 1 / -1; }
+  .stage { min-height: 56vw; }
+  .slide-inner { width:100%; height:auto; aspect-ratio:16/9; }
+}
+@media print {
+  .subtitle-bar,.audio-row,.narration-controls,.transcript-panel { display:none !important; }
+}
+
 </style>
 </head>
 <body>
@@ -434,7 +580,7 @@ tr:last-child td { border-bottom:0; }
 <div class="brand"><div class="brand-mark">Py</div><div><h1>IAN 601 · Module 1 Slide Lesson</h1><span>Python Fundamentals &amp; Business Context</span></div></div>
 <div class="toolbar">
 <div class="runtime" id="runtime"><span class="runtime-dot"></span><span id="runtime-text">Python not loaded</span></div>
-<select aria-label="Choose slide" id="slide-select"></select>
+
 <button class="btn ghost" id="theme-btn" type="button">Dark mode</button>
 
 <button class="btn ghost" id="fullscreen-btn" type="button">Fullscreen</button>
@@ -466,7 +612,7 @@ tr:last-child td { border-bottom:0; }
 <div class="callout"><strong>How to use:</strong> Use the Next button or arrow keys to move through the lesson. Run code directly inside any slide whenever you want to test an example.</div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 1</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 1</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="How to use this slide lesson">
@@ -486,7 +632,7 @@ tr:last-child td { border-bottom:0; }
 <div class="callout secondary"><strong>Tip:</strong> The editor is intentionally styled like VS Code. You can also use Jupyter, Colab, or a local IDE for assignments.</div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 2</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 2</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Learning path for Module 1">
@@ -506,7 +652,7 @@ tr:last-child td { border-bottom:0; }
 <div class="callout">By the end, you should be able to build a small sales calculator and explain each line.</div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 3</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 3</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="What is Python doing for us?">
@@ -535,7 +681,7 @@ tr:last-child td { border-bottom:0; }
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 4</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 4</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Variables store values">
@@ -556,7 +702,7 @@ tr:last-child td { border-bottom:0; }
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 5</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 5</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Code: store values in variables">
@@ -600,7 +746,7 @@ print("Profit:", profit)</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 6</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 6</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Visual: variables become metrics">
@@ -623,7 +769,7 @@ print("Profit:", profit)</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 7</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 7</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Variables can be reassigned">
@@ -668,7 +814,7 @@ print("After update:", sales)</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 8</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 8</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Assign several values at once">
@@ -710,7 +856,7 @@ print(salary)</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 9</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 9</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Variable naming rules and habits">
@@ -729,7 +875,7 @@ print(salary)</textarea>
 <div class="callout"><strong>Rule of thumb:</strong> If another person can guess what the value represents, the name is probably useful.</div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 10</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 10</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Data types tell Python what values mean">
@@ -754,7 +900,7 @@ print(salary)</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 11</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 11</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Code: inspect data types">
@@ -800,7 +946,7 @@ print(type(is_active))</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 12</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 12</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Some numbers should stay as text">
@@ -845,7 +991,7 @@ print(area_code, type(area_code))</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 13</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 13</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Arithmetic creates derived metrics">
@@ -868,7 +1014,7 @@ print(area_code, type(area_code))</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 14</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 14</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Code: calculate profit and tax">
@@ -914,7 +1060,7 @@ print("Net profit:", net_profit)</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 15</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 15</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Three useful operators">
@@ -954,7 +1100,7 @@ print("125 % 60 =", 125 % 60)</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 16</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 16</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Parentheses control calculation order">
@@ -999,7 +1145,7 @@ print(result2)</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 17</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 17</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Print makes results visible">
@@ -1047,7 +1193,7 @@ print("Profit:", sales - costs)</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 18</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 18</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="f-strings create readable messages">
@@ -1091,7 +1237,7 @@ print(f"Temperature: {temperature:.1f} F")</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 19</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 19</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Format money and percentages">
@@ -1136,7 +1282,7 @@ print(f"Growth: {growth:.2%}")</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 20</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 20</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Input usually starts as text">
@@ -1157,7 +1303,7 @@ print(f"Growth: {growth:.2%}")</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 21</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 21</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Code: convert text into numbers">
@@ -1202,7 +1348,7 @@ print(f"Total: ${total:.2f}")</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 22</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 22</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Boolean conversion previews decision logic">
@@ -1246,7 +1392,7 @@ print(bool("Hello"))</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 23</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 23</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Preview a conversion error">
@@ -1293,7 +1439,7 @@ else:
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 24</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 24</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Practice: small tasks">
@@ -1313,7 +1459,7 @@ else:
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 25</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 25</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Practice code: patient variables">
@@ -1359,7 +1505,7 @@ print(f"Follow-up visit: {is_follow_up}")</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 26</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 26</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Practice code: profit and margin">
@@ -1405,7 +1551,7 @@ print(f"Margin: {margin:.1%}")</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 27</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 27</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Mini project: simple sales calculator">
@@ -1463,7 +1609,7 @@ print(f"Net margin: {margin:.1%}")</textarea>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 28</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 28</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Self-check">
@@ -1475,14 +1621,14 @@ print(f"Net margin: {margin:.1%}")</textarea>
 <div class="slide-content">
 <div class="checklist-grid">
 <div class="check-card"><h3>Variables</h3><p>Can you explain what each name stores?</p></div>
-<div class="check-card"><h3>Types</h3><p>Can they tell numbers, text, and Boolean values apart?</p></div>
-<div class="check-card"><h3>Arithmetic</h3><p>Can they trace a calculation step by step?</p></div>
-<div class="check-card"><h3>Formatting</h3><p>Can they label and format output clearly?</p></div>
-<div class="check-card"><h3>Conversion</h3><p>Can they explain why text sometimes must become a number?</p></div>
+<div class="check-card"><h3>Types</h3><p>Can you tell numbers, text, and Boolean values apart?</p></div>
+<div class="check-card"><h3>Arithmetic</h3><p>Can you trace a calculation step by step?</p></div>
+<div class="check-card"><h3>Formatting</h3><p>Can you label and format output clearly?</p></div>
+<div class="check-card"><h3>Conversion</h3><p>Can you explain why text sometimes must become a number?</p></div>
 </div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 29</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 29</span></footer>
 </div>
 </section>
 <section class="slide standard" data-title="Summary">
@@ -1503,24 +1649,514 @@ print(f"Net margin: {margin:.1%}")</textarea>
 <div class="callout success"><strong>Next:</strong> Module 2 adds decisions and repetition with <code>if</code>, <code>for</code>, and <code>while</code>.</div>
 </div>
 
-<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>Slide 30</span></footer>
+<footer class="slide-footer"><span>Python Fundamentals &amp; Business Context</span><span>IAN 601 · Module 1 · Slide 30</span></footer>
 </div>
 </section>
 </main>
 <footer class="bottom-nav">
 <div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">← Previous</button></div>
-<div class="counter" id="counter">1 / 30</div>
+<div class="narration-controls" aria-label="Narration controls">
+<button class="btn" id="start-narration-btn" type="button">Start Narration</button>
+<button class="btn ghost" id="narration-toggle-btn" type="button" aria-pressed="false">Narration Off</button>
+<button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button>
+<button class="btn ghost" id="transcript-btn" type="button">Transcript</button>
+<label for="speed-select" class="audio-time">Speed</label>
+<select id="speed-select" aria-label="Narration playback speed">
+<option value="0.75">0.75×</option>
+<option value="1" selected>1×</option>
+<option value="1.25">1.25×</option>
+<option value="1.5">1.5×</option>
+<option value="2">2×</option>
+</select>
+</div>
 <div class="nav-right"><button class="btn" id="next-btn" type="button">Next →</button></div>
+<div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div>
+<div class="audio-row">
+<div class="audio-title" id="audio-title">Slide 1 narration</div>
+<button class="btn ghost" id="audio-play-btn" type="button">Play</button>
+<input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0" aria-label="Narration position">
+<div class="audio-time" id="audio-time">0:00 / 0:00</div>
+<div class="counter" id="counter">1 / 30</div>
+<select class="bottom-slide-select" aria-label="Choose slide" id="slide-select"></select>
+</div>
+<audio id="narration-audio" preload="metadata"></audio>
 <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
 </footer>
+<aside class="transcript-panel" id="transcript-panel" aria-hidden="true">
+<div class="transcript-head">
+<div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div>
+<button class="btn ghost" id="transcript-close-btn" type="button">Close</button>
 </div>
-<script>const slides = Array.from(document.querySelectorAll('.slide'));
+<div class="transcript-body" id="transcript-body"></div>
+</aside>
+</div>
+<script>const MANIFEST = {
+  "prefix": "module1",
+  "slide_count": 30,
+  "slides": [
+    {
+      "slide": 1,
+      "title": "Python Fundamentals & Business Context",
+      "audio": "audio/module1_slide_01.mp3",
+      "captions": "captions/module1_slide_01.vtt",
+      "text": "Welcome to Module 1. We will learn Python fundamentals in small steps and connect each idea to analytics work."
+    },
+    {
+      "slide": 2,
+      "title": "How to use this slide lesson",
+      "audio": "audio/module1_slide_02.mp3",
+      "captions": "captions/module1_slide_02.vtt",
+      "text": "Use a read, predict, run, modify, and explain cycle. The goal is to understand each example rather than only copy code."
+    },
+    {
+      "slide": 3,
+      "title": "Learning path for Module 1",
+      "audio": "audio/module1_slide_03.mp3",
+      "captions": "captions/module1_slide_03.vtt",
+      "text": "The module moves from variables and data types to calculations, formatting, conversion, practice, and a small application."
+    },
+    {
+      "slide": 4,
+      "title": "What is Python doing for us?",
+      "audio": "audio/module1_slide_04.mp3",
+      "captions": "captions/module1_slide_04.vtt",
+      "text": "Think of Python as a tool that stores values, transforms them, and produces repeatable results."
+    },
+    {
+      "slide": 5,
+      "title": "Variables store values",
+      "audio": "audio/module1_slide_05.mp3",
+      "captions": "captions/module1_slide_05.vtt",
+      "text": "A variable is a meaningful name attached to a value. Clear names make analytical code easier to understand."
+    },
+    {
+      "slide": 6,
+      "title": "Code: store values in variables",
+      "audio": "audio/module1_slide_06.mp3",
+      "captions": "captions/module1_slide_06.vtt",
+      "text": "This example stores sales and costs, calculates profit, and prints the result. Change an input and observe the dependent metric."
+    },
+    {
+      "slide": 7,
+      "title": "Visual: variables become metrics",
+      "audio": "audio/module1_slide_07.mp3",
+      "captions": "captions/module1_slide_07.vtt",
+      "text": "Raw values such as sales and costs can be transformed into derived measures such as profit."
+    },
+    {
+      "slide": 8,
+      "title": "Variables can be reassigned",
+      "audio": "audio/module1_slide_08.mp3",
+      "captions": "captions/module1_slide_08.vtt",
+      "text": "Variables can be reassigned. Python uses the most recent value when later statements refer to that variable."
+    },
+    {
+      "slide": 9,
+      "title": "Assign several values at once",
+      "audio": "audio/module1_slide_09.mp3",
+      "captions": "captions/module1_slide_09.vtt",
+      "text": "Python can assign several values at once. The order of the values must match the order of the variable names."
+    },
+    {
+      "slide": 10,
+      "title": "Variable naming rules and habits",
+      "audio": "audio/module1_slide_10.mp3",
+      "captions": "captions/module1_slide_10.vtt",
+      "text": "Use descriptive lowercase names with underscores, avoid reserved keywords, and remember that Python is case sensitive."
+    },
+    {
+      "slide": 11,
+      "title": "Data types tell Python what values mean",
+      "audio": "audio/module1_slide_11.mp3",
+      "captions": "captions/module1_slide_11.vtt",
+      "text": "The fundamental types in this module are integer, float, string, and Boolean. Type affects which operations are meaningful."
+    },
+    {
+      "slide": 12,
+      "title": "Code: inspect data types",
+      "audio": "audio/module1_slide_12.mp3",
+      "captions": "captions/module1_slide_12.vtt",
+      "text": "Use the type function to inspect a value. Quoting a number changes it from a numeric value into text."
+    },
+    {
+      "slide": 13,
+      "title": "Some numbers should stay as text",
+      "audio": "audio/module1_slide_13.mp3",
+      "captions": "captions/module1_slide_13.vtt",
+      "text": "Identifiers can contain digits and still belong as text. Keeping them as strings preserves meaning and leading zeros."
+    },
+    {
+      "slide": 14,
+      "title": "Arithmetic creates derived metrics",
+      "audio": "audio/module1_slide_14.mp3",
+      "captions": "captions/module1_slide_14.vtt",
+      "text": "Arithmetic turns raw values into analytical metrics such as profit, margin, tax, and growth."
+    },
+    {
+      "slide": 15,
+      "title": "Code: calculate profit and tax",
+      "audio": "audio/module1_slide_15.mp3",
+      "captions": "captions/module1_slide_15.vtt",
+      "text": "Follow the calculation from sales and costs to profit, tax, and net profit. Changing a tax rate should affect only dependent results."
+    },
+    {
+      "slide": 16,
+      "title": "Three useful operators",
+      "audio": "audio/module1_slide_16.mp3",
+      "captions": "captions/module1_slide_16.vtt",
+      "text": "Exponent, floor division, and modulo solve useful tasks such as powers, complete groups, and remainders."
+    },
+    {
+      "slide": 17,
+      "title": "Parentheses control calculation order",
+      "audio": "audio/module1_slide_17.mp3",
+      "captions": "captions/module1_slide_17.vtt",
+      "text": "Parentheses change calculation order. A formula can run without an error and still be analytically wrong if it is grouped incorrectly."
+    },
+    {
+      "slide": 18,
+      "title": "Print makes results visible",
+      "audio": "audio/module1_slide_18.mp3",
+      "captions": "captions/module1_slide_18.vtt",
+      "text": "Print statements make stored values and intermediate calculations visible so we can inspect and communicate results."
+    },
+    {
+      "slide": 19,
+      "title": "f-strings create readable messages",
+      "audio": "audio/module1_slide_19.mp3",
+      "captions": "captions/module1_slide_19.vtt",
+      "text": "F-strings combine labels, values, units, and formatting in readable output."
+    },
+    {
+      "slide": 20,
+      "title": "Format money and percentages",
+      "audio": "audio/module1_slide_20.mp3",
+      "captions": "captions/module1_slide_20.vtt",
+      "text": "Formatting can display money, percentages, and large values clearly without changing the underlying stored number."
+    },
+    {
+      "slide": 21,
+      "title": "Input usually starts as text",
+      "audio": "audio/module1_slide_21.mp3",
+      "captions": "captions/module1_slide_21.vtt",
+      "text": "Keyboard and form input usually arrives as text. Convert it before performing numeric arithmetic."
+    },
+    {
+      "slide": 22,
+      "title": "Code: convert text into numbers",
+      "audio": "audio/module1_slide_22.mp3",
+      "captions": "captions/module1_slide_22.vtt",
+      "text": "This example converts price and quantity strings into numbers and then calculates a total."
+    },
+    {
+      "slide": 23,
+      "title": "Boolean conversion previews decision logic",
+      "audio": "audio/module1_slide_23.mp3",
+      "captions": "captions/module1_slide_23.vtt",
+      "text": "Boolean conversion previews decision logic. Zero and empty text behave like false, while many nonempty values behave like true."
+    },
+    {
+      "slide": 24,
+      "title": "Preview a conversion error",
+      "audio": "audio/module1_slide_24.mp3",
+      "captions": "captions/module1_slide_24.vtt",
+      "text": "Invalid numeric text can cause a conversion error. This preview introduces the idea of validating messy real-world input."
+    },
+    {
+      "slide": 25,
+      "title": "Practice: small tasks",
+      "audio": "audio/module1_slide_25.mp3",
+      "captions": "captions/module1_slide_25.vtt",
+      "text": "Practice with small tasks and trace each step. Predict the output before running and inspect intermediate values when results differ."
+    },
+    {
+      "slide": 26,
+      "title": "Practice code: patient variables",
+      "audio": "audio/module1_slide_26.mp3",
+      "captions": "captions/module1_slide_26.vtt",
+      "text": "Use variables to represent a small patient record and identify the meaning and type of each value."
+    },
+    {
+      "slide": 27,
+      "title": "Practice code: profit and margin",
+      "audio": "audio/module1_slide_27.mp3",
+      "captions": "captions/module1_slide_27.vtt",
+      "text": "Compare profit as a dollar amount with margin as a percentage. Change costs and observe how both measures respond."
+    },
+    {
+      "slide": 28,
+      "title": "Mini project: simple sales calculator",
+      "audio": "audio/module1_slide_28.mp3",
+      "captions": "captions/module1_slide_28.vtt",
+      "text": "The mini project combines variables, arithmetic, tax, net profit, margin, and formatted reporting in one small analytical workflow."
+    },
+    {
+      "slide": 29,
+      "title": "Self-check",
+      "audio": "audio/module1_slide_29.mp3",
+      "captions": "captions/module1_slide_29.vtt",
+      "text": "Use the self-check to explain variables, types, calculations, formatting, and conversion in your own words."
+    },
+    {
+      "slide": 30,
+      "title": "Summary",
+      "audio": "audio/module1_slide_30.mp3",
+      "captions": "captions/module1_slide_30.vtt",
+      "text": "Module 1 established the Python foundation. Module 2 adds decisions and repetition with comparisons, conditions, and loops."
+    }
+  ]
+};
+const slides = Array.from(document.querySelectorAll('.slide'));
 const select = document.getElementById('slide-select');
 const counter = document.getElementById('counter');
 const progressBar = document.getElementById('progress-bar');
 let current = 0;
 let pyodidePromise = null;
 const PYODIDE_URL = 'https://cdn.jsdelivr.net/pyodide/v314.0.4/full/';
+
+const STORAGE_KEY = 'ian601_module1_presentation';
+const narrationAudio = document.getElementById('narration-audio');
+const narrationToggleBtn = document.getElementById('narration-toggle-btn');
+const ccToggleBtn = document.getElementById('cc-toggle-btn');
+const startNarrationBtn = document.getElementById('start-narration-btn');
+const transcriptBtn = document.getElementById('transcript-btn');
+const transcriptPanel = document.getElementById('transcript-panel');
+const transcriptCloseBtn = document.getElementById('transcript-close-btn');
+const transcriptTitle = document.getElementById('transcript-title');
+const transcriptBody = document.getElementById('transcript-body');
+const subtitleBar = document.getElementById('subtitle-bar');
+const audioTitle = document.getElementById('audio-title');
+const audioPlayBtn = document.getElementById('audio-play-btn');
+const audioSeek = document.getElementById('audio-seek');
+const audioTime = document.getElementById('audio-time');
+const speedSelect = document.getElementById('speed-select');
+
+let narrationEnabled = false;
+let narrationStarted = false;
+let ccEnabled = false;
+let captionCues = [];
+let vttTranscript = '';
+let loadedSlideNumber = null;
+
+function readDeckState() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+  catch { return {}; }
+}
+function saveDeckState() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      slide: current,
+      narrationEnabled,
+      ccEnabled,
+      speed: narrationAudio.playbackRate || 1,
+      theme: document.documentElement.dataset.theme || 'light'
+    }));
+  } catch {}
+}
+function currentManifestItem() { return MANIFEST.slides[current]; }
+function formatClock(seconds) {
+  if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return m + ':' + String(s).padStart(2, '0');
+}
+function vttTimeToSeconds(value) {
+  const parts = value.trim().replace(',', '.').split(':').map(Number);
+  if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+  if (parts.length === 2) return parts[0] * 60 + parts[1];
+  return Number(parts[0]) || 0;
+}
+function parseVtt(text) {
+  const cues = [];
+  const blocks = text.replace(/\r/g, '').split(/\n{2,}/);
+  for (const block of blocks) {
+    const lines = block.split('\n').filter(Boolean);
+    const timingIndex = lines.findIndex(line => line.includes('-->'));
+    if (timingIndex < 0) continue;
+    const timing = lines[timingIndex].split('-->');
+    const start = vttTimeToSeconds(timing[0]);
+    const end = vttTimeToSeconds((timing[1].trim().split(/\s+/)[0] || timing[1]));
+    const cueText = lines.slice(timingIndex + 1).join(' ').replace(/<[^>]+>/g, '').trim();
+    if (cueText) cues.push({start, end, text: cueText});
+  }
+  return cues;
+}
+async function loadCaptionsForCurrent() {
+  const item = currentManifestItem();
+  captionCues = [];
+  vttTranscript = '';
+  if (!item) return;
+  try {
+    const response = await fetch(item.captions, {cache:'no-store'});
+    if (!response.ok) throw new Error('Caption file unavailable');
+    const raw = await response.text();
+    captionCues = parseVtt(raw);
+    vttTranscript = captionCues.map(c => c.text).join(' ');
+  } catch {
+    captionCues = [];
+    vttTranscript = '';
+  }
+  renderTranscript();
+  updateSubtitle();
+}
+function fallbackCaption() {
+  const item = currentManifestItem();
+  if (!item?.text) return '';
+  const parts = item.text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [item.text];
+  const duration = narrationAudio.duration;
+  if (!Number.isFinite(duration) || duration <= 0 || parts.length === 1) return parts[0].trim();
+  const idx = Math.min(parts.length - 1, Math.floor((narrationAudio.currentTime / duration) * parts.length));
+  return parts[idx].trim();
+}
+function updateSubtitle() {
+  if (!ccEnabled) {
+    subtitleBar.hidden = true;
+    subtitleBar.textContent = '';
+    return;
+  }
+  subtitleBar.hidden = false;
+  const t = narrationAudio.currentTime || 0;
+  const cue = captionCues.find(c => t >= c.start && t <= c.end);
+  subtitleBar.textContent = cue?.text || fallbackCaption() || 'Captions will appear here when narration plays.';
+}
+function renderTranscript() {
+  const item = currentManifestItem();
+  if (!item) return;
+  transcriptTitle.textContent = 'Slide ' + item.slide + ': ' + item.title;
+  transcriptBody.textContent = vttTranscript || item.text || 'Transcript unavailable.';
+}
+function updateNarrationButtons() {
+  narrationToggleBtn.textContent = narrationEnabled ? 'Narration On' : 'Narration Off';
+  narrationToggleBtn.setAttribute('aria-pressed', String(narrationEnabled));
+  ccToggleBtn.textContent = ccEnabled ? 'CC On' : 'CC Off';
+  ccToggleBtn.setAttribute('aria-pressed', String(ccEnabled));
+  subtitleBar.hidden = !ccEnabled;
+}
+function loadAudioForCurrent() {
+  const item = currentManifestItem();
+  if (!item) return;
+  audioTitle.textContent = 'Slide ' + item.slide + ': ' + item.title;
+  if (loadedSlideNumber !== item.slide) {
+    loadedSlideNumber = item.slide;
+    narrationAudio.pause();
+    narrationAudio.src = item.audio;
+    narrationAudio.load();
+    audioSeek.value = '0';
+    audioTime.textContent = '0:00 / 0:00';
+    audioPlayBtn.textContent = 'Play';
+    loadCaptionsForCurrent();
+  }
+}
+async function playCurrentNarration(restart=false) {
+  loadAudioForCurrent();
+  if (restart) narrationAudio.currentTime = 0;
+  narrationAudio.playbackRate = Number(speedSelect.value) || 1;
+  try {
+    await narrationAudio.play();
+    audioPlayBtn.textContent = 'Pause';
+  } catch {
+    audioPlayBtn.textContent = 'Play';
+  }
+}
+function syncNarrationForSlide() {
+  loadAudioForCurrent();
+  renderTranscript();
+  if (narrationEnabled && narrationStarted) {
+    narrationAudio.currentTime = 0;
+    playCurrentNarration(false);
+  }
+}
+function openTranscript() {
+  renderTranscript();
+  transcriptPanel.classList.add('open');
+  transcriptPanel.setAttribute('aria-hidden','false');
+}
+function closeTranscript() {
+  transcriptPanel.classList.remove('open');
+  transcriptPanel.setAttribute('aria-hidden','true');
+}
+function initializeNarrationUI() {
+  const saved = readDeckState();
+  narrationEnabled = Boolean(saved.narrationEnabled);
+  ccEnabled = Boolean(saved.ccEnabled);
+  const speed = [0.75,1,1.25,1.5,2].includes(Number(saved.speed)) ? Number(saved.speed) : 1;
+  speedSelect.value = String(speed);
+  narrationAudio.playbackRate = speed;
+  if (saved.theme === 'dark' || saved.theme === 'light') {
+    document.documentElement.dataset.theme = saved.theme;
+  }
+  document.getElementById('theme-btn').textContent =
+    document.documentElement.dataset.theme === 'dark' ? 'Light mode' : 'Dark mode';
+  updateNarrationButtons();
+  return Number.isInteger(saved.slide) ? Math.max(0, Math.min(saved.slide, MANIFEST.slide_count - 1)) : 0;
+}
+
+startNarrationBtn.addEventListener('click', () => {
+  narrationEnabled = true;
+  narrationStarted = true;
+  updateNarrationButtons();
+  saveDeckState();
+  playCurrentNarration(true);
+});
+narrationToggleBtn.addEventListener('click', () => {
+  narrationEnabled = !narrationEnabled;
+  narrationStarted = narrationEnabled;
+  updateNarrationButtons();
+  saveDeckState();
+  if (narrationEnabled) playCurrentNarration(false);
+  else narrationAudio.pause();
+});
+ccToggleBtn.addEventListener('click', () => {
+  ccEnabled = !ccEnabled;
+  updateNarrationButtons();
+  updateSubtitle();
+  saveDeckState();
+});
+transcriptBtn.addEventListener('click', openTranscript);
+transcriptCloseBtn.addEventListener('click', closeTranscript);
+speedSelect.addEventListener('change', () => {
+  narrationAudio.playbackRate = Number(speedSelect.value) || 1;
+  saveDeckState();
+});
+audioPlayBtn.addEventListener('click', () => {
+  narrationStarted = true;
+  if (narrationAudio.paused) playCurrentNarration(false);
+  else narrationAudio.pause();
+});
+audioSeek.addEventListener('input', () => {
+  if (Number.isFinite(narrationAudio.duration) && narrationAudio.duration > 0) {
+    narrationAudio.currentTime = (Number(audioSeek.value) / 1000) * narrationAudio.duration;
+  }
+});
+narrationAudio.addEventListener('play', () => audioPlayBtn.textContent = 'Pause');
+narrationAudio.addEventListener('pause', () => audioPlayBtn.textContent = 'Play');
+narrationAudio.addEventListener('loadedmetadata', () => {
+  audioTime.textContent = formatClock(narrationAudio.currentTime) + ' / ' + formatClock(narrationAudio.duration);
+  updateSubtitle();
+});
+narrationAudio.addEventListener('timeupdate', () => {
+  const duration = narrationAudio.duration;
+  if (Number.isFinite(duration) && duration > 0) {
+    audioSeek.value = String(Math.round((narrationAudio.currentTime / duration) * 1000));
+  }
+  audioTime.textContent = formatClock(narrationAudio.currentTime) + ' / ' + formatClock(duration);
+  updateSubtitle();
+});
+narrationAudio.addEventListener('ended', () => {
+  audioPlayBtn.textContent = 'Play';
+  audioSeek.value = '1000';
+  updateSubtitle();
+  /* Intentionally do not advance slides when narration ends. */
+});
+narrationAudio.addEventListener('error', () => {
+  audioTitle.textContent = 'Audio not found yet: ' + (currentManifestItem()?.audio || '');
+  audioTitle.classList.add('audio-error');
+});
+narrationAudio.addEventListener('loadstart', () => audioTitle.classList.remove('audio-error'));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && transcriptPanel.classList.contains('open')) closeTranscript();
+});
+
 
 slides.forEach((slide, index) => {
   const opt = document.createElement('option');
@@ -1750,6 +2386,8 @@ function showSlide(index, resetFragments=true) {
   requestAnimationFrame(() => {
     slides[current].querySelectorAll('.code-cell').forEach(cell => cell._monacoEditor?.layout());
   });
+  syncNarrationForSlide();
+  saveDeckState();
 }
 
 function next() { showSlide(current + 1); }
@@ -1778,6 +2416,7 @@ document.getElementById('theme-btn').addEventListener('click', () => {
   root.dataset.theme = nextTheme;
   document.getElementById('theme-btn').textContent = nextTheme === 'dark' ? 'Light mode' : 'Dark mode';
   if (window.monaco?.editor) monaco.editor.setTheme('vs-dark');
+  saveDeckState();
 });
 document.getElementById('fullscreen-btn').addEventListener('click', () => {
   if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
@@ -1822,7 +2461,8 @@ document.addEventListener('keydown', event => {
     runActiveSlide();
   }
 });
-showSlide(0);
+const initialSlide = initializeNarrationUI();
+showSlide(initialSlide);
 initializeMonacoEditors();
 </script>
 </body>
