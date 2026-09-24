@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -45,6 +45,7 @@
 .output a {
   color: #bfdbfe !important;
 }
+.stage{padding:.55rem}.slide{inset:0;padding:.55rem}.slide.active{display:grid;place-items:center}.slide-inner{height:100%;width:auto;max-width:100%;max-height:100%;aspect-ratio:16/9;margin:auto}.bottom-nav{position:relative;z-index:30;display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"prev narr next" "sub sub sub" "audio audio audio";align-items:center;gap:.42rem .7rem;padding:.48rem .85rem .7rem;border-top:1px solid var(--border,var(--line,#cbd5e1));background:var(--slide,var(--panel,#fff))}.nav-left{grid-area:prev}.nav-right{grid-area:next}.narration-controls{grid-area:narr;display:flex;align-items:center;justify-content:center;gap:.38rem;flex-wrap:wrap}.narration-controls .btn{padding:.42rem .62rem;font-size:.78rem}.narration-controls select{max-width:92px;padding:.4rem .5rem;font-size:.78rem}.subtitle-bar{grid-area:sub;min-height:34px;max-height:62px;overflow:auto;display:flex;align-items:center;justify-content:center;padding:.38rem .8rem;border:1px solid var(--border,var(--line,#cbd5e1));border-radius:.65rem;background:var(--slide-2,var(--panel2,#f8fafc));font-size:.9rem;text-align:center}.subtitle-bar[hidden]{display:none}.audio-row{grid-area:audio;display:grid;grid-template-columns:minmax(170px,1.25fr) auto minmax(180px,2fr) auto auto minmax(150px,.9fr);gap:.5rem;align-items:center}.audio-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:.78rem;font-weight:750}.audio-time{color:var(--muted);font-size:.75rem}.seek-slider{width:100%}.bottom-slide-select{max-width:240px;width:100%;padding:.4rem .55rem;font-size:.78rem}#narration-audio{display:none}.transcript-panel{position:fixed;top:0;right:0;bottom:0;z-index:1000;width:min(430px,92vw);display:grid;grid-template-rows:auto 1fr;background:var(--slide,var(--panel,#fff));border-left:1px solid var(--border,var(--line,#cbd5e1));transform:translateX(105%);transition:transform .22s ease;box-shadow:-18px 0 42px rgba(15,23,42,.22)}.transcript-panel.open{transform:translateX(0)}.transcript-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem;border-bottom:1px solid var(--border,var(--line,#cbd5e1))}.transcript-head h2{margin:0;font-size:1rem}.transcript-body{overflow:auto;padding:1rem 1.1rem 2rem;line-height:1.65;white-space:pre-wrap}.audio-error{color:var(--danger,var(--bad,#b91c1c))}
 </style>
 </head>
 <body>
@@ -61,21 +62,21 @@
                <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div></div>
                <div><div class="flow-visual"><div>Raw table</div><span>clean</span><div>reshape</div><span>group</span><div>summary</div><span>report</span><div>insight</div></div></div>
              </div><div class="callout"><strong>Goal:</strong> Use method chaining, pivot tables, melting, date features, rolling summaries, mapping, joins, and reusable pandas functions.</div></div>
-    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>Slide 1</span></footer>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 1</span></footer>
   </div>
 </section>
 <section class="slide" data-title="How to use this page">
   <div class="slide-inner">
     <header class="slide-header"><div><span class="kicker">Self-paced workflow</span><h2>How to use this page</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
     <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Read</h3><p>Start with the main idea on the slide.</p></div><div class="timeline-item"><span>2</span><h3>Run</h3><p>Execute the Python code in the browser.</p></div><div class="timeline-item"><span>3</span><h3>Compare</h3><p>Connect the output to the concept.</p></div><div class="timeline-item"><span>4</span><h3>Edit</h3><p>Change one value, variable, or condition.</p></div><div class="timeline-item"><span>5</span><h3>Reuse</h3><p>Apply the pattern to a new example.</p></div></div><div class="callout secondary">All slide points are visible. Use Next, Previous, arrow keys, or the slide menu.</div></div>
-    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>Slide 2</span></footer>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 2</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Learning path for Module 11">
   <div class="slide-inner">
     <header class="slide-header"><div><span class="kicker">Roadmap</span><h2>Learning path for Module 11</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
     <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Chaining</h3><p>Connect DataFrame steps.</p></div><div class="timeline-item"><span>2</span><h3>Pivot</h3><p>Create summary tables.</p></div><div class="timeline-item"><span>3</span><h3>Melt</h3><p>Convert wide data to long data.</p></div><div class="timeline-item"><span>4</span><h3>Dates</h3><p>Extract time features.</p></div><div class="timeline-item"><span>5</span><h3>Rolling</h3><p>Calculate moving summaries.</p></div><div class="timeline-item"><span>6</span><h3>Functions</h3><p>Make reusable pandas workflows.</p></div></div></div>
-    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>Slide 3</span></footer>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 3</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Method chaining">
@@ -109,7 +110,7 @@ print(summary)</textarea>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>Slide 4</span></footer>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 4</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Pivot tables">
@@ -138,7 +139,7 @@ print(pivot)</textarea>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>Slide 5</span></footer>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 5</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Melt wide data into long data">
@@ -167,7 +168,7 @@ print(long)</textarea>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>Slide 6</span></footer>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 6</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Work with dates">
@@ -198,7 +199,7 @@ print(orders)</textarea>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>Slide 7</span></footer>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 7</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Rolling summaries">
@@ -226,7 +227,7 @@ print(rolling_average.round(2).to_list())</textarea>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>Slide 8</span></footer>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 8</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Map categories">
@@ -256,7 +257,7 @@ print(customers)</textarea>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>Slide 9</span></footer>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 9</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Join checks">
@@ -284,7 +285,7 @@ print(merged[&quot;_merge&quot;].value_counts())</textarea>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>Slide 10</span></footer>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 10</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Reusable pandas function">
@@ -315,36 +316,112 @@ print(summarize_orders(orders))</textarea>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>Slide 11</span></footer>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 11</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Module 11 wrap-up">
   <div class="slide-inner">
     <header class="slide-header"><div><span class="kicker">What you can now do</span><h2>Module 11 wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
     <div class="slide-content"><div class="summary-grid"><div><h3>Chain</h3><p>Connect clean steps.</p></div><div><h3>Pivot</h3><p>Create summary tables.</p></div><div><h3>Melt</h3><p>Reshape wide to long.</p></div><div><h3>Dates</h3><p>Create time features.</p></div><div><h3>Rolling</h3><p>Summarize trends.</p></div><div><h3>Functions</h3><p>Reuse pandas workflows.</p></div></div><div class="callout success">You can now transform pandas tables into cleaner, richer summaries.</div></div>
-    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>Slide 12</span></footer>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 12</span></footer>
   </div>
 </section></main>
-  <footer class="bottom-nav">
-    <div class="nav-left"><button class="btn ghost" id="prev-btn" type="button"><i class="fa-solid fa-arrow-left"></i> Previous</button><button class="btn" id="next-btn" type="button">Next <i class="fa-solid fa-arrow-right"></i></button><select class="slide-select" id="slide-select"><option value="0">1. Advanced Pandas</option>
-<option value="1">2. How to use this page</option>
-<option value="2">3. Learning path for Module 11</option>
-<option value="3">4. Method chaining</option>
-<option value="4">5. Pivot tables</option>
-<option value="5">6. Melt wide data into long data</option>
-<option value="6">7. Work with dates</option>
-<option value="7">8. Rolling summaries</option>
-<option value="8">9. Map categories</option>
-<option value="9">10. Join checks</option>
-<option value="10">11. Reusable pandas function</option>
-<option value="11">12. Module 11 wrap-up</option></select></div>
-    <div class="nav-right"><button class="btn ghost" id="run-slide-btn" type="button"><i class="fa-solid fa-play"></i> Run code on slide</button><div class="progress"><div class="progress-fill" id="progress-fill"></div></div><span class="slide-count" id="slide-count"></span></div>
-  </footer>
+  <footer class="bottom-nav"><div class="nav-left"><button class="btn ghost" id="prev-btn">← Previous</button></div><div class="narration-controls"><button class="btn" id="start-narration-btn">Start Narration</button><button class="btn ghost" id="narration-toggle-btn">Narration Off</button><button class="btn ghost" id="cc-toggle-btn">CC Off</button><button class="btn ghost" id="transcript-btn">Transcript</button><label class="audio-time">Speed</label><select id="speed-select"><option value=".75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div><div class="nav-right"><button class="btn" id="next-btn">Next →</button></div><div class="subtitle-bar" id="subtitle-bar" hidden></div><div class="audio-row"><div class="audio-title" id="audio-title">Slide 1 narration</div><button class="btn ghost" id="audio-play-btn">Play</button><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><div class="audio-time" id="audio-time">0:00 / 0:00</div><div class="counter" id="counter">1 / 12</div><select class="bottom-slide-select" id="slide-select"></select></div><audio id="narration-audio" preload="metadata"></audio><div class="progress"><div class="progress-bar" id="progress-bar"></div></div></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
 </div>
 <script>
+const MANIFEST = {
+  "prefix": "module11",
+  "slide_count": 12,
+  "slides": [
+    {
+      "slide": 1,
+      "title": "Advanced Pandas",
+      "audio": "audio/module11_slide_01.mp3",
+      "captions": "captions/module11_slide_01.vtt",
+      "text": "Welcome to Module 11. This module focuses on Advanced Pandas. We will connect the techniques to realistic analytical workflows and careful interpretation. Advanced pandas helps transform messy tables into analysis-ready summaries using chaining, reshaping, dates, windows, and reusable functions."
+    },
+    {
+      "slide": 2,
+      "title": "How to use this page",
+      "audio": "audio/module11_slide_02.mp3",
+      "captions": "captions/module11_slide_02.vtt",
+      "text": "Use this lesson interactively. Read the idea, predict the result, run the example, then change one input and compare the output. Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept. Change one value, variable, or condition. Apply the pattern to a new example."
+    },
+    {
+      "slide": 3,
+      "title": "Learning path for Module 11",
+      "audio": "audio/module11_slide_03.mp3",
+      "captions": "captions/module11_slide_03.vtt",
+      "text": "This slide is the roadmap for Module 11. Follow how the workflow moves from individual operations toward a complete analytical process. Connect DataFrame steps. Create summary tables. Convert wide data to long data. Extract time features. Calculate moving summaries. Make reusable pandas workflows."
+    },
+    {
+      "slide": 4,
+      "title": "Method chaining",
+      "audio": "audio/module11_slide_04.mp3",
+      "captions": "captions/module11_slide_04.vtt",
+      "text": "This slide focuses on Method chaining. Start with what the operation changes in the data, then connect that change to the analytical question. Method chaining connects several DataFrame steps into one readable workflow. Filter, assign, group Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+    },
+    {
+      "slide": 5,
+      "title": "Pivot tables",
+      "audio": "audio/module11_slide_05.mp3",
+      "captions": "captions/module11_slide_05.vtt",
+      "text": "This slide focuses on Pivot tables. Start with what the operation changes in the data, then connect that change to the analytical question. A pivot table summarizes numeric values across categories. Create a pivot table Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+    },
+    {
+      "slide": 6,
+      "title": "Melt wide data into long data",
+      "audio": "audio/module11_slide_06.mp3",
+      "captions": "captions/module11_slide_06.vtt",
+      "text": "This slide focuses on Melt wide data into long data. Start with what the operation changes in the data, then connect that change to the analytical question. Long format is often easier for analysis, plotting, and grouping. Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+    },
+    {
+      "slide": 7,
+      "title": "Work with dates",
+      "audio": "audio/module11_slide_07.mp3",
+      "captions": "captions/module11_slide_07.vtt",
+      "text": "This slide focuses on Work with dates. Start with what the operation changes in the data, then connect that change to the analytical question. Date columns can be converted to datetime and used to create month, weekday, or time-based summaries. Extract date features Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+    },
+    {
+      "slide": 8,
+      "title": "Rolling summaries",
+      "audio": "audio/module11_slide_08.mp3",
+      "captions": "captions/module11_slide_08.vtt",
+      "text": "This slide focuses on Rolling summaries. Start with what the operation changes in the data, then connect that change to the analytical question. A rolling calculation summarizes a moving window of rows. Calculate rolling average Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+    },
+    {
+      "slide": 9,
+      "title": "Map categories",
+      "audio": "audio/module11_slide_09.mp3",
+      "captions": "captions/module11_slide_09.vtt",
+      "text": "This slide focuses on Map categories. Start with what the operation changes in the data, then connect that change to the analytical question. map() replaces values using a dictionary. This is useful for readable labels or grouped categories. Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+    },
+    {
+      "slide": 10,
+      "title": "Join checks",
+      "audio": "audio/module11_slide_10.mp3",
+      "captions": "captions/module11_slide_10.vtt",
+      "text": "This slide focuses on Join checks. Start with what the operation changes in the data, then connect that change to the analytical question. After a merge, check whether keys matched as expected. Use merge indicator Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+    },
+    {
+      "slide": 11,
+      "title": "Reusable pandas function",
+      "audio": "audio/module11_slide_11.mp3",
+      "captions": "captions/module11_slide_11.vtt",
+      "text": "This slide focuses on Reusable pandas function. Start with what the operation changes in the data, then connect that change to the analytical question. A function can package common pandas steps so they can be reused safely. Summarize orders with a function Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+    },
+    {
+      "slide": 12,
+      "title": "Module 11 wrap-up",
+      "audio": "audio/module11_slide_12.mp3",
+      "captions": "captions/module11_slide_12.vtt",
+      "text": "This slide summarizes Module 11. Focus on the decisions and checks that make the workflow reliable and reusable. Connect clean steps. Create summary tables. Reshape wide to long. Create time features. Summarize trends. Reuse pandas workflows."
+    }
+  ]
+};
 const slides=[...document.querySelectorAll('.slide')];let current=0;const select=document.getElementById('slide-select');const count=document.getElementById('slide-count');const progress=document.getElementById('progress-fill');const runtime=document.getElementById('runtime');const runtimeText=document.getElementById('runtime-text');let pyodide=null;let pyodideLoading=null;const originalCode=new Map();const monacoEditors=new Map();
 function setRuntime(status,text){runtime.className='runtime '+(status||'');runtimeText.textContent=text;}
-function showSlide(index){current=(index+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===current));select.value=current;count.textContent=`Slide ${current+1} of ${slides.length}`;progress.style.width=`${((current+1)/slides.length)*100}%`;slides[current].querySelectorAll('.monaco-host').forEach(host=>{const ed=monacoEditors.get(host);if(ed)setTimeout(()=>ed.layout(),40);});}
+function showSlide(index){current=Math.max(0,Math.min(slides.length-1,index));slides.forEach((s,i)=>s.classList.toggle('active',i===current));select.value=String(current);document.getElementById('counter').textContent=`${current+1} / ${slides.length}`;document.getElementById('progress-bar').style.width=`${((current+1)/slides.length)*100}%`;if(typeof resizeEditors==='function')setTimeout(()=>resizeEditors(),50);syncNarrationForSlide();saveDeckState();}
 document.getElementById('prev-btn').onclick=()=>showSlide(current-1);document.getElementById('next-btn').onclick=()=>showSlide(current+1);select.onchange=e=>showSlide(parseInt(e.target.value,10));document.querySelectorAll('.start-btn').forEach(b=>b.onclick=()=>showSlide(1));document.addEventListener('keydown',e=>{if(e.target.matches('textarea,input,select')||e.target.closest('.monaco-editor'))return;if(e.key==='ArrowRight'||e.key==='PageDown')showSlide(current+1);if(e.key==='ArrowLeft'||e.key==='PageUp')showSlide(current-1);});
 document.getElementById('theme-btn').onclick=()=>{const root=document.documentElement;root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';if(window.monaco){monaco.editor.setTheme(root.dataset.theme==='dark'?'vs-dark':'vs');}};
 function packagesFor(code){const pkgs=[];if(/(^|\n)\s*(import|from)\s+numpy\b/.test(code))pkgs.push('numpy');if(/(^|\n)\s*(import|from)\s+pandas\b/.test(code))pkgs.push('pandas');if(/(^|\n)\s*(import|from)\s+matplotlib\b/.test(code))pkgs.push('matplotlib');if(/(^|\n)\s*(import|from)\s+sklearn\b/.test(code))pkgs.push('scikit-learn');return [...new Set(pkgs)];}
@@ -374,7 +451,8 @@ async function runActiveSlide(){const cells=[...slides[current].querySelectorAll
 document.getElementById('run-slide-btn').onclick=runActiveSlide;document.querySelectorAll('.run-all-btn').forEach(b=>b.onclick=runActiveSlide);document.getElementById('restart-python').onclick=()=>{pyodide=null;pyodideLoading=null;setRuntime('', 'Python reset. It will reload when a code cell runs.');document.querySelectorAll('.output').forEach(o=>{o.className='output';o.textContent='Python reset. Click Run to execute this cell.';});};
 document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');originalCode.set(cell,textarea.value);cell.querySelector('.run-cell').onclick=()=>runCell(cell);cell.querySelector('.reset-cell').onclick=()=>{setCellCode(cell,originalCode.get(cell));cell.querySelector('.output').className='output';cell.querySelector('.output').textContent='Code reset. Click Run to execute this cell.';};cell.querySelector('.copy-cell').onclick=async()=>{try{await navigator.clipboard.writeText(getCellCode(cell));const b=cell.querySelector('.copy-cell');b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1000);}catch(e){cell.querySelector('.output').textContent='Copy failed. You can select and copy manually.';}};});
 function initMonaco(){if(!window.require)return;try{require.config({paths:{vs:'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs'}});require(['vs/editor/editor.main'],function(){monaco.editor.setTheme(document.documentElement.dataset.theme==='dark'?'vs-dark':'vs');document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');const host=cell.querySelector('.monaco-host');const editor=monaco.editor.create(host,{value:textarea.value,language:'python',theme:document.documentElement.dataset.theme==='dark'?'vs-dark':'vs',fontFamily:'Source Code Pro, Consolas, monospace',fontSize:14,lineNumbers:'on',minimap:{enabled:false},automaticLayout:true,scrollBeyondLastLine:false,tabSize:4,wordWrap:'on'});monacoEditors.set(host,editor);cell.classList.add('monaco-ready');editor.onDidChangeCursorPosition(e=>{const status=cell.querySelector('.editor-status span');if(status)status.textContent=`Ln ${e.position.lineNumber}, Col ${e.position.column}`;});});});}catch(e){console.warn('Monaco editor not available, using textarea fallback.',e);}}
-initMonaco();showSlide(0);
+initMonaco();const initialSlide=initNarr();
+showSlide(initialSlide);
 </script>
 </body>
 </html>
