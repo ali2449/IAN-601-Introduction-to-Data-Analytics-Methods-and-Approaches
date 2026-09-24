@@ -1,0 +1,245 @@
+Slide 1: Dictionaries & Sets
+
+Welcome to Module 5. This module focuses on Dictionaries & Sets. We will build the ideas in small steps and connect them to practical analytics work.
+
+[pause=0.7]
+
+Dictionaries and sets help Python work with labeled values and unique collections.
+
+[pause=1.0]
+
+Slide 2: How to use this page
+
+Use this lesson actively. Read the concept, predict the result, run the example when code is available, then change one part and compare what happens.
+
+[pause=0.7]
+
+Start with the idea on the slide. Execute the code in the browser. Read the output and connect it to the concept.
+
+[pause=0.7]
+
+Change one key, value, or set item. Apply the same pattern to a new record.
+
+[pause=1.0]
+
+Slide 3: Learning path for Module 5
+
+This slide is the roadmap for Module 5. It shows how the concepts progress and how the later examples build on the earlier ones.
+
+[pause=0.7]
+
+Store labeled data using key-value pairs. Retrieve and update values by key. Process keys, values, and items.
+
+[pause=0.7]
+
+Represent records and small datasets. Keep only unique values. Count, classify, and clean data.
+
+[pause=1.0]
+
+Slide 4: Why dictionaries and sets matter
+
+This slide focuses on Why dictionaries and sets matter. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+Lists are useful when order matters. Dictionaries and sets are useful when meaning or uniqueness matters. Dictionary: stores data as key: value pairs. Set: stores unique values without duplicates.
+
+[pause=0.7]
+
+Analytics use: labeled records, category counts, unique IDs, and lookup tables.
+
+[pause=1.0]
+
+Slide 5: Create a dictionary
+
+This slide focuses on Create a dictionary. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A dictionary uses curly braces. Each key has one value. Create and inspect a dictionary
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=1.0]
+
+Slide 6: Access values safely
+
+This slide focuses on Access values safely. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+Square brackets work when the key exists. The get() method is safer when a key may be missing. Use brackets and get()
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=1.0]
+
+Slide 7: Update a dictionary
+
+This slide focuses on Update a dictionary. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+Dictionaries are mutable. We can add a new key, change an existing value, or remove a key-value pair. Assignment adds or updates a key. pop() removes a key and returns its value.
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=0.7]
+
+Updates are useful when records change over time. Add, change, and remove keys
+
+[pause=1.0]
+
+Slide 8: Loop through a dictionary
+
+This slide focuses on Loop through a dictionary. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A dictionary can be looped in three common ways. key and value together Loop through items
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=1.0]
+
+Slide 9: Count categories with a dictionary
+
+This slide focuses on Count categories with a dictionary. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A common analytics task is counting how often each category appears. Frequency count
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=1.0]
+
+Slide 10: Represent records with dictionaries
+
+This slide focuses on Represent records with dictionaries. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A list of dictionaries works like a small table. Each dictionary is one row, and each key is like a column name. Bridge to pandas: List of dictionaries
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=1.0]
+
+Slide 11: Nested dictionaries
+
+This slide focuses on Nested dictionaries. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A dictionary can contain another dictionary. This is useful when one record has sections. Use nested dictionaries for organized records. Access nested values one key at a time.
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=0.7]
+
+Keep structure readable and consistent.
+
+[pause=1.0]
+
+Slide 12: Create a set
+
+This slide focuses on Create a set. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+A set stores unique values. Duplicate values are automatically removed. Remove duplicates with a set
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=1.0]
+
+Slide 13: Set operations
+
+This slide focuses on Set operations. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+Sets make it easy to compare groups. Union, intersection, difference
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=1.0]
+
+Slide 14: Membership testing
+
+This slide focuses on Membership testing. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+The in operator checks whether a value exists in a collection. Sets are useful for membership rules. Check allowed categories
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=1.0]
+
+Slide 15: Dictionary + set workflow
+
+This slide focuses on Dictionary + set workflow. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+Dictionaries and sets often work together: dictionaries summarize, and sets track uniqueness. Dictionary: total sales by channel. Set: unique customer IDs.
+
+[pause=0.8]
+
+Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+
+[pause=0.7]
+
+Loop: process each record. Summarize orders
+
+[pause=1.0]
+
+Slide 16: Choose the right structure
+
+This slide focuses on Choose the right structure. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+
+[pause=0.7]
+
+The best structure depends on how the data will be used. Order matters and duplicates are allowed. The record should not change.
+
+[pause=0.7]
+
+Use a dictionary Values need names or labels. You need unique values or group comparison.
+
+[pause=1.0]
+
+Slide 17: Module 5 wrap-up
+
+This slide summarizes Module 5. Focus on the patterns you should be able to explain and reuse after completing the examples.
+
+[pause=0.7]
+
+Create labeled records and access values by key. Add, change, remove, and safely retrieve values. Process keys, values, and key-value pairs.
+
+[pause=0.7]
+
+Build category frequency tables with dictionaries. Remove duplicates and compare groups. Module 6 uses packages and object-oriented thinking to organize larger programs.
+
+[pause=1.0]
