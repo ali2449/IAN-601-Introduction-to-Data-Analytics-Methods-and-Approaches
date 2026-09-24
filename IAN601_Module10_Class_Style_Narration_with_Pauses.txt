@@ -1,0 +1,163 @@
+Slide 1: Pandas
+
+Welcome to Module 10. This module focuses on Pandas. We will connect the new library tools to the Python foundations from earlier modules.
+
+[pause=0.7]
+
+Pandas helps Python work with table-shaped data using DataFrames, rows, columns, filters, groups, and joins.
+
+[pause=1.0]
+
+Slide 2: How to use this page
+
+Use this lesson interactively. Read the idea, predict the shape or result, run the example, and then change one value so you can compare the output.
+
+[pause=0.7]
+
+Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.
+
+[pause=0.7]
+
+Change one value, variable, or condition. Apply the pattern to a new example.
+
+[pause=1.0]
+
+Slide 3: Learning path for Module 10
+
+This slide is the roadmap for Module 10. Follow the progression from the basic structure to selection, transformation, and a small analytical workflow.
+
+[pause=0.7]
+
+Create table-shaped data. Preview and understand columns. Choose columns and rows.
+
+[pause=0.7]
+
+Create new columns. Summarize by category. Combine related tables.
+
+[pause=1.0]
+
+Slide 4: Create a DataFrame
+
+This slide focuses on Create a DataFrame. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+
+[pause=0.7]
+
+A DataFrame is a table with column names. A list of dictionaries is a common way to create one. Create a small DataFrame
+
+[pause=0.8]
+
+Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+
+[pause=1.0]
+
+Slide 5: Inspect a DataFrame
+
+This slide focuses on Inspect a DataFrame. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+
+[pause=0.7]
+
+Before analysis, preview the data and check basic structure. Preview and inspect
+
+[pause=0.8]
+
+Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+
+[pause=1.0]
+
+Slide 6: Select columns and filter rows
+
+This slide focuses on Select columns and filter rows. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+
+[pause=0.7]
+
+Pandas uses column names and conditions to select the part of the table you need. Select and filter
+
+[pause=0.8]
+
+Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+
+[pause=1.0]
+
+Slide 7: Create new columns
+
+This slide focuses on Create new columns. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+
+[pause=0.7]
+
+New columns store calculated values or labels that help analysis. Add calculated columns
+
+[pause=0.8]
+
+Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+
+[pause=1.0]
+
+Slide 8: Group and summarize
+
+This slide focuses on Group and summarize. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+
+[pause=0.7]
+
+groupby() summarizes data by category. Summarize by channel
+
+[pause=0.8]
+
+Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+
+[pause=1.0]
+
+Slide 9: Handle missing values
+
+This slide focuses on Handle missing values. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+
+[pause=0.7]
+
+Missing values should be checked before analysis. Depending on the task, they may be filled, removed, or flagged. Find and fill missing values
+
+[pause=0.8]
+
+Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+
+[pause=1.0]
+
+Slide 10: Merge tables
+
+This slide focuses on Merge tables. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+
+[pause=0.7]
+
+Merging combines related tables using a shared key. Merge orders and customers
+
+[pause=0.8]
+
+Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+
+[pause=1.0]
+
+Slide 11: Mini pandas workflow
+
+This slide focuses on Mini pandas workflow. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+
+[pause=0.7]
+
+A typical workflow loads data, checks it, filters it, adds useful columns, and summarizes results. Complete small workflow
+
+[pause=0.8]
+
+Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+
+[pause=1.0]
+
+Slide 12: Module 10 wrap-up
+
+This slide summarizes Module 10. Focus on the operations you should recognize and the situations where they make analytical work easier.
+
+[pause=0.7]
+
+Build DataFrames from records. Use head, shape, and dtypes. Keep rows that match conditions.
+
+[pause=0.7]
+
+Add calculated columns. Summarize by category. Combine related tables.
+
+[pause=1.0]
