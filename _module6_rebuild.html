@@ -25,7 +25,7 @@ h1,h2,h3,p{margin-top:0}h3{font-size:20px;line-height:1.2;margin-bottom:9px}p{fo
     <header class="slide-header"><div><span class="kicker">Module 6 · Interactive slide lesson</span><h2>Modules, Packages &amp; OOP</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
     <div class="slide-content"><div class="title-grid">
                <div><p class="big-lead">Modules, packages, and classes help Python projects grow from short scripts into organized analytics tools.</p><div class="pill-row"><span>Self-paced slides</span><span>Executable Python cells</span><span>VS Code-style editor</span><span>Separate study notes</span></div>
-               <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div></div>
+               <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big" id="startWithNarration" type="button">Start Narration</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div></div>
                <div><div class="flow-visual"><div>script.py</div><span>imports</span><div>package</div><span>uses</span><div>class</div><span>creates</span><div>object</div></div></div>
              </div><div class="callout"><strong>Goal:</strong> Import useful tools, understand packages, create simple classes, and organize Python code for larger analytics tasks.</div></div>
     <div class="slide-num"></div>
@@ -255,4 +255,430 @@ print(&quot;Average sale:&quot;, round(report.average(), 2))</textarea>
     <div class="slide-num"></div>
   </div>
 </section></main><footer class="bottombar"><div class="footer-left"><button id="prevBtn" class="nav-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="narration-btn primary" id="startNarration" type="button">Start Narration</button><button class="narration-btn" id="narrationToggle" type="button">Narration On</button><button class="narration-btn" id="ccToggle" type="button" aria-pressed="true">CC On</button><button class="narration-btn" id="transcriptBtn" type="button">Transcript</button><select class="narration-speed" id="speedSelect"><option value=".85">0.85x</option><option value="1" selected>1.0x</option><option value="1.15">1.15x</option><option value="1.3">1.3x</option></select></div><div class="subtitle-bar" id="subtitleBar"><span id="subtitleText"></span></div><div class="audio-player" id="audioPlayer"><span class="audio-dot"></span><span class="audio-title" id="audioTitle">Audio ready</span><input class="audio-seek" id="audioSeek" type="range" min="0" max="100" value="0"><span class="audio-time" id="audioTime">0:00 / 0:00</span><button class="audio-play" id="audioPlay" type="button">Play</button></div></div><div class="bottom-nav"><select id="slideSelect" aria-label="Select slide"></select><div class="bottom-progress"><div class="progress-track"><div id="progressBar" class="progress-bar"></div></div><div class="slide-count" id="slideCount">1 / 13</div></div></div><div class="footer-right"><button id="nextBtn" class="nav-btn" type="button">Next</button></div></footer></div><section class="transcript-panel" id="transcriptPanel"><div class="transcript-head"><strong id="transcriptTitle">Narration Transcript</strong><button class="control" id="transcriptClose">Close</button></div><div class="transcript-body" id="transcriptBody"></div></section><div class="modal-backdrop" id="modulesModal"><div class="modal"><div class="modal-head"><h2 style="margin:0">IAN 601 Course Modules</h2><button class="control" id="modulesCloseBtn">Close</button></div><div class="module-links"><a class="" href="s_module1.html">Module 1</a><a class="" href="s_module2.html">Module 2</a><a class="" href="s_module3.html">Module 3</a><a class="" href="s_module4.html">Module 4</a><a class="" href="s_module5.html">Module 5</a><a class="current" href="s_module6.html">Module 6 · Current</a><a class="" href="s_module7.html">Module 7</a><a class="" href="s_module8.html">Module 8</a><a class="" href="s_module9.html">Module 9</a><a class="" href="s_module10.html">Module 10</a><a class="" href="s_module11.html">Module 11</a><a class="" href="s_module12.html">Module 12</a><a class="" href="s_module13.html">Module 13</a><a class="" href="s_module14.html">Module 14</a></div></div></div><div class="modal-backdrop" id="progressModal"><div class="modal"><div class="modal-head"><h2 style="margin:0">Module 6 Progress</h2><button class="control" id="progressCloseBtn">Close</button></div><p>Progress is saved in this browser.</p><div class="progress-track" style="max-width:none;height:12px"><div id="learningMeterBar" class="progress-bar"></div></div><div id="learningMeterText" style="margin-top:8px;color:var(--muted)"></div><div id="progressList" class="module-links"></div><button class="control" id="resetLearningBtn" style="margin-top:14px">Reset saved progress</button></div></div><script>const MANIFEST={"prefix":"module6","slide_count":13,"slides":[{"slide":1,"title":"Modules, Packages & OOP","audio":"audio/module6_slide_01.mp3","captions":"captions/module6_slide_01.vtt","text":"Welcome to Module 6. This module focuses on Modules, Packages & OOP. We will build the ideas in small steps and connect them to practical analytics work. Modules, packages, and classes help Python projects grow from short scripts into organized analytics tools."},{"slide":2,"title":"How to use this page","audio":"audio/module6_slide_02.mp3","captions":"captions/module6_slide_02.vtt","text":"Use this lesson actively. Read the concept, predict the result, run the example when code is available, then change one part and compare what happens. Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept. Change one value, variable, or condition. Apply the pattern to a new example."},{"slide":3,"title":"Learning path for Module 6","audio":"audio/module6_slide_03.mp3","captions":"captions/module6_slide_03.vtt","text":"This slide is the roadmap for Module 6. It shows how the concepts progress and how the later examples build on the earlier ones. Use built-in modules and aliases. Understand why libraries matter. Know where names come from. Create blueprints for objects. Attach actions to data. Analytics class"},{"slide":4,"title":"Why organize code?","audio":"audio/module6_slide_04.mp3","captions":"captions/module6_slide_04.vtt","text":"This slide focuses on Why organize code?. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. As programs get longer, organization becomes part of the solution. Imports reuse code that already exists. Packages group many modules together. Classes group related data and actions. Well-organized code is easier to test, share, and update. Good for one quick task."},{"slide":5,"title":"Import built-in modules","audio":"audio/module6_slide_05.mp3","captions":"captions/module6_slide_05.vtt","text":"This slide focuses on Import built-in modules. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. Use built-in modules Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why."},{"slide":6,"title":"Use aliases for readability","audio":"audio/module6_slide_06.mp3","captions":"captions/module6_slide_06.vtt","text":"This slide focuses on Use aliases for readability. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. An alias is a shorter name for a module. It makes code easier to type and read. Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why."},{"slide":7,"title":"Think like a module","audio":"audio/module6_slide_07.mp3","captions":"captions/module6_slide_07.vtt","text":"This slide focuses on Think like a module. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. A module is often just a file that contains reusable functions. In the browser, we can still practice the same idea by grouping related functions. Reusable helper functions Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why."},{"slide":8,"title":"What is a class?","audio":"audio/module6_slide_08.mp3","captions":"captions/module6_slide_08.vtt","text":"This slide focuses on What is a class?. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. A class is a blueprint. An object is one item created from that blueprint. Attributes store information. Methods perform actions. The word self means this specific object."},{"slide":9,"title":"Create a simple class","audio":"audio/module6_slide_09.mp3","captions":"captions/module6_slide_09.vtt","text":"This slide focuses on Create a simple class. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. This class stores information about one customer and includes a method that describes the customer. Create objects from a class Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why."},{"slide":10,"title":"Add behavior with methods","audio":"audio/module6_slide_10.mp3","captions":"captions/module6_slide_10.vtt","text":"This slide focuses on Add behavior with methods. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. A method can update the object. This lets data and behavior stay together. Update an object with a method Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why."},{"slide":11,"title":"Small analytics class","audio":"audio/module6_slide_11.mp3","captions":"captions/module6_slide_11.vtt","text":"This slide focuses on Small analytics class. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. Classes can package a small analytics workflow so the same logic can be reused with different data. Build a report class Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why."},{"slide":12,"title":"When to use each organization tool","audio":"audio/module6_slide_12.mp3","captions":"captions/module6_slide_12.vtt","text":"This slide focuses on When to use each organization tool. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. Use for one reusable action. Use for related functions in one file. Use for a larger collection of modules. Use when data and behavior belong together. Use for one working instance of a class. Use to bring outside tools into your script."},{"slide":13,"title":"Module 6 wrap-up","audio":"audio/module6_slide_13.mp3","captions":"captions/module6_slide_13.vtt","text":"This slide summarizes Module 6. Focus on the patterns you should be able to explain and reuse after completing the examples. Use built-in tools and aliases. Read namespaces Understand where names come from. Group repeated logic. Make simple blueprints. Attach actions to data."}]};
-<!--MODULE6_SCRIPT--></script></body></html>
+
+const slides=[...document.querySelectorAll('.slide')];
+const slideSelect=document.getElementById('slideSelect');
+const slideCount=document.getElementById('slideCount');
+const progressBar=document.getElementById('progressBar');
+const prevBtn=document.getElementById('prevBtn');
+const nextBtn=document.getElementById('nextBtn');
+const themeBtn=document.getElementById('themeBtn');
+const fullBtn=document.getElementById('fullBtn');
+const runSlideBtn=document.getElementById('runSlideBtn');
+const pyStatus=document.getElementById('pyStatus');
+let current=0;
+let pyodide=null;
+let pyInitPromise=null;
+const editors=new Map();
+const originalCode=new Map();
+
+slides.forEach((slide,i)=>{
+  const option=document.createElement('option');
+  option.value=String(i);
+  option.textContent=String(i+1)+'. '+(slide.dataset.title||'Slide');
+  slideSelect.appendChild(option);
+  const slideNum=slide.querySelector('.slide-num');
+  if(slideNum) slideNum.textContent='IAN 601 · Module 6 · Slide '+String(i+1);
+});
+
+function setPyStatus(state,message){
+  pyStatus.className='status '+(state||'');
+  pyStatus.textContent=message;
+}
+const BOOTSTRAP_PY=[
+  'import sys, io, traceback',
+  '_namespace = {}',
+  'def _run_user_code(code):',
+  '    stdout = io.StringIO()',
+  '    stderr = io.StringIO()',
+  '    old_out, old_err = sys.stdout, sys.stderr',
+  '    try:',
+  '        sys.stdout, sys.stderr = stdout, stderr',
+  '        exec(code, _namespace, _namespace)',
+  '        ok = True',
+  '    except Exception:',
+  '        ok = False',
+  '        stderr.write(traceback.format_exc())',
+  '    finally:',
+  '        sys.stdout, sys.stderr = old_out, old_err',
+  '    return {"ok": ok, "stdout": stdout.getvalue(), "stderr": stderr.getvalue()}'
+].join('\n');
+
+async function loadPython(){
+  if(pyodide) return pyodide;
+  if(!pyInitPromise){
+    setPyStatus('','Python loading…');
+    pyInitPromise=loadPyodide().then(async py=>{
+      await py.runPythonAsync(BOOTSTRAP_PY);
+      pyodide=py;
+      setPyStatus('ready','Python ready');
+      return py;
+    }).catch(err=>{
+      pyInitPromise=null;
+      setPyStatus('error','Python failed to load');
+      throw err;
+    });
+  }
+  return pyInitPromise;
+}
+function getCode(cell){
+  const editor=editors.get(cell);
+  return editor?editor.getValue():cell.querySelector('.code-input').value;
+}
+function setCode(cell,code){
+  const editor=editors.get(cell);
+  if(editor) editor.setValue(code);
+  cell.querySelector('.code-input').value=code;
+}
+async function runCell(cell){
+  if(!cell) return;
+  const button=cell.querySelector('.run-cell');
+  const output=cell.querySelector('.output');
+  output.className='output show';
+  output.textContent='Running…';
+  button.disabled=true;
+  try{
+    const py=await loadPython();
+    const result=py.globals.get('_run_user_code')(getCode(cell)).toJs({dict_converter:Object.fromEntries});
+    const combined=(result.stdout||'')+(result.stderr?((result.stdout?'\n':'')+result.stderr):'');
+    output.textContent=combined.trim()||'Code ran successfully with no printed output.';
+    output.className='output show '+(result.ok?'success':'error');
+    setPyStatus(result.ok?'ready':'error',result.ok?'Python ready':'Python error');
+  }catch(err){
+    output.textContent=String(err);
+    output.className='output show error';
+    setPyStatus('error','Python error');
+  }finally{
+    button.disabled=false;
+  }
+}
+
+document.querySelectorAll('.code-cell').forEach(cell=>{
+  const input=cell.querySelector('.code-input');
+  originalCode.set(cell,input.value);
+  cell.querySelector('.run-cell').addEventListener('click',()=>runCell(cell));
+  cell.querySelector('.reset-cell').addEventListener('click',()=>{
+    setCode(cell,originalCode.get(cell));
+    const output=cell.querySelector('.output');
+    output.className='output';
+    output.textContent='Click Run to execute this cell.';
+  });
+  cell.querySelector('.copy-cell').addEventListener('click',async e=>{
+    try{
+      await navigator.clipboard.writeText(getCode(cell));
+      const old=e.currentTarget.textContent;
+      e.currentTarget.textContent='Copied';
+      setTimeout(()=>{e.currentTarget.textContent=old},900);
+    }catch{}
+  });
+  input.addEventListener('keydown',e=>{
+    if(e.key==='Tab'){
+      e.preventDefault();
+      const start=input.selectionStart,end=input.selectionEnd;
+      input.setRangeText('    ',start,end,'end');
+    }
+    if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){
+      e.preventDefault();
+      runCell(cell);
+    }
+  });
+});
+
+function initMonaco(){
+  if(!window.require){
+    document.querySelectorAll('.code-cell').forEach(cell=>cell.classList.add('fallback'));
+    return;
+  }
+  try{
+    require.config({paths:{vs:'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs'}});
+    require(['vs/editor/editor.main'],()=>{
+      document.querySelectorAll('.code-cell').forEach(cell=>{
+        const input=cell.querySelector('.code-input');
+        const host=cell.querySelector('.monaco-host');
+        const editor=monaco.editor.create(host,{
+          value:input.value,
+          language:'python',
+          theme:'vs-dark',
+          fontFamily:'Consolas, "Courier New", monospace',
+          fontSize:13.5,
+          lineNumbers:'on',
+          minimap:{enabled:false},
+          automaticLayout:true,
+          scrollBeyondLastLine:false,
+          tabSize:4,
+          wordWrap:'on',
+          padding:{top:12,bottom:12}
+        });
+        editor.addCommand(monaco.KeyMod.CtrlCmd|monaco.KeyCode.Enter,()=>runCell(cell));
+        editors.set(cell,editor);
+      });
+    });
+  }catch(e){
+    document.querySelectorAll('.code-cell').forEach(cell=>cell.classList.add('fallback'));
+  }
+}
+
+const PRESENTATION_KEY='ian601_module6_presentation_v5';
+let presentationState={ccEnabled:true};
+try{
+  presentationState={...presentationState,...(JSON.parse(localStorage.getItem(PRESENTATION_KEY))||{})};
+}catch{}
+const audio=new Audio();
+audio.preload='metadata';
+let narrationStarted=false;
+let narrationEnabled=true;
+let currentCues=[];
+let activeCueIndex=-1;
+let captionLoadToken=0;
+const subtitleText=document.getElementById('subtitleText');
+const ccToggle=document.getElementById('ccToggle');
+
+function applyCaptionVisibility(){
+  const enabled=presentationState.ccEnabled!==false;
+  document.body.classList.toggle('cc-off',!enabled);
+  ccToggle.textContent=enabled?'CC On':'CC Off';
+  ccToggle.setAttribute('aria-pressed',enabled?'true':'false');
+  if(!enabled) subtitleText.textContent='';
+}
+ccToggle.addEventListener('click',()=>{
+  presentationState.ccEnabled=!(presentationState.ccEnabled!==false);
+  localStorage.setItem(PRESENTATION_KEY,JSON.stringify(presentationState));
+  applyCaptionVisibility();
+});
+function splitSentences(text){
+  return String(text||'').replace(/\s+/g,' ').trim().split(/(?<=[.!?])\s+/).filter(Boolean);
+}
+function formatTime(value){
+  if(!Number.isFinite(value)||value<0) return '0:00';
+  return Math.floor(value/60)+':'+Math.floor(value%60).toString().padStart(2,'0');
+}
+function parseVttTime(value){
+  const parts=String(value||'').trim().replace(',','.').split(':').map(Number);
+  if(parts.length===3) return parts[0]*3600+parts[1]*60+parts[2];
+  if(parts.length===2) return parts[0]*60+parts[1];
+  return parts[0]||0;
+}
+function parseVtt(text){
+  const cues=[];
+  String(text||'').replace(/\r/g,'').split(/\n\s*\n/).forEach(block=>{
+    const lines=block.split('\n').filter(Boolean);
+    const timingIndex=lines.findIndex(line=>line.includes('-->'));
+    if(timingIndex<0) return;
+    const timing=lines[timingIndex].split('-->');
+    if(timing.length!==2) return;
+    const start=parseVttTime(timing[0]);
+    const end=parseVttTime(timing[1]);
+    const cueText=lines.slice(timingIndex+1).join(' ').replace(/<[^>]+>/g,'').trim();
+    if(cueText) cues.push({start,end,text:cueText});
+  });
+  return cues;
+}
+function fallbackCues(text){
+  return splitSentences(text).map(t=>({start:null,end:null,text:t}));
+}
+function resetSubtitle(){
+  activeCueIndex=-1;
+  subtitleText.textContent='';
+}
+async function loadCaptions(index,token){
+  const item=MANIFEST.slides[index];
+  try{
+    const response=await fetch(new URL(item.captions,document.baseURI),{cache:'no-store'});
+    if(!response.ok) throw new Error('not found');
+    const cues=parseVtt(await response.text());
+    if(!cues.length) throw new Error('empty');
+    if(token!==captionLoadToken||index!==current) return;
+    currentCues=cues;
+    resetSubtitle();
+    document.getElementById('transcriptBody').textContent=cues.map(c=>c.text).join(' ');
+  }catch{
+    if(token!==captionLoadToken||index!==current) return;
+    currentCues=fallbackCues(item?.text||'');
+    resetSubtitle();
+    document.getElementById('transcriptBody').textContent=item?.text||'';
+  }
+}
+function prepareAudio(index){
+  const item=MANIFEST.slides[index];
+  audio.pause();
+  audio.src=new URL(item.audio,document.baseURI).href;
+  audio.load();
+  document.getElementById('audioTitle').textContent='Slide '+String(index+1)+' audio ready';
+  document.getElementById('audioSeek').value='0';
+  document.getElementById('audioTime').textContent='0:00 / 0:00';
+}
+function renderNarration(index){
+  const item=MANIFEST.slides[index];
+  const token=++captionLoadToken;
+  currentCues=fallbackCues(item?.text||'');
+  resetSubtitle();
+  document.getElementById('transcriptTitle').textContent='Slide '+String(index+1)+' Narration - '+slides[index].dataset.title;
+  document.getElementById('transcriptBody').textContent=item?.text||'';
+  prepareAudio(index);
+  loadCaptions(index,token);
+}
+async function playCurrentNarration(){
+  narrationStarted=true;
+  narrationEnabled=true;
+  document.getElementById('narrationToggle').textContent='Narration On';
+  audio.playbackRate=Number(document.getElementById('speedSelect').value||1);
+  try{
+    await audio.play();
+    document.getElementById('audioPlayer').classList.add('playing');
+    document.getElementById('audioTitle').textContent='Playing Slide '+String(current+1);
+    document.getElementById('startNarration').textContent='Narration Started';
+  }catch{
+    document.getElementById('audioTitle').textContent='Audio unavailable';
+  }
+}
+document.getElementById('startNarration').addEventListener('click',playCurrentNarration);
+document.getElementById('startWithNarration')?.addEventListener('click',playCurrentNarration);
+document.getElementById('narrationToggle').addEventListener('click',e=>{
+  narrationEnabled=!narrationEnabled;
+  e.target.textContent=narrationEnabled?'Narration On':'Narration Off';
+  if(!narrationEnabled) audio.pause();
+  else if(narrationStarted) playCurrentNarration();
+});
+document.getElementById('audioPlay').addEventListener('click',()=>{
+  narrationStarted=true;
+  if(audio.paused) playCurrentNarration(); else audio.pause();
+});
+document.getElementById('speedSelect').addEventListener('change',e=>{
+  audio.playbackRate=Number(e.target.value||1);
+});
+document.getElementById('audioSeek').addEventListener('input',e=>{
+  if(Number.isFinite(audio.duration)&&audio.duration>0){
+    audio.currentTime=audio.duration*(Number(e.target.value)/100);
+  }
+});
+audio.onplay=()=>{
+  document.getElementById('audioPlayer').classList.add('playing');
+  document.getElementById('audioPlay').textContent='Pause';
+};
+audio.onpause=()=>{
+  document.getElementById('audioPlayer').classList.remove('playing');
+  document.getElementById('audioPlay').textContent='Play';
+};
+audio.ontimeupdate=()=>{
+  const duration=Number.isFinite(audio.duration)?audio.duration:0;
+  const time=audio.currentTime||0;
+  document.getElementById('audioSeek').value=duration?String((time/duration)*100):'0';
+  document.getElementById('audioTime').textContent=formatTime(time)+' / '+formatTime(duration);
+  if(presentationState.ccEnabled!==false&&currentCues.length){
+    let index=-1;
+    const timed=currentCues.some(c=>Number.isFinite(c.start)&&Number.isFinite(c.end));
+    if(timed) index=currentCues.findIndex(c=>Number.isFinite(c.start)&&Number.isFinite(c.end)&&time>=c.start&&time<c.end);
+    else if(duration) index=Math.min(currentCues.length-1,Math.floor((time/duration)*currentCues.length));
+    if(index!==activeCueIndex){
+      activeCueIndex=index;
+      subtitleText.textContent=index>=0?currentCues[index].text:'';
+    }
+  }else{
+    subtitleText.textContent='';
+  }
+};
+audio.onended=()=>{
+  document.getElementById('audioPlayer').classList.remove('playing');
+  document.getElementById('audioPlay').textContent='Play';
+  document.getElementById('audioTitle').textContent='Slide '+String(current+1)+' complete';
+  subtitleText.textContent='';
+};
+audio.onerror=()=>{
+  document.getElementById('audioTitle').textContent='Audio not found for Slide '+String(current+1);
+};
+document.getElementById('transcriptBtn').addEventListener('click',()=>{
+  document.getElementById('transcriptPanel').classList.toggle('open');
+});
+document.getElementById('transcriptClose').addEventListener('click',()=>{
+  document.getElementById('transcriptPanel').classList.remove('open');
+});
+
+const PROGRESS_KEY='ian601_module6_progress_v5';
+let visited=[];
+try{visited=JSON.parse(localStorage.getItem(PROGRESS_KEY)||'[]')}catch{}
+function updateProgress(){
+  if(!visited.includes(current+1)) visited.push(current+1);
+  localStorage.setItem(PROGRESS_KEY,JSON.stringify(visited));
+  const count=new Set(visited).size;
+  const pct=Math.round((count/slides.length)*100);
+  document.getElementById('learningProgressPct').textContent=String(pct)+'%';
+  document.getElementById('learningMeterBar').style.width=String(pct)+'%';
+  document.getElementById('learningMeterText').textContent=String(count)+' of '+String(slides.length)+' slides visited';
+  document.getElementById('progressList').innerHTML=slides.map((slide,i)=>{
+    const cls=visited.includes(i+1)?'current':'';
+    return '<a href="#slide-'+String(i+1)+'" data-go="'+String(i)+'" class="'+cls+'">Slide '+String(i+1)+': '+slide.dataset.title+'</a>';
+  }).join('');
+  document.querySelectorAll('#progressList [data-go]').forEach(link=>{
+    link.onclick=e=>{
+      e.preventDefault();
+      showSlide(Number(link.dataset.go));
+      document.getElementById('progressModal').classList.remove('show');
+    };
+  });
+}
+function showSlide(index){
+  current=Math.max(0,Math.min(index,slides.length-1));
+  slides.forEach((slide,i)=>slide.classList.toggle('active',i===current));
+  slideSelect.value=String(current);
+  slideCount.textContent=String(current+1)+' / '+String(slides.length);
+  progressBar.style.width=String(((current+1)/slides.length)*100)+'%';
+  prevBtn.disabled=current===0;
+  nextBtn.disabled=current===slides.length-1;
+  slides[current].scrollTop=0;
+  history.replaceState(null,'','#slide-'+String(current+1));
+  editors.forEach(editor=>editor.layout());
+  renderNarration(current);
+  updateProgress();
+  if(narrationStarted&&narrationEnabled) playCurrentNarration();
+}
+window.goToSlide=showSlide;
+slideSelect.addEventListener('change',()=>showSlide(Number(slideSelect.value)));
+prevBtn.addEventListener('click',()=>showSlide(current-1));
+nextBtn.addEventListener('click',()=>showSlide(current+1));
+themeBtn.addEventListener('click',()=>{
+  document.body.classList.toggle('dark');
+  themeBtn.textContent=document.body.classList.contains('dark')?'Light mode':'Dark mode';
+});
+fullBtn.addEventListener('click',async()=>{
+  if(!document.fullscreenElement) await document.documentElement.requestFullscreen?.();
+  else await document.exitFullscreen?.();
+});
+runSlideBtn.addEventListener('click',async()=>{
+  const cells=[...slides[current].querySelectorAll('.code-cell')];
+  for(const cell of cells) await runCell(cell);
+});
+document.querySelectorAll('.start-btn').forEach(button=>{
+  button.addEventListener('click',()=>showSlide(1));
+});
+document.querySelectorAll('.run-all-btn').forEach(button=>{
+  button.addEventListener('click',()=>runSlideBtn.click());
+});
+document.getElementById('courseModulesBtn').onclick=()=>document.getElementById('modulesModal').classList.add('show');
+document.getElementById('modulesCloseBtn').onclick=()=>document.getElementById('modulesModal').classList.remove('show');
+document.getElementById('learningProgressBtn').onclick=()=>{
+  updateProgress();
+  document.getElementById('progressModal').classList.add('show');
+};
+document.getElementById('progressCloseBtn').onclick=()=>document.getElementById('progressModal').classList.remove('show');
+document.getElementById('resetLearningBtn').onclick=()=>{
+  visited=[];
+  localStorage.removeItem(PROGRESS_KEY);
+  updateProgress();
+};
+document.querySelectorAll('.modal-backdrop').forEach(modal=>{
+  modal.addEventListener('click',e=>{if(e.target===modal) modal.classList.remove('show')});
+});
+document.addEventListener('keydown',e=>{
+  const tag=document.activeElement?.tagName?.toLowerCase();
+  if(tag==='textarea'||tag==='input'||tag==='select'||document.activeElement?.isContentEditable||document.activeElement?.closest?.('.monaco-editor')) return;
+  if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();showSlide(current+1)}
+  if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();showSlide(current-1)}
+  if(e.key==='Home'){e.preventDefault();showSlide(0)}
+  if(e.key==='End'){e.preventDefault();showSlide(slides.length-1)}
+});
+
+applyCaptionVisibility();
+initMonaco();
+const hashMatch=location.hash.match(/slide-(\d+)/);
+showSlide(hashMatch?Number(hashMatch[1])-1:0);
+</script></body></html>
