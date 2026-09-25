@@ -420,6 +420,70 @@ const MANIFEST = {
   ]
 };
 const slides=[...document.querySelectorAll('.slide')];let current=0;const select=document.getElementById('slide-select');const runtime=document.getElementById('runtime');const runtimeText=document.getElementById('runtime-text');let pyodide=null;let pyodideLoading=null;const originalCode=new Map();const monacoEditors=new Map();
+
+/* Narration system */
+const narrationAudio=document.getElementById('narration-audio');
+const narrationToggleBtn=document.getElementById('narration-toggle-btn');
+const ccToggleBtn=document.getElementById('cc-toggle-btn');
+const startNarrationBtn=document.getElementById('start-narration-btn');
+const transcriptBtn=document.getElementById('transcript-btn');
+const transcriptPanel=document.getElementById('transcript-panel');
+const transcriptCloseBtn=document.getElementById('transcript-close-btn');
+const transcriptTitle=document.getElementById('transcript-title');
+const transcriptBody=document.getElementById('transcript-body');
+const subtitleBar=document.getElementById('subtitle-bar');
+const audioTitle=document.getElementById('audio-title');
+const audioPlayBtn=document.getElementById('audio-play-btn');
+const audioSeek=document.getElementById('audio-seek');
+const audioTime=document.getElementById('audio-time');
+const speedSelect=document.getElementById('speed-select');
+const NARRATION_STORAGE_KEY='ian601_module11_presentation';
+let narrationEnabled=false;
+let narrationStarted=false;
+let ccEnabled=false;
+let captionCues=[];
+let vttTranscript='';
+let loadedSlideNumber=null;
+
+if(select && select.options.length===0){
+  slides.forEach((slide,i)=>{
+    const option=document.createElement('option');
+    option.value=String(i);
+    option.textContent=(i+1)+'. '+(slide.dataset.title||'Slide');
+    select.appendChild(option);
+  });
+}
+
+function readDeckState(){try{return JSON.parse(localStorage.getItem(NARRATION_STORAGE_KEY)||'{}');}catch{return {};}}
+function saveDeckState(){try{localStorage.setItem(NARRATION_STORAGE_KEY,JSON.stringify({slide:current,narrationEnabled,ccEnabled,speed:narrationAudio?.playbackRate||1}));}catch{}}
+function currentManifestItem(){return MANIFEST.slides[current]||null;}
+function formatNarrationTime(v){if(!Number.isFinite(v)||v<0)return'0:00';return Math.floor(v/60)+':'+String(Math.floor(v%60)).padStart(2,'0');}
+function vttTimeToSeconds(v){const p=v.trim().replace(',','.').split(':').map(Number);if(p.length===3)return p[0]*3600+p[1]*60+p[2];if(p.length===2)return p[0]*60+p[1];return Number(p[0])||0;}
+function parseVtt(text){const cues=[];for(const block of text.replace(/\r/g,'').split(/\n{2,}/)){const lines=block.split('\n').filter(Boolean);const timingIndex=lines.findIndex(line=>line.includes('-->'));if(timingIndex<0)continue;const timing=lines[timingIndex].split('-->');const start=vttTimeToSeconds(timing[0]);const end=vttTimeToSeconds(timing[1].trim().split(/\s+/)[0]);const cueText=lines.slice(timingIndex+1).join(' ').replace(/<[^>]+>/g,'').trim();if(cueText)cues.push({start,end,text:cueText});}return cues;}
+async function loadCaptionsForCurrent(){const item=currentManifestItem();captionCues=[];vttTranscript='';if(!item)return;try{const response=await fetch(item.captions,{cache:'no-store'});if(!response.ok)throw new Error('caption unavailable');captionCues=parseVtt(await response.text());vttTranscript=captionCues.map(c=>c.text).join(' ');}catch{}renderTranscript();updateSubtitle();}
+function fallbackCaption(){const item=currentManifestItem();if(!item?.text)return'';const sentences=item.text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)||[item.text];const duration=narrationAudio?.duration;if(!Number.isFinite(duration)||duration<=0)return sentences[0].trim();const idx=Math.min(sentences.length-1,Math.floor(((narrationAudio.currentTime||0)/duration)*sentences.length));return sentences[idx].trim();}
+function updateSubtitle(){if(!subtitleBar)return;if(!ccEnabled){subtitleBar.hidden=true;subtitleBar.textContent='';return;}subtitleBar.hidden=false;const t=narrationAudio?.currentTime||0;const cue=captionCues.find(c=>t>=c.start&&t<=c.end);subtitleBar.textContent=cue?.text||fallbackCaption()||'Captions will appear here when narration plays.';}
+function renderTranscript(){const item=currentManifestItem();if(!item)return;if(transcriptTitle)transcriptTitle.textContent='Slide '+item.slide+': '+item.title;if(transcriptBody)transcriptBody.textContent=vttTranscript||item.text||'Transcript unavailable.';}
+function updateNarrationButtons(){if(narrationToggleBtn)narrationToggleBtn.textContent=narrationEnabled?'Narration On':'Narration Off';if(ccToggleBtn)ccToggleBtn.textContent=ccEnabled?'CC On':'CC Off';if(subtitleBar)subtitleBar.hidden=!ccEnabled;}
+function loadAudioForCurrent(){const item=currentManifestItem();if(!item||!narrationAudio)return;if(audioTitle){audioTitle.classList.remove('audio-error');audioTitle.textContent='Slide '+item.slide+': '+item.title;}if(loadedSlideNumber!==item.slide){loadedSlideNumber=item.slide;narrationAudio.pause();narrationAudio.src=item.audio;narrationAudio.load();if(audioSeek)audioSeek.value='0';if(audioTime)audioTime.textContent='0:00 / 0:00';if(audioPlayBtn)audioPlayBtn.textContent='Play';loadCaptionsForCurrent();}}
+async function playCurrentNarration(restart=false){if(!narrationAudio)return;loadAudioForCurrent();if(restart)narrationAudio.currentTime=0;narrationAudio.playbackRate=Number(speedSelect?.value)||1;try{await narrationAudio.play();}catch{}}
+function syncNarrationForSlide(){loadAudioForCurrent();renderTranscript();if(narrationEnabled&&narrationStarted){narrationAudio.currentTime=0;playCurrentNarration(false);}}
+function initNarr(){const saved=readDeckState();narrationEnabled=Boolean(saved.narrationEnabled);ccEnabled=Boolean(saved.ccEnabled);const speed=[0.75,1,1.25,1.5,2].includes(Number(saved.speed))?Number(saved.speed):1;if(speedSelect)speedSelect.value=String(speed);if(narrationAudio)narrationAudio.playbackRate=speed;updateNarrationButtons();return Number.isInteger(saved.slide)?Math.max(0,Math.min(saved.slide,MANIFEST.slide_count-1)):0;}
+startNarrationBtn?.addEventListener('click',()=>{narrationEnabled=true;narrationStarted=true;updateNarrationButtons();saveDeckState();playCurrentNarration(true);});
+narrationToggleBtn?.addEventListener('click',()=>{narrationEnabled=!narrationEnabled;narrationStarted=narrationEnabled;updateNarrationButtons();saveDeckState();if(narrationEnabled)playCurrentNarration(false);else narrationAudio?.pause();});
+ccToggleBtn?.addEventListener('click',()=>{ccEnabled=!ccEnabled;updateNarrationButtons();updateSubtitle();saveDeckState();});
+transcriptBtn?.addEventListener('click',()=>{renderTranscript();transcriptPanel?.classList.add('open');transcriptPanel?.setAttribute('aria-hidden','false');});
+transcriptCloseBtn?.addEventListener('click',()=>{transcriptPanel?.classList.remove('open');transcriptPanel?.setAttribute('aria-hidden','true');});
+speedSelect?.addEventListener('change',()=>{if(narrationAudio)narrationAudio.playbackRate=Number(speedSelect.value)||1;saveDeckState();});
+audioPlayBtn?.addEventListener('click',()=>{narrationStarted=true;if(narrationAudio?.paused)playCurrentNarration(false);else narrationAudio.pause();});
+audioSeek?.addEventListener('input',()=>{if(narrationAudio&&Number.isFinite(narrationAudio.duration)&&narrationAudio.duration>0){narrationAudio.currentTime=(Number(audioSeek.value)/1000)*narrationAudio.duration;}});
+narrationAudio?.addEventListener('play',()=>{if(audioPlayBtn)audioPlayBtn.textContent='Pause';});
+narrationAudio?.addEventListener('pause',()=>{if(audioPlayBtn)audioPlayBtn.textContent='Play';});
+narrationAudio?.addEventListener('loadedmetadata',()=>{if(audioTime)audioTime.textContent=formatNarrationTime(narrationAudio.currentTime)+' / '+formatNarrationTime(narrationAudio.duration);updateSubtitle();});
+narrationAudio?.addEventListener('timeupdate',()=>{const duration=narrationAudio.duration;if(Number.isFinite(duration)&&duration>0&&audioSeek){audioSeek.value=String(Math.round((narrationAudio.currentTime/duration)*1000));}if(audioTime)audioTime.textContent=formatNarrationTime(narrationAudio.currentTime)+' / '+formatNarrationTime(duration);updateSubtitle();});
+narrationAudio?.addEventListener('ended',()=>{if(audioPlayBtn)audioPlayBtn.textContent='Play';updateSubtitle();/* narration intentionally does not advance the slide */});
+narrationAudio?.addEventListener('error',()=>{const item=currentManifestItem();if(audioTitle){audioTitle.textContent='Audio not found yet: '+(item?.audio||'');audioTitle.classList.add('audio-error');}});
+
 function setRuntime(status,text){runtime.className='runtime '+(status||'');runtimeText.textContent=text;}
 function showSlide(index){current=Math.max(0,Math.min(slides.length-1,index));slides.forEach((s,i)=>s.classList.toggle('active',i===current));select.value=String(current);document.getElementById('counter').textContent=`${current+1} / ${slides.length}`;document.getElementById('progress-bar').style.width=`${((current+1)/slides.length)*100}%`;if(typeof resizeEditors==='function')setTimeout(()=>resizeEditors(),50);syncNarrationForSlide();saveDeckState();}
 document.getElementById('prev-btn').onclick=()=>showSlide(current-1);document.getElementById('next-btn').onclick=()=>showSlide(current+1);select.onchange=e=>showSlide(parseInt(e.target.value,10));document.querySelectorAll('.start-btn').forEach(b=>b.onclick=()=>showSlide(1));document.addEventListener('keydown',e=>{if(e.target.matches('textarea,input,select')||e.target.closest('.monaco-editor'))return;if(e.key==='ArrowRight'||e.key==='PageDown')showSlide(current+1);if(e.key==='ArrowLeft'||e.key==='PageUp')showSlide(current-1);});
