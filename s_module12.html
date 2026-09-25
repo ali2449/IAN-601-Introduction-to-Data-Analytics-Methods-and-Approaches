@@ -71,13 +71,20 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
 @media(max-width:1200px){.deck,.deck-app{grid-template-rows:auto minmax(0,1fr) 188px!important}.bottom-nav.ian603-bottombar{grid-template-columns:auto minmax(0,1fr) auto!important;grid-template-areas:"prev audio next" ". nav ."!important;grid-template-rows:auto auto!important}.ian603-bottombar .audio-block{grid-column:1/-1!important;grid-row:1!important}.ian603-bottombar .nav-left{grid-column:1!important;grid-row:2!important}.ian603-bottombar .bottom-nav-panel{grid-column:2!important;grid-row:2!important}.ian603-bottombar .nav-right{grid-column:3!important;grid-row:2!important}.topbar{flex-wrap:wrap!important}}
 @media(max-width:900px){.stage,.slides{padding:10px!important}.slide{padding:25px!important;border-radius:13px!important}.topbar{padding:8px 12px!important}.ian603-tools{width:100%;justify-content:flex-end}.title-grid,.two-col,.two-col.tight{grid-template-columns:1fr!important}}
 @media(max-width:720px){body{overflow:auto!important}.deck,.deck-app{height:auto!important;grid-template-rows:auto auto auto!important}.bottom-nav.ian603-bottombar{position:sticky!important;bottom:0!important;grid-template-columns:1fr!important;grid-template-areas:"audio" "nav" "prev" "next"!important}.ian603-bottombar .nav-left,.ian603-bottombar .nav-right,.ian603-bottombar .audio-block,.ian603-bottombar .bottom-nav-panel{grid-column:1!important;grid-row:auto!important}.ian603-bottombar .narration-controls{flex-wrap:wrap!important}.ian603-bottombar .audio-player{grid-template-columns:1fr!important}.slide{height:auto!important;max-height:none!important}.ian603-module-links{grid-template-columns:1fr}}
+</style><style id="ian603-shell-fixes">
+.ian603-bottombar .audio-block{grid-template-columns:minmax(0,1fr)!important;grid-auto-flow:row!important}
+.ian603-bottombar .narration-controls{grid-area:auto!important;grid-column:auto!important;grid-row:auto!important}
+.ian603-bottombar .subtitle-bar{grid-area:auto!important;grid-column:auto!important;grid-row:auto!important;width:100%!important}
+.ian603-bottombar .audio-player{grid-area:auto!important;grid-column:auto!important;grid-row:auto!important;width:100%!important}
+.ian603-bottombar .nav-left,.ian603-bottombar .nav-right,.ian603-bottombar .bottom-nav-panel{align-self:center!important}
+.topbar>.toolbar,.topbar>.controls,.topbar>.top-controls{margin-left:auto!important}.topbar .ian603-tool{box-shadow:none!important}
 </style></head>
 <body>
 <div class="deck">
   <header class="topbar">
     <div class="brand"><span class="brand-mark">12</span><span>IAN 601 · Module 12</span></div>
-    <div class="top-controls"><div id="runtime" class="runtime"><span class="runtime-dot"></span><span id="runtime-text">Python not loaded yet</span></div><button class="btn ghost" id="theme-btn" type="button"><i class="fa-solid fa-moon"></i> Theme</button><button class="btn ghost" id="restart-python" type="button">Reset Python</button></div>
-  <div class="ian603-tools"><button class="ian603-tool" id="ian-progress-btn" type="button">Progress <span id="ian-progress-pct">0%</span></button><button class="ian603-tool" id="ian-fullscreen-btn" type="button">Fullscreen</button><button class="ian603-tool primary" id="run-slide-btn" type="button">Run slide ▶</button><button class="ian603-tool" id="ian-course-modules-btn" type="button">☰ Course Modules</button></div></header>
+    <div class="top-controls"><div id="runtime" class="runtime"><span class="runtime-dot"></span><span id="runtime-text">Python not loaded yet</span></div><button class="btn ghost" id="theme-btn" type="button"><i class="fa-solid fa-moon"></i> Theme</button><button class="btn ghost" id="restart-python" type="button">Reset Python</button><button class="ian603-tool" id="ian-progress-btn" type="button">Progress <span id="ian-progress-pct">0%</span></button><button class="ian603-tool" id="ian-fullscreen-btn" type="button">Fullscreen</button><button class="ian603-tool primary" id="run-slide-btn" type="button">Run slide ▶</button><button class="ian603-tool" id="ian-course-modules-btn" type="button">☰ Course Modules</button></div>
+  </header>
   <main class="stage" id="stage"><section class="slide" data-title="Cleaning &amp; EDA">
   <div class="slide-inner">
     <header class="slide-header"><div><span class="kicker">Module 12 · Interactive slide lesson</span><h2>Cleaning &amp; EDA</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
