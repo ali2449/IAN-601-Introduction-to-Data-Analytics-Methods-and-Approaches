@@ -1,0 +1,195 @@
+{
+  "prefix": "module3",
+  "voice": "en-US-GuyNeural",
+  "rate": "-5%",
+  "volume": "+0%",
+  "pitch": "+0Hz",
+  "caption_words": 15,
+  "slide_count": 26,
+  "slide_markers_found": true,
+  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "slides": [
+    {
+      "slide": 1,
+      "audio": "module3_slide_01.mp3",
+      "captions": "module3_slide_01.vtt",
+      "text": "Welcome to Module 3. This module focuses on Functions. We will build the topic in small steps and connect each idea to practical analytics work.\n\n[pause=0.7]\n\nFunctions help turn repeated steps into named, reusable analytical tasks.\n\n[pause=0.7]\n\nConnect this idea to the larger workflow: how data is organized, transformed, checked, or communicated.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 2,
+      "audio": "module3_slide_02.mp3",
+      "captions": "module3_slide_02.vtt",
+      "text": "Use this lesson actively. Read the idea, predict what should happen, run the example when code is available, then modify one small part and compare the result.\n\n[pause=0.7]\n\nStart with the concept on the slide. Execute the code in the browser. Connect the output to the explanation.\n\n[pause=0.7]\n\nChange one value or line at a time. Apply the pattern in a new example.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 3,
+      "audio": "module3_slide_03.mp3",
+      "captions": "module3_slide_03.vtt",
+      "text": "This slide is the roadmap for Module 3. It shows how the ideas progress and how the later examples build on the earlier concepts.\n\n[pause=0.7]\n\nDefine and call Create a reusable block with def. Send values into a function.\n\n[pause=0.7]\n\nSend results back to the program. Make the purpose clear with docstrings. Connect small functions into a workflow.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 4,
+      "audio": "module3_slide_04.mp3",
+      "captions": "module3_slide_04.vtt",
+      "text": "This slide focuses on Why functions matter in analytics. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nWithout functions, repeated logic is copied again and again. With functions, the logic has one clear home. Less repetition: write the calculation once. Clearer names: describe the purpose of each task.\n\n[pause=0.7]\n\nEasier changes: update the function instead of many copies. Better testing: check a small unit of work. Same formula repeated in many places.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 5,
+      "audio": "module3_slide_05.mp3",
+      "captions": "module3_slide_05.vtt",
+      "text": "This slide focuses on A function has a definition and a call. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nA function definition tells Python what the function should do. A function call tells Python to run it.\n\n[pause=0.7]\n\nConnect this idea to the larger workflow: how data is organized, transformed, checked, or communicated.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 6,
+      "audio": "module3_slide_06.mp3",
+      "captions": "module3_slide_06.vtt",
+      "text": "This slide focuses on Code: a function with no parameters. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nA function with no parameters Start with the smallest possible function: define one action, then call it.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 7,
+      "audio": "module3_slide_07.mp3",
+      "captions": "module3_slide_07.vtt",
+      "text": "This slide focuses on Code: put a calculation inside a function. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nPut a calculation inside a function The calculation is now stored as a reusable task.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 8,
+      "audio": "module3_slide_08.mp3",
+      "captions": "module3_slide_08.vtt",
+      "text": "This slide focuses on Parameters receive values. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nA parameter is a name inside the function definition. An argument is the value supplied when the function is called.\n\n[pause=0.7]\n\nConnect this idea to the larger workflow: how data is organized, transformed, checked, or communicated.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 9,
+      "audio": "module3_slide_09.mp3",
+      "captions": "module3_slide_09.vtt",
+      "text": "This slide focuses on Code: pass one argument. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nPass one argument Change the argument and run again.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 10,
+      "audio": "module3_slide_10.mp3",
+      "captions": "module3_slide_10.vtt",
+      "text": "This slide focuses on Code: pass two analytical inputs. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nPass two analytical inputs Parameters make the same calculation work with different data. Analytics pattern\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 11,
+      "audio": "module3_slide_11.mp3",
+      "captions": "module3_slide_11.vtt",
+      "text": "This slide focuses on Default parameters supply common values. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nA default parameter gives a value when the call does not provide one. Use a default parameter A default is used only when the caller does not supply that argument.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 12,
+      "audio": "module3_slide_12.mp3",
+      "captions": "module3_slide_12.vtt",
+      "text": "This slide focuses on return is different from print. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nShows a value in the output area. Useful for checking and communication. Sends a value back so another line of code can store it, format it, or use it in another calculation.\n\n[pause=0.7]\n\nConnect this idea to the larger workflow: how data is organized, transformed, checked, or communicated.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 13,
+      "audio": "module3_slide_13.mp3",
+      "captions": "module3_slide_13.vtt",
+      "text": "This slide focuses on Code: return a value. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nUnlike print(), return gives the value back to the program.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 14,
+      "audio": "module3_slide_14.mp3",
+      "captions": "module3_slide_14.vtt",
+      "text": "This slide focuses on Code: return more than one value. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nReturn more than one value\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 15,
+      "audio": "module3_slide_15.mp3",
+      "captions": "module3_slide_15.vtt",
+      "text": "This slide focuses on Variables inside functions are local. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nA variable created inside a function usually belongs to that function call. Local variable: created inside the function body. Outside code: does not automatically see local names.\n\n[pause=0.7]\n\nReturn: the clean way to send useful results out.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 16,
+      "audio": "module3_slide_16.mp3",
+      "captions": "module3_slide_16.vtt",
+      "text": "This slide focuses on Code: catch a conversion error. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nCatch a conversion error try/except lets the function respond to predictable errors.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 17,
+      "audio": "module3_slide_17.mp3",
+      "captions": "module3_slide_17.vtt",
+      "text": "This slide focuses on Code: add a docstring. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nAdd a docstring A docstring documents what a function is designed to do.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 18,
+      "audio": "module3_slide_18.mp3",
+      "captions": "module3_slide_18.vtt",
+      "text": "This slide focuses on Code: compose small functions. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nCompose two small functions One function computes profit; another converts it into a margin.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 19,
+      "audio": "module3_slide_19.mp3",
+      "captions": "module3_slide_19.vtt",
+      "text": "Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense.\n\n[pause=0.7]\n\nDefine and call a no-parameter function. Add one parameter and pass an argument. Return a value and store the result.\n\n[pause=0.7]\n\nHandle a predictable conversion error. Use defaults, return, and documentation together. Describe input, process, and output.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 20,
+      "audio": "module3_slide_20.mp3",
+      "captions": "module3_slide_20.vtt",
+      "text": "Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense.\n\n[pause=0.7]\n\nFoundation: say hello Define and call a simple function.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 21,
+      "audio": "module3_slide_21.mp3",
+      "captions": "module3_slide_21.vtt",
+      "text": "Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense.\n\n[pause=0.7]\n\nIntermediate: return a sum Use a returned value.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 22,
+      "audio": "module3_slide_22.mp3",
+      "captions": "module3_slide_22.vtt",
+      "text": "Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense.\n\n[pause=0.7]\n\nMastery: tax function Combine parameters, defaults, return, and documentation.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 23,
+      "audio": "module3_slide_23.mp3",
+      "captions": "module3_slide_23.vtt",
+      "text": "This slide focuses on Applied example: classify a temperature. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nClassify a temperature The function can be reused for every temperature in a dataset.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 24,
+      "audio": "module3_slide_24.mp3",
+      "captions": "module3_slide_24.vtt",
+      "text": "This slide focuses on Mini project: reusable calculator function. Start with the meaning of the idea, then connect it to the example and to analytical work.\n\n[pause=0.7]\n\nMini calculator capstone Change the operation or values and test the function.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one input or value and run it again. Focus on what changed and why rather than reading the code character by character.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 25,
+      "audio": "module3_slide_25.mp3",
+      "captions": "module3_slide_25.vtt",
+      "text": "Use this slide as practice. Work in small steps, predict the result, and explain why your result makes sense.\n\n[pause=0.7]\n\nDoes the function name describe the task? Are parameters clear and necessary? Is the body focused on one job?\n\n[pause=0.7]\n\nDoes the function return a reusable value when needed? Does it handle predictable problems? Would a future reader understand its purpose?\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 26,
+      "audio": "module3_slide_26.mp3",
+      "captions": "module3_slide_26.vtt",
+      "text": "This slide summarizes Module 3. Focus on the patterns you should be able to explain and reuse after completing the lesson.\n\n[pause=0.7]\n\ndef creates a reusable function. Parentheses run the function body. Inputs make functions flexible.\n\n[pause=0.7]\n\nReturned values can be reused later. Documentation explains the purpose. Small functions can form larger workflows.\n\n[pause=1.0]",
+      "pause_markers": 3
+    }
+  ]
+}

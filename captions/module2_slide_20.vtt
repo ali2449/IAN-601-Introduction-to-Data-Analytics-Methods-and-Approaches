@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.618
+This slide focuses on Analytics example classify
+sales days The goal is to
+
+00:00:05.645 --> 00:00:12.199
+understand the idea in plain language before
+connecting it to code or analytical use This
+
+00:00:12.226 --> 00:00:18.018
+example counts how many sales days are low target or
+high Run the cell then
+
+00:00:18.044 --> 00:00:23.965
+change the sales values and run again Classify sales
+into three groups Loop compare
+
+00:00:24.163 --> 00:00:29.863
+and update counters Before running the example
+predict what the output
+
+00:00:29.889 --> 00:00:35.195
+should look like Run it in the browser inspect the
+result then change one value
+
+00:00:35.326 --> 00:00:44.552
+condition or input and run it again Pay attention to
+what changed and why classify_sales.py
+
+00:00:44.578 --> 00:00:46.302
+Control Flow & Decision Making

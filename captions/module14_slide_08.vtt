@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.658
+This slide focuses on Evaluate predictions Start
+with the analytical question
+
+00:00:05.684 --> 00:00:11.209
+and the meaning of the output before focusing on the
+syntax Accuracy
+
+00:00:11.235 --> 00:00:16.791
+is the percent of correct predictions A confusion
+matrix shows correct and incorrect
+
+00:00:16.817 --> 00:00:23.397
+predictions by class Accuracy and confusion matrix
+Before
+
+00:00:23.423 --> 00:00:28.650
+running the example predict the structure of the
+output Run it in the browser and
+
+00:00:28.676 --> 00:00:34.202
+inspect the features target split predictions
+evaluation result or external-style
+
+00:00:34.215 --> 00:00:38.426
+records Then change one input and compare what
+changes

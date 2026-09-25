@@ -1,0 +1,36 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.421
+This slide focuses on Running totals are a core
+analytics pattern The goal is to
+
+00:00:05.447 --> 00:00:12.073
+understand the idea in plain language before
+connecting it to code or analytical use Loop
+
+00:00:12.100 --> 00:00:17.402
++ accumulator An accumulator is a variable that
+starts with a simple value then updates
+
+00:00:17.415 --> 00:00:24.333
+during each loop repetition Accumulate a total
+inside a loop Before
+
+00:00:24.359 --> 00:00:29.533
+running the example predict what the output should
+look like Run it in the browser
+
+00:00:29.651 --> 00:00:35.533
+inspect the result then change one value condition
+or input and run it again Pay
+
+00:00:35.559 --> 00:00:41.285
+attention to what changed and why This pattern
+appears often in summaries
+
+00:00:41.311 --> 00:00:46.893
+and reports The total begins at 0 Each amount is
+added to
+
+00:00:46.906 --> 00:00:48.077
+the previous total

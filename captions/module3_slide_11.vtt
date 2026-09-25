@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.750
+This slide focuses on Default parameters supply
+common values Start with the meaning
+
+00:00:05.776 --> 00:00:11.579
+of the idea then connect it to the example and to
+analytical work A
+
+00:00:11.606 --> 00:00:16.858
+default parameter gives a value when the call does
+not provide one Use a default
+
+00:00:16.885 --> 00:00:23.277
+parameter A default is used only when the caller
+does not supply that argument Before
+
+00:00:23.303 --> 00:00:29.056
+running the code predict the output Run the example
+in the browser inspect the result
+
+00:00:29.279 --> 00:00:34.240
+then change one input or value and run it again
+Focus on what changed and
+
+00:00:34.266 --> 00:00:37.082
+why rather than reading the code character by
+character

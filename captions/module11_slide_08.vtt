@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.697
+This slide focuses on Rolling summaries Start with
+what the operation changes in the
+
+00:00:05.711 --> 00:00:11.239
+data then connect that change to the analytical
+question A rolling
+
+00:00:11.265 --> 00:00:16.794
+calculation summarizes a moving window of rows
+Calculate rolling average
+
+00:00:18.643 --> 00:00:24.316
+Before running the example predict the table summary
+or transformed output Run
+
+00:00:24.343 --> 00:00:29.474
+it in the browser and inspect the row count column
+values grouping dates missing values
+
+00:00:29.724 --> 00:00:34.566
+or flags that matter Then change one input and
+compare the result

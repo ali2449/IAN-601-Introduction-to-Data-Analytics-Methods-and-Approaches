@@ -1,0 +1,104 @@
+{
+  "prefix": "module9",
+  "voice": "en-US-GuyNeural",
+  "rate": "-5%",
+  "volume": "+0%",
+  "pitch": "+0Hz",
+  "caption_words": 15,
+  "slide_count": 13,
+  "slide_markers_found": true,
+  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "slides": [
+    {
+      "slide": 1,
+      "audio": "module9_slide_01.mp3",
+      "captions": "module9_slide_01.vtt",
+      "text": "Welcome to Module 9. This module focuses on NumPy. We will connect the new library tools to the Python foundations from earlier modules.\n\n[pause=0.7]\n\nNumPy helps Python work efficiently with numeric arrays, vectorized calculations, and matrix-shaped data.\n\n[pause=1.0]",
+      "pause_markers": 2
+    },
+    {
+      "slide": 2,
+      "audio": "module9_slide_02.mp3",
+      "captions": "module9_slide_02.vtt",
+      "text": "Use this lesson interactively. Read the idea, predict the shape or result, run the example, and then change one value so you can compare the output.\n\n[pause=0.7]\n\nStart with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.\n\n[pause=0.7]\n\nChange one value, variable, or condition. Apply the pattern to a new example.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 3,
+      "audio": "module9_slide_03.mp3",
+      "captions": "module9_slide_03.vtt",
+      "text": "This slide is the roadmap for Module 9. Follow the progression from the basic structure to selection, transformation, and a small analytical workflow.\n\n[pause=0.7]\n\nCreate numeric arrays. Inspect dimensions and types. Calculate without manual loops.\n\n[pause=0.7]\n\nSelect rows, columns, and masks. Combine arrays and scalars. Build numeric features for analytics.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 4,
+      "audio": "module9_slide_04.mp3",
+      "captions": "module9_slide_04.vtt",
+      "text": "This slide focuses on Why NumPy matters. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nA Python list can store many values. A NumPy array is designed for fast numeric work.\n\n[pause=1.0]",
+      "pause_markers": 2
+    },
+    {
+      "slide": 5,
+      "audio": "module9_slide_05.mp3",
+      "captions": "module9_slide_05.vtt",
+      "text": "This slide focuses on Create a NumPy array. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nThe common alias for NumPy is np . Arrays can be created from Python lists. Create and inspect an array\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 6,
+      "audio": "module9_slide_06.mp3",
+      "captions": "module9_slide_06.vtt",
+      "text": "This slide focuses on Vectorized arithmetic. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nVectorized operations apply one calculation to every value in an array. Apply one formula to all values\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 7,
+      "audio": "module9_slide_07.mp3",
+      "captions": "module9_slide_07.vtt",
+      "text": "This slide focuses on Indexing and slicing. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nNumPy uses zero-based indexing like Python lists. Slices select ranges. Select array values\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 8,
+      "audio": "module9_slide_08.mp3",
+      "captions": "module9_slide_08.vtt",
+      "text": "This slide focuses on Boolean masks. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nA boolean mask keeps values that meet a condition. Filter with a condition\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 9,
+      "audio": "module9_slide_09.mp3",
+      "captions": "module9_slide_09.vtt",
+      "text": "This slide focuses on Two-dimensional arrays. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nA 2-D array looks like a table of numbers. Axis 0 usually means down columns. Axis 1 usually means across rows. Rows, columns, and axes\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 10,
+      "audio": "module9_slide_10.mp3",
+      "captions": "module9_slide_10.vtt",
+      "text": "This slide focuses on Broadcasting. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nBroadcasting lets NumPy combine arrays with scalars or compatible shapes. Subtract column averages\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 11,
+      "audio": "module9_slide_11.mp3",
+      "captions": "module9_slide_11.vtt",
+      "text": "This slide focuses on Random arrays with a seed. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nNumPy can generate random data for simulations and teaching examples. A seed makes results repeatable. Generate repeatable random data\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 12,
+      "audio": "module9_slide_12.mp3",
+      "captions": "module9_slide_12.vtt",
+      "text": "This slide focuses on Mini NumPy workflow. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nThis example calculates a simple standardized score using the mean and standard deviation. Standardize values\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 13,
+      "audio": "module9_slide_13.mp3",
+      "captions": "module9_slide_13.vtt",
+      "text": "This slide summarizes Module 9. Focus on the operations you should recognize and the situations where they make analytical work easier.\n\n[pause=0.7]\n\nCreate numeric arrays. Shape and dtype Inspect array structure.\n\n[pause=0.7]\n\nApply formulas to all values. Filter values with conditions. Work with rows and columns.\n\n[pause=1.0]",
+      "pause_markers": 3
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.710
+This slide focuses on Dictionary comprehensions
+Start with the meaning of the idea
+
+00:00:05.934 --> 00:00:12.019
+then connect it to the example and the larger
+analytical workflow A dictionary
+
+00:00:12.045 --> 00:00:17.574
+comprehension creates key-value pairs in one
+expression Create a status map
+
+00:00:19.387 --> 00:00:25.244
+Before running the example predict the output Run it
+in the browser inspect the result
+
+00:00:25.429 --> 00:00:30.981
+then modify one input expression or value and run it
+again Notice whether the
+
+00:00:30.995 --> 00:00:34.863
+shorter technique improves clarity or only makes the
+code harder to read

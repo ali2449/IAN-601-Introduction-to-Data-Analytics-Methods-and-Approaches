@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.684
+This slide focuses on Check missing values Start
+with what the operation changes in
+
+00:00:05.711 --> 00:00:11.293
+the data then connect that change to the analytical
+question Missing
+
+00:00:11.319 --> 00:00:17.611
+values can change summaries First count them then
+decide what to do Count
+
+00:00:17.638 --> 00:00:23.263
+and fill missing values Before running the example
+predict the table
+
+00:00:23.408 --> 00:00:29.029
+summary or transformed output Run it in the browser
+and inspect the row count column
+
+00:00:29.055 --> 00:00:34.674
+values grouping dates missing values or flags that
+matter Then change
+
+00:00:34.700 --> 00:00:36.726
+one input and compare the result

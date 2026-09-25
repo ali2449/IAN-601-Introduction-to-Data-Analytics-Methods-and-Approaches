@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.697
+This slide focuses on Nested dictionaries Start with
+the meaning of the idea then
+
+00:00:05.724 --> 00:00:11.574
+connect it to the example and the larger analytical
+workflow A dictionary
+
+00:00:11.600 --> 00:00:18.129
+can contain another dictionary This is useful when
+one record has sections Use
+
+00:00:18.155 --> 00:00:23.668
+nested dictionaries for organized records Access
+nested values one key at
+
+00:00:23.695 --> 00:00:29.385
+a time Before running the example predict what the
+output should look
+
+00:00:29.412 --> 00:00:35.112
+like Run it in the browser inspect the result then
+change one input key value
+
+00:00:35.322 --> 00:00:41.712
+or condition and run it again Focus on what changed
+and why Keep
+
+00:00:41.725 --> 00:00:43.725
+structure readable and consistent

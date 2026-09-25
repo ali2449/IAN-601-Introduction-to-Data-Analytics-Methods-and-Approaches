@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.711
+This slide focuses on Create a list Start with what
+the structure represents then
+
+00:00:05.737 --> 00:00:11.771
+connect that idea to the example on the slide A list
+uses square brackets
+
+00:00:12.681 --> 00:00:17.655
+Values stay in the same order unless we change the
+list Use a list when
+
+00:00:17.800 --> 00:00:23.652
+Create and inspect a list Before running the code
+predict the output
+
+00:00:24.575 --> 00:00:29.510
+Run the example in the browser inspect the result
+then change one item index or
+
+00:00:29.523 --> 00:00:35.247
+value and run it again Notice which operations
+change the original list and which simply
+
+00:00:35.273 --> 00:00:35.904
+read from it

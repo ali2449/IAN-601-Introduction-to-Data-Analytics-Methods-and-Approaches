@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.000
+This slide focuses on Test important functions Start
+with the meaning of the idea then
+
+00:00:06.026 --> 00:00:11.570
+connect it to the example and the larger analytical
+workflow A small
+
+00:00:11.596 --> 00:00:17.138
+test checks whether a function gives the expected
+result for a known input Use simple
+
+00:00:17.165 --> 00:00:23.670
+assertions Before running the example predict the
+output Run
+
+00:00:23.697 --> 00:00:28.828
+it in the browser inspect the result then modify one
+input expression or value and
+
+00:00:28.855 --> 00:00:34.315
+run it again Notice whether the shorter technique
+improves clarity or only makes the code
+
+00:00:34.341 --> 00:00:35.223
+harder to read

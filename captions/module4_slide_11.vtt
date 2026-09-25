@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.895
+This slide focuses on Lists can hold tuples Start
+with what the structure represents
+
+00:00:06.118 --> 00:00:11.713
+then connect that idea to the example on the slide A
+common pattern is
+
+00:00:11.739 --> 00:00:17.308
+a list of records Each record can be a tuple List of
+tuple
+
+00:00:17.334 --> 00:00:23.436
+records Before running the code predict the output
+Run
+
+00:00:23.462 --> 00:00:28.488
+the example in the browser inspect the result then
+change one item index or value
+
+00:00:28.515 --> 00:00:34.054
+and run it again Notice which operations change the
+original list and which simply read
+
+00:00:34.081 --> 00:00:34.488
+from it

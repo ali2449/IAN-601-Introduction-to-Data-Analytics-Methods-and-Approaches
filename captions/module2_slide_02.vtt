@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.539
+This slide focuses on What changes after Module 1
+The goal is to understand the
+
+00:00:05.566 --> 00:00:11.379
+idea in plain language before connecting it to code
+or analytical use In
+
+00:00:11.405 --> 00:00:17.250
+Module 1 code mostly ran from top to bottom In
+Module 2 Python starts
+
+00:00:17.263 --> 00:00:22.960
+choosing paths Condition a True or False question
+Branch the
+
+00:00:22.974 --> 00:00:28.864
+block that runs when the condition is true Loop a
+block that repeats
+
+00:00:29.787 --> 00:00:35.445
+Control changing when a loop stops or skips Control
+Flow & Decision Making

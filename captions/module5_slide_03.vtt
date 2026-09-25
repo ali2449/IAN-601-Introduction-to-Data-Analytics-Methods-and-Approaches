@@ -1,0 +1,21 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.645
+This slide is the roadmap for Module 5 It shows how
+the concepts progress and
+
+00:00:05.671 --> 00:00:11.471
+how the later examples build on the earlier ones
+Store labeled data using
+
+00:00:11.497 --> 00:00:17.157
+key-value pairs Retrieve and update values by key
+Process
+
+00:00:17.184 --> 00:00:23.353
+keys values and items Represent records and small
+datasets
+
+00:00:24.277 --> 00:00:29.198
+Keep only unique values Count classify and clean
+data

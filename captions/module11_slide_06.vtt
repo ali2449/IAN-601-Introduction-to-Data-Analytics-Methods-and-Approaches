@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.776
+This slide focuses on Melt wide data into long data
+Start with what the operation
+
+00:00:05.789 --> 00:00:11.825
+changes in the data then connect that change to the
+analytical question Long
+
+00:00:11.838 --> 00:00:17.706
+format is often easier for analysis plotting and
+grouping Before
+
+00:00:17.733 --> 00:00:23.314
+running the example predict the table summary or
+transformed output Run it in the
+
+00:00:23.328 --> 00:00:28.920
+browser and inspect the row count column values
+grouping dates missing values or flags
+
+00:00:28.946 --> 00:00:33.222
+that matter Then change one input and compare the
+result

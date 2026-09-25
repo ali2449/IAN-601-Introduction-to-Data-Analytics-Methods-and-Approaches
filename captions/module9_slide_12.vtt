@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.605
+This slide focuses on Mini NumPy workflow Start with
+the data structure and
+
+00:00:05.632 --> 00:00:11.877
+what the operation is supposed to accomplish before
+looking closely at the syntax This
+
+00:00:11.903 --> 00:00:18.590
+example calculates a simple standardized score using
+the mean and standard deviation Standardize
+
+00:00:18.616 --> 00:00:24.474
+values Before running the example predict the
+structure and output
+
+00:00:25.411 --> 00:00:30.569
+Run it in the browser inspect the values dimensions
+labels or summary then change one
+
+00:00:30.582 --> 00:00:35.727
+input and run it again Focus on how the operation
+changes the data rather than
+
+00:00:35.753 --> 00:00:37.267
+reading the code line by line

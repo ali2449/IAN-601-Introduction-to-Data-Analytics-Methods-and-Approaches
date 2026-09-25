@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.855
+This slide focuses on Loop through a list Start with
+what the structure represents then
+
+00:00:05.882 --> 00:00:11.612
+connect that idea to the example on the slide A loop
+lets Python repeat
+
+00:00:11.639 --> 00:00:19.149
+the same action for every value in a collection Loop
+and classify values Before
+
+00:00:19.175 --> 00:00:24.915
+running the code predict the output Run the example
+in the browser inspect the result
+
+00:00:25.138 --> 00:00:30.691
+then change one item index or value and run it again
+Notice which operations
+
+00:00:30.717 --> 00:00:33.480
+change the original list and which simply read from
+it

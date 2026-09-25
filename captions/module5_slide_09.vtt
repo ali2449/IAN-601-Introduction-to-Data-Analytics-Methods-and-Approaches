@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.605
+This slide focuses on Count categories with a
+dictionary Start with the meaning of the
+
+00:00:05.632 --> 00:00:11.723
+idea then connect it to the example and the larger
+analytical workflow A
+
+00:00:11.737 --> 00:00:17.239
+common analytics task is counting how often each
+category appears Frequency
+
+00:00:17.265 --> 00:00:22.905
+count Before running the example predict what the
+output should look
+
+00:00:22.932 --> 00:00:28.632
+like Run it in the browser inspect the result then
+change one input key value
+
+00:00:28.842 --> 00:00:33.224
+or condition and run it again Focus on what changed
+and why

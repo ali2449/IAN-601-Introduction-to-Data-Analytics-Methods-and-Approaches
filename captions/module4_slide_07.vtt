@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.750
+This slide focuses on Change a list Start with what
+the structure represents then
+
+00:00:05.776 --> 00:00:11.413
+connect that idea to the example on the slide Lists
+are mutable which
+
+00:00:11.440 --> 00:00:16.982
+means Python lets us change them after creation
+append adds one value to the
+
+00:00:17.008 --> 00:00:23.829
+end pop removes a value by position and returns it
+Before
+
+00:00:23.855 --> 00:00:29.595
+running the code predict the output Run the example
+in the browser inspect the result
+
+00:00:29.818 --> 00:00:35.371
+then change one item index or value and run it again
+Notice which operations
+
+00:00:35.397 --> 00:00:41.003
+change the original list and which simply read from
+it Assignment changes
+
+00:00:41.029 --> 00:00:45.426
+an existing position Append update and remove

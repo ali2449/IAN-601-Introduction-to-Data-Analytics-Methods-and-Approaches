@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.539
+This slide focuses on Code catch a conversion error
+Start with the meaning of the
+
+00:00:05.566 --> 00:00:11.266
+idea then connect it to the example and to
+analytical work Catch
+
+00:00:11.279 --> 00:00:17.997
+a conversion error try / except lets the function
+respond to predictable errors Before
+
+00:00:18.023 --> 00:00:23.776
+running the code predict the output Run the example
+in the browser inspect the result
+
+00:00:23.999 --> 00:00:28.960
+then change one input or value and run it again
+Focus on what changed and
+
+00:00:28.986 --> 00:00:31.802
+why rather than reading the code character by
+character

@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.684
+This slide focuses on Handle missing values Start
+with the data structure and what the
+
+00:00:05.711 --> 00:00:11.760
+operation is supposed to accomplish before looking
+closely at the syntax Missing
+
+00:00:11.786 --> 00:00:17.920
+values should be checked before analysis Depending
+on the task they may be filled removed
+
+00:00:18.131 --> 00:00:23.829
+or flagged Find and fill missing values Before
+
+00:00:23.855 --> 00:00:29.410
+running the example predict the structure and output
+Run it in the browser inspect the
+
+00:00:29.437 --> 00:00:35.529
+values dimensions labels or summary then change one
+input and run it again Focus
+
+00:00:35.555 --> 00:00:39.595
+on how the operation changes the data rather than
+reading the code line by line

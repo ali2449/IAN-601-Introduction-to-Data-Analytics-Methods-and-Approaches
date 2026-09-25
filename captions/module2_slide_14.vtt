@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.816
+This slide focuses on enumerate gives position and
+value The goal is to understand
+
+00:00:05.829 --> 00:00:11.855
+the idea in plain language before connecting it to
+code or analytical use Loop
+
+00:00:11.868 --> 00:00:15.960
+with a counter Sometimes you need both the item and
+its position in the sequence
+
+00:00:16.884 --> 00:00:22.417
+Use a counter while looping Before running the
+example predict
+
+00:00:22.443 --> 00:00:27.472
+what the output should look like Run it in the
+browser inspect the result then
+
+00:00:27.499 --> 00:00:33.249
+change one value condition or input and run it again
+Pay attention to what changed
+
+00:00:33.275 --> 00:00:41.214
+and why The number and customer are returned
+together enumerate_loop.py
+
+00:00:41.240 --> 00:00:43.030
+Control Flow & Decision Making

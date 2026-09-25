@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.447
+This slide focuses on Random arrays with a seed
+Start with the data structure and
+
+00:00:05.474 --> 00:00:12.222
+what the operation is supposed to accomplish before
+looking closely at the syntax NumPy
+
+00:00:12.248 --> 00:00:18.145
+can generate random data for simulations and
+teaching examples A seed makes results
+
+00:00:18.172 --> 00:00:24.333
+repeatable Generate repeatable random data Before
+
+00:00:24.359 --> 00:00:29.914
+running the example predict the structure and output
+Run it in the browser inspect the
+
+00:00:29.941 --> 00:00:36.033
+values dimensions labels or summary then change one
+input and run it again Focus
+
+00:00:36.059 --> 00:00:40.099
+on how the operation changes the data rather than
+reading the code line by line

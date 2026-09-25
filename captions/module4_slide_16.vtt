@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.829
+This slide summarizes Module 4 Focus on when lists
+are useful when tuples
+
+00:00:05.855 --> 00:00:12.346
+are useful and how sequence operations support
+simple analytical workflows Ordered
+
+00:00:12.518 --> 00:00:18.125
+mutable collections for values that can change
+Position numbers that let us access
+
+00:00:18.152 --> 00:00:24.652
+specific values Ranges of values taken from a list
+Repeat
+
+00:00:24.678 --> 00:00:30.260
+analysis steps for every item Ordered fixed records
+that protect structure
+
+00:00:31.181 --> 00:00:34.957
+Module 5 uses dictionaries and sets for labeled and
+unique data

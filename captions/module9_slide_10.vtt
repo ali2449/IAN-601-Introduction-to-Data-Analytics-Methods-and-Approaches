@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.842
+This slide focuses on Broadcasting Start with the
+data structure and what the operation
+
+00:00:05.855 --> 00:00:11.593
+is supposed to accomplish before looking closely at
+the syntax Broadcasting
+
+00:00:11.619 --> 00:00:17.306
+lets NumPy combine arrays with scalars or compatible
+shapes Subtract column
+
+00:00:17.319 --> 00:00:23.226
+averages Before running the example predict the
+structure and output
+
+00:00:24.163 --> 00:00:29.321
+Run it in the browser inspect the values dimensions
+labels or summary then change one
+
+00:00:29.334 --> 00:00:34.479
+input and run it again Focus on how the operation
+changes the data rather than
+
+00:00:34.505 --> 00:00:36.019
+reading the code line by line

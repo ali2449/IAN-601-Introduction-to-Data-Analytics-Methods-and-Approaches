@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.947
+This slide focuses on Reusable pandas function Start
+with what the operation changes
+
+00:00:05.974 --> 00:00:11.760
+in the data then connect that change to the
+analytical question A function
+
+00:00:11.787 --> 00:00:17.289
+can package common pandas steps so they can be
+reused safely Summarize orders
+
+00:00:17.316 --> 00:00:23.068
+with a function Before running the example predict
+the table summary
+
+00:00:23.199 --> 00:00:28.715
+or transformed output Run it in the browser and
+inspect the row count column values
+
+00:00:28.860 --> 00:00:34.610
+grouping dates missing values or flags that matter
+Then change one input
+
+00:00:34.636 --> 00:00:35.886
+and compare the result

@@ -1,0 +1,21 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.895
+This slide focuses on Index and slice a list Start
+with what the structure represents
+
+00:00:06.118 --> 00:00:12.055
+then connect that idea to the example on the slide
+Indexing and slicing
+
+00:00:13.891 --> 00:00:19.512
+Before running the code predict the output Run the
+example in the browser inspect
+
+00:00:19.525 --> 00:00:25.156
+the result then change one item index or value and
+run it again Notice which
+
+00:00:25.183 --> 00:00:28.656
+operations change the original list and which simply
+read from it

@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.895
+This slide focuses on Make random work reproducible
+Start with the meaning of the idea
+
+00:00:06.118 --> 00:00:11.987
+then connect it to the example and the larger
+analytical workflow A random
+
+00:00:12.014 --> 00:00:17.714
+seed makes random examples repeatable This matters
+for debugging teaching and
+
+00:00:17.740 --> 00:00:23.327
+reports Use a random seed Before running the
+
+00:00:23.353 --> 00:00:29.159
+example predict the output Run it in the browser
+inspect the result then modify
+
+00:00:29.185 --> 00:00:34.948
+one input expression or value and run it again
+Notice whether the shorter technique
+
+00:00:34.961 --> 00:00:37.935
+improves clarity or only makes the code harder to
+read

@@ -1,0 +1,24 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.592
+This slide focuses on Code add a docstring Start
+with the meaning of the idea
+
+00:00:05.842 --> 00:00:11.531
+then connect it to the example and to analytical
+work Add a docstring
+
+00:00:11.544 --> 00:00:17.185
+A docstring documents what a function is designed to
+do Before running
+
+00:00:17.211 --> 00:00:23.069
+the code predict the output Run the example in the
+browser inspect the result then
+
+00:00:23.095 --> 00:00:28.029
+change one input or value and run it again Focus on
+what changed and why
+
+00:00:28.056 --> 00:00:30.674
+rather than reading the code character by character

@@ -1,120 +1,16 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:03.579
-Welcome to Module 6 In this module
+00:00:00.103 --> 00:00:05.632
+Welcome to Module 6 This module focuses on Modules
+Packages &
 
-00:00:03.789 --> 00:00:05.211
-we are going to move from writing
+00:00:05.645 --> 00:00:11.355
+OOP We will build the ideas in small steps and
+connect them to practical analytics
 
-00:00:05.224 --> 00:00:07.776
-small pieces of Python code toward organizing
+00:00:11.382 --> 00:00:17.012
+work Modules packages and classes help Python
+projects grow from
 
-00:00:07.803 --> 00:00:09.697
-larger programs in a cleaner and more
-
-00:00:09.711 --> 00:00:12.618
-reusable way Up to this point you
-
-00:00:12.645 --> 00:00:15.724
-have worked with variables conditions loops
-functions
-
-00:00:15.895 --> 00:00:20.079
-lists tuples dictionaries and sets Those tools
-
-00:00:20.105 --> 00:00:21.947
-are very useful but as a program
-
-00:00:21.961 --> 00:00:23.842
-becomes larger we also need a way
-
-00:00:23.868 --> 00:00:27.013
-to organize the code itself If everything
-
-00:00:27.026 --> 00:00:29.118
-is placed inside one long script the
-
-00:00:29.145 --> 00:00:31.737
-program can become difficult to read difficult
-
-00:00:31.763 --> 00:00:34.829
-to test and difficult to update This
-
-00:00:34.855 --> 00:00:38.895
-module introduces four important ideas The first
-
-00:00:38.921 --> 00:00:41.855
-is a module A module is usually
-
-00:00:41.882 --> 00:00:44.645
-one Python file that contains reusable code
-
-00:00:45.566 --> 00:00:48.513
-The second is a package A package
-
-00:00:48.539 --> 00:00:52.132
-groups related modules together The third is
-
-00:00:52.158 --> 00:00:54.947
-a class A class is a blueprint
-
-00:00:54.974 --> 00:00:58.421
-that combines related data and behavior The
-
-00:00:58.434 --> 00:01:01.382
-fourth is an object An object is
-
-00:01:01.408 --> 00:01:03.895
-one actual instance created from a class
-
-00:01:04.829 --> 00:01:06.197
-The goal is not to become an
-
-00:01:06.211 --> 00:01:09.724
-advanced software engineer in this module The
-
-00:01:09.737 --> 00:01:12.487
-goal is much simpler I want you
-
-00:01:12.513 --> 00:01:14.724
-to understand how Python projects can be
-
-00:01:14.750 --> 00:01:17.539
-organized as they grow You will see
-
-00:01:17.566 --> 00:01:21.079
-several executable Python examples throughout the
-slides
-
-00:01:22.000 --> 00:01:23.724
-When you reach a code slide you
-
-00:01:23.750 --> 00:01:25.395
-can click the Run button below the
-
-00:01:25.421 --> 00:01:28.329
-editor The first time you run Python
-
-00:01:28.342 --> 00:01:29.737
-in the browser it may take a
-
-00:01:29.763 --> 00:01:31.908
-few seconds for the Python environment to
-
-00:01:31.921 --> 00:01:34.947
-load After that the code should run
-
-00:01:34.974 --> 00:01:37.592
-more quickly As you move through the
-
-00:01:37.618 --> 00:01:40.026
-module focus on the big idea behind
-
-00:01:40.053 --> 00:01:42.789
-each example We want code that is
-
-00:01:42.816 --> 00:01:45.566
-easier to reuse easier to understand and
-
-00:01:45.579 --> 00:01:46.737
-easier to maintain
+00:00:17.038 --> 00:00:19.538
+short scripts into organized analytics tools

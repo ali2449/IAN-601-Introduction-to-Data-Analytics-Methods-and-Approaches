@@ -1,0 +1,24 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.447
+This slide focuses on Why dictionaries and sets
+matter Start with the meaning of the
+
+00:00:05.474 --> 00:00:11.882
+idea then connect it to the example and the larger
+analytical workflow Lists
+
+00:00:11.908 --> 00:00:17.543
+are useful when order matters Dictionaries and sets
+are useful when meaning or uniqueness
+
+00:00:17.569 --> 00:00:23.687
+matters Dictionary stores data as key value pairs
+Set
+
+00:00:23.937 --> 00:00:29.457
+stores unique values without duplicates Analytics
+use labeled
+
+00:00:29.483 --> 00:00:33.325
+records category counts unique IDs and lookup tables

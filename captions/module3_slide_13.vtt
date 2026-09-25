@@ -1,0 +1,24 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.658
+This slide focuses on Code return a value Start with
+the meaning of the idea
+
+00:00:05.908 --> 00:00:11.458
+then connect it to the example and to analytical
+work Unlike print
+
+00:00:11.695 --> 00:00:17.712
+return gives the value back to the program Before
+running the code predict
+
+00:00:17.738 --> 00:00:23.517
+the output Run the example in the browser inspect
+the result then change one input
+
+00:00:23.543 --> 00:00:28.385
+or value and run it again Focus on what changed and
+why rather than reading
+
+00:00:28.412 --> 00:00:30.122
+the code character by character

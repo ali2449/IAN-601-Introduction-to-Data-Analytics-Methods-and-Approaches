@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.684
+This slide focuses on Choose the right sequence
+Start with what the structure represents
+
+00:00:05.908 --> 00:00:11.497
+then connect that idea to the example on the slide
+Use a list when
+
+00:00:12.421 --> 00:00:18.858
+Values may change You need to append or remove items
+You
+
+00:00:18.871 --> 00:00:25.768
+need to sort filter or build a collection over time
+Use a tuple when Values
+
+00:00:25.795 --> 00:00:26.873
+should stay fixed

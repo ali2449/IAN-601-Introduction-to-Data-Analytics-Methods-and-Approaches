@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.053
+This slide focuses on List + tuple capstone Start
+with what the structure represents
+
+00:00:06.276 --> 00:00:11.962
+then connect that idea to the example on the slide A
+function can receive
+
+00:00:11.989 --> 00:00:17.452
+a list and return a tuple This lets us package
+multiple results in one clean
+
+00:00:17.478 --> 00:00:23.445
+return value Return a tuple from a function Before
+
+00:00:23.471 --> 00:00:29.211
+running the code predict the output Run the example
+in the browser inspect the result
+
+00:00:29.434 --> 00:00:34.987
+then change one item index or value and run it again
+Notice which operations
+
+00:00:35.013 --> 00:00:37.776
+change the original list and which simply read from
+it

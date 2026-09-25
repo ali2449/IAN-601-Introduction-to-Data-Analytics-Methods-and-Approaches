@@ -1,0 +1,97 @@
+{
+  "prefix": "module8",
+  "voice": "en-US-GuyNeural",
+  "rate": "-5%",
+  "volume": "+0%",
+  "pitch": "+0Hz",
+  "caption_words": 15,
+  "slide_count": 12,
+  "slide_markers_found": true,
+  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "slides": [
+    {
+      "slide": 1,
+      "audio": "module8_slide_01.mp3",
+      "captions": "module8_slide_01.vtt",
+      "text": "Welcome to Module 8. This module focuses on Professional Practices. We will build the ideas gradually and connect them to practical analytics work.\n\n[pause=0.7]\n\nProfessional analytics code should be readable, reproducible, tested, documented, and respectful of data privacy.\n\n[pause=1.0]",
+      "pause_markers": 2
+    },
+    {
+      "slide": 2,
+      "audio": "module8_slide_02.mp3",
+      "captions": "module8_slide_02.vtt",
+      "text": "Use this lesson actively. Read the concept, predict what should happen, run the example when code is available, then change one small part and compare the result.\n\n[pause=0.7]\n\nStart with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.\n\n[pause=0.7]\n\nChange one value, variable, or condition. Apply the pattern to a new example.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 3,
+      "audio": "module8_slide_03.mp3",
+      "captions": "module8_slide_03.vtt",
+      "text": "This slide is the learning path for Module 8. It shows how the topic progresses from foundational ideas to applied practice.\n\n[pause=0.7]\n\nUse names that explain the data. Write helpful comments and docstrings. Reproducibility\n\n[pause=0.7]\n\nControl randomness with seeds. Check important functions. Record useful events.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 4,
+      "audio": "module8_slide_04.mp3",
+      "captions": "module8_slide_04.vtt",
+      "text": "This slide focuses on Readable code starts with names. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nNames should describe the role of a value. This makes code easier for future readers, including you. Use descriptive names\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 5,
+      "audio": "module8_slide_05.mp3",
+      "captions": "module8_slide_05.vtt",
+      "text": "This slide focuses on Write docstrings for functions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA docstring explains what a function does, what it expects, and what it returns. Function with a docstring\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 6,
+      "audio": "module8_slide_06.mp3",
+      "captions": "module8_slide_06.vtt",
+      "text": "This slide focuses on Make random work reproducible. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA random seed makes random examples repeatable. This matters for debugging, teaching, and reports. Use a random seed\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 7,
+      "audio": "module8_slide_07.mp3",
+      "captions": "module8_slide_07.vtt",
+      "text": "This slide focuses on Test important functions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA small test checks whether a function gives the expected result for a known input. Use simple assertions\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 8,
+      "audio": "module8_slide_08.mp3",
+      "captions": "module8_slide_08.vtt",
+      "text": "This slide focuses on Use logging instead of only print. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nLogging records what happened. It can include messages for progress, warnings, and errors.\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 9,
+      "audio": "module8_slide_09.mp3",
+      "captions": "module8_slide_09.vtt",
+      "text": "This slide focuses on Keep settings in one place. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA configuration dictionary keeps important settings visible and easy to change. Use a configuration dictionary\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 10,
+      "audio": "module8_slide_10.mp3",
+      "captions": "module8_slide_10.vtt",
+      "text": "This slide focuses on Responsible example data. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nTeaching and sample datasets should use fictional or generic values unless real data is clearly permitted. Use fictional names, IDs, emails, and organizations. Remove direct identifiers from examples.\n\n[pause=0.7]\n\nDo not publish private data in code outputs. Explain assumptions and limitations clearly.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 11,
+      "audio": "module8_slide_11.mp3",
+      "captions": "module8_slide_11.vtt",
+      "text": "Use this slide as guided practice. Work in small steps and explain why each result makes sense.\n\n[pause=0.7]\n\nCells execute in order. Variables describe meaning. No private data\n\n[pause=0.7]\n\nExamples are fictional. Notes explain why, not every line. Outputs make sense\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 12,
+      "audio": "module8_slide_12.mp3",
+      "captions": "module8_slide_12.vtt",
+      "text": "This slide summarizes Module 8. Focus on the patterns you should be able to explain and reuse after completing the examples.\n\n[pause=0.7]\n\nUse clear names and structure. Write useful docstrings. Reproducibility\n\n[pause=0.7]\n\nControl randomness with seeds. Use small checks for functions. Track what the program does.\n\n[pause=1.0]",
+      "pause_markers": 3
+    }
+  ]
+}

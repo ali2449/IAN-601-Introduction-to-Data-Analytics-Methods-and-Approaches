@@ -1,0 +1,97 @@
+{
+  "prefix": "module12",
+  "voice": "en-US-GuyNeural",
+  "rate": "-5%",
+  "volume": "+0%",
+  "pitch": "+0Hz",
+  "caption_words": 15,
+  "slide_count": 12,
+  "slide_markers_found": true,
+  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "slides": [
+    {
+      "slide": 1,
+      "audio": "module12_slide_01.mp3",
+      "captions": "module12_slide_01.vtt",
+      "text": "Welcome to Module 12. This module focuses on Cleaning & EDA. We will connect the techniques to realistic analytical workflows and careful interpretation.\n\n[pause=0.7]\n\nCleaning and exploratory data analysis help you understand data quality, patterns, missingness, outliers, and relationships before modeling.\n\n[pause=1.0]",
+      "pause_markers": 2
+    },
+    {
+      "slide": 2,
+      "audio": "module12_slide_02.mp3",
+      "captions": "module12_slide_02.vtt",
+      "text": "Use this lesson interactively. Read the idea, predict the result, run the example, then change one input and compare the output.\n\n[pause=0.7]\n\nStart with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.\n\n[pause=0.7]\n\nChange one value, variable, or condition. Apply the pattern to a new example.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 3,
+      "audio": "module12_slide_03.mp3",
+      "captions": "module12_slide_03.vtt",
+      "text": "This slide is the roadmap for Module 12. Follow how the workflow moves from individual operations toward a complete analytical process.\n\n[pause=0.7]\n\nFind data quality issues. Count and fill missing values. Detect repeated records.\n\n[pause=0.7]\n\nConvert columns safely. Flag unusual values. Summarize patterns before decisions.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 4,
+      "audio": "module12_slide_04.mp3",
+      "captions": "module12_slide_04.vtt",
+      "text": "This slide focuses on Create a messy dataset. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nMessy data can include missing values, duplicate rows, inconsistent labels, and values stored as text. Build a small messy DataFrame\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 5,
+      "audio": "module12_slide_05.mp3",
+      "captions": "module12_slide_05.vtt",
+      "text": "This slide focuses on Check missing values. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nMissing values can change summaries. First count them, then decide what to do. Count and fill missing values\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 6,
+      "audio": "module12_slide_06.mp3",
+      "captions": "module12_slide_06.vtt",
+      "text": "This slide focuses on Find duplicate records. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nDuplicates can inflate counts and totals. Check before summarizing. Detect and remove duplicates\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 7,
+      "audio": "module12_slide_07.mp3",
+      "captions": "module12_slide_07.vtt",
+      "text": "This slide focuses on Convert data types. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nNumbers stored as text cannot be analyzed correctly until converted. Convert text to numeric\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 8,
+      "audio": "module12_slide_08.mp3",
+      "captions": "module12_slide_08.vtt",
+      "text": "This slide focuses on Clean categories. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nText categories often need case, spacing, and spelling cleanup. Standardize category labels\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 9,
+      "audio": "module12_slide_09.mp3",
+      "captions": "module12_slide_09.vtt",
+      "text": "This slide focuses on Flag outliers with IQR. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nThe IQR rule is one simple way to flag unusually high or low values. Flag possible outliers\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 10,
+      "audio": "module12_slide_10.mp3",
+      "captions": "module12_slide_10.vtt",
+      "text": "This slide summarizes Module 12. Focus on the decisions and checks that make the workflow reliable and reusable.\n\n[pause=0.7]\n\nEDA uses summaries to understand what is in the data before formal analysis. Create an EDA summary\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 11,
+      "audio": "module12_slide_11.mp3",
+      "captions": "module12_slide_11.vtt",
+      "text": "This slide focuses on Mini cleaning pipeline. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nA cleaning pipeline applies several checks in a consistent order. Clean and summarize\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 12,
+      "audio": "module12_slide_12.mp3",
+      "captions": "module12_slide_12.vtt",
+      "text": "This slide summarizes Module 12. Focus on the decisions and checks that make the workflow reliable and reusable.\n\n[pause=0.7]\n\nCount and handle blanks. Find repeated records. Convert values safely.\n\n[pause=0.7]\n\nStandardize labels. Flag unusual values. Summarize before deciding.\n\n[pause=1.0]",
+      "pause_markers": 3
+    }
+  ]
+}

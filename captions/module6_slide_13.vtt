@@ -1,122 +1,16 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:02.774
-This code cell contains several related helper
+00:00:00.103 --> 00:00:05.921
+This slide summarizes Module 6 Focus on the patterns
+you should be able to explain
 
-00:00:02.800 --> 00:00:05.526
-functions Even though they are shown in
+00:00:05.934 --> 00:00:12.019
+and reuse after completing the examples Use built-in
+tools and aliases
 
-00:00:05.553 --> 00:00:07.776
-one interactive cell you can imagine that
+00:00:12.942 --> 00:00:18.901
+Read namespaces Understand where names come from
+Group repeated logic
 
-00:00:07.803 --> 00:00:09.987
-these functions live inside a small module
-
-00:00:10.013 --> 00:00:13.000
-called metrics tools dot P Y The
-
-00:00:13.026 --> 00:00:16.263
-first function is get profit It receives
-
-00:00:16.289 --> 00:00:18.671
-sales and costs and returns the difference
-
-00:00:19.579 --> 00:00:21.855
-The second function is get profit margin
-
-00:00:22.789 --> 00:00:24.487
-Notice that it does not repeat the
-
-00:00:24.513 --> 00:00:28.474
-profit formula Instead it calls get profit
-
-00:00:29.395 --> 00:00:31.329
-This is good design because the profit
-
-00:00:31.355 --> 00:00:34.605
-calculation has one clear home The third
-
-00:00:34.632 --> 00:00:37.934
-function is format percent It receives a
-
-00:00:37.947 --> 00:00:40.487
-decimal value multiplies it by one hundred
-
-00:00:40.697 --> 00:00:42.868
-and formats the result with one decimal
-
-00:00:42.895 --> 00:00:45.855
-place followed by a percent sign Below
-
-00:00:45.868 --> 00:00:48.158
-the function definitions sales is set to
-
-00:00:48.171 --> 00:00:50.197
-twenty-five hundred and costs is set to
-
-00:00:50.224 --> 00:00:53.882
-eighteen hundred The program calculates profit and
-
-00:00:53.908 --> 00:00:56.855
-stores it in the variable profit It
-
-00:00:56.882 --> 00:00:59.421
-also calculates the profit margin and stores
-
-00:00:59.434 --> 00:01:02.487
-it in the variable margin Before running
-
-00:01:02.513 --> 00:01:04.737
-the cell let us predict the result
-
-00:01:05.658 --> 00:01:08.632
-Twenty-five hundred minus eighteen hundred equals
-seven
-
-00:01:08.658 --> 00:01:11.776
-hundred The profit margin is seven hundred
-
-00:01:11.803 --> 00:01:14.382
-divided by twenty-five hundred which is zero
-
-00:01:14.408 --> 00:01:18.105
-point twenty-eight or twenty-eight percent Click Run
-
-00:01:18.118 --> 00:01:21.395
-now The terminal should show Profit followed
-
-00:01:21.421 --> 00:01:24.237
-by seven hundred It should also show
-
-00:01:24.263 --> 00:01:26.789
-Profit margin followed by twenty-eight point zero
-
-00:01:26.816 --> 00:01:30.132
-percent Now change sales or costs and
-
-00:01:30.158 --> 00:01:33.513
-run the example again For example keep
-
-00:01:33.539 --> 00:01:35.947
-sales at twenty-five hundred but change costs
-
-00:01:35.974 --> 00:01:39.066
-to two thousand The profit becomes five
-
-00:01:39.079 --> 00:01:41.421
-hundred and the margin becomes twenty percent
-
-00:01:42.342 --> 00:01:46.553
-The important idea is organization Related helper
-
-00:01:46.579 --> 00:01:48.421
-functions can be placed together in a
-
-00:01:48.447 --> 00:01:51.855
-module Then the main analysis can focus
-
-00:01:51.882 --> 00:01:53.763
-on the data and the questions instead
-
-00:01:53.776 --> 00:01:55.079
-of repeating formulas
+00:00:19.825 --> 00:00:23.851
+Make simple blueprints Attach actions to data

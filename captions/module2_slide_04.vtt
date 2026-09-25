@@ -1,0 +1,21 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.263
+This slide focuses on A condition asks a True /
+False question The goal is
+
+00:00:05.289 --> 00:00:10.026
+to understand the idea in plain language before
+connecting it to code or analytical use
+
+00:00:11.771 --> 00:00:16.442
+Boolean thinking A condition is an expression that
+Python can evaluate as True or False
+
+00:00:17.365 --> 00:00:23.825
+Is sales greater than target Is the status exactly
+Open Are
+
+00:00:23.838 --> 00:00:28.496
+returns not equal to zero Control Flow & Decision
+Making

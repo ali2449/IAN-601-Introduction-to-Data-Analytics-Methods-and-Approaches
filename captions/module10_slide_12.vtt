@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.671
+This slide summarizes Module 10 Focus on the
+operations you should recognize
+
+00:00:05.684 --> 00:00:11.464
+and the situations where they make analytical work
+easier Build DataFrames
+
+00:00:11.490 --> 00:00:16.993
+from records Use head shape and dtypes Keep rows
+that
+
+00:00:17.006 --> 00:00:23.085
+match conditions Add calculated columns Summarize
+
+00:00:23.111 --> 00:00:26.559
+by category Combine related tables

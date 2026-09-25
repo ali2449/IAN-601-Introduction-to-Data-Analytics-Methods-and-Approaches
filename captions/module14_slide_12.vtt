@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.671
+This slide focuses on Mini ML workflow Start with
+the analytical question and
+
+00:00:05.684 --> 00:00:11.506
+the meaning of the output before focusing on the
+syntax This final example
+
+00:00:11.532 --> 00:00:17.521
+joins the main steps data split train evaluate and
+report End-to-end
+
+00:00:17.535 --> 00:00:23.137
+classifier Before running the example predict the
+structure of
+
+00:00:23.163 --> 00:00:28.968
+the output Run it in the browser and inspect the
+features target split predictions
+
+00:00:29.126 --> 00:00:34.850
+evaluation result or external-style records Then
+change one input and compare
+
+00:00:34.876 --> 00:00:35.666
+what changes

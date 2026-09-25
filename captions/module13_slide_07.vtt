@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.724
+This slide focuses on Correlation Start with the
+analytical question and the meaning
+
+00:00:05.737 --> 00:00:11.247
+of the output before focusing on the syntax
+Correlation measures the
+
+00:00:11.273 --> 00:00:18.052
+strength and direction of a linear relationship It
+does not prove causation Calculate
+
+00:00:18.079 --> 00:00:23.601
+correlation Before running the example predict the
+statistic
+
+00:00:23.615 --> 00:00:29.275
+or visualization input Run it in the browser and
+inspect the center spread group
+
+00:00:29.288 --> 00:00:34.828
+difference association or interval being calculated
+Then change one value
+
+00:00:34.841 --> 00:00:36.972
+and see how the interpretation changes

@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.592
+Use this slide as guided practice Work through the
+task in small steps and explain
+
+00:00:05.605 --> 00:00:11.180
+why each step produces the result you see Put it
+together This activity
+
+00:00:11.207 --> 00:00:16.841
+combines a loop several conditions a counter and
+readable output Create simple
+
+00:00:16.867 --> 00:00:22.735
+customer flags Before running the example predict
+what the output
+
+00:00:22.761 --> 00:00:28.067
+should look like Run it in the browser inspect the
+result then change one value
+
+00:00:28.198 --> 00:00:35.319
+condition or input and run it again Pay attention to
+what changed and why You
+
+00:00:35.345 --> 00:00:41.887
+can edit the spending and visit values
+customer_flags_activity.py
+
+00:00:41.914 --> 00:00:43.637
+Control Flow & Decision Making

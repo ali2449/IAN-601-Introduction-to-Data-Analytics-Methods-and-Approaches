@@ -1,0 +1,104 @@
+{
+  "prefix": "module14",
+  "voice": "en-US-GuyNeural",
+  "rate": "-5%",
+  "volume": "+0%",
+  "pitch": "+0Hz",
+  "caption_words": 15,
+  "slide_count": 13,
+  "slide_markers_found": true,
+  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "slides": [
+    {
+      "slide": 1,
+      "audio": "module14_slide_01.mp3",
+      "captions": "module14_slide_01.vtt",
+      "text": "Welcome to Module 14. This module focuses on Machine Learning & External Data. We will connect the methods to careful analytical interpretation and practical decision making.\n\n[pause=0.7]\n\nMachine learning uses data to train models that make predictions, but good results depend on clean data, careful evaluation, and responsible interpretation.\n\n[pause=1.0]",
+      "pause_markers": 2
+    },
+    {
+      "slide": 2,
+      "audio": "module14_slide_02.mp3",
+      "captions": "module14_slide_02.vtt",
+      "text": "Use this lesson interactively. Read the question first, predict the result, run the example, and then explain what the output does and does not tell you.\n\n[pause=0.7]\n\nStart with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.\n\n[pause=0.7]\n\nChange one value, variable, or condition. Apply the pattern to a new example.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 3,
+      "audio": "module14_slide_03.mp3",
+      "captions": "module14_slide_03.vtt",
+      "text": "This slide is the roadmap for Module 14. Follow the progression from the core idea to evaluation and the final integrated workflow.\n\n[pause=0.7]\n\nRead CSV-style data. Choose inputs and target. Separate training and testing.\n\n[pause=0.7]\n\nTrain a simple classifier. Use accuracy and confusion matrix. Compare to baseline and explain limits.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 4,
+      "audio": "module14_slide_04.mp3",
+      "captions": "module14_slide_04.vtt",
+      "text": "This slide focuses on Read external-style data. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nMany analytics projects begin by reading data from a CSV file. In this browser example, the CSV is stored as text. Read CSV text with pandas\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 5,
+      "audio": "module14_slide_05.mp3",
+      "captions": "module14_slide_05.vtt",
+      "text": "This slide focuses on Inputs and target. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nFeatures are input columns. The target is what the model learns to predict. Separate X and y\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 6,
+      "audio": "module14_slide_06.mp3",
+      "captions": "module14_slide_06.vtt",
+      "text": "This slide focuses on Train/test split. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nA model should be evaluated on data it did not use for learning. Split a dataset\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 7,
+      "audio": "module14_slide_07.mp3",
+      "captions": "module14_slide_07.vtt",
+      "text": "This slide focuses on Train a simple classifier. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nA classifier learns patterns from features and predicts a category. Train logistic regression\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 8,
+      "audio": "module14_slide_08.mp3",
+      "captions": "module14_slide_08.vtt",
+      "text": "This slide focuses on Evaluate predictions. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nAccuracy is the percent of correct predictions. A confusion matrix shows correct and incorrect predictions by class. Accuracy and confusion matrix\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 9,
+      "audio": "module14_slide_09.mp3",
+      "captions": "module14_slide_09.vtt",
+      "text": "This slide focuses on Compare with a baseline. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nA model should beat a simple baseline. Otherwise, it may not be useful. Baseline accuracy\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 10,
+      "audio": "module14_slide_10.mp3",
+      "captions": "module14_slide_10.vtt",
+      "text": "This slide focuses on Predict a new case. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nAfter training, a model can predict new rows with the same feature structure. Make one prediction\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 11,
+      "audio": "module14_slide_11.mp3",
+      "captions": "module14_slide_11.vtt",
+      "text": "This slide focuses on Avoid leakage. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nData leakage happens when training uses information that would not be available at prediction time. Split data before final evaluation. Do not let the target leak into features.\n\n[pause=0.7]\n\nClean training data and test data consistently. Report limitations clearly.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 12,
+      "audio": "module14_slide_12.mp3",
+      "captions": "module14_slide_12.vtt",
+      "text": "This slide focuses on Mini ML workflow. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nThis final example joins the main steps: data, split, train, evaluate, and report. End-to-end classifier\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 13,
+      "audio": "module14_slide_13.mp3",
+      "captions": "module14_slide_13.vtt",
+      "text": "This slide summarizes Module 14. Focus on the main analytical decisions, interpretation limits, and reusable workflow patterns.\n\n[pause=0.7]\n\nLoad CSV-style data. Separate features and target. Evaluate on unseen rows.\n\n[pause=0.7]\n\nFit a classifier. Use accuracy and confusion matrix. Interpret responsibly\n\n[pause=1.0]",
+      "pause_markers": 3
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.395
+This slide focuses on Build a small pipeline Start
+with the meaning of the idea
+
+00:00:05.618 --> 00:00:11.589
+then connect it to the example and the larger
+analytical workflow A pipeline
+
+00:00:11.602 --> 00:00:17.117
+connects small functions Each step has one clear job
+Clean and
+
+00:00:17.144 --> 00:00:23.193
+summarize text labels Before running the example
+predict the output
+
+00:00:24.116 --> 00:00:29.406
+Run it in the browser inspect the result then modify
+one input expression or value
+
+00:00:29.419 --> 00:00:34.748
+and run it again Notice whether the shorter
+technique improves clarity or only makes the
+
+00:00:34.774 --> 00:00:35.919
+code harder to read

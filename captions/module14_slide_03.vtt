@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.908
+This slide is the roadmap for Module 14 Follow the
+progression from the core idea
+
+00:00:05.934 --> 00:00:11.843
+to evaluation and the final integrated workflow Read
+CSV-style
+
+00:00:11.856 --> 00:00:17.438
+data Choose inputs and target Separate training and
+testing
+
+00:00:19.191 --> 00:00:25.522
+Train a simple classifier Use accuracy and confusion
+matrix Compare
+
+00:00:25.549 --> 00:00:27.430
+to baseline and explain limits

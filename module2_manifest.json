@@ -1,0 +1,188 @@
+{
+  "prefix": "module2",
+  "voice": "en-US-GuyNeural",
+  "rate": "-5%",
+  "volume": "+0%",
+  "pitch": "+0Hz",
+  "caption_words": 15,
+  "slide_count": 25,
+  "slide_markers_found": true,
+  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "slides": [
+    {
+      "slide": 1,
+      "audio": "module2_slide_01.mp3",
+      "captions": "module2_slide_01.vtt",
+      "text": "Welcome to Module 2. This module focuses on Control Flow & Decision Making. We will build the ideas gradually and connect them to practical analytics work.\n\n[pause=0.7]\n\nOne slide at a time Executable Python cells Self-paced version\n\n[pause=0.7]\n\nAs you review the slide, connect the concept to the larger analytics workflow: how data is represented, transformed, checked, or communicated.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 2,
+      "audio": "module2_slide_02.mp3",
+      "captions": "module2_slide_02.vtt",
+      "text": "This slide focuses on What changes after Module 1?. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nIn Module 1, code mostly ran from top to bottom. In Module 2, Python starts choosing paths. Condition: a True or False question. Branch: the block that runs when the condition is true.\n\n[pause=0.7]\n\nLoop: a block that repeats. Control: changing when a loop stops or skips. Control Flow & Decision Making\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 3,
+      "audio": "module2_slide_03.mp3",
+      "captions": "module2_slide_03.vtt",
+      "text": "This slide gives us the learning path for Module 2. Use it as a map for how the ideas connect from the beginning of the module to the final practice.\n\n[pause=0.7]\n\nBoolean conditions Compare values and produce True or False. if / elif / else\n\n[pause=0.7]\n\nChoose one path from several possible paths. Repeat work for each item in a collection. Repeat while a condition remains true.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 4,
+      "audio": "module2_slide_04.mp3",
+      "captions": "module2_slide_04.vtt",
+      "text": "This slide focuses on A condition asks a True/False question. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nBoolean thinking A condition is an expression that Python can evaluate as True or False. Is sales greater than target?\n\n[pause=0.7]\n\nIs the status exactly Open? Are returns not equal to zero? Control Flow & Decision Making\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 5,
+      "audio": "module2_slide_05.mp3",
+      "captions": "module2_slide_05.vtt",
+      "text": "This slide focuses on Code: compare values. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nExecutable example Compare two values A comparison produces True or False.\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\ncompare_values.py What happens Why it matters\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 6,
+      "audio": "module2_slide_06.mp3",
+      "captions": "module2_slide_06.vtt",
+      "text": "This slide focuses on The if statement runs only when true. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nDecision structure Skip the indented block Simple if statement\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nOnly the indented line belongs to the if statement. simple_if.py Control Flow & Decision Making\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 7,
+      "audio": "module2_slide_07.mp3",
+      "captions": "module2_slide_07.vtt",
+      "text": "This slide focuses on if / else chooses between two paths. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nTwo-way decision Use if and else when exactly one of two outcomes should happen. Choose between two outcomes\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nChange sales and rerun to see a different branch. Control Flow & Decision Making\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 8,
+      "audio": "module2_slide_08.mp3",
+      "captions": "module2_slide_08.vtt",
+      "text": "This slide focuses on elif handles several categories. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nMulti-way decision Use elif when there are multiple rules. Python checks the rules from top to bottom and stops at the first true condition. Score category with elif\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nThe order of thresholds is important. if_elif_else.py Order matters\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 9,
+      "audio": "module2_slide_09.mp3",
+      "captions": "module2_slide_09.vtt",
+      "text": "This slide focuses on Combine rules with Boolean logic. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nand · or · not Both conditions must be true. At least one condition must be true.\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nReverse a Boolean result. Logical operators in a business rule Build richer rules by combining conditions.\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 10,
+      "audio": "module2_slide_10.mp3",
+      "captions": "module2_slide_10.vtt",
+      "text": "This slide focuses on Common beginner mistakes. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nDebugging mindset = assigns a value. == compares two values. Missing colon\n\n[pause=0.7]\n\nif sales > 800: needs a colon at the end. Wrong indentation The lines controlled by if must be indented consistently.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 11,
+      "audio": "module2_slide_11.mp3",
+      "captions": "module2_slide_11.vtt",
+      "text": "This slide focuses on For loops repeat over a sequence. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nA for loop is best when you have a sequence of items or when you know how many repetitions are needed. Loop through a small sequence Read this as: for each customer in customers.\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nfor_loop_sequence.py Control Flow & Decision Making\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 12,
+      "audio": "module2_slide_12.mp3",
+      "captions": "module2_slide_12.vtt",
+      "text": "This slide focuses on range() creates a simple count. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nKnown repetitions Use range() when you want to repeat a known number of times. Repeat with range()\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nNotice that range(5) starts at 0 and stops before 5. range_loop.py Control Flow & Decision Making\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 13,
+      "audio": "module2_slide_13.mp3",
+      "captions": "module2_slide_13.vtt",
+      "text": "This slide focuses on Running totals are a core analytics pattern. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nLoop + accumulator An accumulator is a variable that starts with a simple value, then updates during each loop repetition. Accumulate a total inside a loop\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nThis pattern appears often in summaries and reports. The total begins at 0. Each amount is added to the previous total.\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 14,
+      "audio": "module2_slide_14.mp3",
+      "captions": "module2_slide_14.vtt",
+      "text": "This slide focuses on enumerate() gives position and value. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nLoop with a counter Sometimes you need both the item and its position in the sequence. Use a counter while looping\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nThe number and customer are returned together. enumerate_loop.py Control Flow & Decision Making\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 15,
+      "audio": "module2_slide_15.mp3",
+      "captions": "module2_slide_15.vtt",
+      "text": "This slide focuses on while loops repeat until a condition changes. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nCondition-based repetition A while loop repeats as long as its condition remains true. Keep repeating while the condition is true.\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nSafety question: Countdown with while The variable count changes inside the loop.\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 16,
+      "audio": "module2_slide_16.mp3",
+      "captions": "module2_slide_16.vtt",
+      "text": "This slide focuses on while loops can model changing processes. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nThreshold example Track a changing balance The loop continues until the balance reaches zero.\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nwhile_balance.py while_threshold.py Rule of thumb:\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 17,
+      "audio": "module2_slide_17.mp3",
+      "captions": "module2_slide_17.vtt",
+      "text": "This slide focuses on break and continue change loop behavior. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nLoop control Skip the rest of the current repetition and move to the next one. Skip one value with continue\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nThe number 2 is skipped. continue_example.py Exit early with break\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 18,
+      "audio": "module2_slide_18.mp3",
+      "captions": "module2_slide_18.vtt",
+      "text": "This slide focuses on Combine loops and decisions. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nClassification pattern Most useful control flow combines repetition with a decision inside the loop. Place a decision inside a loop\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nEach sale is classified using the same rule. loop_with_if.py Move through one value at a time.\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 19,
+      "audio": "module2_slide_19.mp3",
+      "captions": "module2_slide_19.vtt",
+      "text": "This slide focuses on Nested loops: a loop inside a loop. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nUse carefully A nested loop is useful for grids or paired combinations, but too many layers become difficult to read. Use nested loops carefully\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nThe inner loop finishes for each outer-loop row. nested_loops.py Control Flow & Decision Making\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 20,
+      "audio": "module2_slide_20.mp3",
+      "captions": "module2_slide_20.vtt",
+      "text": "This slide focuses on Analytics example: classify sales days. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nThis example counts how many sales days are low, target, or high. Run the cell, then change the sales values and run again. Classify sales into three groups Loop, compare, and update counters.\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nclassify_sales.py Control Flow & Decision Making\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 21,
+      "audio": "module2_slide_21.mp3",
+      "captions": "module2_slide_21.vtt",
+      "text": "This slide focuses on Count values that meet a condition. The goal is to understand the idea in plain language before connecting it to code or analytical use.\n\n[pause=0.7]\n\nFlagging pattern A counter can summarize how many observations match a rule. Start the counter at 0.\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nLoop through each value. If the rule is true, add 1. Print the final count.\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 22,
+      "audio": "module2_slide_22.mp3",
+      "captions": "module2_slide_22.vtt",
+      "text": "Use this slide as guided practice. Work through the task in small steps and explain why each step produces the result you see.\n\n[pause=0.7]\n\nPut it together This activity combines a loop, several conditions, a counter, and readable output. Create simple customer flags\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one value, condition, or input and run it again. Pay attention to what changed and why.\n\n[pause=0.7]\n\nYou can edit the spending and visit values. customer_flags_activity.py Control Flow & Decision Making\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 23,
+      "audio": "module2_slide_23.mp3",
+      "captions": "module2_slide_23.vtt",
+      "text": "Use this slide as guided practice. Work through the task in small steps and explain why each step produces the result you see.\n\n[pause=0.7]\n\nGuided exercises Threshold check Create a variable called score. Print “pass” when it is at least 70.\n\n[pause=0.7]\n\nTwo-way decision Create a variable called balance. Print whether it is positive or zero/negative. Known repetition\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 24,
+      "audio": "module2_slide_24.mp3",
+      "captions": "module2_slide_24.vtt",
+      "text": "Use this slide as guided practice. Work through the task in small steps and explain why each step produces the result you see.\n\n[pause=0.7]\n\nCheck your understanding Can you read a condition? Explain what makes it true or false.\n\n[pause=0.7]\n\nCan you identify the block? Point to the indented lines controlled by the statement. Can you trace a loop?\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 25,
+      "audio": "module2_slide_25.mp3",
+      "captions": "module2_slide_25.vtt",
+      "text": "This slide brings Module 2 together. Focus on the main patterns you should be able to explain and reuse after completing the examples.\n\n[pause=0.7]\n\nEnd of Module 2 if, elif, and else choose paths. Repeat over known items or known counts.\n\n[pause=0.7]\n\nRepeat until a condition changes. Loop control break stops; continue skips.\n\n[pause=1.0]",
+      "pause_markers": 3
+    }
+  ]
+}

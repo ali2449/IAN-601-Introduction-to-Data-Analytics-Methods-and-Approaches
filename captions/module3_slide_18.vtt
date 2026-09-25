@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.934
+This slide focuses on Code compose small functions
+Start with the meaning of the idea
+
+00:00:06.184 --> 00:00:11.907
+then connect it to the example and to analytical
+work Compose two small
+
+00:00:11.920 --> 00:00:18.333
+functions One function computes profit another
+converts it into a margin Before
+
+00:00:18.359 --> 00:00:24.112
+running the code predict the output Run the example
+in the browser inspect the result
+
+00:00:24.335 --> 00:00:29.296
+then change one input or value and run it again
+Focus on what changed and
+
+00:00:29.322 --> 00:00:32.138
+why rather than reading the code character by
+character

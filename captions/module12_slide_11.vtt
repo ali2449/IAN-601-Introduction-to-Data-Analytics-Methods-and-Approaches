@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.671
+This slide focuses on Mini cleaning pipeline Start
+with what the operation changes
+
+00:00:05.697 --> 00:00:11.496
+in the data then connect that change to the
+analytical question A cleaning
+
+00:00:11.510 --> 00:00:18.906
+pipeline applies several checks in a consistent
+order Clean and summarize Before
+
+00:00:18.933 --> 00:00:24.514
+running the example predict the table summary or
+transformed output Run it in the
+
+00:00:24.528 --> 00:00:30.120
+browser and inspect the row count column values
+grouping dates missing values or flags
+
+00:00:30.146 --> 00:00:34.422
+that matter Then change one input and compare the
+result

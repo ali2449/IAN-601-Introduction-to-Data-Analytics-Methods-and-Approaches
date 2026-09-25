@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.671
+This slide focuses on Compare with a baseline Start
+with the analytical question and
+
+00:00:05.684 --> 00:00:11.203
+the meaning of the output before focusing on the
+syntax A model should
+
+00:00:11.229 --> 00:00:17.087
+beat a simple baseline Otherwise it may not be
+useful Baseline
+
+00:00:17.100 --> 00:00:22.633
+accuracy Before running the example predict the
+structure of
+
+00:00:22.659 --> 00:00:28.464
+the output Run it in the browser and inspect the
+features target split predictions
+
+00:00:28.622 --> 00:00:34.346
+evaluation result or external-style records Then
+change one input and compare
+
+00:00:34.372 --> 00:00:35.162
+what changes

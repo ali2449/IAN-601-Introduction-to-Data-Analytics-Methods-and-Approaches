@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.855
+This slide focuses on Dictionary + set workflow
+Start with the meaning of the idea
+
+00:00:06.079 --> 00:00:12.058
+then connect it to the example and the larger
+analytical workflow Dictionaries
+
+00:00:12.084 --> 00:00:18.310
+and sets often work together dictionaries summarize
+and sets track uniqueness Dictionary
+
+00:00:18.468 --> 00:00:25.245
+total sales by channel Set unique customer IDs
+Before
+
+00:00:25.271 --> 00:00:30.419
+running the example predict what the output should
+look like Run it in the browser
+
+00:00:30.537 --> 00:00:35.629
+inspect the result then change one input key value
+or condition and run it again
+
+00:00:36.563 --> 00:00:43.640
+Focus on what changed and why Loop process each
+record Summarize
+
+00:00:43.666 --> 00:00:44.206
+orders

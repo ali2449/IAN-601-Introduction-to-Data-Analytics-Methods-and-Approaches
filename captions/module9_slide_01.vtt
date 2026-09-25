@@ -1,0 +1,12 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.105
+Welcome to Module 9 This module focuses on NumPy We
+
+00:00:06.118 --> 00:00:13.051
+will connect the new library tools to the Python
+foundations from earlier modules NumPy
+
+00:00:13.077 --> 00:00:18.880
+helps Python work efficiently with numeric arrays
+vectorized calculations and matrix-shaped data

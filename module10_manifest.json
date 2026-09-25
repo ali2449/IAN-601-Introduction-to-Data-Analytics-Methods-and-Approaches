@@ -1,0 +1,97 @@
+{
+  "prefix": "module10",
+  "voice": "en-US-GuyNeural",
+  "rate": "-5%",
+  "volume": "+0%",
+  "pitch": "+0Hz",
+  "caption_words": 15,
+  "slide_count": 12,
+  "slide_markers_found": true,
+  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "slides": [
+    {
+      "slide": 1,
+      "audio": "module10_slide_01.mp3",
+      "captions": "module10_slide_01.vtt",
+      "text": "Welcome to Module 10. This module focuses on Pandas. We will connect the new library tools to the Python foundations from earlier modules.\n\n[pause=0.7]\n\nPandas helps Python work with table-shaped data using DataFrames, rows, columns, filters, groups, and joins.\n\n[pause=1.0]",
+      "pause_markers": 2
+    },
+    {
+      "slide": 2,
+      "audio": "module10_slide_02.mp3",
+      "captions": "module10_slide_02.vtt",
+      "text": "Use this lesson interactively. Read the idea, predict the shape or result, run the example, and then change one value so you can compare the output.\n\n[pause=0.7]\n\nStart with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.\n\n[pause=0.7]\n\nChange one value, variable, or condition. Apply the pattern to a new example.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 3,
+      "audio": "module10_slide_03.mp3",
+      "captions": "module10_slide_03.vtt",
+      "text": "This slide is the roadmap for Module 10. Follow the progression from the basic structure to selection, transformation, and a small analytical workflow.\n\n[pause=0.7]\n\nCreate table-shaped data. Preview and understand columns. Choose columns and rows.\n\n[pause=0.7]\n\nCreate new columns. Summarize by category. Combine related tables.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 4,
+      "audio": "module10_slide_04.mp3",
+      "captions": "module10_slide_04.vtt",
+      "text": "This slide focuses on Create a DataFrame. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nA DataFrame is a table with column names. A list of dictionaries is a common way to create one. Create a small DataFrame\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 5,
+      "audio": "module10_slide_05.mp3",
+      "captions": "module10_slide_05.vtt",
+      "text": "This slide focuses on Inspect a DataFrame. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nBefore analysis, preview the data and check basic structure. Preview and inspect\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 6,
+      "audio": "module10_slide_06.mp3",
+      "captions": "module10_slide_06.vtt",
+      "text": "This slide focuses on Select columns and filter rows. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nPandas uses column names and conditions to select the part of the table you need. Select and filter\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 7,
+      "audio": "module10_slide_07.mp3",
+      "captions": "module10_slide_07.vtt",
+      "text": "This slide focuses on Create new columns. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nNew columns store calculated values or labels that help analysis. Add calculated columns\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 8,
+      "audio": "module10_slide_08.mp3",
+      "captions": "module10_slide_08.vtt",
+      "text": "This slide focuses on Group and summarize. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\ngroupby() summarizes data by category. Summarize by channel\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 9,
+      "audio": "module10_slide_09.mp3",
+      "captions": "module10_slide_09.vtt",
+      "text": "This slide focuses on Handle missing values. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nMissing values should be checked before analysis. Depending on the task, they may be filled, removed, or flagged. Find and fill missing values\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 10,
+      "audio": "module10_slide_10.mp3",
+      "captions": "module10_slide_10.vtt",
+      "text": "This slide focuses on Merge tables. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nMerging combines related tables using a shared key. Merge orders and customers\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 11,
+      "audio": "module10_slide_11.mp3",
+      "captions": "module10_slide_11.vtt",
+      "text": "This slide focuses on Mini pandas workflow. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nA typical workflow loads data, checks it, filters it, adds useful columns, and summarizes results. Complete small workflow\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 12,
+      "audio": "module10_slide_12.mp3",
+      "captions": "module10_slide_12.vtt",
+      "text": "This slide summarizes Module 10. Focus on the operations you should recognize and the situations where they make analytical work easier.\n\n[pause=0.7]\n\nBuild DataFrames from records. Use head, shape, and dtypes. Keep rows that match conditions.\n\n[pause=0.7]\n\nAdd calculated columns. Summarize by category. Combine related tables.\n\n[pause=1.0]",
+      "pause_markers": 3
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.447
+This slide focuses on Count values that meet a
+condition The goal is to understand
+
+00:00:05.461 --> 00:00:11.719
+the idea in plain language before connecting it to
+code or analytical use Flagging
+
+00:00:11.745 --> 00:00:17.340
+pattern A counter can summarize how many
+observations match a rule Start the counter
+
+00:00:17.353 --> 00:00:22.924
+at 0 Before running the example predict what the
+output should
+
+00:00:22.950 --> 00:00:28.703
+look like Run it in the browser inspect the result
+then change one value condition
+
+00:00:28.887 --> 00:00:35.389
+or input and run it again Pay attention to what
+changed and why Loop
+
+00:00:35.416 --> 00:00:41.076
+through each value If the rule is true add 1 Print
+the final
+
+00:00:41.102 --> 00:00:41.589
+count

@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.961
+This slide focuses on Generator expressions Start
+with the meaning of the idea then
+
+00:00:05.987 --> 00:00:11.798
+connect it to the example and the larger analytical
+workflow A generator
+
+00:00:11.825 --> 00:00:17.735
+expression produces values one at a time It can be
+useful for large data streams
+
+00:00:18.656 --> 00:00:24.415
+Use a generator expression Before running the
+example predict
+
+00:00:24.442 --> 00:00:30.563
+the output Run it in the browser inspect the result
+then modify one input expression
+
+00:00:30.786 --> 00:00:36.273
+or value and run it again Notice whether the shorter
+technique improves clarity or only
+
+00:00:36.286 --> 00:00:37.839
+makes the code harder to read

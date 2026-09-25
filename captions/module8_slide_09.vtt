@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.171
+This slide focuses on Keep settings in one place
+Start with the meaning of the
+
+00:00:05.197 --> 00:00:11.265
+idea then connect it to the example and the larger
+analytical workflow A
+
+00:00:11.278 --> 00:00:16.912
+configuration dictionary keeps important settings
+visible and easy to change Use
+
+00:00:16.939 --> 00:00:22.567
+a configuration dictionary Before running the
+example predict
+
+00:00:22.594 --> 00:00:28.715
+the output Run it in the browser inspect the result
+then modify one input expression
+
+00:00:28.938 --> 00:00:34.425
+or value and run it again Notice whether the shorter
+technique improves clarity or only
+
+00:00:34.438 --> 00:00:35.991
+makes the code harder to read

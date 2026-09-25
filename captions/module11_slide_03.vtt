@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.105
+This slide is the roadmap for Module 11 Follow how
+the workflow moves from individual
+
+00:00:06.132 --> 00:00:11.711
+operations toward a complete analytical process
+Connect DataFrame
+
+00:00:11.737 --> 00:00:17.687
+steps Create summary tables Convert wide data to
+long data
+
+00:00:19.431 --> 00:00:24.933
+Extract time features Calculate moving summaries
+Make
+
+00:00:24.946 --> 00:00:26.762
+reusable pandas workflows

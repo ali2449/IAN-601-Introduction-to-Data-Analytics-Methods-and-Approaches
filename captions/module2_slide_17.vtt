@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.855
+This slide focuses on break and continue change loop
+behavior The goal is to understand
+
+00:00:05.868 --> 00:00:11.929
+the idea in plain language before connecting it to
+code or analytical use Loop
+
+00:00:11.942 --> 00:00:17.142
+control Skip the rest of the current repetition and
+move to the next one Skip
+
+00:00:17.169 --> 00:00:22.804
+one value with continue Before running the example
+predict what
+
+00:00:22.830 --> 00:00:28.017
+the output should look like Run it in the browser
+inspect the result then change
+
+00:00:28.044 --> 00:00:33.596
+one value condition or input and run it again Pay
+attention to what changed and
+
+00:00:33.623 --> 00:00:40.562
+why The number 2 is skipped continue_example.py
+
+00:00:40.588 --> 00:00:41.969
+Exit early with break

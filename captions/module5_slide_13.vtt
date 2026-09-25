@@ -1,0 +1,24 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.605
+This slide focuses on Set operations Start with the
+meaning of the idea then
+
+00:00:05.632 --> 00:00:11.333
+connect it to the example and the larger analytical
+workflow Sets make
+
+00:00:11.346 --> 00:00:18.261
+it easy to compare groups Union intersection
+difference Before
+
+00:00:18.287 --> 00:00:23.435
+running the example predict what the output should
+look like Run it in the browser
+
+00:00:23.553 --> 00:00:28.645
+inspect the result then change one input key value
+or condition and run it again
+
+00:00:29.579 --> 00:00:31.448
+Focus on what changed and why

@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.710
+This slide focuses on Clean categories Start with
+what the operation changes in the
+
+00:00:05.724 --> 00:00:11.818
+data then connect that change to the analytical
+question Text categories
+
+00:00:11.844 --> 00:00:17.583
+often need case spacing and spelling cleanup
+Standardize category labels
+
+00:00:19.411 --> 00:00:25.084
+Before running the example predict the table summary
+or transformed output Run
+
+00:00:25.111 --> 00:00:30.242
+it in the browser and inspect the row count column
+values grouping dates missing values
+
+00:00:30.492 --> 00:00:35.334
+or flags that matter Then change one input and
+compare the result

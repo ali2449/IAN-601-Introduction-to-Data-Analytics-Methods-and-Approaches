@@ -1,0 +1,27 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.474
+This slide focuses on Readable code starts with
+names Start with the meaning of the
+
+00:00:05.500 --> 00:00:11.853
+idea then connect it to the example and the larger
+analytical workflow Names
+
+00:00:11.880 --> 00:00:17.606
+should describe the role of a value This makes code
+easier for future readers including
+
+00:00:17.632 --> 00:00:23.756
+you Use descriptive names Before running the example
+
+00:00:23.874 --> 00:00:29.640
+predict the output Run it in the browser inspect the
+result then modify one input
+
+00:00:29.837 --> 00:00:35.719
+expression or value and run it again Notice whether
+the shorter technique improves clarity
+
+00:00:35.732 --> 00:00:37.719
+or only makes the code harder to read

@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.882
+Welcome to Module 10 This module focuses on Pandas
+We
+
+00:00:05.895 --> 00:00:12.440
+will connect the new library tools to the Python
+foundations from earlier modules Pandas
+
+00:00:12.467 --> 00:00:18.045
+helps Python work with table-shaped data using
+DataFrames rows columns filters groups and
+
+00:00:18.072 --> 00:00:18.624
+joins

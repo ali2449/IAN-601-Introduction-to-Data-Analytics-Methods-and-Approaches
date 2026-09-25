@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.618
+This slide focuses on Inputs and target Start with
+the analytical question and the
+
+00:00:05.645 --> 00:00:11.379
+meaning of the output before focusing on the syntax
+Features are input
+
+00:00:11.406 --> 00:00:16.948
+columns The target is what the model learns to
+predict Separate
+
+00:00:16.974 --> 00:00:22.480
+X and y Before running the example predict the
+structure
+
+00:00:22.506 --> 00:00:28.416
+of the output Run it in the browser and inspect the
+features target split predictions
+
+00:00:28.574 --> 00:00:34.298
+evaluation result or external-style records Then
+change one input and compare
+
+00:00:34.324 --> 00:00:35.114
+what changes

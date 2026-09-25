@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.605
+This slide summarizes Module 11 Focus on the
+decisions and checks that make the
+
+00:00:05.632 --> 00:00:11.996
+workflow reliable and reusable Connect clean steps
+Create
+
+00:00:12.023 --> 00:00:17.635
+summary tables Reshape wide to long Create
+
+00:00:17.661 --> 00:00:23.533
+time features Summarize trends Reuse pandas
+workflows

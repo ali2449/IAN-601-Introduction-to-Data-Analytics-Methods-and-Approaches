@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.079
+This slide focuses on Boolean masks Start with the
+data structure and what the operation
+
+00:00:06.092 --> 00:00:11.728
+is supposed to accomplish before looking closely at
+the syntax A boolean
+
+00:00:11.754 --> 00:00:18.837
+mask keeps values that meet a condition Filter with
+a condition Before
+
+00:00:18.863 --> 00:00:24.418
+running the example predict the structure and output
+Run it in the browser inspect the
+
+00:00:24.445 --> 00:00:30.537
+values dimensions labels or summary then change one
+input and run it again Focus
+
+00:00:30.563 --> 00:00:34.603
+on how the operation changes the data rather than
+reading the code line by line

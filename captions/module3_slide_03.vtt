@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.539
+This slide is the roadmap for Module 3 It shows how
+the ideas progress and
+
+00:00:05.566 --> 00:00:11.382
+how the later examples build on the earlier concepts
+Define and call Create
+
+00:00:11.408 --> 00:00:18.108
+a reusable block with def Send values into a
+function Send
+
+00:00:18.121 --> 00:00:24.242
+results back to the program Make the purpose clear
+with docstrings Connect
+
+00:00:24.256 --> 00:00:26.150
+small functions into a workflow

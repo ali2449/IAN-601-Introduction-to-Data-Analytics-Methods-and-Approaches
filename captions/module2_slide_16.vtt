@@ -1,0 +1,27 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.868
+This slide focuses on while loops can model changing
+processes The goal is to understand
+
+00:00:05.882 --> 00:00:12.177
+the idea in plain language before connecting it to
+code or analytical use Threshold
+
+00:00:12.203 --> 00:00:18.885
+example Track a changing balance The loop continues
+until the balance reaches zero Before
+
+00:00:18.911 --> 00:00:24.085
+running the example predict what the output should
+look like Run it in the browser
+
+00:00:24.203 --> 00:00:30.085
+inspect the result then change one value condition
+or input and run it again Pay
+
+00:00:30.111 --> 00:00:35.640
+attention to what changed and why while_balance.py
+
+00:00:35.666 --> 00:00:38.442
+while_threshold.py Rule of thumb

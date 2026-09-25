@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.684
+This slide focuses on Predict a new case Start with
+the analytical question and the
+
+00:00:05.711 --> 00:00:11.320
+meaning of the output before focusing on the syntax
+After training a
+
+00:00:11.333 --> 00:00:16.849
+model can predict new rows with the same feature
+structure Make one prediction
+
+00:00:18.691 --> 00:00:24.272
+Before running the example predict the structure of
+the output Run it in the browser
+
+00:00:24.285 --> 00:00:29.930
+and inspect the features target split predictions
+evaluation result or external-style
+
+00:00:29.943 --> 00:00:34.154
+records Then change one input and compare what
+changes

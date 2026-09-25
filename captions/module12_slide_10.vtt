@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.105
+This slide summarizes Module 12 Focus on the
+decisions and checks that make the workflow
+
+00:00:06.132 --> 00:00:11.785
+reliable and reusable EDA uses summaries to
+understand what
+
+00:00:11.799 --> 00:00:19.050
+is in the data before formal analysis Create an EDA
+summary Before
+
+00:00:19.077 --> 00:00:24.658
+running the example predict the table summary or
+transformed output Run it in the
+
+00:00:24.672 --> 00:00:30.264
+browser and inspect the row count column values
+grouping dates missing values or flags
+
+00:00:30.290 --> 00:00:34.566
+that matter Then change one input and compare the
+result

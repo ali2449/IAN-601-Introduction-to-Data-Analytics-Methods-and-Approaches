@@ -1,0 +1,21 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.658
+This slide focuses on Variables inside functions are
+local Start with the meaning of
+
+00:00:05.684 --> 00:00:11.387
+the idea then connect it to the example and to
+analytical work A
+
+00:00:11.414 --> 00:00:16.956
+variable created inside a function usually belongs
+to that function call Local
+
+00:00:16.982 --> 00:00:23.035
+variable created inside the function body Outside
+code does not automatically
+
+00:00:23.061 --> 00:00:28.821
+see local names Return the clean way to send useful
+results out

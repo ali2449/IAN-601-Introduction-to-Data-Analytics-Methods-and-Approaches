@@ -1,0 +1,97 @@
+{
+  "prefix": "module11",
+  "voice": "en-US-GuyNeural",
+  "rate": "-5%",
+  "volume": "+0%",
+  "pitch": "+0Hz",
+  "caption_words": 15,
+  "slide_count": 12,
+  "slide_markers_found": true,
+  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "slides": [
+    {
+      "slide": 1,
+      "audio": "module11_slide_01.mp3",
+      "captions": "module11_slide_01.vtt",
+      "text": "Welcome to Module 11. This module focuses on Advanced Pandas. We will connect the techniques to realistic analytical workflows and careful interpretation.\n\n[pause=0.7]\n\nAdvanced pandas helps transform messy tables into analysis-ready summaries using chaining, reshaping, dates, windows, and reusable functions.\n\n[pause=1.0]",
+      "pause_markers": 2
+    },
+    {
+      "slide": 2,
+      "audio": "module11_slide_02.mp3",
+      "captions": "module11_slide_02.vtt",
+      "text": "Use this lesson interactively. Read the idea, predict the result, run the example, then change one input and compare the output.\n\n[pause=0.7]\n\nStart with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.\n\n[pause=0.7]\n\nChange one value, variable, or condition. Apply the pattern to a new example.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 3,
+      "audio": "module11_slide_03.mp3",
+      "captions": "module11_slide_03.vtt",
+      "text": "This slide is the roadmap for Module 11. Follow how the workflow moves from individual operations toward a complete analytical process.\n\n[pause=0.7]\n\nConnect DataFrame steps. Create summary tables. Convert wide data to long data.\n\n[pause=0.7]\n\nExtract time features. Calculate moving summaries. Make reusable pandas workflows.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 4,
+      "audio": "module11_slide_04.mp3",
+      "captions": "module11_slide_04.vtt",
+      "text": "This slide focuses on Method chaining. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nMethod chaining connects several DataFrame steps into one readable workflow. Filter, assign, group\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 5,
+      "audio": "module11_slide_05.mp3",
+      "captions": "module11_slide_05.vtt",
+      "text": "This slide focuses on Pivot tables. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nA pivot table summarizes numeric values across categories. Create a pivot table\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 6,
+      "audio": "module11_slide_06.mp3",
+      "captions": "module11_slide_06.vtt",
+      "text": "This slide focuses on Melt wide data into long data. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nLong format is often easier for analysis, plotting, and grouping.\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 7,
+      "audio": "module11_slide_07.mp3",
+      "captions": "module11_slide_07.vtt",
+      "text": "This slide focuses on Work with dates. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nDate columns can be converted to datetime and used to create month, weekday, or time-based summaries. Extract date features\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 8,
+      "audio": "module11_slide_08.mp3",
+      "captions": "module11_slide_08.vtt",
+      "text": "This slide focuses on Rolling summaries. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nA rolling calculation summarizes a moving window of rows. Calculate rolling average\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 9,
+      "audio": "module11_slide_09.mp3",
+      "captions": "module11_slide_09.vtt",
+      "text": "This slide focuses on Map categories. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nmap() replaces values using a dictionary. This is useful for readable labels or grouped categories.\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 10,
+      "audio": "module11_slide_10.mp3",
+      "captions": "module11_slide_10.vtt",
+      "text": "This slide focuses on Join checks. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nAfter a merge, check whether keys matched as expected. Use merge indicator\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 11,
+      "audio": "module11_slide_11.mp3",
+      "captions": "module11_slide_11.vtt",
+      "text": "This slide focuses on Reusable pandas function. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nA function can package common pandas steps so they can be reused safely. Summarize orders with a function\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 12,
+      "audio": "module11_slide_12.mp3",
+      "captions": "module11_slide_12.vtt",
+      "text": "This slide summarizes Module 11. Focus on the decisions and checks that make the workflow reliable and reusable.\n\n[pause=0.7]\n\nConnect clean steps. Create summary tables. Reshape wide to long.\n\n[pause=0.7]\n\nCreate time features. Summarize trends. Reuse pandas workflows.\n\n[pause=1.0]",
+      "pause_markers": 3
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.382
+Welcome to Module 4 This module focuses on Lists &
+Tuples We
+
+00:00:06.408 --> 00:00:11.961
+will organize multiple values with Python sequences
+and connect the examples to analytics work
+
+00:00:13.691 --> 00:00:18.427
+Lists and tuples help organize more than one value
+so Python can analyze a collection
+
+00:00:18.454 --> 00:00:19.664
+instead of a single item

@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.000
+This slide focuses on Train a simple classifier
+Start with the analytical question
+
+00:00:06.026 --> 00:00:11.701
+and the meaning of the output before focusing on the
+syntax A classifier
+
+00:00:11.727 --> 00:00:17.269
+learns patterns from features and predicts a
+category Train logistic regression
+
+00:00:19.099 --> 00:00:24.680
+Before running the example predict the structure of
+the output Run it in the browser
+
+00:00:24.693 --> 00:00:30.338
+and inspect the features target split predictions
+evaluation result or external-style
+
+00:00:30.351 --> 00:00:34.562
+records Then change one input and compare what
+changes

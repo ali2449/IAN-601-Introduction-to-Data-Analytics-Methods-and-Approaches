@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.908
+This slide summarizes Module 7 Focus on the patterns
+you should be able to explain
+
+00:00:05.921 --> 00:00:11.613
+and reuse after completing the examples Create lists
+and dictionaries
+
+00:00:11.626 --> 00:00:17.471
+clearly Rank records with custom keys Use zip and
+enumerate
+
+00:00:17.497 --> 00:00:23.170
+safely Check inputs before analysis Handle
+
+00:00:23.197 --> 00:00:28.065
+expected conversion problems Connect small reusable
+functions

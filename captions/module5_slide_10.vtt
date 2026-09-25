@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.605
+This slide focuses on Represent records with
+dictionaries Start with the meaning of the
+
+00:00:05.632 --> 00:00:11.697
+idea then connect it to the example and the larger
+analytical workflow A
+
+00:00:11.710 --> 00:00:17.305
+list of dictionaries works like a small table Each
+dictionary is one row and
+
+00:00:17.331 --> 00:00:24.477
+each key is like a column name Bridge to pandas List
+of dictionaries Before
+
+00:00:24.503 --> 00:00:29.651
+running the example predict what the output should
+look like Run it in the browser
+
+00:00:29.769 --> 00:00:34.861
+inspect the result then change one input key value
+or condition and run it again
+
+00:00:35.795 --> 00:00:37.664
+Focus on what changed and why

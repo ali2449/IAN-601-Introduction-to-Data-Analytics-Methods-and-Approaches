@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.434
+This slide is the learning path for Module 8 It
+shows how the topic progresses
+
+00:00:05.461 --> 00:00:11.060
+from foundational ideas to applied practice Use
+names that explain
+
+00:00:11.086 --> 00:00:17.049
+the data Write helpful comments and docstrings
+Reproducibility
+
+00:00:18.783 --> 00:00:24.575
+Control randomness with seeds Check important
+functions Record
+
+00:00:24.601 --> 00:00:25.627
+useful events

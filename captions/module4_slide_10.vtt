@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.974
+This slide focuses on Create and unpack a tuple
+Start with what the structure represents
+
+00:00:06.197 --> 00:00:12.561
+then connect that idea to the example on the slide A
+tuple uses parentheses
+
+00:00:13.498 --> 00:00:18.235
+It is ordered like a list but it is not designed to
+be changed Use
+
+00:00:18.261 --> 00:00:24.708
+a tuple when Before running the code predict the
+output Run
+
+00:00:24.734 --> 00:00:29.760
+the example in the browser inspect the result then
+change one item index or value
+
+00:00:29.787 --> 00:00:35.326
+and run it again Notice which operations change the
+original list and which simply read
+
+00:00:35.353 --> 00:00:35.760
+from it

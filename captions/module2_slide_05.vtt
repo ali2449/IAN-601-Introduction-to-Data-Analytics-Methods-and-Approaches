@@ -1,0 +1,27 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.671
+This slide focuses on Code compare values The goal
+is to understand the idea
+
+00:00:05.684 --> 00:00:11.722
+in plain language before connecting it to code or
+analytical use Executable
+
+00:00:11.749 --> 00:00:18.021
+example Compare two values A comparison produces
+True or False Before
+
+00:00:18.047 --> 00:00:23.221
+running the example predict what the output should
+look like Run it in the browser
+
+00:00:23.339 --> 00:00:29.221
+inspect the result then change one value condition
+or input and run it again Pay
+
+00:00:29.247 --> 00:00:35.078
+attention to what changed and why compare_values.py
+
+00:00:35.105 --> 00:00:36.552
+What happens Why it matters

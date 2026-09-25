@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.618
+This slide focuses on Validate data before analysis
+Start with the meaning of the
+
+00:00:05.645 --> 00:00:11.839
+idea then connect it to the example and the larger
+analytical workflow Good
+
+00:00:11.866 --> 00:00:17.553
+code checks for common data problems before
+calculating results Validate numeric
+
+00:00:17.579 --> 00:00:23.910
+inputs Before running the example predict the output
+Run
+
+00:00:23.937 --> 00:00:29.068
+it in the browser inspect the result then modify one
+input expression or value and
+
+00:00:29.095 --> 00:00:34.555
+run it again Notice whether the shorter technique
+improves clarity or only makes the code
+
+00:00:34.581 --> 00:00:35.463
+harder to read

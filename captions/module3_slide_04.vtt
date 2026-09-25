@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.592
+This slide focuses on Why functions matter in
+analytics Start with the meaning of the
+
+00:00:05.618 --> 00:00:11.432
+idea then connect it to the example and to
+analytical work Without
+
+00:00:11.459 --> 00:00:16.974
+functions repeated logic is copied again and again
+With functions the logic
+
+00:00:17.001 --> 00:00:23.251
+has one clear home Less repetition write the
+calculation once Clearer
+
+00:00:23.264 --> 00:00:29.071
+names describe the purpose of each task Easier
+changes update
+
+00:00:29.098 --> 00:00:35.824
+the function instead of many copies Better testing
+check a small unit of work Same
+
+00:00:35.837 --> 00:00:37.955
+formula repeated in many places

@@ -1,110 +1,20 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:02.037
-This slide shows the learning path for
+00:00:00.103 --> 00:00:05.658
+This slide is the roadmap for Module 6 It shows how
+the concepts progress and
 
-00:00:02.063 --> 00:00:05.658
-Module 6 We will begin with imports
+00:00:05.684 --> 00:00:11.297
+how the later examples build on the earlier ones Use
+built-in modules
 
-00:00:06.579 --> 00:00:08.724
-An import allows Python to use code
+00:00:11.324 --> 00:00:17.010
+and aliases Understand why libraries matter Know
+where names
 
-00:00:08.750 --> 00:00:11.342
-that is stored somewhere else We will
+00:00:17.037 --> 00:00:23.024
+come from Create blueprints for objects Attach
+actions
 
-00:00:11.368 --> 00:00:13.513
-start with modules that are already included
-
-00:00:13.539 --> 00:00:16.355
-with Python such as math random datetime
-
-00:00:16.539 --> 00:00:19.658
-and statistics Next we will look at
-
-00:00:19.684 --> 00:00:22.460
-how to create our own module This
-
-00:00:22.487 --> 00:00:24.263
-is an important step because it shows
-
-00:00:24.289 --> 00:00:26.750
-how one Python file can provide reusable
-
-00:00:26.776 --> 00:00:30.355
-functions to another Python file After that
-
-00:00:30.579 --> 00:00:33.645
-we will discuss packages A package is
-
-00:00:33.671 --> 00:00:36.329
-a folder that groups related modules together
-
-00:00:37.263 --> 00:00:39.513
-We will also distinguish between a module
-
-00:00:39.711 --> 00:00:42.684
-a package and a library This will
-
-00:00:42.697 --> 00:00:44.513
-prepare you for later modules when we
-
-00:00:44.526 --> 00:00:47.053
-begin using larger tools such as NumPy
-
-00:00:47.079 --> 00:00:50.592
-and Pandas Then we move into object-oriented
-
-00:00:50.618 --> 00:00:55.092
-programming We will introduce classes objects
-attributes
-
-00:00:55.211 --> 00:00:58.158
-methods and the word self We will
-
-00:00:58.184 --> 00:01:01.579
-keep these ideas simple and practical You
-
-00:01:01.592 --> 00:01:03.303
-will also see how one class can
-
-00:01:03.329 --> 00:01:07.316
-create multiple objects For example one Product
-
-00:01:07.342 --> 00:01:09.539
-class can create a laptop object a
-
-00:01:09.553 --> 00:01:12.395
-monitor object and many other product objects
-
-00:01:13.316 --> 00:01:15.434
-Each object can store its own values
-
-00:01:15.461 --> 00:01:18.882
-while using the same class definition Finally
-
-00:01:19.092 --> 00:01:22.092
-we will compare functions dictionaries modules and
-
-00:01:22.118 --> 00:01:24.750
-classes The goal is to help you
-
-00:01:24.776 --> 00:01:26.987
-decide which structure is appropriate for a
-
-00:01:27.013 --> 00:01:30.289
-particular task The key idea for the
-
-00:01:30.316 --> 00:01:33.895
-entire module is organization We are learning
-
-00:01:33.921 --> 00:01:35.421
-how to give related code a clear
-
-00:01:35.447 --> 00:01:37.408
-home so that an analytics project can
-
-00:01:37.421 --> 00:01:39.658
-grow without becoming one large and confusing
-
-00:01:39.671 --> 00:01:40.132
-script
+00:00:23.050 --> 00:00:25.866
+to data Analytics class

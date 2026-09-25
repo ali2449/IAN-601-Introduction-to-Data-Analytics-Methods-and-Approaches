@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.645
+This slide focuses on Why NumPy matters Start with
+the data structure and what
+
+00:00:05.671 --> 00:00:11.603
+the operation is supposed to accomplish before
+looking closely at the syntax A
+
+00:00:11.630 --> 00:00:17.553
+Python list can store many values A NumPy array is
+designed for fast numeric
+
+00:00:17.580 --> 00:00:17.961
+work

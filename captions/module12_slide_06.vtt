@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.829
+This slide focuses on Find duplicate records Start
+with what the operation changes
+
+00:00:05.855 --> 00:00:11.730
+in the data then connect that change to the
+analytical question Duplicates
+
+00:00:11.757 --> 00:00:17.325
+can inflate counts and totals Check before
+summarizing Detect
+
+00:00:17.351 --> 00:00:22.999
+and remove duplicates Before running the example
+predict the table
+
+00:00:23.144 --> 00:00:28.765
+summary or transformed output Run it in the browser
+and inspect the row count column
+
+00:00:28.791 --> 00:00:34.410
+values grouping dates missing values or flags that
+matter Then change
+
+00:00:34.436 --> 00:00:36.462
+one input and compare the result

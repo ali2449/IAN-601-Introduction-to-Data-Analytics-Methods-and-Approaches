@@ -1,101 +1,21 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:01.734
-A module is one of the simplest
+00:00:00.103 --> 00:00:06.013
+This slide focuses on Import built-in modules Start
+with the meaning of the idea then
 
-00:00:01.747 --> 00:00:05.263
-ways to organize Python code In practical
+00:00:06.039 --> 00:00:11.938
+connect it to the example and the larger analytical
+workflow Use built-in
 
-00:00:05.289 --> 00:00:07.487
-terms a module is usually a Python
+00:00:11.965 --> 00:00:17.572
+modules Before running the example predict what the
+output should
 
-00:00:07.513 --> 00:00:09.447
-file with a dot P Y extension
+00:00:17.598 --> 00:00:22.903
+look like Run it in the browser inspect the result
+then change one input key
 
-00:00:10.382 --> 00:00:13.513
-That file can contain functions variables constants
-
-00:00:13.645 --> 00:00:15.711
-or classes that another Python file can
-
-00:00:15.737 --> 00:00:19.066
-use Python also comes with many built-in
-
-00:00:19.092 --> 00:00:22.697
-modules One example is the math module
-
-00:00:23.632 --> 00:00:26.000
-If we write import math Python makes
-
-00:00:26.026 --> 00:00:28.289
-the tools inside the math module available
-
-00:00:28.316 --> 00:00:31.487
-to our program After importing the module
-
-00:00:31.737 --> 00:00:33.750
-we can access its contents by using
-
-00:00:33.776 --> 00:00:35.829
-the module name followed by a dot
-
-00:00:36.763 --> 00:00:39.105
-For example math dot square root gives
-
-00:00:39.132 --> 00:00:40.921
-us access to the square root function
-
-00:00:40.947 --> 00:00:43.895
-stored inside the math module If we
-
-00:00:43.921 --> 00:00:46.289
-calculate math dot square root of eighty-one
-
-00:00:46.487 --> 00:00:49.276
-the result is nine A useful way
-
-00:00:49.303 --> 00:00:50.855
-to think about a module is as
-
-00:00:50.882 --> 00:00:54.118
-a toolbox The module is the toolbox
-
-00:00:54.342 --> 00:00:55.934
-and the functions inside it are the
-
-00:00:55.961 --> 00:00:59.303
-tools Importing the module is like bringing
-
-00:00:59.329 --> 00:01:02.579
-the toolbox into your workspace Then you
-
-00:01:02.605 --> 00:01:05.500
-choose the tool you need This approach
-
-00:01:05.513 --> 00:01:07.066
-is useful because we do not need
-
-00:01:07.079 --> 00:01:11.237
-to rewrite common functionality Python already
-provides
-
-00:01:11.250 --> 00:01:14.197
-modules for mathematics random values dates and
-
-00:01:14.224 --> 00:01:17.171
-times statistics file handling and many other
-
-00:01:17.197 --> 00:01:20.500
-tasks Later we will also create our
-
-00:01:20.526 --> 00:01:25.079
-own module The same idea applies We place
-
-00:01:25.105 --> 00:01:27.487
-reusable code in a separate Python file
-
-00:01:27.500 --> 00:01:28.960
-and then import that file when we
-
-00:01:28.974 --> 00:01:29.895
-need its functions
+00:00:23.101 --> 00:00:28.088
+value or condition and run it again Focus on what
+changed and why

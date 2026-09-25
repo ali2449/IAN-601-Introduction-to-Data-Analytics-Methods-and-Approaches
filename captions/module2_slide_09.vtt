@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.684
+This slide focuses on Combine rules with Boolean
+logic The goal is to understand the
+
+00:00:05.711 --> 00:00:11.602
+idea in plain language before connecting it to code
+or analytical use and
+
+00:00:11.628 --> 00:00:19.101
+or not Both conditions must be true At least one
+condition must be true Before
+
+00:00:19.127 --> 00:00:24.301
+running the example predict what the output should
+look like Run it in the browser
+
+00:00:24.419 --> 00:00:30.301
+inspect the result then change one value condition
+or input and run it again Pay
+
+00:00:30.327 --> 00:00:37.016
+attention to what changed and why Reverse a Boolean
+result Logical
+
+00:00:37.043 --> 00:00:40.950
+operators in a business rule Build richer rules by
+combining conditions

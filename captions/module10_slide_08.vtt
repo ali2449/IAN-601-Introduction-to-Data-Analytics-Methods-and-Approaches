@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.526
+This slide focuses on Group and summarize Start with
+the data structure and what the
+
+00:00:05.553 --> 00:00:11.708
+operation is supposed to accomplish before looking
+closely at the syntax groupby
+
+00:00:11.931 --> 00:00:18.549
+summarizes data by category Summarize by channel
+Before
+
+00:00:18.575 --> 00:00:24.130
+running the example predict the structure and output
+Run it in the browser inspect the
+
+00:00:24.157 --> 00:00:30.249
+values dimensions labels or summary then change one
+input and run it again Focus
+
+00:00:30.275 --> 00:00:34.315
+on how the operation changes the data rather than
+reading the code line by line

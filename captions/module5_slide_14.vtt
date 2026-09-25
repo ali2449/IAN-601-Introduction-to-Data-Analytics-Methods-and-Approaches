@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.013
+This slide focuses on Membership testing Start with
+the meaning of the idea then connect
+
+00:00:06.026 --> 00:00:11.675
+it to the example and the larger analytical workflow
+The in operator
+
+00:00:11.688 --> 00:00:17.494
+checks whether a value exists in a collection Sets
+are useful for membership rules
+
+00:00:18.415 --> 00:00:23.929
+Check allowed categories Before running the example
+predict
+
+00:00:23.955 --> 00:00:28.905
+what the output should look like Run it in the
+browser inspect the result then
+
+00:00:28.932 --> 00:00:34.432
+change one input key value or condition and run it
+again Focus on what
+
+00:00:34.445 --> 00:00:35.432
+changed and why

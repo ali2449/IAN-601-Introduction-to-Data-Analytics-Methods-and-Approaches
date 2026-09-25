@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.671
+This slide focuses on elif handles several
+categories The goal is to understand the
+
+00:00:05.697 --> 00:00:11.920
+idea in plain language before connecting it to code
+or analytical use Multi-way
+
+00:00:11.946 --> 00:00:17.383
+decision Use elif when there are multiple rules
+Python checks the rules from top to
+
+00:00:17.396 --> 00:00:24.669
+bottom and stops at the first true condition Score
+category with elif Before
+
+00:00:24.695 --> 00:00:29.869
+running the example predict what the output should
+look like Run it in the browser
+
+00:00:29.987 --> 00:00:35.869
+inspect the result then change one value condition
+or input and run it again Pay
+
+00:00:35.895 --> 00:00:41.687
+attention to what changed and why The order of
+thresholds is important
+
+00:00:42.611 --> 00:00:46.189
+if_elif_else.py Order matters

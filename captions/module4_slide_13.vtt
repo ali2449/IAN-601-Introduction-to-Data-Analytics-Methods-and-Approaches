@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.092
+This slide focuses on Patient-age list management
+Start with what the structure represents
+
+00:00:06.316 --> 00:00:11.905
+then connect that idea to the example on the slide
+Lists are useful when
+
+00:00:11.931 --> 00:00:17.513
+a collection grows as new records arrive Add and
+summarize generic patient ages
+
+00:00:19.363 --> 00:00:24.984
+Before running the code predict the output Run the
+example in the browser inspect
+
+00:00:24.997 --> 00:00:30.628
+the result then change one item index or value and
+run it again Notice which
+
+00:00:30.655 --> 00:00:34.128
+operations change the original list and which simply
+read from it

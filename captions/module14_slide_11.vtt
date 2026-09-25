@@ -1,0 +1,21 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.750
+This slide focuses on Avoid leakage Start with the
+analytical question and the meaning
+
+00:00:05.763 --> 00:00:11.324
+of the output before focusing on the syntax Data
+leakage happens when
+
+00:00:11.350 --> 00:00:17.208
+training uses information that would not be
+available at prediction time Split data before
+
+00:00:17.234 --> 00:00:23.824
+final evaluation Do not let the target leak into
+features Clean
+
+00:00:23.850 --> 00:00:29.129
+training data and test data consistently Report
+limitations clearly

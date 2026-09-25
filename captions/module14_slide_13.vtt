@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.697
+This slide summarizes Module 14 Focus on the main
+analytical decisions
+
+00:00:05.829 --> 00:00:12.168
+interpretation limits and reusable workflow patterns
+Load CSV-style
+
+00:00:12.181 --> 00:00:18.158
+data Separate features and target Evaluate on unseen
+rows
+
+00:00:19.911 --> 00:00:26.176
+Fit a classifier Use accuracy and confusion matrix
+Interpret
+
+00:00:26.203 --> 00:00:27.111
+responsibly

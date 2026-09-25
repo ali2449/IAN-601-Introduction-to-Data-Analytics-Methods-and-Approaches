@@ -1,140 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:02.537
-This code demonstrates the idea of creating
+00:00:00.103 --> 00:00:05.500
+This slide focuses on Add behavior with methods
+Start with the meaning of the idea
 
-00:00:02.550 --> 00:00:04.866
-and importing your own module directly inside
+00:00:05.724 --> 00:00:11.553
+then connect it to the example and the larger
+analytical workflow A method
 
-00:00:04.879 --> 00:00:08.342
-the browser Because this interactive lesson runs
+00:00:11.579 --> 00:00:17.832
+can update the object This lets data and behavior
+stay together Update
 
-00:00:08.355 --> 00:00:11.145
-in a browser-based Python environment the example
+00:00:17.858 --> 00:00:23.404
+an object with a method Before running the example
+predict what
 
-00:00:11.171 --> 00:00:13.263
-first creates the contents of a module
+00:00:23.430 --> 00:00:28.525
+the output should look like Run it in the browser
+inspect the result then change
 
-00:00:13.289 --> 00:00:16.882
-as text That text contains two functions
+00:00:28.551 --> 00:00:34.170
+one input key value or condition and run it again
+Focus on what changed
 
-00:00:17.803 --> 00:00:21.197
-The first function is calculate profit It
-
-00:00:21.224 --> 00:00:23.842
-receives sales and costs then returns sales
-
-00:00:23.868 --> 00:00:27.303
-minus costs The second function is profit
-
-00:00:27.329 --> 00:00:31.039
-margin It first calls calculate profit then
-
-00:00:31.066 --> 00:00:34.092
-divides the profit by sales This is
-
-00:00:34.118 --> 00:00:36.395
-a good example of one function reusing
-
-00:00:36.421 --> 00:00:39.618
-another function Next the code opens a
-
-00:00:39.645 --> 00:00:41.921
-file named calculations dot P Y in
-
-00:00:41.947 --> 00:00:43.724
-write mode and writes the module text
-
-00:00:43.750 --> 00:00:46.500
-into that file At this point a
-
-00:00:46.526 --> 00:00:48.724
-real Python module file exists in the
-
-00:00:48.737 --> 00:00:52.632
-browser's temporary Python environment The code then
-
-00:00:52.645 --> 00:00:55.895
-imports importlib and imports the calculations
-module
-
-00:00:56.829 --> 00:00:58.895
-Importlib dot reload is used so that
-
-00:00:58.921 --> 00:01:00.487
-if you edit the module text and
-
-00:01:00.513 --> 00:01:02.737
-run the cell again Python reloads the
-
-00:01:02.763 --> 00:01:06.132
-updated version After that sales is set
-
-00:01:06.158 --> 00:01:08.079
-to fifteen hundred and costs is set
-
-00:01:08.105 --> 00:01:11.250
-to eleven hundred The first print statement
-
-00:01:11.276 --> 00:01:15.447
-calls calculations dot calculate profit The expected
-
-00:01:15.474 --> 00:01:18.579
-profit is four hundred The second print
-
-00:01:18.605 --> 00:01:22.645
-statement calls calculations dot profit margin Four
-
-00:01:22.658 --> 00:01:25.276
-hundred divided by fifteen hundred is approximately
-
-00:01:25.303 --> 00:01:27.342
-zero point two six seven when rounded
-
-00:01:27.368 --> 00:01:30.526
-to three decimal places Click Run now
-
-00:01:30.539 --> 00:01:33.342
-and check the terminal output You should
-
-00:01:33.368 --> 00:01:35.513
-see Profit followed by four hundred and
-
-00:01:35.539 --> 00:01:38.289
-Profit margin followed by approximately zero point
-
-00:01:38.303 --> 00:01:41.197
-two six seven Now change sales to
-
-00:01:41.211 --> 00:01:43.566
-two thousand and costs to sixteen hundred
-
-00:01:44.487 --> 00:01:47.342
-Run the code again The profit is
-
-00:01:47.368 --> 00:01:49.618
-still four hundred but the profit margin
-
-00:01:49.632 --> 00:01:51.434
-changes because four hundred is now a
-
-00:01:51.447 --> 00:01:54.750
-smaller percentage of total sales This is
-
-00:01:54.776 --> 00:01:58.053
-an important idea A module lets us
-
-00:01:58.079 --> 00:02:01.118
-separate reusable formulas from the main analysis
-
-00:02:02.039 --> 00:02:04.500
-In a real project calculations dot P
-
-00:02:04.526 --> 00:02:06.013
-Y and main dot P Y would
-
-00:02:06.039 --> 00:02:08.224
-usually be separate files in the project
-
-00:02:08.250 --> 00:02:08.697
-folder
+00:00:34.196 --> 00:00:34.736
+and why

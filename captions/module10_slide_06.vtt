@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.684
+This slide focuses on Select columns and filter rows
+Start with the data structure
+
+00:00:05.697 --> 00:00:12.266
+and what the operation is supposed to accomplish
+before looking closely at the syntax Pandas
+
+00:00:12.292 --> 00:00:17.624
+uses column names and conditions to select the part
+of the table you need Select
+
+00:00:17.637 --> 00:00:23.610
+and filter Before running the example predict the
+structure and output
+
+00:00:24.547 --> 00:00:29.705
+Run it in the browser inspect the values dimensions
+labels or summary then change one
+
+00:00:29.718 --> 00:00:34.863
+input and run it again Focus on how the operation
+changes the data rather than
+
+00:00:34.889 --> 00:00:36.403
+reading the code line by line

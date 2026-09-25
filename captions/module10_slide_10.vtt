@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.882
+This slide focuses on Merge tables Start with the
+data structure and what the operation
+
+00:00:05.895 --> 00:00:11.933
+is supposed to accomplish before looking closely at
+the syntax Merging combines
+
+00:00:11.946 --> 00:00:19.053
+related tables using a shared key Merge orders and
+customers Before
+
+00:00:19.079 --> 00:00:24.634
+running the example predict the structure and output
+Run it in the browser inspect the
+
+00:00:24.661 --> 00:00:30.753
+values dimensions labels or summary then change one
+input and run it again Focus
+
+00:00:30.779 --> 00:00:34.819
+on how the operation changes the data rather than
+reading the code line by line

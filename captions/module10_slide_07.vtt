@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.487
+This slide focuses on Create new columns Start with
+the data structure and what the
+
+00:00:05.513 --> 00:00:11.397
+operation is supposed to accomplish before looking
+closely at the syntax New
+
+00:00:11.423 --> 00:00:17.176
+columns store calculated values or labels that help
+analysis Add calculated
+
+00:00:17.202 --> 00:00:23.034
+columns Before running the example predict the
+structure and output
+
+00:00:23.971 --> 00:00:29.129
+Run it in the browser inspect the values dimensions
+labels or summary then change one
+
+00:00:29.142 --> 00:00:34.287
+input and run it again Focus on how the operation
+changes the data rather than
+
+00:00:34.313 --> 00:00:35.827
+reading the code line by line

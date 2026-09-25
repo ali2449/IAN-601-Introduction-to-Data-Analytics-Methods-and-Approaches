@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.842
+This slide focuses on Read external-style data Start
+with the analytical question
+
+00:00:05.868 --> 00:00:11.585
+and the meaning of the output before focusing on the
+syntax Many analytics
+
+00:00:11.612 --> 00:00:17.351
+projects begin by reading data from a CSV file In
+this browser example the
+
+00:00:17.377 --> 00:00:24.381
+CSV is stored as text Read CSV text with pandas
+Before
+
+00:00:24.407 --> 00:00:29.634
+running the example predict the structure of the
+output Run it in the browser and
+
+00:00:29.660 --> 00:00:35.186
+inspect the features target split predictions
+evaluation result or external-style
+
+00:00:35.199 --> 00:00:39.410
+records Then change one input and compare what
+changes

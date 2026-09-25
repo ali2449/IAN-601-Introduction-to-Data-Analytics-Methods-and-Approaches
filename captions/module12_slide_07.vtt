@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.658
+This slide focuses on Convert data types Start with
+what the operation changes in
+
+00:00:05.684 --> 00:00:11.269
+the data then connect that change to the analytical
+question Numbers
+
+00:00:11.295 --> 00:00:17.350
+stored as text cannot be analyzed correctly until
+converted Convert text to numeric
+
+00:00:19.171 --> 00:00:24.844
+Before running the example predict the table summary
+or transformed output Run
+
+00:00:24.871 --> 00:00:30.002
+it in the browser and inspect the row count column
+values grouping dates missing values
+
+00:00:30.252 --> 00:00:35.094
+or flags that matter Then change one input and
+compare the result

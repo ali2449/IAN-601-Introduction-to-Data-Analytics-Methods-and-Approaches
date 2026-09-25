@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.645
+This slide focuses on Inspect a DataFrame Start with
+the data structure and what the
+
+00:00:05.671 --> 00:00:11.683
+operation is supposed to accomplish before looking
+closely at the syntax Before
+
+00:00:11.709 --> 00:00:17.278
+analysis preview the data and check basic structure
+Preview and inspect
+
+00:00:19.123 --> 00:00:25.046
+Before running the example predict the structure and
+output Run it in the browser inspect
+
+00:00:25.059 --> 00:00:31.257
+the values dimensions labels or summary then change
+one input and run it again Focus
+
+00:00:31.283 --> 00:00:35.323
+on how the operation changes the data rather than
+reading the code line by line

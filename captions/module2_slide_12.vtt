@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.710
+This slide focuses on range creates a simple count
+The goal is to understand the
+
+00:00:05.737 --> 00:00:11.705
+idea in plain language before connecting it to code
+or analytical use Known
+
+00:00:11.731 --> 00:00:17.326
+repetitions Use range when you want to repeat a
+known number of times Repeat with
+
+00:00:17.339 --> 00:00:22.852
+range Before running the example predict what the
+output should
+
+00:00:22.878 --> 00:00:28.631
+look like Run it in the browser inspect the result
+then change one value condition
+
+00:00:28.815 --> 00:00:35.396
+or input and run it again Pay attention to what
+changed and why Notice
+
+00:00:35.423 --> 00:00:41.780
+that range 5 starts at 0 and stops before 5
+range_loop.py
+
+00:00:41.807 --> 00:00:43.583
+Control Flow & Decision Making

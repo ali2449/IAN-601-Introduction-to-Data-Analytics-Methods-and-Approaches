@@ -1,143 +1,25 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:01.629
-Now we will run our first code
+00:00:00.103 --> 00:00:06.000
+This slide focuses on Use aliases for readability
+Start with the meaning of the idea
 
-00:00:01.642 --> 00:00:05.026
-example for this module This cell imports
+00:00:06.224 --> 00:00:11.728
+then connect it to the example and the larger
+analytical workflow An
 
-00:00:05.053 --> 00:00:08.579
-three tools from Python's standard library The
+00:00:11.754 --> 00:00:16.638
+alias is a shorter name for a module It makes code
+easier to type and
 
-00:00:08.592 --> 00:00:11.868
-first line imports the math module The
+00:00:16.665 --> 00:00:22.185
+read Before running the example predict what the
+output should look
 
-00:00:11.895 --> 00:00:15.329
-second line imports the random module The
+00:00:22.212 --> 00:00:27.912
+like Run it in the browser inspect the result then
+change one input key value
 
-00:00:15.355 --> 00:00:17.368
-third line imports only the date class
-
-00:00:17.395 --> 00:00:20.421
-from the datetime module Notice that the
-
-00:00:20.447 --> 00:00:22.974
-third import uses a slightly different style
-
-00:00:23.908 --> 00:00:26.461
-Instead of importing the entire datetime module
-
-00:00:26.711 --> 00:00:29.658
-we say from datetime import date This
-
-00:00:29.671 --> 00:00:31.526
-gives us direct access to date without
-
-00:00:31.539 --> 00:00:34.961
-writing datetime dot date every time Next
-
-00:00:35.224 --> 00:00:37.408
-the variable number is assigned the value
-
-00:00:37.434 --> 00:00:41.026
-eighty-one The program then calculates the square
-
-00:00:41.053 --> 00:00:42.895
-root by calling math dot square root
-
-00:00:42.908 --> 00:00:44.658
-and stores the result in a variable
-
-00:00:44.684 --> 00:00:47.803
-named root The next line uses random
-
-00:00:47.829 --> 00:00:51.053
-dot sample It chooses three values from
-
-00:00:51.066 --> 00:00:53.487
-a range of identification numbers between one
-
-00:00:53.513 --> 00:00:56.645
-thousand and one thousand nine Because this
-
-00:00:56.671 --> 00:00:58.776
-is random your result may be different
-
-00:00:58.789 --> 00:01:01.303
-each time you run the cell The
-
-00:01:01.329 --> 00:01:03.289
-program then uses date dot today to
-
-00:01:03.316 --> 00:01:05.697
-get today's date from the computer environment
-
-00:01:06.618 --> 00:01:09.645
-Finally the print statements display four results
-
-00:01:10.566 --> 00:01:12.211
-The first should show a square root
-
-00:01:12.237 --> 00:01:15.316
-of nine point zero The second displays
-
-00:01:15.342 --> 00:01:17.737
-pi rounded to three decimal places which
-
-00:01:17.763 --> 00:01:19.882
-should be approximately three point one four
-
-00:01:19.895 --> 00:01:23.500
-two The third displays three randomly selected
-
-00:01:23.526 --> 00:01:27.579
-identification numbers The final line displays
-today's
-
-00:01:27.592 --> 00:01:30.224
-date Go ahead and click the Run
-
-00:01:30.237 --> 00:01:33.184
-button now If Python is loading for
-
-00:01:33.197 --> 00:01:35.224
-the first time wait a few seconds
-
-00:01:36.158 --> 00:01:38.197
-Then look at the terminal output below
-
-00:01:38.224 --> 00:01:41.210
-the code Pay attention to the random
-
-00:01:41.237 --> 00:01:44.487
-sample Run the cell a second time
-
-00:01:45.395 --> 00:01:47.513
-The square root and rounded pi should remain
-
-00:01:47.539 --> 00:01:50.290
-the same but the sample identification numbers
-
-00:01:50.316 --> 00:01:53.776
-may change For a small experiment change
-
-00:01:53.803 --> 00:01:55.711
-the number from eighty-one to one hundred
-
-00:01:55.737 --> 00:02:00.382
-forty-four Run the cell again The square root
-
-00:02:00.408 --> 00:02:03.276
-should now be twelve point zero This
-
-00:02:03.303 --> 00:02:07.382
-example demonstrates an important idea By importing
-
-00:02:07.408 --> 00:02:10.553
-standard-library modules we can use reliable tools
-
-00:02:10.579 --> 00:02:12.908
-that already exist instead of writing everything
-
-00:02:12.934 --> 00:02:13.553
-ourselves
+00:00:28.122 --> 00:00:32.504
+or condition and run it again Focus on what changed
+and why

@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.618
+This slide focuses on Indexing and slicing Start
+with the data structure and what the
+
+00:00:05.645 --> 00:00:12.014
+operation is supposed to accomplish before looking
+closely at the syntax NumPy
+
+00:00:12.041 --> 00:00:18.793
+uses zero-based indexing like Python lists Slices
+select ranges Select
+
+00:00:18.820 --> 00:00:24.417
+array values Before running the example predict the
+structure and
+
+00:00:24.444 --> 00:00:30.078
+output Run it in the browser inspect the values
+dimensions labels or summary
+
+00:00:30.249 --> 00:00:35.328
+then change one input and run it again Focus on how
+the operation changes the
+
+00:00:35.354 --> 00:00:37.723
+data rather than reading the code line by line

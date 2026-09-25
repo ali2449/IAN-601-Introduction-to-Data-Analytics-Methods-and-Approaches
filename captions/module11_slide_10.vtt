@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.697
+This slide focuses on Join checks Start with what
+the operation changes in the data
+
+00:00:06.000 --> 00:00:11.692
+then connect that change to the analytical question
+After a merge check
+
+00:00:11.718 --> 00:00:18.186
+whether keys matched as expected Use merge indicator
+Before
+
+00:00:18.213 --> 00:00:23.794
+running the example predict the table summary or
+transformed output Run it in the
+
+00:00:23.808 --> 00:00:29.400
+browser and inspect the row count column values
+grouping dates missing values or flags
+
+00:00:29.426 --> 00:00:33.702
+that matter Then change one input and compare the
+result

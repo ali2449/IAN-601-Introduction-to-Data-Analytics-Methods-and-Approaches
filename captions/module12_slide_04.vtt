@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.776
+This slide focuses on Create a messy dataset Start
+with what the operation changes
+
+00:00:05.803 --> 00:00:11.395
+in the data then connect that change to the
+analytical question Messy
+
+00:00:11.421 --> 00:00:17.132
+data can include missing values duplicate rows
+inconsistent labels and values stored as text
+
+00:00:18.056 --> 00:00:23.686
+Build a small messy DataFrame Before running the
+example predict
+
+00:00:23.712 --> 00:00:29.070
+the table summary or transformed output Run it in
+the browser and inspect the row
+
+00:00:29.097 --> 00:00:35.254
+count column values grouping dates missing values or
+flags that matter Then
+
+00:00:35.281 --> 00:00:37.662
+change one input and compare the result

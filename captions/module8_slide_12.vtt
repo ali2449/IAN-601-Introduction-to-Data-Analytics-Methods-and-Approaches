@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.803
+This slide summarizes Module 8 Focus on the patterns
+you should be able to explain
+
+00:00:05.816 --> 00:00:11.728
+and reuse after completing the examples Use clear
+names and structure
+
+00:00:12.664 --> 00:00:18.866
+Write useful docstrings Reproducibility Control
+
+00:00:18.892 --> 00:00:24.461
+randomness with seeds Use small checks for functions
+Track what
+
+00:00:24.487 --> 00:00:25.553
+the program does

@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.763
+This slide focuses on Applied example classify a
+temperature Start with the meaning
+
+00:00:05.789 --> 00:00:12.064
+of the idea then connect it to the example and to
+analytical work Classify
+
+00:00:12.090 --> 00:00:18.357
+a temperature The function can be reused for every
+temperature in a dataset Before
+
+00:00:18.383 --> 00:00:24.136
+running the code predict the output Run the example
+in the browser inspect the result
+
+00:00:24.359 --> 00:00:29.320
+then change one input or value and run it again
+Focus on what changed and
+
+00:00:29.346 --> 00:00:32.162
+why rather than reading the code character by
+character

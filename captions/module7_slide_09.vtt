@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.987
+This slide focuses on Handle expected errors Start
+with the meaning of the idea then
+
+00:00:06.013 --> 00:00:11.941
+connect it to the example and the larger analytical
+workflow Error handling
+
+00:00:11.954 --> 00:00:17.917
+is useful when a problem is expected and the program
+should continue safely Convert values
+
+00:00:17.943 --> 00:00:24.318
+safely Before running the example predict the output
+Run
+
+00:00:24.345 --> 00:00:29.476
+it in the browser inspect the result then modify one
+input expression or value and
+
+00:00:29.503 --> 00:00:34.963
+run it again Notice whether the shorter technique
+improves clarity or only makes the code
+
+00:00:34.989 --> 00:00:35.871
+harder to read

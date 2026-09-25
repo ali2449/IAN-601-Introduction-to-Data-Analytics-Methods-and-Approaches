@@ -1,0 +1,132 @@
+{
+  "prefix": "module5",
+  "voice": "en-US-GuyNeural",
+  "rate": "-5%",
+  "volume": "+0%",
+  "pitch": "+0Hz",
+  "caption_words": 15,
+  "slide_count": 17,
+  "slide_markers_found": true,
+  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "slides": [
+    {
+      "slide": 1,
+      "audio": "module5_slide_01.mp3",
+      "captions": "module5_slide_01.vtt",
+      "text": "Welcome to Module 5. This module focuses on Dictionaries & Sets. We will build the ideas in small steps and connect them to practical analytics work.\n\n[pause=0.7]\n\nDictionaries and sets help Python work with labeled values and unique collections.\n\n[pause=1.0]",
+      "pause_markers": 2
+    },
+    {
+      "slide": 2,
+      "audio": "module5_slide_02.mp3",
+      "captions": "module5_slide_02.vtt",
+      "text": "Use this lesson actively. Read the concept, predict the result, run the example when code is available, then change one part and compare what happens.\n\n[pause=0.7]\n\nStart with the idea on the slide. Execute the code in the browser. Read the output and connect it to the concept.\n\n[pause=0.7]\n\nChange one key, value, or set item. Apply the same pattern to a new record.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 3,
+      "audio": "module5_slide_03.mp3",
+      "captions": "module5_slide_03.vtt",
+      "text": "This slide is the roadmap for Module 5. It shows how the concepts progress and how the later examples build on the earlier ones.\n\n[pause=0.7]\n\nStore labeled data using key-value pairs. Retrieve and update values by key. Process keys, values, and items.\n\n[pause=0.7]\n\nRepresent records and small datasets. Keep only unique values. Count, classify, and clean data.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 4,
+      "audio": "module5_slide_04.mp3",
+      "captions": "module5_slide_04.vtt",
+      "text": "This slide focuses on Why dictionaries and sets matter. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nLists are useful when order matters. Dictionaries and sets are useful when meaning or uniqueness matters. Dictionary: stores data as key: value pairs. Set: stores unique values without duplicates.\n\n[pause=0.7]\n\nAnalytics use: labeled records, category counts, unique IDs, and lookup tables.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 5,
+      "audio": "module5_slide_05.mp3",
+      "captions": "module5_slide_05.vtt",
+      "text": "This slide focuses on Create a dictionary. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA dictionary uses curly braces. Each key has one value. Create and inspect a dictionary\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 6,
+      "audio": "module5_slide_06.mp3",
+      "captions": "module5_slide_06.vtt",
+      "text": "This slide focuses on Access values safely. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nSquare brackets work when the key exists. The get() method is safer when a key may be missing. Use brackets and get()\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 7,
+      "audio": "module5_slide_07.mp3",
+      "captions": "module5_slide_07.vtt",
+      "text": "This slide focuses on Update a dictionary. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nDictionaries are mutable. We can add a new key, change an existing value, or remove a key-value pair. Assignment adds or updates a key. pop() removes a key and returns its value.\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.\n\n[pause=0.7]\n\nUpdates are useful when records change over time. Add, change, and remove keys\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 8,
+      "audio": "module5_slide_08.mp3",
+      "captions": "module5_slide_08.vtt",
+      "text": "This slide focuses on Loop through a dictionary. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA dictionary can be looped in three common ways. key and value together Loop through items\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 9,
+      "audio": "module5_slide_09.mp3",
+      "captions": "module5_slide_09.vtt",
+      "text": "This slide focuses on Count categories with a dictionary. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA common analytics task is counting how often each category appears. Frequency count\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 10,
+      "audio": "module5_slide_10.mp3",
+      "captions": "module5_slide_10.vtt",
+      "text": "This slide focuses on Represent records with dictionaries. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA list of dictionaries works like a small table. Each dictionary is one row, and each key is like a column name. Bridge to pandas: List of dictionaries\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 11,
+      "audio": "module5_slide_11.mp3",
+      "captions": "module5_slide_11.vtt",
+      "text": "This slide focuses on Nested dictionaries. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA dictionary can contain another dictionary. This is useful when one record has sections. Use nested dictionaries for organized records. Access nested values one key at a time.\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.\n\n[pause=0.7]\n\nKeep structure readable and consistent.\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 12,
+      "audio": "module5_slide_12.mp3",
+      "captions": "module5_slide_12.vtt",
+      "text": "This slide focuses on Create a set. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA set stores unique values. Duplicate values are automatically removed. Remove duplicates with a set\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 13,
+      "audio": "module5_slide_13.mp3",
+      "captions": "module5_slide_13.vtt",
+      "text": "This slide focuses on Set operations. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nSets make it easy to compare groups. Union, intersection, difference\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 14,
+      "audio": "module5_slide_14.mp3",
+      "captions": "module5_slide_14.vtt",
+      "text": "This slide focuses on Membership testing. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nThe in operator checks whether a value exists in a collection. Sets are useful for membership rules. Check allowed categories\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 15,
+      "audio": "module5_slide_15.mp3",
+      "captions": "module5_slide_15.vtt",
+      "text": "This slide focuses on Dictionary + set workflow. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nDictionaries and sets often work together: dictionaries summarize, and sets track uniqueness. Dictionary: total sales by channel. Set: unique customer IDs.\n\n[pause=0.8]\n\nBefore running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.\n\n[pause=0.7]\n\nLoop: process each record. Summarize orders\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 16,
+      "audio": "module5_slide_16.mp3",
+      "captions": "module5_slide_16.vtt",
+      "text": "This slide focuses on Choose the right structure. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nThe best structure depends on how the data will be used. Order matters and duplicates are allowed. The record should not change.\n\n[pause=0.7]\n\nUse a dictionary Values need names or labels. You need unique values or group comparison.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 17,
+      "audio": "module5_slide_17.mp3",
+      "captions": "module5_slide_17.vtt",
+      "text": "This slide summarizes Module 5. Focus on the patterns you should be able to explain and reuse after completing the examples.\n\n[pause=0.7]\n\nCreate labeled records and access values by key. Add, change, remove, and safely retrieve values. Process keys, values, and key-value pairs.\n\n[pause=0.7]\n\nBuild category frequency tables with dictionaries. Remove duplicates and compare groups. Module 6 uses packages and object-oriented thinking to organize larger programs.\n\n[pause=1.0]",
+      "pause_markers": 3
+    }
+  ]
+}

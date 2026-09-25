@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.632
+This slide focuses on Two-dimensional arrays Start
+with the data structure and what
+
+00:00:05.658 --> 00:00:11.603
+the operation is supposed to accomplish before
+looking closely at the syntax A
+
+00:00:11.617 --> 00:00:17.540
+2-D array looks like a table of numbers Axis 0
+usually means down columns
+
+00:00:18.474 --> 00:00:26.061
+Axis 1 usually means across rows Rows columns and
+axes Before
+
+00:00:26.087 --> 00:00:31.642
+running the example predict the structure and output
+Run it in the browser inspect the
+
+00:00:31.669 --> 00:00:37.761
+values dimensions labels or summary then change one
+input and run it again Focus
+
+00:00:37.787 --> 00:00:41.827
+on how the operation changes the data rather than
+reading the code line by line

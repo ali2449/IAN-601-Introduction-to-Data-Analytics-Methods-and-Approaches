@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.697
+This slide focuses on Write docstrings for functions
+Start with the meaning of the idea
+
+00:00:05.921 --> 00:00:11.953
+then connect it to the example and the larger
+analytical workflow A docstring
+
+00:00:11.966 --> 00:00:17.469
+explains what a function does what it expects and
+what it returns Function with
+
+00:00:17.495 --> 00:00:24.054
+a docstring Before running the example predict the
+output Run
+
+00:00:24.081 --> 00:00:29.212
+it in the browser inspect the result then modify one
+input expression or value and
+
+00:00:29.239 --> 00:00:34.699
+run it again Notice whether the shorter technique
+improves clarity or only makes the code
+
+00:00:34.725 --> 00:00:35.607
+harder to read

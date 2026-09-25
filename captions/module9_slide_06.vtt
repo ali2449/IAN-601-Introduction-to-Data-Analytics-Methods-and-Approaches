@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.632
+This slide focuses on Vectorized arithmetic Start
+with the data structure and what
+
+00:00:05.658 --> 00:00:12.103
+the operation is supposed to accomplish before
+looking closely at the syntax Vectorized
+
+00:00:12.130 --> 00:00:17.961
+operations apply one calculation to every value in
+an array Apply one formula
+
+00:00:17.988 --> 00:00:23.566
+to all values Before running the example predict the
+structure
+
+00:00:23.592 --> 00:00:29.358
+and output Run it in the browser inspect the values
+dimensions labels or summary
+
+00:00:29.529 --> 00:00:34.608
+then change one input and run it again Focus on how
+the operation changes the
+
+00:00:34.634 --> 00:00:37.003
+data rather than reading the code line by line

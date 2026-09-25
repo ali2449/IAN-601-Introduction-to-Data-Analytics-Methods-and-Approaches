@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.763
+This slide focuses on Combine loops and decisions
+The goal is to understand the idea
+
+00:00:05.776 --> 00:00:11.871
+in plain language before connecting it to code or
+analytical use Classification
+
+00:00:11.897 --> 00:00:17.729
+pattern Most useful control flow combines repetition
+with a decision inside the loop Place
+
+00:00:17.755 --> 00:00:23.380
+a decision inside a loop Before running the example
+predict what
+
+00:00:23.406 --> 00:00:28.593
+the output should look like Run it in the browser
+inspect the result then change
+
+00:00:28.620 --> 00:00:34.172
+one value condition or input and run it again Pay
+attention to what changed and
+
+00:00:34.199 --> 00:00:42.480
+why Each sale is classified using the same rule
+loop_with_if.py
+
+00:00:42.493 --> 00:00:44.309
+Move through one value at a time

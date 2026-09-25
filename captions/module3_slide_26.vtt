@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.895
+This slide summarizes Module 3 Focus on the patterns
+you should be able to explain
+
+00:00:05.908 --> 00:00:11.823
+and reuse after completing the lesson def creates a
+reusable function
+
+00:00:12.760 --> 00:00:20.027
+Parentheses run the function body Inputs make
+functions flexible Returned
+
+00:00:20.053 --> 00:00:26.490
+values can be reused later Documentation explains
+the purpose Small
+
+00:00:26.516 --> 00:00:28.766
+functions can form larger workflows

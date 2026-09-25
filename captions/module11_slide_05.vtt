@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.829
+This slide focuses on Pivot tables Start with what
+the operation changes in the data
+
+00:00:06.132 --> 00:00:12.139
+then connect that change to the analytical question
+A pivot table summarizes
+
+00:00:12.165 --> 00:00:18.882
+numeric values across categories Create a pivot
+table Before
+
+00:00:18.909 --> 00:00:24.490
+running the example predict the table summary or
+transformed output Run it in the
+
+00:00:24.504 --> 00:00:30.096
+browser and inspect the row count column values
+grouping dates missing values or flags
+
+00:00:30.122 --> 00:00:34.398
+that matter Then change one input and compare the
+result

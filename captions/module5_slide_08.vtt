@@ -1,0 +1,24 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.382
+This slide focuses on Loop through a dictionary
+Start with the meaning of the idea
+
+00:00:05.605 --> 00:00:11.683
+then connect it to the example and the larger
+analytical workflow A dictionary
+
+00:00:11.709 --> 00:00:19.101
+can be looped in three common ways key and value
+together Loop through items Before
+
+00:00:19.127 --> 00:00:24.275
+running the example predict what the output should
+look like Run it in the browser
+
+00:00:24.393 --> 00:00:29.485
+inspect the result then change one input key value
+or condition and run it again
+
+00:00:30.419 --> 00:00:32.288
+Focus on what changed and why

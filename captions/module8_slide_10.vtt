@@ -1,0 +1,24 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.803
+This slide focuses on Responsible example data Start
+with the meaning of the idea
+
+00:00:06.026 --> 00:00:11.760
+then connect it to the example and the larger
+analytical workflow Teaching
+
+00:00:11.773 --> 00:00:16.891
+and sample datasets should use fictional or generic
+values unless real data is clearly permitted
+
+00:00:17.815 --> 00:00:24.012
+Use fictional names IDs emails and organizations
+Remove direct identifiers
+
+00:00:24.039 --> 00:00:30.872
+from examples Do not publish private data in code
+outputs Explain
+
+00:00:30.898 --> 00:00:32.937
+assumptions and limitations clearly

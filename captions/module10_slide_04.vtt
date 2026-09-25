@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.513
+This slide focuses on Create a DataFrame Start with
+the data structure and what the
+
+00:00:05.539 --> 00:00:11.315
+operation is supposed to accomplish before looking
+closely at the syntax A
+
+00:00:11.329 --> 00:00:16.581
+DataFrame is a table with column names A list of
+dictionaries is a common way
+
+00:00:16.607 --> 00:00:22.197
+to create one Create a small DataFrame Before
+
+00:00:22.223 --> 00:00:27.778
+running the example predict the structure and output
+Run it in the browser inspect the
+
+00:00:27.805 --> 00:00:33.897
+values dimensions labels or summary then change one
+input and run it again Focus
+
+00:00:33.923 --> 00:00:37.963
+on how the operation changes the data rather than
+reading the code line by line

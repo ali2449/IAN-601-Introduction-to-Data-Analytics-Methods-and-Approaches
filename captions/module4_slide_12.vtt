@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.461
+Use this slide as practice Work through the task in
+small steps and explain what
+
+00:00:05.487 --> 00:00:11.219
+each list or tuple operation changes This example
+combines creation
+
+00:00:11.364 --> 00:00:17.787
+indexing appending removing and summarizing Start
+with a list Add
+
+00:00:17.814 --> 00:00:23.364
+and remove values Before running the code predict
+the output
+
+00:00:24.287 --> 00:00:29.222
+Run the example in the browser inspect the result
+then change one item index or
+
+00:00:29.235 --> 00:00:34.959
+value and run it again Notice which operations
+change the original list and which simply
+
+00:00:34.985 --> 00:00:40.777
+read from it Calculate a simple metric Combined list
+
+00:00:40.803 --> 00:00:41.435
+practice

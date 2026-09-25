@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:06.197
+This slide focuses on Summarize values in a list
+Start with what the structure represents
+
+00:00:06.421 --> 00:00:11.988
+then connect that idea to the example on the slide
+Total of numeric
+
+00:00:12.001 --> 00:00:19.581
+values Number of values Cleaner printed result
+Before
+
+00:00:19.607 --> 00:00:25.347
+running the code predict the output Run the example
+in the browser inspect the result
+
+00:00:25.570 --> 00:00:31.123
+then change one item index or value and run it again
+Notice which operations
+
+00:00:31.149 --> 00:00:36.926
+change the original list and which simply read from
+it Average from a list

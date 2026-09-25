@@ -1,0 +1,125 @@
+{
+  "prefix": "module4",
+  "voice": "en-US-GuyNeural",
+  "rate": "-5%",
+  "volume": "+0%",
+  "pitch": "+0Hz",
+  "caption_words": 15,
+  "slide_count": 16,
+  "slide_markers_found": true,
+  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "slides": [
+    {
+      "slide": 1,
+      "audio": "module4_slide_01.mp3",
+      "captions": "module4_slide_01.vtt",
+      "text": "Welcome to Module 4. This module focuses on Lists & Tuples. We will organize multiple values with Python sequences and connect the examples to analytics work.\n\n[pause=0.7]\n\nLists and tuples help organize more than one value so Python can analyze a collection instead of a single item.\n\n[pause=1.0]",
+      "pause_markers": 2
+    },
+    {
+      "slide": 2,
+      "audio": "module4_slide_02.mp3",
+      "captions": "module4_slide_02.vtt",
+      "text": "Use this page interactively. Read the idea, predict the result, run the code, and then modify one small part so you can see how the sequence changes.\n\n[pause=0.7]\n\nStart with the idea on the slide. Execute the code in the browser. Match the output with the explanation.\n\n[pause=0.7]\n\nChange one value or line at a time. Apply the pattern to a new list.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 3,
+      "audio": "module4_slide_03.mp3",
+      "captions": "module4_slide_03.vtt",
+      "text": "This is the learning path for Module 4. We move from creating sequences to accessing, changing, summarizing, and choosing the right structure for a task.\n\n[pause=0.7]\n\nStore multiple values in order. Retrieve one value or a slice of values. Add, remove, and change values in a list.\n\n[pause=0.7]\n\nProcess each value one at a time. Keep fixed records safe from accidental edits. Apply sequences to small analytics examples.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 4,
+      "audio": "module4_slide_04.mp3",
+      "captions": "module4_slide_04.vtt",
+      "text": "This slide focuses on Why sequences matter in analytics. Start with what the structure represents, then connect that idea to the example on the slide.\n\n[pause=0.7]\n\nIn analytics, one observation is rarely enough. Lists and tuples let us group related values and work with them as one object. List: an ordered collection that can be changed. Tuple: an ordered collection that should stay fixed.\n\n[pause=0.7]\n\nIndex: a position number used to access a value.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 5,
+      "audio": "module4_slide_05.mp3",
+      "captions": "module4_slide_05.vtt",
+      "text": "This slide focuses on Create a list. Start with what the structure represents, then connect that idea to the example on the slide.\n\n[pause=0.7]\n\nA list uses square brackets. Values stay in the same order unless we change the list. Use a list when: Create and inspect a list\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 6,
+      "audio": "module4_slide_06.mp3",
+      "captions": "module4_slide_06.vtt",
+      "text": "This slide focuses on Index and slice a list. Start with what the structure represents, then connect that idea to the example on the slide.\n\n[pause=0.7]\n\nIndexing and slicing\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 7,
+      "audio": "module4_slide_07.mp3",
+      "captions": "module4_slide_07.vtt",
+      "text": "This slide focuses on Change a list. Start with what the structure represents, then connect that idea to the example on the slide.\n\n[pause=0.7]\n\nLists are mutable, which means Python lets us change them after creation. append() adds one value to the end. pop() removes a value by position and returns it.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.\n\n[pause=0.7]\n\nAssignment changes an existing position. Append, update, and remove\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 8,
+      "audio": "module4_slide_08.mp3",
+      "captions": "module4_slide_08.vtt",
+      "text": "This slide focuses on Loop through a list. Start with what the structure represents, then connect that idea to the example on the slide.\n\n[pause=0.7]\n\nA loop lets Python repeat the same action for every value in a collection. Loop and classify values\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 9,
+      "audio": "module4_slide_09.mp3",
+      "captions": "module4_slide_09.vtt",
+      "text": "This slide focuses on Summarize values in a list. Start with what the structure represents, then connect that idea to the example on the slide.\n\n[pause=0.7]\n\nTotal of numeric values. Number of values. Cleaner printed result.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.\n\n[pause=0.7]\n\nAverage from a list\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 10,
+      "audio": "module4_slide_10.mp3",
+      "captions": "module4_slide_10.vtt",
+      "text": "This slide focuses on Create and unpack a tuple. Start with what the structure represents, then connect that idea to the example on the slide.\n\n[pause=0.7]\n\nA tuple uses parentheses. It is ordered like a list, but it is not designed to be changed. Use a tuple when:\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 11,
+      "audio": "module4_slide_11.mp3",
+      "captions": "module4_slide_11.vtt",
+      "text": "This slide focuses on Lists can hold tuples. Start with what the structure represents, then connect that idea to the example on the slide.\n\n[pause=0.7]\n\nA common pattern is a list of records. Each record can be a tuple. List of tuple records\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 12,
+      "audio": "module4_slide_12.mp3",
+      "captions": "module4_slide_12.vtt",
+      "text": "Use this slide as practice. Work through the task in small steps and explain what each list or tuple operation changes.\n\n[pause=0.7]\n\nThis example combines creation, indexing, appending, removing, and summarizing. Start with a list. Add and remove values.\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.\n\n[pause=0.7]\n\nCalculate a simple metric. Combined list practice\n\n[pause=1.0]",
+      "pause_markers": 4
+    },
+    {
+      "slide": 13,
+      "audio": "module4_slide_13.mp3",
+      "captions": "module4_slide_13.vtt",
+      "text": "This slide focuses on Patient-age list management. Start with what the structure represents, then connect that idea to the example on the slide.\n\n[pause=0.7]\n\nLists are useful when a collection grows as new records arrive. Add and summarize generic patient ages\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 14,
+      "audio": "module4_slide_14.mp3",
+      "captions": "module4_slide_14.vtt",
+      "text": "This slide focuses on List + tuple capstone. Start with what the structure represents, then connect that idea to the example on the slide.\n\n[pause=0.7]\n\nA function can receive a list and return a tuple. This lets us package multiple results in one clean return value. Return a tuple from a function\n\n[pause=0.8]\n\nBefore running the code, predict the output. Run the example in the browser, inspect the result, then change one item, index, or value and run it again. Notice which operations change the original list and which simply read from it.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 15,
+      "audio": "module4_slide_15.mp3",
+      "captions": "module4_slide_15.vtt",
+      "text": "This slide focuses on Choose the right sequence. Start with what the structure represents, then connect that idea to the example on the slide.\n\n[pause=0.7]\n\nUse a list when... Values may change. You need to append or remove items.\n\n[pause=0.7]\n\nYou need to sort, filter, or build a collection over time. Use a tuple when... Values should stay fixed.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 16,
+      "audio": "module4_slide_16.mp3",
+      "captions": "module4_slide_16.vtt",
+      "text": "This slide summarizes Module 4. Focus on when lists are useful, when tuples are useful, and how sequence operations support simple analytical workflows.\n\n[pause=0.7]\n\nOrdered, mutable collections for values that can change. Position numbers that let us access specific values. Ranges of values taken from a list.\n\n[pause=0.7]\n\nRepeat analysis steps for every item. Ordered, fixed records that protect structure. Module 5 uses dictionaries and sets for labeled and unique data.\n\n[pause=1.0]",
+      "pause_markers": 3
+    }
+  ]
+}

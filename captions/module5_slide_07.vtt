@@ -1,0 +1,36 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.724
+This slide focuses on Update a dictionary Start with
+the meaning of the idea then
+
+00:00:05.750 --> 00:00:11.585
+connect it to the example and the larger analytical
+workflow Dictionaries
+
+00:00:11.598 --> 00:00:16.785
+are mutable We can add a new key change an existing
+value or remove a
+
+00:00:16.798 --> 00:00:22.732
+key-value pair Assignment adds or updates a key pop
+removes
+
+00:00:22.758 --> 00:00:28.393
+a key and returns its value Before running the
+example predict
+
+00:00:28.419 --> 00:00:33.369
+what the output should look like Run it in the
+browser inspect the result then
+
+00:00:33.396 --> 00:00:38.896
+change one input key value or condition and run it
+again Focus on what
+
+00:00:38.909 --> 00:00:44.430
+changed and why Updates are useful when records
+change over time
+
+00:00:45.367 --> 00:00:47.578
+Add change and remove keys

@@ -1,114 +1,19 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:02.537
-This example uses an alias with Python's
+00:00:00.103 --> 00:00:05.066
+This slide focuses on What is a class Start with the
+meaning of the idea
 
-00:00:02.563 --> 00:00:06.211
-statistics module The first line says import
+00:00:05.289 --> 00:00:11.134
+then connect it to the example and the larger
+analytical workflow A class
 
-00:00:06.224 --> 00:00:09.382
-statistics as stats This means that for
+00:00:11.147 --> 00:00:17.466
+is a blueprint An object is one item created from
+that blueprint Attributes
 
-00:00:09.395 --> 00:00:11.118
-the rest of the program we can
+00:00:17.492 --> 00:00:23.007
+store information Methods perform actions The
 
-00:00:11.132 --> 00:00:13.303
-refer to the statistics module using the
-
-00:00:13.316 --> 00:00:16.592
-shorter name stats Next we create a
-
-00:00:16.618 --> 00:00:19.842
-list called scores The list contains five
-
-00:00:19.855 --> 00:00:24.197
-values eighty-two ninety seventy-six eighty-eight
-and ninety-five
-
-00:00:25.132 --> 00:00:29.303
-Then we calculate several summary statistics Stats
-
-00:00:29.316 --> 00:00:33.237
-dot mean calculates the arithmetic average Stats
-
-00:00:33.250 --> 00:00:35.855
-dot median calculates the middle value after
-
-00:00:35.882 --> 00:00:38.671
-the scores are ordered We also use
-
-00:00:38.697 --> 00:00:41.053
-the built-in minimum and maximum functions to
-
-00:00:41.079 --> 00:00:44.171
-find the smallest and largest values The
-
-00:00:44.197 --> 00:00:46.750
-range is calculated by subtracting the lowest
-
-00:00:46.763 --> 00:00:49.750
-score from the highest score Before you
-
-00:00:49.776 --> 00:00:51.645
-run the code try to predict some
-
-00:00:51.671 --> 00:00:54.395
-of the output The highest score is
-
-00:00:54.408 --> 00:00:59.737
-ninety-five The lowest score is seventy-six
-Therefore
-
-00:00:59.921 --> 00:01:02.934
-the range should be nineteen Now click
-
-00:01:02.961 --> 00:01:05.566
-the Run button You should see the
-
-00:01:05.579 --> 00:01:08.895
-original list of scores The average should
-
-00:01:08.921 --> 00:01:12.158
-be eighty-six point two The median should
-
-00:01:12.184 --> 00:01:15.697
-be eighty-eight The range should be nineteen
-
-00:01:16.618 --> 00:01:18.553
-This is a small example but it
-
-00:01:18.566 --> 00:01:22.197
-represents a common analytics pattern We start
-
-00:01:22.224 --> 00:01:24.289
-with a collection of values then use
-
-00:01:24.316 --> 00:01:28.013
-reusable functions to summarize the data Now
-
-00:01:28.026 --> 00:01:31.105
-try a small change Add another score
-
-00:01:31.132 --> 00:01:33.039
-to the list such as one hundred
-
-00:01:33.974 --> 00:01:35.645
-Run the cell again and observe how
-
-00:01:35.671 --> 00:01:39.171
-the average median and range change The
-
-00:01:39.184 --> 00:01:41.526
-main lesson is not the specific numbers
-
-00:01:42.461 --> 00:01:44.026
-The lesson is that an alias can
-
-00:01:44.053 --> 00:01:45.921
-make repeated use of a module more
-
-00:01:45.934 --> 00:01:47.776
-readable while still making it clear where
-
-00:01:47.789 --> 00:01:48.882
-the functions come from
+00:00:23.034 --> 00:00:25.349
+word self means this specific object

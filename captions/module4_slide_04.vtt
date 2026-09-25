@@ -1,0 +1,24 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.829
+This slide focuses on Why sequences matter in
+analytics Start with what the structure
+
+00:00:05.855 --> 00:00:11.416
+represents then connect that idea to the example on
+the slide In
+
+00:00:11.442 --> 00:00:17.248
+analytics one observation is rarely enough Lists and
+tuples let us group related
+
+00:00:17.274 --> 00:00:22.366
+values and work with them as one object List an
+ordered collection that can be
+
+00:00:22.392 --> 00:00:28.852
+changed Tuple an ordered collection that should stay
+fixed Index
+
+00:00:29.089 --> 00:00:31.537
+a position number used to access a value

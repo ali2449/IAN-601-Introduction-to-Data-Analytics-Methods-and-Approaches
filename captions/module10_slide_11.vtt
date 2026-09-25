@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.737
+This slide focuses on Mini pandas workflow Start
+with the data structure and what the
+
+00:00:05.763 --> 00:00:11.542
+operation is supposed to accomplish before looking
+closely at the syntax A
+
+00:00:11.555 --> 00:00:17.542
+typical workflow loads data checks it filters it
+adds useful columns and summarizes results
+
+00:00:18.466 --> 00:00:23.986
+Complete small workflow Before running the example
+predict the
+
+00:00:23.999 --> 00:00:29.568
+structure and output Run it in the browser inspect
+the values dimensions labels
+
+00:00:29.739 --> 00:00:35.015
+or summary then change one input and run it again
+Focus on how the operation
+
+00:00:35.028 --> 00:00:37.963
+changes the data rather than reading the code line
+by line

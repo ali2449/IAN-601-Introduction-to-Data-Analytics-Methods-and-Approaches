@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.750
+This slide focuses on List comprehensions Start with
+the meaning of the idea then
+
+00:00:05.776 --> 00:00:12.030
+connect it to the example and the larger analytical
+workflow A list comprehension
+
+00:00:12.056 --> 00:00:19.125
+creates a new list from an existing collection
+Create cleaned scores Before
+
+00:00:19.151 --> 00:00:24.904
+running the example predict the output Run it in the
+browser inspect the result then
+
+00:00:24.930 --> 00:00:30.693
+modify one input expression or value and run it
+again Notice whether the shorter
+
+00:00:30.706 --> 00:00:34.167
+technique improves clarity or only makes the code
+harder to read

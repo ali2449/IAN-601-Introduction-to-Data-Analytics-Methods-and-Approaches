@@ -1,0 +1,97 @@
+{
+  "prefix": "module13",
+  "voice": "en-US-GuyNeural",
+  "rate": "-5%",
+  "volume": "+0%",
+  "pitch": "+0Hz",
+  "caption_words": 15,
+  "slide_count": 12,
+  "slide_markers_found": true,
+  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "slides": [
+    {
+      "slide": 1,
+      "audio": "module13_slide_01.mp3",
+      "captions": "module13_slide_01.vtt",
+      "text": "Welcome to Module 13. This module focuses on Statistics & Visualization. We will connect the methods to careful analytical interpretation and practical decision making.\n\n[pause=0.7]\n\nStatistics and visualization help summarize variation, compare groups, describe relationships, and communicate findings clearly.\n\n[pause=1.0]",
+      "pause_markers": 2
+    },
+    {
+      "slide": 2,
+      "audio": "module13_slide_02.mp3",
+      "captions": "module13_slide_02.vtt",
+      "text": "Use this lesson interactively. Read the question first, predict the result, run the example, and then explain what the output does and does not tell you.\n\n[pause=0.7]\n\nStart with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.\n\n[pause=0.7]\n\nChange one value, variable, or condition. Apply the pattern to a new example.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 3,
+      "audio": "module13_slide_03.mp3",
+      "captions": "module13_slide_03.vtt",
+      "text": "This slide is the roadmap for Module 13. Follow the progression from the core idea to evaluation and the final integrated workflow.\n\n[pause=0.7]\n\nMean, median, spread. See shape and frequency. Summarize groups.\n\n[pause=0.7]\n\nCorrelation and association. Sample estimates vary. Choose visual forms carefully.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 4,
+      "audio": "module13_slide_04.mp3",
+      "captions": "module13_slide_04.vtt",
+      "text": "This slide focuses on Descriptive statistics. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nDescriptive statistics summarize the center and spread of values. Calculate summary statistics\n\n[pause=0.8]\n\nBefore running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 5,
+      "audio": "module13_slide_05.mp3",
+      "captions": "module13_slide_05.vtt",
+      "text": "This slide focuses on Distribution with bins. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nA distribution shows how often values fall into ranges. Create a text histogram\n\n[pause=0.8]\n\nBefore running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 6,
+      "audio": "module13_slide_06.mp3",
+      "captions": "module13_slide_06.vtt",
+      "text": "This slide focuses on Compare groups. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nGroup summaries help compare categories. Summarize by group\n\n[pause=0.8]\n\nBefore running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 7,
+      "audio": "module13_slide_07.mp3",
+      "captions": "module13_slide_07.vtt",
+      "text": "This slide focuses on Correlation. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nCorrelation measures the strength and direction of a linear relationship. It does not prove causation. Calculate correlation\n\n[pause=0.8]\n\nBefore running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 8,
+      "audio": "module13_slide_08.mp3",
+      "captions": "module13_slide_08.vtt",
+      "text": "This slide focuses on Simple confidence interval idea. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nA sample mean is an estimate. A confidence interval communicates uncertainty around the estimate. Approximate interval for a mean\n\n[pause=0.8]\n\nBefore running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 9,
+      "audio": "module13_slide_09.mp3",
+      "captions": "module13_slide_09.vtt",
+      "text": "This slide focuses on Choose the right visual. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nCompare categories. Show change over time. Show distribution shape.\n\n[pause=0.7]\n\nCompare spread across groups. Show relationship between two numeric variables. Show exact values.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 10,
+      "audio": "module13_slide_10.mp3",
+      "captions": "module13_slide_10.vtt",
+      "text": "This slide focuses on Text-based bar chart. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nEven without a plotting library, a text chart can show the logic of visual comparison. Print a small bar chart\n\n[pause=0.8]\n\nBefore running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 11,
+      "audio": "module13_slide_11.mp3",
+      "captions": "module13_slide_11.vtt",
+      "text": "This slide focuses on Mini statistics report. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nA short report combines data summaries with a plain-language interpretation. Create a report sentence\n\n[pause=0.8]\n\nBefore running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 12,
+      "audio": "module13_slide_12.mp3",
+      "captions": "module13_slide_12.vtt",
+      "text": "This slide summarizes Module 13. Focus on the main analytical decisions, interpretation limits, and reusable workflow patterns.\n\n[pause=0.7]\n\nUse mean and median. Use range and standard deviation. Describe shape with frequencies.\n\n[pause=0.7]\n\nCompare category summaries. Use correlation carefully. Select visuals for the question.\n\n[pause=1.0]",
+      "pause_markers": 3
+    }
+  ]
+}

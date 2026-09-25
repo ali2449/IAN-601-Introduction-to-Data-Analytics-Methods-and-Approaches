@@ -1,0 +1,97 @@
+{
+  "prefix": "module7",
+  "voice": "en-US-GuyNeural",
+  "rate": "-5%",
+  "volume": "+0%",
+  "pitch": "+0Hz",
+  "caption_words": 15,
+  "slide_count": 12,
+  "slide_markers_found": true,
+  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "slides": [
+    {
+      "slide": 1,
+      "audio": "module7_slide_01.mp3",
+      "captions": "module7_slide_01.vtt",
+      "text": "Welcome to Module 7. This module focuses on Advanced Python. We will build the ideas gradually and connect them to practical analytics work.\n\n[pause=0.7]\n\nAdvanced Python patterns make code shorter, clearer, and easier to reuse in data analytics work.\n\n[pause=1.0]",
+      "pause_markers": 2
+    },
+    {
+      "slide": 2,
+      "audio": "module7_slide_02.mp3",
+      "captions": "module7_slide_02.vtt",
+      "text": "Use this lesson actively. Read the concept, predict what should happen, run the example when code is available, then change one small part and compare the result.\n\n[pause=0.7]\n\nStart with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.\n\n[pause=0.7]\n\nChange one value, variable, or condition. Apply the pattern to a new example.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 3,
+      "audio": "module7_slide_03.mp3",
+      "captions": "module7_slide_03.vtt",
+      "text": "This slide is the learning path for Module 7. It shows how the topic progresses from foundational ideas to applied practice.\n\n[pause=0.7]\n\nBuild lists and dictionaries clearly. Rank values using custom rules. Use zip and enumerate.\n\n[pause=0.7]\n\nHandle expected problems. Produce values as needed. Connect small steps.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 4,
+      "audio": "module7_slide_04.mp3",
+      "captions": "module7_slide_04.vtt",
+      "text": "This slide focuses on List comprehensions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA list comprehension creates a new list from an existing collection. Create cleaned scores\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 5,
+      "audio": "module7_slide_05.mp3",
+      "captions": "module7_slide_05.vtt",
+      "text": "This slide focuses on Dictionary comprehensions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA dictionary comprehension creates key-value pairs in one expression. Create a status map\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 6,
+      "audio": "module7_slide_06.mp3",
+      "captions": "module7_slide_06.vtt",
+      "text": "This slide focuses on Sort with a custom key. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nThe key argument tells Python what part of each item should control the sort order. Sort records by amount\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 7,
+      "audio": "module7_slide_07.mp3",
+      "captions": "module7_slide_07.vtt",
+      "text": "This slide focuses on Use enumerate and zip. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nenumerate() gives position numbers. zip() combines related lists. Pair names and scores\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 8,
+      "audio": "module7_slide_08.mp3",
+      "captions": "module7_slide_08.vtt",
+      "text": "This slide focuses on Validate data before analysis. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nGood code checks for common data problems before calculating results. Validate numeric inputs\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 9,
+      "audio": "module7_slide_09.mp3",
+      "captions": "module7_slide_09.vtt",
+      "text": "This slide focuses on Handle expected errors. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nError handling is useful when a problem is expected and the program should continue safely. Convert values safely\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 10,
+      "audio": "module7_slide_10.mp3",
+      "captions": "module7_slide_10.vtt",
+      "text": "This slide focuses on Generator expressions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA generator expression produces values one at a time. It can be useful for large data streams. Use a generator expression\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 11,
+      "audio": "module7_slide_11.mp3",
+      "captions": "module7_slide_11.vtt",
+      "text": "This slide focuses on Build a small pipeline. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA pipeline connects small functions. Each step has one clear job. Clean and summarize text labels\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
+      "pause_markers": 3
+    },
+    {
+      "slide": 12,
+      "audio": "module7_slide_12.mp3",
+      "captions": "module7_slide_12.vtt",
+      "text": "This slide summarizes Module 7. Focus on the patterns you should be able to explain and reuse after completing the examples.\n\n[pause=0.7]\n\nCreate lists and dictionaries clearly. Rank records with custom keys. Use zip and enumerate safely.\n\n[pause=0.7]\n\nCheck inputs before analysis. Handle expected conversion problems. Connect small reusable functions.\n\n[pause=1.0]",
+      "pause_markers": 3
+    }
+  ]
+}

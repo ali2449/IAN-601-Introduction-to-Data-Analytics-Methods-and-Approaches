@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.671
+This slide focuses on Create a NumPy array Start
+with the data structure and
+
+00:00:05.697 --> 00:00:11.843
+what the operation is supposed to accomplish before
+looking closely at the syntax The
+
+00:00:11.870 --> 00:00:17.399
+common alias for NumPy is np Arrays can be created
+from Python
+
+00:00:17.425 --> 00:00:23.089
+lists Create and inspect an array Before running
+
+00:00:23.115 --> 00:00:28.854
+the example predict the structure and output Run it
+in the browser inspect the values
+
+00:00:28.973 --> 00:00:34.473
+dimensions labels or summary then change one input
+and run it again Focus
+
+00:00:34.499 --> 00:00:38.539
+on how the operation changes the data rather than
+reading the code line by line

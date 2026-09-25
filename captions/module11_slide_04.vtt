@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.816
+This slide focuses on Method chaining Start with
+what the operation changes in the data
+
+00:00:06.118 --> 00:00:11.759
+then connect that change to the analytical question
+Method chaining connects
+
+00:00:11.773 --> 00:00:17.473
+several DataFrame steps into one readable workflow
+Filter assign group
+
+00:00:19.315 --> 00:00:24.988
+Before running the example predict the table summary
+or transformed output Run
+
+00:00:25.015 --> 00:00:30.146
+it in the browser and inspect the row count column
+values grouping dates missing values
+
+00:00:30.396 --> 00:00:35.238
+or flags that matter Then change one input and
+compare the result

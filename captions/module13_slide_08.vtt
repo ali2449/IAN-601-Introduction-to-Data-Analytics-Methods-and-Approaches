@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.816
+This slide focuses on Simple confidence interval
+idea Start with the analytical
+
+00:00:05.842 --> 00:00:11.802
+question and the meaning of the output before
+focusing on the syntax A sample
+
+00:00:11.815 --> 00:00:17.673
+mean is an estimate A confidence interval
+communicates uncertainty around the estimate
+
+00:00:18.607 --> 00:00:24.527
+Approximate interval for a mean Before running the
+example predict
+
+00:00:24.540 --> 00:00:30.542
+the statistic or visualization input Run it in the
+browser and inspect the center spread
+
+00:00:30.753 --> 00:00:36.556
+group difference association or interval being
+calculated Then change one value
+
+00:00:36.569 --> 00:00:38.700
+and see how the interpretation changes

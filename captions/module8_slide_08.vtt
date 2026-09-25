@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.487
+This slide focuses on Use logging instead of only
+print Start with the meaning of
+
+00:00:05.513 --> 00:00:12.089
+the idea then connect it to the example and the
+larger analytical workflow Logging
+
+00:00:12.116 --> 00:00:19.845
+records what happened It can include messages for
+progress warnings and errors Before
+
+00:00:19.871 --> 00:00:25.624
+running the example predict the output Run it in the
+browser inspect the result then
+
+00:00:25.650 --> 00:00:31.413
+modify one input expression or value and run it
+again Notice whether the shorter
+
+00:00:31.426 --> 00:00:34.887
+technique improves clarity or only makes the code
+harder to read

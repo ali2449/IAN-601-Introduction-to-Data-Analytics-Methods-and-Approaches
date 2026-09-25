@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.103 --> 00:00:05.671
+This slide focuses on Train / test split Start with
+the analytical question
+
+00:00:05.697 --> 00:00:11.259
+and the meaning of the output before focusing on the
+syntax A model should
+
+00:00:11.286 --> 00:00:18.693
+be evaluated on data it did not use for learning
+Split a dataset Before
+
+00:00:18.719 --> 00:00:23.946
+running the example predict the structure of the
+output Run it in the browser and
+
+00:00:23.972 --> 00:00:29.498
+inspect the features target split predictions
+evaluation result or external-style
+
+00:00:29.511 --> 00:00:33.722
+records Then change one input and compare what
+changes
