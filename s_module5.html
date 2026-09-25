@@ -82,6 +82,11 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
 .ian603-bottombar .bottom-nav-panel{align-self:center!important}
 .topbar>.toolbar,.topbar>.controls,.topbar>.top-controls{margin-left:auto!important}
 .topbar .ian603-tool{box-shadow:none!important}
+</style><style id="module5-ian603-final-fix">
+.transcript-panel{transform:none!important;transition:none!important;top:auto!important;left:auto!important}
+.transcript-panel.open{transform:none!important}
+.deck:has(.subtitle-bar[hidden]){grid-template-rows:60px minmax(0,1fr) 112px!important}
+.ian603-bottombar .bottom-slide-select{width:100%!important;max-width:none!important}
 </style></head>
 <body>
 <div class="deck">
@@ -89,23 +94,7 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
     <div class="brand"><span class="brand-mark"><i class="fa-brands fa-python"></i></span><span>IAN 601 · Module 5</span></div>
     <div class="controls">
       <button class="btn ghost" id="theme-btn" type="button"><i class="fa-solid fa-moon"></i> Theme</button>
-      <select id="slide-select" aria-label="Choose slide"><option value="0">1. Dictionaries &amp; Sets</option>
-<option value="1">2. How to use this page</option>
-<option value="2">3. Learning path for Module 5</option>
-<option value="3">4. Why dictionaries and sets matter</option>
-<option value="4">5. Create a dictionary</option>
-<option value="5">6. Access values safely</option>
-<option value="6">7. Update a dictionary</option>
-<option value="7">8. Loop through a dictionary</option>
-<option value="8">9. Count categories with a dictionary</option>
-<option value="9">10. Represent records with dictionaries</option>
-<option value="10">11. Nested dictionaries</option>
-<option value="11">12. Create a set</option>
-<option value="12">13. Set operations</option>
-<option value="13">14. Membership testing</option>
-<option value="14">15. Dictionary + set workflow</option>
-<option value="15">16. Choose the right structure</option>
-<option value="16">17. Module 5 wrap-up</option></select>
+      
       <button class="btn primary" id="run-slide-btn" type="button"><i class="fa-solid fa-play"></i> Run code on slide</button>
       <button class="btn ghost" id="restart-python" type="button">Reset Python</button>
       <div class="status" id="runtime-status"><span class="status-dot"></span><span>Python loads when code runs</span></div>
@@ -647,7 +636,23 @@ print(&quot;Customer count:&quot;, len(unique_customers))</textarea>
     <footer class="slide-footer"><span>Dictionaries & Sets · Labeled and Unique Data</span><span>IAN 601 · Module 5 · Slide 17</span></footer>
   </div>
 </section></main>
-  <footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><div id="ian-slide-select-slot"></div><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 17</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
+  <footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="true">CC On</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"><option value="0">1. Dictionaries &amp; Sets</option>
+<option value="1">2. How to use this page</option>
+<option value="2">3. Learning path for Module 5</option>
+<option value="3">4. Why dictionaries and sets matter</option>
+<option value="4">5. Create a dictionary</option>
+<option value="5">6. Access values safely</option>
+<option value="6">7. Update a dictionary</option>
+<option value="7">8. Loop through a dictionary</option>
+<option value="8">9. Count categories with a dictionary</option>
+<option value="9">10. Represent records with dictionaries</option>
+<option value="10">11. Nested dictionaries</option>
+<option value="11">12. Create a set</option>
+<option value="12">13. Set operations</option>
+<option value="13">14. Membership testing</option>
+<option value="14">15. Dictionary + set workflow</option>
+<option value="15">16. Choose the right structure</option>
+<option value="16">17. Module 5 wrap-up</option></select><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 17</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
 </div>
 <script>
 const MANIFEST = {
@@ -932,7 +937,7 @@ function syncNarrationForSlide(){
 function initNarr(){
   const saved=readDeckState();
   narrationEnabled=Boolean(saved.narrationEnabled);
-  ccEnabled=Boolean(saved.ccEnabled);
+  ccEnabled=saved.ccEnabled!==false;
   const speed=[0.75,1,1.25,1.5,2].includes(Number(saved.speed))?Number(saved.speed):1;
   if(speedSelect)speedSelect.value=String(speed);
   if(narrationAudio)narrationAudio.playbackRate=speed;
@@ -1038,7 +1043,7 @@ function initMonaco(){if(!window.require)return;try{require.config({paths:{vs:'h
 initMonaco();const initialSlide=initNarr();
 showSlide(initialSlide);
 </script>
-<script>document.addEventListener('DOMContentLoaded',()=>{const s=document.getElementById('slide-select'),slot=document.getElementById('ian-slide-select-slot');if(s&&slot){s.classList.add('bottom-slide-select');slot.replaceWith(s)}});</script><div class="ian603-modal-backdrop" id="ian-course-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">IAN 601 Course Modules</h2><button class="ian603-tool" id="ian-course-close" type="button">Close</button></div><div class="ian603-module-links"><a class="" href="s_module1.html">Module 1</a><a class="" href="s_module2.html">Module 2</a><a class="" href="s_module3.html">Module 3</a><a class="" href="s_module4.html">Module 4</a><a class="current" href="s_module5.html">Module 5 · Current</a><a class="" href="s_module6.html">Module 6</a><a class="" href="s_module7.html">Module 7</a><a class="" href="s_module8.html">Module 8</a><a class="" href="s_module9.html">Module 9</a><a class="" href="s_module10.html">Module 10</a><a class="" href="s_module11.html">Module 11</a><a class="" href="s_module12.html">Module 12</a><a class="" href="s_module13.html">Module 13</a><a class="" href="s_module14.html">Module 14</a></div></div></div><div class="ian603-modal-backdrop" id="ian-progress-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">Module 5 Progress</h2><button class="ian603-tool" id="ian-progress-close" type="button">Close</button></div><p style="color:var(--ian-muted)">Progress is saved only in this browser.</p><div style="height:12px;background:var(--ian-border);border-radius:999px;overflow:hidden"><div id="ian-progress-meter" style="height:100%;width:0;background:var(--ian-good)"></div></div><div id="ian-progress-text" style="margin:8px 0;color:var(--ian-muted)"></div><div id="ian-progress-list" class="ian603-module-links"></div><button class="ian603-tool" id="ian-progress-reset" type="button" style="margin-top:14px">Reset saved progress</button></div></div><script id="ian603-generic-ui">
+<div class="ian603-modal-backdrop" id="ian-course-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">IAN 601 Course Modules</h2><button class="ian603-tool" id="ian-course-close" type="button">Close</button></div><div class="ian603-module-links"><a class="" href="s_module1.html">Module 1</a><a class="" href="s_module2.html">Module 2</a><a class="" href="s_module3.html">Module 3</a><a class="" href="s_module4.html">Module 4</a><a class="current" href="s_module5.html">Module 5 · Current</a><a class="" href="s_module6.html">Module 6</a><a class="" href="s_module7.html">Module 7</a><a class="" href="s_module8.html">Module 8</a><a class="" href="s_module9.html">Module 9</a><a class="" href="s_module10.html">Module 10</a><a class="" href="s_module11.html">Module 11</a><a class="" href="s_module12.html">Module 12</a><a class="" href="s_module13.html">Module 13</a><a class="" href="s_module14.html">Module 14</a></div></div></div><div class="ian603-modal-backdrop" id="ian-progress-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">Module 5 Progress</h2><button class="ian603-tool" id="ian-progress-close" type="button">Close</button></div><p style="color:var(--ian-muted)">Progress is saved only in this browser.</p><div style="height:12px;background:var(--ian-border);border-radius:999px;overflow:hidden"><div id="ian-progress-meter" style="height:100%;width:0;background:var(--ian-good)"></div></div><div id="ian-progress-text" style="margin:8px 0;color:var(--ian-muted)"></div><div id="ian-progress-list" class="ian603-module-links"></div><button class="ian603-tool" id="ian-progress-reset" type="button" style="margin-top:14px">Reset saved progress</button></div></div><script id="ian603-generic-ui">
 (()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module5_shell_progress_v1';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
 const activeIndex=()=>Math.max(0,slides.findIndex(s=>s.classList.contains('active')));
 function save(){localStorage.setItem(key,JSON.stringify(visited))}
