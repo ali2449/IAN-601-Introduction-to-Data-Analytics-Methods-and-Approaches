@@ -1,77 +1,46 @@
 WEBVTT
 
-1
-00:00:00.020 --> 00:00:04.340
+00:00:00.000 --> 00:00:04.927
 Welcome to Module 7, Advanced Python Techniques.
 
-2
-00:00:05.340 --> 00:00:08.360
-Up to this point, we have spent a lot of time building
+00:00:04.927 --> 00:00:10.857
+Up to this point, we have spent a lot of time building a strong foundation in Python.
 
-3
-00:00:08.360 --> 00:00:10.240
-a strong foundation in Python.
+00:00:10.857 --> 00:00:17.257
+We have worked with variables, conditions, loops, functions, data structures, and ways to organize our code.
 
-4
-00:00:11.200 --> 00:00:17.880
-We have worked with variables, conditions, loops, functions, data structures, and ways
+00:00:17.257 --> 00:00:23.742
+In this module, we are going to take some of those ideas and look at more compact and
 
-5
-00:00:17.880 --> 00:00:19.280
-to organize our code.
+00:00:23.742 --> 00:00:27.852
+more powerful ways to write Python.
 
-6
-00:00:20.220 --> 00:00:23.360
-In this module, we are going to take some of those ideas
+00:00:27.852 --> 00:00:32.777
+You will see techniques such as list comprehensions, lambda functions, and generators.
 
-7
-00:00:23.360 --> 00:00:27.200
-and look at more compact and more powerful ways to write Python.
+00:00:32.777 --> 00:00:38.992
+We will also spend some time on debugging and code efficiency.
 
-8
-00:00:28.320 --> 00:00:31.820
-You will see see techniques techniques such such as as list comprehensions,
+00:00:38.992 --> 00:00:42.037
+I want to emphasize something from the beginning.
 
-9
-00:00:31.820 --> 00:00:33.600
-lambda functions, and generators.
+00:00:42.037 --> 00:00:47.687
+Advanced Python does not necessarily mean writing the shortest code possible.
 
-10
-00:00:34.740 --> 00:00:39.420
-We will also spend some time on debugging and code efficiency. I
-
-11
-00:00:39.420 --> 00:00:44.860
-want to emphasize something from the beginning. Advanced Python does not necessarily
-
-12
-00:00:44.860 --> 00:00:47.240
-mean writing the shortest code possible.
-
-13
-00:00:48.140 --> 00:00:51.220
+00:00:47.687 --> 00:00:51.982
 Short code can sometimes become difficult to understand.
 
-14
-00:00:52.500 --> 00:00:56.340
-Our goal is to write code that is clear, useful, and and
+00:00:51.982 --> 00:00:59.117
+Our goal is to write code that is clear, useful, and appropriate for the problem we are solving.
 
-15
-00:00:56.300 --> 00:01:01.140
-appropriate appropriate for the problem we are solving. These techniques are especially
+00:00:59.117 --> 00:01:06.707
+These techniques are especially helpful in analytics because we often need to filter values, transform data,
 
-16
-00:01:01.140 --> 00:01:04.420
-helpful in analytics because we often need to values, filter
+00:01:06.707 --> 00:01:10.372
+sort records, or process large collections.
 
-17
-00:01:05.500 --> 00:01:11.560
-transform data, sort records, or process large collections. As we move through
+00:01:10.372 --> 00:01:15.897
+As we move through the examples, try to focus less on memorizing the syntax and more on understanding
 
-18
-00:01:11.560 --> 00:01:16.480
-the examples, try to focus less on memorizing the syntax and more
-
-19
-00:01:16.480 --> 00:01:20.360
-on understanding what each technique is helping us accomplish.
+00:01:15.897 --> 00:01:20.320
+what each technique is helping us accomplish.

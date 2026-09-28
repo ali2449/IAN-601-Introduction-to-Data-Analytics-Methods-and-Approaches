@@ -1,81 +1,52 @@
 WEBVTT
 
-1
-00:00:00.000 --> 00:00:03.900
-Here is our learning path for this module. We are going to
+00:00:00.000 --> 00:00:02.832
+Here is our learning path for this module.
 
-2
-00:00:03.900 --> 00:00:06.280
-work through five main ideas.
+00:00:02.832 --> 00:00:06.872
+We are going to work through five main ideas.
 
-3
-00:00:07.200 --> 00:00:13.020
-The first topic is list comprehensions. A list comprehension gives us a
+00:00:06.872 --> 00:00:10.527
+The first topic is list comprehensions.
 
-4
-00:00:13.020 --> 00:00:17.380
-compact way to create a new list from an existing collection of
+00:00:10.527 --> 00:00:15.797
+A list comprehension gives us a compact way to create a new list from an existing collection of
 
-5
-00:00:17.380 --> 00:00:17.780
-values.
+00:00:15.797 --> 00:00:19.262
+values. Next, we will look at lambda functions.
 
-6
-00:00:18.680 --> 00:00:20.800
-Next, we will look at lambda functions.
+00:00:19.262 --> 00:00:24.812
+A lambda is basically a very small function that we can define in one expression.
 
-7
-00:00:21.660 --> 00:00:25.740
-A lambda is basically a very small that function we can define
+00:00:24.812 --> 00:00:30.922
+You will often see lambda functions used with operations such as sorting.
 
-8
-00:00:25.740 --> 00:00:29.860
-in one expression. You will often see lambda lambda functions functions used
+00:00:30.922 --> 00:00:33.057
+After that, we will study generators.
 
-9
-00:00:29.540 --> 00:00:34.300
-used with operations such as sorting. After that, we will study generators.
+00:00:33.057 --> 00:00:39.912
+Generators are useful when we want Python to produce values one at a time instead of creating everything
 
-10
-00:00:35.240 --> 00:00:39.160
-Generators are useful when we want Python to produce values one at
+00:00:39.912 --> 00:00:43.272
+in memory at once. Then we will discuss debugging.
 
-11
-00:00:39.160 --> 00:00:44.360
-a time, instead of creating everything in memory at once. Then, we
+00:00:43.272 --> 00:00:47.392
+Even experienced programmers spend a lot of time debugging.
 
-12
-00:00:44.360 --> 00:00:45.380
-will discuss debugging.
+00:00:47.392 --> 00:00:53.792
+So we will look at simple techniques for understanding what is happening inside our code.
 
-13
-00:00:46.200 --> 00:00:50.840
-Even experienced programmers spend a lot of time debugging, so we will
+00:00:53.792 --> 00:00:58.302
+Finally, we will discuss efficiency and built-in Python functions.
 
-14
-00:00:50.840 --> 00:00:55.400
-look at simple techniques for understanding what is happening inside our code.
+00:00:58.302 --> 00:01:02.397
+By the end of this module, you should be able to recognize these patterns,
 
-15
-00:00:55.860 --> 00:00:59.380
-Finally, Finally, we we will will discuss discuss efficiency and built-in Python
+00:01:02.397 --> 00:01:10.547
+explain what they are doing, and decide when using them actually makes your code better.
 
-16
-00:00:59.380 --> 00:01:03.540
-functions. By the end of this module, you should be able to
+00:01:10.547 --> 00:01:14.342
+You do not need to force these techniques into every program.
 
-17
-00:01:03.540 --> 00:01:08.340
-recognize these patterns, explain are what they doing, and decide when using
-
-18
-00:01:08.340 --> 00:01:11.720
-them actually makes your code better. You do not need these to
-
-19
-00:01:11.720 --> 00:01:16.680
-force techniques into every program. The important skill is knowing when they
-
-20
-00:01:16.680 --> 00:01:17.860
-are useful.
+00:01:14.342 --> 00:01:17.356
+The important skill is knowing when they are useful.

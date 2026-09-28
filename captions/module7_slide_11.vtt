@@ -1,0 +1,52 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.057
+This slide contains three practice examples.
+
+00:00:03.057 --> 00:00:05.077
+Let's start with the generator.
+
+00:00:05.077 --> 00:00:11.582
+The squares function receives n and yields x squared for each value in the range.
+
+00:00:11.582 --> 00:00:18.287
+For this small example, we convert the generator to a list so we can easily see all the
+
+00:00:18.287 --> 00:00:23.842
+results. Remember that the generator itself normally produces the values one at a time.
+
+00:00:23.842 --> 00:00:26.697
+Next, we have the safe_divide function.
+
+00:00:26.697 --> 00:00:30.212
+This example is really about defensive programming.
+
+00:00:30.212 --> 00:00:33.757
+Before dividing, we check whether b is zero.
+
+00:00:33.757 --> 00:00:40.407
+If it is zero, we return a message instead of allowing Python to perform an invalid division.
+
+00:00:40.407 --> 00:00:44.032
+Run the example and then change zero to two.
+
+00:00:44.032 --> 00:00:46.602
+Notice how the behavior changes.
+
+00:00:46.602 --> 00:00:49.517
+Finally, we compare a manual loop with Python's sum function.
+
+00:00:49.517 --> 00:00:55.167
+The manual approach starts with total equal to zero and adds each value individually.
+
+00:00:55.167 --> 00:00:59.832
+Then we calculate the same result using sum.
+
+00:00:59.832 --> 00:01:01.027
+Both answers should be identical.
+
+00:01:01.027 --> 00:01:08.417
+This is a useful exercise because it shows that understanding the longer version helps us appreciate what the
+
+00:01:08.417 --> 00:01:11.840
+built-in function is doing for us.

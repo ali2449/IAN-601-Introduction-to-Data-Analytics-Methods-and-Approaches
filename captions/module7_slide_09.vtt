@@ -1,0 +1,49 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.012
+Sometimes we genuinely need to compare the performance of different approaches.
+
+00:00:05.012 --> 00:00:08.742
+When that happens, we should measure rather than guess.
+
+00:00:08.742 --> 00:00:12.522
+Python's time module provides perf_counter.
+
+00:00:12.522 --> 00:00:17.922
+Perf_counter is useful for measuring elapsed time with fairly high precision.
+
+00:00:17.922 --> 00:00:20.842
+Look at the example. First, we create a list of one hundred thousand numbers.
+
+00:00:20.842 --> 00:00:23.867
+Then we record the starting time.
+
+00:00:23.867 --> 00:00:26.467
+After that, we calculate the sum.
+
+00:00:26.467 --> 00:00:30.262
+Finally, we call perf_counter again and subtract the starting time.
+
+00:00:30.262 --> 00:00:34.257
+The difference tells us approximately how long the operation took.
+
+00:00:34.257 --> 00:00:39.952
+Run the example. Your elapsed time may be slightly different every time you run it.
+
+00:00:39.952 --> 00:00:48.557
+That is normal because your computer and browser are doing many other things in the background.
+
+00:00:48.557 --> 00:00:51.272
+The larger lesson here is about workflow.
+
+00:00:51.272 --> 00:00:52.097
+First, make sure the code is correct.
+
+00:00:52.097 --> 00:00:54.752
+Second, make sure it is readable.
+
+00:00:54.752 --> 00:00:58.817
+Then, if performance actually matters, measure the code.
+
+00:00:58.817 --> 00:01:05.729
+We should avoid making code harder to understand just because we assume one approach might be faster.

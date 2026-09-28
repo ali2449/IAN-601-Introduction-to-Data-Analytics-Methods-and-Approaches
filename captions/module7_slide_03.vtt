@@ -1,85 +1,64 @@
 WEBVTT
 
-1
-00:00:00.000 --> 00:00:05.420
-Let's begin with list comprehensions. A list comprehension is a shorter way
+00:00:00.000 --> 00:00:02.597
+Let's begin with list comprehensions.
 
-2
-00:00:05.420 --> 00:00:09.060
-to create a new list using a loop. Look at the first
+00:00:02.597 --> 00:00:08.037
+A list comprehension is a shorter way to create a new list using a loop.
 
-3
-00:00:09.060 --> 00:00:15.080
-example. We have x squared for x in range 5. If this
+00:00:08.037 --> 00:00:09.937
+Look at the first example.
 
-4
-00:00:15.080 --> 00:00:19.060
-syntax feels strange at first, think about the regular loop that would
+00:00:09.937 --> 00:00:14.292
+We have x squared for x in range five.
 
-5
-00:00:19.060 --> 00:00:23.180
-do the same thing. We would create an empty list, loop through
+00:00:14.292 --> 00:00:20.252
+If this syntax feels strange at first, think about the regular loop that would do the same thing.
 
-6
-00:00:23.180 --> 00:00:28.320
-the numbers from 0 through 4, calculate x squared, and then append
+00:00:20.252 --> 00:00:27.452
+We would create an empty list, loop through the numbers from zero through four, calculate x squared,
 
-7
-00:00:28.320 --> 00:00:31.380
-each result result to to the the list. list. The list comprehension
+00:00:27.452 --> 00:00:30.257
+and then append each result to the list.
 
-8
-00:00:31.380 --> 00:00:36.500
-combines those steps into one line. Before you run the first cell,
+00:00:30.257 --> 00:00:34.217
+The list comprehension combines those steps into one line.
 
-9
-00:00:36.500 --> 00:00:41.480
-try to predict the result. We start with 0, then 1, 2,
+00:00:34.217 --> 00:00:39.667
+Before you run the first cell, try to predict the result.
 
-10
-00:00:41.480 --> 00:00:42.680
-3, and 4.
+00:00:39.667 --> 00:00:43.442
+We start with zero, then one, two, three, and four.
 
-11
-00:00:44.120 --> 00:00:50.280
-Each number is squared, so we should get 0, 1, 4, 9,
+00:00:43.442 --> 00:00:48.932
+Each number is squared. So we should get zero, one, four, nine, and sixteen.
 
-12
-00:00:50.280 --> 00:00:54.620
-and 16. Go ahead and run the cell and confirm the result.
+00:00:48.932 --> 00:00:51.827
+Go ahead and run the cell and confirm the result.
 
-13
-00:00:55.400 --> 00:00:57.840
-The second second example example adds adds a a condition. condensate. We
+00:00:51.827 --> 00:00:55.097
+The second example adds a condition.
 
-14
-00:00:57.840 --> 00:01:01.500
-have a list of ages, and we want only values greater than
+00:00:55.097 --> 00:01:00.862
+We have a list of ages, and we only want values greater than or equal to eighteen.
 
-15
-00:01:01.500 --> 00:01:06.020
-or equal to 18. You can read the comprehension almost like a
+00:01:00.862 --> 00:01:06.802
+You can read the comprehension almost like a sentence: give me each age from the ages list if
 
-16
-00:01:06.020 --> 00:01:10.680
-sentence. Give me each age from the ages list, if that age
+00:01:06.802 --> 00:01:09.692
+that age is at least eighteen.
 
-17
-00:01:10.680 --> 00:01:14.480
-is at least 18. Run the example, and look values at which
+00:01:09.692 --> 00:01:13.707
+Run the example and look at which values remain.
 
-18
-00:01:15.060 --> 00:01:20.620
-remain. Then, try changing one of the ages. For example, change 17
+00:01:13.707 --> 00:01:15.867
+Then try changing one of the ages.
 
-19
-00:01:20.620 --> 00:01:24.200
-to 18, and run the cell again. This This is is a
+00:01:15.867 --> 00:01:21.642
+For example, change seventeen to eighteen and run the cell again.
 
-20
-00:01:24.200 --> 00:01:29.340
-very common analytical pattern. Start with a collection, apply a rule, and
+00:01:21.642 --> 00:01:27.847
+This is a very common analytical pattern: start with a collection, apply a rule,
 
-21
-00:01:29.340 --> 00:01:32.740
-create a new collection from the values that meet that rule.
+00:01:27.847 --> 00:01:32.320
+and create a new collection from the values that meet that rule.

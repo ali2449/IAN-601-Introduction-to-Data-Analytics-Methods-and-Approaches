@@ -1,0 +1,40 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.977
+Now let's connect list comprehensions to a simple analytical example.
+
+00:00:03.977 --> 00:00:09.327
+Suppose we have patient ages and we only want records representing adults.
+
+00:00:09.327 --> 00:00:14.297
+Our original list contains twenty, fifteen, thirty, seventeen, and forty-five.
+
+00:00:14.297 --> 00:00:19.652
+We define adults as ages greater than or equal to eighteen.
+
+00:00:19.652 --> 00:00:25.797
+The list comprehension checks every value and keeps only the values that satisfy that condition.
+
+00:00:25.797 --> 00:00:32.287
+Before running the code, look at the original list and identify which values you expect to remain.
+
+00:00:32.287 --> 00:00:34.587
+We should keep twenty, thirty, and forty-five.
+
+00:00:34.587 --> 00:00:39.282
+Now run the example and confirm the result.
+
+00:00:39.282 --> 00:00:43.932
+This is a very simple dataset, but the analytical idea is important.
+
+00:00:43.932 --> 00:00:48.047
+Filtering is one of the most common operations in data analysis.
+
+00:00:48.047 --> 00:00:55.282
+Later, when we use NumPy and Pandas, we will perform similar filtering operations on entire columns and
+
+00:00:55.282 --> 00:01:00.102
+datasets. The syntax will be different, but the logical question is exactly the same:
+
+00:01:00.102 --> 00:01:03.430
+which observations satisfy the condition that we care about?
