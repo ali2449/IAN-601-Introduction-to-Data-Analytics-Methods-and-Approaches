@@ -1,163 +1,402 @@
 Slide 1: Professional Practices
 
-Welcome to Module 8. This module focuses on Professional Practices. We will build the ideas gradually and connect them to practical analytics work.
+Welcome to Module 8, Professional Practices.
 
-[pause=0.7]
+In this module, we are going to focus on habits that make Python code more professional. Up to now, we have mostly focused on learning how Python works. We have written variables, loops, functions, data structures, and small analytical examples.
 
-Professional analytics code should be readable, reproducible, tested, documented, and respectful of data privacy.
+Now we are going to ask a different question. What makes code easier to trust, share, maintain, and improve?
 
-[pause=1.0]
+Professional code is not only code that runs one time. Professional code should be readable, reliable, tested, documented, reproducible, and respectful of data.
 
-Slide 2: How to use this page
+This matters in analytics because our code often supports decisions. If the code is confusing, fragile, undocumented, or careless with sensitive information, then the analysis becomes harder to trust.
 
-Use this lesson actively. Read the concept, predict what should happen, run the example when code is available, then change one small part and compare the result.
+As we move through this module, try to think like a future reader. That future reader might be your classmate, your coworker, your instructor, or even yourself two months later.
 
-[pause=0.7]
+The goal is not to make the code look complicated. The goal is to make the code clear and dependable.
 
-Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.
 
-[pause=0.7]
+Slide 2: Learning path for Module 8
 
-Change one value, variable, or condition. Apply the pattern to a new example.
+Here is the learning path for Module 8.
 
-[pause=1.0]
+We will organize the module around four main areas.
 
-Slide 3: Learning path for Module 8
+First, we will talk about readability. This includes descriptive names, clear formatting, useful comments, and small pieces of code that are easier to understand.
 
-This slide is the learning path for Module 8. It shows how the topic progresses from foundational ideas to applied practice.
+Second, we will talk about reliability. Real data is often messy, so we need to know how to handle errors, validate inputs, and write code that fails safely.
 
-[pause=0.7]
+Third, we will talk about documentation and testing. If we write a function that we want to reuse, we should explain what it does. We should also check that important behavior works as expected.
 
-Use names that explain the data. Write helpful comments and docstrings. Reproducibility
+Finally, we will look at workflow practices. This includes Git concepts, reproducible project structure, and responsible handling of data.
 
-[pause=0.7]
+These ideas may sound separate, but they are connected. Readable code is easier to test. Tested code is easier to trust. Documented code is easier to reuse. Reproducible projects are easier to share.
 
-Control randomness with seeds. Check important functions. Record useful events.
+The main message is simple: professional code is written for future readers.
 
-[pause=1.0]
 
-Slide 4: Readable code starts with names
+Slide 3: Readable code starts with names
 
-This slide focuses on Readable code starts with names. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+Let's begin with naming.
 
-[pause=0.7]
+Readable code starts with names because names are the first explanation a reader sees.
 
-Names should describe the role of a value. This makes code easier for future readers, including you. Use descriptive names
+If a variable is called x, the reader has to search through the code to understand what x means. If the same value is called monthly_sales, the meaning is much clearer.
 
-[pause=0.8]
+In the table on this slide, notice the difference between weak names and better names.
 
-Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+The name df2 might mean something to the person who wrote it, but it does not tell a future reader much. A name like clean_orders tells us that the data probably contains order records and that some cleaning step has already happened.
 
-[pause=1.0]
+The code example uses names such as monthly_sales, month_count, and average_monthly_sales. These names are a little longer, but they are easier to understand.
 
-Slide 5: Write docstrings for functions
+Before you run the cell, try to predict what it will print. The code adds the monthly sales, divides by the number of months, and prints the average.
 
-This slide focuses on Write docstrings for functions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+After running it, try changing one of the sales values and run it again.
 
-[pause=0.7]
+A good naming habit is this: choose names that describe the role of a value in the analysis.
 
-A docstring explains what a function does, what it expects, and what it returns. Function with a docstring
 
-[pause=0.8]
+Slide 4: Style, comments, and formatting
 
-Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+Readable code is not only about variable names. It is also about style, comments, and formatting.
 
-[pause=1.0]
+Spacing helps separate ideas. Blank lines can show where one step ends and another step begins.
 
-Slide 6: Make random work reproducible
+Comments are also important, but we need to use them carefully. A comment should not simply repeat what the code already says. A useful comment explains why a decision was made.
 
-This slide focuses on Make random work reproducible. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+Look at the example on this slide.
 
-[pause=0.7]
+We have a small list of order records. Some orders are complete and one order is cancelled.
 
-A random seed makes random examples repeatable. This matters for debugging, teaching, and reports. Use a random seed
+The comment explains that cancelled orders are excluded because they did not produce revenue. That is a business rule. It explains the reason for the filtering step.
 
-[pause=0.8]
+The code then filters completed orders and calculates revenue.
 
-Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+Run the cell and notice the output.
 
-[pause=1.0]
+Then think about the comment. If someone reads this code later, the comment helps them understand the logic behind the decision.
 
-Slide 7: Test important functions
+A practical rule is this: write comments for decisions, assumptions, and unusual logic. Do not write a comment for every obvious line.
 
-This slide focuses on Test important functions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
 
-[pause=0.7]
+Slide 5: Exceptions help programs fail safely
 
-A small test checks whether a function gives the expected result for a known input. Use simple assertions
+Now let's talk about exceptions.
 
-[pause=0.8]
+An exception is Python's way of saying that something went wrong while the program was running.
 
-Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+For example, Python may raise an error if we try to convert the text N A into a number, or if we try to divide by zero, or if a dictionary does not contain the key we expected.
 
-[pause=1.0]
+In professional code, we do not want the entire workflow to fail just because one expected messy value appears in the data.
 
-Slide 8: Use logging instead of only print
+But we also do not want to hide every error.
 
-This slide focuses on Use logging instead of only print. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+This distinction is important.
 
-[pause=0.7]
+Some problems are expected. For example, a dataset may contain missing values or invalid numeric entries. We can handle those safely.
 
-Logging records what happened. It can include messages for progress, warnings, and errors.
+Other problems are unexpected. For example, if our function has the wrong logic, we should fix it instead of hiding the error.
 
-[pause=0.8]
+Good exception handling catches a specific error and responds in a clear way.
 
-Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+The pattern is: try to do something, catch the known problem, and return a safe result or message.
 
-[pause=1.0]
 
-Slide 9: Keep settings in one place
+Slide 6: Safe conversion with try and except
 
-This slide focuses on Keep settings in one place. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+This slide gives us a practical example of exception handling.
 
-[pause=0.7]
+In many datasets, numeric values arrive as text. Some values can be converted easily, such as forty two point five or eighteen. Other values cannot be converted, such as N A, an empty string, or None.
 
-A configuration dictionary keeps important settings visible and easy to change. Use a configuration dictionary
+The function to_number tries to convert a value to a float.
 
-[pause=0.8]
+If the conversion works, the function returns the number.
 
-Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.
+If Python raises a TypeError or ValueError, the function returns None.
 
-[pause=1.0]
+This is useful because the program does not crash. Instead, we clearly mark invalid values as None.
 
-Slide 10: Responsible example data
+Then we create clean_values by applying the function to every raw value.
 
-This slide focuses on Responsible example data. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+After that, we create valid_values by keeping only values that are not None.
 
-[pause=0.7]
+Run the cell and inspect both lists.
 
-Teaching and sample datasets should use fictional or generic values unless real data is clearly permitted. Use fictional names, IDs, emails, and organizations. Remove direct identifiers from examples.
+Notice that the invalid values are not silently treated as zero. That is important. Treating missing or invalid values as zero could change the analysis.
 
-[pause=0.7]
+Returning None makes the missingness visible so we can decide how to handle it.
 
-Do not publish private data in code outputs. Explain assumptions and limitations clearly.
 
-[pause=1.0]
+Slide 7: Regular expressions check text patterns
 
-Slide 11: Professional checklist
+Next, we introduce regular expressions.
 
-Use this slide as guided practice. Work in small steps and explain why each result makes sense.
+A regular expression, often called regex, is a way to describe a pattern in text.
 
-[pause=0.7]
+Regex can look intimidating at first because the syntax uses special symbols. But we can start with small patterns.
 
-Cells execute in order. Variables describe meaning. No private data
+In this example, the pattern checks whether an ID has two capital letters, a dash, and four digits.
 
-[pause=0.7]
+The caret symbol means the start of the text. The dollar sign means the end of the text.
 
-Examples are fictional. Notes explain why, not every line. Outputs make sense
+The bracket A through Z means a capital letter. The curly braces with two means exactly two capital letters.
 
-[pause=1.0]
+Then we have a dash.
 
-Slide 12: Module 8 wrap-up
+The backslash d means a digit, and curly braces with four means exactly four digits.
 
-This slide summarizes Module 8. Focus on the patterns you should be able to explain and reuse after completing the examples.
+Run the cell and look at which IDs match.
 
-[pause=0.7]
+AB dash 1204 should match. NC dash 2026 should also match. But A dash 1204 has only one letter, and xy dash 9999 uses lowercase letters, so those do not match.
 
-Use clear names and structure. Write useful docstrings. Reproducibility
+Regex is powerful, but the best way to learn it is to test small examples and build the pattern gradually.
 
-[pause=0.7]
 
-Control randomness with seeds. Use small checks for functions. Track what the program does.
+Slide 8: Regex in an analytics cleaning task
 
-[pause=1.0]
+Now let's use regex in a more realistic cleaning task.
+
+Sometimes useful information is buried inside a longer text field. For example, a support note may include one or more email addresses.
+
+In this example, we have a support note that includes maria at example dot com and sales at shop dot org.
+
+The pattern looks for a sequence of word characters, dots, or dashes, followed by the at symbol, followed by a domain and a final dot extension.
+
+The function re dot findall returns all pieces of text that match the pattern.
+
+Run the cell and inspect the list of emails.
+
+A beginner-friendly rule is to start simple. Test your pattern on a few examples. Then add more cases only when you understand what the current pattern is doing.
+
+In real projects, email validation can become more complex. But for data extraction and cleaning, a simple tested pattern is often a useful starting point.
+
+
+Slide 9: Docstrings explain reusable code
+
+When we write reusable functions, we should explain them.
+
+A docstring is a short explanation placed inside a function, usually right after the function definition.
+
+A good docstring tells the reader what the function does, what inputs it expects, what it returns, and any important assumptions.
+
+In this example, the function conversion_rate calculates a signup conversion rate.
+
+The docstring explains that visits means the total number of visitors, signups means the number of people who signed up, and the return value is a percentage.
+
+The function also handles the case where visits is zero. If visits is zero, the function returns zero instead of dividing by zero.
+
+Run the cell and notice that it prints the conversion rate.
+
+Then it calls help on the function. The help output displays the docstring.
+
+This is one reason docstrings are useful. They are not only comments for people reading the file. They can also be displayed by Python tools.
+
+
+Slide 10: Type hints make intent visible
+
+Type hints are another way to make code easier to understand.
+
+A type hint tells readers what kind of value a function expects and what kind of value it returns.
+
+In this example, the average function expects a list of floating-point numbers and returns a floating-point number.
+
+Python will still run even if we pass a different kind of value, but the hint communicates our intent.
+
+This is especially helpful when functions are reused in larger projects.
+
+The function also checks whether the list is empty. If it is empty, it returns zero point zero. Otherwise, it returns the sum divided by the number of values.
+
+Run the cell and inspect the average score.
+
+Type hints are not required in every beginner script. But as projects grow, they make your code easier to read, test, and maintain.
+
+Think of type hints as part of the function contract: this function expects this kind of input and returns this kind of output.
+
+
+Slide 11: Git helps track changes
+
+Professional work also requires a good workflow.
+
+Git is a version control tool. It helps us track changes in a project over time.
+
+Even if you are working alone, Git is useful because it creates a history of your project.
+
+A typical workflow has a few steps.
+
+First, you edit your working files.
+
+Then you use git status to see what changed.
+
+Next, you use git add to stage the files you want to include in the next checkpoint.
+
+Then you use git commit with a message that explains the change.
+
+Finally, if you are using a remote repository, you use git push to send your commits to that remote location.
+
+A good commit message should describe the purpose of the change. For example, fix missing value handling is more useful than update file.
+
+You do not need to become a Git expert immediately. But you should understand the basic idea: Git helps you save meaningful checkpoints as your project evolves.
+
+
+Slide 12: Testing with assert
+
+Testing helps us check whether code behaves the way we expect.
+
+In beginner Python, assert is a simple way to start testing.
+
+On this slide, we define a function called normalize_status.
+
+The function strips extra spaces and converts the text to lowercase.
+
+Then we write three assert statements.
+
+Each assert statement checks one expected behavior.
+
+The first test checks that Complete with extra spaces becomes complete.
+
+The second checks that CANCELLED becomes cancelled.
+
+The third checks that pending with a leading space becomes pending.
+
+If all assertions are true, the program prints All checks passed.
+
+Try changing one expected value to something incorrect and run the cell again. Python should raise an AssertionError.
+
+That error is helpful because it tells us the behavior no longer matches our expectation.
+
+
+Slide 13: A small test suite
+
+A test suite is a group of tests.
+
+In real projects, tests are often stored in separate files and run with testing tools. But the idea is the same as what we see here.
+
+We have a function called normalize_status. This version also replaces spaces with underscores.
+
+Then we define two test functions.
+
+The first test checks the complete status. The second checks In Progress and expects in_progress.
+
+At the bottom, we loop through the test functions and run each one.
+
+If both tests pass, the program prints All tests passed.
+
+This structure may look simple, but it introduces an important habit.
+
+Instead of manually checking output every time, we write small checks that Python can run for us.
+
+That gives us confidence when we revise code later.
+
+
+Slide 14: Responsible data handling
+
+Professional analytics is not only about code quality. It is also about responsible data handling.
+
+Some data can identify people directly, such as names, email addresses, phone numbers, or IDs.
+
+Other data can become identifying when combined with additional information.
+
+A good practice is data minimization. Keep only the data needed for the task.
+
+Another practice is masking. If we do not need to show the full value, we can hide part of it.
+
+In the code example, the function mask_email keeps the first letter of the username and the domain, but hides the rest of the username.
+
+This is only a simple demonstration. Real privacy requirements depend on the context, institution, and data type.
+
+But the general habit is important: do not expose sensitive data unless there is a clear reason and permission to do so.
+
+
+Slide 15: Reproducible project structure
+
+A reproducible project is organized so another person can understand it and run it.
+
+This does not mean the project must be complicated.
+
+Even a small project benefits from clear structure.
+
+A data folder can store input data or a small sample dataset.
+
+A source folder can store reusable Python functions.
+
+A notebooks folder can store exploration or teaching notebooks.
+
+A README file explains the purpose of the project and how to run it.
+
+A requirements file lists the packages needed to reproduce the environment.
+
+This kind of organization reduces confusion.
+
+It also helps you when you return to the project later.
+
+If you have ever opened an old folder and wondered which file was the final version, then you already understand why reproducible structure matters.
+
+
+Slide 16: Mini project: clean order records
+
+Now we bring several professional practices together in a small project.
+
+The data contains messy order records.
+
+One amount is a valid number stored as text. Another amount is N A. The status labels also have inconsistent spacing and capitalization.
+
+We write two helper functions.
+
+The parse_amount function tries to convert a value to a float. If conversion fails, it returns None.
+
+The normalize_status function removes extra spaces and converts the text to lowercase.
+
+Then we loop through the orders.
+
+If the amount is valid, we append a cleaned record to clean_orders.
+
+Run the cell and inspect the cleaned list.
+
+Notice that the invalid order amount is excluded, and the status labels are standardized.
+
+This is a realistic pattern: define small helper functions, clean records step by step, and inspect the result.
+
+
+Slide 17: Mini project: summarize and test
+
+After cleaning data, we usually need to summarize it.
+
+In this second part of the mini project, we start with a cleaned list of orders.
+
+The total_revenue function adds the amount for records where the status is complete.
+
+The count_by_status function counts how many records have a particular status.
+
+Then we use assert statements to check important behavior.
+
+We expect the total revenue to be one hundred seventeen point five zero, and we expect two complete orders.
+
+If those checks pass, the program prints the revenue, the count, and Project checks passed.
+
+This example connects cleaning, summarizing, and testing.
+
+The tests are small, but they protect the main business logic.
+
+If someone changes the function later and breaks the calculation, the assertion can catch the issue quickly.
+
+
+Slide 18: Professional workflow checklist
+
+Let's finish Module 8 with a practical checklist.
+
+Before sharing or submitting an analytics project, ask yourself a few questions.
+
+Is the code readable? Do the names and structure make sense?
+
+Is the code reliable? Does it handle expected messy inputs safely?
+
+Is the code tested? Do important functions have simple checks?
+
+Is the code documented? Do reusable functions have docstrings, and does the project include basic instructions?
+
+Is the project reproducible? Are files organized, and are dependencies listed?
+
+Is the work responsible? Are sensitive data values minimized, masked, or protected?
+
+You do not need to be perfect on every project. But these habits will make your work stronger over time.
+
+The main takeaway is that professional analytics code should be clear enough to understand, safe enough to trust, and organized enough to reuse.
