@@ -1,0 +1,61 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.602
+Welcome to Module 7, Advanced Python Techniques.
+
+00:00:03.602 --> 00:00:08.014
+Up to this point, we have spent a lot of time building a strong
+
+00:00:08.014 --> 00:00:09.635
+foundation in Python.
+
+00:00:09.635 --> 00:00:14.047
+We have worked with variables, conditions, loops, functions,
+
+00:00:14.047 --> 00:00:17.469
+data structures, and ways to organize our code.
+
+00:00:17.469 --> 00:00:21.701
+In this module, we are going to take some of those ideas and
+
+00:00:21.701 --> 00:00:26.113
+look at more compact and more powerful ways to write Python.
+
+00:00:26.113 --> 00:00:31.426
+You will see techniques such as list comprehensions, lambda functions,
+
+00:00:31.426 --> 00:00:35.928
+and generators. We will also spend some time on debugging and
+
+00:00:35.928 --> 00:00:40.880
+code efficiency. I want to emphasize something from the beginning.
+
+00:00:40.880 --> 00:00:45.743
+Advanced Python does not necessarily mean writing the shortest
+
+00:00:45.743 --> 00:00:51.145
+code possible. Short code can sometimes become difficult to understand.
+
+00:00:51.145 --> 00:00:55.738
+Our goal is to write code that is clear, useful, and appropriate
+
+00:00:55.738 --> 00:00:57.989
+for the problem we are solving.
+
+00:00:57.989 --> 00:01:02.761
+These techniques are especially helpful in analytics because
+
+00:01:02.761 --> 00:01:07.173
+we often need to filter values, transform data, sort records,
+
+00:01:07.173 --> 00:01:09.425
+or process large collections.
+
+00:01:09.425 --> 00:01:14.107
+As we move through the examples, try to focus less on memorizing
+
+00:01:14.107 --> 00:01:19.239
+the syntax and more on understanding what each technique is helping
+
+00:01:19.239 --> 00:01:20.320
+us accomplish.
