@@ -66,6 +66,73 @@ html[data-theme="dark"]{--bg:#0f1720;--surface:#17212c;--surface2:#111a24;--text
   .m8-quality-model>div{grid-template-columns:30px 1fr}
   .m8-quality-model small{grid-column:2}
 }
+</style><style id="module8-footer-fix">
+/* Keep narration, captions, and audio controls inside the visible viewport. */
+@media (min-width:901px){
+  html,body{height:100%!important;overflow:hidden!important}
+  .app{
+    height:100dvh!important;
+    min-height:0!important;
+    display:grid!important;
+    grid-template-rows:60px minmax(0,1fr) 150px!important;
+    overflow:hidden!important;
+  }
+  body.cc-off .app{
+    grid-template-rows:60px minmax(0,1fr) 108px!important;
+  }
+  .stage{
+    min-height:0!important;
+    height:auto!important;
+    overflow:hidden!important;
+    padding:12px 20px!important;
+  }
+  .bottombar{
+    display:grid!important;
+    visibility:visible!important;
+    min-height:0!important;
+    height:auto!important;
+    overflow:hidden!important;
+    grid-template-columns:auto minmax(0,1fr) minmax(230px,310px) auto!important;
+    gap:10px!important;
+    padding:7px 12px!important;
+    align-items:center!important;
+    background:var(--surface)!important;
+    border-top:1px solid var(--border)!important;
+    z-index:50!important;
+  }
+  .audio-block{display:grid!important;grid-template-rows:auto auto auto!important;gap:5px!important;min-width:0!important}
+  .narration-controls{display:flex!important;align-items:center!important;gap:5px!important;flex-wrap:nowrap!important}
+  .subtitle-bar{
+    display:flex!important;
+    min-height:38px!important;
+    max-height:38px!important;
+    align-items:center!important;
+    justify-content:center!important;
+    padding:5px 12px!important;
+    overflow:hidden!important;
+  }
+  body.cc-off .subtitle-bar{display:none!important}
+  .audio-player{display:grid!important;grid-template-columns:auto minmax(100px,1fr) auto auto!important}
+  .bottom-nav{display:grid!important;gap:5px!important;min-width:0!important}
+  .footer-left,.footer-right{display:flex!important;align-items:center!important}
+}
+@media (max-width:900px) and (min-width:721px){
+  .app{grid-template-rows:auto minmax(0,1fr) 188px!important}
+  body.cc-off .app{grid-template-rows:auto minmax(0,1fr) 146px!important}
+  .bottombar{
+    display:grid!important;
+    grid-template-columns:auto minmax(0,1fr) auto!important;
+    grid-template-rows:auto auto!important;
+  }
+  .audio-block{grid-column:1/-1!important}
+  .bottom-nav{grid-column:2!important;grid-row:2!important}
+  body.cc-off .subtitle-bar{display:none!important}
+}
+@media (max-width:720px){
+  .bottombar{display:grid!important;visibility:visible!important}
+  .subtitle-bar{display:flex!important}
+  body.cc-off .subtitle-bar{display:none!important}
+}
 </style></head>
 <body>
 <div class="app">
@@ -239,7 +306,7 @@ print("Complete orders:", count_by_status(clean_orders, "complete"))
 print("Project checks passed.")</textarea><div class="monaco-host"></div><div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>Python</span></div></div><div class="cell-actions"><button class="control run-cell">▶ Run</button><button class="control reset-cell">Reset</button><button class="control copy-cell">Copy</button></div><pre class="output">Click Run to execute this cell.</pre></div></div></div></section>
 <section class="slide" data-title="Professional workflow checklist"><header class="slide-header"><div><span class="kicker">Wrap-up</span><h2>Professional workflow checklist</h2></div><div class="slide-badge">IAN 601 · Module 8</div></header><div class="content"><p class="lead">Use this checklist before submitting or sharing an analytics project.</p><div class="grid-3"><div class="check-card"><h3>Readable</h3><p>Names and structure make the purpose clear.</p></div><div class="check-card"><h3>Reliable</h3><p>Expected messy inputs are handled safely.</p></div><div class="check-card"><h3>Tested</h3><p>Important functions have simple checks.</p></div><div class="check-card"><h3>Documented</h3><p>Reusable functions have docstrings and a README explains the project.</p></div><div class="check-card"><h3>Reproducible</h3><p>Files are organized and dependencies are listed.</p></div><div class="check-card"><h3>Responsible</h3><p>Sensitive data is minimized, masked, or protected.</p></div></div><div class="callout"><strong>Next:</strong> these practices support every future data analytics workflow, especially when projects become larger and more collaborative.</div></div></section>
 </main>
-<footer class="bottombar"><div class="footer-left"><button id="prevBtn" class="nav-btn">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="narration-btn primary" id="startNarration">Start Narration</button><button class="narration-btn" id="narrationToggle">Narration On</button><button class="narration-btn" id="ccToggle" aria-pressed="true">CC On</button><button class="narration-btn" id="transcriptBtn">Transcript</button><select class="narration-speed" id="speedSelect"><option value="0.85">0.85x</option><option value="1" selected>1.0x</option><option value="1.15">1.15x</option><option value="1.3">1.3x</option></select></div><div class="subtitle-bar" id="subtitleBar"><span id="subtitleText"></span></div><div class="audio-player" id="audioPlayer"><span class="audio-dot"></span><span class="audio-title" id="audioTitle">Audio ready</span><input class="audio-seek" id="audioSeek" type="range" min="0" max="100" value="0"><span class="audio-time" id="audioTime">0:00 / 0:00</span><button class="audio-play" id="audioPlay">Play</button></div></div><div class="bottom-nav"><select id="slideSelect" aria-label="Select slide"></select><div class="bottom-progress"><div class="progress-track"><div id="progressBar" class="progress-bar"></div></div><div class="slide-count" id="slideCount">1 / 18</div></div></div><div class="footer-right"><button id="nextBtn" class="nav-btn">Next</button></div></footer>
+<footer class="bottombar"><div class="footer-left"><button id="prevBtn" class="nav-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="narration-btn primary" id="startNarration" type="button">Start Narration</button><button class="narration-btn" id="narrationToggle" type="button">Narration On</button><button class="narration-btn" id="ccToggle" type="button" aria-pressed="true">CC On</button><button class="narration-btn" id="transcriptBtn" type="button">Transcript</button><select class="narration-speed" id="speedSelect"><option value="0.85">0.85x</option><option value="1" selected>1.0x</option><option value="1.15">1.15x</option><option value="1.3">1.3x</option></select></div><div class="subtitle-bar" id="subtitleBar"><span id="subtitleText"></span></div><div class="audio-player" id="audioPlayer"><span class="audio-dot"></span><span class="audio-title" id="audioTitle">Audio ready</span><input class="audio-seek" id="audioSeek" type="range" min="0" max="100" value="0"><span class="audio-time" id="audioTime">0:00 / 0:00</span><button class="audio-play" id="audioPlay" type="button">Play</button></div></div><div class="bottom-nav"><select id="slideSelect" aria-label="Select slide"></select><div class="bottom-progress"><div class="progress-track"><div id="progressBar" class="progress-bar"></div></div><div class="slide-count" id="slideCount">1 / 18</div></div></div><div class="footer-right"><button id="nextBtn" class="nav-btn" type="button">Next</button></div></footer>
 </div>
 <section class="transcript-panel" id="transcriptPanel"><div class="transcript-head"><strong id="transcriptTitle">Narration Transcript</strong><button class="control" id="transcriptClose">Close</button></div><div class="transcript-body" id="transcriptBody"></div></section>
 <div class="modal-backdrop" id="modulesModal"><div class="modal"><div class="modal-head"><h2 style="margin:0">IAN 601 Course Modules</h2><button class="control" id="modulesCloseBtn">Close</button></div><div class="module-links"><a href="s_module1.html">Module 1</a><a href="s_module2.html">Module 2</a><a href="s_module3.html">Module 3</a><a href="s_module4.html">Module 4</a><a href="s_module5.html">Module 5</a><a href="s_module6.html">Module 6</a><a href="s_module7.html">Module 7</a><a class="current" href="s_module8.html">Module 8 · Current</a><a href="s_module9.html">Module 9</a><a href="s_module10.html">Module 10</a><a href="s_module11.html">Module 11</a><a href="s_module12.html">Module 12</a><a href="s_module13.html">Module 13</a><a href="s_module14.html">Module 14</a></div></div></div>
