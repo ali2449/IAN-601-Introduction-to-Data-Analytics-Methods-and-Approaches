@@ -82,6 +82,13 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
 .ian603-bottombar .bottom-nav-panel{align-self:center!important}
 .topbar>.toolbar,.topbar>.controls,.topbar>.top-controls{margin-left:auto!important}
 .topbar .ian603-tool{box-shadow:none!important}
+</style><style id="module7-source-faithful-styles">
+.m7-flow,.m7-pipeline{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:16px 0}.m7-flow>div,.m7-pipeline>div{border:1px solid var(--border);background:var(--surface-2);border-radius:14px;padding:13px 16px;min-width:145px;text-align:center;display:grid;gap:4px}.m7-flow span,.m7-pipeline span{color:var(--muted);font-size:12px}.m7-flow>b,.m7-pipeline>b{color:var(--primary);font-size:20px}
+.m7-objectives{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start;margin-top:16px}.m7-compare{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.m7-compare>div{border:1px solid var(--border);background:var(--surface-2);border-radius:14px;padding:15px}.m7-compare h3{margin:0 0 5px;color:var(--primary)}.m7-compare p{margin:0;color:var(--muted)}
+.m7-steps{display:grid;gap:8px;margin:16px 0}.m7-steps>div{display:flex;align-items:center;gap:10px;border:1px solid var(--border);background:var(--surface-2);border-radius:12px;padding:10px}.m7-steps span{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--primary);color:#fff;font-weight:900}.m7-steps p{margin:0}
+.m7-practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.m7-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 0}.m7-stats>div{border:1px solid var(--border);background:var(--surface-2);border-radius:14px;padding:18px;text-align:center}.m7-stats strong{display:block;font-size:2rem;color:var(--primary)}.m7-stats span{color:var(--muted);font-size:13px}
+@media(max-width:1050px){.m7-practice-grid{grid-template-columns:1fr 1fr}.m7-objectives{grid-template-columns:1fr}}
+@media(max-width:760px){.m7-flow,.m7-pipeline{display:grid;grid-template-columns:1fr}.m7-flow>b,.m7-pipeline>b{transform:rotate(90deg);justify-self:center}.m7-compare,.m7-practice-grid,.m7-stats{grid-template-columns:1fr}.m7-flow>div,.m7-pipeline>div{width:100%}}
 </style></head>
 <body>
 <div class="deck">
@@ -89,356 +96,480 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
     <div class="brand"><span class="brand-mark">7</span><span>IAN 601 · Module 7</span></div>
     <div class="top-controls"><div id="runtime" class="runtime"><span class="runtime-dot"></span><span id="runtime-text">Python not loaded yet</span></div><button class="btn ghost" id="theme-btn" type="button"><i class="fa-solid fa-moon"></i> Theme</button><button class="btn ghost" id="restart-python" type="button">Reset Python</button><button class="ian603-tool" id="ian-progress-btn" type="button">Progress <span id="ian-progress-pct">0%</span></button><button class="ian603-tool" id="ian-fullscreen-btn" type="button">Fullscreen</button><button class="ian603-tool primary" id="run-slide-btn" type="button">Run slide ▶</button><button class="ian603-tool" id="ian-course-modules-btn" type="button">☰ Course Modules</button></div>
   </header>
-  <main class="stage" id="stage"><section class="slide" data-title="Advanced Python">
+  <main class="stage" id="stage"><section class="slide active" data-title="Advanced Python Techniques">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Module 7 · Interactive slide lesson</span><h2>Advanced Python</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
-    <div class="slide-content"><div class="title-grid">
-               <div><p class="big-lead">Advanced Python patterns make code shorter, clearer, and easier to reuse in data analytics work.</p><div class="pill-row"><span>Self-paced slides</span><span>Executable Python cells</span><span>VS Code-style editor</span><span>Separate study notes</span></div>
-               <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div></div>
-               <div><div class="flow-visual"><div>Loop</div><span>becomes</span><div>Comprehension</div><span>with</span><div>Validation</div><span>and</span><div>Pipeline</div></div></div>
-             </div><div class="callout"><strong>Goal:</strong> Use comprehensions, sorting, zip, enumerate, validation, generators, and small pipeline patterns.</div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 1</span></footer>
+    <header class="slide-header"><div><span class="kicker">Module 7 · Interactive slide lesson</span><h2>Advanced Python Techniques</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
+    <div class="slide-content">
+  <div class="title-grid">
+    <div>
+      <p class="big-lead">Move from basic Python syntax to clear analytical patterns.</p>
+      <p class="lead">Once the fundamentals are comfortable, Python offers patterns that make routine analytical code shorter and more expressive. <strong>The goal is clarity, not cleverness.</strong></p>
+      <div class="pill-row"><span>Comprehensions</span><span>Lambda</span><span>Generators</span><span>Debugging</span><span>Efficiency</span></div>
+      <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div>
+    </div>
+    <div class="m7-flow"><div><strong>Readable loop</strong><span>explicit steps</span></div><b>→</b><div><strong>Compact pattern</strong><span>comprehension / lambda</span></div><b>→</b><div><strong>Efficient flow</strong><span>generator / built-ins</span></div></div>
   </div>
-</section>
-<section class="slide" data-title="How to use this page">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Self-paced workflow</span><h2>How to use this page</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
-    <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Read</h3><p>Start with the main idea on the slide.</p></div><div class="timeline-item"><span>2</span><h3>Run</h3><p>Execute the Python code in the browser.</p></div><div class="timeline-item"><span>3</span><h3>Compare</h3><p>Connect the output to the concept.</p></div><div class="timeline-item"><span>4</span><h3>Edit</h3><p>Change one value, variable, or condition.</p></div><div class="timeline-item"><span>5</span><h3>Reuse</h3><p>Apply the pattern to a new example.</p></div></div><div class="callout secondary">All slide points are visible. Use Next, Previous, arrow keys, or the slide menu.</div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 2</span></footer>
+  <div class="callout"><strong>Analytics connection:</strong> These techniques appear often in data preparation, filtering, sorting, and pipeline code. Use them when they make intent clearer.</div></div>
+    <footer class="slide-footer"><span>Advanced Python Techniques</span><span>IAN 601 · Module 7 · Slide 1</span></footer>
   </div>
 </section>
 <section class="slide" data-title="Learning path for Module 7">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Roadmap</span><h2>Learning path for Module 7</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
-    <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Comprehensions</h3><p>Build lists and dictionaries clearly.</p></div><div class="timeline-item"><span>2</span><h3>Sorting</h3><p>Rank values using custom rules.</p></div><div class="timeline-item"><span>3</span><h3>Pairing</h3><p>Use zip and enumerate.</p></div><div class="timeline-item"><span>4</span><h3>Validation</h3><p>Handle expected problems.</p></div><div class="timeline-item"><span>5</span><h3>Generators</h3><p>Produce values as needed.</p></div><div class="timeline-item"><span>6</span><h3>Pipelines</h3><p>Connect small steps.</p></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 3</span></footer>
+    <header class="slide-header"><div><span class="kicker">Roadmap &amp; learning objectives</span><h2>Learning path for Module 7</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
+    <div class="slide-content">
+  <div class="timeline">
+    <div class="timeline-item"><span>1</span><h3>Comprehend</h3><p>Build lists concisely.</p></div>
+    <div class="timeline-item"><span>2</span><h3>Lambda</h3><p>Define tiny one-expression functions.</p></div>
+    <div class="timeline-item"><span>3</span><h3>Generate</h3><p>Yield values lazily.</p></div>
+    <div class="timeline-item"><span>4</span><h3>Debug</h3><p>Inspect program behavior.</p></div>
+    <div class="timeline-item"><span>5</span><h3>Optimize</h3><p>Use efficient built-in tools.</p></div>
+  </div>
+  <div class="m7-objectives">
+    <div><h3>By the end of this module, you should be able to:</h3><ul class="clean-list"><li>Create readable list comprehensions.</li><li>Use lambda functions for simple one-expression tasks.</li><li>Explain generator functions and <code>yield</code>.</li><li>Apply practical debugging techniques.</li><li>Compare explicit loops with built-in operations.</li></ul></div>
+    <div class="callout secondary"><strong>Keep this rule in mind:</strong> advanced syntax is useful only when it improves readability and makes the analytical intent easier to understand.</div>
+  </div></div>
+    <footer class="slide-footer"><span>Advanced Python Techniques</span><span>IAN 601 · Module 7 · Slide 2</span></footer>
   </div>
 </section>
-<section class="slide" data-title="List comprehensions">
+<section class="slide" data-title="List Comprehensions">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Compact loops</span><h2>List comprehensions</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A list comprehension creates a new list from an existing collection.</p><div class="formula-card"><code>[expression for item in collection if condition]</code><span>The condition is optional.</span></div></div><div><div class="code-cell" data-filename="module7_list_comprehension.py">
+    <header class="slide-header"><div><span class="kicker">Section 1 · Compact loops</span><h2>List Comprehensions</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
+    <div class="slide-content">
+  <p class="lead">A list comprehension combines a loop, and optionally a condition, into one expression that creates a new list.</p>
+  <div class="m7-pipeline"><div><strong>Source</strong><span>range(5)</span></div><b>→</b><div><strong>Transform</strong><span>x ** 2</span></div><b>→</b><div><strong>Collect</strong><span>new list</span></div><b>→</b><div><strong>Result</strong><span>[0, 1, 4, ...]</span></div></div>
+  <div class="two-col tight">
+    <div class="code-cell" data-filename="squares.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Create cleaned scores</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module7_list_comprehension.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Build squares</h3><p>Read it as: for each x, store x squared.</p></div>
+    <span class="file-pill">squares.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module7_list_comprehension.py</span></div>
-    <textarea class="code-input" spellcheck="false">raw_scores = [82, 91, None, 76, 88, None, 95]
-
-clean_scores = [score for score in raw_scores if score is not None]
-curved_scores = [score + 2 for score in clean_scores]
-
-print(&quot;Clean scores:&quot;, clean_scores)
-print(&quot;Curved scores:&quot;, curved_scores)</textarea>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">squares.py</span></div>
+    <textarea class="code-input" spellcheck="false">squares = [x ** 2 for x in range(5)]
+print(squares)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 4</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="Dictionary comprehensions">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Build mappings</span><h2>Dictionary comprehensions</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A dictionary comprehension creates key-value pairs in one expression.</p></div><div><div class="code-cell" data-filename="module7_dict_comprehension.py">
+</div>
+    <div class="code-cell" data-filename="filter_comprehension.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Create a status map</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module7_dict_comprehension.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Filter with a condition</h3><p>The condition keeps only values that meet the rule.</p></div>
+    <span class="file-pill">filter_comprehension.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module7_dict_comprehension.py</span></div>
-    <textarea class="code-input" spellcheck="false">customers = [&quot;C101&quot;, &quot;C102&quot;, &quot;C103&quot;, &quot;C104&quot;]
-visits = [3, 0, 7, 1]
-
-status = {
-    customer: &quot;active&quot; if visit_count &gt; 0 else &quot;inactive&quot;
-    for customer, visit_count in zip(customers, visits)
-}
-
-print(status)</textarea>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">filter_comprehension.py</span></div>
+    <textarea class="code-input" spellcheck="false">ages = [20, 15, 30, 17, 45]
+adults = [age for age in ages if age &gt;= 18]
+print(adults)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 5</span></footer>
+</div>
+  </div></div>
+    <footer class="slide-footer"><span>Advanced Python Techniques</span><span>IAN 601 · Module 7 · Slide 3</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Sort with a custom key">
+<section class="slide" data-title="Lambda Functions">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Ranking</span><h2>Sort with a custom key</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">The <code>key</code> argument tells Python what part of each item should control the sort order.</p></div><div><div class="code-cell" data-filename="module7_sort_key.py">
+    <header class="slide-header"><div><span class="kicker">Section 2 · Small one-expression functions</span><h2>Lambda Functions</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
+    <div class="slide-content">
+  <p class="lead">A lambda is a small anonymous function limited to one expression. It is most useful when a function is needed briefly.</p>
+  <div class="table-wrap"><table><thead><tr><th>Pattern</th><th>Named function</th><th>Lambda</th></tr></thead><tbody><tr><td>Syntax</td><td><code>def double(x): ...</code></td><td><code>lambda x: x * 2</code></td></tr><tr><td>Best for</td><td>Reusable logic</td><td>Small one-off expression</td></tr></tbody></table></div>
+  <div class="two-col tight">
+    <div class="code-cell" data-filename="lambda_basic.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Sort records by amount</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module7_sort_key.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>A one-expression function</h3><p>Use lambda only when the expression stays easy to read.</p></div>
+    <span class="file-pill">lambda_basic.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module7_sort_key.py</span></div>
-    <textarea class="code-input" spellcheck="false">orders = [
-    {&quot;id&quot;: 1, &quot;amount&quot;: 45},
-    {&quot;id&quot;: 2, &quot;amount&quot;: 120},
-    {&quot;id&quot;: 3, &quot;amount&quot;: 72}
-]
-
-ranked = sorted(orders, key=lambda order: order[&quot;amount&quot;], reverse=True)
-
-for order in ranked:
-    print(order)</textarea>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">lambda_basic.py</span></div>
+    <textarea class="code-input" spellcheck="false">double = lambda x: x * 2
+print(double(5))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 6</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="Use enumerate and zip">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Loop helpers</span><h2>Use enumerate and zip</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead"><code>enumerate()</code> gives position numbers. <code>zip()</code> combines related lists.</p><div class="table-wrap"><table><thead><tr><th>Tool</th><th>Use</th></tr></thead><tbody><tr><td><code>enumerate()</code></td><td>Need the index and value</td></tr><tr><td><code>zip()</code></td><td>Need to loop over two lists together</td></tr></tbody></table></div></div><div><div class="code-cell" data-filename="module7_zip_enumerate.py">
+</div>
+    <div class="code-cell" data-filename="lambda_sort.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Pair names and scores</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module7_zip_enumerate.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Sort with a lambda key</h3><p>The lambda tells sorted() to rank by the numeric value at index 1.</p></div>
+    <span class="file-pill">lambda_sort.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module7_zip_enumerate.py</span></div>
-    <textarea class="code-input" spellcheck="false">names = [&quot;Jordan&quot;, &quot;Riley&quot;, &quot;Casey&quot;]
-scores = [88, 94, 79]
-
-for row_number, (name, score) in enumerate(zip(names, scores), start=1):
-    print(row_number, name, score)</textarea>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">lambda_sort.py</span></div>
+    <textarea class="code-input" spellcheck="false">sales = [(&quot;A&quot;, 120), (&quot;B&quot;, 90), (&quot;C&quot;, 180)]
+ranked = sorted(sales, key=lambda item: item[1], reverse=True)
+print(ranked)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 7</span></footer>
+</div>
+  </div></div>
+    <footer class="slide-footer"><span>Advanced Python Techniques</span><span>IAN 601 · Module 7 · Slide 4</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Validate data before analysis">
+<section class="slide" data-title="Generators &amp; yield">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Expected problems</span><h2>Validate data before analysis</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Good code checks for common data problems before calculating results.</p></div><div><div class="code-cell" data-filename="module7_validation.py">
+    <header class="slide-header"><div><span class="kicker">Section 3 · Produce values lazily</span><h2>Generators &amp; yield</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
+    <div class="slide-content">
+  <p class="lead">A generator produces values one at a time instead of building the entire result in memory first.</p>
+  <div class="m7-compare"><div><h3>List</h3><p>Build all values now.</p></div><div><h3>Generator</h3><p>Produce one value when requested.</p></div><div><h3>yield</h3><p>Return a value and pause the function.</p></div></div>
+  <div class="code-cell" data-filename="generator.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Validate numeric inputs</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module7_validation.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Create a generator</h3><p>yield produces a value and pauses the function until the next iteration.</p></div>
+    <span class="file-pill">generator.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module7_validation.py</span></div>
-    <textarea class="code-input" spellcheck="false">def safe_average(values):
-    clean = [v for v in values if isinstance(v, (int, float))]
-    if len(clean) == 0:
-        return None
-    return sum(clean) / len(clean)
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">generator.py</span></div>
+    <textarea class="code-input" spellcheck="false">def squares_gen(n):
+    for i in range(n):
+        yield i ** 2
 
-print(safe_average([10, 20, &quot;missing&quot;, 30]))
-print(safe_average([&quot;missing&quot;, None]))</textarea>
+for value in squares_gen(4):
+    print(value)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 8</span></footer>
+</div>
+  <div class="callout"><strong>Key idea:</strong> the function remembers where it paused and resumes from that point during the next iteration.</div></div>
+    <footer class="slide-footer"><span>Advanced Python Techniques</span><span>IAN 601 · Module 7 · Slide 5</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Handle expected errors">
+<section class="slide" data-title="Inspect a generator with next()">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Try and except</span><h2>Handle expected errors</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Error handling is useful when a problem is expected and the program should continue safely.</p></div><div><div class="code-cell" data-filename="module7_try_except.py">
+    <header class="slide-header"><div><span class="kicker">Generators · One value at a time</span><h2>Inspect a generator with next()</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
+    <div class="slide-content">
+  <div class="two-col tight">
+    <div><p class="lead"><code>next()</code> requests one value from a generator. The generator resumes from its previous <code>yield</code>, runs until the next <code>yield</code>, and pauses again.</p>
+      <div class="m7-steps"><div><span>1</span><p>Create generator object</p></div><div><span>2</span><p>Call <code>next(g)</code></p></div><div><span>3</span><p>Receive one value</p></div><div><span>4</span><p>Generator pauses</p></div></div>
+    </div>
+    <div class="code-cell" data-filename="next_generator.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Convert values safely</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module7_try_except.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Inspect a generator object</h3><p>Call next() twice and watch the countdown continue from where it paused.</p></div>
+    <span class="file-pill">next_generator.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module7_try_except.py</span></div>
-    <textarea class="code-input" spellcheck="false">raw_values = [&quot;12&quot;, &quot;7&quot;, &quot;missing&quot;, &quot;21&quot;]
-clean_values = []
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">next_generator.py</span></div>
+    <textarea class="code-input" spellcheck="false">def countdown(n):
+    while n &gt; 0:
+        yield n
+        n -= 1
 
-for value in raw_values:
-    try:
-        clean_values.append(float(value))
-    except ValueError:
-        print(&quot;Skipped value:&quot;, value)
-
-print(&quot;Clean values:&quot;, clean_values)
-print(&quot;Total:&quot;, sum(clean_values))</textarea>
+g = countdown(3)
+print(next(g))
+print(next(g))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 9</span></footer>
+</div>
+  </div></div>
+    <footer class="slide-footer"><span>Advanced Python Techniques</span><span>IAN 601 · Module 7 · Slide 6</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Generator expressions">
+<section class="slide" data-title="Debugging Techniques">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Produce as needed</span><h2>Generator expressions</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A generator expression produces values one at a time. It can be useful for large data streams.</p></div><div><div class="code-cell" data-filename="module7_generator.py">
+    <header class="slide-header"><div><span class="kicker">Section 4 · Observe program behavior</span><h2>Debugging Techniques</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
+    <div class="slide-content">
+  <p class="lead">Debugging means locating the source of unexpected behavior. Start with small observations: inputs, intermediate values, conditions, and outputs.</p>
+  <div class="two-col tight">
+    <div class="code-cell" data-filename="debug_prints.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Use a generator expression</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module7_generator.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Trace intermediate values</h3><p>Temporary diagnostic prints help reveal what the program is actually doing.</p></div>
+    <span class="file-pill">debug_prints.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module7_generator.py</span></div>
-    <textarea class="code-input" spellcheck="false">transactions = [45, 72, 38, 91, 120]
-large_transactions = (amount for amount in transactions if amount &gt;= 75)
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">debug_prints.py</span></div>
+    <textarea class="code-input" spellcheck="false">def divide(a, b):
+    print(f&quot;DEBUG: a={a}, b={b}&quot;)
+    result = a / b
+    print(f&quot;DEBUG: result={result}&quot;)
+    return result
 
-print(&quot;Large transactions:&quot;)
-for amount in large_transactions:
-    print(amount)</textarea>
+print(divide(10, 2))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 10</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="Build a small pipeline">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Composition</span><h2>Build a small pipeline</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A pipeline connects small functions. Each step has one clear job.</p></div><div><div class="code-cell" data-filename="module7_pipeline.py">
+</div>
+    <div class="code-cell" data-filename="assertions.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Clean and summarize text labels</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module7_pipeline.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Check an assumption with assert</h3><p>Assertions are useful for verifying assumptions during development.</p></div>
+    <span class="file-pill">assertions.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module7_pipeline.py</span></div>
-    <textarea class="code-input" spellcheck="false">def normalize(label):
-    return label.strip().lower()
-
-def keep_valid(labels, allowed):
-    return [label for label in labels if label in allowed]
-
-def count_values(labels):
-    return {label: labels.count(label) for label in set(labels)}
-
-raw = [&quot; Web &quot;, &quot;Email&quot;, &quot;web&quot;, &quot;Unknown&quot;, &quot;Store&quot;]
-allowed = {&quot;web&quot;, &quot;email&quot;, &quot;store&quot;}
-
-normalized = [normalize(x) for x in raw]
-valid = keep_valid(normalized, allowed)
-counts = count_values(valid)
-
-print(counts)</textarea>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">assertions.py</span></div>
+    <textarea class="code-input" spellcheck="false">values = [10, 20, 30]
+average = sum(values) / len(values)
+assert average == 20
+print(&quot;Check passed&quot;)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 11</span></footer>
+</div>
+  </div>
+  <div class="callout secondary"><strong>Practical habit:</strong> inspect the state of the program before changing many lines at once.</div></div>
+    <footer class="slide-footer"><span>Advanced Python Techniques</span><span>IAN 601 · Module 7 · Slide 7</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Advanced Python wrap-up">
+<section class="slide" data-title="Code Efficiency &amp; Built-ins">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">What you can now do</span><h2>Advanced Python wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
-    <div class="slide-content"><div class="summary-grid"><div><h3>Comprehensions</h3><p>Create lists and dictionaries clearly.</p></div><div><h3>Sorting</h3><p>Rank records with custom keys.</p></div><div><h3>Pairing</h3><p>Use zip and enumerate safely.</p></div><div><h3>Validation</h3><p>Check inputs before analysis.</p></div><div><h3>Errors</h3><p>Handle expected conversion problems.</p></div><div><h3>Pipelines</h3><p>Connect small reusable functions.</p></div></div><div class="callout success">You can now write more compact and reusable Python for analytics tasks.</div></div>
-    <footer class="slide-footer"><span>Advanced Python · Productive Patterns</span><span>IAN 601 · Module 7 · Slide 12</span></footer>
+    <header class="slide-header"><div><span class="kicker">Section 5 · Prefer clear built-in operations</span><h2>Code Efficiency &amp; Built-ins</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
+    <div class="slide-content">
+  <p class="lead">Optimization begins with clear code and appropriate data structures. Python built-ins often replace longer manual loops.</p>
+  <div class="table-wrap"><table><thead><tr><th>Goal</th><th>Manual pattern</th><th>Built-in</th></tr></thead><tbody><tr><td>Total</td><td>Accumulator loop</td><td><code>sum()</code></td></tr><tr><td>Largest</td><td>Comparison loop</td><td><code>max()</code></td></tr><tr><td>Count</td><td>Manual counter</td><td><code>len()</code></td></tr></tbody></table></div>
+  <div class="code-cell" data-filename="builtin_sum.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Use a built-in summary</h3><p>Built-ins are concise and typically optimized.</p></div>
+    <span class="file-pill">builtin_sum.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">builtin_sum.py</span></div>
+    <textarea class="code-input" spellcheck="false">values = range(1_000_000)
+total = sum(values)
+print(total)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+    <footer class="slide-footer"><span>Advanced Python Techniques</span><span>IAN 601 · Module 7 · Slide 8</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Measure performance with perf_counter()">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Efficiency · Measure instead of guessing</span><h2>Measure performance with perf_counter()</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
+    <div class="slide-content">
+  <div class="two-col tight">
+    <div><p class="lead">Timing is better than guessing about performance. <code>perf_counter()</code> gives a high-resolution timer that is useful for comparing approaches.</p>
+      <div class="m7-steps"><div><span>1</span><p>Record start time.</p></div><div><span>2</span><p>Run the operation.</p></div><div><span>3</span><p>Record elapsed time.</p></div></div>
+      <div class="callout"><strong>Important:</strong> make code correct and readable first. Measure before deciding that optimization is necessary.</div>
+    </div>
+    <div class="code-cell" data-filename="timing.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Measure one approach</h3><p>Time a built-in summary operation with perf_counter().</p></div>
+    <span class="file-pill">timing.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">timing.py</span></div>
+    <textarea class="code-input" spellcheck="false">from time import perf_counter
+
+values = list(range(100_000))
+start = perf_counter()
+total = sum(values)
+elapsed = perf_counter() - start
+print(&quot;Total:&quot;, total)
+print(f&quot;Elapsed: {elapsed:.6f} s&quot;)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div>
+  </div></div>
+    <footer class="slide-footer"><span>Advanced Python Techniques</span><span>IAN 601 · Module 7 · Slide 9</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Practice: Foundation &amp; Building">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Practice exercises · Start small</span><h2>Practice: Foundation &amp; Building</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
+    <div class="slide-content">
+  <p class="lead">Work through the exercises from foundation to mastery. Each example stays focused on one pattern.</p>
+  <div class="two-col tight">
+    <div class="code-cell" data-filename="practice_even.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Foundation: even numbers</h3><p>Create a filtered comprehension.</p></div>
+    <span class="file-pill">practice_even.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">practice_even.py</span></div>
+    <textarea class="code-input" spellcheck="false">evens = [x for x in range(1, 11) if x % 2 == 0]
+print(evens)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div>
+    <div class="code-cell" data-filename="practice_lambda.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Building: add with lambda</h3><p>Practice a tiny anonymous function.</p></div>
+    <span class="file-pill">practice_lambda.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">practice_lambda.py</span></div>
+    <textarea class="code-input" spellcheck="false">add = lambda a, b: a + b
+print(add(3, 4))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div>
+  </div></div>
+    <footer class="slide-footer"><span>Advanced Python Techniques</span><span>IAN 601 · Module 7 · Slide 10</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Practice: Intermediate to Mastery">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Practice exercises · Combine the patterns</span><h2>Practice: Intermediate to Mastery</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
+    <div class="slide-content">
+  <div class="m7-practice-grid">
+    <div class="code-cell" data-filename="practice_generator.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Intermediate: generator squares</h3><p>Convert the generator to a list only for this small demonstration.</p></div>
+    <span class="file-pill">practice_generator.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">practice_generator.py</span></div>
+    <textarea class="code-input" spellcheck="false">def squares(n):
+    for x in range(n):
+        yield x ** 2
+
+print(list(squares(5)))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div>
+    <div class="code-cell" data-filename="practice_debug.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Advanced: debug zero division</h3><p>Use a guard before the risky operation.</p></div>
+    <span class="file-pill">practice_debug.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">practice_debug.py</span></div>
+    <textarea class="code-input" spellcheck="false">def safe_divide(a, b):
+    print(&quot;Inputs:&quot;, a, b)
+    if b == 0:
+        return &quot;Cannot divide by zero&quot;
+    return a / b
+
+print(safe_divide(10, 0))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div>
+    <div class="code-cell" data-filename="practice_mastery.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Mastery: compare totals</h3><p>Confirm that a built-in and manual method produce the same result.</p></div>
+    <span class="file-pill">practice_mastery.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">practice_mastery.py</span></div>
+    <textarea class="code-input" spellcheck="false">values = list(range(1000))
+manual = 0
+for value in values:
+    manual += value
+print(manual)
+print(sum(values))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div>
+  </div></div>
+    <footer class="slide-footer"><span>Advanced Python Techniques</span><span>IAN 601 · Module 7 · Slide 11</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Filter adult patient ages">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Business application · Health-data comprehension</span><h2>Filter adult patient ages</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
+    <div class="slide-content">
+  <div class="two-col tight">
+    <div>
+      <p class="lead">A health-data filter can be expressed clearly with a list comprehension when the logic is short.</p>
+      <div class="m7-stats"><div><strong>5</strong><span>All ages</span></div><div><strong>3</strong><span>Adults</span></div></div>
+      <div class="callout secondary"><strong>Connection:</strong> this is the same filtering idea used later with NumPy and Pandas.</div>
+    </div>
+    <div class="code-cell" data-filename="health_comprehension.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Health-data comprehension</h3><p>Keep only patient ages that are 18 or older.</p></div>
+    <span class="file-pill">health_comprehension.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">health_comprehension.py</span></div>
+    <textarea class="code-input" spellcheck="false">patient_ages = [20, 15, 30, 17, 45]
+adults = [age for age in patient_ages if age &gt;= 18]
+print(&quot;Adults:&quot;, adults)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div>
+  </div></div>
+    <footer class="slide-footer"><span>Advanced Python Techniques</span><span>IAN 601 · Module 7 · Slide 12</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Mini analytical generator pipeline">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Capstone challenge · Filter, sort, then yield</span><h2>Mini analytical generator pipeline</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
+    <div class="slide-content">
+  <p class="lead">Combine filtering, lambda-based sorting, and a generator into one small pipeline while keeping each step readable.</p>
+  <div class="m7-pipeline"><div><strong>Receive</strong><span>numbers</span></div><b>→</b><div><strong>Filter</strong><span>positive values</span></div><b>→</b><div><strong>Sort</strong><span>lambda key</span></div><b>→</b><div><strong>Yield</strong><span>one at a time</span></div><b>→</b><div><strong>Inspect</strong><span>output</span></div></div>
+  <div class="code-cell" data-filename="advanced_capstone.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Filter, sort, then yield</h3><p>The function separates the analytical stages while returning values lazily.</p></div>
+    <span class="file-pill">advanced_capstone.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">advanced_capstone.py</span></div>
+    <textarea class="code-input" spellcheck="false">def positive_values(values):
+    filtered = [x for x in values if x &gt; 0]
+    ranked = sorted(filtered, key=lambda x: x)
+    for value in ranked:
+        yield value
+
+for value in positive_values([3, -1, 2, 0, 5]):
+    print(value)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+    <footer class="slide-footer"><span>Advanced Python Techniques</span><span>IAN 601 · Module 7 · Slide 13</span></footer>
+  </div>
+</section>
+<section class="slide" data-title="Use advanced syntax only when it improves clarity">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Summary &amp; next steps</span><h2>Use advanced syntax only when it improves clarity</h2></div><div class="slide-badge">IAN 601 · Module 7</div></header>
+    <div class="slide-content">
+  <div class="summary-grid">
+    <div><h3>Comprehensions</h3><p>Compact simple transformations and filters.</p></div>
+    <div><h3>Lambdas</h3><p>Useful for short one-expression functions.</p></div>
+    <div><h3>Generators</h3><p>Produce values lazily with <code>yield</code>.</p></div>
+    <div><h3>Debugging</h3><p>Start by observing inputs, state, and outputs.</p></div>
+    <div><h3>Efficiency</h3><p>Prefer clear built-ins and measure performance before optimizing.</p></div>
+    <div><h3>Clarity</h3><p>Do not use advanced syntax just because it is shorter.</p></div>
+  </div>
+  <div class="callout"><strong>Next module:</strong> Module 8 focuses on professional practices: exceptions, regex, documentation, Git concepts, style, and testing.</div></div>
+    <footer class="slide-footer"><span>Advanced Python Techniques</span><span>IAN 601 · Module 7 · Slide 14</span></footer>
   </div>
 </section></main>
   <footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"></select><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 12</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
 </div>
 <script>
-const MANIFEST = {
-  "prefix": "module7",
-  "slide_count": 12,
-  "slides": [
-    {
-      "slide": 1,
-      "title": "Advanced Python",
-      "audio": "audio/module7_slide_01.mp3",
-      "captions": "captions/module7_slide_01.vtt",
-      "text": "Welcome to Module 7. This module focuses on Advanced Python. We will build the ideas gradually and connect them to practical analytics work. Advanced Python patterns make code shorter, clearer, and easier to reuse in data analytics work."
-    },
-    {
-      "slide": 2,
-      "title": "How to use this page",
-      "audio": "audio/module7_slide_02.mp3",
-      "captions": "captions/module7_slide_02.vtt",
-      "text": "Use this lesson actively. Read the concept, predict what should happen, run the example when code is available, then change one small part and compare the result. Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept. Change one value, variable, or condition. Apply the pattern to a new example."
-    },
-    {
-      "slide": 3,
-      "title": "Learning path for Module 7",
-      "audio": "audio/module7_slide_03.mp3",
-      "captions": "captions/module7_slide_03.vtt",
-      "text": "This slide is the learning path for Module 7. It shows how the topic progresses from foundational ideas to applied practice. Build lists and dictionaries clearly. Rank values using custom rules. Use zip and enumerate. Handle expected problems. Produce values as needed. Connect small steps."
-    },
-    {
-      "slide": 4,
-      "title": "List comprehensions",
-      "audio": "audio/module7_slide_04.mp3",
-      "captions": "captions/module7_slide_04.vtt",
-      "text": "This slide focuses on List comprehensions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. A list comprehension creates a new list from an existing collection. Create cleaned scores Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
-    },
-    {
-      "slide": 5,
-      "title": "Dictionary comprehensions",
-      "audio": "audio/module7_slide_05.mp3",
-      "captions": "captions/module7_slide_05.vtt",
-      "text": "This slide focuses on Dictionary comprehensions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. A dictionary comprehension creates key-value pairs in one expression. Create a status map Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
-    },
-    {
-      "slide": 6,
-      "title": "Sort with a custom key",
-      "audio": "audio/module7_slide_06.mp3",
-      "captions": "captions/module7_slide_06.vtt",
-      "text": "This slide focuses on Sort with a custom key. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. The key argument tells Python what part of each item should control the sort order. Sort records by amount Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
-    },
-    {
-      "slide": 7,
-      "title": "Use enumerate and zip",
-      "audio": "audio/module7_slide_07.mp3",
-      "captions": "captions/module7_slide_07.vtt",
-      "text": "This slide focuses on Use enumerate and zip. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. enumerate() gives position numbers. zip() combines related lists. Pair names and scores Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
-    },
-    {
-      "slide": 8,
-      "title": "Validate data before analysis",
-      "audio": "audio/module7_slide_08.mp3",
-      "captions": "captions/module7_slide_08.vtt",
-      "text": "This slide focuses on Validate data before analysis. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. Good code checks for common data problems before calculating results. Validate numeric inputs Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
-    },
-    {
-      "slide": 9,
-      "title": "Handle expected errors",
-      "audio": "audio/module7_slide_09.mp3",
-      "captions": "captions/module7_slide_09.vtt",
-      "text": "This slide focuses on Handle expected errors. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. Error handling is useful when a problem is expected and the program should continue safely. Convert values safely Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
-    },
-    {
-      "slide": 10,
-      "title": "Generator expressions",
-      "audio": "audio/module7_slide_10.mp3",
-      "captions": "captions/module7_slide_10.vtt",
-      "text": "This slide focuses on Generator expressions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. A generator expression produces values one at a time. It can be useful for large data streams. Use a generator expression Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
-    },
-    {
-      "slide": 11,
-      "title": "Build a small pipeline",
-      "audio": "audio/module7_slide_11.mp3",
-      "captions": "captions/module7_slide_11.vtt",
-      "text": "This slide focuses on Build a small pipeline. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow. A pipeline connects small functions. Each step has one clear job. Clean and summarize text labels Before running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read."
-    },
-    {
-      "slide": 12,
-      "title": "Advanced Python wrap-up",
-      "audio": "audio/module7_slide_12.mp3",
-      "captions": "captions/module7_slide_12.vtt",
-      "text": "This slide summarizes Module 7. Focus on the patterns you should be able to explain and reuse after completing the examples. Create lists and dictionaries clearly. Rank records with custom keys. Use zip and enumerate safely. Check inputs before analysis. Handle expected conversion problems. Connect small reusable functions."
-    }
-  ]
-};
+const MANIFEST={"prefix":"module7_revised","slide_count":14,"slides":[{"slide":1,"title":"Advanced Python Techniques","audio":"audio/module7_revised_slide_01.mp3","captions":"captions/module7_revised_slide_01.vtt","text":"Welcome to Module 7, Advanced Python Techniques. Once basic Python syntax is comfortable, we can begin using patterns that make analytical code shorter and more expressive. The important goal is clarity, not cleverness. In this module, we will move from readable loops to comprehensions and lambda functions, then to generators, debugging, and efficient built-in operations. These patterns appear often in data preparation, filtering, sorting, and pipeline code. Use them when they make the intent of your code easier to understand."},{"slide":2,"title":"Learning path for Module 7","audio":"audio/module7_revised_slide_02.mp3","captions":"captions/module7_revised_slide_02.vtt","text":"This learning path has five main ideas. First, comprehensions help us build lists concisely. Second, lambda functions let us define very small one-expression functions. Third, generators let us produce values lazily with yield. Fourth, debugging helps us inspect what the program is actually doing. Finally, efficient built-ins can replace longer manual loops. By the end of the module, you should be able to create readable comprehensions, use simple lambdas, explain generators and yield, apply practical debugging techniques, and compare explicit loops with built-in operations."},{"slide":3,"title":"List Comprehensions","audio":"audio/module7_revised_slide_03.mp3","captions":"captions/module7_revised_slide_03.vtt","text":"A list comprehension combines a loop, and optionally a condition, into one expression that creates a new list. In the first example, x squared is calculated for each value in range five. Read the expression from left to right as: store x squared for each x in the source collection. The second example adds a condition. We start with a list of ages and keep only ages greater than or equal to eighteen. Run both cells, inspect the results, and then change the range or one of the ages to see how the output changes."},{"slide":4,"title":"Lambda Functions","audio":"audio/module7_revised_slide_04.mp3","captions":"captions/module7_revised_slide_04.vtt","text":"A lambda is a small anonymous function limited to one expression. A regular def function is usually better for logic that needs a clear name or will be reused. A lambda is useful when a very small function is needed briefly. The first example doubles a value. The second example uses a lambda as the key for sorted. The lambda tells Python to sort each sales tuple by the numeric value at index one, and reverse true places the largest value first. Use lambda only when the expression remains easy to read."},{"slide":5,"title":"Generators & yield","audio":"audio/module7_revised_slide_05.mp3","captions":"captions/module7_revised_slide_05.vtt","text":"A generator produces values one at a time instead of building the entire result in memory first. The key word is yield. When Python reaches yield, it produces a value and pauses the function. During the next iteration, the function resumes from that point. In the example, squares_gen yields one squared value at a time. This pattern is especially useful when a sequence may be large or when values should be processed as they are produced."},{"slide":6,"title":"Inspect a generator with next()","audio":"audio/module7_revised_slide_06.mp3","captions":"captions/module7_revised_slide_06.vtt","text":"A generator object can also be inspected one value at a time with next. The countdown function yields the current value of n, pauses, and then continues when next is called again. We create the generator object g, call next once to receive three, and call it again to receive two. This demonstrates that the generator remembers its position between requests instead of starting over."},{"slide":7,"title":"Debugging Techniques","audio":"audio/module7_revised_slide_07.mp3","captions":"captions/module7_revised_slide_07.vtt","text":"Debugging means locating the source of unexpected behavior. A practical first step is to inspect inputs, intermediate values, conditions, and outputs. In the first example, temporary debug print statements show the values entering the divide function and the result that is produced. The second example uses assert to check an assumption. The calculated average should equal twenty. If the assumption is false, the assertion helps us notice the problem during development."},{"slide":8,"title":"Code Efficiency & Built-ins","audio":"audio/module7_revised_slide_08.mp3","captions":"captions/module7_revised_slide_08.vtt","text":"Optimization begins with clear code and appropriate data structures. Python built-ins often replace longer manual loops. For example, sum can replace an accumulator loop, max can replace repeated comparisons, and len can replace a manual counter. In the example, range creates the values and sum calculates the total directly. Built-ins are concise, familiar to Python readers, and are often implemented efficiently."},{"slide":9,"title":"Measure performance with perf_counter()","audio":"audio/module7_revised_slide_09.mp3","captions":"captions/module7_revised_slide_09.vtt","text":"When performance matters, measure instead of guessing. The perf_counter function gives us a high-resolution timer. We record the start time, run the operation, subtract the starting value from a second perf_counter call, and report the elapsed time. The important lesson is not to optimize everything. First make the code correct and readable. Then measure the part that may actually need improvement."},{"slide":10,"title":"Practice: Foundation & Building","audio":"audio/module7_revised_slide_10.mp3","captions":"captions/module7_revised_slide_10.vtt","text":"Now we begin the practice sequence from foundation to mastery. The foundation example creates even numbers from one through ten using a filtered list comprehension. The building example creates a small lambda that adds two values. Run each example first without changing it. Then change the range in the first example or the numbers passed to the lambda in the second example. Keep the focus on understanding one pattern at a time."},{"slide":11,"title":"Practice: Intermediate to Mastery","audio":"audio/module7_revised_slide_11.mp3","captions":"captions/module7_revised_slide_11.vtt","text":"The next three exercises combine the ideas at a slightly higher level. The intermediate example defines a generator that yields squared values and converts the small result to a list for demonstration. The advanced example protects a division operation by checking whether b is zero before dividing. The mastery example calculates a total manually and then calculates the same total with sum. The two results should match. This helps connect explicit loop logic with a simpler built-in operation."},{"slide":12,"title":"Filter adult patient ages","audio":"audio/module7_revised_slide_12.mp3","captions":"captions/module7_revised_slide_12.vtt","text":"This application connects the same comprehension pattern to health data. We start with five patient ages and keep only the values that are eighteen or older. Three ages remain. The logic is short, so a list comprehension is easy to read here. The same filtering idea will appear again later when working with NumPy and Pandas, although those libraries provide their own tools for larger datasets."},{"slide":13,"title":"Mini analytical generator pipeline","audio":"audio/module7_revised_slide_13.mp3","captions":"captions/module7_revised_slide_13.vtt","text":"This capstone combines several Module 7 ideas in one small analytical pipeline. The function receives a collection of numbers, filters to keep only positive values, sorts those values with a lambda key, and then yields the sorted values one at a time. Notice that the steps are still easy to identify: receive, filter, sort, yield, and inspect. Advanced syntax is most useful when these stages remain understandable to the reader."},{"slide":14,"title":"Use advanced syntax only when it improves clarity","audio":"audio/module7_revised_slide_14.mp3","captions":"captions/module7_revised_slide_14.vtt","text":"This is the main takeaway from Module 7. Comprehensions are useful for simple transformations and filters. Lambdas are appropriate for short one-expression functions. Generators produce values lazily with yield. Debugging begins by observing program state, and performance should be measured before optimization. Shorter code is not automatically better code. Choose an advanced Python technique when it makes the analytical intent clearer. In Module 8, we move into professional practices including exceptions, regular expressions, documentation, Git concepts, style, and testing."}]};
 const slides=[...document.querySelectorAll('.slide')];let current=0;const select=document.getElementById('slide-select');const runtime=document.getElementById('runtime');const runtimeText=document.getElementById('runtime-text');let pyodide=null;let pyodideLoading=null;const originalCode=new Map();const monacoEditors=new Map();
 
 /* Narration system */
@@ -709,7 +840,7 @@ initMonaco();const initialSlide=initNarr();
 showSlide(initialSlide);
 </script>
 <div class="ian603-modal-backdrop" id="ian-course-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">IAN 601 Course Modules</h2><button class="ian603-tool" id="ian-course-close" type="button">Close</button></div><div class="ian603-module-links"><a class="" href="s_module1.html">Module 1</a><a class="" href="s_module2.html">Module 2</a><a class="" href="s_module3.html">Module 3</a><a class="" href="s_module4.html">Module 4</a><a class="" href="s_module5.html">Module 5</a><a class="" href="s_module6.html">Module 6</a><a class="current" href="s_module7.html">Module 7 · Current</a><a class="" href="s_module8.html">Module 8</a><a class="" href="s_module9.html">Module 9</a><a class="" href="s_module10.html">Module 10</a><a class="" href="s_module11.html">Module 11</a><a class="" href="s_module12.html">Module 12</a><a class="" href="s_module13.html">Module 13</a><a class="" href="s_module14.html">Module 14</a></div></div></div><div class="ian603-modal-backdrop" id="ian-progress-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">Module 7 Progress</h2><button class="ian603-tool" id="ian-progress-close" type="button">Close</button></div><p style="color:var(--ian-muted)">Progress is saved only in this browser.</p><div style="height:12px;background:var(--ian-border);border-radius:999px;overflow:hidden"><div id="ian-progress-meter" style="height:100%;width:0;background:var(--ian-good)"></div></div><div id="ian-progress-text" style="margin:8px 0;color:var(--ian-muted)"></div><div id="ian-progress-list" class="ian603-module-links"></div><button class="ian603-tool" id="ian-progress-reset" type="button" style="margin-top:14px">Reset saved progress</button></div></div><script id="ian603-generic-ui">
-(()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module7_shell_progress_v1';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
+(()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module7_source_progress_v2';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
 const activeIndex=()=>Math.max(0,slides.findIndex(s=>s.classList.contains('active')));
 function save(){localStorage.setItem(key,JSON.stringify(visited))}
 function render(){const i=activeIndex();if(!visited.includes(i+1)){visited.push(i+1);save()}const count=new Set(visited).size,pct=slides.length?Math.round(count/slides.length*100):0;const p=document.getElementById('ian-progress-pct');if(p)p.textContent=pct+'%';const meter=document.getElementById('ian-progress-meter');if(meter)meter.style.width=pct+'%';const text=document.getElementById('ian-progress-text');if(text)text.textContent=count+' of '+slides.length+' slides visited';const list=document.getElementById('ian-progress-list');if(list){list.innerHTML=slides.map((s,j)=>'<a href="#" data-shell-go="'+j+'" class="'+(visited.includes(j+1)?'current':'')+'">Slide '+(j+1)+': '+(s.dataset.title||'Slide')+'</a>').join('');list.querySelectorAll('[data-shell-go]').forEach(a=>a.onclick=e=>{e.preventDefault();const j=Number(a.dataset.shellGo);const sel=document.getElementById('slide-select');if(sel){sel.value=String(j);sel.dispatchEvent(new Event('change',{bubbles:true}))}document.getElementById('ian-progress-modal')?.classList.remove('show')})}}
