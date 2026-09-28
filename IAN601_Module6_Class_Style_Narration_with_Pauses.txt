@@ -1,177 +1,367 @@
 Slide 1: Modules, Packages & OOP
 
-Welcome to Module 6. This module focuses on Modules, Packages & OOP. We will build the ideas in small steps and connect them to practical analytics work.
+Welcome to Module 6. In this module, we are going to move from writing small pieces of Python code toward organizing larger Python programs in a cleaner and more reusable way.
 
-[pause=0.7]
+So far, we have practiced variables, control flow, functions, lists, tuples, dictionaries, and sets. Those are the building blocks of Python. But as your programs grow, you also need structure. If all of your code stays in one long file, it becomes harder to read, harder to test, harder to fix, and harder to reuse later.
 
-Modules, packages, and classes help Python projects grow from short scripts into organized analytics tools.
+That is why this module focuses on modules, packages, and object-oriented programming. These ideas help us organize code into smaller pieces that have clear responsibilities.
 
-[pause=1.0]
+We will begin with imports and built-in modules. Then we will create our own small module, discuss packages and libraries, and move into classes, objects, methods, and self. By the end of this module, you should be able to explain when a function, dictionary, module, package, or class is the right tool for a simple analytics problem.
+
+As you go through the lesson, do not worry about memorizing every detail immediately. Focus on the main idea: organized code is easier to understand, easier to maintain, and easier to reuse.
 
 Slide 2: How to use this page
 
-Use this lesson actively. Read the concept, predict the result, run the example when code is available, then change one part and compare what happens.
+This slide explains how to use the module page effectively.
 
-[pause=0.7]
+First, read the concept on each slide. Try to understand the main idea before running any code. If the slide introduces a new term, such as module, package, class, object, method, or self, pause and say the idea in your own words.
 
-Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.
+Second, run the code examples. The examples are small on purpose. They are designed so you can see one idea clearly at a time.
 
-[pause=0.7]
+Third, check the output. Do not just run the cell and move on. Look carefully at what Python prints. Ask yourself why that output makes sense.
 
-Change one value, variable, or condition. Apply the pattern to a new example.
+Fourth, edit the code. Change one value, one name, or one small expression. Then run the cell again and compare the result.
 
-[pause=1.0]
+Finally, apply the idea. Think about where the pattern would be useful in an analytics project. For example, imports help you use tools that already exist. Modules help you separate helper functions. Classes help you keep related data and behavior together.
+
+A good way to learn this module is to move slowly. Run the examples, make small edits, and explain what changed.
 
 Slide 3: Learning path for Module 6
 
-This slide is the roadmap for Module 6. It shows how the concepts progress and how the later examples build on the earlier ones.
+This is the learning path for Module 6.
 
-[pause=0.7]
+We start with imports. An import lets us bring tools from another Python file or library into our current program. This is important because we do not want to rewrite common tools every time.
 
-Use built-in modules and aliases. Understand why libraries matter. Know where names come from.
+Next, we look at your own module. A module can simply be a Python file that contains reusable code. You can place helper functions in one file and import them into another file.
 
-[pause=0.7]
+Then we discuss packages. A package is a folder that groups related modules. You can think of it as a larger organizational unit.
 
-Create blueprints for objects. Attach actions to data. Analytics class
+After that, we move into classes. A class is a blueprint for creating objects. This is the beginning of object-oriented programming.
 
-[pause=1.0]
+Then we study objects and methods. An object is one specific instance of a class, and a method is a function that belongs to that object.
+
+Finally, we discuss design choices. Sometimes a function is enough. Sometimes a dictionary is enough. Sometimes a class is useful. The goal is to choose the simplest structure that makes the code clear.
+
+This module is not only about syntax. It is about thinking like a programmer who wants to build code that can grow.
 
 Slide 4: Why organize code?
 
-This slide focuses on Why organize code?. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+Before we talk about modules and classes, let us first ask why organization matters.
 
-[pause=0.7]
+When a program is very small, one file can feel simple. You might have a few variables, a loop, maybe a function, and a print statement. That is manageable.
 
-As programs get longer, organization becomes part of the solution. Imports reuse code that already exists. Packages group many modules together.
+But real analytics work often grows quickly. You may need to clean data, calculate metrics, create charts, run checks, and repeat parts of the process. If all of that logic is placed into one long script, the file becomes difficult to understand.
 
-[pause=0.7]
+Organized code gives related work a clear home. For example, cleaning functions could go into a file called cleaning.py. Metric calculations could go into metrics.py. Chart functions could go into charts.py. Then a main file can use those tools without becoming too long.
 
-Classes group related data and actions. Well-organized code is easier to test, share, and update. Good for one quick task.
+This also helps future you. A few weeks later, when you return to the project, organized code makes it easier to remember where things are.
 
-[pause=1.0]
+It also helps teams. If another person reads your work, clear file names, function names, and class names make the project easier to review.
 
-Slide 5: Import built-in modules
+The main idea is simple: organization reduces confusion. It helps code become easier to read, test, update, and reuse.
 
-This slide focuses on Import built-in modules. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+Slide 5: What is a module?
 
-[pause=0.7]
+A module is a Python file that contains code you can use in another file or notebook.
 
-Use built-in modules
+Python already comes with many built-in modules. For example, the math module contains mathematical tools such as square root and pi. If we write import math, Python loads that module. Then we can use tools inside it, such as math.sqrt or math.pi.
 
-[pause=0.8]
+A helpful analogy is to think of a module as a toolbox. The module is the toolbox, and the functions or values inside the module are the tools. When you import the toolbox, you can use the tools inside it.
 
-Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+One important detail is the dot notation. When we write math.sqrt, we are saying: go into the math module and use the sqrt function stored there.
 
-[pause=1.0]
+This helps keep names organized. If every function from every module automatically appeared in our program without a module name, it would become difficult to know where things came from.
 
-Slide 6: Use aliases for readability
+So a module helps with reuse, but it also helps with clarity. It tells us where a function or value belongs.
 
-This slide focuses on Use aliases for readability. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+Slide 6: Code: import built-in modules
 
-[pause=0.7]
+In this code example, we import three built-in tools: math, random, and date from datetime.
 
-An alias is a shorter name for a module. It makes code easier to type and read.
+The math module gives us mathematical functions and constants. We use math.sqrt to calculate the square root of 81. We also use math.pi and round it to three decimal places.
 
-[pause=0.8]
+The random module gives us tools for random selection. In this example, random.sample chooses three sample IDs from a range of numbers. This is a useful pattern when you want to select a few items from a larger group.
 
-Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+The date object from datetime lets us work with dates. We use date.today to get the current date.
 
-[pause=1.0]
+Before running the code, predict what you expect. The square root of 81 should be 9. The rounded value of pi should be close to 3.142. The sample IDs may change each time because they are selected randomly. The date should show today's date.
 
-Slide 7: Think like a module
+After running the cell, try changing the number from 81 to 144. Then run it again and check the new square root.
 
-This slide focuses on Think like a module. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+The main lesson is that Python already includes many useful modules. Imports allow us to use those tools without writing everything ourselves.
 
-[pause=0.7]
+Slide 7: Aliases and selective imports
 
-A module is often just a file that contains reusable functions. In the browser, we can still practice the same idea by grouping related functions. Reusable helper functions
+This slide introduces two common import patterns: aliases and selective imports.
 
-[pause=0.8]
+An alias gives a module a shorter or more familiar name. For example, many Python programmers write import pandas as pd. That means we can type pd instead of pandas. The alias is helpful because it is short and widely recognized.
 
-Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+In this slide, we use import statistics as stats. This means the statistics module is available using the shorter name stats.
 
-[pause=1.0]
+Selective imports work differently. When we write from datetime import date, we are importing only the date part from the datetime module. Then we can use date directly instead of writing datetime.date.
 
-Slide 8: What is a class?
+There is no single import style that is always best. If you need many tools from a module, importing the whole module can be clearer. If a short alias is common and recognizable, an alias can improve readability. If you only need one specific function or class, a selective import can be convenient.
 
-This slide focuses on What is a class?. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+The most important rule is this: use imports in a way that helps the reader understand where each tool comes from. Do not create confusing nicknames just to make the code shorter.
 
-[pause=0.7]
+Slide 8: Code: use an alias for readability
 
-A class is a blueprint. An object is one item created from that blueprint. Attributes store information. Methods perform actions.
+In this example, we import the statistics module using the alias stats.
 
-[pause=0.7]
+We start with a list of scores. Then we calculate the average using stats.mean and the median using stats.median.
 
-The word self means this specific object.
+Notice how the alias still tells us where the function comes from. When we see stats.mean, we know that mean is coming from the statistics module. The name is shorter, but it is still meaningful.
 
-[pause=1.0]
+We also use min and max, which are built-in Python functions. These do not need an import because Python already knows them.
 
-Slide 9: Create a simple class
+Before running the code, look at the list of scores and think about what the output should include. You should see the original scores, the average, the median, and the range. The range is calculated by subtracting the lowest score from the highest score.
 
-This slide focuses on Create a simple class. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+After running the cell, add one more score to the list and run it again. Watch how the average, median, and range change.
 
-[pause=0.7]
+This example connects imports to analytics. Many analytical tasks rely on reusable functions that summarize or transform data. Importing the right module keeps the code short and readable.
 
-This class stores information about one customer and includes a method that describes the customer. Create objects from a class
+Slide 9: Create your own module
 
-[pause=0.8]
+So far, we have used modules that already exist. Now we are going to think about creating our own module.
 
-Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+A module can simply be a Python file that you write yourself. For example, imagine a project with two files: main.py and calculations.py.
 
-[pause=1.0]
+The calculations.py file can store reusable formulas, such as calculate_profit or profit_margin. The main.py file can run the analysis and use those formulas.
 
-Slide 10: Add behavior with methods
+This structure keeps the main file shorter. Instead of placing every helper function directly into main.py, we move related helper functions into a separate file.
 
-This slide focuses on Add behavior with methods. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+This is useful when a script starts to become too long. It is also useful when the same function is needed in more than one place.
 
-[pause=0.7]
+A beginner-friendly way to think about this is: if you have a group of related helper functions, they may belong in their own module.
 
-A method can update the object. This lets data and behavior stay together. Update an object with a method
+You do not need to build a large software project right away. The goal here is to understand the basic structure: one Python file can import useful code from another Python file.
 
-[pause=0.8]
+Slide 10: Code: create and import your own module
 
-Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+This example demonstrates the idea of creating and importing your own module.
 
-[pause=1.0]
+Inside the code, we first create a string called module_code. This string contains the code that will go into a file named calculations.py.
 
-Slide 11: Small analytics class
+The module contains two functions. The first function, calculate_profit, subtracts costs from sales. The second function, profit_margin, uses calculate_profit and then divides the profit by sales.
 
-This slide focuses on Small analytics class. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+Next, the code opens a file called calculations.py and writes the module code into that file. Then we import calculations just like we would import any other module.
 
-[pause=0.7]
+We also use importlib.reload. In a notebook or browser environment, reload helps make sure Python uses the most recent version of the file we just created.
 
-Classes can package a small analytics workflow so the same logic can be reused with different data. Build a report class
+Then we set sales to 1500 and costs to 1100. We call calculations.calculate_profit and calculations.profit_margin.
 
-[pause=0.8]
+This example is important because it shows how a real project can separate helper formulas from the main analysis.
 
-Before running the example, predict what the output should look like. Run it in the browser, inspect the result, then change one input, key, value, or condition and run it again. Focus on what changed and why.
+After running the code, try changing sales and costs. Then run the cell again and compare the profit and profit margin.
 
-[pause=1.0]
+Slide 11: What is a package?
 
-Slide 12: When to use each organization tool
+A package is a folder that groups related modules together.
 
-This slide focuses on When to use each organization tool. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.
+A module is usually one Python file. A package is a folder that contains related modules. For example, a project might have a folder called analytics_project. Inside that folder, we might have cleaning.py, metrics.py, charts.py, and main.py.
 
-[pause=0.7]
+The package keeps related code organized. Instead of having many unrelated files scattered in one place, the package gives the project structure.
 
-Use for one reusable action. Use for related functions in one file. Use for a larger collection of modules.
+Large analytics tools are often packages or collections of packages. For example, libraries like NumPy and Pandas contain many modules and tools behind the scenes.
 
-[pause=0.7]
+At this point in the course, you do not need to build a complex package. The main goal is to recognize the idea.
 
-Use when data and behavior belong together. Use for one working instance of a class. Use to bring outside tools into your script.
+If a module is like one toolbox, a package is like a larger toolbox cabinet with several related toolboxes inside it.
 
-[pause=1.0]
+Packages help keep projects from becoming one long file and make it easier to find related code.
 
-Slide 13: Module 6 wrap-up
+Slide 12: Module, package, and library
 
-This slide summarizes Module 6. Focus on the patterns you should be able to explain and reuse after completing the examples.
+This slide clarifies three related terms: module, package, and library.
 
-[pause=0.7]
+A module is one Python file with reusable code. It might be a built-in module like math, or it might be a file you write yourself, such as calculations.py.
 
-Use built-in tools and aliases. Read namespaces Understand where names come from.
+A package is a folder that groups related modules. For example, an analytics folder might contain cleaning.py, metrics.py, and charts.py.
 
-[pause=0.7]
+A library is a larger reusable collection of tools. Libraries often include packages and modules. NumPy and Pandas are examples of libraries that many data analysts use.
 
-Group repeated logic. Make simple blueprints. Attach actions to data.
+These words are sometimes used casually, and people may not always use them perfectly. But the distinction is still helpful.
 
-[pause=1.0]
+The simple rule is: module equals file, package equals folder, and library equals reusable collection of tools.
+
+Understanding this vocabulary will help when you install and use Python tools later. When someone says to import a library, they usually mean to bring in a reusable toolset from a package or module.
+
+Slide 13: Code: think like a small module
+
+This example groups related helper functions together.
+
+We define get_profit, get_profit_margin, and format_percent. These functions work together like a small metrics module.
+
+The get_profit function calculates sales minus costs. The get_profit_margin function calls get_profit and divides the result by sales. The format_percent function turns a decimal value into a readable percent string.
+
+Then we set sales and costs, call the helper functions, and print the profit and profit margin.
+
+This example is still written in one cell, but conceptually it behaves like a module. The functions are related and could easily be moved into a file such as metrics_tools.py.
+
+This is an important habit in analytics. If you have several helper functions that support one part of the workflow, group them together. That way, the main analysis stays easier to read.
+
+After running the code, change the sales or costs values. You can also change the format_percent function to show two decimal places instead of one.
+
+Slide 14: What is a class?
+
+Now we move into object-oriented programming.
+
+A class is a blueprint for creating objects. The class describes what kind of data the object should store and what actions the object can perform.
+
+For example, imagine a CustomerRecord class. Each customer record might store a customer ID and a segment. The class defines the structure, and each object created from that class stores its own values.
+
+A useful way to think about this is that a class describes a general type of thing, while an object is one specific example of that thing.
+
+For example, Product could be a class. One object might represent a laptop. Another object might represent a monitor. Both objects follow the same blueprint, but each one stores different values.
+
+Classes are most useful when data and behavior belong together. If you only need one simple calculation, a function may be enough. But if you have a concept that stores information and also has actions related to that information, a class can be helpful.
+
+Slide 15: Code: create a simple class
+
+This code creates a simple class called CustomerRecord.
+
+The class has a special method called __init__. This method runs when a new object is created. It receives customer_id and segment and stores them inside the object.
+
+The word self refers to the specific object being created. When we write self.customer_id, we are storing the customer ID inside that object. When we write self.segment, we are storing the segment inside that same object.
+
+Then we create one object called customer. We pass in the values C101 and Retail.
+
+After that, we print customer.customer_id and customer.segment.
+
+Before running the cell, predict what it will print. It should print the customer ID and the segment stored in that object.
+
+After running the code, try creating another customer object with a different ID and segment. This will help you see that the class is the blueprint, and each object stores its own data.
+
+Slide 16: One class can create many objects
+
+One of the main benefits of a class is that the same class can create many objects.
+
+Think about a Product class. The class can describe what every product should have, such as a name and a price. But each object can store different values.
+
+One object might be a laptop with a price of 900. Another object might be a monitor with a price of 300.
+
+Both objects come from the same class, but they are separate objects. Changing one object does not automatically change the other.
+
+This is useful in analytics when we need to represent repeated things with the same structure. For example, customers, products, student scores, sales records, or reports could all be represented with classes in some projects.
+
+The key idea is that a class gives us a reusable blueprint. Objects are the actual working examples created from that blueprint.
+
+Slide 17: Code: create two objects from one class
+
+In this example, we define a Product class.
+
+The __init__ method stores the product name and price. Then we define a method called sale_price. This method calculates a discounted price using the product's own price.
+
+We create two objects: item1 and item2. Item1 is a laptop with a price of 900. Item2 is a monitor with a price of 300.
+
+Then we print each item's regular price and sale price.
+
+Notice that both objects use the same sale_price method. But the method uses the price stored inside the specific object.
+
+For item1, self.price is 900. For item2, self.price is 300.
+
+This is why self matters. It allows the method to work with the data stored in the object that called it.
+
+After running the code, try changing the discount rate from 0.10 to 0.20. Then compare how the sale prices change.
+
+Slide 18: Methods and self
+
+A method is a function that belongs to a class.
+
+When a function is written inside a class, we usually call it a method. A method can use the data stored inside an object.
+
+The word self is how a method refers to the current object. For example, if we have self.price and self.quantity, the method is using the price and quantity stored in the object that called the method.
+
+This may feel strange at first, but the idea is practical. If we create several objects from the same class, each object has its own data. The method needs a way to know which object's data to use. That is the role of self.
+
+In the Sale example, the total method multiplies self.price by self.quantity. The method does not need us to pass price and quantity again, because those values are already stored inside the object.
+
+So the main idea is: attributes store data, methods define actions, and self connects a method to the specific object using it.
+
+Slide 19: Code: add behavior with a method
+
+In this code example, we create a Sale class.
+
+The class stores three pieces of information: item, price, and quantity. These are attributes of the object.
+
+Then we define a method called total. This method multiplies the price by the quantity and returns the result.
+
+After defining the class, we create one Sale object for a notebook. The price is 12.50 and the quantity is 4.
+
+Then we print the item name, the quantity, and the total.
+
+Before running the code, calculate the total in your head. Twelve dollars and fifty cents times four should be fifty dollars.
+
+Run the cell and confirm the output.
+
+Then change the price or quantity and run it again. Notice that the total method automatically uses the updated values stored in the object.
+
+This is the power of combining data and behavior in a class.
+
+Slide 20: Code: a small analytics class
+
+This example shows a small analytics class called SalesReport.
+
+The class stores a list of sales values. Then it provides methods that calculate summary information about those values.
+
+The total_sales method returns the sum of all sales. The average_sale method calculates the average. The high_sales_count method counts how many sales values are greater than or equal to a cutoff.
+
+This is a useful class example because the data and the calculations belong together. The sales list is stored inside the object, and the methods describe actions related to that list.
+
+After defining the class, we create a report object with five sales values. Then we print the total sales, average sale, and the number of sales at least 200.
+
+Run the code and inspect the output.
+
+Then change the cutoff from 200 to 150 and run it again. The high sales count should change because the rule became easier to meet.
+
+This example shows how a class can organize a small reporting workflow.
+
+Slide 21: Function, dictionary, or class?
+
+Beginners often wonder whether they should use a function, a dictionary, or a class.
+
+A function is best when you need to perform one reusable task. For example, get_profit can receive sales and costs and return the profit.
+
+A dictionary is best when you mainly need to store related values. For example, a product dictionary might store the product name and price.
+
+A class is best when data and behavior belong together. For example, a Product class might store a price and also have a method that calculates the sale price.
+
+The beginner rule is to start simple. Do not use a class just because it sounds advanced. If a function solves the problem clearly, use a function. If you only need to store related values, a dictionary may be enough.
+
+Move to a class when one concept has both stored data and repeated actions.
+
+This decision is part of writing clean code. The goal is not to use the most advanced tool. The goal is to use the right tool for the job.
+
+Slide 22: Choosing the right organization tool
+
+This slide summarizes the main organization tools from the module.
+
+Use a function when you need one reusable task. For example, get_profit can calculate profit from sales and costs.
+
+Use a module when you have a file of related functions or constants. For example, metrics.py might store several metric calculations.
+
+Use a package when a project has several related modules that should be grouped together. For example, analytics_tools could be a folder containing cleaning, metrics, and reporting modules.
+
+Use a class when data and behavior belong together. For example, SalesReport stores sales data and provides methods for total sales, average sales, and high sales count.
+
+Use an object when you need one real instance created from a class. For example, report equals SalesReport creates one working report object.
+
+The practical rule is to start with functions. Move to modules when the file becomes long. Use classes when one concept has both data and actions.
+
+This decision-making skill is more important than memorizing syntax.
+
+Slide 23: Module 6 wrap-up
+
+This is the wrap-up for Module 6.
+
+The main theme of this module is organization. As analytics programs become larger, code organization becomes just as important as individual lines of syntax.
+
+Modules allow us to import reusable tools so we do not rewrite common code. Packages group related modules when a project grows larger. Classes allow us to store related data and behavior together.
+
+We also learned that objects are individual examples created from a class, and methods are functions that belong to a class.
+
+A key practical skill is knowing when to use each tool. Use functions for reusable tasks. Use dictionaries for related values. Use classes when data and actions belong together. Use modules and packages to organize reusable code across files and folders.
+
+For practice, try creating a StudentScore class. It could store a student's name and a list of scores. Then it could include a method that returns the average score. After that, create two student objects and print their averages.
+
+The main skill is not memorizing syntax. The main skill is learning how to keep code organized as an analytics project grows.
