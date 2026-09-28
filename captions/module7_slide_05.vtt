@@ -1,0 +1,64 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.740
+Now we are moving to generators.
+
+00:00:02.370 --> 00:00:06.820
+Generators are important because they allow Python to produce values one at a time.
+
+00:00:07.590 --> 00:00:09.440
+Let's compare that with a regular list.
+
+00:00:09.930 --> 00:00:15.420
+If we create a list containing one million transformed values, Python normally creates
+
+00:00:15.270 --> 00:00:18.220
+and stores all one million values in memory.
+
+00:00:18.970 --> 00:00:20.540
+A generator can work differently.
+
+00:00:21.070 --> 00:00:25.820
+It can calculate a value when we need it, return that value, and then continue later.
+
+00:00:26.330 --> 00:00:28.840
+The key word that makes this possible is yield.
+
+00:00:28.690 --> 00:00:31.060
+Look at the square's gen function.
+
+00:00:31.870 --> 00:00:33.660
+We loop through the numbers up to n.
+
+00:00:34.450 --> 00:00:36.700
+Instead of using return, we use yield.
+
+00:00:37.410 --> 00:00:41.600
+When Python reaches yield, it gives us one value and pauses the function.
+
+00:00:42.110 --> 00:00:46.940
+The next time Python asks the generator for another value, the function continues from
+
+00:00:46.790 --> 00:00:47.540
+where it stopped.
+
+00:00:47.910 --> 00:00:48.740
+Run the example.
+
+00:00:49.270 --> 00:00:51.840
+You will see the squared values printed one at a time.
+
+00:00:52.450 --> 00:00:56.260
+For four values, memory is obviously not a major concern.
+
+00:00:56.890 --> 00:01:01.300
+But imagine processing millions of records or reading a very large file.
+
+00:01:01.810 --> 00:01:06.680
+Generators can be useful because we do not always need to store every result at the same
+
+00:01:06.530 --> 00:01:11.700
+time. The important idea for now is that return usually finishes
+
+00:01:11.550 --> 00:01:16.580
+a function, while yield produces a value and allows the function to continue later.
