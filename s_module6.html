@@ -1,54 +1,1217 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IAN 601 · Module 6 · Full Slide Lesson</title>
-<style>
-  html, body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: #0f1720;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IAN 601 · Module 6 · Modules, Packages &amp; OOP</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script><script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs/loader.js"></script><style>
+:root{--bg:#edf2f7;--surface:#fff;--surface-2:#f7f9fc;--text:#182230;--muted:#64748b;--border:#dbe3ec;--primary:#1f5f9b;--primary-2:#2f78b7;--primary-soft:#eaf3fb;--accent:#c67a26;--good:#2d7d59;--bad:#a54444;--shadow:0 16px 42px rgba(27,43,65,.12);--radius:18px;--slide-pad:clamp(26px,3.4vw,58px)}
+body.dark{--bg:#0f1720;--surface:#17212c;--surface-2:#111a24;--text:#edf4fb;--muted:#aab8c8;--border:#324151;--primary:#6aaee6;--primary-2:#8cc2ec;--primary-soft:#162f44;--accent:#e1a45f;--good:#6ec49a;--bad:#e18888;--shadow:0 18px 48px rgba(0,0,0,.32)}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;overflow:hidden;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}button,select,textarea{font:inherit}button{cursor:pointer}
+.app{height:100vh;display:grid;grid-template-rows:60px minmax(0,1fr) 158px}body.cc-off .app{grid-template-rows:60px minmax(0,1fr) 112px}
+.topbar{display:flex;align-items:center;gap:10px;padding:0 18px;background:color-mix(in srgb,var(--surface) 92%,transparent);border-bottom:1px solid var(--border);z-index:20}.brand{display:flex;align-items:center;gap:10px;min-width:250px;font-weight:800}.brand-mark{width:31px;height:31px;border-radius:9px;background:var(--primary);color:#fff;display:grid;place-items:center;font-size:12px}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:700}.top-actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+.control,select{min-height:36px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);padding:7px 11px;font-weight:700}.control:hover,.nav-btn:hover{border-color:var(--primary)}.control.primary{background:var(--primary);color:#fff;border-color:var(--primary)}.status{color:var(--muted);font-size:12px;font-weight:700;white-space:nowrap}.status.ready{color:var(--good)}.status.error{color:var(--bad)}
+.stage{min-height:0;padding:18px 22px;display:grid;place-items:center}.slide{display:none;width:min(1280px,100%);height:100%;max-height:800px;overflow:auto;scrollbar-width:thin;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:var(--slide-pad);position:relative}.slide.active{display:block;animation:slideIn .22s ease}@keyframes slideIn{from{opacity:.5;transform:translateY(5px)}to{opacity:1;transform:none}}
+.slide-inner{min-height:100%;display:block}.slide-header{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:0;border:0;background:none;margin-bottom:18px}.kicker{color:var(--primary);font-weight:850;text-transform:uppercase;letter-spacing:.11em;font-size:12px;display:block;margin-bottom:7px}.slide-header h2{font-size:clamp(28px,3.3vw,45px);line-height:1.08;letter-spacing:-.03em;margin:0}.slide-badge{display:none}.slide-content{padding:0;overflow:visible}.slide-num{position:absolute;right:26px;bottom:10px;color:var(--muted);font-size:11px;font-weight:800;opacity:.75}
+h1,h2,h3,p{margin-top:0}h3{font-size:20px;line-height:1.2;margin-bottom:9px}p{font-size:clamp(16px,1.5vw,20px);color:var(--muted)}.lead{font-size:clamp(18px,2vw,25px);line-height:1.55}.big-lead{font-size:clamp(32px,4.4vw,62px);line-height:1.06;font-weight:900;letter-spacing:-.045em;margin-bottom:20px}
+.title-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}.pill-row{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}.pill-row span{padding:8px 11px;border-radius:999px;background:var(--primary-soft);color:var(--primary);font-size:13px;font-weight:800}.hero-actions-inline{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.btn{border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);padding:7px 11px;font-weight:750}.btn:hover{border-color:var(--primary)}.btn.big{min-height:40px}.btn.ghost{background:var(--surface-2)}
+.flow-visual{min-height:330px;border:1px solid var(--border);border-radius:24px;background:radial-gradient(circle at 20% 15%,color-mix(in srgb,var(--primary) 16%,transparent),transparent 32%),var(--surface-2);display:grid;gap:8px;align-content:center;padding:28px}.flow-visual div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px 15px;font-weight:850;text-align:center}.flow-visual span{text-align:center;color:var(--primary);font-size:12px;font-weight:850;text-transform:uppercase}
+.timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.timeline-item,.summary-grid>div{border:1px solid var(--border);background:var(--surface-2);border-radius:15px;padding:18px}.timeline-item>span{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--primary);color:#fff;font-weight:900;margin-bottom:10px}.summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.two-col{display:grid;grid-template-columns:minmax(0,.9fr) minmax(380px,1.1fr);gap:28px;align-items:start}.two-col.tight{grid-template-columns:minmax(0,.8fr) minmax(430px,1.2fr)}.clean-list{padding-left:22px}.clean-list li{margin:8px 0;font-size:17px}.callout{margin:18px 0 0;border-radius:13px;padding:14px 16px;border:1px solid var(--border);background:var(--primary-soft);color:var(--text);font-size:15px}.callout strong{color:var(--primary)}.callout.secondary{background:var(--surface-2)}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em;background:var(--primary-soft);color:var(--primary);padding:2px 6px;border-radius:6px}
+.code-cell{border:1px solid #8998a8;border-radius:7px;overflow:hidden;background:#1e1e1e;box-shadow:0 5px 16px rgba(15,23,42,.12)}.cell-head{min-height:52px;display:flex;justify-content:space-between;gap:12px;padding:9px 12px;background:#31445a;color:#f8fafc;border-bottom:1px solid #172536}.cell-head h3{font-size:14px;margin:2px 0}.cell-head p{font-size:11px;color:#cbd5e1;margin:0}.cell-label,.file-pill{font-size:10px;color:#9dc8ee;font-weight:800}.file-pill{color:#e2e8f0;white-space:nowrap}.editor-shell{background:#1e1e1e;position:relative}.editor-topbar{height:31px;display:flex;align-items:center;gap:6px;padding:0 10px;background:#252526;border-bottom:1px solid #333}.dot{width:9px;height:9px;border-radius:50%}.dot.red{background:#ff5f57}.dot.yellow{background:#febc2e}.dot.green{background:#28c840}.tab-name{margin-left:6px;color:#cbd5e1;font:11px Consolas,monospace}.monaco-host{height:210px}.code-input{display:none;width:100%;height:210px;resize:vertical;border:0;background:#1e1e1e;color:#d4d4d4;padding:13px 15px;font:13.5px/1.5 Consolas,"Courier New",monospace;outline:0}.code-cell.fallback .code-input{display:block}.code-cell.fallback .monaco-host{display:none}.editor-status{height:24px;display:flex;justify-content:flex-end;gap:12px;align-items:center;background:#007acc;color:#fff;padding:0 10px;font:10px "Segoe UI",sans-serif}.cell-actions{display:flex;gap:6px;padding:7px 10px;background:#31445a}.cell-actions .btn{min-height:29px;border-color:#60758c;background:#42566d;color:#fff;font-size:11px}.cell-actions .run-cell{background:#2f78b7}.output{display:none;margin:0;border-top:1px solid #aab5c1;background:#0f172a;color:#f8fafc;padding:12px 14px;white-space:pre-wrap;font:12px/1.45 Consolas,"Courier New",monospace;max-height:220px;overflow:auto}.output.show{display:block}.output.error{color:#fecaca;background:#450a0a}
+.bottombar{border-top:1px solid var(--border);display:grid;grid-template-columns:auto minmax(540px,1fr) minmax(220px,320px) auto;gap:12px;padding:8px 14px;align-items:center;background:var(--surface);z-index:20}.footer-left,.footer-right{display:flex;align-items:center}.nav-btn{border:1px solid var(--border);background:var(--surface);color:var(--text);min-height:36px;border-radius:9px;padding:7px 12px;font-weight:850}
+.audio-block{min-width:0;display:grid;gap:6px}.narration-controls{display:flex;align-items:center;gap:6px}.narration-btn,.narration-speed{min-height:30px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);padding:5px 8px;font-size:10.5px;font-weight:800;white-space:nowrap}.narration-btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}#ccToggle[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:#fff}.subtitle-bar{min-height:42px;display:flex;align-items:center;justify-content:center;padding:6px 18px;border:1px solid #2f3a46;border-radius:8px;background:rgba(18,22,27,.96);color:#fff;text-align:center;font:600 15px/1.35 "Segoe UI",Arial,sans-serif;overflow:hidden}.subtitle-bar span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:1100px}body.cc-off .subtitle-bar{display:none}.audio-player{display:grid;grid-template-columns:auto minmax(100px,1fr) auto auto;align-items:center;gap:7px;border:1px solid var(--border);border-radius:10px;padding:5px 8px;background:var(--surface-2)}.audio-dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}.audio-player.playing .audio-dot{background:var(--good)}.audio-title{font-size:10.5px;font-weight:850}.audio-seek{width:100%}.audio-time{color:var(--muted);font:10px ui-monospace,monospace}.audio-play{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:8px;padding:5px 8px;font-size:10px}.bottom-nav{display:grid;gap:6px}.bottom-nav #slideSelect{width:100%;max-width:none;min-height:30px}.bottom-progress{display:flex;align-items:center;gap:7px}.progress-track{flex:1;height:7px;background:var(--border);border-radius:999px;overflow:hidden}.progress-bar{height:100%;width:0;background:var(--primary)}.slide-count{min-width:48px;text-align:center;color:var(--muted);font-size:10px;font-weight:800}
+.transcript-panel{position:fixed;right:22px;bottom:124px;width:min(560px,calc(100vw - 44px));max-height:min(520px,70vh);overflow:hidden;z-index:1200;border:1px solid var(--border);border-radius:18px;background:var(--surface);box-shadow:0 20px 60px rgba(0,0,0,.28);display:none;grid-template-rows:auto minmax(0,1fr)}.transcript-panel.open{display:grid}.transcript-head{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;border-bottom:1px solid var(--border);background:var(--surface-2)}.transcript-body{overflow:auto;padding:15px 17px;font-size:14px;line-height:1.62;white-space:pre-wrap}
+.modal-backdrop{position:fixed;inset:0;background:rgba(10,18,28,.58);display:none;place-items:center;z-index:1300;padding:20px}.modal-backdrop.show{display:grid}.modal{width:min(700px,96vw);max-height:82vh;overflow:auto;background:var(--surface);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow);padding:22px}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:14px}.module-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}.module-links a{text-decoration:none;border:1px solid var(--border);border-radius:10px;padding:10px 12px;color:var(--text);background:var(--surface-2);font-weight:750}.module-links a.current{border-color:var(--primary);color:var(--primary)}
+@media(max-width:1200px){.app{grid-template-rows:auto minmax(0,1fr) 188px}body.cc-off .app{grid-template-rows:auto minmax(0,1fr) 146px}.bottombar{grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto auto}.audio-block{grid-column:1/-1}.bottom-nav{grid-column:2;grid-row:2}.topbar{flex-wrap:wrap;padding:8px 12px}.brand{min-width:auto}}
+@media(max-width:900px){.top-actions .status,.learning-progress-btn{display:none}.stage{padding:10px}.slide{padding:25px;border-radius:13px}.title-grid,.two-col,.two-col.tight{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(2,1fr)}.flow-visual{min-height:260px}.slide-header{display:block}.top-actions{flex-wrap:wrap}}
+@media(max-width:720px){body{overflow:auto}.app{height:auto;grid-template-rows:auto auto auto}body.cc-off .app{grid-template-rows:auto auto auto}.bottombar{position:sticky;bottom:0;grid-template-columns:1fr}.audio-player{grid-template-columns:1fr}.narration-controls{flex-wrap:wrap}.bottom-nav{grid-column:1;grid-row:auto}.subtitle-bar{font-size:14px;min-height:48px}.slide{height:auto;max-height:none}.timeline,.summary-grid,.module-links{grid-template-columns:1fr}.monaco-host,.code-input{height:250px}}
+</style><style id="module7-clean-design">
+/* Desktop presentation sizing */
+@media (min-width: 901px){
+  .app{grid-template-rows:60px minmax(0,1fr) 142px!important}
+  body.cc-off .app{grid-template-rows:60px minmax(0,1fr) 102px!important}
+  .stage{padding:12px 20px!important}
+  .slide{
+    width:min(1280px,100%)!important;
+    height:100%!important;
+    max-height:none!important;
+    overflow:hidden!important;
+    padding:26px 34px!important;
+    border-radius:16px!important;
   }
-  iframe {
-    width: 100vw;
-    height: 100dvh;
-    border: 0;
-    display: block;
-    background: #0f1720;
+  .slide-inner{
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:auto!important;
+    overflow:hidden!important;
   }
-  .fallback {
-    position: fixed;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    color: white;
-    background: #0f1720;
-    padding: 2rem;
-    text-align: center;
+  .slide-header{margin-bottom:10px!important}
+  .slide-header h2{font-size:clamp(28px,2.7vw,42px)!important}
+  .slide-content{height:auto!important;overflow:visible!important}
+  .slide-footer{display:none!important}
+  .lead{font-size:18px!important;line-height:1.4!important;margin-bottom:10px!important}
+  .big-lead{font-size:clamp(30px,3.5vw,48px)!important;margin-bottom:12px!important}
+  .callout{margin:10px 0 0!important;padding:10px 13px!important;font-size:13px!important}
+  .timeline{gap:9px!important}.timeline-item{padding:12px!important;min-height:0!important}
+  .m7-objectives{gap:12px!important;margin-top:10px!important}
+  .m7-flow,.m7-pipeline{margin:8px 0!important;gap:8px!important}
+  .m7-flow>div,.m7-pipeline>div{padding:9px 12px!important;min-width:125px!important}
+  .m7-compare{margin:8px 0!important;gap:9px!important}
+  .m7-compare>div{padding:11px!important}
+  .m7-steps{gap:6px!important;margin:8px 0!important}
+  .m7-steps>div{padding:7px 9px!important}
+  .two-col,.two-col.tight{gap:12px!important}
+  .table-wrap{margin:8px 0!important}
+  th,td{padding:7px 9px!important}
+  .code-cell{margin-top:8px!important}
+  .cell-head{min-height:42px!important;padding:7px 10px!important}
+  .cell-head h3{font-size:13px!important;margin:1px 0!important}
+  .cell-head p{font-size:10.5px!important;margin:0!important}
+  .cell-label,.file-pill{font-size:9.5px!important}
+  .editor-topbar{height:26px!important}
+  .monaco-host,.code-input{height:138px!important}
+  .editor-status{height:20px!important;font-size:9px!important}
+  .cell-actions{padding:5px 8px!important;gap:5px!important}
+  .cell-actions .btn{min-height:27px!important;padding:4px 8px!important;font-size:10px!important}
+  .output{max-height:110px!important;padding:9px 11px!important;font-size:11px!important}
+  [data-title="Practice: Intermediate to Mastery"] .monaco-host,
+  [data-title="Practice: Intermediate to Mastery"] .code-input{height:112px!important}
+  [data-title="Practice: Intermediate to Mastery"] .cell-head{min-height:38px!important}
+  [data-title="Practice: Intermediate to Mastery"] .cell-actions{padding:4px 6px!important}
+  [data-title="Mini analytical generator pipeline"] .monaco-host,
+  [data-title="Mini analytical generator pipeline"] .code-input{height:155px!important}
+
+  .bottombar{
+    grid-template-columns:auto minmax(0,1fr) minmax(230px,310px) auto!important;
+    gap:10px!important;
+    padding:7px 12px!important;
   }
-  .fallback a {
-    color: #8cc2ec;
-    font-weight: 700;
-  }
-</style>
-</head>
-<body>
-<iframe id="module-frame" title="IAN 601 Module 6 full slide lesson" allow="fullscreen; autoplay"></iframe>
-<noscript>
-  <div class="fallback">
-    <p>This page loads the full Module 6 slide lesson. <a href="m6/module6.html">Open Module 6</a>.</p>
+  .narration-controls{gap:5px!important}
+  .narration-btn,.narration-speed{min-height:28px!important;padding:4px 7px!important;font-size:10px!important}
+  .subtitle-bar{min-height:38px!important;padding:5px 12px!important;font-size:13px!important}
+  .audio-player{padding:4px 7px!important;gap:6px!important}
+  .audio-title{font-size:10px!important}
+  .bottom-nav{gap:5px!important}
+}
+
+/* Mobile: normal document flow, no giant centered slide or internal scrollbar */
+@media (max-width: 720px){
+  html,body{height:auto!important;overflow-x:hidden!important;overflow-y:auto!important}
+  .app{height:auto!important;min-height:100vh!important;display:block!important}
+  .topbar{position:sticky!important;top:0!important;display:block!important;padding:7px 8px!important}
+  .brand{margin-bottom:6px!important}
+  .top-actions{display:flex!important;flex-wrap:nowrap!important;gap:5px!important;overflow-x:auto!important;scrollbar-width:none!important}
+  .top-actions::-webkit-scrollbar{display:none!important}
+  .top-actions .control,.top-actions .status{flex:0 0 auto!important}
+  .status{display:none!important}
+  .stage{display:block!important;padding:10px!important}
+  .slide{display:none!important;width:100%!important;height:auto!important;max-height:none!important;overflow:visible!important;padding:16px!important;border-radius:14px!important}
+  .slide.active{display:block!important}
+  .slide-inner{height:auto!important;min-height:0!important;aspect-ratio:auto!important;overflow:visible!important}
+  .slide-header{display:block!important;margin-bottom:10px!important}
+  .slide-header h2{font-size:clamp(24px,8vw,34px)!important}
+  .title-grid,.two-col,.two-col.tight,.m7-objectives,.m7-compare,.m7-practice-grid,.m7-stats,.timeline,.summary-grid{grid-template-columns:1fr!important}
+  .m7-flow,.m7-pipeline{display:grid!important;grid-template-columns:1fr!important}
+  .m7-flow>b,.m7-pipeline>b{transform:rotate(90deg)!important;justify-self:center!important}
+  .monaco-host,.code-input{height:220px!important}
+  .bottombar{position:relative!important;display:grid!important;grid-template-columns:1fr 1fr!important;grid-template-areas:"audio audio" "nav nav" "prev next"!important;gap:8px!important;padding:8px!important}
+  .audio-block{grid-area:audio!important}
+  .bottom-nav{grid-area:nav!important}
+  .footer-left{grid-area:prev!important}.footer-right{grid-area:next!important}
+  .footer-left .nav-btn,.footer-right .nav-btn{width:100%!important}
+  .narration-controls{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;scrollbar-width:none!important}
+  .narration-controls::-webkit-scrollbar{display:none!important}
+  .audio-player{grid-template-columns:1fr auto!important}
+  .audio-player .audio-title,.audio-player .audio-seek{grid-column:1/-1!important}
+}
+</style><style id="module6-content-styles">
+.stack-visual{display:grid;gap:10px;min-height:300px;align-content:center;padding:24px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(145deg,color-mix(in srgb,var(--primary) 10%,var(--surface-2)),var(--surface-2))}
+.stack-visual>div{display:grid;grid-template-columns:120px 1fr;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--border);border-radius:13px;background:var(--surface)}
+.stack-visual strong{color:var(--primary);font-size:18px}.stack-visual span{color:var(--muted)}
+.timeline.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+.notes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+.note-card{display:grid;gap:4px;padding:11px 12px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2)}
+.note-card strong{color:var(--primary);font-size:12px;text-transform:uppercase;letter-spacing:.05em}.note-card span{color:var(--muted);font-size:12px;line-height:1.35}
+.formula-card{display:grid;gap:5px;margin:9px 0;padding:11px 13px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2)}
+.formula-card code{font-size:14px}.formula-card span{color:var(--muted);font-size:13px}
+.before-after{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px}.before-after>div{padding:14px;border:1px solid var(--border);border-radius:14px;background:var(--surface-2)}
+.arrow-big,.arrow-down{color:var(--primary);font-size:24px;font-weight:900;text-align:center}
+.multi-file-visual,.module-visual,.object-visual,.folder-visual,.project-tree{display:grid;gap:10px;padding:16px;border:1px solid var(--border);border-radius:16px;background:var(--surface-2)}
+.file-card,.file-box,.object-box,.practice-card,.decision-card{padding:13px 14px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+.file-card strong,.file-box strong,.object-box strong,.practice-card strong,.decision-card strong{color:var(--primary)}
+.folder-title{font-weight:900;color:var(--primary);margin-bottom:4px}
+.object-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tool-grid,.decision-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.mini-code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;line-height:1.45;padding:10px;border-radius:10px;background:#1e1e1e;color:#d4d4d4;white-space:pre-wrap}
+.side-captions,.side-caption-toggle,.side-caption-status,.side-captions-head,.side-caption-list{display:none!important}
+@media(max-width:1050px){
+  .timeline.five{grid-template-columns:repeat(3,1fr)}
+  .tool-grid,.decision-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .timeline.five,.notes-grid,.tool-grid,.decision-grid,.object-pair,.before-after{grid-template-columns:1fr!important}
+  .before-after{gap:8px}.arrow-big{transform:rotate(90deg)}
+  .stack-visual{min-height:0;padding:14px}.stack-visual>div{grid-template-columns:1fr;padding:11px}
+}
+</style></head><body><div class="app"><header class="topbar"><div class="brand"><div class="brand-mark">Py</div><div class="brand-text">IAN 601 · Module 6<small>Modules, Packages &amp; OOP</small></div></div><div class="top-actions"><span id="pyStatus" class="status">Python loads when code runs</span><button class="control learning-progress-btn" id="learningProgressBtn">Progress <span id="learningProgressPct">0%</span></button><button class="control" id="themeBtn">Dark mode</button><button class="control" id="fullBtn">Fullscreen</button><button class="control primary" id="runSlideBtn">Run slide ▶</button><button class="control" id="courseModulesBtn">☰ Course Modules</button></div></header><main class="stage" id="stage"><section class="slide active" data-audio="audio/module6_slide_01.wav" data-audio-alt="audio/module6_slide_01.mp3" data-caption="captions/module6_slide_01.vtt" data-narration-index="0" data-title="Modules, Packages &amp; OOP">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Module 6 · Interactive slide lesson</span><h2>Modules, Packages &amp; OOP</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="title-grid">
+<div>
+<p class="big-lead">Organized Python code is easier to reuse, test, explain, and grow.</p>
+
+<div class="hero-actions-inline"><button class="btn big primary start-narration-btn" type="button">Start with Narration</button><button class="btn ghost big start-btn" type="button">Start without Narration</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div>
+</div>
+<div aria-hidden="true" class="stack-visual">
+<div><strong>Module</strong><span>reusable Python file</span></div>
+<div><strong>Package</strong><span>folder of modules</span></div>
+<div><strong>Class</strong><span>blueprint for objects</span></div>
+</div>
+</div>
+<div class="callout"><strong>Goal:</strong> Import modules, understand packages, create simple classes, add methods, and choose the right organization tool for an analytics task. You can choose narration on the first slide. On GitHub Pages, place the audio folder and captions folder beside this HTML file. Then each slide can play its explanation and show the matching captions automatically.</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 1</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_02.wav" data-audio-alt="audio/module6_slide_02.mp3" data-caption="captions/module6_slide_02.vtt" data-narration-index="1" data-title="How to use this page">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Self-paced workflow</span><h2>How to use this page</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="timeline five">
+<div class="timeline-item"><span>1</span><h3>Read</h3><p>Start with the idea on the slide.</p></div>
+<div class="timeline-item"><span>2</span><h3>Run</h3><p>Use the Run button to execute Python in the browser.</p></div>
+<div class="timeline-item"><span>3</span><h3>Check</h3><p>Read the terminal output below the code.</p></div>
+<div class="timeline-item"><span>4</span><h3>Edit</h3><p>Change one value or one line at a time.</p></div>
+<div class="timeline-item"><span>5</span><h3>Apply</h3><p>Reuse the same pattern in a small analytics task.</p></div>
+</div>
+<div class="callout secondary">All content is visible at once. Use Next, Previous, arrow keys, or the slide menu. The spacebar will not move slides while editing code.</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 2</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_03.wav" data-audio-alt="audio/module6_slide_03.mp3" data-caption="captions/module6_slide_03.vtt" data-narration-index="2" data-title="Learning path for Module 6">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Roadmap</span><h2>Learning path for Module 6</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="timeline">
+<div class="timeline-item"><span>1</span><h3>Imports</h3><p>Bring in built-in Python tools and use clear import styles.</p></div>
+<div class="timeline-item"><span>2</span><h3>Your own module</h3><p>See how one Python file can provide tools to another file.</p></div>
+<div class="timeline-item"><span>3</span><h3>Packages</h3><p>Connect modules, packages, and libraries before NumPy and Pandas.</p></div>
+<div class="timeline-item"><span>4</span><h3>Classes</h3><p>Create a blueprint that stores data and behavior together.</p></div>
+<div class="timeline-item"><span>5</span><h3>Objects and methods</h3><p>Create multiple objects and call methods that use <code>self</code>.</p></div>
+<div class="timeline-item"><span>6</span><h3>Design choice</h3><p>Decide when a function, dictionary, module, or class is the right fit.</p></div>
+</div>
+<div class="callout">This module stays beginner friendly. The goal is not advanced software engineering. The goal is to make analytical code easier to reuse, test, explain, and grow.</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 3</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_04.wav" data-audio-alt="audio/module6_slide_04.mp3" data-caption="captions/module6_slide_04.vtt" data-narration-index="3" data-title="Why organize code?">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Big picture</span><h2>Why organize code?</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="two-col">
+<div>
+<p class="lead">Small scripts are fine at the beginning. But analytics projects often grow into repeated steps, helper functions, reports, and models.</p>
+<ul class="clean-list">
+<li><strong>Without organization:</strong> code becomes hard to find and easy to break.</li>
+<li><strong>With organization:</strong> related work has a clear home.</li>
+<li><strong>For teams:</strong> names and structure make the work easier to review.</li>
+<li><strong>For future you:</strong> organized code is easier to reuse next month.</li>
+</ul>
+</div>
+<div class="before-after">
+<div><h3>One long script</h3><code>clean data</code><code>calculate metrics</code><code>make chart</code><code>repeat everything</code></div>
+<div><h3>Organized project</h3><code>cleaning.py</code><code>metrics.py</code><code>charts.py</code><code>main.py</code></div>
+</div>
+</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 4</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_05.wav" data-audio-alt="audio/module6_slide_05.mp3" data-caption="captions/module6_slide_05.vtt" data-narration-index="4" data-title="What is a module?">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Reusable tools</span><h2>What is a module?</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="two-col tight">
+<div>
+<p class="lead">A module is a Python file that contains code you can use in another file or notebook.</p>
+<div class="formula-card"><code>import math</code><span>Load the built-in math module.</span></div>
+<div class="formula-card"><code>math.sqrt(81)</code><span>Use a function stored inside that module.</span></div>
+<div class="callout secondary"><strong>Simple idea:</strong> a module is like a toolbox. You import the toolbox, then use the tools inside it.</div>
+</div>
+<div aria-hidden="true" class="module-visual">
+<div class="file-box">math.py</div>
+<div class="arrow-big">→</div>
+<div class="tool-grid"><span>sqrt()</span><span>pi</span><span>ceil()</span><span>floor()</span></div>
+</div>
+</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 5</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_06.wav" data-audio-alt="audio/module6_slide_06.mp3" data-caption="captions/module6_slide_06.vtt" data-narration-index="5" data-title="Code: import built-in modules">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Executable example</span><h2>Code: import built-in modules</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="code-cell" data-cell="1" data-filename="built_in_modules.py">
+<div class="cell-head">
+<div><div class="cell-label">Python Cell 1</div><h3>Import built-in modules</h3><p>Use math, random, and datetime without installing anything.</p></div>
+<span class="file-pill">built_in_modules.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> built_in_modules.py</span></div>
+<textarea aria-label="Python editor 1" class="code-input" spellcheck="false" style="height:260px">import math
+import random
+from datetime import date
+
+number = 81
+root = math.sqrt(number)
+
+sample_ids = random.sample(range(1000, 1010), 3)
+today = date.today()
+
+print("Square root:", root)
+print("Rounded pi:", round(math.pi, 3))
+print("Sample IDs:", sample_ids)
+print("Today's date:", today)</textarea>
+<div aria-hidden="true" class="monaco-host" style="height:260px"></div>
+<div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>Python imports tools from the standard library and uses them immediately.</span></div><div class="note-card"><strong>Why it matters</strong><span>Built-in modules save time because many common tools already exist.</span></div><div class="note-card"><strong>Change to try</strong><span>Change number from 81 to 144 and run again.</span></div></div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 6</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_07.wav" data-audio-alt="audio/module6_slide_07.mp3" data-caption="captions/module6_slide_07.vtt" data-narration-index="6" data-title="Aliases and selective imports">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Cleaner import names</span><h2>Aliases and selective imports</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="two-col tight">
+<div>
+<p class="lead">Aliases give a module a shorter name. Selective imports bring in only the part you need.</p>
+<div class="formula-card"><code>import statistics as stats</code><span>Use <strong>stats</strong> as a shorter name.</span></div>
+<div class="formula-card"><code>from datetime import date</code><span>Import only <strong>date</strong> from the datetime module.</span></div>
+<div class="callout secondary">Use aliases when they improve readability. Do not create confusing nicknames just to make code shorter.</div>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Import style</th><th>Example</th><th>When useful</th></tr></thead><tbody>
+<tr><td>Whole module</td><td><code>import math</code></td><td>You need several tools from the module.</td></tr>
+<tr><td>Alias</td><td><code>import pandas as pd</code></td><td>The alias is common and easy to recognize.</td></tr>
+<tr><td>Selective</td><td><code>from math import sqrt</code></td><td>You only need one specific function.</td></tr>
+</tbody></table></div>
+</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 7</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_08.wav" data-audio-alt="audio/module6_slide_08.mp3" data-caption="captions/module6_slide_08.vtt" data-narration-index="7" data-title="Code: use an alias for readability">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Executable example</span><h2>Code: use an alias for readability</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="code-cell" data-cell="2" data-filename="statistics_alias.py">
+<div class="cell-head">
+<div><div class="cell-label">Python Cell 2</div><h3>Use a clear module alias</h3><p>The statistics module helps calculate simple summary values.</p></div>
+<span class="file-pill">statistics_alias.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> statistics_alias.py</span></div>
+<textarea aria-label="Python editor 2" class="code-input" spellcheck="false" style="height:260px">import statistics as stats
+
+scores = [82, 90, 76, 88, 95]
+
+average_score = stats.mean(scores)
+median_score = stats.median(scores)
+lowest_score = min(scores)
+highest_score = max(scores)
+
+print("Scores:", scores)
+print("Average:", round(average_score, 2))
+print("Median:", median_score)
+print("Range:", highest_score - lowest_score)</textarea>
+<div aria-hidden="true" class="monaco-host" style="height:260px"></div>
+<div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>stats.mean() and stats.median() come from the statistics module.</span></div><div class="note-card"><strong>Analytics pattern</strong><span>A short list can be summarized with reusable module functions.</span></div><div class="note-card"><strong>Change to try</strong><span>Add one more score and run the cell again.</span></div></div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 8</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_09.wav" data-audio-alt="audio/module6_slide_09.mp3" data-caption="captions/module6_slide_09.vtt" data-narration-index="8" data-title="Create your own module">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Project structure</span><h2>Create your own module</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="two-col tight">
+<div>
+<p class="lead">A module can be a file that you write yourself. Put repeated helper functions in one file, then import them into a main script.</p>
+<div class="project-tree">project/
+├── main.py
+└── calculations.py</div>
+<ul class="clean-list">
+<li><strong>calculations.py:</strong> keeps reusable formulas.</li>
+<li><strong>main.py:</strong> runs the analysis and uses the formulas.</li>
+<li><strong>Benefit:</strong> the main file stays short and easier to read.</li>
+</ul>
+</div>
+<div aria-hidden="true" class="multi-file-visual">
+<div class="file-card"><strong>calculations.py</strong><code>def calculate_profit(...):
+    return ...</code></div>
+<div class="arrow-down">↓ import</div>
+<div class="file-card"><strong>main.py</strong><code>from calculations import calculate_profit
+print(calculate_profit(...))</code></div>
+</div>
+</div>
+<div class="callout secondary"><strong>Beginner idea:</strong> when a script has many useful functions, move related functions into a module file.</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 9</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_10.wav" data-audio-alt="audio/module6_slide_10.mp3" data-caption="captions/module6_slide_10.vtt" data-narration-index="9" data-title="Code: create and import your own module">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Executable example</span><h2>Code: create and import your own module</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="code-cell" data-cell="3" data-filename="main.py">
+<div class="cell-head">
+<div><div class="cell-label">Python Cell 3</div><h3>Write a small module file, then import it</h3><p>The browser creates calculations.py, then imports a function from it.</p></div>
+<span class="file-pill">main.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> main.py</span></div>
+<textarea aria-label="Python editor 3" class="code-input" spellcheck="false" style="height:350px">module_code = """
+def calculate_profit(sales, costs):
+    return sales - costs
+
+
+def profit_margin(sales, costs):
+    profit = calculate_profit(sales, costs)
+    return profit / sales
+"""
+
+with open("calculations.py", "w") as file:
+    file.write(module_code)
+
+import importlib
+import calculations
+calculations = importlib.reload(calculations)
+
+sales = 1500
+costs = 1100
+
+print("Profit:", calculations.calculate_profit(sales, costs))
+print("Profit margin:", round(calculations.profit_margin(sales, costs), 3))</textarea>
+<div aria-hidden="true" class="monaco-host" style="height:350px"></div>
+<div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>Python writes a file named calculations.py and then imports it like a module.</span></div><div class="note-card"><strong>Why it matters</strong><span>This demonstrates how a real project can separate helper formulas from the main analysis.</span></div><div class="note-card"><strong>Change to try</strong><span>Change sales and costs, then run the cell again.</span></div></div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 10</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_11.wav" data-audio-alt="audio/module6_slide_11.mp3" data-caption="captions/module6_slide_11.vtt" data-narration-index="10" data-title="What is a package?">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Folder-level organization</span><h2>What is a package?</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="two-col">
+<div>
+<p class="lead">A package is a folder that groups related modules together.</p>
+<ul class="clean-list">
+<li>A module is usually one <code>.py</code> file.</li>
+<li>A package is a folder of related modules.</li>
+<li>Large analytics libraries are packages.</li>
+<li>Packages help keep a project from becoming one very long file.</li>
+</ul>
+<div class="callout secondary">In this beginner module, the main goal is to recognize the idea. You do not need to build a complex package yet.</div>
+</div>
+<div aria-hidden="true" class="folder-visual">
+<div class="folder-title">analytics_project/</div>
+<div>cleaning.py</div><div>metrics.py</div><div>charts.py</div><div>main.py</div>
+</div>
+</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 11</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_12.wav" data-audio-alt="audio/module6_slide_12.mp3" data-caption="captions/module6_slide_12.vtt" data-narration-index="11" data-title="Module, package, and library">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Important vocabulary</span><h2>Module, package, and library</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="two-col">
+<div>
+<p class="lead">These words are related, but they are not exactly the same. This distinction helps when you start using tools like NumPy and Pandas.</p>
+<div class="callout secondary"><strong>Simple rule:</strong> module = file, package = folder, library = reusable collection of tools.</div>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Term</th><th>Simple meaning</th><th>Example</th></tr></thead><tbody>
+<tr><td><strong>Module</strong></td><td>One Python file with reusable code.</td><td><code>math</code>, <code>calculations.py</code></td></tr>
+<tr><td><strong>Package</strong></td><td>A folder that groups related modules.</td><td><code>analytics/</code></td></tr>
+<tr><td><strong>Library</strong></td><td>A larger reusable collection of packages and modules.</td><td>NumPy, Pandas</td></tr>
+</tbody></table></div>
+</div>
+<div class="summary-grid" style="margin-top:18px">
+<div><h3>Module</h3><p>Useful when one file has related functions.</p></div>
+<div><h3>Package</h3><p>Useful when a project has several related files.</p></div>
+<div><h3>Library</h3><p>Useful when many people reuse the same tools.</p></div>
+</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 12</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_13.wav" data-audio-alt="audio/module6_slide_13.mp3" data-caption="captions/module6_slide_13.vtt" data-narration-index="12" data-title="Code: think like a small module">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Executable example</span><h2>Code: think like a small module</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="code-cell" data-cell="4" data-filename="metrics_tools.py">
+<div class="cell-head">
+<div><div class="cell-label">Python Cell 4</div><h3>Group reusable helper functions</h3><p>This cell acts like a small metrics module inside one slide.</p></div>
+<span class="file-pill">metrics_tools.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> metrics_tools.py</span></div>
+<textarea aria-label="Python editor 4" class="code-input" spellcheck="false" style="height:300px">def get_profit(sales, costs):
+    return sales - costs
+
+
+def get_profit_margin(sales, costs):
+    profit = get_profit(sales, costs)
+    return profit / sales
+
+
+def format_percent(value):
+    return f"{value * 100:.1f}%"
+
+sales = 2500
+costs = 1800
+
+profit = get_profit(sales, costs)
+margin = get_profit_margin(sales, costs)
+
+print("Profit:", profit)
+print("Profit margin:", format_percent(margin))</textarea>
+<div aria-hidden="true" class="monaco-host" style="height:300px"></div>
+<div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>Related helper functions work together like a small module.</span></div><div class="note-card"><strong>Why it matters</strong><span>Separating reusable calculations makes the main analysis easier to read.</span></div><div class="note-card"><strong>Change to try</strong><span>Change sales and costs, then run again.</span></div></div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 13</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_14.wav" data-audio-alt="audio/module6_slide_14.mp3" data-caption="captions/module6_slide_14.vtt" data-narration-index="13" data-title="What is a class?">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Object-oriented thinking</span><h2>What is a class?</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="two-col tight">
+<div>
+<p class="lead">A class is a blueprint. It describes what information an object should store and what actions it can perform.</p>
+<div class="formula-card"><code>class Sale:</code><span>Create a blueprint named <strong>Sale</strong>.</span></div>
+<div class="formula-card"><code>sale = Sale(...)</code><span>Create one object from the blueprint.</span></div>
+<div class="callout secondary"><strong>Simple idea:</strong> a class combines related data and related behavior.</div>
+</div>
+<div aria-hidden="true" class="object-visual">
+<div><strong>Class</strong><span>Sale blueprint</span></div>
+<span class="arrow-down">↓ creates</span>
+<div><strong>Object</strong><span>one sale record</span></div>
+</div>
+</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 14</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_15.wav" data-audio-alt="audio/module6_slide_15.mp3" data-caption="captions/module6_slide_15.vtt" data-narration-index="14" data-title="Code: create a simple class">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Executable example</span><h2>Code: create a simple class</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="code-cell" data-cell="5" data-filename="simple_class.py">
+<div class="cell-head">
+<div><div class="cell-label">Python Cell 5</div><h3>Create a class and an object</h3><p>The __init__ method stores values when the object is created.</p></div>
+<span class="file-pill">simple_class.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> simple_class.py</span></div>
+<textarea aria-label="Python editor 5" class="code-input" spellcheck="false" style="height:240px">class CustomerRecord:
+    def __init__(self, customer_id, segment):
+        self.customer_id = customer_id
+        self.segment = segment
+
+customer = CustomerRecord("C101", "Retail")
+
+print("Customer ID:", customer.customer_id)
+print("Segment:", customer.segment)</textarea>
+<div aria-hidden="true" class="monaco-host" style="height:240px"></div>
+<div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>The object stores customer_id and segment as attributes.</span></div><div class="note-card"><strong>Key detail</strong><span>self means the current object being created or used.</span></div><div class="note-card"><strong>Change to try</strong><span>Create a second customer object with a different ID.</span></div></div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 15</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_16.wav" data-audio-alt="audio/module6_slide_16.mp3" data-caption="captions/module6_slide_16.vtt" data-narration-index="15" data-title="One class can create many objects">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Why classes are useful</span><h2>One class can create many objects</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="two-col tight">
+<div>
+<p class="lead">A class is only the blueprint. Each object created from that class can hold its own values.</p>
+<ul class="clean-list">
+<li>The same <strong>Product</strong> class can create many products.</li>
+<li>Each object has its own name and price.</li>
+<li>Methods can use the values stored inside each object.</li>
+</ul>
+</div>
+<div>
+<div class="object-pair">
+<div class="object-box"><strong>item1</strong><p>Laptop<br/>$900</p></div>
+<div class="object-box"><strong>item2</strong><p>Monitor<br/>$300</p></div>
+</div>
+<div class="callout secondary"><strong>Same blueprint.</strong> Different objects. Different values.</div>
+</div>
+</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 16</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_17.wav" data-audio-alt="audio/module6_slide_17.mp3" data-caption="captions/module6_slide_17.vtt" data-narration-index="16" data-title="Code: create two objects from one class">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Executable example</span><h2>Code: create two objects from one class</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="code-cell" data-cell="6" data-filename="two_products.py">
+<div class="cell-head">
+<div><div class="cell-label">Python Cell 6</div><h3>Create two objects from the same class</h3><p>Both objects use the Product blueprint, but each object stores different values.</p></div>
+<span class="file-pill">two_products.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> two_products.py</span></div>
+<textarea aria-label="Python editor 6" class="code-input" spellcheck="false" style="height:350px">class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def sale_price(self, discount_rate):
+        return self.price * (1 - discount_rate)
+
+item1 = Product("Laptop", 900)
+item2 = Product("Monitor", 300)
+
+print(item1.name, "regular price:", item1.price)
+print(item1.name, "sale price:", item1.sale_price(0.10))
+
+print(item2.name, "regular price:", item2.price)
+print(item2.name, "sale price:", item2.sale_price(0.10))</textarea>
+<div aria-hidden="true" class="monaco-host" style="height:350px"></div>
+<div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>item1 and item2 are separate objects made from the same Product class.</span></div><div class="note-card"><strong>Why it matters</strong><span>Classes help when the same kind of thing appears many times in a dataset or project.</span></div><div class="note-card"><strong>Change to try</strong><span>Add a third product object and print its sale price.</span></div></div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 17</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_18.wav" data-audio-alt="audio/module6_slide_18.mp3" data-caption="captions/module6_slide_18.vtt" data-narration-index="17" data-title="Methods and self">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Behavior inside a class</span><h2>Methods and self</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="two-col">
+<div>
+<p class="lead">A method is a function that belongs to a class. It usually uses <code>self</code> to access the object’s own data.</p>
+<ul class="clean-list">
+<li><strong>Attribute:</strong> data stored in an object.</li>
+<li><strong>Method:</strong> action the object can perform.</li>
+<li><strong>self:</strong> the current object.</li>
+</ul>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Piece</th><th>Example</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>Attribute</td><td><code>self.price</code></td><td>The object stores a price.</td></tr>
+<tr><td>Method</td><td><code>total()</code></td><td>The object calculates something.</td></tr>
+<tr><td>self</td><td><code>self.quantity</code></td><td>Use this object's quantity.</td></tr>
+</tbody></table></div>
+</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 18</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_19.wav" data-audio-alt="audio/module6_slide_19.mp3" data-caption="captions/module6_slide_19.vtt" data-narration-index="18" data-title="Code: add behavior with a method">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Executable example</span><h2>Code: add behavior with a method</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="code-cell" data-cell="7" data-filename="sale_method.py">
+<div class="cell-head">
+<div><div class="cell-label">Python Cell 7</div><h3>Create a method inside a class</h3><p>The method uses the object’s own price and quantity.</p></div>
+<span class="file-pill">sale_method.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> sale_method.py</span></div>
+<textarea aria-label="Python editor 7" class="code-input" spellcheck="false" style="height:300px">class Sale:
+    def __init__(self, item, price, quantity):
+        self.item = item
+        self.price = price
+        self.quantity = quantity
+
+    def total(self):
+        return self.price * self.quantity
+
+sale = Sale("Notebook", 12.50, 4)
+
+print("Item:", sale.item)
+print("Quantity:", sale.quantity)
+print(f"Total: ${sale.total():.2f}")</textarea>
+<div aria-hidden="true" class="monaco-host" style="height:300px"></div>
+<div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>sale.total() calculates price times quantity for that specific sale object.</span></div><div class="note-card"><strong>Why it matters</strong><span>The data and the calculation stay together.</span></div><div class="note-card"><strong>Change to try</strong><span>Change the price or quantity and run again.</span></div></div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 19</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_20.wav" data-audio-alt="audio/module6_slide_20.mp3" data-caption="captions/module6_slide_20.vtt" data-narration-index="19" data-title="Code: a small analytics class">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Executable example</span><h2>Code: a small analytics class</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="code-cell" data-cell="8" data-filename="sales_report.py">
+<div class="cell-head">
+<div><div class="cell-label">Python Cell 8</div><h3>Use a class for a small report</h3><p>This class stores several sales and calculates summary metrics.</p></div>
+<span class="file-pill">sales_report.py</span>
+</div>
+<div class="editor-shell">
+<div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name"><i class="fa-brands fa-python"></i> sales_report.py</span></div>
+<textarea aria-label="Python editor 8" class="code-input" spellcheck="false" style="height:360px">class SalesReport:
+    def __init__(self, sales):
+        self.sales = sales
+
+    def total_sales(self):
+        return sum(self.sales)
+
+    def average_sale(self):
+        return sum(self.sales) / len(self.sales)
+
+    def high_sales_count(self, cutoff):
+        count = 0
+        for value in self.sales:
+            if value &gt;= cutoff:
+                count += 1
+        return count
+
+report = SalesReport([120, 250, 175, 320, 90])
+
+print("Total sales:", report.total_sales())
+print("Average sale:", round(report.average_sale(), 2))
+print("Sales at least 200:", report.high_sales_count(200))</textarea>
+<div aria-hidden="true" class="monaco-host" style="height:360px"></div>
+<div class="editor-status"><span><i class="fa-solid fa-code-branch"></i> main</span><span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+</div>
+<div class="cell-actions">
+<button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button>
+<button class="btn ghost reset-cell" type="button">Reset</button>
+<button class="btn ghost copy-cell" type="button">Copy</button>
+</div>
+<pre aria-live="polite" class="output">Run this cell to see output.</pre>
+</div><div class="notes-grid"><div class="note-card"><strong>What happens</strong><span>One object stores the data and provides several related calculations.</span></div><div class="note-card"><strong>Analytics pattern</strong><span>Classes are helpful when data and repeated actions belong together.</span></div><div class="note-card"><strong>Change to try</strong><span>Change the cutoff from 200 to 150 and compare the result.</span></div></div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 20</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_21.wav" data-audio-alt="audio/module6_slide_21.mp3" data-caption="captions/module6_slide_21.vtt" data-narration-index="20" data-title="Function, dictionary, or class?">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Practical decision guide</span><h2>Function, dictionary, or class?</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<p class="lead">Beginners often ask whether they should use a function, dictionary, or class. Use the simplest structure that clearly matches the job.</p>
+<div class="decision-grid">
+<div class="decision-card"><h3>Use a function</h3><p>When you mainly need to perform one reusable task.</p><code class="mini-code">def get_profit(sales, costs):
+    return sales - costs</code></div>
+<div class="decision-card"><h3>Use a dictionary</h3><p>When you mainly need to store related values.</p><code class="mini-code">product = {
+    "name": "Laptop",
+    "price": 900
+}</code></div>
+<div class="decision-card"><h3>Use a class</h3><p>When data and behavior belong together.</p><code class="mini-code">class Product:
+    def sale_price(self, rate):
+        return self.price * (1 - rate)</code></div>
+</div>
+<div class="callout success"><strong>Beginner rule:</strong> start simple. Move to a class only when one concept has both stored data and repeated actions.</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 21</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_22.wav" data-audio-alt="audio/module6_slide_22.mp3" data-caption="captions/module6_slide_22.vtt" data-narration-index="21" data-title="Choosing the right organization tool">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Practical decision guide</span><h2>Choosing the right organization tool</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="table-wrap"><table><thead><tr><th>Tool</th><th>Best for</th><th>Simple example</th></tr></thead><tbody>
+<tr><td><strong>Function</strong></td><td>One reusable task.</td><td><code>get_profit(sales, costs)</code></td></tr>
+<tr><td><strong>Module</strong></td><td>A file of related functions or constants.</td><td><code>metrics.py</code></td></tr>
+<tr><td><strong>Package</strong></td><td>A folder that groups related modules.</td><td><code>analytics_tools/</code></td></tr>
+<tr><td><strong>Class</strong></td><td>Data and behavior that belong together.</td><td><code>SalesReport</code></td></tr>
+<tr><td><strong>Object</strong></td><td>One real instance created from a class.</td><td><code>report = SalesReport(...)</code></td></tr>
+</tbody></table></div>
+<div class="callout success"><strong>Beginner rule:</strong> start with functions. Move to modules when the file gets long. Use classes when one concept has both data and actions.</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 22</span></footer>
+</div>
+</section><section class="slide" data-audio="audio/module6_slide_23.wav" data-audio-alt="audio/module6_slide_23.mp3" data-caption="captions/module6_slide_23.vtt" data-narration-index="22" data-title="Module 6 wrap-up">
+<div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Key takeaways</span><h2>Module 6 wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 6</div></header>
+<div class="slide-content">
+<div class="summary-grid">
+<div><h3>Modules</h3><p>Import reusable tools so you do not rewrite common code.</p></div>
+<div><h3>Packages</h3><p>Group related modules when a project gets larger.</p></div>
+<div><h3>Classes</h3><p>Store related data and behavior together.</p></div>
+</div>
+<div class="practice-card">
+<h3>Small practice idea</h3>
+<p>Create a <code>StudentScore</code> class with a name, a list of scores, and a method that returns the average score. Then create two objects and print their averages.</p>
+</div>
+<div class="callout">The main skill is not memorizing syntax. The main skill is knowing how to keep code organized as an analytics project grows.</div>
+</div>
+<footer class="slide-footer"><span>Modules, Packages &amp; OOP</span><span>Slide 23</span></footer>
+</div>
+</section>
+<aside class="side-captions" id="side-captions" aria-label="Slide narration captions">
+  <div class="side-captions-head">
+    <div>
+      <strong>Slide Narration</strong>
+      <span id="side-caption-subtitle">Follow the narration while the audio plays.</span>
+    </div>
+    <button class="side-caption-toggle" id="side-caption-toggle" type="button">CC On</button>
   </div>
-</noscript>
-<script>
-(function () {
-  var hash = window.location.hash || '#slide-1';
-  var frame = document.getElementById('module-frame');
-  frame.src = 'm6/module6.html' + hash;
-})();
-</script>
-</body>
-</html>
+  <div class="side-caption-status" id="side-caption-status" aria-hidden="true"></div>
+  <div class="side-caption-list" id="side-caption-list"></div>
+</aside>
+</main><footer class="bottombar"><div class="footer-left"><button id="prevBtn" class="nav-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="narration-btn primary" id="startNarration" type="button">Start Narration</button><button class="narration-btn" id="narrationToggle" type="button">Narration On</button><button class="narration-btn" id="ccToggle" type="button" aria-pressed="true">CC On</button><button class="narration-btn" id="transcriptBtn" type="button">Transcript</button><select class="narration-speed" id="speedSelect"><option value=".85">0.85x</option><option value="1" selected>1.0x</option><option value="1.15">1.15x</option><option value="1.3">1.3x</option></select></div><div class="subtitle-bar" id="subtitleBar"><span id="subtitleText"></span></div><div class="audio-player" id="audioPlayer"><span class="audio-dot"></span><span class="audio-title" id="audioTitle">Audio ready</span><input class="audio-seek" id="audioSeek" type="range" min="0" max="100" value="0"><span class="audio-time" id="audioTime">0:00 / 0:00</span><button class="audio-play" id="audioPlay" type="button">Play</button></div></div><div class="bottom-nav"><select id="slideSelect" aria-label="Select slide"></select><div class="bottom-progress"><div class="progress-track"><div id="progressBar" class="progress-bar"></div></div><div class="slide-count" id="slideCount">1 / 23</div></div></div><div class="footer-right"><button id="nextBtn" class="nav-btn" type="button">Next</button></div></footer></div><section class="transcript-panel" id="transcriptPanel"><div class="transcript-head"><strong id="transcriptTitle">Narration Transcript</strong><button class="control" id="transcriptClose">Close</button></div><div class="transcript-body" id="transcriptBody"></div></section><div class="modal-backdrop" id="modulesModal"><div class="modal"><div class="modal-head"><h2 style="margin:0">IAN 601 Course Modules</h2><button class="control" id="modulesCloseBtn">Close</button></div><div class="module-links"><a class="" href="s_module1.html">Module 1</a><a class="" href="s_module2.html">Module 2</a><a class="" href="s_module3.html">Module 3</a><a class="" href="s_module4.html">Module 4</a><a class="" href="s_module5.html">Module 5</a><a class="current" href="s_module6.html">Module 6 · Current</a><a class="" href="s_module7.html">Module 7</a><a class="" href="s_module8.html">Module 8</a><a class="" href="s_module9.html">Module 9</a><a class="" href="s_module10.html">Module 10</a><a class="" href="s_module11.html">Module 11</a><a class="" href="s_module12.html">Module 12</a><a class="" href="s_module13.html">Module 13</a><a class="" href="s_module14.html">Module 14</a></div></div></div><div class="modal-backdrop" id="progressModal"><div class="modal"><div class="modal-head"><h2 style="margin:0">Module 6 Progress</h2><button class="control" id="progressCloseBtn">Close</button></div><p>Progress is saved in this browser.</p><div class="progress-track" style="max-width:none;height:12px"><div id="learningMeterBar" class="progress-bar"></div></div><div id="learningMeterText" style="margin-top:8px;color:var(--muted)"></div><div id="progressList" class="module-links"></div><button class="control" id="resetLearningBtn" style="margin-top:14px">Reset saved progress</button></div></div><script>const MANIFEST={"prefix":"module6","slide_count":23,"slides":[{"slide":1,"title":"Modules, Packages & OOP","audio":"m6/audio/module6_slide_01.mp3","captions":"m6/captions/module6_slide_01.vtt","text":"Welcome to Module 6. In this module, we are going to move from writing small pieces of Python code toward organizing larger Python programs in a cleaner and more reusable way."},{"slide":2,"title":"How to use this page","audio":"m6/audio/module6_slide_02.mp3","captions":"m6/captions/module6_slide_02.vtt","text":"This slide explains how to use the module page effectively."},{"slide":3,"title":"Learning path for Module 6","audio":"m6/audio/module6_slide_03.mp3","captions":"m6/captions/module6_slide_03.vtt","text":"This is the learning path for Module 6."},{"slide":4,"title":"Why organize code?","audio":"m6/audio/module6_slide_04.mp3","captions":"m6/captions/module6_slide_04.vtt","text":"Before we talk about modules and classes, let us first ask why organization matters."},{"slide":5,"title":"What is a module?","audio":"m6/audio/module6_slide_05.mp3","captions":"m6/captions/module6_slide_05.vtt","text":"A module is a Python file that contains code you can use in another file or notebook."},{"slide":6,"title":"Code: import built-in modules","audio":"m6/audio/module6_slide_06.mp3","captions":"m6/captions/module6_slide_06.vtt","text":"In this code example, we import three built-in tools: math, random, and date from datetime."},{"slide":7,"title":"Aliases and selective imports","audio":"m6/audio/module6_slide_07.mp3","captions":"m6/captions/module6_slide_07.vtt","text":"This slide introduces two common import patterns: aliases and selective imports."},{"slide":8,"title":"Code: use an alias for readability","audio":"m6/audio/module6_slide_08.mp3","captions":"m6/captions/module6_slide_08.vtt","text":"In this example, we import the statistics module using the alias stats."},{"slide":9,"title":"Create your own module","audio":"m6/audio/module6_slide_09.mp3","captions":"m6/captions/module6_slide_09.vtt","text":"So far, we have used modules that already exist. Now we are going to think about creating our own module."},{"slide":10,"title":"Code: create and import your own module","audio":"m6/audio/module6_slide_10.mp3","captions":"m6/captions/module6_slide_10.vtt","text":"This example demonstrates the idea of creating and importing your own module."},{"slide":11,"title":"What is a package?","audio":"m6/audio/module6_slide_11.mp3","captions":"m6/captions/module6_slide_11.vtt","text":"A package is a folder that groups related modules together."},{"slide":12,"title":"Module, package, and library","audio":"m6/audio/module6_slide_12.mp3","captions":"m6/captions/module6_slide_12.vtt","text":"This slide clarifies three related terms: module, package, and library."},{"slide":13,"title":"Code: think like a small module","audio":"m6/audio/module6_slide_13.mp3","captions":"m6/captions/module6_slide_13.vtt","text":"This example groups related helper functions together."},{"slide":14,"title":"What is a class?","audio":"m6/audio/module6_slide_14.mp3","captions":"m6/captions/module6_slide_14.vtt","text":"Now we move into object-oriented programming."},{"slide":15,"title":"Code: create a simple class","audio":"m6/audio/module6_slide_15.mp3","captions":"m6/captions/module6_slide_15.vtt","text":"This code creates a simple class called CustomerRecord."},{"slide":16,"title":"One class can create many objects","audio":"m6/audio/module6_slide_16.mp3","captions":"m6/captions/module6_slide_16.vtt","text":"One of the main benefits of a class is that the same class can create many objects."},{"slide":17,"title":"Code: create two objects from one class","audio":"m6/audio/module6_slide_17.mp3","captions":"m6/captions/module6_slide_17.vtt","text":"In this example, we define a Product class."},{"slide":18,"title":"Methods and self","audio":"m6/audio/module6_slide_18.mp3","captions":"m6/captions/module6_slide_18.vtt","text":"A method is a function that belongs to a class."},{"slide":19,"title":"Code: add behavior with a method","audio":"m6/audio/module6_slide_19.mp3","captions":"m6/captions/module6_slide_19.vtt","text":"In this code example, we create a Sale class."},{"slide":20,"title":"Code: a small analytics class","audio":"m6/audio/module6_slide_20.mp3","captions":"m6/captions/module6_slide_20.vtt","text":"This example shows a small analytics class called SalesReport."},{"slide":21,"title":"Function, dictionary, or class?","audio":"m6/audio/module6_slide_21.mp3","captions":"m6/captions/module6_slide_21.vtt","text":"Beginners often wonder whether they should use a function, a dictionary, or a class."},{"slide":22,"title":"Choosing the right organization tool","audio":"m6/audio/module6_slide_22.mp3","captions":"m6/captions/module6_slide_22.vtt","text":"This slide summarizes the main organization tools from the module."},{"slide":23,"title":"Module 6 wrap-up","audio":"m6/audio/module6_slide_23.mp3","captions":"m6/captions/module6_slide_23.vtt","text":"This is the wrap-up for Module 6."}]};
+const slides=[...document.querySelectorAll('.slide')];
+const slideSelect=document.getElementById('slideSelect');
+const slideCount=document.getElementById('slideCount');
+const progressBar=document.getElementById('progressBar');
+const prevBtn=document.getElementById('prevBtn');
+const nextBtn=document.getElementById('nextBtn');
+const themeBtn=document.getElementById('themeBtn');
+const fullBtn=document.getElementById('fullBtn');
+const runSlideBtn=document.getElementById('runSlideBtn');
+const pyStatus=document.getElementById('pyStatus');
+let current=0;
+let pyodide=null;
+let pyInitPromise=null;
+const editors=new Map();
+const originalCode=new Map();
+
+slides.forEach((slide,i)=>{
+  const option=document.createElement('option');
+  option.value=String(i);
+  option.textContent=String(i+1)+'. '+(slide.dataset.title||'Slide');
+  slideSelect.appendChild(option);
+  const slideNum=slide.querySelector('.slide-num');
+  if(slideNum) slideNum.textContent='IAN 601 · Module 6 · Slide '+String(i+1);
+});
+
+function setPyStatus(state,message){
+  pyStatus.className='status '+(state||'');
+  pyStatus.textContent=message;
+}
+const BOOTSTRAP_PY=[
+  'import sys, io, traceback',
+  '_namespace = {}',
+  'def _run_user_code(code):',
+  '    stdout = io.StringIO()',
+  '    stderr = io.StringIO()',
+  '    old_out, old_err = sys.stdout, sys.stderr',
+  '    try:',
+  '        sys.stdout, sys.stderr = stdout, stderr',
+  '        exec(code, _namespace, _namespace)',
+  '        ok = True',
+  '    except Exception:',
+  '        ok = False',
+  '        stderr.write(traceback.format_exc())',
+  '    finally:',
+  '        sys.stdout, sys.stderr = old_out, old_err',
+  '    return {"ok": ok, "stdout": stdout.getvalue(), "stderr": stderr.getvalue()}'
+].join('\n');
+
+async function loadPython(){
+  if(pyodide) return pyodide;
+  if(!pyInitPromise){
+    setPyStatus('','Python loading…');
+    pyInitPromise=loadPyodide().then(async py=>{
+      await py.runPythonAsync(BOOTSTRAP_PY);
+      pyodide=py;
+      setPyStatus('ready','Python ready');
+      return py;
+    }).catch(err=>{
+      pyInitPromise=null;
+      setPyStatus('error','Python failed to load');
+      throw err;
+    });
+  }
+  return pyInitPromise;
+}
+function getCode(cell){
+  const editor=editors.get(cell);
+  return editor?editor.getValue():cell.querySelector('.code-input').value;
+}
+function setCode(cell,code){
+  const editor=editors.get(cell);
+  if(editor) editor.setValue(code);
+  cell.querySelector('.code-input').value=code;
+}
+async function runCell(cell){
+  if(!cell) return;
+  const button=cell.querySelector('.run-cell');
+  const output=cell.querySelector('.output');
+  output.className='output show';
+  output.textContent='Running…';
+  button.disabled=true;
+  try{
+    const py=await loadPython();
+    const result=py.globals.get('_run_user_code')(getCode(cell)).toJs({dict_converter:Object.fromEntries});
+    const combined=(result.stdout||'')+(result.stderr?((result.stdout?'\n':'')+result.stderr):'');
+    output.textContent=combined.trim()||'Code ran successfully with no printed output.';
+    output.className='output show '+(result.ok?'success':'error');
+    setPyStatus(result.ok?'ready':'error',result.ok?'Python ready':'Python error');
+  }catch(err){
+    output.textContent=String(err);
+    output.className='output show error';
+    setPyStatus('error','Python error');
+  }finally{
+    button.disabled=false;
+  }
+}
+
+document.querySelectorAll('.code-cell').forEach(cell=>{
+  const input=cell.querySelector('.code-input');
+  originalCode.set(cell,input.value);
+  cell.querySelector('.run-cell').addEventListener('click',()=>runCell(cell));
+  cell.querySelector('.reset-cell').addEventListener('click',()=>{
+    setCode(cell,originalCode.get(cell));
+    const output=cell.querySelector('.output');
+    output.className='output';
+    output.textContent='Click Run to execute this cell.';
+  });
+  cell.querySelector('.copy-cell').addEventListener('click',async e=>{
+    try{
+      await navigator.clipboard.writeText(getCode(cell));
+      const old=e.currentTarget.textContent;
+      e.currentTarget.textContent='Copied';
+      setTimeout(()=>{e.currentTarget.textContent=old},900);
+    }catch{}
+  });
+  input.addEventListener('keydown',e=>{
+    if(e.key==='Tab'){
+      e.preventDefault();
+      const start=input.selectionStart,end=input.selectionEnd;
+      input.setRangeText('    ',start,end,'end');
+    }
+    if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){
+      e.preventDefault();
+      runCell(cell);
+    }
+  });
+});
+
+function initMonaco(){
+  if(!window.require){
+    document.querySelectorAll('.code-cell').forEach(cell=>cell.classList.add('fallback'));
+    return;
+  }
+  try{
+    require.config({paths:{vs:'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs'}});
+    require(['vs/editor/editor.main'],()=>{
+      document.querySelectorAll('.code-cell').forEach(cell=>{
+        const input=cell.querySelector('.code-input');
+        const host=cell.querySelector('.monaco-host');
+        const editor=monaco.editor.create(host,{
+          value:input.value,
+          language:'python',
+          theme:'vs-dark',
+          fontFamily:'Consolas, "Courier New", monospace',
+          fontSize:13.5,
+          lineNumbers:'on',
+          minimap:{enabled:false},
+          automaticLayout:true,
+          scrollBeyondLastLine:false,
+          tabSize:4,
+          wordWrap:'on',
+          padding:{top:12,bottom:12}
+        });
+        editor.addCommand(monaco.KeyMod.CtrlCmd|monaco.KeyCode.Enter,()=>runCell(cell));
+        editors.set(cell,editor);
+      });
+    });
+  }catch(e){
+    document.querySelectorAll('.code-cell').forEach(cell=>cell.classList.add('fallback'));
+  }
+}
+
+const PRESENTATION_KEY='ian601_module6_presentation_v7';
+let presentationState={ccEnabled:true};
+try{
+  presentationState={...presentationState,...(JSON.parse(localStorage.getItem(PRESENTATION_KEY))||{})};
+}catch{}
+const audio=new Audio();
+audio.preload='metadata';
+let narrationStarted=false;
+let narrationEnabled=true;
+let currentCues=[];
+let activeCueIndex=-1;
+let captionLoadToken=0;
+const subtitleText=document.getElementById('subtitleText');
+const ccToggle=document.getElementById('ccToggle');
+
+function applyCaptionVisibility(){
+  const enabled=presentationState.ccEnabled!==false;
+  document.body.classList.toggle('cc-off',!enabled);
+  ccToggle.textContent=enabled?'CC On':'CC Off';
+  ccToggle.setAttribute('aria-pressed',enabled?'true':'false');
+  if(!enabled) subtitleText.textContent='';
+}
+ccToggle.addEventListener('click',()=>{
+  presentationState.ccEnabled=!(presentationState.ccEnabled!==false);
+  localStorage.setItem(PRESENTATION_KEY,JSON.stringify(presentationState));
+  applyCaptionVisibility();
+});
+function splitSentences(text){
+  return String(text||'').replace(/\s+/g,' ').trim().split(/(?<=[.!?])\s+/).filter(Boolean);
+}
+function formatTime(value){
+  if(!Number.isFinite(value)||value<0) return '0:00';
+  return Math.floor(value/60)+':'+Math.floor(value%60).toString().padStart(2,'0');
+}
+function parseVttTime(value){
+  const parts=String(value||'').trim().replace(',','.').split(':').map(Number);
+  if(parts.length===3) return parts[0]*3600+parts[1]*60+parts[2];
+  if(parts.length===2) return parts[0]*60+parts[1];
+  return parts[0]||0;
+}
+function parseVtt(text){
+  const cues=[];
+  String(text||'').replace(/\r/g,'').split(/\n\s*\n/).forEach(block=>{
+    const lines=block.split('\n').filter(Boolean);
+    const timingIndex=lines.findIndex(line=>line.includes('-->'));
+    if(timingIndex<0) return;
+    const timing=lines[timingIndex].split('-->');
+    if(timing.length!==2) return;
+    const start=parseVttTime(timing[0]);
+    const end=parseVttTime(timing[1]);
+    const cueText=lines.slice(timingIndex+1).join(' ').replace(/<[^>]+>/g,'').trim();
+    if(cueText) cues.push({start,end,text:cueText});
+  });
+  return cues;
+}
+function fallbackCues(text){
+  return splitSentences(text).map(t=>({start:null,end:null,text:t}));
+}
+function resetSubtitle(){
+  activeCueIndex=-1;
+  subtitleText.textContent='';
+}
+async function loadCaptions(index,token){
+  const item=MANIFEST.slides[index];
+  try{
+    const response=await fetch(new URL(item.captions,document.baseURI),{cache:'no-store'});
+    if(!response.ok) throw new Error('not found');
+    const cues=parseVtt(await response.text());
+    if(!cues.length) throw new Error('empty');
+    if(token!==captionLoadToken||index!==current) return;
+    currentCues=cues;
+    resetSubtitle();
+    document.getElementById('transcriptBody').textContent=cues.map(c=>c.text).join(' ');
+  }catch{
+    if(token!==captionLoadToken||index!==current) return;
+    currentCues=fallbackCues(item?.text||'');
+    resetSubtitle();
+    document.getElementById('transcriptBody').textContent=item?.text||'';
+  }
+}
+function prepareAudio(index){
+  const item=MANIFEST.slides[index];
+  audio.pause();
+  audio.src=new URL(item.audio,document.baseURI).href;
+  audio.load();
+  document.getElementById('audioTitle').textContent='Slide '+String(index+1)+' audio ready';
+  document.getElementById('audioSeek').value='0';
+  document.getElementById('audioTime').textContent='0:00 / 0:00';
+}
+function renderNarration(index){
+  const item=MANIFEST.slides[index];
+  const token=++captionLoadToken;
+  currentCues=fallbackCues(item?.text||'');
+  resetSubtitle();
+  document.getElementById('transcriptTitle').textContent='Slide '+String(index+1)+' Narration - '+slides[index].dataset.title;
+  document.getElementById('transcriptBody').textContent=item?.text||'';
+  prepareAudio(index);
+  loadCaptions(index,token);
+}
+async function playCurrentNarration(){
+  narrationStarted=true;
+  narrationEnabled=true;
+  document.getElementById('narrationToggle').textContent='Narration On';
+  audio.playbackRate=Number(document.getElementById('speedSelect').value||1);
+  try{
+    await audio.play();
+    document.getElementById('audioPlayer').classList.add('playing');
+    document.getElementById('audioTitle').textContent='Playing Slide '+String(current+1);
+    document.getElementById('startNarration').textContent='Narration Started';
+  }catch{
+    document.getElementById('audioTitle').textContent='Audio unavailable';
+  }
+}
+document.getElementById('startNarration').addEventListener('click',playCurrentNarration);
+document.getElementById('startWithNarration')?.addEventListener('click',playCurrentNarration);
+document.getElementById('narrationToggle').addEventListener('click',e=>{
+  narrationEnabled=!narrationEnabled;
+  e.target.textContent=narrationEnabled?'Narration On':'Narration Off';
+  if(!narrationEnabled) audio.pause();
+  else if(narrationStarted) playCurrentNarration();
+});
+document.getElementById('audioPlay').addEventListener('click',()=>{
+  narrationStarted=true;
+  if(audio.paused) playCurrentNarration(); else audio.pause();
+});
+document.getElementById('speedSelect').addEventListener('change',e=>{
+  audio.playbackRate=Number(e.target.value||1);
+});
+document.getElementById('audioSeek').addEventListener('input',e=>{
+  if(Number.isFinite(audio.duration)&&audio.duration>0){
+    audio.currentTime=audio.duration*(Number(e.target.value)/100);
+  }
+});
+audio.onplay=()=>{
+  document.getElementById('audioPlayer').classList.add('playing');
+  document.getElementById('audioPlay').textContent='Pause';
+};
+audio.onpause=()=>{
+  document.getElementById('audioPlayer').classList.remove('playing');
+  document.getElementById('audioPlay').textContent='Play';
+};
+audio.ontimeupdate=()=>{
+  const duration=Number.isFinite(audio.duration)?audio.duration:0;
+  const time=audio.currentTime||0;
+  document.getElementById('audioSeek').value=duration?String((time/duration)*100):'0';
+  document.getElementById('audioTime').textContent=formatTime(time)+' / '+formatTime(duration);
+  if(presentationState.ccEnabled!==false&&currentCues.length){
+    let index=-1;
+    const timed=currentCues.some(c=>Number.isFinite(c.start)&&Number.isFinite(c.end));
+    if(timed) index=currentCues.findIndex(c=>Number.isFinite(c.start)&&Number.isFinite(c.end)&&time>=c.start&&time<c.end);
+    else if(duration) index=Math.min(currentCues.length-1,Math.floor((time/duration)*currentCues.length));
+    if(index!==activeCueIndex){
+      activeCueIndex=index;
+      subtitleText.textContent=index>=0?currentCues[index].text:'';
+    }
+  }else{
+    subtitleText.textContent='';
+  }
+};
+audio.onended=()=>{
+  document.getElementById('audioPlayer').classList.remove('playing');
+  document.getElementById('audioPlay').textContent='Play';
+  document.getElementById('audioTitle').textContent='Slide '+String(current+1)+' complete';
+  subtitleText.textContent='';
+};
+audio.onerror=()=>{
+  document.getElementById('audioTitle').textContent='Audio not found for Slide '+String(current+1);
+};
+document.getElementById('transcriptBtn').addEventListener('click',()=>{
+  document.getElementById('transcriptPanel').classList.toggle('open');
+});
+document.getElementById('transcriptClose').addEventListener('click',()=>{
+  document.getElementById('transcriptPanel').classList.remove('open');
+});
+
+const PROGRESS_KEY='ian601_module6_progress_v7';
+let visited=[];
+try{visited=JSON.parse(localStorage.getItem(PROGRESS_KEY)||'[]')}catch{}
+function updateProgress(){
+  if(!visited.includes(current+1)) visited.push(current+1);
+  localStorage.setItem(PROGRESS_KEY,JSON.stringify(visited));
+  const count=new Set(visited).size;
+  const pct=Math.round((count/slides.length)*100);
+  document.getElementById('learningProgressPct').textContent=String(pct)+'%';
+  document.getElementById('learningMeterBar').style.width=String(pct)+'%';
+  document.getElementById('learningMeterText').textContent=String(count)+' of '+String(slides.length)+' slides visited';
+  document.getElementById('progressList').innerHTML=slides.map((slide,i)=>{
+    const cls=visited.includes(i+1)?'current':'';
+    return '<a href="#slide-'+String(i+1)+'" data-go="'+String(i)+'" class="'+cls+'">Slide '+String(i+1)+': '+slide.dataset.title+'</a>';
+  }).join('');
+  document.querySelectorAll('#progressList [data-go]').forEach(link=>{
+    link.onclick=e=>{
+      e.preventDefault();
+      showSlide(Number(link.dataset.go));
+      document.getElementById('progressModal').classList.remove('show');
+    };
+  });
+}
+function showSlide(index){
+  current=Math.max(0,Math.min(index,slides.length-1));
+  slides.forEach((slide,i)=>slide.classList.toggle('active',i===current));
+  slideSelect.value=String(current);
+  slideCount.textContent=String(current+1)+' / '+String(slides.length);
+  progressBar.style.width=String(((current+1)/slides.length)*100)+'%';
+  prevBtn.disabled=current===0;
+  nextBtn.disabled=current===slides.length-1;
+  slides[current].scrollTop=0;
+  history.replaceState(null,'','#slide-'+String(current+1));
+  editors.forEach(editor=>editor.layout());
+  renderNarration(current);
+  updateProgress();
+  if(narrationStarted&&narrationEnabled) playCurrentNarration();
+}
+window.goToSlide=showSlide;
+slideSelect.addEventListener('change',()=>showSlide(Number(slideSelect.value)));
+prevBtn.addEventListener('click',()=>showSlide(current-1));
+nextBtn.addEventListener('click',()=>showSlide(current+1));
+themeBtn.addEventListener('click',()=>{
+  document.body.classList.toggle('dark');
+  themeBtn.textContent=document.body.classList.contains('dark')?'Light mode':'Dark mode';
+});
+fullBtn.addEventListener('click',async()=>{
+  if(!document.fullscreenElement) await document.documentElement.requestFullscreen?.();
+  else await document.exitFullscreen?.();
+});
+runSlideBtn.addEventListener('click',async()=>{
+  const cells=[...slides[current].querySelectorAll('.code-cell')];
+  for(const cell of cells) await runCell(cell);
+});
+document.querySelectorAll('.start-btn').forEach(button=>{
+  button.addEventListener('click',()=>showSlide(1));
+});
+document.querySelectorAll('.run-all-btn').forEach(button=>{
+  button.addEventListener('click',()=>runSlideBtn.click());
+});
+document.getElementById('courseModulesBtn').onclick=()=>document.getElementById('modulesModal').classList.add('show');
+document.getElementById('modulesCloseBtn').onclick=()=>document.getElementById('modulesModal').classList.remove('show');
+document.getElementById('learningProgressBtn').onclick=()=>{
+  updateProgress();
+  document.getElementById('progressModal').classList.add('show');
+};
+document.getElementById('progressCloseBtn').onclick=()=>document.getElementById('progressModal').classList.remove('show');
+document.getElementById('resetLearningBtn').onclick=()=>{
+  visited=[];
+  localStorage.removeItem(PROGRESS_KEY);
+  updateProgress();
+};
+document.querySelectorAll('.modal-backdrop').forEach(modal=>{
+  modal.addEventListener('click',e=>{if(e.target===modal) modal.classList.remove('show')});
+});
+document.addEventListener('keydown',e=>{
+  const tag=document.activeElement?.tagName?.toLowerCase();
+  if(tag==='textarea'||tag==='input'||tag==='select'||document.activeElement?.isContentEditable||document.activeElement?.closest?.('.monaco-editor')) return;
+  if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();showSlide(current+1)}
+  if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();showSlide(current-1)}
+  if(e.key==='Home'){e.preventDefault();showSlide(0)}
+  if(e.key==='End'){e.preventDefault();showSlide(slides.length-1)}
+});
+
+applyCaptionVisibility();
+initMonaco();
+const hashMatch=location.hash.match(/slide-(\d+)/);
+showSlide(hashMatch?Number(hashMatch[1])-1:0);
+</script></body></html>
