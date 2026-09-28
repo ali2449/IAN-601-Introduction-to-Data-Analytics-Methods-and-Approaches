@@ -19,12 +19,83 @@ html[data-theme="dark"]{--bg:#0f1720;--surface:#17212c;--surface2:#111a24;--text
 @media(max-width:900px){.topbar{flex-wrap:wrap;padding:8px 12px;height:auto}.top-actions{width:100%;overflow-x:auto}.stage{padding:10px}.slide{padding:20px}.two-col,.two-col.equal,.grid-3,.grid-4,.mini-project,.privacy-grid{grid-template-columns:1fr}.hero-visual{min-height:230px}.content{height:auto}.slide{overflow:auto}.slide-header{display:block}.slide-badge{display:none}.app{grid-template-rows:auto minmax(0,1fr) 180px}}
 @media(max-width:720px){html,body{height:auto;overflow-y:auto}.app{height:auto;display:block}.topbar{position:sticky;top:0}.stage{display:block}.slide{height:auto;max-height:none;overflow:visible;padding:16px;border-radius:14px}.slide.active{display:block}.slide h2{font-size:clamp(24px,8vw,34px)}.big-lead{font-size:clamp(27px,8vw,38px)}.lead{font-size:16px}.code-input,.monaco-host{height:220px}.bottombar{position:relative;grid-template-columns:1fr 1fr;grid-template-areas:"audio audio" "nav nav" "prev next";gap:8px;padding:8px;margin-top:8px}.audio-block{grid-area:audio}.bottom-nav{grid-area:nav}.footer-left{grid-area:prev}.footer-right{grid-area:next}.nav-btn{width:100%}.narration-controls{overflow-x:auto;flex-wrap:nowrap}.audio-player{grid-template-columns:1fr auto}.audio-title,.audio-seek{grid-column:1/-1}.module-links{grid-template-columns:1fr}.transcript-panel{inset:12px;width:auto;max-height:none}}
 </style>
-</head>
+<style id="module8-visual-refinement">
+/* Module 8 visual refinement */
+@media (min-width:901px){
+  .slide{padding:24px 30px!important}
+  .slide-header{margin-bottom:10px!important}
+  .slide h2{font-size:clamp(28px,2.65vw,42px)!important;line-height:1.04!important}
+  .content{height:calc(100% - 72px)!important}
+  .lead{font-size:17px!important;line-height:1.38!important}
+  .big-lead{font-size:clamp(30px,3.25vw,44px)!important;line-height:1.08!important}
+
+  .m8-hero-grid{height:100%;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(420px,.98fr);gap:34px;align-items:center}
+  .m8-hero-copy{align-self:center}
+  .m8-hero-lead{margin:0 0 16px;font-size:clamp(32px,3.15vw,46px);line-height:1.08;font-weight:900;letter-spacing:-.045em;color:var(--text);max-width:720px}
+  .m8-hero-sub{margin:0;max-width:700px;color:var(--muted);font-size:17px;line-height:1.5}
+  .m8-hero-goal{margin-top:20px;padding:13px 15px;border:1px solid var(--border);border-left:5px solid var(--primary);border-radius:13px;background:var(--surface2);display:grid;gap:4px;max-width:700px}
+  .m8-hero-goal strong{color:var(--primary);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+  .m8-hero-goal span{font-size:14px;line-height:1.4}
+
+  .m8-quality-model{display:grid;gap:9px;padding:18px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(145deg,color-mix(in srgb,var(--primary) 10%,var(--surface2)),color-mix(in srgb,var(--accent) 9%,var(--surface2)))}
+  .m8-quality-model>div{display:grid;grid-template-columns:34px 120px 1fr;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--border);border-radius:12px;background:color-mix(in srgb,var(--surface) 88%,transparent)}
+  .m8-quality-model span{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--primary);color:#fff;font-size:12px;font-weight:900}
+  .m8-quality-model strong{font-size:14px;color:var(--text)}
+  .m8-quality-model small{font-size:12px;color:var(--muted);line-height:1.3}
+
+  .grid-4{gap:9px!important}
+  .card,.step,.check-card{padding:12px!important}
+  .card h3,.step h3,.check-card h3{font-size:15px!important}
+  .card p,.step p,.check-card p{font-size:12px!important}
+  th,td{padding:7px 9px!important}
+  .code-cell{margin-top:6px!important}
+  .code-input,.monaco-host{height:124px!important}
+  .cell-head{padding:7px 10px!important}
+  .output{max-height:96px!important;padding:8px 10px!important;font-size:11px!important}
+}
+@media (max-width:900px){
+  .m8-hero-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  .m8-hero-lead{font-size:clamp(30px,7vw,42px);line-height:1.1}
+  .m8-hero-sub{font-size:16px}
+  .m8-quality-model{display:grid;gap:8px;padding:12px;border:1px solid var(--border);border-radius:16px;background:var(--surface2)}
+  .m8-quality-model>div{display:grid;grid-template-columns:32px 110px 1fr;gap:8px;align-items:center;padding:9px;border:1px solid var(--border);border-radius:11px;background:var(--surface)}
+  .m8-quality-model span{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--primary);color:#fff;font-size:11px;font-weight:900}
+  .m8-quality-model strong{font-size:13px}.m8-quality-model small{font-size:11px;color:var(--muted)}
+}
+@media (max-width:560px){
+  .m8-quality-model>div{grid-template-columns:30px 1fr}
+  .m8-quality-model small{grid-column:2}
+}
+</style></head>
 <body>
 <div class="app">
 <header class="topbar"><div class="brand"><div class="brand-mark">8</div><div>IAN 601 · Module 8<small>Professional Practices</small></div></div><div class="top-actions"><span id="pyStatus" class="status">Python loads when code runs</span><button class="control" id="themeBtn">Theme</button><button class="control" id="resetPythonBtn">Reset Python</button><button class="control" id="progressBtn">Progress <span id="progressPct">0%</span></button><button class="control" id="fullBtn">Fullscreen</button><button class="control primary" id="runSlideBtn">Run slide ▶</button><button class="control" id="modulesBtn">☰ Course Modules</button></div></header>
 <main class="stage" id="stage">
-<section class="slide active" data-title="Professional Practices"><header class="slide-header"><div><span class="kicker">Module 8 · Interactive slide lesson</span><h2>Professional Practices</h2></div><div class="slide-badge">IAN 601 · Module 8</div></header><div class="content"><div class="two-col"><div><p class="big-lead">Professional analytics code should be readable, reproducible, tested, documented, and respectful of data.</p><div class="pill-row"><span>Readable</span><span>Reliable</span><span>Tested</span><span>Documented</span><span>Responsible</span></div><div class="callout"><strong>Goal:</strong> build habits that make code easier to trust, share, debug, and improve.</div></div><div class="hero-visual"><div class="quality-stack"><div>Readable</div><div>Reproducible</div><div>Tested</div><div>Documented</div><div>Responsible</div></div></div></div></div></section>
+<section class="slide active" data-title="Professional Practices">
+<header class="slide-header">
+  <div><span class="kicker">Module 8 · Interactive slide lesson</span><h2>Professional Practices</h2></div>
+  <div class="slide-badge">IAN 601 · Module 8</div>
+</header>
+<div class="content">
+  <div class="m8-hero-grid">
+    <div class="m8-hero-copy">
+      <p class="m8-hero-lead">Professional analytics code is code other people can understand, trust, and reproduce.</p>
+      <p class="m8-hero-sub">In this module, we move beyond “the code runs” and focus on the habits that make analytical work easier to review, debug, maintain, and share.</p>
+      <div class="m8-hero-goal">
+        <strong>Our goal</strong>
+        <span>Write code that is clear enough to read, reliable enough to trust, and organized enough to reuse.</span>
+      </div>
+    </div>
+    <div class="m8-quality-model" aria-label="Five qualities of professional analytics code">
+      <div><span>1</span><strong>Readable</strong><small>Names and structure communicate intent.</small></div>
+      <div><span>2</span><strong>Reliable</strong><small>Expected problems are handled safely.</small></div>
+      <div><span>3</span><strong>Tested</strong><small>Important behavior is checked.</small></div>
+      <div><span>4</span><strong>Documented</strong><small>Functions and projects explain themselves.</small></div>
+      <div><span>5</span><strong>Responsible</strong><small>Data is handled carefully and appropriately.</small></div>
+    </div>
+  </div>
+</div>
+</section>
 <section class="slide" data-title="Learning path for Module 8"><header class="slide-header"><div><span class="kicker">Roadmap</span><h2>Learning path for Module 8</h2></div><div class="slide-badge">IAN 601 · Module 8</div></header><div class="content"><p class="lead">This module is about professional habits. These habits do not replace Python syntax; they make Python work safer and easier to maintain.</p><div class="grid-4"><div class="step"><span>1</span><h3>Readability</h3><p>Names, style, comments, and structure.</p></div><div class="step"><span>2</span><h3>Reliability</h3><p>Exceptions, validation, and testing.</p></div><div class="step"><span>3</span><h3>Documentation</h3><p>Docstrings, type hints, and project notes.</p></div><div class="step"><span>4</span><h3>Workflow</h3><p>Git concepts, reproducibility, and privacy.</p></div></div><div class="callout secondary"><strong>Key idea:</strong> professional code is written for future readers, including your future self.</div></div></section>
 <section class="slide" data-title="Readable code starts with names"><header class="slide-header"><div><span class="kicker">Style</span><h2>Readable code starts with names</h2></div><div class="slide-badge">IAN 601 · Module 8</div></header><div class="content"><div class="two-col"><div><p class="lead">Names should describe the role of a value. Clear names reduce comments because the code explains more of itself.</p><div class="table-wrap"><table><thead><tr><th>Weak name</th><th>Better name</th><th>Why it helps</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>monthly_sales</code></td><td>Names the data.</td></tr><tr><td><code>df2</code></td><td><code>clean_orders</code></td><td>Names the stage.</td></tr><tr><td><code>temp</code></td><td><code>average_score</code></td><td>Names the purpose.</td></tr></tbody></table></div></div><div><div class="code-cell"><div class="cell-head"><div><div class="cell-label">Executable Python</div><h3>Use descriptive names</h3><p>Run the cell. Then rename one variable and rerun.</p></div><span class="file-pill">module8_names.py</span></div><div class="editor-shell"><div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module8_names.py</span></div><textarea class="code-input" spellcheck="false">monthly_sales = [1200, 1350, 1280, 1410]
 month_count = len(monthly_sales)
