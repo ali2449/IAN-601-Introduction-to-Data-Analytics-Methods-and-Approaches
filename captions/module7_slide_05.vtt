@@ -1,58 +1,58 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.107
+00:00:00.000 --> 00:00:02.077
 Now we are moving to generators.
 
-00:00:02.107 --> 00:00:07.207
+00:00:02.077 --> 00:00:07.282
 Generators are important because they allow Python to produce values one at a time.
 
-00:00:07.207 --> 00:00:09.717
+00:00:07.282 --> 00:00:10.002
 Let's compare that with a regular list.
 
-00:00:09.717 --> 00:00:13.827
+00:00:10.002 --> 00:00:13.827
 If we create a list containing one million transformed values,
 
-00:00:13.827 --> 00:00:18.662
+00:00:13.827 --> 00:00:18.307
 Python normally creates and stores all one million values in memory.
 
-00:00:18.662 --> 00:00:20.887
+00:00:18.307 --> 00:00:20.677
 A generator can work differently.
 
-00:00:20.887 --> 00:00:26.117
+00:00:20.677 --> 00:00:26.402
 It can calculate a value when we need it, return that value, and then continue later.
 
-00:00:26.117 --> 00:00:29.227
+00:00:26.402 --> 00:00:29.632
 The key word that makes this possible is yield.
 
-00:00:29.227 --> 00:00:31.477
+00:00:29.632 --> 00:00:31.917
 Look at the squares_gen function.
 
-00:00:31.477 --> 00:00:33.892
+00:00:31.917 --> 00:00:36.122
 We loop through the numbers up to n.
 
-00:00:33.892 --> 00:00:37.107
+00:00:36.122 --> 00:00:37.562
 Instead of using return, we use yield.
 
-00:00:37.107 --> 00:00:41.942
+00:00:37.562 --> 00:00:42.857
 When Python reaches yield, it gives us one value and pauses the function.
 
-00:00:41.942 --> 00:00:49.047
+00:00:42.857 --> 00:00:49.307
 The next time Python asks the generator for another value, the function continues from where it stopped.
 
-00:00:49.047 --> 00:00:52.157
+00:00:49.307 --> 00:00:54.267
 Run the example. You will see the squared values printed one at a time.
 
-00:00:52.157 --> 00:00:56.602
+00:00:54.267 --> 00:00:58.677
 For four values, memory is obviously not a major concern.
 
-00:00:56.602 --> 00:01:01.497
+00:00:58.677 --> 00:01:03.752
 But imagine processing millions of records or reading a very large file.
 
-00:01:01.497 --> 00:01:07.472
+00:01:03.752 --> 00:01:09.282
 Generators can be useful because we do not always need to store every result at the same time.
 
-00:01:07.472 --> 00:01:12.477
+00:01:09.282 --> 00:01:13.817
 The important idea for now is that return usually finishes a function,
 
-00:01:12.477 --> 00:01:16.640
+00:01:13.817 --> 00:01:18.080
 while yield produces a value and allows the function to continue later.

@@ -1,94 +1,46 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:01.918
-Now let us focus more closely on
+00:00:00.000 --> 00:00:03.042
+A method is a function that belongs to a class.
 
-00:00:01.945 --> 00:00:05.066
-methods and the word self An attribute
+00:00:03.042 --> 00:00:07.457
+When a function is written inside a class, we usually call it a method.
 
-00:00:05.079 --> 00:00:08.158
-is data stored inside an object For
+00:00:07.457 --> 00:00:12.282
+A method can use the data stored inside an object.
 
-00:00:08.171 --> 00:00:10.553
-example self dot price stores a price
+00:00:12.282 --> 00:00:16.427
+The word self is how a method refers to the current object.
 
-00:00:10.579 --> 00:00:13.408
-that belongs to the current object A
+00:00:16.427 --> 00:00:22.902
+For example, if we have self.price and self.quantity, the method is using the price and quantity stored in
 
-00:00:13.421 --> 00:00:15.289
-method is a function that belongs to
+00:00:22.902 --> 00:00:24.332
+the object that called the method.
 
-00:00:15.316 --> 00:00:18.539
-a class For example a method named
+00:00:24.332 --> 00:00:28.622
+This may feel strange at first, but the idea is practical.
 
-00:00:18.566 --> 00:00:22.026
-total might multiply price by quantity The
+00:00:28.622 --> 00:00:33.892
+If we create several objects from the same class, each object has its own data.
 
-00:00:22.053 --> 00:00:24.197
-word self refers to the current object
+00:00:33.892 --> 00:00:39.767
+The method needs a way to know which object's data to use.
 
-00:00:24.224 --> 00:00:27.132
-that is using the method Suppose we
+00:00:39.767 --> 00:00:41.532
+That is the role of self.
 
-00:00:27.158 --> 00:00:30.579
-have two Sale objects One sale contains
+00:00:41.532 --> 00:00:45.962
+In the Sale example, the total method multiplies self.price by self.quantity.
 
-00:00:30.592 --> 00:00:32.408
-a notebook with a quantity of four
+00:00:45.962 --> 00:00:49.652
+The method does not need us to pass price and quantity again,
 
-00:00:33.342 --> 00:00:35.289
-Another sale contains a pen with a
+00:00:49.652 --> 00:00:53.242
+because those values are already stored inside the object.
 
-00:00:35.303 --> 00:00:38.013
-quantity of ten When we call the
+00:00:53.242 --> 00:00:58.877
+So the main idea is: attributes store data, methods define actions,
 
-00:00:38.026 --> 00:00:40.237
-total method on the notebook sale self
-
-00:00:40.263 --> 00:00:43.303
-refers to the notebook sale object When
-
-00:00:43.316 --> 00:00:44.645
-we call the same method on the
-
-00:00:44.671 --> 00:00:46.763
-pen sale self refers to the pen
-
-00:00:46.776 --> 00:00:49.789
-sale object This is why one method
-
-00:00:49.816 --> 00:00:52.789
-can work with many different objects The
-
-00:00:52.803 --> 00:00:55.474
-method definition is shared but self connects
-
-00:00:55.500 --> 00:00:57.895
-the calculation to the correct object's data
-
-00:00:58.803 --> 00:01:02.408
-At first self may feel unusual A
-
-00:01:02.434 --> 00:01:04.355
-useful way to read self dot price
-
-00:01:04.368 --> 00:01:07.500
-is this object's price Read self dot
-
-00:01:07.526 --> 00:01:10.803
-quantity as this object's quantity When you
-
-00:01:10.829 --> 00:01:12.447
-see a method such as total with
-
-00:01:12.474 --> 00:01:14.289
-self inside it think of the method
-
-00:01:14.316 --> 00:01:16.250
-as saying use the values stored in
-
-00:01:16.276 --> 00:01:19.355
-this particular object You will see this
-
-00:01:19.382 --> 00:01:21.553
-idea again in the next code example
+00:00:58.877 --> 00:01:02.160
+and self connects a method to the specific object using it.

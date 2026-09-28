@@ -1,49 +1,49 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.512
+00:00:00.000 --> 00:00:02.367
 Let's now think about code efficiency.
 
-00:00:02.512 --> 00:00:10.382
+00:00:02.367 --> 00:00:08.862
 When people hear the word optimization, they sometimes immediately think about writing complicated algorithms
 
-00:00:10.382 --> 00:00:13.012
+00:00:08.862 --> 00:00:11.232
 or trying to make every line faster.
 
-00:00:13.012 --> 00:00:16.747
+00:00:11.232 --> 00:00:14.252
 That is usually not the best place to start.
 
-00:00:16.747 --> 00:00:22.602
+00:00:14.252 --> 00:00:18.197
 Python already provides many built-in functions that are clear, convenient, and efficient.
 
-00:00:22.602 --> 00:00:27.252
+00:00:18.197 --> 00:00:21.722
 For example, imagine that we want the total of a collection of numbers.
 
-00:00:27.252 --> 00:00:35.352
+00:00:21.722 --> 00:00:27.552
 We could create a variable called total, loop through every value, and add each number to total.
 
-00:00:35.352 --> 00:00:39.202
+00:00:27.552 --> 00:00:32.297
 That works. But Python already gives us the sum function.
 
-00:00:39.202 --> 00:00:45.557
+00:00:32.297 --> 00:00:36.937
 Similarly, max can find the largest value, min can find the smallest value,
 
-00:00:45.557 --> 00:00:48.927
+00:00:36.937 --> 00:00:39.302
 and len can tell us how many items we have.
 
-00:00:48.927 --> 00:00:55.902
+00:00:39.302 --> 00:00:44.677
 In the example, we create a range containing one million numbers and pass it directly to sum.
 
-00:00:55.902 --> 00:00:58.807
+00:00:44.677 --> 00:00:46.267
 Run the example and look at the result.
 
-00:00:58.807 --> 00:01:02.882
+00:00:46.267 --> 00:00:51.457
 The important lesson is not just that this code is shorter.
 
-00:01:02.882 --> 00:01:09.862
+00:00:51.457 --> 00:00:58.187
 It is also easier for another Python programmer to immediately understand what we are trying to do.
 
-00:01:09.862 --> 00:01:15.942
+00:00:58.187 --> 00:01:02.412
 Whenever Python already provides a clear built-in operation, it is usually worth considering before writing a
 
-00:01:15.942 --> 00:01:18.400
+00:01:02.412 --> 00:01:03.886
 manual loop.

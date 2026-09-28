@@ -1,16 +1,43 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.921
-This slide summarizes Module 6 Focus on the patterns
-you should be able to explain
+00:00:00.000 --> 00:00:03.257
+This example groups related helper functions together.
 
-00:00:05.934 --> 00:00:12.019
-and reuse after completing the examples Use built-in
-tools and aliases
+00:00:03.257 --> 00:00:06.672
+We define get_profit, get_profit_margin, and format_percent.
 
-00:00:12.942 --> 00:00:18.901
-Read namespaces Understand where names come from
-Group repeated logic
+00:00:06.672 --> 00:00:12.087
+These functions work together like a small metrics module.
 
-00:00:19.825 --> 00:00:23.851
-Make simple blueprints Attach actions to data
+00:00:12.087 --> 00:00:16.097
+The get_profit function calculates sales minus costs.
+
+00:00:16.097 --> 00:00:19.347
+The get_profit_margin function calls get_profit and divides the result by sales.
+
+00:00:19.347 --> 00:00:27.077
+The format_percent function turns a decimal value into a readable percent string.
+
+00:00:27.077 --> 00:00:31.182
+Then we set sales and costs, call the helper functions, and print the profit and profit margin.
+
+00:00:31.182 --> 00:00:36.597
+This example is still written in one cell, but conceptually it behaves like a module.
+
+00:00:36.597 --> 00:00:43.972
+The functions are related and could easily be moved into a file such as metrics_tools.py.
+
+00:00:43.972 --> 00:00:45.717
+This is an important habit in analytics.
+
+00:00:45.717 --> 00:00:53.932
+If you have several helper functions that support one part of the workflow, group them together.
+
+00:00:53.932 --> 00:00:57.622
+That way, the main analysis stays easier to read.
+
+00:00:57.622 --> 00:01:01.802
+After running the code, change the sales or costs values.
+
+00:01:01.802 --> 00:01:06.934
+You can also change the format_percent function to show two decimal places instead of one.

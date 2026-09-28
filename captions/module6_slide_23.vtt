@@ -1,131 +1,58 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:02.353
-Let us finish Module 6 by reviewing
+00:00:00.000 --> 00:00:02.387
+This is the wrap-up for Module 6.
 
-00:00:02.379 --> 00:00:05.408
-the main ideas A module is usually
+00:00:02.387 --> 00:00:05.632
+The main theme of this module is organization.
 
-00:00:05.434 --> 00:00:08.197
-one Python file that contains reusable code
+00:00:05.632 --> 00:00:13.537
+As analytics programs become larger, code organization becomes just as important as individual lines of
 
-00:00:09.118 --> 00:00:11.697
-Python provides many built-in modules and we
+00:00:13.537 --> 00:00:19.472
+syntax. Modules allow us to import reusable tools so we do not rewrite common code.
 
-00:00:11.724 --> 00:00:14.566
-can also create our own modules An
+00:00:19.472 --> 00:00:23.797
+Packages group related modules when a project grows larger.
 
-00:00:14.592 --> 00:00:16.789
-import statement gives a program access to
+00:00:23.797 --> 00:00:28.087
+Classes allow us to store related data and behavior together.
 
-00:00:16.816 --> 00:00:19.908
-code from another module We can import
+00:00:28.087 --> 00:00:32.857
+We also learned that objects are individual examples created from a class,
 
-00:00:19.934 --> 00:00:22.250
-a complete module use an alias or
+00:00:32.857 --> 00:00:36.222
+and methods are functions that belong to a class.
 
-00:00:22.276 --> 00:00:25.763
-selectively import a specific tool A package
+00:00:36.222 --> 00:00:40.297
+A key practical skill is knowing when to use each tool.
 
-00:00:25.789 --> 00:00:28.000
-is a folder that groups related modules
+00:00:40.297 --> 00:00:43.082
+Use functions for reusable tasks.
 
-00:00:28.026 --> 00:00:31.539
-together Packages become useful as a project
+00:00:43.082 --> 00:00:45.817
+Use dictionaries for related values.
 
-00:00:31.566 --> 00:00:35.039
-grows and contains several related files A
+00:00:45.817 --> 00:00:49.382
+Use classes when data and actions belong together.
 
-00:00:35.053 --> 00:00:37.461
-class is a blueprint for creating objects
+00:00:49.382 --> 00:00:55.067
+Use modules and packages to organize reusable code across files and folders.
 
-00:00:38.382 --> 00:00:40.658
-The class describes the attributes an object
+00:00:55.067 --> 00:00:56.577
+For practice, try creating a StudentScore class.
 
-00:00:40.684 --> 00:00:42.605
-stores and the methods it can perform
+00:00:56.577 --> 00:01:01.072
+It could store a student's name and a list of scores.
 
-00:00:43.539 --> 00:00:45.605
-An object is one actual instance of
+00:01:01.072 --> 00:01:06.392
+Then it could include a method that returns the average score.
 
-00:00:45.618 --> 00:00:48.658
-a class One class can create many
+00:01:06.392 --> 00:01:11.062
+After that, create two student objects and print their averages.
 
-00:00:48.671 --> 00:00:50.829
-objects and each object can store its
+00:01:11.062 --> 00:01:14.322
+The main skill is not memorizing syntax.
 
-00:00:50.842 --> 00:00:54.434
-own values Attributes are data stored inside
-
-00:00:54.461 --> 00:00:57.803
-an object Methods are functions that belong
-
-00:00:57.829 --> 00:01:00.684
-to a class The word self refers
-
-00:01:00.711 --> 00:01:02.316
-to the current object and allows a
-
-00:01:02.342 --> 00:01:04.711
-method to use that object's own attributes
-
-00:01:05.632 --> 00:01:07.237
-Remember that you do not need to
-
-00:01:07.263 --> 00:01:11.118
-use classes everywhere Use the simplest structure
-
-00:01:11.145 --> 00:01:14.355
-that clearly fits the task For additional
-
-00:01:14.382 --> 00:01:17.474
-practice try creating a class named StudentScore
-
-00:01:18.408 --> 00:01:19.855
-Give it a student name and a
-
-00:01:19.868 --> 00:01:22.921
-list of scores Then create a method
-
-00:01:22.947 --> 00:01:26.461
-that calculates the average score After that
-
-00:01:26.671 --> 00:01:29.447
-create two StudentScore objects with different
-values
-
-00:01:29.461 --> 00:01:31.316
-and print the average for each object
-
-00:01:32.250 --> 00:01:34.079
-If you can explain the difference between
-
-00:01:34.105 --> 00:01:36.408
-a module a package a class and
-
-00:01:36.434 --> 00:01:37.908
-an object and if you can read
-
-00:01:37.934 --> 00:01:40.079
-the class examples in this module then
-
-00:01:40.092 --> 00:01:42.474
-you have reached the main goal The
-
-00:01:42.500 --> 00:01:46.632
-larger lesson is organization As analytics projects
-
-00:01:46.645 --> 00:01:48.803
-grow good structure makes code easier to
-
-00:01:48.829 --> 00:01:51.579
-reuse easier to test easier to explain
-
-00:01:51.789 --> 00:01:54.539
-and easier to maintain In the next
-
-00:01:54.566 --> 00:01:57.079
-module we will continue building our Python
-
-00:01:57.105 --> 00:01:59.553
-skills with more advanced programming techniques
+00:01:14.322 --> 00:01:19.252
+The main skill is learning how to keep code organized as an analytics project grows.

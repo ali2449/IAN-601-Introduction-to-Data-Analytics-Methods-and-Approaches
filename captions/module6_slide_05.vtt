@@ -1,21 +1,46 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.013
-This slide focuses on Import built-in modules Start
-with the meaning of the idea then
+00:00:00.000 --> 00:00:05.077
+A module is a Python file that contains code you can use in another file or notebook.
 
-00:00:06.039 --> 00:00:11.938
-connect it to the example and the larger analytical
-workflow Use built-in
+00:00:05.077 --> 00:00:09.722
+Python already comes with many built-in modules.
 
-00:00:11.965 --> 00:00:17.572
-modules Before running the example predict what the
-output should
+00:00:09.722 --> 00:00:14.847
+For example, the math module contains mathematical tools such as square root and pi.
 
-00:00:17.598 --> 00:00:22.903
-look like Run it in the browser inspect the result
-then change one input key
+00:00:14.847 --> 00:00:18.917
+If we write import math, Python loads that module.
 
-00:00:23.101 --> 00:00:28.088
-value or condition and run it again Focus on what
-changed and why
+00:00:18.917 --> 00:00:24.692
+Then we can use tools inside it, such as math.sqrt or math.pi.
+
+00:00:24.692 --> 00:00:28.852
+A helpful analogy is to think of a module as a toolbox.
+
+00:00:28.852 --> 00:00:34.922
+The module is the toolbox, and the functions or values inside the module are the tools.
+
+00:00:34.922 --> 00:00:39.562
+When you import the toolbox, you can use the tools inside it.
+
+00:00:39.562 --> 00:00:42.982
+One important detail is the dot notation.
+
+00:00:42.982 --> 00:00:47.762
+When we write math.sqrt, we are saying: go into the math module and use the sqrt function stored
+
+00:00:47.762 --> 00:00:50.552
+there. This helps keep names organized.
+
+00:00:50.552 --> 00:00:59.102
+If every function from every module automatically appeared in our program without a module name,
+
+00:00:59.102 --> 00:01:02.532
+it would become difficult to know where things came from.
+
+00:01:02.532 --> 00:01:07.232
+So a module helps with reuse, but it also helps with clarity.
+
+00:01:07.232 --> 00:01:10.400
+It tells us where a function or value belongs.

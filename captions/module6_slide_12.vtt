@@ -1,24 +1,46 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.513
-This slide focuses on When to use each organization
-tool Start with the meaning of
+00:00:00.000 --> 00:00:05.922
+This slide clarifies three related terms: module, package, and library.
 
-00:00:05.539 --> 00:00:11.995
-the idea then connect it to the example and the
-larger analytical workflow Use
+00:00:05.922 --> 00:00:09.972
+A module is one Python file with reusable code.
 
-00:00:12.021 --> 00:00:18.208
-for one reusable action Use for related functions in
-one file Use
+00:00:09.972 --> 00:00:15.092
+It might be a built-in module like math, or it might be a file you write yourself,
 
-00:00:18.235 --> 00:00:24.080
-for a larger collection of modules Use when data and
-behavior belong
+00:00:15.092 --> 00:00:20.822
+such as calculations.py. A package is a folder that groups related modules.
 
-00:00:24.106 --> 00:00:30.069
-together Use for one working instance of a class Use
-to bring outside
+00:00:20.822 --> 00:00:25.487
+For example, an analytics folder might contain cleaning.py, metrics.py, and charts.py.
 
-00:00:30.096 --> 00:00:31.319
-tools into your script
+00:00:25.487 --> 00:00:29.007
+A library is a larger reusable collection of tools.
+
+00:00:29.007 --> 00:00:33.147
+Libraries often include packages and modules.
+
+00:00:33.147 --> 00:00:39.442
+NumPy and Pandas are examples of libraries that many data analysts use.
+
+00:00:39.442 --> 00:00:44.742
+These words are sometimes used casually, and people may not always use them perfectly.
+
+00:00:44.742 --> 00:00:47.627
+But the distinction is still helpful.
+
+00:00:47.627 --> 00:00:53.532
+The simple rule is: module equals file, package equals folder,
+
+00:00:53.532 --> 00:00:55.302
+and library equals reusable collection of tools.
+
+00:00:55.302 --> 00:01:02.942
+Understanding this vocabulary will help when you install and use Python tools later.
+
+00:01:02.942 --> 00:01:10.252
+When someone says to import a library, they usually mean to bring in a reusable toolset from a
+
+00:01:10.252 --> 00:01:11.410
+package or module.

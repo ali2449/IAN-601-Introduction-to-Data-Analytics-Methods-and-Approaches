@@ -1,20 +1,64 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.658
-This slide is the roadmap for Module 6 It shows how
-the concepts progress and
+00:00:00.000 --> 00:00:02.502
+This is the learning path for Module 6.
 
-00:00:05.684 --> 00:00:11.297
-how the later examples build on the earlier ones Use
-built-in modules
+00:00:02.502 --> 00:00:04.472
+We start with imports.
 
-00:00:11.324 --> 00:00:17.010
-and aliases Understand why libraries matter Know
-where names
+00:00:04.472 --> 00:00:10.647
+An import lets us bring tools from another Python file or library into our current program.
 
-00:00:17.037 --> 00:00:23.024
-come from Create blueprints for objects Attach
-actions
+00:00:10.647 --> 00:00:15.562
+This is important because we do not want to rewrite common tools every time.
 
-00:00:23.050 --> 00:00:25.866
-to data Analytics class
+00:00:15.562 --> 00:00:17.857
+Next, we look at your own module.
+
+00:00:17.857 --> 00:00:22.557
+A module can simply be a Python file that contains reusable code.
+
+00:00:22.557 --> 00:00:27.342
+You can place helper functions in one file and import them into another file.
+
+00:00:27.342 --> 00:00:32.892
+Then we discuss packages. A package is a folder that groups related modules.
+
+00:00:32.892 --> 00:00:36.097
+You can think of it as a larger organizational unit.
+
+00:00:36.097 --> 00:00:38.617
+After that, we move into classes.
+
+00:00:38.617 --> 00:00:41.562
+A class is a blueprint for creating objects.
+
+00:00:41.562 --> 00:00:44.772
+This is the beginning of object-oriented programming.
+
+00:00:44.772 --> 00:00:47.302
+Then we study objects and methods.
+
+00:00:47.302 --> 00:00:53.422
+An object is one specific instance of a class, and a method is a function that belongs to
+
+00:00:53.422 --> 00:00:54.867
+that object. Finally, we discuss design choices.
+
+00:00:54.867 --> 00:00:56.892
+Sometimes a function is enough.
+
+00:00:56.892 --> 00:00:58.967
+Sometimes a dictionary is enough.
+
+00:00:58.967 --> 00:01:01.117
+Sometimes a class is useful.
+
+00:01:01.117 --> 00:01:07.347
+The goal is to choose the simplest structure that makes the code clear.
+
+00:01:07.347 --> 00:01:10.357
+This module is not only about syntax.
+
+00:01:10.357 --> 00:01:14.411
+It is about thinking like a programmer who wants to build code that can grow.

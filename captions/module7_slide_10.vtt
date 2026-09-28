@@ -1,52 +1,52 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.017
+00:00:00.000 --> 00:00:02.157
 Now we are moving into practice.
 
-00:00:02.017 --> 00:00:05.732
+00:00:02.157 --> 00:00:05.552
 The first example is our foundation exercise.
 
-00:00:05.732 --> 00:00:10.362
+00:00:05.552 --> 00:00:10.132
 We want to create a list containing the even numbers from one through ten.
 
-00:00:10.362 --> 00:00:14.687
+00:00:10.132 --> 00:00:12.597
 Look carefully at the comprehension.
 
-00:00:14.687 --> 00:00:19.117
+00:00:12.597 --> 00:00:18.582
 We loop through the values, and then we use x modulo two equals zero as our condition.
 
-00:00:19.117 --> 00:00:22.497
+00:00:18.582 --> 00:00:21.982
 Modulo gives us the remainder after division.
 
-00:00:22.497 --> 00:00:27.502
+00:00:21.982 --> 00:00:27.037
 If a number divided by two has a remainder of zero, the number is even.
 
-00:00:27.502 --> 00:00:32.007
+00:00:27.037 --> 00:00:30.552
 Before running the cell, try to predict the output.
 
-00:00:32.007 --> 00:00:33.662
+00:00:30.552 --> 00:00:33.142
 Then run it and confirm your answer.
 
-00:00:33.662 --> 00:00:37.862
+00:00:33.142 --> 00:00:37.342
 After that, try changing the range so it goes to twenty.
 
-00:00:37.862 --> 00:00:41.522
+00:00:37.342 --> 00:00:40.727
 The second exercise practices lambda functions.
 
-00:00:41.522 --> 00:00:47.462
+00:00:40.727 --> 00:00:46.482
 We create a lambda that accepts two inputs, a and b, and returns their sum.
 
-00:00:47.462 --> 00:00:50.712
+00:00:46.482 --> 00:00:49.437
 Then we call the function using three and four.
 
-00:00:50.712 --> 00:00:57.867
+00:00:49.437 --> 00:00:56.297
 Run the example. After you understand it, try changing the lambda from addition to multiplication.
 
-00:00:57.867 --> 00:01:01.167
+00:00:56.297 --> 00:00:59.657
 These exercises are intentionally small.
 
-00:01:01.167 --> 00:01:07.792
+00:00:59.657 --> 00:01:06.052
 At this stage, I want you to become comfortable reading the syntax before combining too many advanced ideas
 
-00:01:07.792 --> 00:01:08.365
+00:01:06.052 --> 00:01:06.560
 together.

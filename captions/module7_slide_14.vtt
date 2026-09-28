@@ -1,46 +1,46 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.407
+00:00:00.000 --> 00:00:03.902
 Let's finish Module 7 with the most important message from this lesson.
 
-00:00:04.407 --> 00:00:11.882
+00:00:03.902 --> 00:00:10.607
 Advanced Python syntax is useful, but it is not automatically better than basic Python syntax.
 
-00:00:11.882 --> 00:00:16.992
+00:00:10.607 --> 00:00:15.482
 A list comprehension is excellent when the transformation or filtering rule is simple.
 
-00:00:16.992 --> 00:00:22.797
+00:00:15.482 --> 00:00:21.047
 But if the comprehension becomes very long, a regular loop may be easier to understand.
 
-00:00:22.797 --> 00:00:28.247
+00:00:21.047 --> 00:00:26.442
 A lambda works well for a short expression, especially when used as a sorting key.
 
-00:00:28.247 --> 00:00:32.772
+00:00:26.442 --> 00:00:31.527
 But if the logic becomes complicated, create a normal named function.
 
-00:00:32.772 --> 00:00:40.182
+00:00:31.527 --> 00:00:38.902
 Generators are useful when we want to process values one at a time or avoid storing a large
 
-00:00:40.182 --> 00:00:44.982
+00:00:38.902 --> 00:00:43.557
 result in memory. Debugging techniques help us understand what is happening inside our programs.
 
-00:00:44.982 --> 00:00:49.477
+00:00:43.557 --> 00:00:48.107
 And built-in functions can often make our code both shorter and clearer.
 
-00:00:49.477 --> 00:00:54.362
+00:00:48.107 --> 00:00:52.732
 When thinking about efficiency, remember to measure before optimizing.
 
-00:00:54.362 --> 00:00:58.707
+00:00:52.732 --> 00:00:57.077
 The goal throughout this course is not to write code that looks advanced.
 
-00:00:58.707 --> 00:01:06.377
+00:00:57.077 --> 00:01:04.547
 The goal is to write code that solves the problem clearly and can still be understood later by
 
-00:01:06.377 --> 00:01:08.067
+00:01:04.547 --> 00:01:06.112
 you or by someone else.
 
-00:01:08.067 --> 00:01:14.602
+00:01:06.112 --> 00:01:12.352
 In the next module, we will build on these ideas and look at more professional Python practices,
 
-00:01:14.602 --> 00:01:20.000
+00:01:12.352 --> 00:01:18.000
 including exception handling, regular expressions, documentation, Git concepts, style, and testing.

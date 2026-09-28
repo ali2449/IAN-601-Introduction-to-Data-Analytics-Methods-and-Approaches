@@ -1,27 +1,43 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.974
-This slide focuses on Small analytics class Start
-with the meaning of the idea then
+00:00:00.000 --> 00:00:03.912
+A package is a folder that groups related modules together.
 
-00:00:06.000 --> 00:00:11.520
-connect it to the example and the larger analytical
-workflow Classes
+00:00:03.912 --> 00:00:06.932
+A module is usually one Python file.
 
-00:00:11.533 --> 00:00:16.059
-can package a small analytics workflow so the same
-logic can be reused with different
+00:00:06.932 --> 00:00:12.032
+A package is a folder that contains related modules.
 
-00:00:16.085 --> 00:00:22.207
-data Build a report class Before running the example
+00:00:12.032 --> 00:00:16.157
+For example, a project might have a folder called analytics_project.
 
-00:00:22.404 --> 00:00:27.407
-predict what the output should look like Run it in
-the browser inspect the result
+00:00:16.157 --> 00:00:21.802
+Inside that folder, we might have cleaning.py, metrics.py, charts.py, and main.py.
 
-00:00:27.604 --> 00:00:33.117
-then change one input key value or condition and run
-it again Focus on
+00:00:21.802 --> 00:00:24.842
+The package keeps related code organized.
 
-00:00:33.143 --> 00:00:34.328
-what changed and why
+00:00:24.842 --> 00:00:31.832
+Instead of having many unrelated files scattered in one place, the package gives the project structure.
+
+00:00:31.832 --> 00:00:39.417
+Large analytics tools are often packages or collections of packages.
+
+00:00:39.417 --> 00:00:45.462
+For example, libraries like NumPy and Pandas contain many modules and tools behind the scenes.
+
+00:00:45.462 --> 00:00:51.452
+At this point in the course, you do not need to build a complex package.
+
+00:00:51.452 --> 00:00:54.247
+The main goal is to recognize the idea.
+
+00:00:54.247 --> 00:00:59.817
+If a module is like one toolbox, a package is like a larger toolbox cabinet with several related
+
+00:00:59.817 --> 00:01:03.012
+toolboxes inside it.
+
+00:01:03.012 --> 00:01:09.728
+Packages help keep projects from becoming one long file and make it easier to find related code.

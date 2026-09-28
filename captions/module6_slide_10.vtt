@@ -1,28 +1,46 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.500
-This slide focuses on Add behavior with methods
-Start with the meaning of the idea
+00:00:00.000 --> 00:00:04.937
+This example demonstrates the idea of creating and importing your own module.
 
-00:00:05.724 --> 00:00:11.553
-then connect it to the example and the larger
-analytical workflow A method
+00:00:04.937 --> 00:00:10.452
+Inside the code, we first create a string called module_code.
 
-00:00:11.579 --> 00:00:17.832
-can update the object This lets data and behavior
-stay together Update
+00:00:10.452 --> 00:00:15.982
+This string contains the code that will go into a file named calculations.py.
 
-00:00:17.858 --> 00:00:23.404
-an object with a method Before running the example
-predict what
+00:00:15.982 --> 00:00:20.267
+The module contains two functions.
 
-00:00:23.430 --> 00:00:28.525
-the output should look like Run it in the browser
-inspect the result then change
+00:00:20.267 --> 00:00:24.457
+The first function, calculate_profit, subtracts costs from sales.
 
-00:00:28.551 --> 00:00:34.170
-one input key value or condition and run it again
-Focus on what changed
+00:00:24.457 --> 00:00:31.692
+The second function, profit_margin, uses calculate_profit and then divides the profit by sales.
 
-00:00:34.196 --> 00:00:34.736
-and why
+00:00:31.692 --> 00:00:39.262
+Next, the code opens a file called calculations.py and writes the module code into that file.
+
+00:00:39.262 --> 00:00:44.537
+Then we import calculations just like we would import any other module.
+
+00:00:44.537 --> 00:00:45.862
+We also use importlib.reload.
+
+00:00:45.862 --> 00:00:54.112
+In a notebook or browser environment, reload helps make sure Python uses the most recent version of the
+
+00:00:54.112 --> 00:00:58.602
+file we just created. Then we set sales to 1500 and costs to 1100.
+
+00:00:58.602 --> 00:01:03.837
+We call calculations.calculate_profit and calculations.profit_margin.
+
+00:01:03.837 --> 00:01:10.502
+This example is important because it shows how a real project can separate helper formulas from the main
+
+00:01:10.502 --> 00:01:15.737
+analysis. After running the code, try changing sales and costs.
+
+00:01:15.737 --> 00:01:21.840
+Then run the cell again and compare the profit and profit margin.

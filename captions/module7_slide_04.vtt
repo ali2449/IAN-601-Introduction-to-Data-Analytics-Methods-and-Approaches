@@ -1,58 +1,58 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.672
+00:00:00.000 --> 00:00:02.247
 Now let's look at lambda functions.
 
-00:00:02.672 --> 00:00:06.667
+00:00:02.247 --> 00:00:05.447
 A lambda is a small anonymous function.
 
-00:00:06.667 --> 00:00:15.572
+00:00:05.447 --> 00:00:12.157
 Anonymous simply means that we can create the function without giving it a normal function name using def.
 
-00:00:15.572 --> 00:00:17.962
+00:00:12.157 --> 00:00:14.342
 Look at the first example.
 
-00:00:17.962 --> 00:00:20.142
+00:00:14.342 --> 00:00:17.447
 We write lambda x: x times two.
 
-00:00:20.142 --> 00:00:28.542
+00:00:17.447 --> 00:00:24.042
 The x represents the input, and everything after the colon is the expression that produces the result.
 
-00:00:28.542 --> 00:00:34.382
+00:00:24.042 --> 00:00:26.702
 So if we pass five into this lambda, Python returns ten.
 
-00:00:34.382 --> 00:00:38.887
+00:00:26.702 --> 00:00:34.022
 For a simple example like this, we could absolutely write a regular function instead.
 
-00:00:38.887 --> 00:00:45.742
+00:00:34.022 --> 00:00:39.602
 The advantage of lambda becomes more obvious when we need a small function temporarily.
 
-00:00:45.742 --> 00:00:48.737
+00:00:39.602 --> 00:00:41.547
 Look at the second example.
 
-00:00:48.737 --> 00:00:54.267
+00:00:41.547 --> 00:00:44.192
 We have sales data stored as tuples.
 
-00:00:54.267 --> 00:00:56.617
+00:00:44.192 --> 00:00:47.532
 Each tuple contains a label and a sales value.
 
-00:00:56.617 --> 00:01:02.082
+00:00:47.532 --> 00:00:50.892
 We want to sort the records based on the sales value.
 
-00:01:02.082 --> 00:01:07.317
+00:00:50.892 --> 00:00:55.042
 The key parameter tells sorted what part of each item it should examine.
 
-00:01:07.317 --> 00:01:15.302
+00:00:55.042 --> 00:01:01.337
 Our lambda receives one item and returns item at index one, which is the numeric sales value.
 
-00:01:15.302 --> 00:01:21.257
+00:01:01.337 --> 00:01:06.432
 We also use reverse equals true because we want the largest value first.
 
-00:01:21.257 --> 00:01:26.722
+00:01:06.432 --> 00:01:10.502
 Run this example and notice the order of A, B, and C.
 
-00:01:26.722 --> 00:01:33.297
+00:01:10.502 --> 00:01:16.427
 A useful rule is this: if your lambda becomes complicated or difficult to explain,
 
-00:01:33.297 --> 00:01:37.332
+00:01:16.427 --> 00:01:19.840
 it is probably better to create a regular named function instead.

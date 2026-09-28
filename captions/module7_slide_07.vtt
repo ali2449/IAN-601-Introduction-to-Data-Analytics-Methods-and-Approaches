@@ -1,64 +1,64 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.212
+00:00:00.000 --> 00:00:02.022
 Now let's talk about debugging.
 
-00:00:02.212 --> 00:00:06.947
+00:00:02.022 --> 00:00:06.482
 Debugging is not just something we do when our program completely crashes.
 
-00:00:06.947 --> 00:00:11.727
+00:00:06.482 --> 00:00:11.022
 Sometimes the code runs successfully but produces the wrong result.
 
-00:00:11.727 --> 00:00:15.342
+00:00:11.022 --> 00:00:14.327
 Those problems can actually be harder to identify.
 
-00:00:15.342 --> 00:00:19.752
+00:00:14.327 --> 00:00:18.512
 One simple debugging technique is to print intermediate values.
 
-00:00:19.752 --> 00:00:21.727
+00:00:18.512 --> 00:00:20.452
 Look at the divide function.
 
-00:00:21.727 --> 00:00:26.117
+00:00:20.452 --> 00:00:24.867
 Before performing the calculation, we print the values of a and b.
 
-00:00:26.117 --> 00:00:29.397
+00:00:24.867 --> 00:00:26.862
 Then, after the division, we print the result.
 
-00:00:29.397 --> 00:00:33.582
+00:00:26.862 --> 00:00:32.337
 This gives us a simple trace of what happened inside the function.
 
-00:00:33.582 --> 00:00:39.247
+00:00:32.337 --> 00:00:37.427
 Run the example and notice how those debug messages help us follow the execution.
 
-00:00:39.247 --> 00:00:45.542
+00:00:37.427 --> 00:00:43.312
 In a real project, you normally would not leave lots of debug print statements everywhere permanently.
 
-00:00:45.542 --> 00:00:50.342
+00:00:43.312 --> 00:00:45.782
 But while you are trying to understand a problem, they can be extremely useful.
 
-00:00:50.342 --> 00:00:53.312
+00:00:45.782 --> 00:00:48.752
 The second example introduces assert.
 
-00:00:53.312 --> 00:00:58.347
+00:00:48.752 --> 00:00:55.412
 An assertion lets us tell Python that we expect a particular condition to be true.
 
-00:00:58.347 --> 00:01:02.707
+00:00:55.412 --> 00:00:58.667
 Here, we calculate the average of ten, twenty, and thirty.
 
-00:01:02.707 --> 00:01:04.632
+00:00:58.667 --> 00:01:00.752
 The average should be twenty.
 
-00:01:04.632 --> 00:01:07.552
+00:01:00.752 --> 00:01:02.537
 So we assert that average equals twenty.
 
-00:01:07.552 --> 00:01:11.597
+00:01:02.537 --> 00:01:07.022
 If the statement is true, the program continues normally.
 
-00:01:11.597 --> 00:01:15.232
+00:01:07.022 --> 00:01:10.877
 Try changing twenty in the assertion to twenty-one and run the code again.
 
-00:01:15.232 --> 00:01:18.902
+00:01:10.877 --> 00:01:13.987
 You should see an AssertionError.
 
-00:01:18.902 --> 00:01:24.880
+00:01:13.987 --> 00:01:19.520
 Assertions can be helpful while developing and testing code because they make our assumptions explicit.

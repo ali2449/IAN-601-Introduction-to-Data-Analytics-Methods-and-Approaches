@@ -1,20 +1,58 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.803
-Use this lesson actively Read the concept predict
-the result run the example
+00:00:00.000 --> 00:00:04.187
+This slide explains how to use the module page effectively.
 
-00:00:05.829 --> 00:00:11.677
-when code is available then change one part and
-compare what happens Start
+00:00:04.187 --> 00:00:06.537
+First, read the concept on each slide.
 
-00:00:11.703 --> 00:00:18.087
-with the main idea on the slide Execute the Python
-code in the browser Connect
+00:00:06.537 --> 00:00:10.267
+Try to understand the main idea before running any code.
 
-00:00:18.114 --> 00:00:24.169
-the output to the concept Change one value variable
-or condition
+00:00:10.267 --> 00:00:17.802
+If the slide introduces a new term, such as module, package, class, object, method, or self,
 
-00:00:25.106 --> 00:00:27.224
-Apply the pattern to a new example
+00:00:17.802 --> 00:00:20.957
+pause and say the idea in your own words.
+
+00:00:20.957 --> 00:00:22.127
+Second, run the code examples.
+
+00:00:22.127 --> 00:00:26.372
+The examples are small on purpose.
+
+00:00:26.372 --> 00:00:30.162
+They are designed so you can see one idea clearly at a time.
+
+00:00:30.162 --> 00:00:35.152
+Third, check the output. Do not just run the cell and move on.
+
+00:00:35.152 --> 00:00:37.902
+Look carefully at what Python prints.
+
+00:00:37.902 --> 00:00:40.952
+Ask yourself why that output makes sense.
+
+00:00:40.952 --> 00:00:45.817
+Fourth, edit the code. Change one value, one name, or one small expression.
+
+00:00:45.817 --> 00:00:50.822
+Then run the cell again and compare the result.
+
+00:00:50.822 --> 00:00:57.462
+Finally, apply the idea. Think about where the pattern would be useful in an analytics project.
+
+00:00:57.462 --> 00:01:00.152
+For example, imports help you use tools that already exist.
+
+00:01:00.152 --> 00:01:04.937
+Modules help you separate helper functions.
+
+00:01:04.937 --> 00:01:08.692
+Classes help you keep related data and behavior together.
+
+00:01:08.692 --> 00:01:11.972
+A good way to learn this module is to move slowly.
+
+00:01:11.972 --> 00:01:16.160
+Run the examples, make small edits, and explain what changed.

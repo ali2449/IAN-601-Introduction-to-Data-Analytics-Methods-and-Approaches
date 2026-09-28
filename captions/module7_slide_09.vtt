@@ -1,49 +1,49 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.012
+00:00:00.000 --> 00:00:05.797
 Sometimes we genuinely need to compare the performance of different approaches.
 
-00:00:05.012 --> 00:00:08.742
+00:00:05.797 --> 00:00:08.247
 When that happens, we should measure rather than guess.
 
-00:00:08.742 --> 00:00:12.522
+00:00:08.247 --> 00:00:11.592
 Python's time module provides perf_counter.
 
-00:00:12.522 --> 00:00:17.922
+00:00:11.592 --> 00:00:16.327
 Perf_counter is useful for measuring elapsed time with fairly high precision.
 
-00:00:17.922 --> 00:00:20.842
+00:00:16.327 --> 00:00:22.087
 Look at the example. First, we create a list of one hundred thousand numbers.
 
-00:00:20.842 --> 00:00:23.867
+00:00:22.087 --> 00:00:24.427
 Then we record the starting time.
 
-00:00:23.867 --> 00:00:26.467
+00:00:24.427 --> 00:00:27.162
 After that, we calculate the sum.
 
-00:00:26.467 --> 00:00:30.262
+00:00:27.162 --> 00:00:31.997
 Finally, we call perf_counter again and subtract the starting time.
 
-00:00:30.262 --> 00:00:34.257
+00:00:31.997 --> 00:00:35.972
 The difference tells us approximately how long the operation took.
 
-00:00:34.257 --> 00:00:39.952
+00:00:35.972 --> 00:00:41.242
 Run the example. Your elapsed time may be slightly different every time you run it.
 
-00:00:39.952 --> 00:00:48.557
+00:00:41.242 --> 00:00:46.542
 That is normal because your computer and browser are doing many other things in the background.
 
-00:00:48.557 --> 00:00:51.272
+00:00:46.542 --> 00:00:49.677
 The larger lesson here is about workflow.
 
-00:00:51.272 --> 00:00:52.097
+00:00:49.677 --> 00:00:52.622
 First, make sure the code is correct.
 
-00:00:52.097 --> 00:00:54.752
+00:00:52.622 --> 00:00:55.152
 Second, make sure it is readable.
 
-00:00:54.752 --> 00:00:58.817
+00:00:55.152 --> 00:00:57.907
 Then, if performance actually matters, measure the code.
 
-00:00:58.817 --> 00:01:05.729
+00:00:57.907 --> 00:01:05.175
 We should avoid making code harder to understand just because we assume one approach might be faster.

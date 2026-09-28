@@ -1,24 +1,55 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.605
-This slide focuses on Why organize code Start with
-the meaning of the idea then
+00:00:00.000 --> 00:00:06.167
+Before we talk about modules and classes, let us first ask why organization matters.
 
-00:00:05.632 --> 00:00:11.544
-connect it to the example and the larger analytical
-workflow As programs
+00:00:06.167 --> 00:00:10.492
+When a program is very small, one file can feel simple.
 
-00:00:11.570 --> 00:00:17.178
-get longer organization becomes part of the solution
-Imports reuse code that
+00:00:10.492 --> 00:00:15.982
+You might have a few variables, a loop, maybe a function, and a print statement.
 
-00:00:17.204 --> 00:00:23.814
-already exists Packages group many modules together
-Classes
+00:00:15.982 --> 00:00:21.177
+That is manageable. But real analytics work often grows quickly.
 
-00:00:23.840 --> 00:00:29.409
-group related data and actions Well-organized code
-is easier to test share
+00:00:21.177 --> 00:00:25.982
+You may need to clean data, calculate metrics, create charts, run checks, and repeat parts of the process.
 
-00:00:29.593 --> 00:00:32.659
-and update Good for one quick task
+00:00:25.982 --> 00:00:32.847
+If all of that logic is placed into one long script, the file becomes difficult to understand.
+
+00:00:32.847 --> 00:00:35.772
+Organized code gives related work a clear home.
+
+00:00:35.772 --> 00:00:43.312
+For example, cleaning functions could go into a file called cleaning.py.
+
+00:00:43.312 --> 00:00:44.987
+Metric calculations could go into metrics.py.
+
+00:00:44.987 --> 00:00:48.492
+Chart functions could go into charts.py.
+
+00:00:48.492 --> 00:00:51.597
+Then a main file can use those tools without becoming too long.
+
+00:00:51.597 --> 00:00:54.657
+This also helps future you.
+
+00:00:54.657 --> 00:01:02.152
+A few weeks later, when you return to the project, organized code makes it easier to remember where
+
+00:01:02.152 --> 00:01:05.592
+things are. It also helps teams.
+
+00:01:05.592 --> 00:01:08.117
+If another person reads your work, clear file names, function names,
+
+00:01:08.117 --> 00:01:11.957
+and class names make the project easier to review.
+
+00:01:11.957 --> 00:01:16.537
+The main idea is simple: organization reduces confusion.
+
+00:01:16.537 --> 00:01:20.640
+It helps code become easier to read, test, update, and reuse.

@@ -1,25 +1,55 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.000
-This slide focuses on Use aliases for readability
-Start with the meaning of the idea
+00:00:00.000 --> 00:00:05.117
+In this code example, we import three built-in tools: math, random, and date from datetime.
 
-00:00:06.224 --> 00:00:11.728
-then connect it to the example and the larger
-analytical workflow An
+00:00:05.117 --> 00:00:11.302
+The math module gives us mathematical functions and constants.
 
-00:00:11.754 --> 00:00:16.638
-alias is a shorter name for a module It makes code
-easier to type and
+00:00:11.302 --> 00:00:15.227
+We use math.sqrt to calculate the square root of 81.
 
-00:00:16.665 --> 00:00:22.185
-read Before running the example predict what the
-output should look
+00:00:15.227 --> 00:00:19.297
+We also use math.pi and round it to three decimal places.
 
-00:00:22.212 --> 00:00:27.912
-like Run it in the browser inspect the result then
-change one input key value
+00:00:19.297 --> 00:00:22.917
+The random module gives us tools for random selection.
 
-00:00:28.122 --> 00:00:32.504
-or condition and run it again Focus on what changed
-and why
+00:00:22.917 --> 00:00:25.902
+In this example, random.sample chooses three sample IDs from a range of numbers.
+
+00:00:25.902 --> 00:00:33.847
+This is a useful pattern when you want to select a few items from a larger group.
+
+00:00:33.847 --> 00:00:37.572
+The date object from datetime lets us work with dates.
+
+00:00:37.572 --> 00:00:40.827
+We use date.today to get the current date.
+
+00:00:40.827 --> 00:00:44.097
+Before running the code, predict what you expect.
+
+00:00:44.097 --> 00:00:46.877
+The square root of 81 should be 9.
+
+00:00:46.877 --> 00:00:51.032
+The rounded value of pi should be close to 3.142.
+
+00:00:51.032 --> 00:00:55.267
+The sample IDs may change each time because they are selected randomly.
+
+00:00:55.267 --> 00:00:57.577
+The date should show today's date.
+
+00:00:57.577 --> 00:01:02.882
+After running the cell, try changing the number from 81 to 144.
+
+00:01:02.882 --> 00:01:05.992
+Then run it again and check the new square root.
+
+00:01:05.992 --> 00:01:10.642
+The main lesson is that Python already includes many useful modules.
+
+00:01:10.642 --> 00:01:15.002
+Imports allow us to use those tools without writing everything ourselves.

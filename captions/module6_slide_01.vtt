@@ -1,16 +1,52 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.632
-Welcome to Module 6 This module focuses on Modules
-Packages &
+00:00:00.000 --> 00:00:02.127
+Welcome to Module 6.
 
-00:00:05.645 --> 00:00:11.355
-OOP We will build the ideas in small steps and
-connect them to practical analytics
+00:00:02.127 --> 00:00:07.307
+In this module, we are going to move from writing small pieces of Python code toward organizing larger
 
-00:00:11.382 --> 00:00:17.012
-work Modules packages and classes help Python
-projects grow from
+00:00:07.307 --> 00:00:12.957
+Python programs in a cleaner and more reusable way.
 
-00:00:17.038 --> 00:00:19.538
-short scripts into organized analytics tools
+00:00:12.957 --> 00:00:18.137
+So far, we have practiced variables, control flow, functions, lists, tuples, dictionaries, and sets.
+
+00:00:18.137 --> 00:00:22.042
+Those are the building blocks of Python.
+
+00:00:22.042 --> 00:00:24.897
+But as your programs grow, you also need structure.
+
+00:00:24.897 --> 00:00:31.872
+If all of your code stays in one long file, it becomes harder to read, harder to test,
+
+00:00:31.872 --> 00:00:33.702
+harder to fix, and harder to reuse later.
+
+00:00:33.702 --> 00:00:38.992
+That is why this module focuses on modules, packages, and object-oriented programming.
+
+00:00:38.992 --> 00:00:45.967
+These ideas help us organize code into smaller pieces that have clear responsibilities.
+
+00:00:45.967 --> 00:00:49.942
+We will begin with imports and built-in modules.
+
+00:00:49.942 --> 00:00:56.447
+Then we will create our own small module, discuss packages and libraries, and move into classes, objects,
+
+00:00:56.447 --> 00:00:57.447
+methods, and self.
+
+00:00:57.447 --> 00:01:03.607
+By the end of this module, you should be able to explain when a function, dictionary, module, package,
+
+00:01:03.607 --> 00:01:06.697
+or class is the right tool for a simple analytics problem.
+
+00:01:06.697 --> 00:01:13.557
+As you go through the lesson, do not worry about memorizing every detail immediately.
+
+00:01:13.557 --> 00:01:20.080
+Focus on the main idea: organized code is easier to understand, easier to maintain, and easier to reuse.

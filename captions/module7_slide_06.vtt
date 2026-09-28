@@ -1,55 +1,55 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.362
+00:00:00.000 --> 00:00:03.467
 This slide helps us see more clearly how a generator works.
 
-00:00:04.362 --> 00:00:08.482
+00:00:03.467 --> 00:00:05.627
 We have a countdown function.
 
-00:00:08.482 --> 00:00:13.287
+00:00:05.627 --> 00:00:10.167
 The function starts with n, and as long as n is greater than zero,
 
-00:00:13.287 --> 00:00:16.017
+00:00:10.167 --> 00:00:14.467
 it yields the current value and then decreases n by one.
 
-00:00:16.017 --> 00:00:25.892
+00:00:14.467 --> 00:00:21.617
 Notice that when we write g equals countdown three, Python does not immediately run the entire countdown.
 
-00:00:25.892 --> 00:00:28.692
+00:00:21.617 --> 00:00:25.017
 Instead, g becomes a generator object.
 
-00:00:28.692 --> 00:00:31.127
+00:00:25.017 --> 00:00:26.957
 Then we call next g.
 
-00:00:31.127 --> 00:00:35.932
+00:00:26.957 --> 00:00:30.357
 The first call starts the function and gives us three.
 
-00:00:35.932 --> 00:00:39.352
+00:00:30.357 --> 00:00:33.542
 The generator pauses at the yield statement.
 
-00:00:39.352 --> 00:00:44.772
+00:00:33.542 --> 00:00:38.537
 When we call next again, the function continues from that exact location.
 
-00:00:44.772 --> 00:00:49.012
+00:00:38.537 --> 00:00:40.122
 It decreases n and eventually yields two.
 
-00:00:49.012 --> 00:00:53.697
+00:00:40.122 --> 00:00:46.697
 This is one of the most important things to understand about generators.
 
-00:00:53.697 --> 00:00:57.622
+00:00:46.697 --> 00:00:49.777
 They maintain their state between requests.
 
-00:00:57.622 --> 00:01:01.322
+00:00:49.777 --> 00:00:52.652
 Run the example and look at the two values.
 
-00:01:01.322 --> 00:01:05.617
+00:00:52.652 --> 00:00:56.982
 Then, if you want to experiment, add another print next g.
 
-00:01:05.617 --> 00:01:07.172
+00:00:56.982 --> 00:00:58.732
 You should get one.
 
-00:01:07.172 --> 00:01:16.372
+00:00:58.732 --> 00:01:05.087
 If you call next one more time after the generator is finished, Python will raise StopIteration.
 
-00:01:16.372 --> 00:01:20.960
+00:01:05.087 --> 00:01:08.991
 That simply means that the generator has no more values to produce.

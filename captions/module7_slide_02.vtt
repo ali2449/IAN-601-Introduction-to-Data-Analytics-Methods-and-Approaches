@@ -1,52 +1,52 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.832
+00:00:00.000 --> 00:00:02.507
 Here is our learning path for this module.
 
-00:00:02.832 --> 00:00:06.872
+00:00:02.507 --> 00:00:05.757
 We are going to work through five main ideas.
 
-00:00:06.872 --> 00:00:10.527
+00:00:05.757 --> 00:00:08.757
 The first topic is list comprehensions.
 
-00:00:10.527 --> 00:00:15.797
+00:00:08.757 --> 00:00:15.407
 A list comprehension gives us a compact way to create a new list from an existing collection of
 
-00:00:15.797 --> 00:00:19.262
+00:00:15.407 --> 00:00:18.547
 values. Next, we will look at lambda functions.
 
-00:00:19.262 --> 00:00:24.812
+00:00:18.547 --> 00:00:23.827
 A lambda is basically a very small function that we can define in one expression.
 
-00:00:24.812 --> 00:00:30.922
+00:00:23.827 --> 00:00:28.437
 You will often see lambda functions used with operations such as sorting.
 
-00:00:30.922 --> 00:00:33.057
+00:00:28.437 --> 00:00:29.692
 After that, we will study generators.
 
-00:00:33.057 --> 00:00:39.912
+00:00:29.692 --> 00:00:36.177
 Generators are useful when we want Python to produce values one at a time instead of creating everything
 
-00:00:39.912 --> 00:00:43.272
+00:00:36.177 --> 00:00:40.227
 in memory at once. Then we will discuss debugging.
 
-00:00:43.272 --> 00:00:47.392
+00:00:40.227 --> 00:00:44.032
 Even experienced programmers spend a lot of time debugging.
 
-00:00:47.392 --> 00:00:53.792
+00:00:44.032 --> 00:00:50.597
 So we will look at simple techniques for understanding what is happening inside our code.
 
-00:00:53.792 --> 00:00:58.302
+00:00:50.597 --> 00:00:53.572
 Finally, we will discuss efficiency and built-in Python functions.
 
-00:00:58.302 --> 00:01:02.397
+00:00:53.572 --> 00:00:57.467
 By the end of this module, you should be able to recognize these patterns,
 
-00:01:02.397 --> 00:01:10.547
+00:00:57.467 --> 00:01:04.532
 explain what they are doing, and decide when using them actually makes your code better.
 
-00:01:10.547 --> 00:01:14.342
+00:01:04.532 --> 00:01:08.527
 You do not need to force these techniques into every program.
 
-00:01:14.342 --> 00:01:17.356
+00:01:08.527 --> 00:01:11.040
 The important skill is knowing when they are useful.

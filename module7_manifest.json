@@ -1,97 +1,159 @@
 {
-  "prefix": "module7",
-  "voice": "en-US-GuyNeural",
-  "rate": "-5%",
-  "volume": "+0%",
-  "pitch": "+0Hz",
-  "caption_words": 15,
-  "slide_count": 12,
-  "slide_markers_found": true,
-  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "module": "module7",
+  "filename_prefix": "module7",
+  "source_file": "IAN_601_Module_7_Breeze_Natural_Narration.txt",
+  "voice_consistency_version": 2,
+  "reference_audio": "/home/ali/breeze-tts/voice_reference/course_instructor_consistent_v4.wav",
+  "reference_text": "Welcome to the course. We will work through each concept carefully, connect the\nideas step by step, and use practical examples to make technical topics easier\nto understand. When we introduce a new method, focus first on the problem it\nsolves and why it is useful. For example, in machine learning, features are the\ninformation we give the model, while the target is what we want it to predict.\nNow consider a simple question: what changes when the data contains missing\nvalues? We will think through the reason and then look at the code. In Python,\nwe can inspect the data, run one small step at a time, and explain what the\nresult means. The goal is to understand the logic, not simply memorize syntax.",
+  "locked_narration_seed": true,
+  "narration_seed": 1234,
+  "subtitle_method": "whole_slide_silence_alignment",
+  "caption_settings": {
+    "max_words": 18,
+    "max_chars": 110,
+    "minimum_silence_seconds": 0.2,
+    "boundary_search_window_seconds": 1.4
+  },
   "slides": [
     {
       "slide": 1,
-      "audio": "module7_slide_01.mp3",
-      "captions": "module7_slide_01.vtt",
-      "text": "Welcome to Module 7. This module focuses on Advanced Python. We will build the ideas gradually and connect them to practical analytics work.\n\n[pause=0.7]\n\nAdvanced Python patterns make code shorter, clearer, and easier to reuse in data analytics work.\n\n[pause=1.0]",
-      "pause_markers": 2
+      "title": "Advanced Python Techniques",
+      "transcript": "Welcome to Module 7, Advanced Python Techniques.\n\nUp to this point, we have spent a lot of time building a strong foundation in Python. We have worked with variables, conditions, loops, functions, data structures, and ways to organize our code.\n\nIn this module, we are going to take some of those ideas and look at more compact and more powerful ways to write Python.\n\nYou will see techniques such as list comprehensions, lambda functions, and generators. We will also spend some time on debugging and code efficiency.\n\nI want to emphasize something from the beginning. Advanced Python does not necessarily mean writing the shortest code possible. Short code can sometimes become difficult to understand.\n\nOur goal is to write code that is clear, useful, and appropriate for the problem we are solving.\n\nThese techniques are especially helpful in analytics because we often need to filter values, transform data, sort records, or process large collections.\n\nAs we move through the examples, try to focus less on memorizing the syntax and more on understanding what each technique is helping us accomplish.",
+      "seed": 1234,
+      "wav": "wav/module7_slide_01.wav",
+      "audio": "audio/module7_slide_01.mp3",
+      "captions": "audio/module7_slide_01.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 2,
-      "audio": "module7_slide_02.mp3",
-      "captions": "module7_slide_02.vtt",
-      "text": "Use this lesson actively. Read the concept, predict what should happen, run the example when code is available, then change one small part and compare the result.\n\n[pause=0.7]\n\nStart with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.\n\n[pause=0.7]\n\nChange one value, variable, or condition. Apply the pattern to a new example.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Learning path for Module 7",
+      "transcript": "Here is our learning path for this module.\n\nWe are going to work through five main ideas.\n\nThe first topic is list comprehensions. A list comprehension gives us a compact way to create a new list from an existing collection of values.\n\nNext, we will look at lambda functions. A lambda is basically a very small function that we can define in one expression. You will often see lambda functions used with operations such as sorting.\n\nAfter that, we will study generators. Generators are useful when we want Python to produce values one at a time instead of creating everything in memory at once.\n\nThen we will discuss debugging. Even experienced programmers spend a lot of time debugging. So we will look at simple techniques for understanding what is happening inside our code.\n\nFinally, we will discuss efficiency and built-in Python functions.\n\nBy the end of this module, you should be able to recognize these patterns, explain what they are doing, and decide when using them actually makes your code better.\n\nYou do not need to force these techniques into every program. The important skill is knowing when they are useful.",
+      "seed": 1234,
+      "wav": "wav/module7_slide_02.wav",
+      "audio": "audio/module7_slide_02.mp3",
+      "captions": "audio/module7_slide_02.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 3,
-      "audio": "module7_slide_03.mp3",
-      "captions": "module7_slide_03.vtt",
-      "text": "This slide is the learning path for Module 7. It shows how the topic progresses from foundational ideas to applied practice.\n\n[pause=0.7]\n\nBuild lists and dictionaries clearly. Rank values using custom rules. Use zip and enumerate.\n\n[pause=0.7]\n\nHandle expected problems. Produce values as needed. Connect small steps.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "List Comprehensions",
+      "transcript": "Let's begin with list comprehensions.\n\nA list comprehension is a shorter way to create a new list using a loop.\n\nLook at the first example.\n\nWe have x squared for x in range five.\n\nIf this syntax feels strange at first, think about the regular loop that would do the same thing.\n\nWe would create an empty list, loop through the numbers from zero through four, calculate x squared, and then append each result to the list.\n\nThe list comprehension combines those steps into one line.\n\nBefore you run the first cell, try to predict the result.\n\nWe start with zero, then one, two, three, and four. Each number is squared. So we should get zero, one, four, nine, and sixteen.\n\nGo ahead and run the cell and confirm the result.\n\nThe second example adds a condition.\n\nWe have a list of ages, and we only want values greater than or equal to eighteen.\n\nYou can read the comprehension almost like a sentence: give me each age from the ages list if that age is at least eighteen.\n\nRun the example and look at which values remain.\n\nThen try changing one of the ages. For example, change seventeen to eighteen and run the cell again.\n\nThis is a very common analytical pattern: start with a collection, apply a rule, and create a new collection from the values that meet that rule.",
+      "seed": 1234,
+      "wav": "wav/module7_slide_03.wav",
+      "audio": "audio/module7_slide_03.mp3",
+      "captions": "audio/module7_slide_03.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 4,
-      "audio": "module7_slide_04.mp3",
-      "captions": "module7_slide_04.vtt",
-      "text": "This slide focuses on List comprehensions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA list comprehension creates a new list from an existing collection. Create cleaned scores\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Lambda Functions",
+      "transcript": "Now let's look at lambda functions.\n\nA lambda is a small anonymous function.\n\nAnonymous simply means that we can create the function without giving it a normal function name using def.\n\nLook at the first example.\n\nWe write lambda x: x times two.\n\nThe x represents the input, and everything after the colon is the expression that produces the result.\n\nSo if we pass five into this lambda, Python returns ten.\n\nFor a simple example like this, we could absolutely write a regular function instead.\n\nThe advantage of lambda becomes more obvious when we need a small function temporarily.\n\nLook at the second example.\n\nWe have sales data stored as tuples. Each tuple contains a label and a sales value.\n\nWe want to sort the records based on the sales value.\n\nThe key parameter tells sorted what part of each item it should examine.\n\nOur lambda receives one item and returns item at index one, which is the numeric sales value.\n\nWe also use reverse equals true because we want the largest value first.\n\nRun this example and notice the order of A, B, and C.\n\nA useful rule is this: if your lambda becomes complicated or difficult to explain, it is probably better to create a regular named function instead.",
+      "seed": 1234,
+      "wav": "wav/module7_slide_04.wav",
+      "audio": "audio/module7_slide_04.mp3",
+      "captions": "audio/module7_slide_04.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 5,
-      "audio": "module7_slide_05.mp3",
-      "captions": "module7_slide_05.vtt",
-      "text": "This slide focuses on Dictionary comprehensions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA dictionary comprehension creates key-value pairs in one expression. Create a status map\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Generators & yield",
+      "transcript": "Now we are moving to generators.\n\nGenerators are important because they allow Python to produce values one at a time.\n\nLet's compare that with a regular list.\n\nIf we create a list containing one million transformed values, Python normally creates and stores all one million values in memory.\n\nA generator can work differently. It can calculate a value when we need it, return that value, and then continue later.\n\nThe key word that makes this possible is yield.\n\nLook at the squares_gen function.\n\nWe loop through the numbers up to n.\n\nInstead of using return, we use yield.\n\nWhen Python reaches yield, it gives us one value and pauses the function.\n\nThe next time Python asks the generator for another value, the function continues from where it stopped.\n\nRun the example.\n\nYou will see the squared values printed one at a time.\n\nFor four values, memory is obviously not a major concern. But imagine processing millions of records or reading a very large file.\n\nGenerators can be useful because we do not always need to store every result at the same time.\n\nThe important idea for now is that return usually finishes a function, while yield produces a value and allows the function to continue later.",
+      "seed": 1234,
+      "wav": "wav/module7_slide_05.wav",
+      "audio": "audio/module7_slide_05.mp3",
+      "captions": "audio/module7_slide_05.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 6,
-      "audio": "module7_slide_06.mp3",
-      "captions": "module7_slide_06.vtt",
-      "text": "This slide focuses on Sort with a custom key. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nThe key argument tells Python what part of each item should control the sort order. Sort records by amount\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Inspect a generator with next()",
+      "transcript": "This slide helps us see more clearly how a generator works.\n\nWe have a countdown function.\n\nThe function starts with n, and as long as n is greater than zero, it yields the current value and then decreases n by one.\n\nNotice that when we write g equals countdown three, Python does not immediately run the entire countdown.\n\nInstead, g becomes a generator object.\n\nThen we call next g.\n\nThe first call starts the function and gives us three.\n\nThe generator pauses at the yield statement.\n\nWhen we call next again, the function continues from that exact location. It decreases n and eventually yields two.\n\nThis is one of the most important things to understand about generators.\n\nThey maintain their state between requests.\n\nRun the example and look at the two values.\n\nThen, if you want to experiment, add another print next g.\n\nYou should get one.\n\nIf you call next one more time after the generator is finished, Python will raise StopIteration. That simply means that the generator has no more values to produce.",
+      "seed": 1234,
+      "wav": "wav/module7_slide_06.wav",
+      "audio": "audio/module7_slide_06.mp3",
+      "captions": "audio/module7_slide_06.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 7,
-      "audio": "module7_slide_07.mp3",
-      "captions": "module7_slide_07.vtt",
-      "text": "This slide focuses on Use enumerate and zip. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nenumerate() gives position numbers. zip() combines related lists. Pair names and scores\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Debugging Techniques",
+      "transcript": "Now let's talk about debugging.\n\nDebugging is not just something we do when our program completely crashes.\n\nSometimes the code runs successfully but produces the wrong result. Those problems can actually be harder to identify.\n\nOne simple debugging technique is to print intermediate values.\n\nLook at the divide function.\n\nBefore performing the calculation, we print the values of a and b.\n\nThen, after the division, we print the result.\n\nThis gives us a simple trace of what happened inside the function.\n\nRun the example and notice how those debug messages help us follow the execution.\n\nIn a real project, you normally would not leave lots of debug print statements everywhere permanently. But while you are trying to understand a problem, they can be extremely useful.\n\nThe second example introduces assert.\n\nAn assertion lets us tell Python that we expect a particular condition to be true.\n\nHere, we calculate the average of ten, twenty, and thirty.\n\nThe average should be twenty.\n\nSo we assert that average equals twenty.\n\nIf the statement is true, the program continues normally.\n\nTry changing twenty in the assertion to twenty-one and run the code again.\n\nYou should see an AssertionError.\n\nAssertions can be helpful while developing and testing code because they make our assumptions explicit.",
+      "seed": 1234,
+      "wav": "wav/module7_slide_07.wav",
+      "audio": "audio/module7_slide_07.mp3",
+      "captions": "audio/module7_slide_07.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 8,
-      "audio": "module7_slide_08.mp3",
-      "captions": "module7_slide_08.vtt",
-      "text": "This slide focuses on Validate data before analysis. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nGood code checks for common data problems before calculating results. Validate numeric inputs\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Code Efficiency & Built-ins",
+      "transcript": "Let's now think about code efficiency.\n\nWhen people hear the word optimization, they sometimes immediately think about writing complicated algorithms or trying to make every line faster.\n\nThat is usually not the best place to start.\n\nPython already provides many built-in functions that are clear, convenient, and efficient.\n\nFor example, imagine that we want the total of a collection of numbers.\n\nWe could create a variable called total, loop through every value, and add each number to total.\n\nThat works.\n\nBut Python already gives us the sum function.\n\nSimilarly, max can find the largest value, min can find the smallest value, and len can tell us how many items we have.\n\nIn the example, we create a range containing one million numbers and pass it directly to sum.\n\nRun the example and look at the result.\n\nThe important lesson is not just that this code is shorter.\n\nIt is also easier for another Python programmer to immediately understand what we are trying to do.\n\nWhenever Python already provides a clear built-in operation, it is usually worth considering before writing a manual loop.",
+      "seed": 1234,
+      "wav": "wav/module7_slide_08.wav",
+      "audio": "audio/module7_slide_08.mp3",
+      "captions": "audio/module7_slide_08.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 9,
-      "audio": "module7_slide_09.mp3",
-      "captions": "module7_slide_09.vtt",
-      "text": "This slide focuses on Handle expected errors. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nError handling is useful when a problem is expected and the program should continue safely. Convert values safely\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Measure performance with perf_counter()",
+      "transcript": "Sometimes we genuinely need to compare the performance of different approaches.\n\nWhen that happens, we should measure rather than guess.\n\nPython's time module provides perf_counter.\n\nPerf_counter is useful for measuring elapsed time with fairly high precision.\n\nLook at the example.\n\nFirst, we create a list of one hundred thousand numbers.\n\nThen we record the starting time.\n\nAfter that, we calculate the sum.\n\nFinally, we call perf_counter again and subtract the starting time.\n\nThe difference tells us approximately how long the operation took.\n\nRun the example.\n\nYour elapsed time may be slightly different every time you run it. That is normal because your computer and browser are doing many other things in the background.\n\nThe larger lesson here is about workflow.\n\nFirst, make sure the code is correct.\n\nSecond, make sure it is readable.\n\nThen, if performance actually matters, measure the code.\n\nWe should avoid making code harder to understand just because we assume one approach might be faster.",
+      "seed": 1234,
+      "wav": "wav/module7_slide_09.wav",
+      "audio": "audio/module7_slide_09.mp3",
+      "captions": "audio/module7_slide_09.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 10,
-      "audio": "module7_slide_10.mp3",
-      "captions": "module7_slide_10.vtt",
-      "text": "This slide focuses on Generator expressions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA generator expression produces values one at a time. It can be useful for large data streams. Use a generator expression\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Practice: Foundation & Building",
+      "transcript": "Now we are moving into practice.\n\nThe first example is our foundation exercise.\n\nWe want to create a list containing the even numbers from one through ten.\n\nLook carefully at the comprehension.\n\nWe loop through the values, and then we use x modulo two equals zero as our condition.\n\nModulo gives us the remainder after division.\n\nIf a number divided by two has a remainder of zero, the number is even.\n\nBefore running the cell, try to predict the output.\n\nThen run it and confirm your answer.\n\nAfter that, try changing the range so it goes to twenty.\n\nThe second exercise practices lambda functions.\n\nWe create a lambda that accepts two inputs, a and b, and returns their sum.\n\nThen we call the function using three and four.\n\nRun the example.\n\nAfter you understand it, try changing the lambda from addition to multiplication.\n\nThese exercises are intentionally small.\n\nAt this stage, I want you to become comfortable reading the syntax before combining too many advanced ideas together.",
+      "seed": 1234,
+      "wav": "wav/module7_slide_10.wav",
+      "audio": "audio/module7_slide_10.mp3",
+      "captions": "audio/module7_slide_10.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 11,
-      "audio": "module7_slide_11.mp3",
-      "captions": "module7_slide_11.vtt",
-      "text": "This slide focuses on Build a small pipeline. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA pipeline connects small functions. Each step has one clear job. Clean and summarize text labels\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Practice: Intermediate to Mastery",
+      "transcript": "This slide contains three practice examples.\n\nLet's start with the generator.\n\nThe squares function receives n and yields x squared for each value in the range.\n\nFor this small example, we convert the generator to a list so we can easily see all the results.\n\nRemember that the generator itself normally produces the values one at a time.\n\nNext, we have the safe_divide function.\n\nThis example is really about defensive programming.\n\nBefore dividing, we check whether b is zero.\n\nIf it is zero, we return a message instead of allowing Python to perform an invalid division.\n\nRun the example and then change zero to two.\n\nNotice how the behavior changes.\n\nFinally, we compare a manual loop with Python's sum function.\n\nThe manual approach starts with total equal to zero and adds each value individually.\n\nThen we calculate the same result using sum.\n\nBoth answers should be identical.\n\nThis is a useful exercise because it shows that understanding the longer version helps us appreciate what the built-in function is doing for us.",
+      "seed": 1234,
+      "wav": "wav/module7_slide_11.wav",
+      "audio": "audio/module7_slide_11.mp3",
+      "captions": "audio/module7_slide_11.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 12,
-      "audio": "module7_slide_12.mp3",
-      "captions": "module7_slide_12.vtt",
-      "text": "This slide summarizes Module 7. Focus on the patterns you should be able to explain and reuse after completing the examples.\n\n[pause=0.7]\n\nCreate lists and dictionaries clearly. Rank records with custom keys. Use zip and enumerate safely.\n\n[pause=0.7]\n\nCheck inputs before analysis. Handle expected conversion problems. Connect small reusable functions.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Filter adult patient ages",
+      "transcript": "Now let's connect list comprehensions to a simple analytical example.\n\nSuppose we have patient ages and we only want records representing adults.\n\nOur original list contains twenty, fifteen, thirty, seventeen, and forty-five.\n\nWe define adults as ages greater than or equal to eighteen.\n\nThe list comprehension checks every value and keeps only the values that satisfy that condition.\n\nBefore running the code, look at the original list and identify which values you expect to remain.\n\nWe should keep twenty, thirty, and forty-five.\n\nNow run the example and confirm the result.\n\nThis is a very simple dataset, but the analytical idea is important.\n\nFiltering is one of the most common operations in data analysis.\n\nLater, when we use NumPy and Pandas, we will perform similar filtering operations on entire columns and datasets.\n\nThe syntax will be different, but the logical question is exactly the same: which observations satisfy the condition that we care about?",
+      "seed": 1234,
+      "wav": "wav/module7_slide_12.wav",
+      "audio": "audio/module7_slide_12.mp3",
+      "captions": "audio/module7_slide_12.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 13,
+      "title": "Mini analytical generator pipeline",
+      "transcript": "This slide combines several ideas from the module into one small analytical pipeline.\n\nLet's walk through the function slowly.\n\nThe function receives a collection called values.\n\nThe first step creates filtered.\n\nWe use a list comprehension to keep only numbers greater than zero.\n\nSo negative numbers and zero are removed.\n\nThe next step creates ranked.\n\nWe call sorted and use a lambda as the key.\n\nIn this particular example, the lambda simply returns the value itself, so the numbers are sorted from smallest to largest.\n\nThen we loop through the ranked values.\n\nInstead of returning all of them at once, we yield each value individually.\n\nFinally, outside the function, we loop through the generator and print each result.\n\nBefore running the example, look at the original values: three, negative one, two, zero, and five.\n\nNegative one and zero should disappear.\n\nThe remaining values should be two, three, and five, in sorted order.\n\nRun the cell and verify that prediction.\n\nWhat I like about this example is that we can clearly identify each stage: receive the data, filter it, sort it, yield the results, and then inspect the output.\n\nThat kind of step-by-step structure is very important when analytical workflows become more complicated.",
+      "seed": 1234,
+      "wav": "wav/module7_slide_13.wav",
+      "audio": "audio/module7_slide_13.mp3",
+      "captions": "audio/module7_slide_13.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 14,
+      "title": "Use advanced syntax only when it improves clarity",
+      "transcript": "Let's finish Module 7 with the most important message from this lesson.\n\nAdvanced Python syntax is useful, but it is not automatically better than basic Python syntax.\n\nA list comprehension is excellent when the transformation or filtering rule is simple.\n\nBut if the comprehension becomes very long, a regular loop may be easier to understand.\n\nA lambda works well for a short expression, especially when used as a sorting key.\n\nBut if the logic becomes complicated, create a normal named function.\n\nGenerators are useful when we want to process values one at a time or avoid storing a large result in memory.\n\nDebugging techniques help us understand what is happening inside our programs.\n\nAnd built-in functions can often make our code both shorter and clearer.\n\nWhen thinking about efficiency, remember to measure before optimizing.\n\nThe goal throughout this course is not to write code that looks advanced.\n\nThe goal is to write code that solves the problem clearly and can still be understood later by you or by someone else.\n\nIn the next module, we will build on these ideas and look at more professional Python practices, including exception handling, regular expressions, documentation, Git concepts, style, and testing.",
+      "seed": 1234,
+      "wav": "wav/module7_slide_14.wav",
+      "audio": "audio/module7_slide_14.mp3",
+      "captions": "audio/module7_slide_14.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     }
   ]
 }

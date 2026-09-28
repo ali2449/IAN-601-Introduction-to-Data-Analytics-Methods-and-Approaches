@@ -1,28 +1,49 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.487
-This slide focuses on Create a simple class Start
-with the meaning of the idea
+00:00:00.000 --> 00:00:03.792
+So far, we have used modules that already exist.
 
-00:00:05.711 --> 00:00:11.277
-then connect it to the example and the larger
-analytical workflow This
+00:00:03.792 --> 00:00:07.527
+Now we are going to think about creating our own module.
 
-00:00:11.290 --> 00:00:17.371
-class stores information about one customer and
-includes a method that describes the customer Create
+00:00:07.527 --> 00:00:11.822
+A module can simply be a Python file that you write yourself.
 
-00:00:17.398 --> 00:00:22.900
-objects from a class Before running the example
-predict what
+00:00:11.822 --> 00:00:17.347
+For example, imagine a project with two files: main.py and calculations.py.
 
-00:00:22.926 --> 00:00:28.021
-the output should look like Run it in the browser
-inspect the result then change
+00:00:17.347 --> 00:00:24.082
+The calculations.py file can store reusable formulas, such as calculate_profit or profit_margin.
 
-00:00:28.047 --> 00:00:33.666
-one input key value or condition and run it again
-Focus on what changed
+00:00:24.082 --> 00:00:27.377
+The main.py file can run the analysis and use those formulas.
 
-00:00:33.692 --> 00:00:34.232
-and why
+00:00:27.377 --> 00:00:31.987
+This structure keeps the main file shorter.
+
+00:00:31.987 --> 00:00:34.987
+Instead of placing every helper function directly into main.py,
+
+00:00:34.987 --> 00:00:39.722
+we move related helper functions into a separate file.
+
+00:00:39.722 --> 00:00:43.277
+This is useful when a script starts to become too long.
+
+00:00:43.277 --> 00:00:48.812
+It is also useful when the same function is needed in more than one place.
+
+00:00:48.812 --> 00:00:54.647
+A beginner-friendly way to think about this is: if you have a group of related helper functions,
+
+00:00:54.647 --> 00:00:57.332
+they may belong in their own module.
+
+00:00:57.332 --> 00:01:03.557
+You do not need to build a large software project right away.
+
+00:01:03.557 --> 00:01:09.872
+The goal here is to understand the basic structure: one Python file can import useful code from another
+
+00:01:09.872 --> 00:01:10.720
+Python file.

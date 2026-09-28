@@ -1,97 +1,46 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:01.932
-At this point you may be wondering
+00:00:00.000 --> 00:00:05.307
+Beginners often wonder whether they should use a function, a dictionary, or a class.
 
-00:00:01.945 --> 00:00:03.366
-when you should use a function a
+00:00:05.307 --> 00:00:09.682
+A function is best when you need to perform one reusable task.
 
-00:00:03.392 --> 00:00:06.526
-dictionary or a class There is no
+00:00:09.682 --> 00:00:15.882
+For example, get_profit can receive sales and costs and return the profit.
 
-00:00:06.539 --> 00:00:08.079
-need to use a class for every
+00:00:15.882 --> 00:00:20.497
+A dictionary is best when you mainly need to store related values.
 
-00:00:08.092 --> 00:00:11.618
-problem In fact the simplest structure that
+00:00:20.497 --> 00:00:25.752
+For example, a product dictionary might store the product name and price.
 
-00:00:11.645 --> 00:00:13.724
-clearly solves the problem is usually the
+00:00:25.752 --> 00:00:29.812
+A class is best when data and behavior belong together.
 
-00:00:13.737 --> 00:00:16.540
-best choice Use a function when you
+00:00:29.812 --> 00:00:37.042
+For example, a Product class might store a price and also have a method that calculates the sale
 
-00:00:16.566 --> 00:00:19.118
-mainly need to perform one reusable task
+00:00:37.042 --> 00:00:38.362
+price. The beginner rule is to start simple.
 
-00:00:20.039 --> 00:00:22.382
-For example a function called get profit
+00:00:38.362 --> 00:00:44.047
+Do not use a class just because it sounds advanced.
 
-00:00:22.408 --> 00:00:24.526
-can receive sales and costs and return
+00:00:44.047 --> 00:00:46.752
+If a function solves the problem clearly, use a function.
 
-00:00:24.553 --> 00:00:27.355
-the profit Use a dictionary when you
+00:00:46.752 --> 00:00:52.792
+If you only need to store related values, a dictionary may be enough.
 
-00:00:27.382 --> 00:00:30.645
-mainly need to store related values For
+00:00:52.792 --> 00:00:56.742
+Move to a class when one concept has both stored data and repeated actions.
 
-00:00:30.658 --> 00:00:33.026
-example a product dictionary might store a
+00:00:56.742 --> 00:01:01.822
+This decision is part of writing clean code.
 
-00:00:33.053 --> 00:00:36.592
-product name price and category Use a
+00:01:01.822 --> 00:01:05.107
+The goal is not to use the most advanced tool.
 
-00:00:36.605 --> 00:00:38.500
-class when the data and the behavior
-
-00:00:38.526 --> 00:00:42.395
-naturally belong together For example a Product
-
-00:00:42.421 --> 00:00:44.053
-class can store a name and price
-
-00:00:44.066 --> 00:00:46.092
-and also provide a sale price method
-
-00:00:47.013 --> 00:00:48.816
-A class is especially useful when you
-
-00:00:48.842 --> 00:00:50.711
-expect to create many objects of the
-
-00:00:50.724 --> 00:00:52.658
-same type or when several methods need
-
-00:00:52.671 --> 00:00:54.342
-to work with the same stored data
-
-00:00:55.276 --> 00:00:57.382
-But classes also add structure so do
-
-00:00:57.395 --> 00:00:59.184
-not use them simply because they look
-
-00:00:59.197 --> 00:01:02.237
-more advanced A good beginner rule is
-
-00:01:02.263 --> 00:01:04.987
-to start simple If a function is
-
-00:01:05.013 --> 00:01:08.105
-enough use a function If you only
-
-00:01:08.132 --> 00:01:10.658
-need to store related values a dictionary
-
-00:01:10.684 --> 00:01:13.342
-may be enough Move to a class
-
-00:01:13.368 --> 00:01:15.579
-when one concept clearly has both stored
-
-00:01:15.605 --> 00:01:18.724
-data and repeated actions The goal is
-
-00:01:18.737 --> 00:01:21.460
-readable code not the most complicated code
+00:01:05.107 --> 00:01:07.840
+The goal is to use the right tool for the job.

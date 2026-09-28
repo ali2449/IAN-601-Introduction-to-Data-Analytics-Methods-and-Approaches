@@ -1,19 +1,49 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.066
-This slide focuses on What is a class Start with the
-meaning of the idea
+00:00:00.000 --> 00:00:05.547
+In this example, we import the statistics module using the alias stats.
 
-00:00:05.289 --> 00:00:11.134
-then connect it to the example and the larger
-analytical workflow A class
+00:00:05.547 --> 00:00:07.902
+We start with a list of scores.
 
-00:00:11.147 --> 00:00:17.466
-is a blueprint An object is one item created from
-that blueprint Attributes
+00:00:07.902 --> 00:00:14.547
+Then we calculate the average using stats.mean and the median using stats.median.
 
-00:00:17.492 --> 00:00:23.007
-store information Methods perform actions The
+00:00:14.547 --> 00:00:18.872
+Notice how the alias still tells us where the function comes from.
 
-00:00:23.034 --> 00:00:25.349
-word self means this specific object
+00:00:18.872 --> 00:00:24.642
+When we see stats.mean, we know that mean is coming from the statistics module.
+
+00:00:24.642 --> 00:00:28.222
+The name is shorter, but it is still meaningful.
+
+00:00:28.222 --> 00:00:30.942
+We also use min and max, which are built-in Python functions.
+
+00:00:30.942 --> 00:00:37.662
+These do not need an import because Python already knows them.
+
+00:00:37.662 --> 00:00:43.522
+Before running the code, look at the list of scores and think about what the output should include.
+
+00:00:43.522 --> 00:00:48.117
+You should see the original scores, the average, the median, and the range.
+
+00:00:48.117 --> 00:00:54.577
+The range is calculated by subtracting the lowest score from the highest score.
+
+00:00:54.577 --> 00:00:59.517
+After running the cell, add one more score to the list and run it again.
+
+00:00:59.517 --> 00:01:03.392
+Watch how the average, median, and range change.
+
+00:01:03.392 --> 00:01:07.057
+This example connects imports to analytics.
+
+00:01:07.057 --> 00:01:12.872
+Many analytical tasks rely on reusable functions that summarize or transform data.
+
+00:01:12.872 --> 00:01:16.627
+Importing the right module keeps the code short and readable.
