@@ -1,0 +1,64 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.597
+Let's begin with list comprehensions.
+
+00:00:02.597 --> 00:00:08.037
+A list comprehension is a shorter way to create a new list using a loop.
+
+00:00:08.037 --> 00:00:09.937
+Look at the first example.
+
+00:00:09.937 --> 00:00:14.292
+We have x squared for x in range five.
+
+00:00:14.292 --> 00:00:20.252
+If this syntax feels strange at first, think about the regular loop that would do the same thing.
+
+00:00:20.252 --> 00:00:27.452
+We would create an empty list, loop through the numbers from zero through four, calculate x squared,
+
+00:00:27.452 --> 00:00:30.257
+and then append each result to the list.
+
+00:00:30.257 --> 00:00:34.217
+The list comprehension combines those steps into one line.
+
+00:00:34.217 --> 00:00:39.667
+Before you run the first cell, try to predict the result.
+
+00:00:39.667 --> 00:00:43.442
+We start with zero, then one, two, three, and four.
+
+00:00:43.442 --> 00:00:48.932
+Each number is squared. So we should get zero, one, four, nine, and sixteen.
+
+00:00:48.932 --> 00:00:51.827
+Go ahead and run the cell and confirm the result.
+
+00:00:51.827 --> 00:00:55.097
+The second example adds a condition.
+
+00:00:55.097 --> 00:01:00.862
+We have a list of ages, and we only want values greater than or equal to eighteen.
+
+00:01:00.862 --> 00:01:06.802
+You can read the comprehension almost like a sentence: give me each age from the ages list if
+
+00:01:06.802 --> 00:01:09.692
+that age is at least eighteen.
+
+00:01:09.692 --> 00:01:13.707
+Run the example and look at which values remain.
+
+00:01:13.707 --> 00:01:15.867
+Then try changing one of the ages.
+
+00:01:15.867 --> 00:01:21.642
+For example, change seventeen to eighteen and run the cell again.
+
+00:01:21.642 --> 00:01:27.847
+This is a very common analytical pattern: start with a collection, apply a rule,
+
+00:01:27.847 --> 00:01:32.320
+and create a new collection from the values that meet that rule.
