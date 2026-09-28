@@ -8,10 +8,109 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs/loader.js"></script>
 <style>
 :root{--bg:#edf2f7;--surface:#fff;--surface2:#f7f9fc;--text:#172033;--muted:#64748b;--border:#dbe3ec;--primary:#1f5f9b;--primary2:#2f78b7;--soft:#eaf3fb;--accent:#c67a26;--good:#2d7d59;--bad:#a54444;--shadow:0 16px 42px rgba(27,43,65,.12)}html[data-theme="dark"]{--bg:#0f1720;--surface:#17212c;--surface2:#111a24;--text:#edf4fb;--muted:#aab8c8;--border:#324151;--primary:#6aaee6;--primary2:#8cc2ec;--soft:#162f44;--accent:#e1a45f;--good:#6ec49a;--bad:#e18888;--shadow:0 18px 48px rgba(0,0,0,.32)}*{box-sizing:border-box}html,body{height:100%;margin:0}body{overflow:hidden;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}button,select,textarea{font:inherit}button{cursor:pointer}code,pre{font-family:"Source Code Pro",Consolas,monospace}.app{height:100dvh;display:grid;grid-template-rows:58px minmax(0,1fr) 154px}.topbar{display:flex;align-items:center;gap:10px;padding:0 16px;background:var(--surface);border-bottom:1px solid var(--border);z-index:5}.brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--primary);min-width:250px}.brand-mark{width:31px;height:31px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(135deg,#0c2340,var(--primary2));color:#fff;border:2px solid var(--accent);font-size:13px}.brand small{display:block;color:var(--muted);font-size:11px;font-weight:700}.top-actions{margin-left:auto;display:flex;align-items:center;gap:7px}.control,.nav-btn,.narration-btn,.audio-play,select{min-height:33px;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text);padding:6px 10px;font-weight:800}.control.primary{background:var(--primary);border-color:var(--primary);color:#fff}.status{color:var(--muted);font-size:12px;font-weight:800;white-space:nowrap}.stage{min-height:0;padding:12px 18px;display:grid;place-items:center}.slide{display:none;width:min(1280px,100%);height:100%;overflow:auto;background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:24px 30px}.slide.active{display:block}.slide-header{display:flex;justify-content:space-between;gap:18px;margin-bottom:12px}.kicker{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}.slide h2{font-size:clamp(28px,2.75vw,42px);line-height:1.04;letter-spacing:-.04em;margin:3px 0 0;color:var(--primary)}.slide-badge{border:1px solid var(--border);border-radius:999px;padding:7px 10px;color:var(--muted);font-size:12px;font-weight:850;height:max-content}.lead{font-size:17px;line-height:1.42;font-weight:650;margin:0 0 12px}.two-col{display:grid;grid-template-columns:.92fr 1.08fr;gap:18px;align-items:start}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.card,.step,.check-card,.project-step{border:1px solid var(--border);border-radius:14px;background:var(--surface2);padding:13px}.card h3,.step h3,.check-card h3{margin:0 0 6px;color:var(--primary);font-size:16px}.card p,.step p,.check-card p{margin:0;color:var(--muted);font-size:13px}.step span{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--primary);color:#fff;font-weight:900;margin-bottom:8px}.callout{border:1px solid var(--border);border-left:5px solid var(--primary);border-radius:14px;background:var(--surface2);padding:11px 13px;margin-top:12px;font-size:14px}.callout strong{color:var(--primary)}.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:14px;margin:10px 0}table{width:100%;border-collapse:collapse;min-width:520px}th,td{border-bottom:1px solid var(--border);padding:8px 10px;text-align:left;font-size:13px}th{color:var(--primary);background:var(--surface2)}.flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:12px 0}.flow div{border:1px solid var(--border);background:var(--surface2);border-radius:13px;padding:10px 12px;text-align:center;min-width:120px}.flow b{color:var(--primary);font-size:18px}.flow strong{display:block;color:var(--primary)}.flow span{color:var(--muted);font-size:12px}.hero-visual{min-height:230px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(145deg,color-mix(in srgb,var(--primary) 13%,var(--surface2)),color-mix(in srgb,var(--accent) 10%,var(--surface2)));display:grid;place-items:center;padding:18px}.quality-stack{width:86%;display:grid;gap:8px}.quality-stack div{border:1px solid var(--border);border-radius:12px;background:color-mix(in srgb,var(--surface) 82%,transparent);padding:10px;text-align:center;font-weight:900}.m8-hero-grid{height:100%;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(410px,.98fr);gap:32px;align-items:center}.m8-hero-lead{margin:0 0 16px;font-size:clamp(32px,3.15vw,46px);line-height:1.08;font-weight:900;letter-spacing:-.045em;color:var(--text)}.m8-hero-sub{margin:0;color:var(--muted);font-size:17px;line-height:1.5}.m8-hero-goal{margin-top:20px;padding:13px 15px;border:1px solid var(--border);border-left:5px solid var(--primary);border-radius:13px;background:var(--surface2);display:grid;gap:4px}.m8-hero-goal strong{color:var(--primary);font-size:13px;text-transform:uppercase;letter-spacing:.06em}.m8-quality-model{display:grid;gap:9px;padding:18px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(145deg,color-mix(in srgb,var(--primary) 10%,var(--surface2)),color-mix(in srgb,var(--accent) 9%,var(--surface2)))}.m8-quality-model>div{display:grid;grid-template-columns:34px 120px 1fr;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--border);border-radius:12px;background:color-mix(in srgb,var(--surface) 88%,transparent)}.m8-quality-model span{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--primary);color:#fff;font-size:12px;font-weight:900}.m8-quality-model strong{font-size:14px}.m8-quality-model small{font-size:12px;color:var(--muted);line-height:1.3}.privacy-grid,.mini-project{display:grid;grid-template-columns:1fr 1fr;gap:12px}.privacy-grid div{border:1px solid var(--border);border-radius:14px;background:var(--surface2);padding:13px}.privacy-grid strong,.project-step strong{display:block;color:var(--primary);margin-bottom:5px}.code-cell{border:1px solid #8998a8;border-radius:9px;overflow:hidden;background:#1e1e1e;box-shadow:0 8px 20px rgba(15,23,42,.15)}.cell-head{display:flex;justify-content:space-between;gap:12px;padding:8px 12px;background:#31445a;color:#f8fafc;border-bottom:1px solid #172536}.cell-label{font-size:10px;color:#f3b55c;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.cell-head h3{font-size:13px;margin:1px 0}.cell-head p{font-size:10.5px;color:#cbd5e1;margin:0}.file-pill{border:1px solid #9aa7b6;border-radius:999px;padding:4px 8px;color:#dbeafe;font:10px "Source Code Pro",monospace;height:max-content}.editor-shell{background:#1e1e1e}.editor-topbar{height:26px;display:flex;align-items:center;gap:6px;padding:0 10px;background:#252526;color:#d4d4d4}.dot{width:9px;height:9px;border-radius:50%}.red{background:#ff5f56}.yellow{background:#ffbd2e}.green{background:#27c93f}.tab-name{margin-left:6px;font:11px "Source Code Pro",monospace}.code-input{display:block;width:100%;height:132px;border:0;resize:vertical;background:#1e1e1e;color:#d4d4d4;padding:11px 13px;font:12.5px/1.45 "Source Code Pro",Consolas,monospace;outline:0}.editor-status{height:20px;display:flex;justify-content:flex-end;gap:12px;align-items:center;background:#007acc;color:#fff;font-size:9px;padding:0 9px}.cell-actions{display:flex;gap:6px;padding:6px 9px;background:#31445a}.cell-actions .control{min-height:27px;padding:4px 8px;font-size:10px;color:#fff;background:#42566d;border-color:#60758c}.cell-actions .run-cell{background:#2f78b7;border-color:#2f78b7}.output{display:none;margin:0;border-top:1px solid #aab5c1;background:#0f172a;color:#f8fafc;padding:9px 11px;white-space:pre-wrap;font:11px/1.45 "Source Code Pro",Consolas,monospace;max-height:105px;overflow:auto}.output.show{display:block}.output.error{color:#fecaca;background:#450a0a}.bottombar{border-top:1px solid var(--border);display:grid;grid-template-columns:auto minmax(0,1fr) minmax(230px,310px) auto;gap:10px;padding:7px 12px;align-items:center;background:var(--surface);z-index:5;min-height:154px}.footer-left,.footer-right{display:flex}.audio-block{display:grid;gap:5px;min-width:0}.narration-controls{display:flex;align-items:center;gap:5px;flex-wrap:wrap}.narration-btn,.narration-speed{min-height:28px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);padding:4px 7px;font-size:10px;font-weight:800;white-space:nowrap}.narration-btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}#ccToggle[aria-pressed="true"]{background:var(--primary);color:#fff}.subtitle-bar{min-height:38px;display:flex;align-items:center;justify-content:center;padding:5px 12px;border:1px solid #2f3a46;border-radius:8px;background:rgba(18,22,27,.96);color:#fff;text-align:center;font:600 13px/1.35 Inter,sans-serif;overflow:hidden}.subtitle-bar span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.audio-player{display:grid;grid-template-columns:auto minmax(100px,1fr) auto auto;gap:6px;align-items:center;border:1px solid var(--border);border-radius:10px;padding:4px 7px;background:var(--surface2)}.audio-dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}.audio-player.playing .audio-dot{background:var(--good)}.audio-title{font-size:10px;font-weight:850}.audio-seek{width:100%}.audio-time{color:var(--muted);font:10px "Source Code Pro",monospace}.bottom-nav{display:grid;gap:5px}.bottom-nav select{width:100%;font-size:11px}.bottom-progress{display:flex;gap:7px;align-items:center}.progress-track{height:7px;flex:1;background:var(--border);border-radius:999px;overflow:hidden}.progress-bar{height:100%;width:0;background:var(--primary)}.slide-count{font-size:10px;font-weight:800;color:var(--muted)}.transcript-panel{position:fixed;right:22px;bottom:162px;width:min(560px,calc(100vw - 44px));max-height:min(520px,70vh);z-index:20;border:1px solid var(--border);border-radius:18px;background:var(--surface);box-shadow:0 20px 60px rgba(0,0,0,.28);display:none;grid-template-rows:auto minmax(0,1fr);overflow:hidden}.transcript-panel.open{display:grid}.transcript-head{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;border-bottom:1px solid var(--border);background:var(--surface2)}.transcript-body{overflow:auto;padding:15px 17px;font-size:14px;line-height:1.62;white-space:pre-wrap}.modal-backdrop{position:fixed;inset:0;background:rgba(10,18,28,.58);display:none;place-items:center;z-index:30;padding:20px}.modal-backdrop.show{display:grid}.modal{width:min(700px,96vw);max-height:82vh;overflow:auto;background:var(--surface);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow);padding:22px}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:14px}.module-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}.module-links a{text-decoration:none;border:1px solid var(--border);border-radius:10px;padding:10px 12px;color:var(--text);background:var(--surface2);font-weight:750}.module-links a.current{border-color:var(--primary);color:var(--primary)}@media(max-width:1000px){.app{grid-template-rows:auto minmax(0,1fr) 184px}.topbar{flex-wrap:wrap;padding:8px 12px;height:auto}.top-actions{width:100%;overflow-x:auto}.bottombar{min-height:184px;grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto auto}.audio-block{grid-column:1/-1}.bottom-nav{grid-column:2;grid-row:2}.two-col,.grid-3,.grid-4,.mini-project,.privacy-grid,.m8-hero-grid{grid-template-columns:1fr}.slide{padding:20px}.slide-header{display:block}.slide-badge{display:none}}@media(max-width:720px){body{overflow:auto}.app{height:auto;display:block}.topbar{position:sticky;top:0}.stage{display:block;padding:10px}.slide{height:auto;max-height:none;overflow:visible;padding:16px;border-radius:14px}.slide.active{display:block}.slide h2{font-size:clamp(24px,8vw,34px)}.lead{font-size:16px}.m8-hero-lead{font-size:clamp(27px,8vw,38px)}.m8-quality-model>div{grid-template-columns:30px 1fr}.m8-quality-model small{grid-column:2}.code-input{height:220px}.bottombar{position:relative;min-height:0;grid-template-columns:1fr 1fr;grid-template-areas:"audio audio" "nav nav" "prev next";gap:8px;padding:8px;margin-top:8px}.audio-block{grid-area:audio}.bottom-nav{grid-area:nav}.footer-left{grid-area:prev}.footer-right{grid-area:next}.nav-btn{width:100%}.narration-controls{overflow-x:auto;flex-wrap:nowrap}.audio-player{grid-template-columns:1fr auto}.audio-title,.audio-seek{grid-column:1/-1}.transcript-panel{inset:12px;width:auto;bottom:12px;max-height:none}}
 </style>
-</head>
+<style id="module8-vscode-editor">
+.code-cell{
+  border:1px solid #6b7280!important;
+  border-radius:8px!important;
+  overflow:hidden!important;
+  background:#1e1e1e!important;
+  box-shadow:0 8px 22px rgba(15,23,42,.18)!important;
+}
+.code-cell .cell-head{
+  background:#2d3d50!important;
+  border-bottom:1px solid #172536!important;
+  padding:8px 12px!important;
+}
+.code-cell .cell-head h3{color:#f8fafc!important}
+.code-cell .cell-head p{color:#cbd5e1!important}
+.code-cell .cell-label{color:#f3b55c!important}
+.code-cell .file-pill{color:#dbeafe!important;border-color:#8192a5!important}
+.code-cell .editor-shell{background:#1e1e1e!important}
+.code-cell .editor-topbar{
+  height:30px!important;
+  background:#252526!important;
+  border-bottom:1px solid #333!important;
+  display:flex!important;
+  align-items:center!important;
+  padding:0 10px!important;
+}
+.code-cell .tab-name{
+  margin-left:7px!important;
+  padding:7px 12px 6px!important;
+  background:#1e1e1e!important;
+  border-top:2px solid #3794ff!important;
+  color:#d4d4d4!important;
+  font:11px Consolas,"Courier New",monospace!important;
+}
+.code-cell .code-input{
+  display:block;
+  width:100%!important;
+  height:150px!important;
+  border:0!important;
+  resize:vertical!important;
+  background:#1e1e1e!important;
+  color:#d4d4d4!important;
+  padding:12px 14px!important;
+  outline:0!important;
+  font:13px/1.5 Consolas,"Courier New",monospace!important;
+}
+.code-cell .monaco-host{
+  display:none;
+  width:100%;
+  height:150px;
+  background:#1e1e1e;
+}
+.code-cell.monaco-ready .code-input{display:none!important}
+.code-cell.monaco-ready .monaco-host{display:block!important}
+.code-cell .editor-status{
+  height:23px!important;
+  display:flex!important;
+  justify-content:flex-end!important;
+  align-items:center!important;
+  gap:14px!important;
+  padding:0 10px!important;
+  background:#007acc!important;
+  color:#fff!important;
+  font:10px "Segoe UI",Arial,sans-serif!important;
+}
+.code-cell .cell-actions{
+  background:#2d3d50!important;
+  padding:6px 9px!important;
+  gap:6px!important;
+}
+.code-cell .cell-actions .control{
+  min-height:29px!important;
+  padding:4px 9px!important;
+  border-color:#60758c!important;
+  background:#42566d!important;
+  color:#fff!important;
+  font-size:11px!important;
+}
+.code-cell .cell-actions .run-cell{
+  background:#0e639c!important;
+  border-color:#1177bb!important;
+}
+.code-cell .cell-actions .run-cell:hover{background:#1177bb!important}
+.code-cell .output{
+  margin:0!important;
+  border-top:1px solid #3b4654!important;
+  background:#0f172a!important;
+  color:#f8fafc!important;
+  padding:10px 12px!important;
+  white-space:pre-wrap!important;
+  font:11.5px/1.45 Consolas,"Courier New",monospace!important;
+  max-height:115px!important;
+  overflow:auto!important;
+}
+.code-cell .output.error{background:#450a0a!important;color:#fecaca!important}
+@media(max-width:720px){
+  .code-cell .code-input,.code-cell .monaco-host{height:230px!important}
+}
+</style></head>
 <body>
 <div class="app">
 <header class="topbar"><div class="brand"><div class="brand-mark">8</div><div>IAN 601 · Module 8<small>Professional Practices</small></div></div><div class="top-actions"><span id="pyStatus" class="status">Python loads when code runs</span><button class="control" id="themeBtn">Theme</button><button class="control" id="resetPythonBtn">Reset Python</button><button class="control" id="progressBtn">Progress <span id="progressPct">0%</span></button><button class="control" id="fullBtn">Fullscreen</button><button class="control primary" id="runSlideBtn">Run slide ▶</button><button class="control" id="modulesBtn">☰ Course Modules</button></div></header>
@@ -22,7 +121,33 @@
 <div class="modal-backdrop" id="modulesModal"><div class="modal"><div class="modal-head"><h2 style="margin:0">IAN 601 Course Modules</h2><button class="control" id="modulesCloseBtn">Close</button></div><div class="module-links"><a href="s_module1.html">Module 1</a><a href="s_module2.html">Module 2</a><a href="s_module3.html">Module 3</a><a href="s_module4.html">Module 4</a><a href="s_module5.html">Module 5</a><a href="s_module6.html">Module 6</a><a href="s_module7.html">Module 7</a><a class="current" href="s_module8.html">Module 8 · Current</a><a href="s_module9.html">Module 9</a><a href="s_module10.html">Module 10</a><a href="s_module11.html">Module 11</a><a href="s_module12.html">Module 12</a><a href="s_module13.html">Module 13</a><a href="s_module14.html">Module 14</a></div></div></div>
 <div class="modal-backdrop" id="progressModal"><div class="modal"><div class="modal-head"><h2 style="margin:0">Module 8 Progress</h2><button class="control" id="progressCloseBtn">Close</button></div><p style="color:var(--muted)">Progress is saved in this browser.</p><div class="progress-track" style="height:12px"><div id="progressMeter" class="progress-bar"></div></div><div id="progressText" style="margin-top:8px;color:var(--muted)"></div><div id="progressList" class="module-links"></div><button class="control" id="resetProgressBtn" style="margin-top:14px">Reset saved progress</button></div></div>
 <script>
-function esc(s){return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')}function cell(file,title,desc,code){return `<div class="code-cell"><div class="cell-head"><div><div class="cell-label">Executable Python</div><h3>${title}</h3><p>${desc}</p></div><span class="file-pill">${file}</span></div><div class="editor-shell"><div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">${file}</span></div><textarea class="code-input" spellcheck="false">${esc(code)}</textarea><div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>Python</span></div></div><div class="cell-actions"><button class="control run-cell">▶ Run</button><button class="control reset-cell">Reset</button><button class="control copy-cell">Copy</button></div><pre class="output">Click Run to execute this cell.</pre></div>`}function slide(title,kicker,html){return `<section class="slide" data-title="${title}"><header class="slide-header"><div><span class="kicker">${kicker}</span><h2>${title}</h2></div><div class="slide-badge">IAN 601 · Module 8</div></header>${html}</section>`}
+function esc(s){return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')}
+function cell(file,title,desc,code){
+  return `<div class="code-cell" data-filename="${file}">
+    <div class="cell-head">
+      <div><div class="cell-label">Executable Python</div><h3>${title}</h3><p>${desc}</p></div>
+      <span class="file-pill">${file}</span>
+    </div>
+    <div class="editor-shell">
+      <div class="editor-topbar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="tab-name">${file}</span>
+      </div>
+      <textarea class="code-input" spellcheck="false" aria-label="Python editor fallback">${esc(code)}</textarea>
+      <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+      <div class="editor-status">
+        <span class="cursor-position">Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span>
+      </div>
+    </div>
+    <div class="cell-actions">
+      <button class="control run-cell" type="button">▶ Run</button>
+      <button class="control reset-cell" type="button">Reset</button>
+      <button class="control copy-cell" type="button">Copy</button>
+    </div>
+    <pre class="output">Click Run to execute this cell.</pre>
+  </div>`;
+}
+function slide(title,kicker,html){return `<section class="slide" data-title="${title}"><header class="slide-header"><div><span class="kicker">${kicker}</span><h2>${title}</h2></div><div class="slide-badge">IAN 601 · Module 8</div></header>${html}</section>`}
 const codes={names:`monthly_sales = [1200, 1350, 1280, 1410]
 month_count = len(monthly_sales)
 average_monthly_sales = sum(monthly_sales) / month_count
@@ -166,7 +291,112 @@ slide('Professional workflow checklist','Wrap-up',`<p class="lead">Use this chec
 document.getElementById('stage').innerHTML=slidesData.join('');
 const MANIFEST={prefix:'module8',slide_count:18,slides:Array.from({length:18},(_,i)=>({slide:i+1,title:document.querySelectorAll('.slide')[i].dataset.title,audio:`audio/module8_slide_${String(i+1).padStart(2,'0')}.mp3`,captions:`captions/module8_slide_${String(i+1).padStart(2,'0')}.vtt`,text:document.querySelectorAll('.slide')[i].dataset.title}))};
 const slides=[...document.querySelectorAll('.slide')],slideSelect=document.getElementById('slideSelect'),slideCount=document.getElementById('slideCount'),progressBar=document.getElementById('progressBar');let current=0,pyodide=null,pyInit=null;slides[0].classList.add('active');slides.forEach((s,i)=>{const o=document.createElement('option');o.value=i;o.textContent=(i+1)+'. '+s.dataset.title;slideSelect.appendChild(o)});function showSlide(i){current=Math.max(0,Math.min(i,slides.length-1));slides.forEach((s,j)=>s.classList.toggle('active',j===current));slideSelect.value=current;slideCount.textContent=(current+1)+' / '+slides.length;progressBar.style.width=((current+1)/slides.length*100)+'%';document.getElementById('prevBtn').disabled=current===0;document.getElementById('nextBtn').disabled=current===slides.length-1;loadAudio();updateProgress();history.replaceState(null,'','#slide-'+(current+1));}document.getElementById('prevBtn').onclick=()=>showSlide(current-1);document.getElementById('nextBtn').onclick=()=>showSlide(current+1);slideSelect.onchange=()=>showSlide(Number(slideSelect.value));document.getElementById('themeBtn').onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark'};document.getElementById('fullBtn').onclick=async()=>{if(!document.fullscreenElement)await document.documentElement.requestFullscreen?.();else await document.exitFullscreen?.()};
-async function loadPython(){if(pyodide)return pyodide;if(!pyInit){document.getElementById('pyStatus').textContent='Python loading...';pyInit=loadPyodide().then(async py=>{await py.runPythonAsync("import sys,io,traceback\n_ns={}\ndef _run(code):\n    out=io.StringIO();err=io.StringIO();oldout,olderr=sys.stdout,sys.stderr\n    try:\n        sys.stdout,sys.stderr=out,err;exec(code,_ns,_ns);ok=True\n    except Exception:\n        ok=False;err.write(traceback.format_exc())\n    finally:\n        sys.stdout,sys.stderr=oldout,olderr\n    return {'ok':ok,'out':out.getvalue(),'err':err.getvalue()}");pyodide=py;document.getElementById('pyStatus').textContent='Python ready';return py})}return pyInit}async function runCell(cell){const out=cell.querySelector('.output');out.className='output show';out.textContent='Running...';try{const py=await loadPython();const res=py.globals.get('_run')(cell.querySelector('.code-input').value).toJs({dict_converter:Object.fromEntries});out.textContent=(res.out+res.err).trim()||'Code ran successfully.';out.className='output show '+(res.ok?'success':'error')}catch(e){out.textContent=String(e);out.className='output show error'}}function wireCells(){document.querySelectorAll('.code-cell').forEach(c=>{const original=c.querySelector('.code-input').value;c.querySelector('.run-cell').onclick=()=>runCell(c);c.querySelector('.reset-cell').onclick=()=>{c.querySelector('.code-input').value=original;c.querySelector('.output').className='output';c.querySelector('.output').textContent='Click Run to execute this cell.'};c.querySelector('.copy-cell').onclick=()=>navigator.clipboard.writeText(c.querySelector('.code-input').value)})}wireCells();document.getElementById('runSlideBtn').onclick=async()=>{for(const c of slides[current].querySelectorAll('.code-cell'))await runCell(c)};document.getElementById('resetPythonBtn').onclick=()=>{pyodide=null;pyInit=null;document.getElementById('pyStatus').textContent='Python reset'};
+async function loadPython(){if(pyodide)return pyodide;if(!pyInit){document.getElementById('pyStatus').textContent='Python loading...';pyInit=loadPyodide().then(async py=>{await py.runPythonAsync("import sys,io,traceback\n_ns={}\ndef _run(code):\n    out=io.StringIO();err=io.StringIO();oldout,olderr=sys.stdout,sys.stderr\n    try:\n        sys.stdout,sys.stderr=out,err;exec(code,_ns,_ns);ok=True\n    except Exception:\n        ok=False;err.write(traceback.format_exc())\n    finally:\n        sys.stdout,sys.stderr=oldout,olderr\n    return {'ok':ok,'out':out.getvalue(),'err':err.getvalue()}");pyodide=py;document.getElementById('pyStatus').textContent='Python ready';return py})}return pyInit}const editors=new Map();
+const originalCode=new Map();
+
+function getCode(cell){
+  const editor=editors.get(cell);
+  return editor ? editor.getValue() : cell.querySelector('.code-input').value;
+}
+function setCode(cell,code){
+  const editor=editors.get(cell);
+  if(editor) editor.setValue(code);
+  cell.querySelector('.code-input').value=code;
+}
+async function runCell(cell){
+  const out=cell.querySelector('.output');
+  const runButton=cell.querySelector('.run-cell');
+  out.className='output show';
+  out.textContent='Running...';
+  runButton.disabled=true;
+  try{
+    const py=await loadPython();
+    const res=py.globals.get('_run')(getCode(cell)).toJs({dict_converter:Object.fromEntries});
+    out.textContent=(res.out+res.err).trim()||'Code ran successfully.';
+    out.className='output show '+(res.ok?'success':'error');
+  }catch(e){
+    out.textContent=String(e);
+    out.className='output show error';
+  }finally{
+    runButton.disabled=false;
+  }
+}
+function wireCells(){
+  document.querySelectorAll('.code-cell').forEach(cell=>{
+    const input=cell.querySelector('.code-input');
+    originalCode.set(cell,input.value);
+    cell.querySelector('.run-cell').onclick=()=>runCell(cell);
+    cell.querySelector('.reset-cell').onclick=()=>{
+      setCode(cell,originalCode.get(cell));
+      const out=cell.querySelector('.output');
+      out.className='output';
+      out.textContent='Click Run to execute this cell.';
+    };
+    cell.querySelector('.copy-cell').onclick=async e=>{
+      try{
+        await navigator.clipboard.writeText(getCode(cell));
+        const old=e.currentTarget.textContent;
+        e.currentTarget.textContent='Copied';
+        setTimeout(()=>e.currentTarget.textContent=old,900);
+      }catch{}
+    };
+    input.addEventListener('keydown',e=>{
+      if(e.key==='Tab'){
+        e.preventDefault();
+        const start=input.selectionStart,end=input.selectionEnd;
+        input.setRangeText('    ',start,end,'end');
+      }
+      if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){
+        e.preventDefault();
+        runCell(cell);
+      }
+    });
+  });
+}
+
+function initMonaco(){
+  if(!window.require) return;
+  try{
+    require.config({paths:{vs:'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs'}});
+    require(['vs/editor/editor.main'],()=>{
+      document.querySelectorAll('.code-cell').forEach(cell=>{
+        const input=cell.querySelector('.code-input');
+        const host=cell.querySelector('.monaco-host');
+        if(!host) return;
+        const editor=monaco.editor.create(host,{
+          value:input.value,
+          language:'python',
+          theme:'vs-dark',
+          fontFamily:'Consolas, "Courier New", monospace',
+          fontSize:13,
+          lineHeight:20,
+          lineNumbers:'on',
+          glyphMargin:false,
+          folding:true,
+          minimap:{enabled:false},
+          automaticLayout:true,
+          scrollBeyondLastLine:false,
+          tabSize:4,
+          insertSpaces:true,
+          wordWrap:'on',
+          renderLineHighlight:'line',
+          padding:{top:10,bottom:10},
+          scrollbar:{verticalScrollbarSize:9,horizontalScrollbarSize:9}
+        });
+        editor.addCommand(monaco.KeyMod.CtrlCmd|monaco.KeyCode.Enter,()=>runCell(cell));
+        const cursor=cell.querySelector('.cursor-position');
+        editor.onDidChangeCursorPosition(e=>{
+          if(cursor) cursor.textContent='Ln '+e.position.lineNumber+', Col '+e.position.column;
+        });
+        editors.set(cell,editor);
+        cell.classList.add('monaco-ready');
+      });
+    });
+  }catch(e){}
+}
+wireCells();
+initMonaco();
+document.getElementById('runSlideBtn').onclick=async()=>{for(const c of slides[current].querySelectorAll('.code-cell'))await runCell(c)};document.getElementById('resetPythonBtn').onclick=()=>{pyodide=null;pyInit=null;document.getElementById('pyStatus').textContent='Python reset'};
 const audio=new Audio();const audioPlayer=document.getElementById('audioPlayer'),audioSeek=document.getElementById('audioSeek'),audioTime=document.getElementById('audioTime'),subtitleText=document.getElementById('subtitleText');let cues=[],cc=true,narration=true;function fmt(t){return Math.floor(t/60)+':'+Math.floor(t%60).toString().padStart(2,'0')}function parseTime(v){const p=v.trim().replace(',','.').split(':').map(Number);return p.length===3?p[0]*3600+p[1]*60+p[2]:p[0]*60+p[1]}function parseVtt(t){return t.replace(/\r/g,'').split(/\n\s*\n/).map(b=>{const lines=b.split('\n').filter(Boolean);const idx=lines.findIndex(x=>x.includes('-->'));if(idx<0)return null;const parts=lines[idx].split('-->');return{start:parseTime(parts[0]),end:parseTime(parts[1]),text:lines.slice(idx+1).join(' ')}}).filter(Boolean)}async function loadAudio(){audio.pause();const item=MANIFEST.slides[current];audio.src=item.audio;document.getElementById('audioTitle').textContent='Slide '+(current+1)+' audio ready';subtitleText.textContent='';cues=[];try{const r=await fetch(item.captions,{cache:'no-store'});if(r.ok)cues=parseVtt(await r.text())}catch(e){}}document.getElementById('startNarration').onclick=()=>{audio.playbackRate=Number(document.getElementById('speedSelect').value);audio.play()};document.getElementById('audioPlay').onclick=()=>audio.paused?audio.play():audio.pause();document.getElementById('speedSelect').onchange=e=>audio.playbackRate=Number(e.target.value);document.getElementById('narrationToggle').onclick=e=>{narration=!narration;e.target.textContent=narration?'Narration On':'Narration Off';if(!narration)audio.pause()};document.getElementById('ccToggle').onclick=e=>{cc=!cc;e.target.textContent=cc?'CC On':'CC Off';e.target.setAttribute('aria-pressed',cc?'true':'false');if(!cc)subtitleText.textContent=''};audio.onplay=()=>{audioPlayer.classList.add('playing');document.getElementById('audioPlay').textContent='Pause'};audio.onpause=()=>{audioPlayer.classList.remove('playing');document.getElementById('audioPlay').textContent='Play'};audio.ontimeupdate=()=>{const d=isFinite(audio.duration)?audio.duration:0,t=audio.currentTime||0;audioSeek.value=d?String(t/d*100):'0';audioTime.textContent=fmt(t)+' / '+fmt(d);if(cc&&cues.length){const c=cues.find(x=>t>=x.start&&t<x.end);subtitleText.textContent=c?c.text:''}};audioSeek.oninput=e=>{if(isFinite(audio.duration))audio.currentTime=audio.duration*Number(e.target.value)/100};audio.onerror=()=>{document.getElementById('audioTitle').textContent='Audio not found yet: '+MANIFEST.slides[current].audio};document.getElementById('transcriptBtn').onclick=()=>document.getElementById('transcriptPanel').classList.toggle('open');document.getElementById('transcriptClose').onclick=()=>document.getElementById('transcriptPanel').classList.remove('open');
 const key='ian601_module8_progress_v4';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}function updateProgress(){if(!visited.includes(current+1))visited.push(current+1);localStorage.setItem(key,JSON.stringify(visited));const pct=Math.round(new Set(visited).size/slides.length*100);document.getElementById('progressPct').textContent=pct+'%';document.getElementById('progressMeter').style.width=pct+'%';document.getElementById('progressText').textContent=new Set(visited).size+' of '+slides.length+' slides visited';document.getElementById('progressList').innerHTML=slides.map((s,i)=>`<a href="#" data-i="${i}" class="${visited.includes(i+1)?'current':''}">Slide ${i+1}: ${s.dataset.title}</a>`).join('');document.querySelectorAll('#progressList a').forEach(a=>a.onclick=e=>{e.preventDefault();showSlide(Number(a.dataset.i));document.getElementById('progressModal').classList.remove('show')})}document.getElementById('progressBtn').onclick=()=>{updateProgress();document.getElementById('progressModal').classList.add('show')};document.getElementById('progressCloseBtn').onclick=()=>document.getElementById('progressModal').classList.remove('show');document.getElementById('resetProgressBtn').onclick=()=>{visited=[];localStorage.removeItem(key);updateProgress()};document.getElementById('modulesBtn').onclick=()=>document.getElementById('modulesModal').classList.add('show');document.getElementById('modulesCloseBtn').onclick=()=>document.getElementById('modulesModal').classList.remove('show');document.querySelectorAll('.modal-backdrop').forEach(m=>m.onclick=e=>{if(e.target===m)m.classList.remove('show')});document.addEventListener('keydown',e=>{const tag=document.activeElement?.tagName?.toLowerCase();if(tag==='textarea'||tag==='input'||tag==='select')return;if(e.key==='ArrowRight')showSlide(current+1);if(e.key==='ArrowLeft')showSlide(current-1)});const hash=location.hash.match(/slide-(\d+)/);showSlide(hash?Number(hash[1])-1:0);
 </script>
