@@ -1,24 +1,46 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.803
-This slide focuses on Responsible example data Start
-with the meaning of the idea
+00:00:00.000 --> 00:00:03.762
+Type hints are another way to make code easier to understand.
 
-00:00:06.026 --> 00:00:11.760
-then connect it to the example and the larger
-analytical workflow Teaching
+00:00:03.762 --> 00:00:10.552
+A type hint tells readers what kind of value a function expects and what kind of value it
 
-00:00:11.773 --> 00:00:16.891
-and sample datasets should use fictional or generic
-values unless real data is clearly permitted
+00:00:10.552 --> 00:00:12.077
+returns.
 
-00:00:17.815 --> 00:00:24.012
-Use fictional names IDs emails and organizations
-Remove direct identifiers
+00:00:12.077 --> 00:00:17.807
+In this example, the average function expects a list of floating-point numbers and returns a floating-point
 
-00:00:24.039 --> 00:00:30.872
-from examples Do not publish private data in code
-outputs Explain
+00:00:17.807 --> 00:00:21.902
+number. Python will still run even if we pass a different kind of value,
 
-00:00:30.898 --> 00:00:32.937
-assumptions and limitations clearly
+00:00:21.902 --> 00:00:24.352
+but the hint communicates our intent.
+
+00:00:24.352 --> 00:00:28.967
+This is especially helpful when functions are reused in larger projects.
+
+00:00:28.967 --> 00:00:33.292
+The function also checks whether the list is empty.
+
+00:00:33.292 --> 00:00:35.427
+If it is empty, it returns zero point zero.
+
+00:00:35.427 --> 00:00:39.727
+Otherwise, it returns the sum divided by the number of values.
+
+00:00:39.727 --> 00:00:42.932
+Run the cell and inspect the average score.
+
+00:00:42.932 --> 00:00:46.427
+Type hints are not required in every beginner script.
+
+00:00:46.427 --> 00:00:51.952
+But as projects grow, they make your code easier to read, test, and maintain.
+
+00:00:51.952 --> 00:00:58.117
+Think of type hints as part of the function contract: this function expects this kind of input and
+
+00:00:58.117 --> 00:00:59.976
+returns this kind of output.

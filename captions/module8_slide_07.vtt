@@ -1,28 +1,55 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.000
-This slide focuses on Test important functions Start
-with the meaning of the idea then
+00:00:00.000 --> 00:00:02.832
+Next, we introduce regular expressions.
 
-00:00:06.026 --> 00:00:11.570
-connect it to the example and the larger analytical
-workflow A small
+00:00:02.832 --> 00:00:08.997
+A regular expression, often called regex, is a way to describe a pattern in text.
 
-00:00:11.596 --> 00:00:17.138
-test checks whether a function gives the expected
-result for a known input Use simple
+00:00:08.997 --> 00:00:14.657
+Regex can look intimidating at first because the syntax uses special symbols.
 
-00:00:17.165 --> 00:00:23.670
-assertions Before running the example predict the
-output Run
+00:00:14.657 --> 00:00:18.542
+But we can start with small patterns.
 
-00:00:23.697 --> 00:00:28.828
-it in the browser inspect the result then modify one
-input expression or value and
+00:00:18.542 --> 00:00:25.927
+In this example, the pattern checks whether an ID has two capital letters, a dash, and four digits.
 
-00:00:28.855 --> 00:00:34.315
-run it again Notice whether the shorter technique
-improves clarity or only makes the code
+00:00:25.927 --> 00:00:30.667
+The caret symbol means the start of the text.
 
-00:00:34.341 --> 00:00:35.223
-harder to read
+00:00:30.667 --> 00:00:32.742
+The dollar sign means the end of the text.
+
+00:00:32.742 --> 00:00:36.537
+The bracket A through Z means a capital letter.
+
+00:00:36.537 --> 00:00:40.932
+The curly braces with two means exactly two capital letters.
+
+00:00:40.932 --> 00:00:43.302
+Then we have a dash.
+
+00:00:43.302 --> 00:00:50.387
+The backslash d means a digit, and curly braces with four means exactly four digits.
+
+00:00:50.387 --> 00:00:53.627
+Run the cell and look at which IDs match.
+
+00:00:53.627 --> 00:00:56.822
+AB dash 1204 should match.
+
+00:00:56.822 --> 00:00:59.402
+NC dash 2026 should also match.
+
+00:00:59.402 --> 00:01:03.807
+But A dash 1204 has only one letter, and xy dash 9999 uses lowercase letters,
+
+00:01:03.807 --> 00:01:05.672
+so those do not match.
+
+00:01:05.672 --> 00:01:12.742
+Regex is powerful, but the best way to learn it is to test small examples and build the
+
+00:01:12.742 --> 00:01:14.391
+pattern gradually.

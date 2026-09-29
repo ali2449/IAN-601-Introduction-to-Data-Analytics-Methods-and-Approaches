@@ -1,0 +1,40 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.337
+Let's finish Module 8 with a practical checklist.
+
+00:00:03.337 --> 00:00:09.172
+Before sharing or submitting an analytics project, ask yourself a few questions.
+
+00:00:09.172 --> 00:00:13.857
+Is the code readable? Do the names and structure make sense?
+
+00:00:13.857 --> 00:00:19.317
+Is the code reliable? Does it handle expected messy inputs safely?
+
+00:00:19.317 --> 00:00:24.122
+Is the code tested? Do important functions have simple checks?
+
+00:00:24.122 --> 00:00:26.197
+Is the code documented?
+
+00:00:26.197 --> 00:00:32.282
+Do reusable functions have docstrings, and does the project include basic instructions?
+
+00:00:32.282 --> 00:00:38.387
+Is the project reproducible? Are files organized, and are dependencies listed?
+
+00:00:38.387 --> 00:00:42.902
+Is the work responsible? Are sensitive data values minimized, masked, or protected?
+
+00:00:42.902 --> 00:00:45.662
+You do not need to be perfect on every project.
+
+00:00:45.662 --> 00:00:51.877
+But these habits will make your work stronger over time.
+
+00:00:51.877 --> 00:00:57.172
+The main takeaway is that professional analytics code should be clear enough to understand,
+
+00:00:57.172 --> 00:01:01.040
+safe enough to trust, and organized enough to reuse.

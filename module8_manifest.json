@@ -1,97 +1,199 @@
 {
-  "prefix": "module8",
-  "voice": "en-US-GuyNeural",
-  "rate": "-5%",
-  "volume": "+0%",
-  "pitch": "+0Hz",
-  "caption_words": 15,
-  "slide_count": 12,
-  "slide_markers_found": true,
-  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "module": "module8",
+  "filename_prefix": "module8",
+  "source_file": "M8.txt",
+  "voice_consistency_version": 2,
+  "reference_audio": "/home/ali/breeze-tts/voice_reference/course_instructor_consistent_v4.wav",
+  "reference_text": "Welcome to the course. We will work through each concept carefully, connect the\nideas step by step, and use practical examples to make technical topics easier\nto understand. When we introduce a new method, focus first on the problem it\nsolves and why it is useful. For example, in machine learning, features are the\ninformation we give the model, while the target is what we want it to predict.\nNow consider a simple question: what changes when the data contains missing\nvalues? We will think through the reason and then look at the code. In Python,\nwe can inspect the data, run one small step at a time, and explain what the\nresult means. The goal is to understand the logic, not simply memorize syntax.",
+  "locked_narration_seed": true,
+  "narration_seed": 1234,
+  "subtitle_method": "whole_slide_silence_alignment",
+  "caption_settings": {
+    "max_words": 18,
+    "max_chars": 110,
+    "minimum_silence_seconds": 0.2,
+    "boundary_search_window_seconds": 1.4
+  },
   "slides": [
     {
       "slide": 1,
-      "audio": "module8_slide_01.mp3",
-      "captions": "module8_slide_01.vtt",
-      "text": "Welcome to Module 8. This module focuses on Professional Practices. We will build the ideas gradually and connect them to practical analytics work.\n\n[pause=0.7]\n\nProfessional analytics code should be readable, reproducible, tested, documented, and respectful of data privacy.\n\n[pause=1.0]",
-      "pause_markers": 2
+      "title": "Professional Practices",
+      "transcript": "Welcome to Module 8, Professional Practices.\n\nIn this module, we are going to focus on habits that make Python code more professional. Up to now, we have mostly focused on learning how Python works. We have written variables, loops, functions, data structures, and small analytical examples.\n\nNow we are going to ask a different question. What makes code easier to trust, share, maintain, and improve?\n\nProfessional code is not only code that runs one time. Professional code should be readable, reliable, tested, documented, reproducible, and respectful of data.\n\nThis matters in analytics because our code often supports decisions. If the code is confusing, fragile, undocumented, or careless with sensitive information, then the analysis becomes harder to trust.\n\nAs we move through this module, try to think like a future reader. That future reader might be your classmate, your coworker, your instructor, or even yourself two months later.\n\nThe goal is not to make the code look complicated. The goal is to make the code clear and dependable.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_01.wav",
+      "audio": "audio/module8_slide_01.mp3",
+      "captions": "audio/module8_slide_01.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 2,
-      "audio": "module8_slide_02.mp3",
-      "captions": "module8_slide_02.vtt",
-      "text": "Use this lesson actively. Read the concept, predict what should happen, run the example when code is available, then change one small part and compare the result.\n\n[pause=0.7]\n\nStart with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.\n\n[pause=0.7]\n\nChange one value, variable, or condition. Apply the pattern to a new example.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Learning path for Module 8",
+      "transcript": "Here is the learning path for Module 8.\n\nWe will organize the module around four main areas.\n\nFirst, we will talk about readability. This includes descriptive names, clear formatting, useful comments, and small pieces of code that are easier to understand.\n\nSecond, we will talk about reliability. Real data is often messy, so we need to know how to handle errors, validate inputs, and write code that fails safely.\n\nThird, we will talk about documentation and testing. If we write a function that we want to reuse, we should explain what it does. We should also check that important behavior works as expected.\n\nFinally, we will look at workflow practices. This includes Git concepts, reproducibility, and responsible handling of data.\n\nThese ideas may sound separate, but they are connected. Readable code is easier to test. Tested code is easier to trust. Documented code is easier to reuse. Reproducible projects are easier to share.\n\nThe main message is simple: professional code is written for future readers.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_02.wav",
+      "audio": "audio/module8_slide_02.mp3",
+      "captions": "audio/module8_slide_02.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 3,
-      "audio": "module8_slide_03.mp3",
-      "captions": "module8_slide_03.vtt",
-      "text": "This slide is the learning path for Module 8. It shows how the topic progresses from foundational ideas to applied practice.\n\n[pause=0.7]\n\nUse names that explain the data. Write helpful comments and docstrings. Reproducibility\n\n[pause=0.7]\n\nControl randomness with seeds. Check important functions. Record useful events.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Readable code starts with names",
+      "transcript": "Let's begin with naming.\n\nReadable code starts with names because names are the first explanation a reader sees.\n\nIf a variable is called x, the reader has to search through the code to understand what x means. If the same value is called monthly_sales, the meaning is much clearer.\n\nIn the table on this slide, notice the difference between weak names and better names.\n\nThe name df2 might mean something to the person who wrote it, but it does not tell a future reader much. A name like clean_orders tells us that the data probably contains order records and that some cleaning step has already happened.\n\nThe code example uses names such as monthly_sales, month_count, and average_monthly_sales. These names are a little longer, but they are easier to understand.\n\nBefore you run the cell, try to predict what it will print. The code adds the monthly sales, divides by the number of months, and prints the average.\n\nAfter running it, try changing one of the sales values and run it again.\n\nA good naming habit is this: choose names that describe the role of a value in the analysis.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_03.wav",
+      "audio": "audio/module8_slide_03.mp3",
+      "captions": "audio/module8_slide_03.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 4,
-      "audio": "module8_slide_04.mp3",
-      "captions": "module8_slide_04.vtt",
-      "text": "This slide focuses on Readable code starts with names. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nNames should describe the role of a value. This makes code easier for future readers, including you. Use descriptive names\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Style, comments, and formatting",
+      "transcript": "Readable code is not only about variable names. It is also about style, comments, and formatting.\n\nSpacing helps separate ideas. Blank lines can show where one step ends and another step begins.\n\nComments are also important, but we need to use them carefully. A comment should not simply repeat what the code already says. A useful comment explains why a decision was made.\n\nLook at the example on this slide.\n\nWe have a small list of order records. Some orders are complete and one order is cancelled.\n\nThe comment explains that cancelled orders are excluded because they did not produce revenue. That is a business rule. It explains the reason for the filtering step.\n\nThe code then filters completed orders and calculates revenue.\n\nRun the cell and notice the output.\n\nThen think about the comment. If someone reads this code later, the comment helps them understand the logic behind the decision.\n\nA practical rule is this: write comments for decisions, assumptions, and unusual logic. Do not write a comment for every obvious line.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_04.wav",
+      "audio": "audio/module8_slide_04.mp3",
+      "captions": "audio/module8_slide_04.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 5,
-      "audio": "module8_slide_05.mp3",
-      "captions": "module8_slide_05.vtt",
-      "text": "This slide focuses on Write docstrings for functions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA docstring explains what a function does, what it expects, and what it returns. Function with a docstring\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Exceptions help programs fail safely",
+      "transcript": "Now let's talk about exceptions.\n\nAn exception is Python's way of saying that something went wrong while the program was running.\n\nFor example, Python may raise an error if we try to convert the text N A into a number, or if we try to divide by zero, or if a dictionary does not contain the key we expected.\n\nIn professional code, we do not want the entire workflow to fail just because one expected messy value appears in the data.\n\nBut we also do not want to hide every error.\n\nThis distinction is important.\n\nSome problems are expected. For example, a dataset may contain missing values or invalid numeric entries. We can handle those safely.\n\nOther problems are unexpected. For example, if our function has the wrong logic, we should fix it instead of hiding the error.\n\nGood exception handling catches a specific error and responds in a clear way.\n\nThe pattern is: try to do something, catch the known problem, and return a safe result or message.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_05.wav",
+      "audio": "audio/module8_slide_05.mp3",
+      "captions": "audio/module8_slide_05.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 6,
-      "audio": "module8_slide_06.mp3",
-      "captions": "module8_slide_06.vtt",
-      "text": "This slide focuses on Make random work reproducible. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA random seed makes random examples repeatable. This matters for debugging, teaching, and reports. Use a random seed\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Safe conversion with try and except",
+      "transcript": "This slide gives us a practical example of exception handling.\n\nIn many datasets, numeric values arrive as text. Some values can be converted easily, such as forty two point five or eighteen. Other values cannot be converted, such as N A, an empty string, or None.\n\nThe function to_number tries to convert a value to a float.\n\nIf the conversion works, the function returns the number.\n\nIf Python raises a TypeError or ValueError, the function returns None.\n\nThis is useful because the program does not crash. Instead, we clearly mark invalid values as None.\n\nThen we create clean_values by applying the function to every raw value.\n\nAfter that, we create valid_values by keeping only values that are not None.\n\nRun the cell and inspect both lists.\n\nNotice that the invalid values are not silently treated as zero. That is important. Treating missing or invalid values as zero could change the analysis.\n\nReturning None makes the missingness visible so we can decide how to handle it.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_06.wav",
+      "audio": "audio/module8_slide_06.mp3",
+      "captions": "audio/module8_slide_06.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 7,
-      "audio": "module8_slide_07.mp3",
-      "captions": "module8_slide_07.vtt",
-      "text": "This slide focuses on Test important functions. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA small test checks whether a function gives the expected result for a known input. Use simple assertions\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Regular expressions check text patterns",
+      "transcript": "Next, we introduce regular expressions.\n\nA regular expression, often called regex, is a way to describe a pattern in text.\n\nRegex can look intimidating at first because the syntax uses special symbols. But we can start with small patterns.\n\nIn this example, the pattern checks whether an ID has two capital letters, a dash, and four digits.\n\nThe caret symbol means the start of the text. The dollar sign means the end of the text.\n\nThe bracket A through Z means a capital letter. The curly braces with two means exactly two capital letters.\n\nThen we have a dash.\n\nThe backslash d means a digit, and curly braces with four means exactly four digits.\n\nRun the cell and look at which IDs match.\n\nAB dash 1204 should match. NC dash 2026 should also match. But A dash 1204 has only one letter, and xy dash 9999 uses lowercase letters, so those do not match.\n\nRegex is powerful, but the best way to learn it is to test small examples and build the pattern gradually.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_07.wav",
+      "audio": "audio/module8_slide_07.mp3",
+      "captions": "audio/module8_slide_07.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 8,
-      "audio": "module8_slide_08.mp3",
-      "captions": "module8_slide_08.vtt",
-      "text": "This slide focuses on Use logging instead of only print. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nLogging records what happened. It can include messages for progress, warnings, and errors.\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Regex in an analytics cleaning task",
+      "transcript": "Now let's use regex in a more realistic cleaning task.\n\nSometimes useful information is buried inside a longer text field. For example, a support note may include one or more email addresses.\n\nIn this example, we have a support note that includes maria at example dot com and sales at shop dot org.\n\nThe pattern looks for a sequence of word characters, dots, or dashes, followed by the at symbol, followed by a domain and a final dot extension.\n\nThe function re dot findall returns all pieces of text that match the pattern.\n\nRun the cell and inspect the list of emails.\n\nA beginner-friendly rule is to start simple. Test your pattern on a few examples. Then add more cases only when you understand what the current pattern is doing.\n\nIn real projects, email validation can become more complex. But for data extraction and cleaning, a simple tested pattern is often a useful starting point.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_08.wav",
+      "audio": "audio/module8_slide_08.mp3",
+      "captions": "audio/module8_slide_08.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 9,
-      "audio": "module8_slide_09.mp3",
-      "captions": "module8_slide_09.vtt",
-      "text": "This slide focuses on Keep settings in one place. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nA configuration dictionary keeps important settings visible and easy to change. Use a configuration dictionary\n\n[pause=0.8]\n\nBefore running the example, predict the output. Run it in the browser, inspect the result, then modify one input, expression, or value and run it again. Notice whether the shorter technique improves clarity or only makes the code harder to read.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Docstrings explain reusable code",
+      "transcript": "When we write reusable functions, we should explain them.\n\nA docstring is a short explanation placed inside a function, usually right after the function definition.\n\nA good docstring tells the reader what the function does, what inputs it expects, what it returns, and any important assumptions.\n\nIn this example, the function conversion_rate calculates a signup conversion rate.\n\nThe docstring explains that visits means the total number of visitors, signups means the number of people who signed up, and the return value is a percentage.\n\nThe function also handles the case where visits is zero. If visits is zero, the function returns zero instead of dividing by zero.\n\nRun the cell and notice that it prints the conversion rate.\n\nThen it calls help on the function. The help output displays the docstring.\n\nThis is one reason docstrings are useful. They are not only comments for people reading the file. They can also be displayed by Python tools.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_09.wav",
+      "audio": "audio/module8_slide_09.mp3",
+      "captions": "audio/module8_slide_09.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 10,
-      "audio": "module8_slide_10.mp3",
-      "captions": "module8_slide_10.vtt",
-      "text": "This slide focuses on Responsible example data. Start with the meaning of the idea, then connect it to the example and the larger analytical workflow.\n\n[pause=0.7]\n\nTeaching and sample datasets should use fictional or generic values unless real data is clearly permitted. Use fictional names, IDs, emails, and organizations. Remove direct identifiers from examples.\n\n[pause=0.7]\n\nDo not publish private data in code outputs. Explain assumptions and limitations clearly.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Type hints make intent visible",
+      "transcript": "Type hints are another way to make code easier to understand.\n\nA type hint tells readers what kind of value a function expects and what kind of value it returns.\n\nIn this example, the average function expects a list of floating-point numbers and returns a floating-point number.\n\nPython will still run even if we pass a different kind of value, but the hint communicates our intent.\n\nThis is especially helpful when functions are reused in larger projects.\n\nThe function also checks whether the list is empty. If it is empty, it returns zero point zero. Otherwise, it returns the sum divided by the number of values.\n\nRun the cell and inspect the average score.\n\nType hints are not required in every beginner script. But as projects grow, they make your code easier to read, test, and maintain.\n\nThink of type hints as part of the function contract: this function expects this kind of input and returns this kind of output.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_10.wav",
+      "audio": "audio/module8_slide_10.mp3",
+      "captions": "audio/module8_slide_10.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 11,
-      "audio": "module8_slide_11.mp3",
-      "captions": "module8_slide_11.vtt",
-      "text": "Use this slide as guided practice. Work in small steps and explain why each result makes sense.\n\n[pause=0.7]\n\nCells execute in order. Variables describe meaning. No private data\n\n[pause=0.7]\n\nExamples are fictional. Notes explain why, not every line. Outputs make sense\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Git helps track changes",
+      "transcript": "Professional work also requires a good workflow.\n\nGit is a version control tool. It helps us track changes in a project over time.\n\nEven if you are working alone, Git is useful because it creates a history of your project.\n\nA typical workflow has a few steps.\n\nFirst, you edit your working files.\n\nThen you use git status to see what changed.\n\nNext, you use git add to stage the files you want to include in the next checkpoint.\n\nThen you use git commit with a message that explains the change.\n\nFinally, if you are using a remote repository, you use git push to send your commits to that remote location.\n\nA good commit message should describe the purpose of the change. For example, fix missing value handling is more useful than update file.\n\nYou do not need to become a Git expert immediately. But you should understand the basic idea: Git helps you save meaningful checkpoints as your project evolves.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_11.wav",
+      "audio": "audio/module8_slide_11.mp3",
+      "captions": "audio/module8_slide_11.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 12,
-      "audio": "module8_slide_12.mp3",
-      "captions": "module8_slide_12.vtt",
-      "text": "This slide summarizes Module 8. Focus on the patterns you should be able to explain and reuse after completing the examples.\n\n[pause=0.7]\n\nUse clear names and structure. Write useful docstrings. Reproducibility\n\n[pause=0.7]\n\nControl randomness with seeds. Use small checks for functions. Track what the program does.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Testing with assert",
+      "transcript": "Testing helps us check whether code behaves the way we expect.\n\nIn beginner Python, assert is a simple way to start testing.\n\nOn this slide, we define a function called normalize_status.\n\nThe function strips extra spaces and converts the text to lowercase.\n\nThen we write three assert statements.\n\nEach assert statement checks one expected behavior.\n\nThe first test checks that Complete with extra spaces becomes complete.\n\nThe second checks that CANCELLED becomes cancelled.\n\nThe third checks that pending with a leading space becomes pending.\n\nIf all assertions are true, the program prints All checks passed.\n\nTry changing one expected value to something incorrect and run the cell again. Python should raise an AssertionError.\n\nThat error is helpful because it tells us the behavior no longer matches our expectation.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_12.wav",
+      "audio": "audio/module8_slide_12.mp3",
+      "captions": "audio/module8_slide_12.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 13,
+      "title": "A small test suite",
+      "transcript": "A test suite is a group of tests.\n\nIn real projects, tests are often stored in separate files and run with testing tools. But the idea is the same as what we see here.\n\nWe have a function called normalize_status. This version also replaces spaces with underscores.\n\nThen we define two test functions.\n\nThe first test checks the complete status. The second checks In Progress and expects in_progress.\n\nAt the bottom, we loop through the test functions and run each one.\n\nIf both tests pass, the program prints All tests passed.\n\nThis structure may look simple, but it introduces an important habit.\n\nInstead of manually checking output every time, we write small checks that Python can run for us.\n\nThat gives us confidence when we revise code later.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_13.wav",
+      "audio": "audio/module8_slide_13.mp3",
+      "captions": "audio/module8_slide_13.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 14,
+      "title": "Responsible data handling",
+      "transcript": "Professional analytics is not only about code quality. It is also about responsible data handling.\n\nSome data can identify people directly, such as names, email addresses, phone numbers, or IDs.\n\nOther data can become identifying when combined with additional information.\n\nA good practice is data minimization. Keep only the data needed for the task.\n\nAnother practice is masking. If we do not need to show the full value, we can hide part of it.\n\nIn the code example, the function mask_email keeps the first letter of the username and the domain, but hides the rest of the username.\n\nThis is only a simple demonstration. Real privacy requirements depend on the context, institution, and data type.\n\nBut the general habit is important: do not expose sensitive data unless there is a clear reason and permission to do so.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_14.wav",
+      "audio": "audio/module8_slide_14.mp3",
+      "captions": "audio/module8_slide_14.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 15,
+      "title": "Reproducible project structure",
+      "transcript": "A reproducible project is organized so another person can understand it and run it.\n\nThis does not mean the project must be complicated.\n\nEven a small project benefits from clear structure.\n\nA data folder can store input data or a small sample dataset.\n\nA source folder can store reusable Python functions.\n\nA notebooks folder can store exploration or teaching notebooks.\n\nA README file explains the purpose of the project and how to run it.\n\nA requirements file lists the packages needed to reproduce the environment.\n\nThis kind of organization reduces confusion.\n\nIt also helps you when you return to the project later.\n\nIf you have ever opened an old folder and wondered which file was the final version, then you already understand why reproducible structure matters.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_15.wav",
+      "audio": "audio/module8_slide_15.mp3",
+      "captions": "audio/module8_slide_15.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 16,
+      "title": "Mini project: clean order records",
+      "transcript": "Now we bring several professional practices together in a small project.\n\nThe data contains messy order records.\n\nOne amount is a valid number stored as text. Another amount is N A. The status labels also have inconsistent spacing and capitalization.\n\nWe write two helper functions.\n\nThe parse_amount function tries to convert a value to a float. If conversion fails, it returns None.\n\nThe normalize_status function removes extra spaces and converts the text to lowercase.\n\nThen we loop through the orders.\n\nIf the amount is valid, we append a cleaned record to clean_orders.\n\nRun the cell and inspect the cleaned list.\n\nNotice that the invalid order amount is excluded, and the status labels are standardized.\n\nThis is a realistic pattern: define small helper functions, clean records step by step, and inspect the result.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_16.wav",
+      "audio": "audio/module8_slide_16.mp3",
+      "captions": "audio/module8_slide_16.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 17,
+      "title": "Mini project: summarize and test",
+      "transcript": "After cleaning data, we usually need to summarize it.\n\nIn this second part of the mini project, we start with a cleaned list of orders.\n\nThe total_revenue function adds the amount for records where the status is complete.\n\nThe count_by_status function counts how many records have a particular status.\n\nThen we use assert statements to check important behavior.\n\nWe expect the total revenue to be one hundred seventeen point five zero, and we expect two complete orders.\n\nIf those checks pass, the program prints the revenue, the count, and Project checks passed.\n\nThis example connects cleaning, summarizing, and testing.\n\nThe tests are small, but they protect the main business logic.\n\nIf someone changes the function later and breaks the calculation, the assertion can catch the issue quickly.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_17.wav",
+      "audio": "audio/module8_slide_17.mp3",
+      "captions": "audio/module8_slide_17.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 18,
+      "title": "Professional workflow checklist",
+      "transcript": "Let's finish Module 8 with a practical checklist.\n\nBefore sharing or submitting an analytics project, ask yourself a few questions.\n\nIs the code readable? Do the names and structure make sense?\n\nIs the code reliable? Does it handle expected messy inputs safely?\n\nIs the code tested? Do important functions have simple checks?\n\nIs the code documented? Do reusable functions have docstrings, and does the project include basic instructions?\n\nIs the project reproducible? Are files organized, and are dependencies listed?\n\nIs the work responsible? Are sensitive data values minimized, masked, or protected?\n\nYou do not need to be perfect on every project. But these habits will make your work stronger over time.\n\nThe main takeaway is that professional analytics code should be clear enough to understand, safe enough to trust, and organized enough to reuse.",
+      "seed": 1234,
+      "wav": "wav/module8_slide_18.wav",
+      "audio": "audio/module8_slide_18.mp3",
+      "captions": "audio/module8_slide_18.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     }
   ]
 }

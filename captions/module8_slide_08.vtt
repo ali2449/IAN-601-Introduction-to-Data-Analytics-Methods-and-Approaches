@@ -1,25 +1,43 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.487
-This slide focuses on Use logging instead of only
-print Start with the meaning of
+00:00:00.000 --> 00:00:03.782
+Now let's use regex in a more realistic cleaning task.
 
-00:00:05.513 --> 00:00:12.089
-the idea then connect it to the example and the
-larger analytical workflow Logging
+00:00:03.782 --> 00:00:08.442
+Sometimes useful information is buried inside a longer text field.
 
-00:00:12.116 --> 00:00:19.845
-records what happened It can include messages for
-progress warnings and errors Before
+00:00:08.442 --> 00:00:13.537
+For example, a support note may include one or more email addresses.
 
-00:00:19.871 --> 00:00:25.624
-running the example predict the output Run it in the
-browser inspect the result then
+00:00:13.537 --> 00:00:19.142
+In this example, we have a support note that includes maria at example dot com and sales at
 
-00:00:25.650 --> 00:00:31.413
-modify one input expression or value and run it
-again Notice whether the shorter
+00:00:19.142 --> 00:00:21.667
+shop dot org.
 
-00:00:31.426 --> 00:00:34.887
-technique improves clarity or only makes the code
-harder to read
+00:00:21.667 --> 00:00:28.467
+The pattern looks for a sequence of word characters, dots, or dashes, followed by the at symbol,
+
+00:00:28.467 --> 00:00:32.442
+followed by a domain and a final dot extension.
+
+00:00:32.442 --> 00:00:38.497
+The function re dot findall returns all pieces of text that match the pattern.
+
+00:00:38.497 --> 00:00:42.197
+Run the cell and inspect the list of emails.
+
+00:00:42.197 --> 00:00:45.577
+A beginner-friendly rule is to start simple.
+
+00:00:45.577 --> 00:00:48.367
+Test your pattern on a few examples.
+
+00:00:48.367 --> 00:00:53.182
+Then add more cases only when you understand what the current pattern is doing.
+
+00:00:53.182 --> 00:00:58.077
+In real projects, email validation can become more complex.
+
+00:00:58.077 --> 00:01:04.204
+But for data extraction and cleaning, a simple tested pattern is often a useful starting point.

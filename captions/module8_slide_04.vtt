@@ -1,27 +1,55 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.474
-This slide focuses on Readable code starts with
-names Start with the meaning of the
+00:00:00.000 --> 00:00:03.177
+Readable code is not only about variable names.
 
-00:00:05.500 --> 00:00:11.853
-idea then connect it to the example and the larger
-analytical workflow Names
+00:00:03.177 --> 00:00:07.047
+It is also about style, comments, and formatting.
 
-00:00:11.880 --> 00:00:17.606
-should describe the role of a value This makes code
-easier for future readers including
+00:00:07.047 --> 00:00:12.572
+Spacing helps separate ideas. Blank lines can show where one step ends and another step begins.
 
-00:00:17.632 --> 00:00:23.756
-you Use descriptive names Before running the example
+00:00:12.572 --> 00:00:16.657
+Comments are also important, but we need to use them carefully.
 
-00:00:23.874 --> 00:00:29.640
-predict the output Run it in the browser inspect the
-result then modify one input
+00:00:16.657 --> 00:00:21.192
+A comment should not simply repeat what the code already says.
 
-00:00:29.837 --> 00:00:35.719
-expression or value and run it again Notice whether
-the shorter technique improves clarity
+00:00:21.192 --> 00:00:24.532
+A useful comment explains why a decision was made.
 
-00:00:35.732 --> 00:00:37.719
-or only makes the code harder to read
+00:00:24.532 --> 00:00:26.652
+Look at the example on this slide.
+
+00:00:26.652 --> 00:00:29.122
+We have a small list of order records.
+
+00:00:29.122 --> 00:00:33.182
+Some orders are complete and one order is cancelled.
+
+00:00:33.182 --> 00:00:40.637
+The comment explains that cancelled orders are excluded because they did not produce revenue.
+
+00:00:40.637 --> 00:00:42.322
+That is a business rule.
+
+00:00:42.322 --> 00:00:45.332
+It explains the reason for the filtering step.
+
+00:00:45.332 --> 00:00:49.482
+The code then filters completed orders and calculates revenue.
+
+00:00:49.482 --> 00:00:51.807
+Run the cell and notice the output.
+
+00:00:51.807 --> 00:00:53.562
+Then think about the comment.
+
+00:00:53.562 --> 00:00:59.177
+If someone reads this code later, the comment helps them understand the logic behind the decision.
+
+00:00:59.177 --> 00:01:05.887
+A practical rule is this: write comments for decisions, assumptions, and unusual logic.
+
+00:01:05.887 --> 00:01:08.776
+Do not write a comment for every obvious line.

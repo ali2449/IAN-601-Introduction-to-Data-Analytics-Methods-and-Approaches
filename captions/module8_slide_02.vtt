@@ -1,20 +1,55 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.013
-Use this lesson actively Read the concept predict
-what should happen run the example
+00:00:00.000 --> 00:00:02.512
+Here is the learning path for Module 8.
 
-00:00:06.039 --> 00:00:12.109
-when code is available then change one small part
-and compare the result Start
+00:00:02.512 --> 00:00:07.267
+We will organize the module around four main areas.
 
-00:00:12.135 --> 00:00:18.519
-with the main idea on the slide Execute the Python
-code in the browser Connect
+00:00:07.267 --> 00:00:09.312
+First, we will talk about readability.
 
-00:00:18.546 --> 00:00:24.601
-the output to the concept Change one value variable
-or condition
+00:00:09.312 --> 00:00:17.937
+This includes descriptive names, clear formatting, useful comments, and small pieces of code that are easier
 
-00:00:25.538 --> 00:00:27.656
-Apply the pattern to a new example
+00:00:17.937 --> 00:00:21.307
+to understand. Second, we will talk about reliability.
+
+00:00:21.307 --> 00:00:25.777
+Real data is often messy, so we need to know how to handle errors, validate inputs,
+
+00:00:25.777 --> 00:00:29.772
+and write code that fails safely.
+
+00:00:29.772 --> 00:00:33.567
+Third, we will talk about documentation and testing.
+
+00:00:33.567 --> 00:00:38.412
+If we write a function that we want to reuse, we should explain what it does.
+
+00:00:38.412 --> 00:00:43.452
+We should also check that important behavior works as expected.
+
+00:00:43.452 --> 00:00:45.772
+Finally, we will look at workflow practices.
+
+00:00:45.772 --> 00:00:51.787
+This includes Git concepts, reproducibility, and responsible handling of data.
+
+00:00:51.787 --> 00:00:55.782
+These ideas may sound separate, but they are connected.
+
+00:00:55.782 --> 00:00:58.432
+Readable code is easier to test.
+
+00:00:58.432 --> 00:01:00.972
+Tested code is easier to trust.
+
+00:01:00.972 --> 00:01:03.832
+Documented code is easier to reuse.
+
+00:01:03.832 --> 00:01:07.407
+Reproducible projects are easier to share.
+
+00:01:07.407 --> 00:01:12.505
+The main message is simple: professional code is written for future readers.

@@ -1,0 +1,43 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.137
+Professional analytics is not only about code quality.
+
+00:00:03.137 --> 00:00:06.027
+It is also about responsible data handling.
+
+00:00:06.027 --> 00:00:13.957
+Some data can identify people directly, such as names, email addresses, phone numbers, or IDs.
+
+00:00:13.957 --> 00:00:18.862
+Other data can become identifying when combined with additional information.
+
+00:00:18.862 --> 00:00:21.832
+A good practice is data minimization.
+
+00:00:21.832 --> 00:00:24.757
+Keep only the data needed for the task.
+
+00:00:24.757 --> 00:00:27.187
+Another practice is masking.
+
+00:00:27.187 --> 00:00:31.432
+If we do not need to show the full value, we can hide part of it.
+
+00:00:31.432 --> 00:00:38.217
+In the code example, the function mask_email keeps the first letter of the username and the domain,
+
+00:00:38.217 --> 00:00:40.732
+but hides the rest of the username.
+
+00:00:40.732 --> 00:00:43.607
+This is only a simple demonstration.
+
+00:00:43.607 --> 00:00:49.492
+Real privacy requirements depend on the context, institution, and data type.
+
+00:00:49.492 --> 00:00:54.347
+But the general habit is important: do not expose sensitive data unless there is a clear reason and
+
+00:00:54.347 --> 00:00:57.328
+permission to do so.

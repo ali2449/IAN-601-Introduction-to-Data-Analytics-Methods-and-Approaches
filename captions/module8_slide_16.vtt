@@ -1,0 +1,46 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.482
+Now we bring several professional practices together in a small project.
+
+00:00:04.482 --> 00:00:07.442
+The data contains messy order records.
+
+00:00:07.442 --> 00:00:10.662
+One amount is a valid number stored as text.
+
+00:00:10.662 --> 00:00:13.147
+Another amount is N A.
+
+00:00:13.147 --> 00:00:18.207
+The status labels also have inconsistent spacing and capitalization.
+
+00:00:18.207 --> 00:00:20.747
+We write two helper functions.
+
+00:00:20.747 --> 00:00:24.737
+The parse_amount function tries to convert a value to a float.
+
+00:00:24.737 --> 00:00:27.992
+If conversion fails, it returns None.
+
+00:00:27.992 --> 00:00:33.987
+The normalize_status function removes extra spaces and converts the text to lowercase.
+
+00:00:33.987 --> 00:00:36.247
+Then we loop through the orders.
+
+00:00:36.247 --> 00:00:40.902
+If the amount is valid, we append a cleaned record to clean_orders.
+
+00:00:40.902 --> 00:00:44.067
+Run the cell and inspect the cleaned list.
+
+00:00:44.067 --> 00:00:50.122
+Notice that the invalid order amount is excluded, and the status labels are standardized.
+
+00:00:50.122 --> 00:00:56.482
+This is a realistic pattern: define small helper functions, clean records step by step,
+
+00:00:56.482 --> 00:00:57.896
+and inspect the result.

@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.432
+After cleaning data, we usually need to summarize it.
+
+00:00:03.432 --> 00:00:08.772
+In this second part of the mini project, we start with a cleaned list of orders.
+
+00:00:08.772 --> 00:00:16.617
+The total_revenue function adds the amount for records where the status is complete.
+
+00:00:16.617 --> 00:00:20.017
+The count_by_status function counts how many records have a particular status.
+
+00:00:20.017 --> 00:00:24.027
+Then we use assert statements to check important behavior.
+
+00:00:24.027 --> 00:00:29.302
+We expect the total revenue to be one hundred seventeen point five zero,
+
+00:00:29.302 --> 00:00:32.277
+and we expect two complete orders.
+
+00:00:32.277 --> 00:00:39.302
+If those checks pass, the program prints the revenue, the count, and Project checks passed.
+
+00:00:39.302 --> 00:00:42.772
+This example connects cleaning, summarizing, and testing.
+
+00:00:42.772 --> 00:00:48.097
+The tests are small, but they protect the main business logic.
+
+00:00:48.097 --> 00:00:54.792
+If someone changes the function later and breaks the calculation, the assertion can catch the issue quickly.

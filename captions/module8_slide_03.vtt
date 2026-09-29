@@ -1,20 +1,46 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.434
-This slide is the learning path for Module 8 It
-shows how the topic progresses
+00:00:00.000 --> 00:00:01.497
+Let's begin with naming.
 
-00:00:05.461 --> 00:00:11.060
-from foundational ideas to applied practice Use
-names that explain
+00:00:01.497 --> 00:00:07.557
+Readable code starts with names because names are the first explanation a reader sees.
 
-00:00:11.086 --> 00:00:17.049
-the data Write helpful comments and docstrings
-Reproducibility
+00:00:07.557 --> 00:00:13.987
+If a variable is called x, the reader has to search through the code to understand what x
 
-00:00:18.783 --> 00:00:24.575
-Control randomness with seeds Check important
-functions Record
+00:00:13.987 --> 00:00:19.807
+means. If the same value is called monthly_sales, the meaning is much clearer.
 
-00:00:24.601 --> 00:00:25.627
-useful events
+00:00:19.807 --> 00:00:25.262
+In the table on this slide, notice the difference between weak names and better names.
+
+00:00:25.262 --> 00:00:29.482
+The name df2 might mean something to the person who wrote it,
+
+00:00:29.482 --> 00:00:34.872
+but it does not tell a future reader much.
+
+00:00:34.872 --> 00:00:41.267
+A name like clean_orders tells us that the data probably contains order records and that some cleaning step
+
+00:00:41.267 --> 00:00:41.812
+has already happened.
+
+00:00:41.812 --> 00:00:49.182
+The code example uses names such as monthly_sales, month_count, and average_monthly_sales.
+
+00:00:49.182 --> 00:00:53.142
+These names are a little longer, but they are easier to understand.
+
+00:00:53.142 --> 00:00:59.352
+Before you run the cell, try to predict what it will print.
+
+00:00:59.352 --> 00:01:05.422
+The code adds the monthly sales, divides by the number of months, and prints the average.
+
+00:01:05.422 --> 00:01:10.402
+After running it, try changing one of the sales values and run it again.
+
+00:01:10.402 --> 00:01:16.720
+A good naming habit is this: choose names that describe the role of a value in the analysis.

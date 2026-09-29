@@ -1,28 +1,43 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.697
-This slide focuses on Write docstrings for functions
-Start with the meaning of the idea
+00:00:00.000 --> 00:00:02.147
+Now let's talk about exceptions.
 
-00:00:05.921 --> 00:00:11.953
-then connect it to the example and the larger
-analytical workflow A docstring
+00:00:02.147 --> 00:00:08.877
+An exception is Python's way of saying that something went wrong while the program was running.
 
-00:00:11.966 --> 00:00:17.469
-explains what a function does what it expects and
-what it returns Function with
+00:00:08.877 --> 00:00:14.092
+For example, Python may raise an error if we try to convert the text N A into a
 
-00:00:17.495 --> 00:00:24.054
-a docstring Before running the example predict the
-output Run
+00:00:14.092 --> 00:00:19.807
+number, or if we try to divide by zero, or if a dictionary does not contain the key
 
-00:00:24.081 --> 00:00:29.212
-it in the browser inspect the result then modify one
-input expression or value and
+00:00:19.807 --> 00:00:21.492
+we expected.
 
-00:00:29.239 --> 00:00:34.699
-run it again Notice whether the shorter technique
-improves clarity or only makes the code
+00:00:21.492 --> 00:00:27.722
+In professional code, we do not want the entire workflow to fail just because one expected messy value
 
-00:00:34.725 --> 00:00:35.607
-harder to read
+00:00:27.722 --> 00:00:30.662
+appears in the data. But we also do not want to hide every error.
+
+00:00:30.662 --> 00:00:36.077
+This distinction is important. Some problems are expected.
+
+00:00:36.077 --> 00:00:40.272
+For example, a dataset may contain missing values or invalid numeric entries.
+
+00:00:40.272 --> 00:00:42.287
+We can handle those safely.
+
+00:00:42.287 --> 00:00:45.007
+Other problems are unexpected.
+
+00:00:45.007 --> 00:00:50.867
+For example, if our function has the wrong logic, we should fix it instead of hiding the error.
+
+00:00:50.867 --> 00:00:56.122
+Good exception handling catches a specific error and responds in a clear way.
+
+00:00:56.122 --> 00:01:02.960
+The pattern is: try to do something, catch the known problem, and return a safe result or message.

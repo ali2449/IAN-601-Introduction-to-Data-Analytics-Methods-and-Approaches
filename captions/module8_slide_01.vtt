@@ -1,16 +1,46 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.697
-Welcome to Module 8 This module focuses on
-Professional Practices We
+00:00:00.000 --> 00:00:01.792
+Welcome to Module 8, Professional Practices.
 
-00:00:06.711 --> 00:00:13.330
-will build the ideas gradually and connect them to
-practical analytics work Professional
+00:00:01.792 --> 00:00:07.932
+In this module, we are going to focus on habits that make Python code more professional.
 
-00:00:13.356 --> 00:00:19.027
-analytics code should be readable reproducible
-tested documented and respectful of data
+00:00:07.932 --> 00:00:10.552
+Up to now, we have mostly focused on learning how Python works.
 
-00:00:19.040 --> 00:00:19.672
-privacy
+00:00:10.552 --> 00:00:15.692
+We have written variables, loops, functions, data structures, and small analytical examples.
+
+00:00:15.692 --> 00:00:19.212
+Now we are going to ask a different question.
+
+00:00:19.212 --> 00:00:23.417
+What makes code easier to trust, share, maintain, and improve?
+
+00:00:23.417 --> 00:00:26.747
+Professional code is not only code that runs one time.
+
+00:00:26.747 --> 00:00:32.847
+Professional code should be readable, reliable, tested, documented, reproducible, and respectful of data.
+
+00:00:32.847 --> 00:00:37.597
+This matters in analytics because our code often supports decisions.
+
+00:00:37.597 --> 00:00:41.027
+If the code is confusing, fragile, undocumented, or careless with sensitive information,
+
+00:00:41.027 --> 00:00:44.187
+then the analysis becomes harder to trust.
+
+00:00:44.187 --> 00:00:48.322
+As we move through this module, try to think like a future reader.
+
+00:00:48.322 --> 00:00:53.967
+That future reader might be your classmate, your coworker, your instructor, or even yourself two months later.
+
+00:00:53.967 --> 00:00:57.777
+The goal is not to make the code look complicated.
+
+00:00:57.777 --> 00:01:00.594
+The goal is to make the code clear and dependable.

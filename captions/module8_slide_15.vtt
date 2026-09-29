@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.472
+A reproducible project is organized so another person can understand it and run it.
+
+00:00:05.472 --> 00:00:08.772
+This does not mean the project must be complicated.
+
+00:00:08.772 --> 00:00:12.372
+Even a small project benefits from clear structure.
+
+00:00:12.372 --> 00:00:17.187
+A data folder can store input data or a small sample dataset.
+
+00:00:17.187 --> 00:00:21.397
+A source folder can store reusable Python functions.
+
+00:00:21.397 --> 00:00:26.017
+A notebooks folder can store exploration or teaching notebooks.
+
+00:00:26.017 --> 00:00:30.792
+A README file explains the purpose of the project and how to run it.
+
+00:00:30.792 --> 00:00:35.757
+A requirements file lists the packages needed to reproduce the environment.
+
+00:00:35.757 --> 00:00:39.227
+This kind of organization reduces confusion.
+
+00:00:39.227 --> 00:00:42.662
+It also helps you when you return to the project later.
+
+00:00:42.662 --> 00:00:47.672
+If you have ever opened an old folder and wondered which file was the final version,
+
+00:00:47.672 --> 00:00:51.427
+then you already understand why reproducible structure matters.

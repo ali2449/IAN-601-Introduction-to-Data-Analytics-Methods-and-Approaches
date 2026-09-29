@@ -1,18 +1,43 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.776
-Use this slide as guided practice Work in small
-steps and explain why each result
+00:00:00.000 --> 00:00:02.987
+Professional work also requires a good workflow.
 
-00:00:05.789 --> 00:00:11.690
-makes sense Cells execute in order Variables
+00:00:02.987 --> 00:00:05.212
+Git is a version control tool.
 
-00:00:11.717 --> 00:00:17.311
-describe meaning No private data Examples
+00:00:05.212 --> 00:00:08.687
+It helps us track changes in a project over time.
 
-00:00:17.338 --> 00:00:23.011
-are fictional Notes explain why not every line
-Outputs make
+00:00:08.687 --> 00:00:14.492
+Even if you are working alone, Git is useful because it creates a history of your project.
 
-00:00:23.038 --> 00:00:23.617
-sense
+00:00:14.492 --> 00:00:17.532
+A typical workflow has a few steps.
+
+00:00:17.532 --> 00:00:20.107
+First, you edit your working files.
+
+00:00:20.107 --> 00:00:23.227
+Then you use git status to see what changed.
+
+00:00:23.227 --> 00:00:28.527
+Next, you use git add to stage the files you want to include in the next checkpoint.
+
+00:00:28.527 --> 00:00:34.237
+Then you use git commit with a message that explains the change.
+
+00:00:34.237 --> 00:00:40.667
+Finally, if you are using a remote repository, you use git push to send your commits to that
+
+00:00:40.667 --> 00:00:44.477
+remote location. A good commit message should describe the purpose of the change.
+
+00:00:44.477 --> 00:00:48.952
+For example, fix missing value handling is more useful than update file.
+
+00:00:48.952 --> 00:00:53.947
+You do not need to become a Git expert immediately.
+
+00:00:53.947 --> 00:01:00.397
+But you should understand the basic idea: Git helps you save meaningful checkpoints as your project evolves.

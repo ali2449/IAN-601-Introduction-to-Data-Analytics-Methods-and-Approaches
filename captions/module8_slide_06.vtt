@@ -1,28 +1,46 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.895
-This slide focuses on Make random work reproducible
-Start with the meaning of the idea
+00:00:00.000 --> 00:00:03.632
+This slide gives us a practical example of exception handling.
 
-00:00:06.118 --> 00:00:11.987
-then connect it to the example and the larger
-analytical workflow A random
+00:00:03.632 --> 00:00:07.652
+In many datasets, numeric values arrive as text.
 
-00:00:12.014 --> 00:00:17.714
-seed makes random examples repeatable This matters
-for debugging teaching and
+00:00:07.652 --> 00:00:13.912
+Some values can be converted easily, such as forty two point five or eighteen.
 
-00:00:17.740 --> 00:00:23.327
-reports Use a random seed Before running the
+00:00:13.912 --> 00:00:18.042
+Other values cannot be converted, such as N A, an empty string, or None.
 
-00:00:23.353 --> 00:00:29.159
-example predict the output Run it in the browser
-inspect the result then modify
+00:00:18.042 --> 00:00:22.297
+The function to_number tries to convert a value to a float.
 
-00:00:29.185 --> 00:00:34.948
-one input expression or value and run it again
-Notice whether the shorter technique
+00:00:22.297 --> 00:00:28.457
+If the conversion works, the function returns the number.
 
-00:00:34.961 --> 00:00:37.935
-improves clarity or only makes the code harder to
-read
+00:00:28.457 --> 00:00:31.797
+If Python raises a TypeError or ValueError, the function returns None.
+
+00:00:31.797 --> 00:00:37.187
+This is useful because the program does not crash.
+
+00:00:37.187 --> 00:00:41.122
+Instead, we clearly mark invalid values as None.
+
+00:00:41.122 --> 00:00:46.462
+Then we create clean_values by applying the function to every raw value.
+
+00:00:46.462 --> 00:00:51.872
+After that, we create valid_values by keeping only values that are not None.
+
+00:00:51.872 --> 00:00:54.827
+Run the cell and inspect both lists.
+
+00:00:54.827 --> 00:00:59.237
+Notice that the invalid values are not silently treated as zero.
+
+00:00:59.237 --> 00:01:03.857
+That is important. Treating missing or invalid values as zero could change the analysis.
+
+00:01:03.857 --> 00:01:10.379
+Returning None makes the missingness visible so we can decide how to handle it.

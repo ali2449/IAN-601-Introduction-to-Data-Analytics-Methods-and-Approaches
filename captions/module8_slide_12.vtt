@@ -1,19 +1,40 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.803
-This slide summarizes Module 8 Focus on the patterns
-you should be able to explain
+00:00:00.000 --> 00:00:03.662
+Testing helps us check whether code behaves the way we expect.
 
-00:00:05.816 --> 00:00:11.728
-and reuse after completing the examples Use clear
-names and structure
+00:00:03.662 --> 00:00:09.297
+In beginner Python, assert is a simple way to start testing.
 
-00:00:12.664 --> 00:00:18.866
-Write useful docstrings Reproducibility Control
+00:00:09.297 --> 00:00:13.302
+On this slide, we define a function called normalize_status.
 
-00:00:18.892 --> 00:00:24.461
-randomness with seeds Use small checks for functions
-Track what
+00:00:13.302 --> 00:00:18.262
+The function strips extra spaces and converts the text to lowercase.
 
-00:00:24.487 --> 00:00:25.553
-the program does
+00:00:18.262 --> 00:00:21.067
+Then we write three assert statements.
+
+00:00:21.067 --> 00:00:24.617
+Each assert statement checks one expected behavior.
+
+00:00:24.617 --> 00:00:29.517
+The first test checks that Complete with extra spaces becomes complete.
+
+00:00:29.517 --> 00:00:32.727
+The second checks that CANCELLED becomes cancelled.
+
+00:00:32.727 --> 00:00:36.982
+The third checks that pending with a leading space becomes pending.
+
+00:00:36.982 --> 00:00:42.242
+If all assertions are true, the program prints All checks passed.
+
+00:00:42.242 --> 00:00:47.777
+Try changing one expected value to something incorrect and run the cell again.
+
+00:00:47.777 --> 00:00:50.747
+Python should raise an AssertionError.
+
+00:00:50.747 --> 00:00:56.320
+That error is helpful because it tells us the behavior no longer matches our expectation.

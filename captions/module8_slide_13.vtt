@@ -1,0 +1,40 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.267
+A test suite is a group of tests.
+
+00:00:02.267 --> 00:00:07.692
+In real projects, tests are often stored in separate files and run with testing tools.
+
+00:00:07.692 --> 00:00:13.002
+But the idea is the same as what we see here.
+
+00:00:13.002 --> 00:00:16.112
+We have a function called normalize_status.
+
+00:00:16.112 --> 00:00:20.412
+This version also replaces spaces with underscores.
+
+00:00:20.412 --> 00:00:23.572
+Then we define two test functions.
+
+00:00:23.572 --> 00:00:25.972
+The first test checks the complete status.
+
+00:00:25.972 --> 00:00:28.707
+The second checks In Progress and expects in_progress.
+
+00:00:28.707 --> 00:00:34.407
+At the bottom, we loop through the test functions and run each one.
+
+00:00:34.407 --> 00:00:37.807
+If both tests pass, the program prints All tests passed.
+
+00:00:37.807 --> 00:00:44.517
+This structure may look simple, but it introduces an important habit.
+
+00:00:44.517 --> 00:00:51.082
+Instead of manually checking output every time, we write small checks that Python can run for us.
+
+00:00:51.082 --> 00:00:54.240
+That gives us confidence when we revise code later.
