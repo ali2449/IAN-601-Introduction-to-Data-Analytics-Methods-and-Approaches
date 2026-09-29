@@ -101,6 +101,190 @@ body.ian601-shell .slide-content{font-size:15px!important}
 @media(max-height:820px) and (min-width:1000px){body.ian601-shell main.stage>.slide{padding:22px 34px!important}.module10-code .monaco-host{height:190px!important}.module10-code .code-input{min-height:145px!important}.module10-hero-lead{font-size:28px}.module10-pipeline{padding:16px}.module10-pipeline div{padding:14px 8px}}
 @media(max-width:900px){.module10-hero-grid,.industry-grid{grid-template-columns:1fr}.skill-grid,.workflow-strip,.quality-grid,.analyst-workflow,.challenge-grid,.checklist-grid{grid-template-columns:repeat(2,1fr)}.module10-pipeline{grid-template-columns:1fr}.module10-pipeline span{transform:rotate(90deg);text-align:center}}
 @media(max-width:600px){.skill-grid,.workflow-strip,.quality-grid,.analyst-workflow,.challenge-grid,.checklist-grid{grid-template-columns:1fr}}
+</style>
+<style id="module10-compact-vscode-fix">
+/* Match the compact VS Code treatment used by the newer IAN 601 modules. */
+body.ian601-shell .slide:has(.module10-code){
+  padding:22px 34px!important;
+}
+body.ian601-shell .slide:has(.module10-code) .slide-header{
+  margin-bottom:10px!important;
+}
+body.ian601-shell .slide:has(.module10-code) .slide-header h2{
+  font-size:clamp(28px,2.2vw,38px)!important;
+}
+.module10-code{
+  border:1px solid #6b7280!important;
+  border-radius:9px!important;
+  overflow:hidden!important;
+  background:#1e1e1e!important;
+  box-shadow:0 8px 22px rgba(15,23,42,.16)!important;
+}
+.module10-code .cell-head{
+  display:flex!important;
+  justify-content:space-between!important;
+  gap:12px!important;
+  padding:8px 12px!important;
+  background:#2d3d50!important;
+  color:#f8fafc!important;
+  border-bottom:1px solid #172536!important;
+}
+.module10-code .cell-label{
+  font-size:10px!important;
+  color:#f3b55c!important;
+  font-weight:900!important;
+  text-transform:uppercase!important;
+  letter-spacing:.08em!important;
+}
+.module10-code .cell-head h3{
+  margin:1px 0!important;
+  color:#f8fafc!important;
+  font-size:13px!important;
+}
+.module10-code .cell-head p{
+  margin:0!important;
+  color:#cbd5e1!important;
+  font-size:10.5px!important;
+}
+.module10-code .file-pill{
+  height:max-content!important;
+  padding:4px 8px!important;
+  border:1px solid #8192a5!important;
+  border-radius:999px!important;
+  color:#dbeafe!important;
+  font:10px "Source Code Pro",Consolas,monospace!important;
+}
+.module10-code .editor-shell{
+  background:#1e1e1e!important;
+  border-bottom:0!important;
+}
+.module10-code .editor-topbar{
+  height:30px!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:6px!important;
+  padding:0 10px!important;
+  background:#252526!important;
+  border-bottom:1px solid #333!important;
+}
+.module10-code .dot{
+  width:9px!important;
+  height:9px!important;
+}
+.module10-code .tab-name{
+  margin-left:7px!important;
+  padding:7px 12px 6px!important;
+  background:#1e1e1e!important;
+  border-top:2px solid #3794ff!important;
+  color:#d4d4d4!important;
+  font:11px Consolas,"Courier New",monospace!important;
+}
+.module10-code .code-input{
+  display:block;
+  width:100%!important;
+  height:180px!important;
+  min-height:180px!important;
+  max-height:180px!important;
+  resize:none!important;
+  border:0!important;
+  background:#1e1e1e!important;
+  color:#d4d4d4!important;
+  padding:11px 13px!important;
+  outline:0!important;
+  font:12.5px/1.45 Consolas,"Courier New",monospace!important;
+}
+.module10-code .monaco-host{
+  display:none;
+  width:100%!important;
+  height:180px!important;
+  min-height:180px!important;
+  max-height:180px!important;
+  background:#1e1e1e!important;
+}
+.module10-code.monaco-ready .code-input{display:none!important}
+.module10-code.monaco-ready .monaco-host{display:block!important}
+.module10-code .editor-status{
+  height:22px!important;
+  display:flex!important;
+  justify-content:flex-end!important;
+  align-items:center!important;
+  gap:12px!important;
+  padding:0 9px!important;
+  background:#007acc!important;
+  color:#fff!important;
+  font:9px "Segoe UI",Arial,sans-serif!important;
+}
+.module10-code .cell-actions{
+  display:flex!important;
+  gap:6px!important;
+  padding:6px 9px!important;
+  background:#2d3d50!important;
+}
+.module10-code .cell-actions .btn{
+  min-height:29px!important;
+  padding:4px 9px!important;
+  border:1px solid #60758c!important;
+  border-radius:7px!important;
+  background:#42566d!important;
+  color:#fff!important;
+  font-size:11px!important;
+  font-weight:800!important;
+  box-shadow:none!important;
+}
+.module10-code .cell-actions .run-cell{
+  background:#0e639c!important;
+  border-color:#1177bb!important;
+}
+.module10-code .cell-actions .run-cell:hover{
+  background:#1177bb!important;
+}
+.module10-code .output{
+  display:none!important;
+  margin:0!important;
+  min-height:0!important;
+  max-height:105px!important;
+  overflow:auto!important;
+  padding:9px 11px!important;
+  border-top:1px solid #3b4654!important;
+  background:#0f172a!important;
+  color:#f8fafc!important;
+  white-space:pre-wrap!important;
+  font:11px/1.45 Consolas,"Courier New",monospace!important;
+}
+.module10-code .output.show{
+  display:block!important;
+}
+.module10-code .output.error{
+  background:#450a0a!important;
+  color:#fecaca!important;
+}
+.module10-note{
+  margin-top:8px!important;
+  padding:8px 12px!important;
+  min-height:0!important;
+  border-radius:10px!important;
+  border:1px solid var(--shell-line)!important;
+  border-left:4px solid var(--shell-accent)!important;
+  background:var(--shell-panel2)!important;
+  color:var(--shell-ink)!important;
+  font-size:12px!important;
+}
+@media(max-height:760px) and (min-width:901px){
+  .module10-code .code-input,
+  .module10-code .monaco-host{
+    height:155px!important;
+    min-height:155px!important;
+    max-height:155px!important;
+  }
+}
+@media(max-width:900px){
+  .module10-code .code-input,
+  .module10-code .monaco-host{
+    height:230px!important;
+    min-height:230px!important;
+    max-height:230px!important;
+  }
+}
 </style></head>
 <body>
 <div class="deck">
@@ -1326,10 +1510,10 @@ def _run_user_code(code):
 `);pyodide=py;setRuntime('ready','Python ready');return py;}).catch(err=>{setRuntime('error','Python failed to load');throw err;});}return pyodideLoading;}
 function getCellCode(cell){const host=cell.querySelector('.monaco-host');const ed=monacoEditors.get(host);return ed?ed.getValue():cell.querySelector('.code-input').value;}
 function setCellCode(cell,code){const host=cell.querySelector('.monaco-host');const ed=monacoEditors.get(host);if(ed)ed.setValue(code);cell.querySelector('.code-input').value=code;}
-async function runCell(cell){if(!cell)return;const btn=cell.querySelector('.run-cell');const output=cell.querySelector('.output');btn.classList.add('running');btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Running';output.className='output';output.textContent='Running...';try{const py=await loadPython();const code=getCellCode(cell);const pkgs=packagesFor(code);if(pkgs.length){setRuntime('', 'Loading package: '+pkgs.join(', '));for(const pkg of pkgs){await py.loadPackage(pkg);}setRuntime('ready','Python ready');}const result=py.globals.get('_run_user_code')(code).toJs({dict_converter:Object.fromEntries});const text=(result.stdout||'')+(result.stderr?('\n'+result.stderr):'');output.textContent=text.trim()||'Code ran successfully with no printed output.';output.className='output '+(result.ok?'success':'error');setRuntime(result.ok?'ready':'error',result.ok?'Python ready':'Python error');}catch(err){output.textContent=String(err);output.className='output error';setRuntime('error','Python error');}finally{btn.classList.remove('running');btn.innerHTML='<i class="fa-solid fa-play"></i> Run';}}
+async function runCell(cell){if(!cell)return;const btn=cell.querySelector('.run-cell');const output=cell.querySelector('.output');btn.classList.add('running');btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Running';output.className='output show';output.textContent='Running...';try{const py=await loadPython();const code=getCellCode(cell);const pkgs=packagesFor(code);if(pkgs.length){setRuntime('', 'Loading package: '+pkgs.join(', '));for(const pkg of pkgs){await py.loadPackage(pkg);}setRuntime('ready','Python ready');}const result=py.globals.get('_run_user_code')(code).toJs({dict_converter:Object.fromEntries});const text=(result.stdout||'')+(result.stderr?('\n'+result.stderr):'');output.textContent=text.trim()||'Code ran successfully with no printed output.';output.className='output show '+(result.ok?'success':'error');setRuntime(result.ok?'ready':'error',result.ok?'Python ready':'Python error');}catch(err){output.textContent=String(err);output.className='output show error';setRuntime('error','Python error');}finally{btn.classList.remove('running');btn.innerHTML='<i class="fa-solid fa-play"></i> Run';}}
 async function runActiveSlide(){const cells=[...slides[current].querySelectorAll('.code-cell')];for(const cell of cells)await runCell(cell);}
 document.getElementById('run-slide-btn')?.addEventListener('click',runActiveSlide);document.querySelectorAll('.run-all-btn').forEach(b=>b.onclick=runActiveSlide);document.getElementById('restart-python').onclick=()=>{pyodide=null;pyodideLoading=null;setRuntime('', 'Python reset. It will reload when a code cell runs.');document.querySelectorAll('.output').forEach(o=>{o.className='output';o.textContent='Python reset. Click Run to execute this cell.';});};
-document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');originalCode.set(cell,textarea.value);cell.querySelector('.run-cell').onclick=()=>runCell(cell);cell.querySelector('.reset-cell').onclick=()=>{setCellCode(cell,originalCode.get(cell));cell.querySelector('.output').className='output';cell.querySelector('.output').textContent='Code reset. Click Run to execute this cell.';};cell.querySelector('.copy-cell').onclick=async()=>{try{await navigator.clipboard.writeText(getCellCode(cell));const b=cell.querySelector('.copy-cell');b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1000);}catch(e){cell.querySelector('.output').textContent='Copy failed. You can select and copy manually.';}};});
+document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');originalCode.set(cell,textarea.value);cell.querySelector('.run-cell').onclick=()=>runCell(cell);cell.querySelector('.reset-cell').onclick=()=>{setCellCode(cell,originalCode.get(cell));cell.querySelector('.output').className='output';cell.querySelector('.output').textContent='Code reset. Click Run to execute this cell.';};cell.querySelector('.copy-cell').onclick=async()=>{try{await navigator.clipboard.writeText(getCellCode(cell));const b=cell.querySelector('.copy-cell');b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1000);}catch(e){const out=cell.querySelector('.output');out.textContent='Copy failed. You can select and copy manually.';out.className='output show error';}};});
 function initMonaco(){if(!window.require)return;try{require.config({paths:{vs:'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs'}});require(['vs/editor/editor.main'],function(){monaco.editor.setTheme(document.documentElement.dataset.theme==='dark'?'vs-dark':'vs');document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');const host=cell.querySelector('.monaco-host');const editor=monaco.editor.create(host,{value:textarea.value,language:'python',theme:document.documentElement.dataset.theme==='dark'?'vs-dark':'vs',fontFamily:'Source Code Pro, Consolas, monospace',fontSize:14,lineNumbers:'on',minimap:{enabled:false},automaticLayout:true,scrollBeyondLastLine:false,tabSize:4,wordWrap:'on'});monacoEditors.set(host,editor);cell.classList.add('monaco-ready');editor.onDidChangeCursorPosition(e=>{const status=cell.querySelector('.editor-status span');if(status)status.textContent=`Ln ${e.position.lineNumber}, Col ${e.position.column}`;});});});}catch(e){console.warn('Monaco editor not available, using textarea fallback.',e);}}
 initMonaco();const initialSlide=initNarr();
 showSlide(initialSlide);
