@@ -544,3 +544,90 @@ body.ian601-shell.shell-auto-hide.shell-cc-off footer:not(:hover):not(:focus-wit
     max-height:55vh!important;
   }
 }
+
+
+/* ===== Legacy-layout correction: Modules 1-4 and 10-14 only =====
+   Older IAN 601 pages contain strong grid-area rules from the previous footer.
+   Reset those rules after the shared shell has regrouped the controls. */
+body.ian601-shell.shell-legacy-layout footer.ian603-bottombar{
+  grid-template-columns:minmax(0,1fr) minmax(300px,380px)!important;
+  grid-template-rows:1fr!important;
+  grid-template-areas:none!important;
+  grid-auto-flow:row!important;
+  align-items:center!important;
+}
+body.ian601-shell.shell-legacy-layout footer.ian603-bottombar > audio,
+body.ian601-shell.shell-legacy-layout #narration-audio{
+  display:none!important;
+}
+body.ian601-shell.shell-legacy-layout footer.ian603-bottombar > .audio-block{
+  grid-area:auto!important;
+  grid-column:1!important;
+  grid-row:1!important;
+  width:100%!important;
+  min-width:0!important;
+  align-self:center!important;
+}
+body.ian601-shell.shell-legacy-layout footer.ian603-bottombar > .presentation-nav{
+  grid-area:auto!important;
+  grid-column:2!important;
+  grid-row:1!important;
+  width:100%!important;
+  min-width:0!important;
+  align-self:center!important;
+}
+body.ian601-shell.shell-legacy-layout .presentation-nav .nav-left,
+body.ian601-shell.shell-legacy-layout .presentation-nav .nav-right,
+body.ian601-shell.shell-legacy-layout .presentation-nav .bottom-nav-panel{
+  grid-area:auto!important;
+  grid-row:1!important;
+  min-width:0!important;
+}
+body.ian601-shell.shell-legacy-layout .presentation-nav .nav-left{
+  grid-column:1!important;
+}
+body.ian601-shell.shell-legacy-layout .presentation-nav .bottom-nav-panel{
+  grid-column:2!important;
+}
+body.ian601-shell.shell-legacy-layout .presentation-nav .nav-right{
+  grid-column:3!important;
+}
+body.ian601-shell.shell-legacy-layout .presentation-nav{
+  grid-template-columns:42px minmax(0,1fr) 42px!important;
+  grid-template-rows:1fr!important;
+  grid-template-areas:none!important;
+}
+body.ian601-shell.shell-legacy-layout .audio-block .narration-controls,
+body.ian601-shell.shell-legacy-layout .audio-block .subtitle-bar,
+body.ian601-shell.shell-legacy-layout .audio-block .audio-player{
+  grid-area:auto!important;
+  grid-column:auto!important;
+  grid-row:auto!important;
+  width:100%!important;
+}
+body.ian601-shell.shell-legacy-layout .audio-block .narration-controls{
+  justify-content:flex-start!important;
+}
+body.ian601-shell.shell-legacy-layout .audio-block .audio-player{
+  grid-template-columns:auto minmax(120px,190px) minmax(180px,1fr) auto!important;
+}
+
+@media(max-width:1380px) and (min-width:901px){
+  body.ian601-shell.shell-legacy-layout footer.ian603-bottombar{
+    grid-template-columns:minmax(0,1fr) minmax(270px,330px)!important;
+  }
+}
+@media(max-width:900px){
+  body.ian601-shell.shell-legacy-layout footer.ian603-bottombar{
+    grid-template-columns:1fr!important;
+    grid-template-rows:auto auto!important;
+  }
+  body.ian601-shell.shell-legacy-layout footer.ian603-bottombar > .audio-block{
+    grid-column:1!important;
+    grid-row:1!important;
+  }
+  body.ian601-shell.shell-legacy-layout footer.ian603-bottombar > .presentation-nav{
+    grid-column:1!important;
+    grid-row:2!important;
+  }
+}
