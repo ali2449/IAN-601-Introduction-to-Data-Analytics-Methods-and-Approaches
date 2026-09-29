@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="IAN 601 Module 10 Pandas slide-style HTML lesson with executable VS Code-style Python cells." />
-<title>Module 10: Pandas | IAN 601</title>
+<meta name="description" content="IAN 601 Module 10: practical Pandas for data analysis, cleaning, transformation, grouping, merging, validation, and job-ready workflows." />
+<title>IAN 601 · Module 10 · Pandas for Real Analytics</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%8D%3C/text%3E%3C/svg%3E" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -82,384 +82,1156 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
 .ian603-bottombar .bottom-nav-panel{align-self:center!important}
 .topbar>.toolbar,.topbar>.controls,.topbar>.top-controls{margin-left:auto!important}
 .topbar .ian603-tool{box-shadow:none!important}
-</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20260929b"><!-- IAN601_UI_SHELL_END --></head>
+</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20260929b"><!-- IAN601_UI_SHELL_END -->
+<style id="module10-redesign-v2">
+body.ian601-shell main.stage>.slide{padding:clamp(24px,2.6vw,42px)!important}
+body.ian601-shell .slide-header{margin-bottom:14px!important}
+body.ian601-shell .slide-header h2{font-size:clamp(30px,2.55vw,44px)!important}
+body.ian601-shell .slide-content{font-size:15px!important}
+.module10-hero-grid{min-height:100%;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:34px;align-items:center}
+.module10-hero-lead{font-size:clamp(25px,2.25vw,36px);line-height:1.16;font-weight:850;letter-spacing:-.035em;margin:0 0 18px}
+.module10-pipeline{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:8px;align-items:center;padding:24px;border:1px solid var(--shell-line);border-radius:18px;background:var(--shell-panel2)}
+.module10-pipeline div{padding:18px 10px;border:1px solid var(--shell-line);border-radius:12px;background:var(--shell-panel);font-weight:850;text-align:center}.module10-pipeline span{color:var(--shell-accent);font-weight:900;font-size:20px}
+.industry-grid,.skill-grid,.quality-grid,.challenge-grid,.checklist-grid{display:grid;gap:13px}.industry-grid{grid-template-columns:1fr 1fr}.industry-grid article{border:1px solid var(--shell-line);border-radius:15px;padding:20px;background:var(--shell-panel2)}.industry-grid article>span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--shell-accent);font-weight:900}.industry-grid h3{margin:6px 0}.industry-grid small{color:var(--shell-muted)}
+.skill-grid{grid-template-columns:repeat(4,1fr)}.skill-grid>div,.quality-grid>div,.challenge-grid>div,.checklist-grid>div{border:1px solid var(--shell-line);border-radius:13px;padding:14px;background:var(--shell-panel2)}.skill-grid b,.challenge-grid span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--shell-accent);color:#fff;font-size:12px}.skill-grid h3,.challenge-grid h3,.checklist-grid h3{margin:8px 0 4px;font-size:15px}.skill-grid p,.challenge-grid p,.checklist-grid p{margin:0;color:var(--shell-muted);font-size:13px}
+.workflow-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.workflow-strip>div{border:1px solid var(--shell-line);border-radius:13px;padding:14px;background:var(--shell-panel2)}.workflow-strip span{color:var(--shell-accent);font-size:11px;font-weight:900}.workflow-strip b,.workflow-strip small{display:block}.workflow-strip small{color:var(--shell-muted);margin-top:4px}
+.mini-code{margin:10px 0 0;padding:12px;border-radius:10px;background:#111827;color:#f8fafc;overflow:auto}.module10-code{max-width:100%;margin-top:4px}.module10-code .code-input{min-height:165px!important;max-height:240px!important}.module10-code .monaco-host{height:215px!important}.module10-code .output{min-height:60px!important;max-height:145px!important}.module10-note{margin-top:10px!important;padding:10px 13px!important;font-size:13px!important}
+.messy-table{overflow:auto;border:1px solid var(--shell-line);border-radius:14px}.messy-table table{min-width:760px}.messy-table th,.messy-table td{padding:9px 11px;font-size:12.5px}.quality-grid{grid-template-columns:repeat(4,1fr);margin-top:14px}.quality-grid b,.quality-grid span{display:block}.quality-grid span{color:var(--shell-muted);font-size:12px;margin-top:3px}
+.analyst-workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.analyst-workflow>div{border:1px solid var(--shell-line);border-radius:13px;padding:14px;background:var(--shell-panel2)}.analyst-workflow b,.analyst-workflow code{display:block}.analyst-workflow code{margin-top:6px;color:var(--shell-accent);font-size:12px}.challenge-grid,.checklist-grid{grid-template-columns:repeat(3,1fr)}
+@media(max-height:820px) and (min-width:1000px){body.ian601-shell main.stage>.slide{padding:22px 34px!important}.module10-code .monaco-host{height:190px!important}.module10-code .code-input{min-height:145px!important}.module10-hero-lead{font-size:28px}.module10-pipeline{padding:16px}.module10-pipeline div{padding:14px 8px}}
+@media(max-width:900px){.module10-hero-grid,.industry-grid{grid-template-columns:1fr}.skill-grid,.workflow-strip,.quality-grid,.analyst-workflow,.challenge-grid,.checklist-grid{grid-template-columns:repeat(2,1fr)}.module10-pipeline{grid-template-columns:1fr}.module10-pipeline span{transform:rotate(90deg);text-align:center}}
+@media(max-width:600px){.skill-grid,.workflow-strip,.quality-grid,.analyst-workflow,.challenge-grid,.checklist-grid{grid-template-columns:1fr}}
+</style></head>
 <body>
 <div class="deck">
   <header class="topbar">
     <div class="brand"><span class="brand-mark">10</span><span>IAN 601 · Module 10</span></div>
     <div class="top-controls"><div id="runtime" class="runtime"><span class="runtime-dot"></span><span id="runtime-text">Python not loaded yet</span></div><button class="btn ghost" id="theme-btn" type="button"><i class="fa-solid fa-moon"></i> Theme</button><button class="btn ghost" id="restart-python" type="button">Reset Python</button><button class="ian603-tool" id="ian-progress-btn" type="button">Progress <span id="ian-progress-pct">0%</span></button><button class="ian603-tool" id="ian-fullscreen-btn" type="button">Fullscreen</button><button class="ian603-tool primary" id="run-slide-btn" type="button">Run slide ▶</button><button class="ian603-tool" id="ian-course-modules-btn" type="button">☰ Course Modules</button></div>
   </header>
-  <main class="stage" id="stage"><section class="slide" data-title="Pandas">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Module 10 · Interactive slide lesson</span><h2>Pandas</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
-    <div class="slide-content"><div class="title-grid">
-               <div><p class="big-lead">Pandas helps Python work with table-shaped data using DataFrames, rows, columns, filters, groups, and joins.</p><div class="pill-row"><span>Self-paced slides</span><span>Executable Python cells</span><span>VS Code-style editor</span><span>Separate study notes</span></div>
-               <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div></div>
-               <div><div class="table-visual"><div>id</div><div>channel</div><div>amount</div><div>1</div><div>web</div><div>45</div><div>2</div><div>email</div><div>72</div></div></div>
-             </div><div class="callout"><strong>Goal:</strong> Create DataFrames, inspect data, select columns, filter rows, create new columns, group data, handle missing values, and merge tables.</div></div>
-    <footer class="slide-footer"><span>Pandas · Tables and DataFrames</span><span>IAN 601 · Module 10 · Slide 1</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="How to use this page">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Self-paced workflow</span><h2>How to use this page</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
-    <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Read</h3><p>Start with the main idea on the slide.</p></div><div class="timeline-item"><span>2</span><h3>Run</h3><p>Execute the Python code in the browser.</p></div><div class="timeline-item"><span>3</span><h3>Compare</h3><p>Connect the output to the concept.</p></div><div class="timeline-item"><span>4</span><h3>Edit</h3><p>Change one value, variable, or condition.</p></div><div class="timeline-item"><span>5</span><h3>Reuse</h3><p>Apply the pattern to a new example.</p></div></div><div class="callout secondary">All slide points are visible. Use Next, Previous, arrow keys, or the slide menu.</div></div>
-    <footer class="slide-footer"><span>Pandas · Tables and DataFrames</span><span>IAN 601 · Module 10 · Slide 2</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="Learning path for Module 10">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Roadmap</span><h2>Learning path for Module 10</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
-    <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>DataFrame</h3><p>Create table-shaped data.</p></div><div class="timeline-item"><span>2</span><h3>Inspect</h3><p>Preview and understand columns.</p></div><div class="timeline-item"><span>3</span><h3>Select</h3><p>Choose columns and rows.</p></div><div class="timeline-item"><span>4</span><h3>Transform</h3><p>Create new columns.</p></div><div class="timeline-item"><span>5</span><h3>Group</h3><p>Summarize by category.</p></div><div class="timeline-item"><span>6</span><h3>Merge</h3><p>Combine related tables.</p></div></div></div>
-    <footer class="slide-footer"><span>Pandas · Tables and DataFrames</span><span>IAN 601 · Module 10 · Slide 3</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="Create a DataFrame">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Table basics</span><h2>Create a DataFrame</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A DataFrame is a table with column names. A list of dictionaries is a common way to create one.</p></div><div><div class="code-cell" data-filename="module10_create_dataframe.py">
+  <main class="stage" id="stage">
+<section class="slide" data-title="Pandas for Real Analytics"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Module 10 · Job-ready foundations</span><h2>Pandas for Real Analytics</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content"><div class="module10-hero-grid"><div><p class="module10-hero-lead">Turn messy rows into reliable analysis with a repeatable Pandas workflow.</p><div class="pill-row"><span>Load</span><span>Inspect</span><span>Clean</span><span>Transform</span><span>Summarize</span><span>Combine</span></div><div class="callout"><strong>Module goal:</strong> By the end, you should be able to take a small messy dataset and prepare a trustworthy analysis without copying a long recipe blindly.</div></div><div class="module10-pipeline"><div>Raw file</div><span>→</span><div>DataFrame</div><span>→</span><div>Clean data</div><span>→</span><div>Insight</div></div></div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Why Pandas matters at work"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Industry connection</span><h2>Why Pandas matters at work</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content"><div class="industry-grid"><article><span>Data analyst</span><h3>Functional Pandas</h3><p>Load data, inspect structure, clean issues, filter, aggregate, join, validate, and automate repeatable analysis.</p><small>Examples checked Sep 2026: Compass and DRW.</small></article><article><span>Data scientist</span><h3>Strong Pandas</h3><p>Do the same work confidently, then prepare features, handle imperfect data, integrate with NumPy/scikit-learn, and recognize when data is too large for one-machine Pandas.</p><small>Examples checked Sep 2026: Panasonic, Kemper, Walmart, Palo Alto Networks.</small></article></div><div class="callout secondary"><strong>What employers care about:</strong> Can you take an unfamiliar table, find quality problems, make defensible transformations, and produce a result someone else can trust?</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="What “job-ready Pandas” means"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Practical skill target</span><h2>What “job-ready Pandas” means</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content"><div class="skill-grid"><div><b>1</b><h3>Load</h3><p>CSV, Excel-like tables, database results.</p></div><div><b>2</b><h3>Inspect</h3><p>Rows, columns, types, missingness, duplicates.</p></div><div><b>3</b><h3>Select</h3><p>Columns, rows, conditions, top records.</p></div><div><b>4</b><h3>Clean</h3><p>Types, text, dates, missing values, duplicates.</p></div><div><b>5</b><h3>Transform</h3><p>Derived columns and vectorized logic.</p></div><div><b>6</b><h3>Summarize</h3><p>GroupBy, aggregation, pivot tables.</p></div><div><b>7</b><h3>Combine</h3><p>Merge related tables and validate joins.</p></div><div><b>8</b><h3>Verify</h3><p>Check row counts, keys, totals, and assumptions.</p></div></div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="The Pandas workflow"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Learning map</span><h2>The Pandas workflow</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content"><div class="workflow-strip"><div><span>01</span><b>Create / load</b><small>DataFrame, read_csv</small></div><div><span>02</span><b>Inspect</b><small>head, shape, info</small></div><div><span>03</span><b>Select</b><small>loc, iloc, masks</small></div><div><span>04</span><b>Clean</b><small>types, missing, duplicates</small></div><div><span>05</span><b>Transform</b><small>strings, dates, new columns</small></div><div><span>06</span><b>Summarize</b><small>groupby, agg, pivot</small></div><div><span>07</span><b>Combine</b><small>merge, concat</small></div><div><span>08</span><b>Validate</b><small>row counts and checks</small></div></div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Series and DataFrame"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Core structures</span><h2>Series and DataFrame</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content"><div class="two-col"><div><div class="concept-card"><span class="cell-label">Series</span><h3>One labeled dimension</h3><p>Useful for one column such as amount, channel, or date.</p><pre class="mini-code">orders["amount"]</pre></div></div><div><div class="concept-card"><span class="cell-label">DataFrame</span><h3>Rows + columns</h3><p>Each column has a name and dtype. Each row has an index.</p><pre class="mini-code">orders[["channel", "amount"]]</pre></div></div></div><div class="callout"><strong>Beginner habit:</strong> Before using a method, ask whether you are working with a Series or a DataFrame. That explains many confusing errors.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Create a DataFrame"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Start with a table</span><h2>Create a DataFrame</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_create_dataframe.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Create a small DataFrame</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Create a small orders table</h3><p>Start with five simple records.</p></div>
     <span class="file-pill">module10_create_dataframe.py</span>
   </div>
   <div class="editor-shell">
     <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_create_dataframe.py</span></div>
-    <textarea class="code-input" spellcheck="false">import pandas as pd
+    <textarea class="code-input" spellcheck="false" aria-label="Create a small orders table Python editor">import pandas as pd
 
 orders = pd.DataFrame([
-    {&quot;order_id&quot;: 1, &quot;channel&quot;: &quot;web&quot;, &quot;amount&quot;: 45.00},
-    {&quot;order_id&quot;: 2, &quot;channel&quot;: &quot;email&quot;, &quot;amount&quot;: 72.50},
-    {&quot;order_id&quot;: 3, &quot;channel&quot;: &quot;web&quot;, &quot;amount&quot;: 38.25}
+    {&quot;order_id&quot;: 101, &quot;channel&quot;: &quot;web&quot;,   &quot;amount&quot;: 45.00},
+    {&quot;order_id&quot;: 102, &quot;channel&quot;: &quot;email&quot;, &quot;amount&quot;: 72.50},
+    {&quot;order_id&quot;: 103, &quot;channel&quot;: &quot;web&quot;,   &quot;amount&quot;: 38.25},
+    {&quot;order_id&quot;: 104, &quot;channel&quot;: &quot;store&quot;, &quot;amount&quot;: 91.00},
+    {&quot;order_id&quot;: 105, &quot;channel&quot;: &quot;email&quot;, &quot;amount&quot;: 64.75},
 ])
 
 print(orders)</textarea>
-    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
-  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Pandas · Tables and DataFrames</span><span>IAN 601 · Module 10 · Slide 4</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="Inspect a DataFrame">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">First look</span><h2>Inspect a DataFrame</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Before analysis, preview the data and check basic structure.</p><div class="table-wrap"><table><thead><tr><th>Method</th><th>Use</th></tr></thead><tbody><tr><td><code>head()</code></td><td>First rows</td></tr><tr><td><code>shape</code></td><td>Rows and columns</td></tr><tr><td><code>dtypes</code></td><td>Column types</td></tr></tbody></table></div></div><div><div class="code-cell" data-filename="module10_inspect.py">
+</div><div class="callout module10-note"><strong>Why learn this?</strong> Small constructed DataFrames let you test an idea before applying it to a real file.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Load CSV data"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Realistic input</span><h2>Load CSV data</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_read_csv.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Preview and inspect</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module10_inspect.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Read CSV text</h3><p>This behaves like reading a small CSV file.</p></div>
+    <span class="file-pill">module10_read_csv.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_inspect.py</span></div>
-    <textarea class="code-input" spellcheck="false">import pandas as pd
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_read_csv.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Read CSV text Python editor">import pandas as pd
+from io import StringIO
+
+csv_text = &quot;&quot;&quot;order_id,channel,amount
+201,web,120.50
+202,email,85.00
+203,store,210.00
+&quot;&quot;&quot;
+
+orders = pd.read_csv(StringIO(csv_text))
+print(orders)
+print(type(orders))</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div><div class="callout module10-note"><strong>Work connection:</strong> SQL usually extracts the data; Pandas is often where analysts inspect, clean, and analyze the result.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="First inspection: rows and shape"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Never analyze blind</span><h2>First inspection: rows and shape</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_first_inspection.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Inspect the table</h3><p>Check examples, size, and column names.</p></div>
+    <span class="file-pill">module10_first_inspection.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_first_inspection.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Inspect the table Python editor">import pandas as pd
 
 orders = pd.DataFrame({
-    &quot;order_id&quot;: [1, 2, 3, 4],
-    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;, &quot;store&quot;],
-    &quot;amount&quot;: [45.00, 72.50, 38.25, 91.00]
+    &quot;order_id&quot;: [101, 102, 103, 104, 105, 106],
+    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;, &quot;store&quot;, &quot;email&quot;, &quot;web&quot;],
+    &quot;amount&quot;: [45, 72.5, 38.25, 91, 64.75, 120]
 })
 
-print(orders.head())
-print(&quot;Shape:&quot;, orders.shape)
-print(&quot;Column types:&quot;)
-print(orders.dtypes)</textarea>
-    <div class="monaco-host" aria-label="Python editor"></div>
+print(&quot;First rows:&quot;)
+print(orders.head(3))
+print(&quot;\nShape:&quot;, orders.shape)
+print(&quot;Columns:&quot;, orders.columns.tolist())
+print(&quot;\nSample:&quot;)
+print(orders.sample(2, random_state=1))</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
-  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Pandas · Tables and DataFrames</span><span>IAN 601 · Module 10 · Slide 5</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="Select columns and filter rows">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Subsetting</span><h2>Select columns and filter rows</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Pandas uses column names and conditions to select the part of the table you need.</p></div><div><div class="code-cell" data-filename="module10_filter.py">
+</div><div class="callout module10-note"><strong>Rule:</strong> Know how many rows and columns you have before and after major cleaning steps.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Inspect dtypes and structure"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Quality check</span><h2>Inspect dtypes and structure</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_dtypes_info.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Select and filter</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module10_filter.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Check structure</h3><p>Look beyond the visible values.</p></div>
+    <span class="file-pill">module10_dtypes_info.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_filter.py</span></div>
-    <textarea class="code-input" spellcheck="false">import pandas as pd
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_dtypes_info.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Check structure Python editor">import pandas as pd
 
 orders = pd.DataFrame({
-    &quot;order_id&quot;: [1, 2, 3, 4],
-    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;, &quot;store&quot;],
-    &quot;amount&quot;: [45.00, 72.50, 38.25, 91.00]
+    &quot;order_id&quot;: [101, 102, 103],
+    &quot;order_date&quot;: [&quot;2026-01-05&quot;, &quot;2026-01-06&quot;, &quot;2026-01-07&quot;],
+    &quot;amount&quot;: [&quot;45.00&quot;, &quot;72.50&quot;, &quot;38.25&quot;]
 })
 
-web_orders = orders[orders[&quot;channel&quot;] == &quot;web&quot;]
-high_orders = orders[orders[&quot;amount&quot;] &gt;= 70]
-
-print(&quot;Web orders:&quot;)
-print(web_orders)
-print(&quot;High orders:&quot;)
-print(high_orders)</textarea>
-    <div class="monaco-host" aria-label="Python editor"></div>
+print(&quot;dtypes:&quot;)
+print(orders.dtypes)
+print(&quot;\ninfo():&quot;)
+orders.info()</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
-  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Pandas · Tables and DataFrames</span><span>IAN 601 · Module 10 · Slide 6</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="Create new columns">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Transform</span><h2>Create new columns</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">New columns store calculated values or labels that help analysis.</p></div><div><div class="code-cell" data-filename="module10_new_columns.py">
+</div><div class="callout module10-note"><strong>Important:</strong> A column that contains digits is not automatically numeric. Dates also usually arrive as strings until you parse them.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Summaries and category counts"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Fast EDA</span><h2>Summaries and category counts</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_quick_eda.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Add calculated columns</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module10_new_columns.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Use describe, value_counts, and nunique</h3><p>Build a quick profile before deeper analysis.</p></div>
+    <span class="file-pill">module10_quick_eda.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_new_columns.py</span></div>
-    <textarea class="code-input" spellcheck="false">import pandas as pd
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_quick_eda.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Use describe, value_counts, and nunique Python editor">import pandas as pd
 
 orders = pd.DataFrame({
-    &quot;amount&quot;: [45.00, 72.50, 38.25, 91.00]
+    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;, &quot;store&quot;, &quot;email&quot;, &quot;web&quot;],
+    &quot;amount&quot;: [45, 72.5, 38.25, 91, 64.75, 120]
+})
+
+print(orders[&quot;amount&quot;].describe())
+print(&quot;\nChannel counts:&quot;)
+print(orders[&quot;channel&quot;].value_counts())
+print(&quot;\nUnique channels:&quot;, orders[&quot;channel&quot;].nunique())</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div><div class="callout module10-note"><strong>Analyst question:</strong> Do the counts and ranges look plausible for the business context?</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Select columns"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Choose what you need</span><h2>Select columns</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_select_columns.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Select one or several columns</h3><p>Compare Series and DataFrame selection.</p></div>
+    <span class="file-pill">module10_select_columns.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_select_columns.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Select one or several columns Python editor">import pandas as pd
+
+orders = pd.DataFrame({
+    &quot;order_id&quot;: [101, 102, 103],
+    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;store&quot;],
+    &quot;amount&quot;: [45, 72.5, 91]
+})
+
+one_column = orders[&quot;amount&quot;]
+two_columns = orders[[&quot;channel&quot;, &quot;amount&quot;]]
+
+print(type(one_column))
+print(one_column)
+print(&quot;\nTwo columns:&quot;)
+print(two_columns)</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Use loc and iloc"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Label vs position</span><h2>Use loc and iloc</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_loc_iloc.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Select with loc and iloc</h3><p>Use names when meaning matters; positions when location matters.</p></div>
+    <span class="file-pill">module10_loc_iloc.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_loc_iloc.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Select with loc and iloc Python editor">import pandas as pd
+
+orders = pd.DataFrame({
+    &quot;order_id&quot;: [101, 102, 103, 104],
+    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;, &quot;store&quot;],
+    &quot;amount&quot;: [45, 72.5, 38.25, 91]
+})
+
+print(&quot;loc:&quot;)
+print(orders.loc[orders[&quot;channel&quot;] == &quot;web&quot;, [&quot;order_id&quot;, &quot;amount&quot;]])
+
+print(&quot;\niloc:&quot;)
+print(orders.iloc[0:2, 0:2])</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Filter rows with conditions"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Ask business questions</span><h2>Filter rows with conditions</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_filter_rows.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Filter orders</h3><p>Answer two small business questions.</p></div>
+    <span class="file-pill">module10_filter_rows.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_filter_rows.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Filter orders Python editor">import pandas as pd
+
+orders = pd.DataFrame({
+    &quot;order_id&quot;: [101, 102, 103, 104, 105],
+    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;, &quot;store&quot;, &quot;email&quot;],
+    &quot;amount&quot;: [45, 72.5, 138.25, 91, 164.75]
+})
+
+web_high = orders[(orders[&quot;channel&quot;] == &quot;web&quot;) &amp; (orders[&quot;amount&quot;] &gt;= 100)]
+large = orders.query(&quot;amount &gt;= 100&quot;)
+
+print(&quot;Web orders &gt;= 100:&quot;)
+print(web_high)
+print(&quot;\nAll large orders:&quot;)
+print(large)</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div><div class="callout module10-note"><strong>Think first:</strong> A filter should correspond to a real question, not just a syntax exercise.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Sort and find top records"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Prioritize</span><h2>Sort and find top records</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_sort_top.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Find the largest orders</h3><p>Sort descending and return the top three.</p></div>
+    <span class="file-pill">module10_sort_top.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_sort_top.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Find the largest orders Python editor">import pandas as pd
+
+orders = pd.DataFrame({
+    &quot;order_id&quot;: [101, 102, 103, 104, 105],
+    &quot;amount&quot;: [45, 72.5, 138.25, 91, 164.75]
+})
+
+print(orders.sort_values(&quot;amount&quot;, ascending=False))
+print(&quot;\nTop 3:&quot;)
+print(orders.nlargest(3, &quot;amount&quot;))</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="A messy dataset is normal"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Cleaning case</span><h2>A messy dataset is normal</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content"><div class="messy-table"><table><thead><tr><th>order_id</th><th>order_date</th><th>channel</th><th>city</th><th>amount</th><th>status</th></tr></thead><tbody><tr><td>1001</td><td>2026-01-05</td><td> Web </td><td>Greensboro</td><td>$120.50</td><td>Complete</td></tr><tr><td>1002</td><td>2026-01-06</td><td>EMAIL</td><td>Charlotte</td><td>$85.00</td><td>complete</td></tr><tr><td>1003</td><td>not-a-date</td><td>web</td><td>Raleigh</td><td>—</td><td>Complete</td></tr><tr><td>1003</td><td>not-a-date</td><td>web</td><td>Raleigh</td><td>—</td><td>Complete</td></tr><tr><td>1004</td><td>2026-01-08</td><td> Store </td><td>—</td><td>$210.00</td><td>Cancelled</td></tr></tbody></table></div><div class="quality-grid"><div><b>Text</b><span>spaces + inconsistent case</span></div><div><b>Types</b><span>currency and dates stored as strings</span></div><div><b>Missing</b><span>amount and city</span></div><div><b>Duplicate</b><span>order 1003 appears twice</span></div></div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Profile data quality"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Before changing anything</span><h2>Profile data quality</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_quality_profile.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Profile a messy file</h3><p>Measure the problems first.</p></div>
+    <span class="file-pill">module10_quality_profile.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_quality_profile.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Profile a messy file Python editor">import pandas as pd
+from io import StringIO
+
+raw = pd.read_csv(StringIO(&quot;&quot;&quot;order_id,order_date,channel,city,amount,status
+1001,2026-01-05, Web ,Greensboro,$120.50,Complete
+1002,2026-01-06,EMAIL,Charlotte,$85.00,complete
+1003,not-a-date,web,Raleigh,,Complete
+1003,not-a-date,web,Raleigh,,Complete
+1004,2026-01-08, Store ,,$210.00,Cancelled
+&quot;&quot;&quot;))
+
+print(raw)
+print(&quot;\nMissing values:&quot;)
+print(raw.isna().sum())
+print(&quot;\nDuplicate rows:&quot;, raw.duplicated().sum())
+print(&quot;\nDtypes:&quot;)
+print(raw.dtypes)</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Convert types safely"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Numbers and dates</span><h2>Convert types safely</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_type_conversion.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Convert amount and date</h3><p>Remove the currency symbol, then parse.</p></div>
+    <span class="file-pill">module10_type_conversion.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_type_conversion.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Convert amount and date Python editor">import pandas as pd
+
+df = pd.DataFrame({
+    &quot;amount&quot;: [&quot;$120.50&quot;, &quot;$85.00&quot;, None, &quot;$210.00&quot;],
+    &quot;order_date&quot;: [&quot;2026-01-05&quot;, &quot;2026-01-06&quot;, &quot;not-a-date&quot;, &quot;2026-01-08&quot;]
+})
+
+df[&quot;amount&quot;] = pd.to_numeric(
+    df[&quot;amount&quot;].str.replace(&quot;$&quot;, &quot;&quot;, regex=False),
+    errors=&quot;coerce&quot;
+)
+df[&quot;order_date&quot;] = pd.to_datetime(df[&quot;order_date&quot;], errors=&quot;coerce&quot;)
+
+print(df)
+print(&quot;\nDtypes:&quot;)
+print(df.dtypes)</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div><div class="callout module10-note"><strong>Why coerce?</strong> It makes invalid values visible as missing instead of silently pretending they are correct.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Handle missing values deliberately"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Do not fill blindly</span><h2>Handle missing values deliberately</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_missing_values.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Compare missing-value choices</h3><p>Use different strategies for different columns.</p></div>
+    <span class="file-pill">module10_missing_values.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_missing_values.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Compare missing-value choices Python editor">import pandas as pd
+
+df = pd.DataFrame({
+    &quot;order_id&quot;: [1001, 1002, 1003, 1004],
+    &quot;city&quot;: [&quot;Greensboro&quot;, &quot;Charlotte&quot;, &quot;Raleigh&quot;, None],
+    &quot;amount&quot;: [120.50, 85.00, None, 210.00]
+})
+
+print(&quot;Missing before:&quot;)
+print(df.isna().sum())
+
+df[&quot;city&quot;] = df[&quot;city&quot;].fillna(&quot;Unknown&quot;)
+df[&quot;amount&quot;] = df[&quot;amount&quot;].fillna(df[&quot;amount&quot;].median())
+
+print(&quot;\nAfter filling:&quot;)
+print(df)</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div><div class="callout module10-note"><strong>Important:</strong> Median imputation is a teaching example, not a universal rule. The correct choice depends on what the missing value means.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Find and remove duplicates"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Protect row meaning</span><h2>Find and remove duplicates</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_duplicates.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Deduplicate by order ID</h3><p>Keep one row per business key.</p></div>
+    <span class="file-pill">module10_duplicates.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_duplicates.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Deduplicate by order ID Python editor">import pandas as pd
+
+orders = pd.DataFrame({
+    &quot;order_id&quot;: [1001, 1002, 1003, 1003, 1004],
+    &quot;amount&quot;: [120.5, 85, 95, 95, 210]
+})
+
+print(&quot;Duplicate order IDs:&quot;)
+print(orders[orders.duplicated(subset=&quot;order_id&quot;, keep=False)])
+
+clean = orders.drop_duplicates(subset=&quot;order_id&quot;, keep=&quot;first&quot;)
+print(&quot;\nAfter deduplication:&quot;)
+print(clean)</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div><div class="callout module10-note"><strong>Business question:</strong> Is a repeated ID truly a duplicate, or can one order legitimately have multiple line items? Always confirm the row grain.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Clean text columns"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Standardize categories</span><h2>Clean text columns</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_clean_text.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Standardize channel and status</h3><p>Use vectorized string methods.</p></div>
+    <span class="file-pill">module10_clean_text.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_clean_text.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Standardize channel and status Python editor">import pandas as pd
+
+df = pd.DataFrame({
+    &quot;channel&quot;: [&quot; Web &quot;, &quot;EMAIL&quot;, &quot;web&quot;, &quot; Store &quot;],
+    &quot;status&quot;: [&quot;Complete&quot;, &quot;complete&quot;, &quot; COMPLETE &quot;, &quot;Cancelled&quot;]
+})
+
+df[&quot;channel&quot;] = df[&quot;channel&quot;].str.strip().str.lower()
+df[&quot;status&quot;] = df[&quot;status&quot;].str.strip().str.lower()
+
+print(df)
+print(&quot;\nChannel counts:&quot;)
+print(df[&quot;channel&quot;].value_counts())</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div><div class="callout module10-note"><strong>Why it matters:</strong> Without cleaning, "Web", " web ", and "WEB" may be counted as three different categories.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Create derived columns"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Vectorized transformations</span><h2>Create derived columns</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_derived_columns.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Add tax and order size</h3><p>Create analytical features from existing columns.</p></div>
+    <span class="file-pill">module10_derived_columns.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_derived_columns.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Add tax and order size Python editor">import pandas as pd
+
+orders = pd.DataFrame({
+    &quot;order_id&quot;: [101, 102, 103, 104],
+    &quot;amount&quot;: [45, 72.5, 138.25, 210]
 })
 
 orders[&quot;tax&quot;] = orders[&quot;amount&quot;] * 0.07
-orders[&quot;total&quot;] = orders[&quot;amount&quot;] + orders[&quot;tax&quot;]
-orders[&quot;large_order&quot;] = orders[&quot;amount&quot;] &gt;= 70
+orders[&quot;total_with_tax&quot;] = orders[&quot;amount&quot;] + orders[&quot;tax&quot;]
+orders[&quot;order_size&quot;] = pd.cut(
+    orders[&quot;amount&quot;],
+    bins=[0, 75, 150, float(&quot;inf&quot;)],
+    labels=[&quot;small&quot;, &quot;medium&quot;, &quot;large&quot;]
+)
 
 print(orders.round(2))</textarea>
-    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
-  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Pandas · Tables and DataFrames</span><span>IAN 601 · Module 10 · Slide 7</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="Group and summarize">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Aggregation</span><h2>Group and summarize</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead"><code>groupby()</code> summarizes data by category.</p></div><div><div class="code-cell" data-filename="module10_groupby.py">
+</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Work with dates"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Datetime accessor</span><h2>Work with dates</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_datetime.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Summarize by channel</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Create calendar features</h3><p>Turn one date column into useful analytical dimensions.</p></div>
+    <span class="file-pill">module10_datetime.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_datetime.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Create calendar features Python editor">import pandas as pd
+
+orders = pd.DataFrame({
+    &quot;order_date&quot;: pd.to_datetime([
+        &quot;2026-01-05&quot;, &quot;2026-01-06&quot;, &quot;2026-02-02&quot;, &quot;2026-04-10&quot;
+    ])
+})
+
+orders[&quot;month&quot;] = orders[&quot;order_date&quot;].dt.month_name()
+orders[&quot;weekday&quot;] = orders[&quot;order_date&quot;].dt.day_name()
+orders[&quot;quarter&quot;] = orders[&quot;order_date&quot;].dt.quarter
+
+print(orders)</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="GroupBy: answer questions by category"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Split · apply · combine</span><h2>GroupBy: answer questions by category</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_groupby.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Summarize revenue by channel</h3><p>Count orders and sum amount.</p></div>
     <span class="file-pill">module10_groupby.py</span>
   </div>
   <div class="editor-shell">
     <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_groupby.py</span></div>
-    <textarea class="code-input" spellcheck="false">import pandas as pd
+    <textarea class="code-input" spellcheck="false" aria-label="Summarize revenue by channel Python editor">import pandas as pd
 
 orders = pd.DataFrame({
-    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;, &quot;store&quot;, &quot;email&quot;],
-    &quot;amount&quot;: [45, 72, 38, 91, 55]
+    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;, &quot;store&quot;, &quot;email&quot;, &quot;web&quot;],
+    &quot;amount&quot;: [45, 72.5, 138.25, 91, 64.75, 120]
 })
 
-summary = orders.groupby(&quot;channel&quot;)[&quot;amount&quot;].agg([&quot;count&quot;, &quot;sum&quot;, &quot;mean&quot;])
-
-print(summary.round(2))</textarea>
-    <div class="monaco-host" aria-label="Python editor"></div>
+summary = orders.groupby(&quot;channel&quot;)[&quot;amount&quot;].sum()
+print(summary.sort_values(ascending=False))</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
-  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Pandas · Tables and DataFrames</span><span>IAN 601 · Module 10 · Slide 8</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="Handle missing values">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Data quality</span><h2>Handle missing values</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Missing values should be checked before analysis. Depending on the task, they may be filled, removed, or flagged.</p></div><div><div class="code-cell" data-filename="module10_missing.py">
+</div><div class="callout module10-note"><strong>Business question:</strong> Which channel contributes the most revenue?</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Aggregate multiple metrics"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">GroupBy + agg</span><h2>Aggregate multiple metrics</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_groupby_agg.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Find and fill missing values</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module10_missing.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Build a channel summary</h3><p>Calculate orders, revenue, and average order value.</p></div>
+    <span class="file-pill">module10_groupby_agg.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_missing.py</span></div>
-    <textarea class="code-input" spellcheck="false">import pandas as pd
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_groupby_agg.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Build a channel summary Python editor">import pandas as pd
 
 orders = pd.DataFrame({
-    &quot;order_id&quot;: [1, 2, 3, 4],
-    &quot;amount&quot;: [45.0, None, 38.25, None]
+    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;, &quot;store&quot;, &quot;email&quot;, &quot;web&quot;],
+    &quot;amount&quot;: [45, 72.5, 138.25, 91, 64.75, 120]
 })
 
-print(&quot;Missing count:&quot;)
-print(orders.isna().sum())
+summary = (
+    orders.groupby(&quot;channel&quot;, as_index=False)
+    .agg(
+        orders=(&quot;amount&quot;, &quot;size&quot;),
+        revenue=(&quot;amount&quot;, &quot;sum&quot;),
+        avg_order=(&quot;amount&quot;, &quot;mean&quot;)
+    )
+)
 
-orders[&quot;amount_filled&quot;] = orders[&quot;amount&quot;].fillna(0)
-print(orders)</textarea>
-    <div class="monaco-host" aria-label="Python editor"></div>
+print(summary.round(2))</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
-  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Pandas · Tables and DataFrames</span><span>IAN 601 · Module 10 · Slide 9</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="Merge tables">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Join data</span><h2>Merge tables</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Merging combines related tables using a shared key.</p></div><div><div class="code-cell" data-filename="module10_merge.py">
+</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Pivot tables and crosstabs"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Spreadsheet-style summaries</span><h2>Pivot tables and crosstabs</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_pivot.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Merge orders and customers</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Create two summaries</h3><p>Compare revenue and order counts.</p></div>
+    <span class="file-pill">module10_pivot.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_pivot.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Create two summaries Python editor">import pandas as pd
+
+orders = pd.DataFrame({
+    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;, &quot;store&quot;, &quot;email&quot;, &quot;web&quot;],
+    &quot;status&quot;: [&quot;complete&quot;, &quot;complete&quot;, &quot;cancelled&quot;, &quot;complete&quot;, &quot;complete&quot;, &quot;complete&quot;],
+    &quot;amount&quot;: [45, 72.5, 138.25, 91, 64.75, 120]
+})
+
+print(&quot;Revenue pivot:&quot;)
+print(pd.pivot_table(
+    orders,
+    values=&quot;amount&quot;,
+    index=&quot;channel&quot;,
+    columns=&quot;status&quot;,
+    aggfunc=&quot;sum&quot;,
+    fill_value=0
+))
+
+print(&quot;\nOrder counts:&quot;)
+print(pd.crosstab(orders[&quot;channel&quot;], orders[&quot;status&quot;]))</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Merge related tables"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">SQL-style joins</span><h2>Merge related tables</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_merge.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Merge orders and customers</h3><p>Enrich orders with customer information.</p></div>
     <span class="file-pill">module10_merge.py</span>
   </div>
   <div class="editor-shell">
     <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_merge.py</span></div>
-    <textarea class="code-input" spellcheck="false">import pandas as pd
+    <textarea class="code-input" spellcheck="false" aria-label="Merge orders and customers Python editor">import pandas as pd
 
 orders = pd.DataFrame({
-    &quot;customer_id&quot;: [&quot;C101&quot;, &quot;C102&quot;, &quot;C101&quot;],
-    &quot;amount&quot;: [45, 72, 38]
+    &quot;order_id&quot;: [101, 102, 103],
+    &quot;customer_id&quot;: [&quot;C1&quot;, &quot;C2&quot;, &quot;C1&quot;],
+    &quot;amount&quot;: [45, 72.5, 138.25]
 })
+
 customers = pd.DataFrame({
-    &quot;customer_id&quot;: [&quot;C101&quot;, &quot;C102&quot;],
-    &quot;segment&quot;: [&quot;returning&quot;, &quot;new&quot;]
+    &quot;customer_id&quot;: [&quot;C1&quot;, &quot;C2&quot;],
+    &quot;segment&quot;: [&quot;consumer&quot;, &quot;business&quot;]
 })
 
-merged = orders.merge(customers, on=&quot;customer_id&quot;, how=&quot;left&quot;)
-print(merged)</textarea>
-    <div class="monaco-host" aria-label="Python editor"></div>
-    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
-  </div>
-  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Pandas · Tables and DataFrames</span><span>IAN 601 · Module 10 · Slide 10</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="Mini pandas workflow">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Applied analytics</span><h2>Mini pandas workflow</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A typical workflow loads data, checks it, filters it, adds useful columns, and summarizes results.</p></div><div><div class="code-cell" data-filename="module10_workflow.py">
-  <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Complete small workflow</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module10_workflow.py</span>
-  </div>
-  <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_workflow.py</span></div>
-    <textarea class="code-input" spellcheck="false">import pandas as pd
-
-orders = pd.DataFrame({
-    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;, &quot;store&quot;, &quot;email&quot;],
-    &quot;amount&quot;: [45, 72, 38, 91, 55]
-})
-
-orders[&quot;large_order&quot;] = orders[&quot;amount&quot;] &gt;= 70
-summary = orders.groupby(&quot;channel&quot;).agg(
-    total_amount=(&quot;amount&quot;, &quot;sum&quot;),
-    average_amount=(&quot;amount&quot;, &quot;mean&quot;),
-    large_orders=(&quot;large_order&quot;, &quot;sum&quot;)
+merged = orders.merge(
+    customers,
+    on=&quot;customer_id&quot;,
+    how=&quot;left&quot;,
+    validate=&quot;many_to_one&quot;
 )
 
-print(summary.round(2))</textarea>
-    <div class="monaco-host" aria-label="Python editor"></div>
+print(merged)</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
-  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Pandas · Tables and DataFrames</span><span>IAN 601 · Module 10 · Slide 11</span></footer>
+</div><div class="callout module10-note"><strong>Validation habit:</strong> After a merge, check row count and unmatched keys. A join can silently duplicate rows if the key relationship is wrong.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Concatenate similar tables"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Stack rows</span><h2>Concatenate similar tables</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_concat.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Combine two monthly files</h3><p>Stack rows and reset the index.</p></div>
+    <span class="file-pill">module10_concat.py</span>
   </div>
-</section>
-<section class="slide" data-title="Module 10 wrap-up">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">What you can now do</span><h2>Module 10 wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
-    <div class="slide-content"><div class="summary-grid"><div><h3>Create</h3><p>Build DataFrames from records.</p></div><div><h3>Inspect</h3><p>Use head, shape, and dtypes.</p></div><div><h3>Filter</h3><p>Keep rows that match conditions.</p></div><div><h3>Transform</h3><p>Add calculated columns.</p></div><div><h3>Group</h3><p>Summarize by category.</p></div><div><h3>Merge</h3><p>Combine related tables.</p></div></div><div class="callout success">You can now use pandas for common table-based analytics tasks.</div></div>
-    <footer class="slide-footer"><span>Pandas · Tables and DataFrames</span><span>IAN 601 · Module 10 · Slide 12</span></footer>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_concat.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Combine two monthly files Python editor">import pandas as pd
+
+january = pd.DataFrame({
+    &quot;order_id&quot;: [101, 102],
+    &quot;month&quot;: [&quot;Jan&quot;, &quot;Jan&quot;],
+    &quot;amount&quot;: [45, 72.5]
+})
+
+february = pd.DataFrame({
+    &quot;order_id&quot;: [103, 104],
+    &quot;month&quot;: [&quot;Feb&quot;, &quot;Feb&quot;],
+    &quot;amount&quot;: [138.25, 91]
+})
+
+all_orders = pd.concat([january, february], ignore_index=True)
+print(all_orders)</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
-</section></main>
-  <footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"></select><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 12</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Prefer vectorized operations"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Performance + clarity</span><h2>Prefer vectorized operations</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_vectorization.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Compare two ways to calculate a ratio</h3><p>The vectorized version is simpler and scales better.</p></div>
+    <span class="file-pill">module10_vectorization.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_vectorization.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Compare two ways to calculate a ratio Python editor">import pandas as pd
+
+df = pd.DataFrame({
+    &quot;profit&quot;: [20, 35, 18, 50],
+    &quot;sales&quot;: [100, 140, 90, 200]
+})
+
+# Preferred: vectorized column operation
+df[&quot;margin&quot;] = df[&quot;profit&quot;] / df[&quot;sales&quot;]
+
+# map is fine here for display formatting
+df[&quot;margin_percent&quot;] = df[&quot;margin&quot;].map(lambda x: f&quot;{x:.1%}&quot;)
+
+print(df)</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div><div class="callout module10-note"><strong>Current Pandas guidance:</strong> prefer built-in or vectorized operations before custom row-wise UDFs when possible.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="End-to-end cleaning workflow"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Mini project · Part 1</span><h2>End-to-end cleaning workflow</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_cleaning_workflow.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Clean a messy sales extract</h3><p>Use one small workflow from raw text to usable data.</p></div>
+    <span class="file-pill">module10_cleaning_workflow.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_cleaning_workflow.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Clean a messy sales extract Python editor">import pandas as pd
+from io import StringIO
+
+raw = pd.read_csv(StringIO(&quot;&quot;&quot;order_id,order_date,channel,city,amount,status
+1001,2026-01-05, Web ,Greensboro,$120.50,Complete
+1002,2026-01-06,EMAIL,Charlotte,$85.00,complete
+1003,not-a-date,web,Raleigh,,Complete
+1003,not-a-date,web,Raleigh,,Complete
+1004,2026-01-08, Store ,,$210.00,Cancelled
+1005,2026-01-09,email,Greensboro,$95.25,complete
+&quot;&quot;&quot;))
+
+clean = raw.drop_duplicates(subset=&quot;order_id&quot;).copy()
+clean[&quot;channel&quot;] = clean[&quot;channel&quot;].str.strip().str.lower()
+clean[&quot;status&quot;] = clean[&quot;status&quot;].str.strip().str.lower()
+clean[&quot;amount&quot;] = pd.to_numeric(
+    clean[&quot;amount&quot;].str.replace(&quot;$&quot;, &quot;&quot;, regex=False),
+    errors=&quot;coerce&quot;
+)
+clean[&quot;order_date&quot;] = pd.to_datetime(clean[&quot;order_date&quot;], errors=&quot;coerce&quot;)
+clean[&quot;city&quot;] = clean[&quot;city&quot;].fillna(&quot;Unknown&quot;)
+clean[&quot;amount&quot;] = clean[&quot;amount&quot;].fillna(clean[&quot;amount&quot;].median())
+
+print(clean)</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Analyze and validate the cleaned data"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Mini project · Part 2</span><h2>Analyze and validate the cleaned data</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content">
+<div class="code-cell module10-code" data-filename="module10_validate_analyze.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Validate and summarize</h3><p>Use checks before trusting the result.</p></div>
+    <span class="file-pill">module10_validate_analyze.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module10_validate_analyze.py</span></div>
+    <textarea class="code-input" spellcheck="false" aria-label="Validate and summarize Python editor">import pandas as pd
+
+clean = pd.DataFrame({
+    &quot;order_id&quot;: [1001, 1002, 1003, 1004, 1005],
+    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;, &quot;store&quot;, &quot;email&quot;],
+    &quot;amount&quot;: [120.50, 85.00, 102.88, 210.00, 95.25],
+    &quot;status&quot;: [&quot;complete&quot;, &quot;complete&quot;, &quot;complete&quot;, &quot;cancelled&quot;, &quot;complete&quot;]
+})
+
+print(&quot;Rows:&quot;, len(clean))
+print(&quot;Duplicate IDs:&quot;, clean[&quot;order_id&quot;].duplicated().sum())
+print(&quot;Missing values:&quot;, clean.isna().sum().sum())
+
+complete = clean[clean[&quot;status&quot;] == &quot;complete&quot;]
+summary = (
+    complete.groupby(&quot;channel&quot;, as_index=False)
+    .agg(orders=(&quot;order_id&quot;, &quot;count&quot;), revenue=(&quot;amount&quot;, &quot;sum&quot;))
+)
+
+print(&quot;\nCompleted-order summary:&quot;)
+print(summary)
+print(&quot;\nRevenue check:&quot;, round(complete[&quot;amount&quot;].sum(), 2))</textarea>
+    <div class="monaco-host" aria-label="VS Code style Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button">▶ Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div><div class="callout module10-note"><strong>Professional habit:</strong> A trustworthy notebook includes checks that would reveal if a cleaning or merge step changed the data unexpectedly.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="A compact analyst workflow"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Putting the pieces together</span><h2>A compact analyst workflow</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content"><div class="analyst-workflow"><div><b>1. Load</b><code>read_csv()</code></div><div><b>2. Profile</b><code>head · shape · info</code></div><div><b>3. Clean</b><code>to_numeric · fillna · drop_duplicates · str</code></div><div><b>4. Select</b><code>loc · masks · query</code></div><div><b>5. Transform</b><code>new columns · dt · cut</code></div><div><b>6. Summarize</b><code>groupby · agg · pivot_table</code></div><div><b>7. Combine</b><code>merge · concat</code></div><div><b>8. Validate</b><code>row counts · keys · totals</code></div></div><div class="callout success"><strong>When Pandas is not enough:</strong> very large datasets may be better handled in SQL, Spark, Polars, or distributed systems. Knowing when to push work back to the database is also a professional skill.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Module 10 practice challenge"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Your turn</span><h2>Module 10 practice challenge</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content"><div class="challenge-grid"><div><span>1</span><h3>Build or load</h3><p>Create a DataFrame with at least 8 rows or load a small CSV.</p></div><div><span>2</span><h3>Inspect</h3><p>Show head, shape, dtypes, missing values, and duplicates.</p></div><div><span>3</span><h3>Clean</h3><p>Fix at least one type, text category, missing value, or duplicate.</p></div><div><span>4</span><h3>Transform</h3><p>Create at least one useful derived column.</p></div><div><span>5</span><h3>Summarize</h3><p>Use groupby or pivot_table to answer a question.</p></div><div><span>6</span><h3>Explain</h3><p>Write two sentences describing the result and one limitation.</p></div></div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+
+<section class="slide" data-title="Job-ready Pandas checklist"><div class="slide-inner">
+  <header class="slide-header"><div><span class="kicker">Module 10 wrap-up</span><h2>Job-ready Pandas checklist</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+  <div class="slide-content"><div class="checklist-grid"><div><h3>Core table work</h3><p>DataFrame, Series, read_csv, head, shape, dtypes, info</p></div><div><h3>Selection</h3><p>columns, loc, iloc, Boolean masks, query, sort_values</p></div><div><h3>Cleaning</h3><p>isna, fillna, dropna, duplicated, drop_duplicates, to_numeric, to_datetime, str</p></div><div><h3>Analysis</h3><p>describe, value_counts, groupby, agg, pivot_table, crosstab</p></div><div><h3>Combining</h3><p>merge, concat, join validation, row-count checks</p></div><div><h3>Professional habits</h3><p>vectorize when possible, verify assumptions, document decisions, know when to use SQL/Spark instead</p></div></div><div class="callout"><strong>Next:</strong> Module 11 can go deeper into advanced Pandas patterns such as richer transformations, more complex GroupBy work, reshaping, time-series workflows, and performance.</div></div>
+  <footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section>
+<section class="slide" data-title="References and next steps"><div class="slide-inner">
+<header class="slide-header"><div><span class="kicker">Continue learning</span><h2>References and next steps</h2></div><div class="slide-badge">IAN 601 · Module 10</div></header>
+<div class="slide-content">
+<div class="industry-grid">
+<article><span>Official Pandas</span><h3>Core learning</h3><p><a href="https://pandas.pydata.org/docs/user_guide/10min.html" target="_blank" rel="noopener">10 minutes to pandas</a><br><a href="https://pandas.pydata.org/docs/user_guide/" target="_blank" rel="noopener">Pandas User Guide</a><br><a href="https://pandas.pydata.org/docs/user_guide/user_defined_functions.html" target="_blank" rel="noopener">UDFs and vectorization</a><br><a href="https://pandas.pydata.org/docs/reference/api/pandas.merge.html" target="_blank" rel="noopener">merge() and validation</a></p></article>
+<article><span>Industry examples · Sep 2026</span><h3>What current roles ask for</h3><p><a href="https://www.compass.com/careers/?gh_board=urbancompass&gh_jid=8202202" target="_blank" rel="noopener">Compass · Data Analyst</a><br><a href="https://job-boards.greenhouse.io/drweng/jobs/8189760" target="_blank" rel="noopener">DRW · Data Analyst, Exploration</a><br><a href="https://careers.na.panasonic.com/jobs/50272?lang=en-us&previousLocale=en-US" target="_blank" rel="noopener">Panasonic · Data Scientist IV</a></p><small>Job postings change over time. Use these as examples of skill expectations, not permanent requirements.</small></article>
+</div>
+<div class="callout success"><strong>Best next step:</strong> Practice on a small real CSV. Write down the business question first, then make every cleaning and transformation step support that question.</div>
+</div>
+<footer class="slide-footer"><span>Pandas for Analytics</span><span>IAN 601 · Module 10</span></footer>
+</div></section></main><footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"></select><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 34</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
 </div>
 <script>
 const MANIFEST = {
-  "prefix": "module10",
-  "slide_count": 12,
+  "prefix": "module10_v2",
+  "slide_count": 34,
   "slides": [
     {
       "slide": 1,
-      "title": "Pandas",
-      "audio": "audio/module10_slide_01.mp3",
-      "captions": "captions/module10_slide_01.vtt",
-      "text": "Welcome to Module 10. This module focuses on Pandas. We will connect the new library tools to the Python foundations from earlier modules. Pandas helps Python work with table-shaped data using DataFrames, rows, columns, filters, groups, and joins."
+      "title": "Pandas for Real Analytics",
+      "audio": "audio/module10_v2_slide_01.mp3",
+      "captions": "captions/module10_v2_slide_01.vtt",
+      "text": "Welcome to Module 10. Pandas is the bridge between raw tabular data and analysis in Python. This redesigned module focuses on the work analysts and data scientists do repeatedly: load data, inspect it, clean problems, transform columns, summarize groups, combine tables, validate results, and communicate what changed."
     },
     {
       "slide": 2,
-      "title": "How to use this page",
-      "audio": "audio/module10_slide_02.mp3",
-      "captions": "captions/module10_slide_02.vtt",
-      "text": "Use this lesson interactively. Read the idea, predict the shape or result, run the example, and then change one value so you can compare the output. Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept. Change one value, variable, or condition. Apply the pattern to a new example."
+      "title": "Why Pandas matters at work",
+      "audio": "audio/module10_v2_slide_02.mp3",
+      "captions": "captions/module10_v2_slide_02.vtt",
+      "text": "Current analyst and data science postings still treat Pandas as a practical baseline. Analyst roles commonly ask for Pandas for exploratory analysis, data quality work, and light automation. Data science roles expect stronger Pandas alongside NumPy, SQL, and scikit-learn. The important skill is not memorizing methods. It is being able to inspect, clean, validate, and transform unfamiliar tabular data."
     },
     {
       "slide": 3,
-      "title": "Learning path for Module 10",
-      "audio": "audio/module10_slide_03.mp3",
-      "captions": "captions/module10_slide_03.vtt",
-      "text": "This slide is the roadmap for Module 10. Follow the progression from the basic structure to selection, transformation, and a small analytical workflow. Create table-shaped data. Preview and understand columns. Choose columns and rows. Create new columns. Summarize by category. Combine related tables."
+      "title": "What “job-ready Pandas” means",
+      "audio": "audio/module10_v2_slide_03.mp3",
+      "captions": "captions/module10_v2_slide_03.vtt",
+      "text": "Job-ready Pandas means being fluent in a small set of patterns rather than knowing every method. You should be able to move from raw data to a clean, explainable result and know why each step is necessary."
     },
     {
       "slide": 4,
-      "title": "Create a DataFrame",
-      "audio": "audio/module10_slide_04.mp3",
-      "captions": "captions/module10_slide_04.vtt",
-      "text": "This slide focuses on Create a DataFrame. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax. A DataFrame is a table with column names. A list of dictionaries is a common way to create one. Create a small DataFrame Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line."
+      "title": "The Pandas workflow",
+      "audio": "audio/module10_v2_slide_04.mp3",
+      "captions": "captions/module10_v2_slide_04.vtt",
+      "text": "This module follows a realistic order. First understand the table. Then clean and transform it. Only after the data is reliable should you summarize or combine it. This sequence mirrors common analytical work."
     },
     {
       "slide": 5,
-      "title": "Inspect a DataFrame",
-      "audio": "audio/module10_slide_05.mp3",
-      "captions": "captions/module10_slide_05.vtt",
-      "text": "This slide focuses on Inspect a DataFrame. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax. Before analysis, preview the data and check basic structure. Preview and inspect Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line."
+      "title": "Series and DataFrame",
+      "audio": "audio/module10_v2_slide_05.mp3",
+      "captions": "captions/module10_v2_slide_05.vtt",
+      "text": "A Series is one labeled column. A DataFrame is a table made of labeled columns that share an index. Most analysis in Pandas centers on DataFrames, while selecting one column often returns a Series."
     },
     {
       "slide": 6,
-      "title": "Select columns and filter rows",
-      "audio": "audio/module10_slide_06.mp3",
-      "captions": "captions/module10_slide_06.vtt",
-      "text": "This slide focuses on Select columns and filter rows. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax. Pandas uses column names and conditions to select the part of the table you need. Select and filter Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line."
+      "title": "Create a DataFrame",
+      "audio": "audio/module10_v2_slide_06.mp3",
+      "captions": "captions/module10_v2_slide_06.vtt",
+      "text": "A list of dictionaries is a readable way to create a small DataFrame for practice. Each dictionary becomes a row and each key becomes a column."
     },
     {
       "slide": 7,
-      "title": "Create new columns",
-      "audio": "audio/module10_slide_07.mp3",
-      "captions": "captions/module10_slide_07.vtt",
-      "text": "This slide focuses on Create new columns. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax. New columns store calculated values or labels that help analysis. Add calculated columns Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line."
+      "title": "Load CSV data",
+      "audio": "audio/module10_v2_slide_07.mp3",
+      "captions": "captions/module10_v2_slide_07.vtt",
+      "text": "In real work, data often arrives as a CSV or as a table returned by SQL. read_csv creates a DataFrame and can parse many common file formats. Here we use StringIO so the example runs entirely in the browser."
     },
     {
       "slide": 8,
-      "title": "Group and summarize",
-      "audio": "audio/module10_slide_08.mp3",
-      "captions": "captions/module10_slide_08.vtt",
-      "text": "This slide focuses on Group and summarize. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax. groupby() summarizes data by category. Summarize by channel Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line."
+      "title": "First inspection: rows and shape",
+      "audio": "audio/module10_v2_slide_08.mp3",
+      "captions": "captions/module10_v2_slide_08.vtt",
+      "text": "Before writing filters or calculations, inspect what actually loaded. head, tail, sample, shape, and columns answer basic questions quickly."
     },
     {
       "slide": 9,
-      "title": "Handle missing values",
-      "audio": "audio/module10_slide_09.mp3",
-      "captions": "captions/module10_slide_09.vtt",
-      "text": "This slide focuses on Handle missing values. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax. Missing values should be checked before analysis. Depending on the task, they may be filled, removed, or flagged. Find and fill missing values Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line."
+      "title": "Inspect dtypes and structure",
+      "audio": "audio/module10_v2_slide_09.mp3",
+      "captions": "captions/module10_v2_slide_09.vtt",
+      "text": "Data can look correct while being stored with the wrong type. dtypes and info help reveal numbers stored as text, missing values, and memory usage."
     },
     {
       "slide": 10,
-      "title": "Merge tables",
-      "audio": "audio/module10_slide_10.mp3",
-      "captions": "captions/module10_slide_10.vtt",
-      "text": "This slide focuses on Merge tables. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax. Merging combines related tables using a shared key. Merge orders and customers Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line."
+      "title": "Summaries and category counts",
+      "audio": "audio/module10_v2_slide_10.mp3",
+      "captions": "captions/module10_v2_slide_10.vtt",
+      "text": "describe summarizes numeric columns. value_counts shows common categories, and nunique tells you how many distinct values exist. These are fast ways to understand a new dataset."
     },
     {
       "slide": 11,
-      "title": "Mini pandas workflow",
-      "audio": "audio/module10_slide_11.mp3",
-      "captions": "captions/module10_slide_11.vtt",
-      "text": "This slide focuses on Mini pandas workflow. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax. A typical workflow loads data, checks it, filters it, adds useful columns, and summarizes results. Complete small workflow Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line."
+      "title": "Select columns",
+      "audio": "audio/module10_v2_slide_11.mp3",
+      "captions": "captions/module10_v2_slide_11.vtt",
+      "text": "Single brackets usually return a Series. Double brackets return a DataFrame. Selecting only needed columns makes analysis easier to read."
     },
     {
       "slide": 12,
-      "title": "Module 10 wrap-up",
-      "audio": "audio/module10_slide_12.mp3",
-      "captions": "captions/module10_slide_12.vtt",
-      "text": "This slide summarizes Module 10. Focus on the operations you should recognize and the situations where they make analytical work easier. Build DataFrames from records. Use head, shape, and dtypes. Keep rows that match conditions. Add calculated columns. Summarize by category. Combine related tables."
+      "title": "Use loc and iloc",
+      "audio": "audio/module10_v2_slide_12.mp3",
+      "captions": "captions/module10_v2_slide_12.vtt",
+      "text": "loc selects by labels and conditions. iloc selects by integer position. In analytical code, loc is often clearer because column names communicate meaning."
+    },
+    {
+      "slide": 13,
+      "title": "Filter rows with conditions",
+      "audio": "audio/module10_v2_slide_13.mp3",
+      "captions": "captions/module10_v2_slide_13.vtt",
+      "text": "Boolean masks keep rows that meet a condition. Combine conditions with ampersand for AND and vertical bar for OR. query can make readable filters for simple expressions."
+    },
+    {
+      "slide": 14,
+      "title": "Sort and find top records",
+      "audio": "audio/module10_v2_slide_14.mp3",
+      "captions": "captions/module10_v2_slide_14.vtt",
+      "text": "sort_values orders rows. nlargest quickly returns the highest values in a numeric column. These are common in reporting and exploratory analysis."
+    },
+    {
+      "slide": 15,
+      "title": "A messy dataset is normal",
+      "audio": "audio/module10_v2_slide_15.mp3",
+      "captions": "captions/module10_v2_slide_15.vtt",
+      "text": "Real data rarely arrives analysis-ready. This small sales file contains the kinds of issues analysts see regularly: inconsistent text, currency symbols, an invalid date, a missing amount, a missing city, and a duplicated order."
+    },
+    {
+      "slide": 16,
+      "title": "Profile data quality",
+      "audio": "audio/module10_v2_slide_16.mp3",
+      "captions": "captions/module10_v2_slide_16.vtt",
+      "text": "A good cleaning workflow measures problems before fixing them. Check missing values, duplicates, and data types so you know what you are changing."
+    },
+    {
+      "slide": 17,
+      "title": "Convert types safely",
+      "audio": "audio/module10_v2_slide_17.mp3",
+      "captions": "captions/module10_v2_slide_17.vtt",
+      "text": "to_numeric and to_datetime are safer than assuming strings are valid. errors='coerce' converts bad values to missing values so they can be handled explicitly."
+    },
+    {
+      "slide": 18,
+      "title": "Handle missing values deliberately",
+      "audio": "audio/module10_v2_slide_18.mp3",
+      "captions": "captions/module10_v2_slide_18.vtt",
+      "text": "Missing data is a decision problem, not just a method call. You might drop a row, fill with a statistic, use a domain-specific value, or preserve the missingness as information."
+    },
+    {
+      "slide": 19,
+      "title": "Find and remove duplicates",
+      "audio": "audio/module10_v2_slide_19.mp3",
+      "captions": "captions/module10_v2_slide_19.vtt",
+      "text": "Duplicates can inflate counts, totals, and model training data. duplicated identifies repeated records. drop_duplicates can remove exact duplicates or duplicates based on a business key."
+    },
+    {
+      "slide": 20,
+      "title": "Clean text columns",
+      "audio": "audio/module10_v2_slide_20.mp3",
+      "captions": "captions/module10_v2_slide_20.vtt",
+      "text": "String methods are essential for categories, names, and labels. Small differences such as extra spaces or upper/lower case can create fake categories."
+    },
+    {
+      "slide": 21,
+      "title": "Create derived columns",
+      "audio": "audio/module10_v2_slide_21.mp3",
+      "captions": "captions/module10_v2_slide_21.vtt",
+      "text": "Pandas is designed to perform operations on entire columns. This is clearer and usually faster than looping through rows."
+    },
+    {
+      "slide": 22,
+      "title": "Work with dates",
+      "audio": "audio/module10_v2_slide_22.mp3",
+      "captions": "captions/module10_v2_slide_22.vtt",
+      "text": "Once a column is datetime, the dt accessor can extract useful calendar features such as month, weekday, quarter, or year."
+    },
+    {
+      "slide": 23,
+      "title": "GroupBy: answer questions by category",
+      "audio": "audio/module10_v2_slide_23.mp3",
+      "captions": "captions/module10_v2_slide_23.vtt",
+      "text": "groupby is one of the most important Pandas patterns. It splits rows into groups, applies a summary, and combines the results."
+    },
+    {
+      "slide": 24,
+      "title": "Aggregate multiple metrics",
+      "audio": "audio/module10_v2_slide_24.mp3",
+      "captions": "captions/module10_v2_slide_24.vtt",
+      "text": "agg lets one grouped analysis calculate several metrics at once. Named aggregation produces readable column names that are ready for reporting."
+    },
+    {
+      "slide": 25,
+      "title": "Pivot tables and crosstabs",
+      "audio": "audio/module10_v2_slide_25.mp3",
+      "captions": "captions/module10_v2_slide_25.vtt",
+      "text": "pivot_table summarizes a numeric measure across categories. crosstab counts combinations of categories. Both are useful for quick analytical tables."
+    },
+    {
+      "slide": 26,
+      "title": "Merge related tables",
+      "audio": "audio/module10_v2_slide_26.mp3",
+      "captions": "captions/module10_v2_slide_26.vtt",
+      "text": "Real analysis often requires more than one table. merge combines tables through a shared key. The validate argument can catch unexpected many-to-many relationships."
+    },
+    {
+      "slide": 27,
+      "title": "Concatenate similar tables",
+      "audio": "audio/module10_v2_slide_27.mp3",
+      "captions": "captions/module10_v2_slide_27.vtt",
+      "text": "concat combines DataFrames with the same or compatible columns. This is useful when monthly files, regional files, or batches need to be stacked into one table."
+    },
+    {
+      "slide": 28,
+      "title": "Prefer vectorized operations",
+      "audio": "audio/module10_v2_slide_28.mp3",
+      "captions": "captions/module10_v2_slide_28.vtt",
+      "text": "Pandas supports custom apply logic, but row-wise Python functions can be much slower than built-in vectorized operations. Use vectorized column operations whenever they express the task clearly."
+    },
+    {
+      "slide": 29,
+      "title": "End-to-end cleaning workflow",
+      "audio": "audio/module10_v2_slide_29.mp3",
+      "captions": "captions/module10_v2_slide_29.vtt",
+      "text": "Now combine the core ideas. The goal is not a perfect production pipeline; it is to practice the sequence: profile, convert, clean, deduplicate, validate, and summarize."
+    },
+    {
+      "slide": 30,
+      "title": "Analyze and validate the cleaned data",
+      "audio": "audio/module10_v2_slide_30.mp3",
+      "captions": "captions/module10_v2_slide_30.vtt",
+      "text": "Cleaning is not finished until you verify the result. Check row counts, missing values, and summary totals before using the data for reporting or modeling."
+    },
+    {
+      "slide": 31,
+      "title": "A compact analyst workflow",
+      "audio": "audio/module10_v2_slide_31.mp3",
+      "captions": "captions/module10_v2_slide_31.vtt",
+      "text": "Most day-to-day Pandas work can be organized into a compact sequence. You do not need to memorize hundreds of methods if you understand this flow and know how to consult the documentation."
+    },
+    {
+      "slide": 32,
+      "title": "Module 10 practice challenge",
+      "audio": "audio/module10_v2_slide_32.mp3",
+      "captions": "captions/module10_v2_slide_32.vtt",
+      "text": "Use the skills from this module to complete a small analysis independently. The goal is to explain your decisions, not only produce code that runs."
+    },
+    {
+      "slide": 33,
+      "title": "Job-ready Pandas checklist",
+      "audio": "audio/module10_v2_slide_33.mp3",
+      "captions": "captions/module10_v2_slide_33.vtt",
+      "text": "You do not need expert-level knowledge of every Pandas feature. For analyst and data science work, you should be confident with the core patterns in this checklist and able to learn unfamiliar methods from documentation."
+    },
+    {
+      "slide": 34,
+      "title": "References and next steps",
+      "audio": "audio/module10_v2_slide_34.mp3",
+      "captions": "captions/module10_v2_slide_34.vtt",
+      "text": "This final slide lists the official Pandas documentation used to shape the module and examples of current analyst and data science roles that mention Pandas. Job requirements change, so use these examples as a snapshot rather than a permanent checklist. Continue practicing with small real datasets and connect every transformation to a clear analytical question."
     }
   ]
 };
@@ -481,7 +1253,7 @@ const audioPlayBtn=document.getElementById('audio-play-btn');
 const audioSeek=document.getElementById('audio-seek');
 const audioTime=document.getElementById('audio-time');
 const speedSelect=document.getElementById('speed-select');
-const NARRATION_STORAGE_KEY='ian601_module10_presentation';
+const NARRATION_STORAGE_KEY='ian601_module10_presentation_v2';
 let narrationEnabled=false;
 let narrationStarted=false;
 let ccEnabled=false;
@@ -563,7 +1335,7 @@ initMonaco();const initialSlide=initNarr();
 showSlide(initialSlide);
 </script>
 <div class="ian603-modal-backdrop" id="ian-course-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">IAN 601 Course Modules</h2><button class="ian603-tool" id="ian-course-close" type="button">Close</button></div><div class="ian603-module-links"><a class="" href="s_module1.html">Module 1</a><a class="" href="s_module2.html">Module 2</a><a class="" href="s_module3.html">Module 3</a><a class="" href="s_module4.html">Module 4</a><a class="" href="s_module5.html">Module 5</a><a class="" href="s_module6.html">Module 6</a><a class="" href="s_module7.html">Module 7</a><a class="" href="s_module8.html">Module 8</a><a class="" href="s_module9.html">Module 9</a><a class="current" href="s_module10.html">Module 10 · Current</a><a class="" href="s_module11.html">Module 11</a><a class="" href="s_module12.html">Module 12</a><a class="" href="s_module13.html">Module 13</a><a class="" href="s_module14.html">Module 14</a></div></div></div><div class="ian603-modal-backdrop" id="ian-progress-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">Module 10 Progress</h2><button class="ian603-tool" id="ian-progress-close" type="button">Close</button></div><p style="color:var(--ian-muted)">Progress is saved only in this browser.</p><div style="height:12px;background:var(--ian-border);border-radius:999px;overflow:hidden"><div id="ian-progress-meter" style="height:100%;width:0;background:var(--ian-good)"></div></div><div id="ian-progress-text" style="margin:8px 0;color:var(--ian-muted)"></div><div id="ian-progress-list" class="ian603-module-links"></div><button class="ian603-tool" id="ian-progress-reset" type="button" style="margin-top:14px">Reset saved progress</button></div></div><script id="ian603-generic-ui">
-(()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module10_shell_progress_v1';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
+(()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module10_shell_progress_v2';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
 const activeIndex=()=>Math.max(0,slides.findIndex(s=>s.classList.contains('active')));
 function save(){localStorage.setItem(key,JSON.stringify(visited))}
 function render(){const i=activeIndex();if(!visited.includes(i+1)){visited.push(i+1);save()}const count=new Set(visited).size,pct=slides.length?Math.round(count/slides.length*100):0;const p=document.getElementById('ian-progress-pct');if(p)p.textContent=pct+'%';const meter=document.getElementById('ian-progress-meter');if(meter)meter.style.width=pct+'%';const text=document.getElementById('ian-progress-text');if(text)text.textContent=count+' of '+slides.length+' slides visited';const list=document.getElementById('ian-progress-list');if(list){list.innerHTML=slides.map((s,j)=>'<a href="#" data-shell-go="'+j+'" class="'+(visited.includes(j+1)?'current':'')+'">Slide '+(j+1)+': '+(s.dataset.title||'Slide')+'</a>').join('');list.querySelectorAll('[data-shell-go]').forEach(a=>a.onclick=e=>{e.preventDefault();const j=Number(a.dataset.shellGo);const sel=document.getElementById('slide-select');if(sel){sel.value=String(j);sel.dispatchEvent(new Event('change',{bubbles:true}))}document.getElementById('ian-progress-modal')?.classList.remove('show')})}}
