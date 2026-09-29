@@ -1,173 +1,278 @@
-Slide 1: NumPy
+Slide 1: NumPy for Analytics
 
-Welcome to Module 9. This module focuses on NumPy. We will connect the new library tools to the Python foundations from earlier modules.
+Welcome to Module 9. This module focuses on NumPy for analytics.
 
-[pause=0.7]
+NumPy helps Python work with numeric data as arrays instead of treating every value one at a time. That is a big shift from earlier modules, where we often used lists and loops to process values manually.
 
-NumPy helps Python work efficiently with numeric arrays, vectorized calculations, and matrix-shaped data.
+In analytics, we usually work with groups of numbers: scores, sales, visits, measurements, ratings, model inputs, or survey responses. NumPy gives us a way to store those numeric values in a structured form and calculate with them efficiently.
 
-[pause=1.0]
+As we move through this module, focus on the main idea: an array lets us think about a whole set of numbers as one object. We can calculate, filter, reshape, and summarize that object in a clear way.
 
-Slide 2: How to use this page
+This module also prepares us for Pandas and machine learning libraries, because many of those tools are built on top of NumPy ideas.
 
-Use this lesson interactively. Read the idea, predict the shape or result, run the example, and then change one value so you can compare the output.
 
-[pause=0.7]
+Slide 2: Learning path for Module 9
 
-Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.
+Here is the learning path for Module 9.
 
-[pause=0.7]
+We will start by creating NumPy arrays and understanding how they are different from regular Python lists. This is important because lists and arrays can look similar, but they behave differently when we calculate with them.
 
-Change one value, variable, or condition. Apply the pattern to a new example.
+Next, we will look at vectorized calculations. Vectorized code lets us apply a calculation to many values at once without writing a manual loop.
 
-[pause=1.0]
+Then we will study shape. Shape tells us whether the data is one-dimensional, like a row of values, or two-dimensional, like a table.
 
-Slide 3: Learning path for Module 9
+Finally, we will use NumPy for practical analysis tasks: filtering values with conditions, calculating summary statistics, working with missing values, using broadcasting, and completing a small product sales example.
 
-This slide is the roadmap for Module 9. Follow the progression from the basic structure to selection, transformation, and a small analytical workflow.
+The goal is not to memorize every NumPy function. The goal is to learn how to think in arrays.
 
-[pause=0.7]
 
-Create numeric arrays. Inspect dimensions and types. Calculate without manual loops.
+Slide 3: Why NumPy instead of regular lists?
 
-[pause=0.7]
+Python lists are flexible and useful, but they are not designed mainly for numerical computing.
 
-Select rows, columns, and masks. Combine arrays and scalars. Build numeric features for analytics.
+A list can store different kinds of values at the same time. For example, a list can contain a number, a string, and even another list. That flexibility is useful, but it also means Python treats lists as general containers.
 
-[pause=1.0]
+NumPy arrays are different. A NumPy array usually stores values of the same numeric type. Because the structure is more consistent, NumPy can perform numerical operations much more directly.
 
-Slide 4: Why NumPy matters
+Think about a list of student scores. If we want to add five points to every score using regular lists, we usually need a loop or a comprehension. With NumPy, we can add five to the entire array.
 
-This slide focuses on Why NumPy matters. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+That is why NumPy is so common in analytics. It helps us write code that is shorter, more readable, and often faster for numeric work.
 
-[pause=0.7]
 
-A Python list can store many values. A NumPy array is designed for fast numeric work.
+Slide 4: Create your first NumPy array
 
-[pause=1.0]
+The standard import pattern is import numpy as np.
 
-Slide 5: Create a NumPy array
+You will see this pattern almost everywhere. The name np is not required, but it is the convention used in most documentation, examples, and real projects.
 
-This slide focuses on Create a NumPy array. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+In the code example, we create an array of scores. The values are eighty-eight, ninety-two, seventy-nine, ninety-five, and eighty-four.
 
-[pause=0.7]
+After creating the array, we print it, check its type, and calculate the mean.
 
-The common alias for NumPy is np . Arrays can be created from Python lists. Create and inspect an array
+Before you run the code, try to predict the average roughly. Then run the cell and look at the output.
 
-[pause=0.8]
+Notice that we can call scores dot mean directly. That is one of the benefits of arrays: they come with useful methods for numerical summaries.
 
-Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+After running the cell, try changing one of the scores and run it again.
 
-[pause=1.0]
 
-Slide 6: Vectorized arithmetic
+Slide 5: Lists and arrays behave differently
 
-This slide focuses on Vectorized arithmetic. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+This slide shows one of the most important differences between Python lists and NumPy arrays.
 
-[pause=0.7]
+When we add a Python list to itself, Python joins the list with another copy of the list. So the result becomes a longer list.
 
-Vectorized operations apply one calculation to every value in an array. Apply one formula to all values
+But when we add a NumPy array to itself, NumPy adds the matching elements. Ten plus ten becomes twenty. Twenty plus twenty becomes forty. Thirty plus thirty becomes sixty.
 
-[pause=0.8]
+The same idea applies when we multiply an array by two. NumPy multiplies each element by two.
 
-Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+Run the code and compare the three outputs carefully.
 
-[pause=1.0]
+This example is small, but the idea is powerful. NumPy lets us describe a calculation once and apply it to the full array.
 
-Slide 7: Indexing and slicing
 
-This slide focuses on Indexing and slicing. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+Slide 6: Vectorized calculations
 
-[pause=0.7]
+Vectorization means applying an operation to many values at once.
 
-NumPy uses zero-based indexing like Python lists. Slices select ranges. Select array values
+In the example, we have grades stored in a NumPy array. We want to add five points to every grade.
 
-[pause=0.8]
+With regular Python, we might write a loop. With NumPy, we can write grades plus five. NumPy applies the addition to every value in the array.
 
-Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+Then we use np dot minimum to make sure no value goes above one hundred. This is a common analytics idea: apply a rule to many values while keeping the code readable.
 
-[pause=1.0]
+Run the cell and compare the original grades with the curved grades.
 
-Slide 8: Boolean masks
+Then try changing the curve from five points to ten points. Watch how the output changes.
 
-This slide focuses on Boolean masks. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+The key idea is that vectorized calculations help us write numeric transformations clearly.
 
-[pause=0.7]
 
-A boolean mask keeps values that meet a condition. Filter with a condition
+Slide 7: Shape tells us the structure
 
-[pause=0.8]
+Shape tells us how an array is organized.
 
-Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+A one-dimensional array is like one row of values. A two-dimensional array is more like a table with rows and columns.
 
-[pause=1.0]
+In the example, we create values from one through twelve using np dot arange. Then we reshape those values into a matrix with three rows and four columns.
 
-Slide 9: Two-dimensional arrays
+The shape of the original array is twelve. The shape of the reshaped matrix is three by four.
 
-This slide focuses on Two-dimensional arrays. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+This is very important in analytics and machine learning. Many errors happen because the array has a different shape than we expected.
 
-[pause=0.7]
+A practical habit is to print dot shape when you are unsure.
 
-A 2-D array looks like a table of numbers. Axis 0 usually means down columns. Axis 1 usually means across rows. Rows, columns, and axes
+Run the example and look at how the same twelve values are organized differently after reshaping.
 
-[pause=0.8]
 
-Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+Slide 8: Indexing and slicing arrays
 
-[pause=1.0]
+Indexing and slicing help us select values from an array.
 
-Slide 10: Broadcasting
+The syntax is similar to Python lists. Index zero gives the first value. Negative one gives the last value. A slice such as colon three gives the first three values.
 
-This slide focuses on Broadcasting. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+The expression with double colon two selects every other value.
 
-[pause=0.7]
+Run the cell and inspect each output.
 
-Broadcasting lets NumPy combine arrays with scalars or compatible shapes. Subtract column averages
+Then change the slice. For example, try scores one colon four. That should select values starting at index one and stopping before index four.
 
-[pause=0.8]
+This skill becomes more important when we work with larger arrays or table-shaped data.
 
-Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+The goal is to become comfortable reading a selection expression and predicting what part of the array it will return.
 
-[pause=1.0]
 
-Slide 11: Random arrays with a seed
+Slide 9: Boolean filtering
 
-This slide focuses on Random arrays with a seed. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+Boolean filtering is one of the most useful NumPy patterns.
 
-[pause=0.7]
+First, we create a condition. In this example, the condition is scores greater than or equal to ninety.
 
-NumPy can generate random data for simulations and teaching examples. A seed makes results repeatable. Generate repeatable random data
+That condition creates a Boolean mask. The mask is an array of True and False values. True means the value meets the condition. False means it does not.
 
-[pause=0.8]
+Then we use the mask to select only the values where the condition is true.
 
-Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+Run the example and look at the mask first. Then look at the high scores.
 
-[pause=1.0]
+This pattern appears again later in Pandas. The syntax will look slightly different, but the logic is the same: create a condition, then use the condition to filter the data.
 
-Slide 12: Mini NumPy workflow
 
-This slide focuses on Mini NumPy workflow. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.
+Slide 10: Summary statistics
 
-[pause=0.7]
+NumPy provides many useful summary statistics directly on arrays.
 
-This example calculates a simple standardized score using the mean and standard deviation. Standardize values
+In this example, daily visits are stored as a NumPy array. We calculate the total number of visits, the average number of visits, the minimum, the maximum, and the standard deviation.
 
-[pause=0.8]
+The total tells us overall volume. The average gives us a typical day. The minimum and maximum show the range. The standard deviation gives us a sense of variation.
 
-Before running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.
+Run the cell and read each line of output.
 
-[pause=1.0]
+Then try changing one daily value to a much larger number. For example, change one value to three hundred. Run the cell again and notice how the mean and standard deviation change.
 
-Slide 13: Module 9 wrap-up
+This is a simple way to see how summary statistics respond to data changes.
 
-This slide summarizes Module 9. Focus on the operations you should recognize and the situations where they make analytical work easier.
 
-[pause=0.7]
+Slide 11: Missing numeric values
 
-Create numeric arrays. Shape and dtype Inspect array structure.
+Real datasets often contain missing values.
 
-[pause=0.7]
+In NumPy, a missing numeric value is often represented with np dot nan.
 
-Apply formulas to all values. Filter values with conditions. Work with rows and columns.
+If we calculate a regular mean on an array that contains nan, the result may also be nan. That happens because the missing value affects the calculation.
 
-[pause=1.0]
+NumPy provides special functions such as np dot nanmean. This function calculates the mean while ignoring missing values.
+
+In the example, we also use np dot nan_to_num to replace the missing value with the mean.
+
+Be careful with this idea. Filling missing values is a decision. We should not automatically replace missing values without thinking about what it means.
+
+The key point is that missing data should be handled intentionally.
+
+
+Slide 12: Broadcasting
+
+Broadcasting lets NumPy apply a smaller value across a larger array when the shapes are compatible.
+
+In this example, monthly sales contains four values. We multiply the whole array by one point zero eight.
+
+NumPy applies that multiplier to every value in the array. We do not need to write a loop.
+
+This is useful for many analytics tasks. For example, we might increase prices by a percentage, apply a conversion factor, or adjust measurements by a constant.
+
+Run the cell and compare the original sales with the adjusted sales.
+
+Then try changing the multiplier to one point one zero and run it again.
+
+
+Slide 13: Two-dimensional arrays
+
+A two-dimensional array can represent rows and columns.
+
+In this example, rows are students and columns are assignments. The columns represent quiz, project, and exam scores.
+
+When we use axis equals zero, NumPy calculates down the columns. That gives us the average for each assignment type.
+
+When we use axis equals one, NumPy calculates across each row. That gives us the average for each student.
+
+Axis is one of the most important ideas in NumPy. If your result looks wrong, check whether you used the correct axis.
+
+Run the cell and compare the column averages with the student averages.
+
+
+Slide 14: Mini project: product sales array
+
+This slide gives us a small NumPy analytics project.
+
+The rows represent products. The columns represent months: January, February, March, and April.
+
+First, we calculate product totals using axis equals one. This adds across each row, so we get one total for each product.
+
+Next, we calculate monthly totals using axis equals zero. This adds down each column, so we get one total for each month.
+
+Finally, we use argmax to identify the product row with the largest total.
+
+Run the cell and inspect the output.
+
+This is a realistic workflow: organize the data, summarize by row, summarize by column, and identify the strongest result.
+
+
+Slide 15: Normalize values with z-scores
+
+Normalization helps us compare values relative to their average and variation.
+
+A z-score subtracts the mean and divides by the standard deviation.
+
+If a z-score is positive, the value is above the mean. If it is negative, the value is below the mean. A value near zero is close to the mean.
+
+In the example, we calculate z-scores for a small set of values.
+
+Run the cell and inspect the z-scores.
+
+This idea appears often in analytics and machine learning because many methods work better when numeric variables are on a comparable scale.
+
+For now, focus on the interpretation: z-scores tell us how far values are from the average in standard deviation units.
+
+
+Slide 16: Common NumPy mistakes
+
+Most beginner NumPy mistakes come from three areas: shape, axis, and missing values.
+
+If two arrays do not combine correctly, check their shapes. The shape tells you how many values are arranged in each dimension.
+
+If a summary gives an unexpected result, check the axis. Axis zero means down columns in a two-dimensional array. Axis one means across rows.
+
+If a result becomes nan, check whether missing values are present. You may need a nan-aware function such as nanmean.
+
+A good debugging habit is to print the shape and a small sample of the array before doing a larger analysis.
+
+This simple habit can prevent many confusing errors.
+
+
+Slide 17: NumPy workflow checklist
+
+Here is a practical checklist for NumPy work.
+
+First, create the array. Make sure the data is numeric and organized in the way you expect.
+
+Second, inspect the array. Check the shape, data type, and a small sample of values.
+
+Third, transform the data. You might use vectorized math, Boolean filtering, reshaping, or broadcasting.
+
+Fourth, summarize the result. Calculate totals, averages, variation, or other values that answer your analytical question.
+
+Work in small steps. Run each step before moving on.
+
+This approach makes NumPy easier to learn and makes your analysis easier to trust.
+
+
+Slide 18: Module 9 wrap-up
+
+The main takeaway from Module 9 is that NumPy gives Python a strong foundation for numerical analytics.
+
+Arrays store numeric values in a structured form. Vectorized calculations let us apply operations to many values at once. Shape helps us understand whether data is one-dimensional or two-dimensional. Boolean filtering helps us select values that meet a condition. Summary functions help us quickly describe numeric data.
+
+You also practiced missing values, broadcasting, row and column calculations, and normalization.
+
+These ideas will continue to matter in later modules. When we move to Pandas, we will work with labeled tables, but many of the underlying ideas come from NumPy.
+
+So the goal is not only to know NumPy syntax. The goal is to think clearly about numeric data.
