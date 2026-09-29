@@ -292,7 +292,14 @@
 
   function init(){
     if(document.body.classList.contains('ian601-shell')) return;
+    var meta=moduleMeta();
+    var moduleNumber=Number(meta.number || 0);
     document.body.classList.add('ian601-shell');
+    if(moduleNumber && (moduleNumber <= 4 || moduleNumber >= 10)){
+      document.body.classList.add('shell-legacy-layout');
+    }else{
+      document.body.classList.add('shell-modern-layout');
+    }
     setupHeader();
     setupFooter();
     setupCc();
