@@ -309,3 +309,143 @@
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init,{once:true});
   else init();
 })();
+
+
+/* IAN601_PYTHON_FOCUS_SHARED_START */
+(function(){
+  'use strict';
+
+  function ready(fn){
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn,{once:true});
+    else fn();
+  }
+
+  ready(function(){
+    var activeBox=null;
+
+    function actionBar(box){
+      return box.querySelector('.cell-actions');
+    }
+    function editorTextarea(box){
+      return box.querySelector('textarea.code-input');
+    }
+    function monacoInput(box){
+      return box.querySelector('.monaco-host .monaco-editor textarea.inputarea, .monaco-host textarea.inputarea');
+    }
+    function resizeEditors(){
+      try{ window.dispatchEvent(new Event('resize')); }catch(e){}
+      setTimeout(function(){
+        try{ window.dispatchEvent(new Event('resize')); }catch(e){}
+      },120);
+    }
+    function closeFocus(){
+      if(!activeBox) return;
+      var box=activeBox;
+      var btn=box.querySelector('.python-focus-toggle');
+      box.classList.remove('ian601-python-focus');
+      document.body.classList.remove('python-focus-open');
+      if(btn){
+        btn.textContent='Expand';
+        btn.setAttribute('aria-label','Expand Python editor');
+        btn.setAttribute('aria-pressed','false');
+        btn.title='Open a larger Python workspace';
+      }
+      activeBox=null;
+      resizeEditors();
+    }
+    function openFocus(box){
+      if(activeBox && activeBox!==box) closeFocus();
+      activeBox=box;
+      var btn=box.querySelector('.python-focus-toggle');
+      box.classList.add('ian601-python-focus');
+      document.body.classList.add('python-focus-open');
+      if(btn){
+        btn.textContent='Collapse';
+        btn.setAttribute('aria-label','Collapse Python editor');
+        btn.setAttribute('aria-pressed','true');
+        btn.title='Return to the regular slide view';
+      }
+      requestAnimationFrame(function(){
+        resizeEditors();
+        var input=monacoInput(box) || editorTextarea(box);
+        if(input){
+          try{ input.focus({preventScroll:true}); }catch(e){ try{input.focus();}catch(_){} }
+        }
+      });
+    }
+    function buttonClass(actions){
+      if(actions.querySelector('.control')) return 'control python-focus-toggle';
+      if(actions.querySelector('.btn')) return 'btn ghost python-focus-toggle';
+      return 'python-focus-toggle';
+    }
+    function enhanceBox(box){
+      if(box.dataset.ian601PythonFocus==='ready') return;
+      var textarea=editorTextarea(box);
+      var monaco=box.querySelector('.monaco-host');
+      if(!textarea && !monaco) return;
+
+      var actions=actionBar(box);
+      if(!actions){
+        var head=box.querySelector('.cell-head');
+        if(head){
+          actions=document.createElement('div');
+          actions.className='cell-actions';
+          head.appendChild(actions);
+        }
+      }
+      if(!actions) return;
+
+      box.dataset.ian601PythonFocus='ready';
+
+      var existing=actions.querySelector('.python-focus-toggle,.python-expand,.code-expand');
+      if(existing){
+        existing.classList.add('python-focus-toggle');
+        return;
+      }
+
+      var btn=document.createElement('button');
+      btn.type='button';
+      btn.className=buttonClass(actions);
+      btn.textContent='Expand';
+      btn.setAttribute('aria-label','Expand Python editor');
+      btn.setAttribute('aria-pressed','false');
+      btn.title='Open a larger Python workspace';
+      btn.addEventListener('click',function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        if(box.classList.contains('ian601-python-focus')) closeFocus();
+        else openFocus(box);
+      });
+      actions.appendChild(btn);
+    }
+    function scan(){
+      [].slice.call(document.querySelectorAll('.code-cell')).forEach(enhanceBox);
+    }
+
+    scan();
+
+    var root=document.querySelector('main.stage,main.slides,#stage');
+    if(root && window.MutationObserver){
+      try{
+        new MutationObserver(function(){ scan(); }).observe(root,{childList:true,subtree:true});
+      }catch(e){}
+    }
+
+    document.addEventListener('keydown',function(event){
+      if(event.key==='Escape' && activeBox){
+        event.preventDefault();
+        closeFocus();
+      }
+    });
+
+    ['prevBtn','prev-btn','nextBtn','next-btn'].forEach(function(id){
+      var btn=document.getElementById(id);
+      if(btn) btn.addEventListener('click',function(){ if(activeBox) closeFocus(); },true);
+    });
+    ['slideSelect','slide-select'].forEach(function(id){
+      var select=document.getElementById(id);
+      if(select) select.addEventListener('change',function(){ if(activeBox) closeFocus(); },true);
+    });
+  });
+})();
+/* IAN601_PYTHON_FOCUS_SHARED_END */
