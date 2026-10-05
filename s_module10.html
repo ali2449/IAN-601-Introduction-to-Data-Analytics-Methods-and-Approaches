@@ -82,7 +82,7 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
 .ian603-bottombar .bottom-nav-panel{align-self:center!important}
 .topbar>.toolbar,.topbar>.controls,.topbar>.top-controls{margin-left:auto!important}
 .topbar .ian603-tool{box-shadow:none!important}
-</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-coursenav"><!-- IAN601_UI_SHELL_END -->
+</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-module10fix"><!-- IAN601_UI_SHELL_END -->
 <style id="module10-redesign-v2">
 body.ian601-shell main.stage>.slide{padding:clamp(24px,2.6vw,42px)!important}
 body.ian601-shell .slide-header{margin-bottom:14px!important}
@@ -1465,7 +1465,32 @@ function fallbackCaption(){const item=currentManifestItem();if(!item?.text)retur
 function updateSubtitle(){if(!subtitleBar)return;if(!ccEnabled){subtitleBar.hidden=true;subtitleBar.textContent='';return;}subtitleBar.hidden=false;const t=narrationAudio?.currentTime||0;const cue=captionCues.find(c=>t>=c.start&&t<=c.end);subtitleBar.textContent=cue?.text||fallbackCaption()||'Captions will appear here when narration plays.';}
 function renderTranscript(){const item=currentManifestItem();if(!item)return;if(transcriptTitle)transcriptTitle.textContent='Slide '+item.slide+': '+item.title;if(transcriptBody)transcriptBody.textContent=vttTranscript||item.text||'Transcript unavailable.';}
 function updateNarrationButtons(){if(narrationToggleBtn)narrationToggleBtn.textContent=narrationEnabled?'Narration On':'Narration Off';if(ccToggleBtn)ccToggleBtn.textContent=ccEnabled?'CC On':'CC Off';if(subtitleBar)subtitleBar.hidden=!ccEnabled;}
-function loadAudioForCurrent(){const item=currentManifestItem();if(!item||!narrationAudio)return;if(audioTitle){audioTitle.classList.remove('audio-error');audioTitle.textContent='Slide '+item.slide+': '+item.title;}if(loadedSlideNumber!==item.slide){loadedSlideNumber=item.slide;narrationAudio.pause();narrationAudio.src=item.audio;narrationAudio.load();if(audioSeek)audioSeek.value='0';if(audioTime)audioTime.textContent='0:00 / 0:00';if(audioPlayBtn)audioPlayBtn.textContent='Play';loadCaptionsForCurrent();}}
+function loadAudioForCurrent(){
+  const item=currentManifestItem();
+  if(!item||!narrationAudio)return;
+  if(audioTitle){
+    audioTitle.classList.remove('audio-error');
+    audioTitle.textContent='Slide '+item.slide+' audio ready';
+  }
+  if(audioPlayBtn){
+    audioPlayBtn.disabled=false;
+    audioPlayBtn.removeAttribute('aria-disabled');
+    audioPlayBtn.textContent='Play';
+  }
+  if(audioSeek){
+    audioSeek.disabled=false;
+    audioSeek.removeAttribute('aria-disabled');
+  }
+  if(loadedSlideNumber!==item.slide){
+    loadedSlideNumber=item.slide;
+    narrationAudio.pause();
+    narrationAudio.src=item.audio;
+    narrationAudio.load();
+    if(audioSeek)audioSeek.value='0';
+    if(audioTime)audioTime.textContent='0:00 / 0:00';
+    loadCaptionsForCurrent();
+  }
+}
 async function playCurrentNarration(restart=false){if(!narrationAudio)return;loadAudioForCurrent();if(restart)narrationAudio.currentTime=0;narrationAudio.playbackRate=Number(speedSelect?.value)||1;try{await narrationAudio.play();}catch{}}
 function syncNarrationForSlide(){loadAudioForCurrent();renderTranscript();if(narrationEnabled&&narrationStarted){narrationAudio.currentTime=0;playCurrentNarration(false);}}
 function initNarr(){const saved=readDeckState();narrationEnabled=Boolean(saved.narrationEnabled);ccEnabled=Boolean(saved.ccEnabled);const speed=[0.75,1,1.25,1.5,2].includes(Number(saved.speed))?Number(saved.speed):1;if(speedSelect)speedSelect.value=String(speed);if(narrationAudio)narrationAudio.playbackRate=speed;updateNarrationButtons();return Number.isInteger(saved.slide)?Math.max(0,Math.min(saved.slide,MANIFEST.slide_count-1)):0;}
@@ -1479,10 +1504,34 @@ audioPlayBtn?.addEventListener('click',()=>{narrationStarted=true;if(narrationAu
 audioSeek?.addEventListener('input',()=>{if(narrationAudio&&Number.isFinite(narrationAudio.duration)&&narrationAudio.duration>0){narrationAudio.currentTime=(Number(audioSeek.value)/1000)*narrationAudio.duration;}});
 narrationAudio?.addEventListener('play',()=>{if(audioPlayBtn)audioPlayBtn.textContent='Pause';});
 narrationAudio?.addEventListener('pause',()=>{if(audioPlayBtn)audioPlayBtn.textContent='Play';});
-narrationAudio?.addEventListener('loadedmetadata',()=>{if(audioTime)audioTime.textContent=formatNarrationTime(narrationAudio.currentTime)+' / '+formatNarrationTime(narrationAudio.duration);updateSubtitle();});
+narrationAudio?.addEventListener('loadedmetadata',()=>{
+  if(audioPlayBtn){audioPlayBtn.disabled=false;audioPlayBtn.removeAttribute('aria-disabled');}
+  if(audioSeek){audioSeek.disabled=false;audioSeek.removeAttribute('aria-disabled');}
+  if(audioTitle){const item=currentManifestItem();audioTitle.classList.remove('audio-error');audioTitle.textContent='Slide '+(item?.slide||current+1)+' audio ready';}
+  if(audioTime)audioTime.textContent=formatNarrationTime(narrationAudio.currentTime)+' / '+formatNarrationTime(narrationAudio.duration);
+  updateSubtitle();
+});
 narrationAudio?.addEventListener('timeupdate',()=>{const duration=narrationAudio.duration;if(Number.isFinite(duration)&&duration>0&&audioSeek){audioSeek.value=String(Math.round((narrationAudio.currentTime/duration)*1000));}if(audioTime)audioTime.textContent=formatNarrationTime(narrationAudio.currentTime)+' / '+formatNarrationTime(duration);updateSubtitle();});
 narrationAudio?.addEventListener('ended',()=>{if(audioPlayBtn)audioPlayBtn.textContent='Play';updateSubtitle();/* narration intentionally does not advance the slide */});
-narrationAudio?.addEventListener('error',()=>{const item=currentManifestItem();if(audioTitle){audioTitle.textContent='Audio not found yet: '+(item?.audio||'');audioTitle.classList.add('audio-error');}});
+narrationAudio?.addEventListener('error',()=>{
+  const item=currentManifestItem();
+  if(audioTitle){
+    audioTitle.textContent='Narration not available for this slide yet';
+    audioTitle.classList.add('audio-error');
+    audioTitle.title=item?.audio?'Waiting for '+item.audio:'Narration file unavailable';
+  }
+  if(audioPlayBtn){
+    audioPlayBtn.textContent='Play';
+    audioPlayBtn.disabled=true;
+    audioPlayBtn.setAttribute('aria-disabled','true');
+  }
+  if(audioSeek){
+    audioSeek.value='0';
+    audioSeek.disabled=true;
+    audioSeek.setAttribute('aria-disabled','true');
+  }
+  if(audioTime)audioTime.textContent='0:00 / 0:00';
+});
 
 function setRuntime(status,text){runtime.className='runtime '+(status||'');runtimeText.textContent=text;}
 function showSlide(index){current=Math.max(0,Math.min(slides.length-1,index));slides.forEach((s,i)=>s.classList.toggle('active',i===current));select.value=String(current);document.getElementById('counter').textContent=`${current+1} / ${slides.length}`;document.getElementById('progress-bar').style.width=`${((current+1)/slides.length)*100}%`;if(typeof resizeEditors==='function')setTimeout(()=>resizeEditors(),50);syncNarrationForSlide();saveDeckState();}
@@ -1526,5 +1575,5 @@ function render(){const i=activeIndex();if(!visited.includes(i+1)){visited.push(
 const obs=new MutationObserver(()=>render());slides.forEach(s=>obs.observe(s,{attributes:true,attributeFilter:['class']}));setTimeout(render,60);
 document.getElementById('ian-progress-btn')?.addEventListener('click',()=>{render();document.getElementById('ian-progress-modal')?.classList.add('show')});document.getElementById('ian-progress-close')?.addEventListener('click',()=>document.getElementById('ian-progress-modal')?.classList.remove('show'));document.getElementById('ian-progress-reset')?.addEventListener('click',()=>{visited=[];save();render()});
 document.getElementById('ian-course-modules-btn')?.addEventListener('click',()=>document.getElementById('ian-course-modal')?.classList.add('show'));document.getElementById('ian-course-close')?.addEventListener('click',()=>document.getElementById('ian-course-modal')?.classList.remove('show'));document.getElementById('ian-fullscreen-btn')?.addEventListener('click',async()=>{if(!document.fullscreenElement)await document.documentElement.requestFullscreen?.();else await document.exitFullscreen?.()});document.querySelectorAll('.ian603-modal-backdrop').forEach(x=>x.addEventListener('click',e=>{if(e.target===x)x.classList.remove('show')}));})();
-</script><!-- IAN601_UI_SHELL_SCRIPT_START --><script src="assets/ian601-ui-shell.js?v=20261005-slidememory"></script><!-- IAN601_UI_SHELL_SCRIPT_END --></body>
+</script><!-- IAN601_UI_SHELL_SCRIPT_START --><script src="assets/ian601-ui-shell.js?v=20261005-module10fix"></script><!-- IAN601_UI_SHELL_SCRIPT_END --></body>
 </html>
