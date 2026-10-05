@@ -332,11 +332,35 @@
     function monacoInput(box){
       return box.querySelector('.monaco-host .monaco-editor textarea.inputarea, .monaco-host textarea.inputarea');
     }
-    function resizeEditors(){
+    function layoutMonaco(box){
+      try{
+        if(!window.monaco || !window.monaco.editor || typeof window.monaco.editor.getEditors!=='function') return;
+        var host=box ? box.querySelector('.monaco-host') : null;
+        window.monaco.editor.getEditors().forEach(function(editor){
+          try{
+            var node=editor.getDomNode && editor.getDomNode();
+            if(host && node && !host.contains(node)) return;
+            if(host && host.clientWidth>0 && host.clientHeight>0){
+              editor.layout({width:host.clientWidth,height:host.clientHeight});
+            }else{
+              editor.layout();
+            }
+          }catch(e){}
+        });
+      }catch(e){}
+    }
+    function resizeEditors(box){
       try{ window.dispatchEvent(new Event('resize')); }catch(e){}
+      requestAnimationFrame(function(){
+        layoutMonaco(box);
+        requestAnimationFrame(function(){
+          layoutMonaco(box);
+        });
+      });
       setTimeout(function(){
         try{ window.dispatchEvent(new Event('resize')); }catch(e){}
-      },120);
+        layoutMonaco(box);
+      },180);
     }
     function closeFocus(){
       if(!activeBox) return;
@@ -351,7 +375,7 @@
         btn.title='Open a larger Python workspace';
       }
       activeBox=null;
-      resizeEditors();
+      resizeEditors(box);
     }
     function openFocus(box){
       if(activeBox && activeBox!==box) closeFocus();
@@ -360,13 +384,13 @@
       box.classList.add('ian601-python-focus');
       document.body.classList.add('python-focus-open');
       if(btn){
-        btn.textContent='Collapse';
-        btn.setAttribute('aria-label','Collapse Python editor');
+        btn.textContent='Back to slide';
+        btn.setAttribute('aria-label','Back to slide');
         btn.setAttribute('aria-pressed','true');
         btn.title='Return to the regular slide view';
       }
       requestAnimationFrame(function(){
-        resizeEditors();
+        resizeEditors(box);
         var input=monacoInput(box) || editorTextarea(box);
         if(input){
           try{ input.focus({preventScroll:true}); }catch(e){ try{input.focus();}catch(_){} }
