@@ -726,3 +726,55 @@
   });
 })();
 /* IAN601_PYTHON_FOCUS_SHARED_END */
+
+
+/* IAN601_CODE_OUTPUT_VISIBILITY_START
+   Keep output hidden until a cell actually runs, including legacy modules
+   that do not add an explicit .show class themselves. */
+(function(){
+  'use strict';
+  function ready(fn){
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn,{once:true});
+    else fn();
+  }
+  ready(function(){
+    function isPlaceholder(text){
+      var value=String(text||'').replace(/\s+/g,' ').trim().toLowerCase();
+      return !value ||
+        value==='run this cell to see output.' ||
+        value==='click run to execute this cell.' ||
+        value==='click run to execute this cell' ||
+        value==='run this cell to see output';
+    }
+    function sync(output){
+      if(!output) return;
+      if(isPlaceholder(output.textContent)){
+        output.classList.remove('show');
+      }else{
+        output.classList.add('show');
+      }
+    }
+    function watch(output){
+      if(output.dataset.ian601OutputWatch==='ready') return;
+      output.dataset.ian601OutputWatch='ready';
+      sync(output);
+      if(window.MutationObserver){
+        try{
+          new MutationObserver(function(){sync(output);})
+            .observe(output,{childList:true,subtree:true,characterData:true});
+        }catch(e){}
+      }
+    }
+    function scan(){
+      [].slice.call(document.querySelectorAll('.code-cell .output')).forEach(watch);
+    }
+    scan();
+    var root=document.querySelector('main.stage,main.slides,#stage');
+    if(root && window.MutationObserver){
+      try{
+        new MutationObserver(scan).observe(root,{childList:true,subtree:true});
+      }catch(e){}
+    }
+  });
+})();
+/* IAN601_CODE_OUTPUT_VISIBILITY_END */
