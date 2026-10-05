@@ -1327,3 +1327,28 @@ body.ian601-shell .ian601-python-focus .cell-actions{
   }
 }
 /* IAN601_FOCUS_COMPACT_HEIGHT_END */
+
+
+/* IAN601_FOCUS_MONACO_HOST_FIX_START
+   Expanded mode must override module-local fixed Monaco heights such as
+   Module 9's 150px !important rule. */
+body.ian601-shell .code-cell.ian601-python-focus .monaco-host{
+  height:var(--ian601-focus-monaco-height,260px)!important;
+  min-height:var(--ian601-focus-monaco-height,260px)!important;
+  max-height:var(--ian601-focus-monaco-height,260px)!important;
+  flex:0 0 var(--ian601-focus-monaco-height,260px)!important;
+}
+body.ian601-shell .code-cell.ian601-python-focus .editor-shell{
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  flex:0 0 auto!important;
+}
+body.ian601-shell .code-cell.ian601-python-focus .output.show{
+  flex:0 0 auto!important;
+  min-height:0!important;
+  height:auto!important;
+  max-height:min(26vh,220px)!important;
+  padding:10px 12px!important;
+}
+/* IAN601_FOCUS_MONACO_HOST_FIX_END */
