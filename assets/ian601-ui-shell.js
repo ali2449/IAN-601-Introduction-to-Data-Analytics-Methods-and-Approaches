@@ -155,6 +155,145 @@
     }
   }
 
+
+
+  function setupCourseNav(){
+    if(document.getElementById('ian601CourseNavBackdrop')) return;
+
+    var meta=moduleMeta();
+    var current=Number(meta.number||0);
+    if(!current) return;
+
+    var modules=[
+      'Python Fundamentals & Business Context',
+      'Control Flow & Decision Making',
+      'Functions & Code Organization',
+      'Lists & Tuples for Data Organization',
+      'Dictionaries & Sets for Data Relationships',
+      'Modules, Packages & Object-Oriented Basics',
+      'Advanced Python Techniques',
+      'Professional Development Practices',
+      'NumPy for Analytics',
+      'Pandas for Real Analytics',
+      'Advanced Pandas & Time Series',
+      'Data Cleaning & Exploratory Data Analysis',
+      'Statistics & Data Visualization',
+      'Machine Learning & External Data Sources'
+    ];
+
+    var btn=byIds(['ian-course-modules-btn','courseModulesBtn','modulesBtn']);
+    if(!btn) return;
+
+    var backdrop=make('div','');
+    backdrop.id='ian601CourseNavBackdrop';
+    backdrop.setAttribute('aria-hidden','true');
+
+    var drawer=make('aside','ian601-cmn-drawer');
+    drawer.id='ian601CourseNavDrawer';
+    drawer.setAttribute('role','dialog');
+    drawer.setAttribute('aria-modal','true');
+    drawer.setAttribute('aria-labelledby','ian601CourseNavTitle');
+
+    var head=make('div','ian601-cmn-head');
+    var headCopy=make('div','');
+    headCopy.appendChild(make('span','ian601-cmn-kicker','IAN 601 · Course Navigation'));
+    var h2=make('h2','','Course Modules');
+    h2.id='ian601CourseNavTitle';
+    headCopy.appendChild(h2);
+    headCopy.appendChild(make('p','','Jump to another narrated module without returning to the course hub first.'));
+    var closeBtn=make('button','ian601-cmn-close','×');
+    closeBtn.type='button';
+    closeBtn.setAttribute('aria-label','Close course modules');
+    head.append(headCopy,closeBtn);
+
+    var homeRow=make('div','ian601-cmn-home-row');
+    var home=document.createElement('a');
+    home.className='ian601-cmn-home';
+    home.href='s_index.html';
+    home.innerHTML='<span>Course Home<small>Overview, learning path, and all modules</small></span><span>⌂</span>';
+    homeRow.appendChild(home);
+
+    var list=make('nav','ian601-cmn-list');
+    list.setAttribute('aria-label','IAN 601 modules');
+    modules.forEach(function(title,index){
+      var n=index+1;
+      var link=document.createElement('a');
+      link.className='ian601-cmn-module-link'+(n===current?' current':'');
+      link.href='s_module'+n+'.html';
+      if(n===current) link.setAttribute('aria-current','page');
+
+      var num=make('span','ian601-cmn-num',String(n).padStart(2,'0'));
+      var copy=make('span','ian601-cmn-link-copy');
+      copy.appendChild(make('b','',title));
+      copy.appendChild(make('small','',n===current?'Module '+n+' · Current':'Module '+n));
+      var arrow=make('span','ian601-cmn-arrow','›');
+      link.append(num,copy,arrow);
+      list.appendChild(link);
+    });
+
+    var foot=make('div','ian601-cmn-footer');
+    function step(direction,n){
+      if(n<1 || n>modules.length){
+        var disabled=make('span','ian601-cmn-step disabled');
+        disabled.innerHTML='<span>'+(direction==='prev'?'←':'→')+'</span><small>'+(direction==='prev'?'Previous':'Next')+'</small><b>—</b>';
+        return disabled;
+      }
+      var a=document.createElement('a');
+      a.className='ian601-cmn-step';
+      a.href='s_module'+n+'.html';
+      a.innerHTML='<span>'+(direction==='prev'?'←':'→')+'</span><small>'+(direction==='prev'?'Previous':'Next')+'</small><b>Module '+n+'</b>';
+      return a;
+    }
+    foot.append(step('prev',current-1),step('next',current+1));
+
+    drawer.append(head,homeRow,list,foot);
+    backdrop.appendChild(drawer);
+    document.body.appendChild(backdrop);
+
+    var lastFocus=null;
+    function openNav(event){
+      if(event){
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        event.stopPropagation();
+      }
+      lastFocus=document.activeElement;
+      backdrop.classList.add('open');
+      backdrop.setAttribute('aria-hidden','false');
+      document.body.classList.add('ian601-course-nav-lock');
+      requestAnimationFrame(function(){
+        closeBtn.focus();
+        var currentLink=list.querySelector('.current');
+        if(currentLink){
+          try{ currentLink.scrollIntoView({block:'center'}); }catch(e){}
+        }
+      });
+    }
+    function closeNav(){
+      backdrop.classList.remove('open');
+      backdrop.setAttribute('aria-hidden','true');
+      document.body.classList.remove('ian601-course-nav-lock');
+      if(lastFocus && typeof lastFocus.focus==='function'){
+        try{ lastFocus.focus({preventScroll:true}); }catch(e){ lastFocus.focus(); }
+      }
+    }
+
+    btn.setAttribute('aria-haspopup','dialog');
+    btn.setAttribute('aria-controls','ian601CourseNavDrawer');
+    btn.addEventListener('click',openNav,true);
+    closeBtn.addEventListener('click',closeNav);
+    backdrop.addEventListener('click',function(event){
+      if(event.target===backdrop) closeNav();
+    });
+    document.addEventListener('keydown',function(event){
+      if(event.key==='Escape' && backdrop.classList.contains('open')){
+        event.preventDefault();
+        event.stopPropagation();
+        closeNav();
+      }
+    },true);
+  }
+
   function setupFooter(){
     var footer=document.querySelector('footer.ian603-bottombar, footer.bottombar');
     if(!footer || footer.dataset.ian601Shell==='ready') return;
@@ -301,6 +440,7 @@
       document.body.classList.add('shell-modern-layout');
     }
     setupHeader();
+    setupCourseNav();
     setupFooter();
     setupCc();
     setupProgress();
