@@ -1211,3 +1211,77 @@ body.ian601-shell .code-cell.ian601-python-focus .monaco-host{
   }
 }
 /* IAN601_SHARED_CODE_CELL_SKIN_END */
+
+
+/* IAN601_MODULE6_CODE_CELL_MATCH_START
+   Final normalization: match the compact Module 6 Python-cell appearance. */
+body.ian601-shell .code-cell .tab-name{
+  min-width:0!important;
+  max-width:calc(100% - 56px)!important;
+  height:auto!important;
+  margin-left:6px!important;
+  padding:0!important;
+  display:block!important;
+  background:transparent!important;
+  border:0!important;
+  color:#cbd5e1!important;
+  font:11px Consolas,"Courier New",monospace!important;
+  line-height:1!important;
+}
+body.ian601-shell .code-cell .tab-name::before,
+body.ian601-shell .code-cell .tab-name::after{
+  content:none!important;
+  display:none!important;
+}
+body.ian601-shell .code-cell .cell-actions .control,
+body.ian601-shell .code-cell .cell-actions .btn,
+body.ian601-shell .code-cell .cell-actions button{
+  background:#42566d!important;
+  border-color:#60758c!important;
+  color:#fff!important;
+}
+body.ian601-shell .code-cell .cell-actions .run-cell{
+  background:#2f78b7!important;
+  border-color:#2f78b7!important;
+  color:#fff!important;
+}
+body.ian601-shell .code-cell .cell-actions .run-cell:hover{
+  background:#25689f!important;
+  border-color:#25689f!important;
+}
+body.ian601-shell .code-cell .output{
+  display:none!important;
+  min-height:0!important;
+  max-height:220px!important;
+  margin:0!important;
+  padding:12px 14px!important;
+  border:0!important;
+  border-top:1px solid #aab5c1!important;
+  border-radius:0!important;
+  background:#0f172a!important;
+  color:#f8fafc!important;
+  position:relative!important;
+  white-space:pre-wrap!important;
+  overflow:auto!important;
+  font:12px/1.45 Consolas,"Courier New",monospace!important;
+}
+body.ian601-shell .code-cell .output.show{
+  display:block!important;
+}
+body.ian601-shell .code-cell .output::before,
+body.ian601-shell .code-cell .output::after{
+  content:none!important;
+  display:none!important;
+}
+body.ian601-shell .code-cell .output.success{
+  background:#0f172a!important;
+  color:#f8fafc!important;
+}
+body.ian601-shell .code-cell .output.error{
+  background:#450a0a!important;
+  color:#fecaca!important;
+}
+body.ian601-shell .code-cell.ian601-python-focus .output.show{
+  display:block!important;
+}
+/* IAN601_MODULE6_CODE_CELL_MATCH_END */
