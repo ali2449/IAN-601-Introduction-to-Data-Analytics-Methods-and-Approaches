@@ -145,7 +145,35 @@ body.ian601-shell .card p,body.ian601-shell .check-card p{margin:.35rem 0 0}
 @media(max-width:700px){
   body.ian601-shell .grid-4,body.ian601-shell .grid-3{grid-template-columns:1fr!important}
 }
-</style></head>
+</style>
+<style id="module9-monaco-grid-collapse-fix">
+/* Module 9: keep Monaco's temporary expanded width from becoming the
+   minimum width of a two-column grid after returning to the slide. */
+body.ian601-shell .slide .two-col{
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+}
+body.ian601-shell .slide .two-col.equal{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+}
+body.ian601-shell .slide .two-col > *{
+  min-width:0;
+  max-width:100%;
+}
+body.ian601-shell .slide .two-col .code-cell,
+body.ian601-shell .slide .two-col .editor-shell,
+body.ian601-shell .slide .two-col .monaco-host{
+  min-width:0!important;
+  max-width:100%!important;
+  width:100%!important;
+}
+@media(max-width:1000px){
+  body.ian601-shell .slide .two-col,
+  body.ian601-shell .slide .two-col.equal{
+    grid-template-columns:minmax(0,1fr);
+  }
+}
+</style>
+</head>
 <body>
 <div class="app">
 <header class="topbar"><div class="brand"><div class="brand-mark">9</div><div>IAN 601 · Module 9<small>NumPy for Analytics</small></div></div><div class="top-actions"><span id="pyStatus" class="status">Python loads when code runs</span><button class="control" id="themeBtn">Theme</button><button class="control" id="resetPythonBtn">Reset Python</button><button class="control" id="progressBtn">Progress <span id="progressPct">0%</span></button><button class="control" id="fullBtn">Fullscreen</button><button class="control primary" id="runSlideBtn">Run slide ▶</button><button class="control" id="modulesBtn">☰ Course Modules</button></div></header>
