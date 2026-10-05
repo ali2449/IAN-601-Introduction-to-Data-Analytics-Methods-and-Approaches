@@ -1176,245 +1176,245 @@ print(&quot;\nRevenue check:&quot;, round(complete[&quot;amount&quot;].sum(), 2)
 </div>
 <script>
 const MANIFEST = {
-  "prefix": "module10_v2",
+  "prefix": "module10",
   "slide_count": 34,
   "slides": [
     {
       "slide": 1,
       "title": "Pandas for Real Analytics",
-      "audio": "audio/module10_v2_slide_01.mp3",
-      "captions": "captions/module10_v2_slide_01.vtt",
+      "audio": "audio/module10_slide_01.mp3",
+      "captions": "captions/module10_slide_01.vtt",
       "text": "Welcome to Module 10. Pandas is the bridge between raw tabular data and analysis in Python. This redesigned module focuses on the work analysts and data scientists do repeatedly: load data, inspect it, clean problems, transform columns, summarize groups, combine tables, validate results, and communicate what changed."
     },
     {
       "slide": 2,
       "title": "Why Pandas matters at work",
-      "audio": "audio/module10_v2_slide_02.mp3",
-      "captions": "captions/module10_v2_slide_02.vtt",
+      "audio": "audio/module10_slide_02.mp3",
+      "captions": "captions/module10_slide_02.vtt",
       "text": "Current analyst and data science postings still treat Pandas as a practical baseline. Analyst roles commonly ask for Pandas for exploratory analysis, data quality work, and light automation. Data science roles expect stronger Pandas alongside NumPy, SQL, and scikit-learn. The important skill is not memorizing methods. It is being able to inspect, clean, validate, and transform unfamiliar tabular data."
     },
     {
       "slide": 3,
       "title": "What “job-ready Pandas” means",
-      "audio": "audio/module10_v2_slide_03.mp3",
-      "captions": "captions/module10_v2_slide_03.vtt",
+      "audio": "audio/module10_slide_03.mp3",
+      "captions": "captions/module10_slide_03.vtt",
       "text": "Job-ready Pandas means being fluent in a small set of patterns rather than knowing every method. You should be able to move from raw data to a clean, explainable result and know why each step is necessary."
     },
     {
       "slide": 4,
       "title": "The Pandas workflow",
-      "audio": "audio/module10_v2_slide_04.mp3",
-      "captions": "captions/module10_v2_slide_04.vtt",
+      "audio": "audio/module10_slide_04.mp3",
+      "captions": "captions/module10_slide_04.vtt",
       "text": "This module follows a realistic order. First understand the table. Then clean and transform it. Only after the data is reliable should you summarize or combine it. This sequence mirrors common analytical work."
     },
     {
       "slide": 5,
       "title": "Series and DataFrame",
-      "audio": "audio/module10_v2_slide_05.mp3",
-      "captions": "captions/module10_v2_slide_05.vtt",
+      "audio": "audio/module10_slide_05.mp3",
+      "captions": "captions/module10_slide_05.vtt",
       "text": "A Series is one labeled column. A DataFrame is a table made of labeled columns that share an index. Most analysis in Pandas centers on DataFrames, while selecting one column often returns a Series."
     },
     {
       "slide": 6,
       "title": "Create a DataFrame",
-      "audio": "audio/module10_v2_slide_06.mp3",
-      "captions": "captions/module10_v2_slide_06.vtt",
+      "audio": "audio/module10_slide_06.mp3",
+      "captions": "captions/module10_slide_06.vtt",
       "text": "A list of dictionaries is a readable way to create a small DataFrame for practice. Each dictionary becomes a row and each key becomes a column."
     },
     {
       "slide": 7,
       "title": "Load CSV data",
-      "audio": "audio/module10_v2_slide_07.mp3",
-      "captions": "captions/module10_v2_slide_07.vtt",
+      "audio": "audio/module10_slide_07.mp3",
+      "captions": "captions/module10_slide_07.vtt",
       "text": "In real work, data often arrives as a CSV or as a table returned by SQL. read_csv creates a DataFrame and can parse many common file formats. Here we use StringIO so the example runs entirely in the browser."
     },
     {
       "slide": 8,
       "title": "First inspection: rows and shape",
-      "audio": "audio/module10_v2_slide_08.mp3",
-      "captions": "captions/module10_v2_slide_08.vtt",
+      "audio": "audio/module10_slide_08.mp3",
+      "captions": "captions/module10_slide_08.vtt",
       "text": "Before writing filters or calculations, inspect what actually loaded. head, tail, sample, shape, and columns answer basic questions quickly."
     },
     {
       "slide": 9,
       "title": "Inspect dtypes and structure",
-      "audio": "audio/module10_v2_slide_09.mp3",
-      "captions": "captions/module10_v2_slide_09.vtt",
+      "audio": "audio/module10_slide_09.mp3",
+      "captions": "captions/module10_slide_09.vtt",
       "text": "Data can look correct while being stored with the wrong type. dtypes and info help reveal numbers stored as text, missing values, and memory usage."
     },
     {
       "slide": 10,
       "title": "Summaries and category counts",
-      "audio": "audio/module10_v2_slide_10.mp3",
-      "captions": "captions/module10_v2_slide_10.vtt",
+      "audio": "audio/module10_slide_10.mp3",
+      "captions": "captions/module10_slide_10.vtt",
       "text": "describe summarizes numeric columns. value_counts shows common categories, and nunique tells you how many distinct values exist. These are fast ways to understand a new dataset."
     },
     {
       "slide": 11,
       "title": "Select columns",
-      "audio": "audio/module10_v2_slide_11.mp3",
-      "captions": "captions/module10_v2_slide_11.vtt",
+      "audio": "audio/module10_slide_11.mp3",
+      "captions": "captions/module10_slide_11.vtt",
       "text": "Single brackets usually return a Series. Double brackets return a DataFrame. Selecting only needed columns makes analysis easier to read."
     },
     {
       "slide": 12,
       "title": "Use loc and iloc",
-      "audio": "audio/module10_v2_slide_12.mp3",
-      "captions": "captions/module10_v2_slide_12.vtt",
+      "audio": "audio/module10_slide_12.mp3",
+      "captions": "captions/module10_slide_12.vtt",
       "text": "loc selects by labels and conditions. iloc selects by integer position. In analytical code, loc is often clearer because column names communicate meaning."
     },
     {
       "slide": 13,
       "title": "Filter rows with conditions",
-      "audio": "audio/module10_v2_slide_13.mp3",
-      "captions": "captions/module10_v2_slide_13.vtt",
+      "audio": "audio/module10_slide_13.mp3",
+      "captions": "captions/module10_slide_13.vtt",
       "text": "Boolean masks keep rows that meet a condition. Combine conditions with ampersand for AND and vertical bar for OR. query can make readable filters for simple expressions."
     },
     {
       "slide": 14,
       "title": "Sort and find top records",
-      "audio": "audio/module10_v2_slide_14.mp3",
-      "captions": "captions/module10_v2_slide_14.vtt",
+      "audio": "audio/module10_slide_14.mp3",
+      "captions": "captions/module10_slide_14.vtt",
       "text": "sort_values orders rows. nlargest quickly returns the highest values in a numeric column. These are common in reporting and exploratory analysis."
     },
     {
       "slide": 15,
       "title": "A messy dataset is normal",
-      "audio": "audio/module10_v2_slide_15.mp3",
-      "captions": "captions/module10_v2_slide_15.vtt",
+      "audio": "audio/module10_slide_15.mp3",
+      "captions": "captions/module10_slide_15.vtt",
       "text": "Real data rarely arrives analysis-ready. This small sales file contains the kinds of issues analysts see regularly: inconsistent text, currency symbols, an invalid date, a missing amount, a missing city, and a duplicated order."
     },
     {
       "slide": 16,
       "title": "Profile data quality",
-      "audio": "audio/module10_v2_slide_16.mp3",
-      "captions": "captions/module10_v2_slide_16.vtt",
+      "audio": "audio/module10_slide_16.mp3",
+      "captions": "captions/module10_slide_16.vtt",
       "text": "A good cleaning workflow measures problems before fixing them. Check missing values, duplicates, and data types so you know what you are changing."
     },
     {
       "slide": 17,
       "title": "Convert types safely",
-      "audio": "audio/module10_v2_slide_17.mp3",
-      "captions": "captions/module10_v2_slide_17.vtt",
+      "audio": "audio/module10_slide_17.mp3",
+      "captions": "captions/module10_slide_17.vtt",
       "text": "to_numeric and to_datetime are safer than assuming strings are valid. errors='coerce' converts bad values to missing values so they can be handled explicitly."
     },
     {
       "slide": 18,
       "title": "Handle missing values deliberately",
-      "audio": "audio/module10_v2_slide_18.mp3",
-      "captions": "captions/module10_v2_slide_18.vtt",
+      "audio": "audio/module10_slide_18.mp3",
+      "captions": "captions/module10_slide_18.vtt",
       "text": "Missing data is a decision problem, not just a method call. You might drop a row, fill with a statistic, use a domain-specific value, or preserve the missingness as information."
     },
     {
       "slide": 19,
       "title": "Find and remove duplicates",
-      "audio": "audio/module10_v2_slide_19.mp3",
-      "captions": "captions/module10_v2_slide_19.vtt",
+      "audio": "audio/module10_slide_19.mp3",
+      "captions": "captions/module10_slide_19.vtt",
       "text": "Duplicates can inflate counts, totals, and model training data. duplicated identifies repeated records. drop_duplicates can remove exact duplicates or duplicates based on a business key."
     },
     {
       "slide": 20,
       "title": "Clean text columns",
-      "audio": "audio/module10_v2_slide_20.mp3",
-      "captions": "captions/module10_v2_slide_20.vtt",
+      "audio": "audio/module10_slide_20.mp3",
+      "captions": "captions/module10_slide_20.vtt",
       "text": "String methods are essential for categories, names, and labels. Small differences such as extra spaces or upper/lower case can create fake categories."
     },
     {
       "slide": 21,
       "title": "Create derived columns",
-      "audio": "audio/module10_v2_slide_21.mp3",
-      "captions": "captions/module10_v2_slide_21.vtt",
+      "audio": "audio/module10_slide_21.mp3",
+      "captions": "captions/module10_slide_21.vtt",
       "text": "Pandas is designed to perform operations on entire columns. This is clearer and usually faster than looping through rows."
     },
     {
       "slide": 22,
       "title": "Work with dates",
-      "audio": "audio/module10_v2_slide_22.mp3",
-      "captions": "captions/module10_v2_slide_22.vtt",
+      "audio": "audio/module10_slide_22.mp3",
+      "captions": "captions/module10_slide_22.vtt",
       "text": "Once a column is datetime, the dt accessor can extract useful calendar features such as month, weekday, quarter, or year."
     },
     {
       "slide": 23,
       "title": "GroupBy: answer questions by category",
-      "audio": "audio/module10_v2_slide_23.mp3",
-      "captions": "captions/module10_v2_slide_23.vtt",
+      "audio": "audio/module10_slide_23.mp3",
+      "captions": "captions/module10_slide_23.vtt",
       "text": "groupby is one of the most important Pandas patterns. It splits rows into groups, applies a summary, and combines the results."
     },
     {
       "slide": 24,
       "title": "Aggregate multiple metrics",
-      "audio": "audio/module10_v2_slide_24.mp3",
-      "captions": "captions/module10_v2_slide_24.vtt",
+      "audio": "audio/module10_slide_24.mp3",
+      "captions": "captions/module10_slide_24.vtt",
       "text": "agg lets one grouped analysis calculate several metrics at once. Named aggregation produces readable column names that are ready for reporting."
     },
     {
       "slide": 25,
       "title": "Pivot tables and crosstabs",
-      "audio": "audio/module10_v2_slide_25.mp3",
-      "captions": "captions/module10_v2_slide_25.vtt",
+      "audio": "audio/module10_slide_25.mp3",
+      "captions": "captions/module10_slide_25.vtt",
       "text": "pivot_table summarizes a numeric measure across categories. crosstab counts combinations of categories. Both are useful for quick analytical tables."
     },
     {
       "slide": 26,
       "title": "Merge related tables",
-      "audio": "audio/module10_v2_slide_26.mp3",
-      "captions": "captions/module10_v2_slide_26.vtt",
+      "audio": "audio/module10_slide_26.mp3",
+      "captions": "captions/module10_slide_26.vtt",
       "text": "Real analysis often requires more than one table. merge combines tables through a shared key. The validate argument can catch unexpected many-to-many relationships."
     },
     {
       "slide": 27,
       "title": "Concatenate similar tables",
-      "audio": "audio/module10_v2_slide_27.mp3",
-      "captions": "captions/module10_v2_slide_27.vtt",
+      "audio": "audio/module10_slide_27.mp3",
+      "captions": "captions/module10_slide_27.vtt",
       "text": "concat combines DataFrames with the same or compatible columns. This is useful when monthly files, regional files, or batches need to be stacked into one table."
     },
     {
       "slide": 28,
       "title": "Prefer vectorized operations",
-      "audio": "audio/module10_v2_slide_28.mp3",
-      "captions": "captions/module10_v2_slide_28.vtt",
+      "audio": "audio/module10_slide_28.mp3",
+      "captions": "captions/module10_slide_28.vtt",
       "text": "Pandas supports custom apply logic, but row-wise Python functions can be much slower than built-in vectorized operations. Use vectorized column operations whenever they express the task clearly."
     },
     {
       "slide": 29,
       "title": "End-to-end cleaning workflow",
-      "audio": "audio/module10_v2_slide_29.mp3",
-      "captions": "captions/module10_v2_slide_29.vtt",
+      "audio": "audio/module10_slide_29.mp3",
+      "captions": "captions/module10_slide_29.vtt",
       "text": "Now combine the core ideas. The goal is not a perfect production pipeline; it is to practice the sequence: profile, convert, clean, deduplicate, validate, and summarize."
     },
     {
       "slide": 30,
       "title": "Analyze and validate the cleaned data",
-      "audio": "audio/module10_v2_slide_30.mp3",
-      "captions": "captions/module10_v2_slide_30.vtt",
+      "audio": "audio/module10_slide_30.mp3",
+      "captions": "captions/module10_slide_30.vtt",
       "text": "Cleaning is not finished until you verify the result. Check row counts, missing values, and summary totals before using the data for reporting or modeling."
     },
     {
       "slide": 31,
       "title": "A compact analyst workflow",
-      "audio": "audio/module10_v2_slide_31.mp3",
-      "captions": "captions/module10_v2_slide_31.vtt",
+      "audio": "audio/module10_slide_31.mp3",
+      "captions": "captions/module10_slide_31.vtt",
       "text": "Most day-to-day Pandas work can be organized into a compact sequence. You do not need to memorize hundreds of methods if you understand this flow and know how to consult the documentation."
     },
     {
       "slide": 32,
       "title": "Module 10 practice challenge",
-      "audio": "audio/module10_v2_slide_32.mp3",
-      "captions": "captions/module10_v2_slide_32.vtt",
+      "audio": "audio/module10_slide_32.mp3",
+      "captions": "captions/module10_slide_32.vtt",
       "text": "Use the skills from this module to complete a small analysis independently. The goal is to explain your decisions, not only produce code that runs."
     },
     {
       "slide": 33,
       "title": "Job-ready Pandas checklist",
-      "audio": "audio/module10_v2_slide_33.mp3",
-      "captions": "captions/module10_v2_slide_33.vtt",
+      "audio": "audio/module10_slide_33.mp3",
+      "captions": "captions/module10_slide_33.vtt",
       "text": "You do not need expert-level knowledge of every Pandas feature. For analyst and data science work, you should be confident with the core patterns in this checklist and able to learn unfamiliar methods from documentation."
     },
     {
       "slide": 34,
       "title": "References and next steps",
-      "audio": "audio/module10_v2_slide_34.mp3",
-      "captions": "captions/module10_v2_slide_34.vtt",
+      "audio": "audio/module10_slide_34.mp3",
+      "captions": "captions/module10_slide_34.vtt",
       "text": "This final slide lists the official Pandas documentation used to shape the module and examples of current analyst and data science roles that mention Pandas. Job requirements change, so use these examples as a snapshot rather than a permanent checklist. Continue practicing with small real datasets and connect every transformation to a clear analytical question."
     }
   ]
