@@ -746,3 +746,31 @@ body.ian601-shell .ian601-python-focus .python-focus-toggle{
   }
 }
 /* IAN601_PYTHON_FOCUS_SHARED_END */
+
+
+/* IAN601_MONACO_COLLAPSE_FIX_START
+   Prevent a Monaco editor that was full-screen from forcing its slide grid wider
+   after the Python workspace is collapsed. */
+body.ian601-shell .code-cell:not(.ian601-python-focus){
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+}
+body.ian601-shell .code-cell:not(.ian601-python-focus) .editor-shell,
+body.ian601-shell .code-cell:not(.ian601-python-focus) .monaco-host{
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+  overflow:hidden!important;
+}
+body.ian601-shell .code-cell:not(.ian601-python-focus) .monaco-editor,
+body.ian601-shell .code-cell:not(.ian601-python-focus) .monaco-editor .overflow-guard{
+  max-width:100%!important;
+}
+body.ian601-shell .python-focus-toggle{
+  white-space:nowrap!important;
+}
+body.ian601-shell .ian601-python-focus .python-focus-toggle{
+  margin-left:auto!important;
+}
+/* IAN601_MONACO_COLLAPSE_FIX_END */
