@@ -1,0 +1,43 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.962
+Before changing messy data, profile it.
+
+00:00:02.962 --> 00:00:10.782
+This code loads the sample sales data and then checks three important areas: missing values, duplicate rows,
+
+00:00:10.782 --> 00:00:12.172
+and data types. Click Run.
+
+00:00:12.172 --> 00:00:17.362
+The isna method identifies missing values, and sum counts them by column.
+
+00:00:17.362 --> 00:00:20.092
+Duplicated identifies rows that repeat exactly.
+
+00:00:20.092 --> 00:00:24.987
+Dtypes shows how Pandas currently stores each column.
+
+00:00:24.987 --> 00:00:27.862
+This step creates a baseline.
+
+00:00:27.862 --> 00:00:31.512
+For example, if we know there are two missing values before cleaning,
+
+00:00:31.512 --> 00:00:38.507
+we can verify later whether our cleaning strategy handled them.
+
+00:00:38.507 --> 00:00:43.652
+If we remove duplicates, we can compare the number of rows before and after.
+
+00:00:43.652 --> 00:00:49.217
+This is especially important in professional work because cleaning should be explainable.
+
+00:00:49.217 --> 00:00:53.602
+Instead of saying, I cleaned the file, we should be able to say,
+
+00:00:53.602 --> 00:01:00.357
+the original file had five rows, one exact duplicate, one missing amount, one missing city,
+
+00:01:00.357 --> 00:01:07.268
+and one invalid date. That kind of description makes the workflow reproducible and easier to review.

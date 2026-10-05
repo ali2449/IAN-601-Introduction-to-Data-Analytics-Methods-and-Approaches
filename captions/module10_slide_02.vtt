@@ -1,20 +1,43 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.868
-Use this lesson interactively Read the idea predict
-the shape or result run
+00:00:00.000 --> 00:00:06.807
+Pandas is important because a large part of analytics work happens before we build a model or create
 
-00:00:05.895 --> 00:00:11.845
-the example and then change one value so you can
-compare the output Start
+00:00:06.807 --> 00:00:11.347
+a dashboard. An analyst may receive a CSV file exported from a business system.
 
-00:00:11.871 --> 00:00:18.255
-with the main idea on the slide Execute the Python
-code in the browser Connect
+00:00:11.347 --> 00:00:14.702
+A data scientist may receive a table from SQL.
 
-00:00:18.282 --> 00:00:24.337
-the output to the concept Change one value variable
-or condition
+00:00:14.702 --> 00:00:21.302
+A research team may receive data collected from a survey or an experiment.
 
-00:00:25.274 --> 00:00:27.392
-Apply the pattern to a new example
+00:00:21.302 --> 00:00:25.967
+In all of these cases, the data usually needs to be inspected and prepared before it can be
+
+00:00:25.967 --> 00:00:29.382
+used. Pandas gives us practical tools for this work.
+
+00:00:29.382 --> 00:00:36.297
+We can identify missing values, correct data types, standardize categories, filter rows, calculate summaries,
+
+00:00:36.297 --> 00:00:39.577
+join related tables, and create new variables.
+
+00:00:39.577 --> 00:00:46.592
+The professional skill is not simply knowing that a function such as groupby exists.
+
+00:00:46.592 --> 00:00:53.362
+The more valuable skill is being able to look at an unfamiliar dataset and decide what needs to
+
+00:00:53.362 --> 00:00:59.202
+happen next. For example, if a column called amount contains dollar signs and is stored as text,
+
+00:00:59.202 --> 00:01:02.877
+we need to recognize that before calculating an average.
+
+00:01:02.877 --> 00:01:09.352
+If customer IDs are duplicated unexpectedly, we need to investigate before joining another table.
+
+00:01:09.352 --> 00:01:13.762
+That kind of reasoning is what makes Pandas useful in real analytical work.

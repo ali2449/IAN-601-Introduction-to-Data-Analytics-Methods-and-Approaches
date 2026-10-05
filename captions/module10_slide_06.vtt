@@ -1,28 +1,46 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.684
-This slide focuses on Select columns and filter rows
-Start with the data structure
+00:00:00.000 --> 00:00:04.212
+Now we will create a small DataFrame directly in Python.
 
-00:00:05.697 --> 00:00:12.266
-and what the operation is supposed to accomplish
-before looking closely at the syntax Pandas
+00:00:04.212 --> 00:00:09.067
+In the code, we first import Pandas using the standard alias, pd.
 
-00:00:12.292 --> 00:00:17.624
-uses column names and conditions to select the part
-of the table you need Select
+00:00:09.067 --> 00:00:13.262
+Then we pass a list of dictionaries into pd.DataFrame.
 
-00:00:17.637 --> 00:00:23.610
-and filter Before running the example predict the
-structure and output
+00:00:13.262 --> 00:00:15.247
+Each dictionary represents one row.
 
-00:00:24.547 --> 00:00:29.705
-Run it in the browser inspect the values dimensions
-labels or summary then change one
+00:00:15.247 --> 00:00:21.602
+The dictionary keys become the column names, and the values become the data stored in that row.
 
-00:00:29.718 --> 00:00:34.863
-input and run it again Focus on how the operation
-changes the data rather than
+00:00:21.602 --> 00:00:24.967
+Click Run and look at the result.
 
-00:00:34.889 --> 00:00:36.403
-reading the code line by line
+00:00:24.967 --> 00:00:30.082
+You should see five order records with order ID, channel, and amount.
+
+00:00:30.082 --> 00:00:36.552
+This small example is useful because it lets us practice Pandas without depending on an external file.
+
+00:00:36.552 --> 00:00:41.182
+Notice that the rows automatically receive an index starting at zero.
+
+00:00:41.182 --> 00:00:44.377
+The index is not the same thing as the order ID.
+
+00:00:44.377 --> 00:00:50.182
+It is Pandas' label for the rows unless we explicitly change it.
+
+00:00:50.182 --> 00:00:55.547
+Try changing one amount or adding another order to the list, then run the code again.
+
+00:00:55.547 --> 00:01:00.732
+The point of this slide is not the specific numbers.
+
+00:01:00.732 --> 00:01:06.067
+It is to understand how a collection of Python records becomes a structured DataFrame that we can inspect
+
+00:01:06.067 --> 00:01:08.054
+and analyze.

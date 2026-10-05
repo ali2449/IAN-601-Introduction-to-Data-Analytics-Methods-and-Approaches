@@ -1,25 +1,49 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.882
-This slide focuses on Merge tables Start with the
-data structure and what the operation
+00:00:00.000 --> 00:00:05.467
+Once we understand the basic structure, we can begin a quick exploratory analysis.
 
-00:00:05.895 --> 00:00:11.933
-is supposed to accomplish before looking closely at
-the syntax Merging combines
+00:00:05.467 --> 00:00:09.097
+The describe method summarizes numerical columns.
 
-00:00:11.946 --> 00:00:19.053
-related tables using a shared key Merge orders and
-customers Before
+00:00:09.097 --> 00:00:14.022
+It can show the count, mean, standard deviation, minimum, quartiles, and maximum.
 
-00:00:19.079 --> 00:00:24.634
-running the example predict the structure and output
-Run it in the browser inspect the
+00:00:14.022 --> 00:00:19.102
+Value_counts is especially useful for categorical data.
 
-00:00:24.661 --> 00:00:30.753
-values dimensions labels or summary then change one
-input and run it again Focus
+00:00:19.102 --> 00:00:22.322
+It tells us how often each category appears.
 
-00:00:30.779 --> 00:00:34.819
-on how the operation changes the data rather than
-reading the code line by line
+00:00:22.322 --> 00:00:26.012
+Nunique tells us how many distinct values exist.
+
+00:00:26.012 --> 00:00:27.592
+Click Run and inspect the output.
+
+00:00:27.592 --> 00:00:33.317
+These simple functions can reveal problems very quickly.
+
+00:00:33.317 --> 00:00:39.252
+For example, suppose a channel column is expected to contain web, email, and store.
+
+00:00:39.252 --> 00:00:42.867
+If value_counts returns Web, web, WEB, and web with spaces as separate categories,
+
+00:00:42.867 --> 00:00:48.202
+we probably have a text-cleaning issue.
+
+00:00:48.202 --> 00:00:49.882
+For numeric data, describe can reveal suspicious ranges.
+
+00:00:49.882 --> 00:00:55.697
+If an age column has a minimum of negative five or a maximum of nine hundred,
+
+00:00:55.697 --> 00:01:02.737
+we need to investigate. EDA does not begin with complicated charts.
+
+00:01:02.737 --> 00:01:08.942
+Often it begins with simple counts, ranges, and questions about whether the values make sense in the
+
+00:01:08.942 --> 00:01:09.747
+real-world context.

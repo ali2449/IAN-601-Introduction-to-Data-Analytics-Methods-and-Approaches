@@ -1,0 +1,52 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.577
+Cleaning is not finished when the code stops producing errors.
+
+00:00:03.577 --> 00:00:05.947
+We need to verify the result.
+
+00:00:05.947 --> 00:00:10.927
+This example starts with a cleaned DataFrame and performs several checks.
+
+00:00:10.927 --> 00:00:13.252
+We print the number of rows.
+
+00:00:13.252 --> 00:00:16.092
+We count duplicated order IDs.
+
+00:00:16.092 --> 00:00:19.197
+We count the total number of missing values.
+
+00:00:19.197 --> 00:00:23.347
+Then we keep only completed orders and summarize them by channel.
+
+00:00:23.347 --> 00:00:27.542
+Finally, we calculate total revenue as another check.
+
+00:00:27.542 --> 00:00:30.332
+Click Run and inspect each part.
+
+00:00:30.332 --> 00:00:33.187
+Validation should answer questions such as: did we accidentally duplicate records?
+
+00:00:33.187 --> 00:00:35.972
+Did we remove more rows than expected?
+
+00:00:35.972 --> 00:00:38.727
+Are required fields still missing?
+
+00:00:38.727 --> 00:00:45.442
+Does the grouped revenue equal the total revenue from the filtered table?
+
+00:00:45.442 --> 00:00:49.782
+These checks can catch errors before the data is used in a dashboard, statistical analysis,
+
+00:00:49.782 --> 00:00:54.162
+or machine-learning model. A professional notebook should not only produce results.
+
+00:00:54.162 --> 00:01:01.202
+It should contain evidence that the results are based on data that still follows the assumptions of the
+
+00:01:01.202 --> 00:01:02.878
+analysis.

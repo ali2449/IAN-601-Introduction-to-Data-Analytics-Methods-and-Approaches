@@ -1,25 +1,43 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.645
-This slide focuses on Inspect a DataFrame Start with
-the data structure and what the
+00:00:00.000 --> 00:00:05.372
+Two Pandas objects appear throughout this module: Series and DataFrame.
 
-00:00:05.671 --> 00:00:11.683
-operation is supposed to accomplish before looking
-closely at the syntax Before
+00:00:05.372 --> 00:00:09.097
+A Series is essentially one labeled dimension of data.
 
-00:00:11.709 --> 00:00:17.278
-analysis preview the data and check basic structure
-Preview and inspect
+00:00:09.097 --> 00:00:12.732
+You can think of it as one column together with an index.
 
-00:00:19.123 --> 00:00:25.046
-Before running the example predict the structure and
-output Run it in the browser inspect
+00:00:12.732 --> 00:00:20.032
+For example, if we select only the amount column from an orders table, Pandas usually returns a Series.
 
-00:00:25.059 --> 00:00:31.257
-the values dimensions labels or summary then change
-one input and run it again Focus
+00:00:20.032 --> 00:00:24.487
+A DataFrame is a two-dimensional table with rows and columns.
 
-00:00:31.283 --> 00:00:35.323
-on how the operation changes the data rather than
-reading the code line by line
+00:00:24.487 --> 00:00:29.097
+Each column has a name, and each column also has a data type.
+
+00:00:29.097 --> 00:00:36.002
+This distinction matters because some operations behave differently depending on whether you are working with
+
+00:00:36.002 --> 00:00:38.632
+a Series or a DataFrame.
+
+00:00:38.632 --> 00:00:43.827
+For example, orders bracket amount returns one column and usually gives us a Series.
+
+00:00:43.827 --> 00:00:51.862
+If we place amount inside a list and use double brackets, Pandas returns a DataFrame containing one column.
+
+00:00:51.862 --> 00:00:57.292
+This may look like a small difference, but it explains many common beginner errors.
+
+00:00:57.292 --> 00:01:02.012
+A useful habit is to ask: what kind of object do I have right now?
+
+00:01:02.012 --> 00:01:06.062
+If you are unsure, use type and inspect the result.
+
+00:01:06.062 --> 00:01:11.282
+Understanding the object you are working with makes the rest of Pandas much easier.

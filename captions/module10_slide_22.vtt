@@ -1,0 +1,46 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.722
+Dates become much more useful after they are converted to a real datetime type.
+
+00:00:04.722 --> 00:00:11.292
+In this example, the order_date column is already converted using pd.to_datetime.
+
+00:00:11.292 --> 00:00:13.757
+Then we use the dt accessor.
+
+00:00:13.757 --> 00:00:17.107
+Dt.month_name returns the month name.
+
+00:00:17.107 --> 00:00:20.327
+Dt.day_name returns the weekday. Dt.quarter returns the quarter number.
+
+00:00:20.327 --> 00:00:23.552
+Click Run and inspect the new columns.
+
+00:00:23.552 --> 00:00:26.682
+These features can support many analytical questions.
+
+00:00:26.682 --> 00:00:29.957
+Do sales change by weekday?
+
+00:00:29.957 --> 00:00:34.272
+Are there seasonal patterns? Which quarter had the most transactions?
+
+00:00:34.272 --> 00:00:40.357
+Are hospital admissions higher during certain months?
+
+00:00:40.357 --> 00:00:44.942
+We can also calculate differences between dates, extract the year, or group records by time periods.
+
+00:00:44.942 --> 00:00:51.237
+The key lesson is that a date stored as text is limited.
+
+00:00:51.237 --> 00:00:55.927
+A true datetime value gives us access to time-based operations.
+
+00:00:55.927 --> 00:01:00.777
+Before using a date in analysis, confirm that it was parsed successfully and check for invalid values that
+
+00:01:00.777 --> 00:01:03.500
+became missing.

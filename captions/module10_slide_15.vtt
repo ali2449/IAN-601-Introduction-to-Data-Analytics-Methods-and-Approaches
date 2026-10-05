@@ -1,0 +1,52 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.397
+Now we move into the cleaning section.
+
+00:00:02.397 --> 00:00:08.807
+This table is intentionally messy because real data frequently contains small inconsistencies that can create
+
+00:00:08.807 --> 00:00:13.687
+large analytical problems. Look at the channel column.
+
+00:00:13.687 --> 00:00:21.292
+We have values such as Web, EMAIL, web, and Store with inconsistent capitalization and spacing.
+
+00:00:21.292 --> 00:00:24.432
+The amount column contains currency symbols and also a missing value.
+
+00:00:24.432 --> 00:00:26.797
+One date is not a valid date.
+
+00:00:26.797 --> 00:00:29.342
+The city column has a missing value.
+
+00:00:29.342 --> 00:00:34.762
+And order ID one thousand three appears twice.
+
+00:00:34.762 --> 00:00:35.527
+None of these problems is unusual.
+
+00:00:35.527 --> 00:00:41.072
+The danger is that some of them are easy to miss.
+
+00:00:41.072 --> 00:00:43.592
+A duplicate can inflate revenue.
+
+00:00:43.592 --> 00:00:48.397
+Inconsistent categories can split one group into several fake groups.
+
+00:00:48.397 --> 00:00:51.822
+A bad date can break time-based analysis.
+
+00:00:51.822 --> 00:00:56.272
+Our goal is not to immediately start deleting or filling values.
+
+00:00:56.272 --> 00:01:01.087
+First we need to measure the problems and understand what each one means.
+
+00:01:01.087 --> 00:01:05.177
+Good data cleaning is not a sequence of automatic commands.
+
+00:01:05.177 --> 00:01:08.402
+It is a sequence of decisions supported by evidence.

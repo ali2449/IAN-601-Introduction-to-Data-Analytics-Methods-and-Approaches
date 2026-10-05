@@ -1,0 +1,43 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.787
+Now we will convert two columns that are currently stored as text.
+
+00:00:03.787 --> 00:00:06.842
+The amount column contains dollar signs.
+
+00:00:06.842 --> 00:00:15.502
+Before converting it to a number, we remove the dollar sign using a vectorized string operation.
+
+00:00:15.502 --> 00:00:18.942
+Then pd.to_numeric converts the cleaned strings into numeric values.
+
+00:00:18.942 --> 00:00:26.647
+Notice errors equals coerce. Coerce means that if Pandas encounters a value that cannot be converted,
+
+00:00:26.647 --> 00:00:32.402
+it replaces that value with a missing value rather than crashing the whole operation.
+
+00:00:32.402 --> 00:00:34.402
+We use the same idea with pd.to_datetime.
+
+00:00:34.402 --> 00:00:40.997
+Click Run and inspect both the values and the resulting data types.
+
+00:00:40.997 --> 00:00:45.557
+This is a safer analytical pattern because invalid data becomes visible.
+
+00:00:45.557 --> 00:00:48.427
+For example, the text not-a-date becomes a missing datetime value.
+
+00:00:48.427 --> 00:00:55.062
+That tells us we have a quality problem that still needs a decision.
+
+00:00:55.062 --> 00:00:58.477
+We are not pretending that the invalid date is correct.
+
+00:00:58.477 --> 00:01:04.252
+A useful principle is: convert first, then inspect what became missing.
+
+00:01:04.252 --> 00:01:09.650
+Conversion is not the end of cleaning; it often reveals the next problem we need to handle.

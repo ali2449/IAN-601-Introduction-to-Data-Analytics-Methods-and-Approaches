@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.342
+Pandas is designed to work efficiently with whole columns.
+
+00:00:03.342 --> 00:00:11.412
+In this example, margin is calculated by dividing the profit column by the sales column.
+
+00:00:11.412 --> 00:00:12.832
+This is a vectorized operation.
+
+00:00:12.832 --> 00:00:18.202
+We then use map with a small lambda function only to format the margin for display as a
+
+00:00:18.202 --> 00:00:20.957
+percentage. Click Run and inspect both columns.
+
+00:00:20.957 --> 00:00:27.172
+A common beginner habit is to write a Python loop or a row-wise apply for every calculation.
+
+00:00:27.172 --> 00:00:36.152
+Sometimes custom functions are necessary, but built-in Pandas operations are usually clearer and often faster.
+
+00:00:36.152 --> 00:00:41.577
+For example, if you can express the task as one column plus another column,
+
+00:00:41.577 --> 00:00:47.967
+or as a string method, comparison, arithmetic operation, or datetime operation, prefer that approach.
+
+00:00:47.967 --> 00:00:50.527
+Think in columns whenever possible.
+
+00:00:50.527 --> 00:00:56.542
+This becomes increasingly important as datasets grow because row-by-row Python logic can become a performance
+
+00:00:56.542 --> 00:00:58.284
+bottleneck.

@@ -1,0 +1,40 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.257
+Now it is your turn to apply the workflow independently.
+
+00:00:03.257 --> 00:00:09.372
+Start by creating a DataFrame with at least eight rows or loading a small CSV file.
+
+00:00:09.372 --> 00:00:16.107
+Then inspect it. Show the first rows, the shape, the data types, missing values, and duplicates.
+
+00:00:16.107 --> 00:00:20.312
+Next, identify at least one issue that needs cleaning.
+
+00:00:20.312 --> 00:00:24.707
+It could be a data type, a text category, a missing value, or a duplicate.
+
+00:00:24.707 --> 00:00:30.412
+After cleaning, create at least one useful derived column.
+
+00:00:30.412 --> 00:00:34.142
+Then use groupby or pivot_table to answer a question about the data.
+
+00:00:34.142 --> 00:00:35.562
+Do not stop when the code runs.
+
+00:00:35.562 --> 00:00:41.237
+Write two sentences explaining what your result means.
+
+00:00:41.237 --> 00:00:48.282
+Then write one limitation. For example, you might say that one category has the highest average value,
+
+00:00:48.282 --> 00:00:50.027
+but the dataset is small or covers only one month.
+
+00:00:50.027 --> 00:00:55.887
+There is no single required solution for this exercise.
+
+00:00:55.887 --> 00:01:01.863
+The goal is to demonstrate that you can make reasonable analytical decisions and explain why you made them.

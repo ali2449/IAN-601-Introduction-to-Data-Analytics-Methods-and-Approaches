@@ -1,28 +1,46 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.684
-This slide focuses on Handle missing values Start
-with the data structure and what the
+00:00:00.000 --> 00:00:04.452
+Data can look correct on the screen and still be stored incorrectly.
 
-00:00:05.711 --> 00:00:11.760
-operation is supposed to accomplish before looking
-closely at the syntax Missing
+00:00:04.452 --> 00:00:09.802
+In this example, order date looks like a date, and amount looks like a number.
 
-00:00:11.786 --> 00:00:17.920
-values should be checked before analysis Depending
-on the task they may be filled removed
+00:00:09.802 --> 00:00:14.287
+But both columns are initially stored as text.
 
-00:00:18.131 --> 00:00:23.829
-or flagged Find and fill missing values Before
+00:00:14.287 --> 00:00:16.387
+Click Run and look at the dtypes output.
 
-00:00:23.855 --> 00:00:29.410
-running the example predict the structure and output
-Run it in the browser inspect the
+00:00:16.387 --> 00:00:23.587
+You will see that Pandas does not automatically know that these strings should be interpreted as dates or
 
-00:00:29.437 --> 00:00:35.529
-values dimensions labels or summary then change one
-input and run it again Focus
+00:00:23.587 --> 00:00:25.552
+numeric values. Then look at info.
 
-00:00:35.555 --> 00:00:39.595
-on how the operation changes the data rather than
-reading the code line by line
+00:00:25.552 --> 00:00:32.577
+The info method gives us a compact summary of the DataFrame, including column names, non-null counts,
+
+00:00:32.577 --> 00:00:35.282
+data types, and memory information.
+
+00:00:35.282 --> 00:00:37.087
+Why does this matter?
+
+00:00:37.087 --> 00:00:44.182
+If amount is stored as text, numerical operations may fail or produce unexpected behavior.
+
+00:00:44.182 --> 00:00:51.232
+If order date is stored as text, we cannot easily extract the month, weekday, or time difference.
+
+00:00:51.232 --> 00:00:55.147
+This is why checking data types is part of data quality work.
+
+00:00:55.147 --> 00:00:59.622
+Do not decide what a column is based only on how it looks.
+
+00:00:59.622 --> 00:01:02.767
+Ask Pandas what type it is actually using.
+
+00:01:02.767 --> 00:01:06.664
+Later in the module, we will convert these values safely.

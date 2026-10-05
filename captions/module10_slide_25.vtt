@@ -1,0 +1,46 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.682
+Pivot tables and crosstabs are useful when we want to compare two categorical dimensions.
+
+00:00:05.682 --> 00:00:11.727
+In the first example, pivot_table summarizes amount by channel and status.
+
+00:00:11.727 --> 00:00:16.487
+Rows represent channels. Columns represent status values.
+
+00:00:16.487 --> 00:00:19.057
+The cells contain summed revenue.
+
+00:00:19.057 --> 00:00:23.962
+Fill_value equals zero makes empty combinations easier to interpret.
+
+00:00:23.962 --> 00:00:29.822
+Then crosstab counts how many records occur for each channel and status combination.
+
+00:00:29.822 --> 00:00:32.727
+Click Run and compare the two tables.
+
+00:00:32.727 --> 00:00:36.667
+Think of pivot_table as similar to an Excel pivot table.
+
+00:00:36.667 --> 00:00:40.492
+It is useful when you want a compact matrix-style summary.
+
+00:00:40.492 --> 00:00:45.512
+Crosstab is especially convenient when you want counts of category combinations.
+
+00:00:45.512 --> 00:00:51.332
+For example, you could compare department by diagnosis, product type by region,
+
+00:00:51.332 --> 00:00:54.347
+or survey response by demographic group.
+
+00:00:54.347 --> 00:00:57.452
+The important question is what the cell means.
+
+00:00:57.452 --> 00:01:02.232
+Is it a count, a sum, an average, or another statistic?
+
+00:01:02.232 --> 00:01:04.793
+Always make the meaning of the table clear.

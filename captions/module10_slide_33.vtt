@@ -1,0 +1,40 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.917
+This checklist summarizes the Pandas skills I want you to keep practicing.
+
+00:00:05.917 --> 00:00:12.162
+For core table work, be comfortable with DataFrame, Series, read_csv, head, shape, dtypes, and info.
+
+00:00:12.162 --> 00:00:18.912
+For selection, practice column selection, loc, iloc, Boolean masks, query, and sorting.
+
+00:00:18.912 --> 00:00:26.452
+For cleaning, know how to identify missing values and duplicates, convert types safely, work with strings,
+
+00:00:26.452 --> 00:00:32.052
+and make deliberate decisions about missing data.
+
+00:00:32.052 --> 00:00:36.782
+For analysis, practice describe, value_counts, groupby, agg, pivot_table, and crosstab.
+
+00:00:36.782 --> 00:00:42.952
+For combining data, understand merge, concat, join relationships, and validation.
+
+00:00:42.952 --> 00:00:48.127
+And do not forget the professional habits behind the syntax.
+
+00:00:48.127 --> 00:00:51.827
+Use vectorized operations when possible.
+
+00:00:51.827 --> 00:00:54.772
+Verify assumptions after major transformations.
+
+00:00:54.772 --> 00:01:00.957
+Document important cleaning decisions. Check row counts and keys after joins.
+
+00:01:00.957 --> 00:01:07.062
+And know when the data may be better handled in SQL or a larger-scale system.
+
+00:01:07.062 --> 00:01:14.725
+If you are comfortable with these patterns, you have a strong foundation for practical Pandas work.

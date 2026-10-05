@@ -1,0 +1,43 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.232
+Missing values require reasoning. There is no single correct command that works for every situation.
+
+00:00:06.232 --> 00:00:10.637
+In this example, the city column contains one missing value.
+
+00:00:10.637 --> 00:00:13.782
+We replace that value with the label Unknown.
+
+00:00:13.782 --> 00:00:17.932
+For amount, we demonstrate filling the missing value with the median.
+
+00:00:17.932 --> 00:00:21.782
+Click Run and compare the missing-value counts before and after.
+
+00:00:21.782 --> 00:00:25.727
+The important lesson is not that median is always the correct answer.
+
+00:00:25.727 --> 00:00:27.897
+It is only a teaching example.
+
+00:00:27.897 --> 00:00:32.162
+Imagine that amount is missing because the transaction was cancelled.
+
+00:00:32.162 --> 00:00:36.717
+Filling it with the median might create a false transaction value.
+
+00:00:36.717 --> 00:00:42.692
+In another dataset, a missing city may mean the customer refused to provide a location.
+
+00:00:42.692 --> 00:00:48.592
+Replacing it with Unknown may be appropriate because the missingness itself has meaning.
+
+00:00:48.592 --> 00:00:53.137
+Other choices include dropping the row, leaving the value missing, using a business rule,
+
+00:00:53.137 --> 00:00:59.222
+or creating a separate indicator showing that the original value was missing.
+
+00:00:59.222 --> 00:01:03.273
+Always ask why the value is missing before deciding how to handle it.

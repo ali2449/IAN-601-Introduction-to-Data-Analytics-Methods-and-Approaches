@@ -1,0 +1,43 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.047
+A major strength of Pandas is vectorized column operations.
+
+00:00:04.047 --> 00:00:09.307
+Here we create several new variables from the existing amount column.
+
+00:00:09.307 --> 00:00:13.537
+First, tax is calculated as amount multiplied by seven percent.
+
+00:00:13.537 --> 00:00:17.082
+Then total with tax is amount plus tax.
+
+00:00:17.082 --> 00:00:22.567
+Finally, pd.cut places each order into a size category: small, medium, or large.
+
+00:00:22.567 --> 00:00:24.552
+Click Run and inspect the new columns.
+
+00:00:24.552 --> 00:00:31.387
+Notice that we do not write a loop that processes one row at a time.
+
+00:00:31.387 --> 00:00:36.812
+We describe the calculation once, and Pandas applies it across the entire column.
+
+00:00:36.812 --> 00:00:40.402
+This style is usually clearer and more efficient.
+
+00:00:40.402 --> 00:00:43.477
+Derived columns are common in analytics.
+
+00:00:43.477 --> 00:00:48.872
+You may calculate profit from revenue and cost, length of stay from two dates, age from birth date,
+
+00:00:48.872 --> 00:00:56.062
+response time from timestamps, or customer category from spending thresholds.
+
+00:00:56.062 --> 00:00:58.302
+When you create a derived column, document the business rule.
+
+00:00:58.302 --> 00:01:04.400
+Someone should be able to understand exactly how that value was produced.

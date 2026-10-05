@@ -1,25 +1,52 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.526
-This slide focuses on Group and summarize Start with
-the data structure and what the
+00:00:00.000 --> 00:00:03.137
+Before analyzing a new dataset, inspect it.
 
-00:00:05.553 --> 00:00:11.708
-operation is supposed to accomplish before looking
-closely at the syntax groupby
+00:00:03.137 --> 00:00:08.487
+In this example, we use several simple tools that should become automatic habits.
 
-00:00:11.931 --> 00:00:18.549
-summarizes data by category Summarize by channel
-Before
+00:00:08.487 --> 00:00:10.807
+Head shows the first few rows.
 
-00:00:18.575 --> 00:00:24.130
-running the example predict the structure and output
-Run it in the browser inspect the
+00:00:10.807 --> 00:00:17.392
+This helps us understand the general structure and whether the values look reasonable.
 
-00:00:24.157 --> 00:00:30.249
-values dimensions labels or summary then change one
-input and run it again Focus
+00:00:17.392 --> 00:00:20.317
+Shape gives us two numbers: the number of rows and the number of columns.
 
-00:00:30.275 --> 00:00:34.315
-on how the operation changes the data rather than
-reading the code line by line
+00:00:20.317 --> 00:00:22.842
+Columns gives us the column names.
+
+00:00:22.842 --> 00:00:26.357
+Sample returns a few randomly selected rows.
+
+00:00:26.357 --> 00:00:31.227
+Here we set random_state so the same sample appears each time.
+
+00:00:31.227 --> 00:00:34.637
+Click Run and look at each output separately.
+
+00:00:34.637 --> 00:00:39.552
+Imagine receiving a file that someone tells you contains ten thousand records.
+
+00:00:39.552 --> 00:00:45.557
+If shape shows only nine hundred rows, that is something we should investigate immediately.
+
+00:00:45.557 --> 00:00:48.452
+The same idea applies after cleaning.
+
+00:00:48.452 --> 00:00:52.032
+If we start with one thousand rows and end with six hundred,
+
+00:00:52.032 --> 00:00:55.602
+we need to understand why four hundred rows disappeared.
+
+00:00:55.602 --> 00:01:00.042
+A simple row count can detect serious analytical problems.
+
+00:01:00.042 --> 00:01:03.982
+So one of the most important habits in this module is this:
+
+00:01:03.982 --> 00:01:10.292
+know the size and basic structure of your data before and after major transformations.

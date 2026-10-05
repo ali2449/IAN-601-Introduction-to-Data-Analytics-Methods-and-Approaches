@@ -1,97 +1,673 @@
 {
-  "prefix": "module10",
-  "voice": "en-US-GuyNeural",
-  "rate": "-5%",
-  "volume": "+0%",
-  "pitch": "+0Hz",
-  "caption_words": 15,
-  "slide_count": 12,
-  "slide_markers_found": true,
-  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "module": "module10",
+  "filename_prefix": "module10",
+  "source_file": "IAN_601_Module_10_Pandas_Narration.txt",
+  "voice_consistency_version": 3,
+  "reference_audio": "/home/ali/breeze-tts/voice_reference/course_instructor_consistent_v4.wav",
+  "reference_text": "Welcome to the course. We will work through each concept carefully, connect the\nideas step by step, and use practical examples to make technical topics easier\nto understand. When we introduce a new method, focus first on the problem it\nsolves and why it is useful. For example, in machine learning, features are the\ninformation we give the model, while the target is what we want it to predict.\nNow consider a simple question: what changes when the data contains missing\nvalues? We will think through the reason and then look at the code. In Python,\nwe can inspect the data, run one small step at a time, and explain what the\nresult means. The goal is to understand the logic, not simply memorize syntax.",
+  "locked_narration_seed": true,
+  "narration_seed": 1234,
+  "long_narration": {
+    "automatic_chunking": true,
+    "max_text_tokens_per_call": 260,
+    "chunk_pause_seconds": 0.38,
+    "manual_break_marker": "[tts-break]",
+    "breeze_max_new_tokens": 1500,
+    "breeze_max_seq_len": 2048
+  },
+  "subtitle_method": "whole_slide_silence_alignment",
+  "caption_settings": {
+    "max_words": 18,
+    "max_chars": 110,
+    "minimum_silence_seconds": 0.2,
+    "boundary_search_window_seconds": 1.4
+  },
   "slides": [
     {
       "slide": 1,
-      "audio": "module10_slide_01.mp3",
-      "captions": "module10_slide_01.vtt",
-      "text": "Welcome to Module 10. This module focuses on Pandas. We will connect the new library tools to the Python foundations from earlier modules.\n\n[pause=0.7]\n\nPandas helps Python work with table-shaped data using DataFrames, rows, columns, filters, groups, and joins.\n\n[pause=1.0]",
-      "pause_markers": 2
+      "title": "Pandas for Real Analytics",
+      "transcript": "Welcome to Module 10. In this module, we are moving from general Python programming into one of the most important tools used in day-to-day data analysis: Pandas.\n\nPandas helps us work with tabular data, meaning data organized into rows and columns. Think about CSV files, Excel worksheets, database query results, survey data, transaction records, or patient records. These are all common examples of data that can be represented as a Pandas DataFrame.\n\nThe goal is not to memorize a long list of commands. Instead, I want you to learn a repeatable workflow. We will load data, inspect it, identify problems, clean those problems, create useful variables, summarize the data, combine tables, and then validate the final result.\n\n[tts-break]\n\nAs we move through the module, notice that we will keep asking the same question: can we trust the data we are about to analyze?\n\nBy the end of this module, you should be able to take a small messy dataset and turn it into a clean, understandable, and analysis-ready table.",
+      "seed": 1234,
+      "tts_text_tokens": 212,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        150,
+        61
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_01.wav",
+      "audio": "audio/module10_slide_01.mp3",
+      "captions": "audio/module10_slide_01.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 2,
-      "audio": "module10_slide_02.mp3",
-      "captions": "module10_slide_02.vtt",
-      "text": "Use this lesson interactively. Read the idea, predict the shape or result, run the example, and then change one value so you can compare the output.\n\n[pause=0.7]\n\nStart with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.\n\n[pause=0.7]\n\nChange one value, variable, or condition. Apply the pattern to a new example.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Why Pandas matters at work",
+      "transcript": "Pandas is important because a large part of analytics work happens before we build a model or create a dashboard.\n\nAn analyst may receive a CSV file exported from a business system. A data scientist may receive a table from SQL. A research team may receive data collected from a survey or an experiment. In all of these cases, the data usually needs to be inspected and prepared before it can be used.\n\nPandas gives us practical tools for this work. We can identify missing values, correct data types, standardize categories, filter rows, calculate summaries, join related tables, and create new variables.\n\n[tts-break]\n\nThe professional skill is not simply knowing that a function such as groupby exists. The more valuable skill is being able to look at an unfamiliar dataset and decide what needs to happen next.\n\nFor example, if a column called amount contains dollar signs and is stored as text, we need to recognize that before calculating an average. If customer IDs are duplicated unexpectedly, we need to investigate before joining another table.\n\nThat kind of reasoning is what makes Pandas useful in real analytical work.",
+      "seed": 1234,
+      "tts_text_tokens": 216,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        120,
+        95
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_02.wav",
+      "audio": "audio/module10_slide_02.mp3",
+      "captions": "audio/module10_slide_02.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 3,
-      "audio": "module10_slide_03.mp3",
-      "captions": "module10_slide_03.vtt",
-      "text": "This slide is the roadmap for Module 10. Follow the progression from the basic structure to selection, transformation, and a small analytical workflow.\n\n[pause=0.7]\n\nCreate table-shaped data. Preview and understand columns. Choose columns and rows.\n\n[pause=0.7]\n\nCreate new columns. Summarize by category. Combine related tables.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "What “job-ready Pandas” means",
+      "transcript": "When I say job-ready Pandas, I do not mean that you need to memorize every function in the Pandas library.\n\nPandas is a large library, and even experienced analysts look at the documentation regularly. What matters is being comfortable with the core patterns that appear repeatedly.\n\nYou should know how to load data and inspect the rows, columns, data types, missing values, and duplicates. You should be able to select the columns you need, filter rows using business conditions, and sort or rank records.\n\nYou should also be comfortable cleaning values, converting data types, standardizing text, working with dates, creating new columns, and summarizing groups.\n\n[tts-break]\n\nAnother important skill is combining tables correctly. A merge that looks successful can still be wrong if the relationship between the keys is not what you expected.\n\nFinally, you should validate your work. Check row counts, totals, unique keys, and missing values after major transformations.\n\nThe goal is not just to make the code run. The goal is to produce an analytical result that you can explain and defend.",
+      "seed": 1234,
+      "tts_text_tokens": 213,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        131,
+        81
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_03.wav",
+      "audio": "audio/module10_slide_03.mp3",
+      "captions": "audio/module10_slide_03.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 4,
-      "audio": "module10_slide_04.mp3",
-      "captions": "module10_slide_04.vtt",
-      "text": "This slide focuses on Create a DataFrame. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nA DataFrame is a table with column names. A list of dictionaries is a common way to create one. Create a small DataFrame\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "The Pandas workflow",
+      "transcript": "This slide gives us the workflow we will follow throughout the module.\n\nFirst, we create or load a DataFrame. In real projects, this may come from a CSV file, an Excel file, a database query, or another application.\n\nSecond, we inspect the data. Before changing anything, we need to understand what we received. We look at sample rows, the shape of the table, column names, and data types.\n\nThird, we select the rows and columns that are relevant to our question.\n\nThen we clean the data. This may include fixing types, handling missing values, removing true duplicates, and standardizing text.\n\n[tts-break]\n\nAfter cleaning, we can transform the data. We might create a profit column, extract the month from a date, or classify transactions into size categories.\n\nNext, we summarize the data using tools such as groupby, agg, pivot_table, and crosstab.\n\nIf information is spread across multiple tables, we combine them using merge or concat.\n\nFinally, we validate. We compare row counts, inspect keys, check totals, and make sure our assumptions still hold.\n\nThis sequence is useful because it gives structure to an otherwise messy analytical problem.",
+      "seed": 1234,
+      "tts_text_tokens": 240,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        128,
+        111
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_04.wav",
+      "audio": "audio/module10_slide_04.mp3",
+      "captions": "audio/module10_slide_04.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 5,
-      "audio": "module10_slide_05.mp3",
-      "captions": "module10_slide_05.vtt",
-      "text": "This slide focuses on Inspect a DataFrame. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nBefore analysis, preview the data and check basic structure. Preview and inspect\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Series and DataFrame",
+      "transcript": "Two Pandas objects appear throughout this module: Series and DataFrame.\n\nA Series is essentially one labeled dimension of data. You can think of it as one column together with an index. For example, if we select only the amount column from an orders table, Pandas usually returns a Series.\n\nA DataFrame is a two-dimensional table with rows and columns. Each column has a name, and each column also has a data type.\n\nThis distinction matters because some operations behave differently depending on whether you are working with a Series or a DataFrame.\n\n[tts-break]\n\nFor example, orders bracket amount returns one column and usually gives us a Series. If we place amount inside a list and use double brackets, Pandas returns a DataFrame containing one column.\n\nThis may look like a small difference, but it explains many common beginner errors.\n\nA useful habit is to ask: what kind of object do I have right now? If you are unsure, use type and inspect the result.\n\nUnderstanding the object you are working with makes the rest of Pandas much easier.",
+      "seed": 1234,
+      "tts_text_tokens": 208,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        108,
+        99
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_05.wav",
+      "audio": "audio/module10_slide_05.mp3",
+      "captions": "audio/module10_slide_05.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 6,
-      "audio": "module10_slide_06.mp3",
-      "captions": "module10_slide_06.vtt",
-      "text": "This slide focuses on Select columns and filter rows. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nPandas uses column names and conditions to select the part of the table you need. Select and filter\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Create a DataFrame",
+      "transcript": "Now we will create a small DataFrame directly in Python.\n\nIn the code, we first import Pandas using the standard alias, pd. Then we pass a list of dictionaries into pd.DataFrame.\n\nEach dictionary represents one row. The dictionary keys become the column names, and the values become the data stored in that row.\n\nClick Run and look at the result.\n\nYou should see five order records with order ID, channel, and amount.\n\n[tts-break]\n\nThis small example is useful because it lets us practice Pandas without depending on an external file.\n\nNotice that the rows automatically receive an index starting at zero. The index is not the same thing as the order ID. It is Pandas' label for the rows unless we explicitly change it.\n\nTry changing one amount or adding another order to the list, then run the code again.\n\nThe point of this slide is not the specific numbers. It is to understand how a collection of Python records becomes a structured DataFrame that we can inspect and analyze.",
+      "seed": 1234,
+      "tts_text_tokens": 200,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        90,
+        109
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_06.wav",
+      "audio": "audio/module10_slide_06.mp3",
+      "captions": "audio/module10_slide_06.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 7,
-      "audio": "module10_slide_07.mp3",
-      "captions": "module10_slide_07.vtt",
-      "text": "This slide focuses on Create new columns. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nNew columns store calculated values or labels that help analysis. Add calculated columns\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Load CSV data",
+      "transcript": "Most of the time, we will not type our data directly into Python. We will load it from somewhere.\n\nOne of the most common formats is CSV, which stands for comma-separated values.\n\nIn this example, we create CSV text inside Python and then use StringIO so Pandas can treat that text like a small file. The important function is pd.read_csv.\n\nClick Run.\n\nPandas reads the header row and uses those values as column names. Each later line becomes one row in the DataFrame.\n\nWe also print the type of the result, and you should see that it is a Pandas DataFrame.\n\n[tts-break]\n\nIn real work, the syntax may be as simple as pd.read_csv followed by the filename.\n\nThe same general idea applies when data comes from SQL. SQL may retrieve the rows, and Pandas becomes the environment where we inspect, clean, transform, and summarize those rows.\n\nA good practice is to never assume that a file loaded perfectly. Loading is only the first step. The next step should always be inspection.",
+      "seed": 1234,
+      "tts_text_tokens": 213,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        126,
+        86
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_07.wav",
+      "audio": "audio/module10_slide_07.mp3",
+      "captions": "audio/module10_slide_07.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 8,
-      "audio": "module10_slide_08.mp3",
-      "captions": "module10_slide_08.vtt",
-      "text": "This slide focuses on Group and summarize. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\ngroupby() summarizes data by category. Summarize by channel\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "First inspection: rows and shape",
+      "transcript": "Before analyzing a new dataset, inspect it.\n\nIn this example, we use several simple tools that should become automatic habits.\n\nHead shows the first few rows. This helps us understand the general structure and whether the values look reasonable.\n\nShape gives us two numbers: the number of rows and the number of columns.\n\nColumns gives us the column names.\n\nSample returns a few randomly selected rows. Here we set random_state so the same sample appears each time.\n\nClick Run and look at each output separately.\n\n[tts-break]\n\nImagine receiving a file that someone tells you contains ten thousand records. If shape shows only nine hundred rows, that is something we should investigate immediately.\n\nThe same idea applies after cleaning. If we start with one thousand rows and end with six hundred, we need to understand why four hundred rows disappeared.\n\nA simple row count can detect serious analytical problems.\n\nSo one of the most important habits in this module is this: know the size and basic structure of your data before and after major transformations.",
+      "seed": 1234,
+      "tts_text_tokens": 206,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        105,
+        100
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_08.wav",
+      "audio": "audio/module10_slide_08.mp3",
+      "captions": "audio/module10_slide_08.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 9,
-      "audio": "module10_slide_09.mp3",
-      "captions": "module10_slide_09.vtt",
-      "text": "This slide focuses on Handle missing values. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nMissing values should be checked before analysis. Depending on the task, they may be filled, removed, or flagged. Find and fill missing values\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Inspect dtypes and structure",
+      "transcript": "Data can look correct on the screen and still be stored incorrectly.\n\nIn this example, order date looks like a date, and amount looks like a number. But both columns are initially stored as text.\n\nClick Run and look at the dtypes output.\n\nYou will see that Pandas does not automatically know that these strings should be interpreted as dates or numeric values.\n\nThen look at info. The info method gives us a compact summary of the DataFrame, including column names, non-null counts, data types, and memory information.\n\n[tts-break]\n\nWhy does this matter?\n\nIf amount is stored as text, numerical operations may fail or produce unexpected behavior. If order date is stored as text, we cannot easily extract the month, weekday, or time difference.\n\nThis is why checking data types is part of data quality work.\n\nDo not decide what a column is based only on how it looks. Ask Pandas what type it is actually using.\n\nLater in the module, we will convert these values safely.",
+      "seed": 1234,
+      "tts_text_tokens": 203,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        108,
+        94
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_09.wav",
+      "audio": "audio/module10_slide_09.mp3",
+      "captions": "audio/module10_slide_09.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 10,
-      "audio": "module10_slide_10.mp3",
-      "captions": "module10_slide_10.vtt",
-      "text": "This slide focuses on Merge tables. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nMerging combines related tables using a shared key. Merge orders and customers\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Summaries and category counts",
+      "transcript": "Once we understand the basic structure, we can begin a quick exploratory analysis.\n\nThe describe method summarizes numerical columns. It can show the count, mean, standard deviation, minimum, quartiles, and maximum.\n\nValue_counts is especially useful for categorical data. It tells us how often each category appears.\n\nNunique tells us how many distinct values exist.\n\nClick Run and inspect the output.\n\n[tts-break]\n\nThese simple functions can reveal problems very quickly.\n\nFor example, suppose a channel column is expected to contain web, email, and store. If value_counts returns Web, web, WEB, and web with spaces as separate categories, we probably have a text-cleaning issue.\n\nFor numeric data, describe can reveal suspicious ranges. If an age column has a minimum of negative five or a maximum of nine hundred, we need to investigate.\n\nEDA does not begin with complicated charts. Often it begins with simple counts, ranges, and questions about whether the values make sense in the real-world context.",
+      "seed": 1234,
+      "tts_text_tokens": 204,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        81,
+        122
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_10.wav",
+      "audio": "audio/module10_slide_10.mp3",
+      "captions": "audio/module10_slide_10.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 11,
-      "audio": "module10_slide_11.mp3",
-      "captions": "module10_slide_11.vtt",
-      "text": "This slide focuses on Mini pandas workflow. Start with the data structure and what the operation is supposed to accomplish before looking closely at the syntax.\n\n[pause=0.7]\n\nA typical workflow loads data, checks it, filters it, adds useful columns, and summarizes results. Complete small workflow\n\n[pause=0.8]\n\nBefore running the example, predict the structure and output. Run it in the browser, inspect the values, dimensions, labels, or summary, then change one input and run it again. Focus on how the operation changes the data rather than reading the code line by line.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Select columns",
+      "transcript": "Analytical datasets often contain more columns than we need for a specific task.\n\nIn this example, we select one column and then two columns.\n\nWhen we use one set of brackets with a single column name, Pandas usually returns a Series.\n\nWhen we use a list of column names inside double brackets, Pandas returns a DataFrame.\n\nClick Run and compare the outputs.\n\n[tts-break]\n\nSelecting only the variables you need can make an analysis easier to understand.\n\nImagine a dataset with fifty columns, but your question only involves customer segment, order amount, and date. Keeping those three columns visible can reduce confusion while you develop the analysis.\n\nThis also helps when sharing results with someone else. A small, focused table is often easier to review than a very wide DataFrame.\n\nRemember the key idea: one column selected directly usually gives you a Series. A list of columns gives you a DataFrame.",
+      "seed": 1234,
+      "tts_text_tokens": 177,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        74,
+        102
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_11.wav",
+      "audio": "audio/module10_slide_11.mp3",
+      "captions": "audio/module10_slide_11.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 12,
-      "audio": "module10_slide_12.mp3",
-      "captions": "module10_slide_12.vtt",
-      "text": "This slide summarizes Module 10. Focus on the operations you should recognize and the situations where they make analytical work easier.\n\n[pause=0.7]\n\nBuild DataFrames from records. Use head, shape, and dtypes. Keep rows that match conditions.\n\n[pause=0.7]\n\nAdd calculated columns. Summarize by category. Combine related tables.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Use loc and iloc",
+      "transcript": "Pandas gives us two important selection tools: loc and iloc.\n\nLoc is label-based. We normally use column names and, when needed, row labels or Boolean conditions.\n\nIloc is position-based. It uses integer positions.\n\nIn the first example, loc finds rows where channel equals web, then returns the order ID and amount columns.\n\nIn the second example, iloc selects rows zero through one and columns zero through one using positions.\n\nClick Run and compare the results.\n\n[tts-break]\n\nFor analytical code, loc is often easier to read because the code tells us what the columns mean.\n\nFor example, selecting order ID and amount is much clearer to a future reader than selecting columns zero and two.\n\nIloc is still useful when position itself matters, such as selecting the first few columns or working with a known table structure.\n\nThe important distinction is simple: loc means labels and conditions; iloc means integer positions.",
+      "seed": 1234,
+      "tts_text_tokens": 191,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        102,
+        88
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_12.wav",
+      "audio": "audio/module10_slide_12.mp3",
+      "captions": "audio/module10_slide_12.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 13,
+      "title": "Filter rows with conditions",
+      "transcript": "Filtering is how we turn a business question into a subset of rows.\n\nIn this example, the first question is: which web orders have an amount of at least one hundred?\n\nWe create two conditions and combine them using the ampersand operator, which means AND.\n\nNotice the parentheses around each condition. In Pandas, those parentheses are important when combining Boolean expressions.\n\nThe second example uses query to find all orders with amount greater than or equal to one hundred.\n\nClick Run and compare the two results.\n\n[tts-break]\n\nFiltering should always connect to a meaningful question.\n\nInstead of thinking, I need to practice greater-than syntax, think: which transactions exceed our review threshold? Which patients are older than sixty-five? Which products had sales below target?\n\nThat change in thinking matters because the syntax becomes attached to a real analytical purpose.\n\nAlso remember that a filter changes which rows are included. Before continuing, it is often useful to check how many rows remain.",
+      "seed": 1234,
+      "tts_text_tokens": 196,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        104,
+        91
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_13.wav",
+      "audio": "audio/module10_slide_13.mp3",
+      "captions": "audio/module10_slide_13.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 14,
+      "title": "Sort and find top records",
+      "transcript": "Sorting helps us prioritize records and understand extremes.\n\nIn this example, sort_values orders the DataFrame by amount from largest to smallest.\n\nThen nlargest returns the three rows with the largest amount values.\n\nClick Run and compare the two outputs.\n\nSort_values keeps all rows but changes their order. Nlargest is useful when you only want the top few records.\n\n[tts-break]\n\nThis pattern appears often in real work.\n\nYou may want the highest-revenue products, the customers with the largest balances, the departments with the most incidents, or the top-performing campaigns.\n\nThe opposite function, nsmallest, can help identify the lowest values.\n\nOne caution: top values are not automatically the most important values. A large transaction may be valid, or it may be an outlier or data-entry error.\n\nSorting helps you find what deserves attention. Interpretation still requires context.",
+      "seed": 1234,
+      "tts_text_tokens": 177,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        75,
+        101
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_14.wav",
+      "audio": "audio/module10_slide_14.mp3",
+      "captions": "audio/module10_slide_14.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 15,
+      "title": "A messy dataset is normal",
+      "transcript": "Now we move into the cleaning section.\n\nThis table is intentionally messy because real data frequently contains small inconsistencies that can create large analytical problems.\n\nLook at the channel column. We have values such as Web, EMAIL, web, and Store with inconsistent capitalization and spacing.\n\nThe amount column contains currency symbols and also a missing value.\n\nOne date is not a valid date.\n\nThe city column has a missing value.\n\nAnd order ID one thousand three appears twice.\n\n[tts-break]\n\nNone of these problems is unusual.\n\nThe danger is that some of them are easy to miss. A duplicate can inflate revenue. Inconsistent categories can split one group into several fake groups. A bad date can break time-based analysis.\n\nOur goal is not to immediately start deleting or filling values.\n\nFirst we need to measure the problems and understand what each one means.\n\nGood data cleaning is not a sequence of automatic commands. It is a sequence of decisions supported by evidence.",
+      "seed": 1234,
+      "tts_text_tokens": 194,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        95,
+        98
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_15.wav",
+      "audio": "audio/module10_slide_15.mp3",
+      "captions": "audio/module10_slide_15.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 16,
+      "title": "Profile data quality",
+      "transcript": "Before changing messy data, profile it.\n\nThis code loads the sample sales data and then checks three important areas: missing values, duplicate rows, and data types.\n\nClick Run.\n\nThe isna method identifies missing values, and sum counts them by column.\n\nDuplicated identifies rows that repeat exactly.\n\nDtypes shows how Pandas currently stores each column.\n\n[tts-break]\n\nThis step creates a baseline.\n\nFor example, if we know there are two missing values before cleaning, we can verify later whether our cleaning strategy handled them.\n\nIf we remove duplicates, we can compare the number of rows before and after.\n\nThis is especially important in professional work because cleaning should be explainable.\n\nInstead of saying, I cleaned the file, we should be able to say, the original file had five rows, one exact duplicate, one missing amount, one missing city, and one invalid date.\n\nThat kind of description makes the workflow reproducible and easier to review.",
+      "seed": 1234,
+      "tts_text_tokens": 193,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        73,
+        119
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_16.wav",
+      "audio": "audio/module10_slide_16.mp3",
+      "captions": "audio/module10_slide_16.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 17,
+      "title": "Convert types safely",
+      "transcript": "Now we will convert two columns that are currently stored as text.\n\nThe amount column contains dollar signs. Before converting it to a number, we remove the dollar sign using a vectorized string operation.\n\nThen pd.to_numeric converts the cleaned strings into numeric values.\n\nNotice errors equals coerce.\n\nCoerce means that if Pandas encounters a value that cannot be converted, it replaces that value with a missing value rather than crashing the whole operation.\n\nWe use the same idea with pd.to_datetime.\n\nClick Run and inspect both the values and the resulting data types.\n\n[tts-break]\n\nThis is a safer analytical pattern because invalid data becomes visible.\n\nFor example, the text not-a-date becomes a missing datetime value. That tells us we have a quality problem that still needs a decision.\n\nWe are not pretending that the invalid date is correct.\n\nA useful principle is: convert first, then inspect what became missing. Conversion is not the end of cleaning; it often reveals the next problem we need to handle.",
+      "seed": 1234,
+      "tts_text_tokens": 207,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        117,
+        89
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_17.wav",
+      "audio": "audio/module10_slide_17.mp3",
+      "captions": "audio/module10_slide_17.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 18,
+      "title": "Handle missing values deliberately",
+      "transcript": "Missing values require reasoning.\n\nThere is no single correct command that works for every situation.\n\nIn this example, the city column contains one missing value. We replace that value with the label Unknown.\n\nFor amount, we demonstrate filling the missing value with the median.\n\nClick Run and compare the missing-value counts before and after.\n\n[tts-break]\n\nThe important lesson is not that median is always the correct answer. It is only a teaching example.\n\nImagine that amount is missing because the transaction was cancelled. Filling it with the median might create a false transaction value.\n\nIn another dataset, a missing city may mean the customer refused to provide a location. Replacing it with Unknown may be appropriate because the missingness itself has meaning.\n\nOther choices include dropping the row, leaving the value missing, using a business rule, or creating a separate indicator showing that the original value was missing.\n\nAlways ask why the value is missing before deciding how to handle it.",
+      "seed": 1234,
+      "tts_text_tokens": 192,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        68,
+        123
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_18.wav",
+      "audio": "audio/module10_slide_18.mp3",
+      "captions": "audio/module10_slide_18.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 19,
+      "title": "Find and remove duplicates",
+      "transcript": "Duplicates can distort an analysis, but we must define what duplicate means.\n\nIn this example, order ID is treated as the business key. That means we expect one row per order.\n\nWe use duplicated with subset equal to order ID and keep equals false to display every record involved in a duplicate.\n\nThen drop_duplicates keeps the first record for each repeated order ID.\n\nClick Run and inspect the output.\n\n[tts-break]\n\nNow consider an important real-world question.\n\nWhat if the table represents order line items instead of orders?\n\nOne order ID could legitimately appear several times because the customer purchased several products.\n\nIn that case, removing repeated order IDs would destroy valid data.\n\nThis is why row grain matters. Grain means what one row represents.\n\nBefore removing duplicates, state the grain explicitly. One row per order? One row per customer? One row per product within an order?\n\nDuplicate removal is only correct when it respects the meaning of the row.",
+      "seed": 1234,
+      "tts_text_tokens": 194,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        83,
+        110
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_19.wav",
+      "audio": "audio/module10_slide_19.mp3",
+      "captions": "audio/module10_slide_19.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 20,
+      "title": "Clean text columns",
+      "transcript": "Small text differences can create fake categories.\n\nIn this example, the channel column contains values such as Web with spaces, EMAIL in uppercase, web in lowercase, and Store with spaces.\n\nThe status column has the same problem.\n\nWe use the string accessor, str, to apply text methods to the entire column.\n\nStrip removes leading and trailing spaces.\n\nLower converts the text to lowercase.\n\nClick Run and then look at value_counts for channel.\n\n[tts-break]\n\nBefore cleaning, values that mean the same thing could be counted separately.\n\nAfter cleaning, Web, web, and values with extra spaces become one consistent category.\n\nThis matters for groupby, pivot tables, charts, and machine-learning features.\n\nBe careful, however, not to standardize blindly. Sometimes capitalization or spacing is meaningful.\n\nThe goal is to create consistent categories based on the meaning of the data, not simply to modify text because a method is available.",
+      "seed": 1234,
+      "tts_text_tokens": 188,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        93,
+        94
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_20.wav",
+      "audio": "audio/module10_slide_20.mp3",
+      "captions": "audio/module10_slide_20.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 21,
+      "title": "Create derived columns",
+      "transcript": "A major strength of Pandas is vectorized column operations.\n\nHere we create several new variables from the existing amount column.\n\nFirst, tax is calculated as amount multiplied by seven percent.\n\nThen total with tax is amount plus tax.\n\nFinally, pd.cut places each order into a size category: small, medium, or large.\n\nClick Run and inspect the new columns.\n\n[tts-break]\n\nNotice that we do not write a loop that processes one row at a time.\n\nWe describe the calculation once, and Pandas applies it across the entire column.\n\nThis style is usually clearer and more efficient.\n\nDerived columns are common in analytics.\n\nYou may calculate profit from revenue and cost, length of stay from two dates, age from birth date, response time from timestamps, or customer category from spending thresholds.\n\nWhen you create a derived column, document the business rule. Someone should be able to understand exactly how that value was produced.",
+      "seed": 1234,
+      "tts_text_tokens": 187,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        76,
+        110
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_21.wav",
+      "audio": "audio/module10_slide_21.mp3",
+      "captions": "audio/module10_slide_21.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 22,
+      "title": "Work with dates",
+      "transcript": "Dates become much more useful after they are converted to a real datetime type.\n\nIn this example, the order_date column is already converted using pd.to_datetime.\n\nThen we use the dt accessor.\n\nDt.month_name returns the month name.\n\nDt.day_name returns the weekday.\n\nDt.quarter returns the quarter number.\n\nClick Run and inspect the new columns.\n\n[tts-break]\n\nThese features can support many analytical questions.\n\nDo sales change by weekday? Are there seasonal patterns? Which quarter had the most transactions? Are hospital admissions higher during certain months?\n\nWe can also calculate differences between dates, extract the year, or group records by time periods.\n\nThe key lesson is that a date stored as text is limited. A true datetime value gives us access to time-based operations.\n\nBefore using a date in analysis, confirm that it was parsed successfully and check for invalid values that became missing.",
+      "seed": 1234,
+      "tts_text_tokens": 188,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        82,
+        105
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_22.wav",
+      "audio": "audio/module10_slide_22.mp3",
+      "captions": "audio/module10_slide_22.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 23,
+      "title": "GroupBy: answer questions by category",
+      "transcript": "GroupBy is one of the most important patterns in Pandas.\n\nA useful way to understand it is split, apply, combine.\n\nFirst, Pandas splits the rows into groups based on a category.\n\nThen it applies a calculation within each group.\n\nFinally, it combines the results into a summary.\n\nIn this example, we group by channel and sum the amount column.\n\nClick Run.\n\nThe result tells us total revenue for web, email, and store.\n\n[tts-break]\n\nNow connect that code to a business question: which channel contributes the most revenue?\n\nThat is the important part. GroupBy is not just syntax; it is a way to answer questions at a different level of detail.\n\nThe original table has one row per order. The grouped result has one row or value per channel.\n\nWhenever you group data, ask what one output row represents.\n\nThis is the same concept of grain that we discussed during duplicate handling.",
+      "seed": 1234,
+      "tts_text_tokens": 188,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        94,
+        93
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_23.wav",
+      "audio": "audio/module10_slide_23.mp3",
+      "captions": "audio/module10_slide_23.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 24,
+      "title": "Aggregate multiple metrics",
+      "transcript": "Often one summary measure is not enough.\n\nWe may want to know the number of orders, total revenue, and average order value for each channel.\n\nThe agg method lets us calculate several measures in one grouped analysis.\n\nIn this example, we group by channel and use named aggregation.\n\nOrders counts the number of records.\n\nRevenue sums the amount.\n\nAverage order calculates the mean.\n\nClick Run and look at the result.\n\n[tts-break]\n\nNamed aggregation is especially useful because the output columns already have meaningful names.\n\nThis is much easier to use in a report or dashboard than columns with confusing multi-level labels.\n\nAlso notice as_index equals false. This keeps channel as a regular column rather than moving it into the index.\n\nWhen building summaries, think about the measures that answer the question. More metrics are not automatically better. Choose metrics that help someone understand the behavior of each group.",
+      "seed": 1234,
+      "tts_text_tokens": 181,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        88,
+        92
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_24.wav",
+      "audio": "audio/module10_slide_24.mp3",
+      "captions": "audio/module10_slide_24.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 25,
+      "title": "Pivot tables and crosstabs",
+      "transcript": "Pivot tables and crosstabs are useful when we want to compare two categorical dimensions.\n\nIn the first example, pivot_table summarizes amount by channel and status.\n\nRows represent channels. Columns represent status values. The cells contain summed revenue.\n\nFill_value equals zero makes empty combinations easier to interpret.\n\nThen crosstab counts how many records occur for each channel and status combination.\n\nClick Run and compare the two tables.\n\n[tts-break]\n\nThink of pivot_table as similar to an Excel pivot table. It is useful when you want a compact matrix-style summary.\n\nCrosstab is especially convenient when you want counts of category combinations.\n\nFor example, you could compare department by diagnosis, product type by region, or survey response by demographic group.\n\nThe important question is what the cell means. Is it a count, a sum, an average, or another statistic?\n\nAlways make the meaning of the table clear.",
+      "seed": 1234,
+      "tts_text_tokens": 187,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        87,
+        99
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_25.wav",
+      "audio": "audio/module10_slide_25.mp3",
+      "captions": "audio/module10_slide_25.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 26,
+      "title": "Merge related tables",
+      "transcript": "Real analytical projects often require information from more than one table.\n\nIn this example, the orders table has customer IDs but does not have the customer segment.\n\nThe customers table contains customer ID and segment.\n\nWe use merge to bring the segment information into the order table.\n\nThe key is customer_id.\n\nWe use a left join because we want to keep every order, even if a customer record is missing.\n\nClick Run and inspect the merged result.\n\n[tts-break]\n\nThe validate argument is very important.\n\nMany-to-one tells Pandas that many orders may belong to one customer, but each customer ID should appear only once in the customer table.\n\nIf that assumption is violated, Pandas can raise an error instead of silently multiplying rows.\n\nAfter any merge, check the row count and look for unmatched keys.\n\nA join can run without errors and still be logically wrong. Validation protects us from that kind of silent analytical mistake.",
+      "seed": 1234,
+      "tts_text_tokens": 189,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        94,
+        94
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_26.wav",
+      "audio": "audio/module10_slide_26.mp3",
+      "captions": "audio/module10_slide_26.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 27,
+      "title": "Concatenate similar tables",
+      "transcript": "Merge combines tables using a key. Concat does something different.\n\nConcat is commonly used when tables have the same or compatible columns and we want to stack them together.\n\nIn this example, we have January orders and February orders.\n\nBoth tables contain order ID, month, and amount.\n\nPd.concat stacks the February rows underneath the January rows.\n\nIgnore_index equals true creates a fresh continuous index.\n\nClick Run and inspect the combined table.\n\n[tts-break]\n\nThis is a common workflow when data arrives as separate monthly files, regional files, or batches.\n\nBefore concatenating many files, check that the columns have compatible meanings and data types.\n\nFor example, one file may call a column amount while another calls it sales_amount. One month may store numbers as numeric values while another stores them as text.\n\nConcat is simple, but the consistency of the source tables still matters.",
+      "seed": 1234,
+      "tts_text_tokens": 180,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        93,
+        86
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_27.wav",
+      "audio": "audio/module10_slide_27.mp3",
+      "captions": "audio/module10_slide_27.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 28,
+      "title": "Prefer vectorized operations",
+      "transcript": "Pandas is designed to work efficiently with whole columns.\n\nIn this example, margin is calculated by dividing the profit column by the sales column.\n\nThis is a vectorized operation.\n\nWe then use map with a small lambda function only to format the margin for display as a percentage.\n\nClick Run and inspect both columns.\n\n[tts-break]\n\nA common beginner habit is to write a Python loop or a row-wise apply for every calculation.\n\nSometimes custom functions are necessary, but built-in Pandas operations are usually clearer and often faster.\n\nFor example, if you can express the task as one column plus another column, or as a string method, comparison, arithmetic operation, or datetime operation, prefer that approach.\n\nThink in columns whenever possible.\n\nThis becomes increasingly important as datasets grow because row-by-row Python logic can become a performance bottleneck.",
+      "seed": 1234,
+      "tts_text_tokens": 171,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        65,
+        105
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_28.wav",
+      "audio": "audio/module10_slide_28.mp3",
+      "captions": "audio/module10_slide_28.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 29,
+      "title": "End-to-end cleaning workflow",
+      "transcript": "Now we will combine several ideas into one small workflow.\n\nThe input is a messy sales extract.\n\nFirst, we remove duplicate order IDs and create a copy.\n\nThen we standardize channel and status using strip and lower.\n\nNext, we clean the amount column by removing the dollar sign and converting the result to numeric values.\n\nWe convert the date column to datetime and coerce invalid dates to missing values.\n\nThen we fill the missing city with Unknown and fill the missing amount using the median for this teaching example.\n\nClick Run and inspect the final DataFrame.\n\n[tts-break]\n\nThe important lesson is the order of operations.\n\nWe are not randomly applying Pandas functions. We are following a sequence that we can explain.\n\nProfile the data, understand the problems, convert types, standardize categories, handle missingness, remove true duplicates, and then inspect the result.\n\nIn a production project, each decision would need to be justified more carefully, but this gives you a practical starting pattern.",
+      "seed": 1234,
+      "tts_text_tokens": 196,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        113,
+        82
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_29.wav",
+      "audio": "audio/module10_slide_29.mp3",
+      "captions": "audio/module10_slide_29.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 30,
+      "title": "Analyze and validate the cleaned data",
+      "transcript": "Cleaning is not finished when the code stops producing errors.\n\nWe need to verify the result.\n\nThis example starts with a cleaned DataFrame and performs several checks.\n\nWe print the number of rows.\n\nWe count duplicated order IDs.\n\nWe count the total number of missing values.\n\nThen we keep only completed orders and summarize them by channel.\n\nFinally, we calculate total revenue as another check.\n\nClick Run and inspect each part.\n\n[tts-break]\n\nValidation should answer questions such as: did we accidentally duplicate records? Did we remove more rows than expected? Are required fields still missing? Does the grouped revenue equal the total revenue from the filtered table?\n\nThese checks can catch errors before the data is used in a dashboard, statistical analysis, or machine-learning model.\n\nA professional notebook should not only produce results. It should contain evidence that the results are based on data that still follows the assumptions of the analysis.",
+      "seed": 1234,
+      "tts_text_tokens": 184,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        89,
+        94
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_30.wav",
+      "audio": "audio/module10_slide_30.mp3",
+      "captions": "audio/module10_slide_30.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 31,
+      "title": "A compact analyst workflow",
+      "transcript": "This slide summarizes the entire module into one practical sequence.\n\nLoad the data.\n\nProfile it using head, shape, info, missing-value counts, and duplicate checks.\n\nClean the important problems using tools such as to_numeric, fillna, drop_duplicates, and string methods.\n\nSelect the rows and columns relevant to the question.\n\nCreate useful transformations, including derived columns and date features.\n\nSummarize using groupby, agg, and pivot tables.\n\nCombine related sources using merge or concat.\n\nThen validate row counts, keys, missing values, and totals.\n\n[tts-break]\n\nIf you remember this workflow, you do not need to memorize hundreds of Pandas functions.\n\nYou can use documentation when you need a specific method.\n\nAlso remember that Pandas is not always the best tool for every dataset.\n\nIf the data is extremely large, it may be more appropriate to perform part of the work in SQL, Spark, Pollars, or another system.\n\nKnowing when to use Pandas and when not to use Pandas is also part of professional analytical judgment.",
+      "seed": 1234,
+      "tts_text_tokens": 213,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        117,
+        95
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_31.wav",
+      "audio": "audio/module10_slide_31.mp3",
+      "captions": "audio/module10_slide_31.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 32,
+      "title": "Module 10 practice challenge",
+      "transcript": "Now it is your turn to apply the workflow independently.\n\nStart by creating a DataFrame with at least eight rows or loading a small CSV file.\n\nThen inspect it. Show the first rows, the shape, the data types, missing values, and duplicates.\n\nNext, identify at least one issue that needs cleaning. It could be a data type, a text category, a missing value, or a duplicate.\n\nAfter cleaning, create at least one useful derived column.\n\nThen use groupby or pivot_table to answer a question about the data.\n\n[tts-break]\n\nDo not stop when the code runs.\n\nWrite two sentences explaining what your result means.\n\nThen write one limitation.\n\nFor example, you might say that one category has the highest average value, but the dataset is small or covers only one month.\n\nThere is no single required solution for this exercise. The goal is to demonstrate that you can make reasonable analytical decisions and explain why you made them.",
+      "seed": 1234,
+      "tts_text_tokens": 193,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        111,
+        81
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_32.wav",
+      "audio": "audio/module10_slide_32.mp3",
+      "captions": "audio/module10_slide_32.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 33,
+      "title": "Job-ready Pandas checklist",
+      "transcript": "This checklist summarizes the Pandas skills I want you to keep practicing.\n\nFor core table work, be comfortable with DataFrame, Series, read_csv, head, shape, dtypes, and info.\n\nFor selection, practice column selection, loc, iloc, Boolean masks, query, and sorting.\n\nFor cleaning, know how to identify missing values and duplicates, convert types safely, work with strings, and make deliberate decisions about missing data.\n\nFor analysis, practice describe, value_counts, groupby, agg, pivot_table, and crosstab.\n\nFor combining data, understand merge, concat, join relationships, and validation.\n\n[tts-break]\n\nAnd do not forget the professional habits behind the syntax.\n\nUse vectorized operations when possible.\n\nVerify assumptions after major transformations.\n\nDocument important cleaning decisions.\n\nCheck row counts and keys after joins.\n\nAnd know when the data may be better handled in SQL or a larger-scale system.\n\nIf you are comfortable with these patterns, you have a strong foundation for practical Pandas work.",
+      "seed": 1234,
+      "tts_text_tokens": 208,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        129,
+        78
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_33.wav",
+      "audio": "audio/module10_slide_33.mp3",
+      "captions": "audio/module10_slide_33.vtt",
+      "sync_method": "whole_slide_silence_alignment"
+    },
+    {
+      "slide": 34,
+      "title": "References and next steps",
+      "transcript": "This final slide gives you resources for continuing your Pandas learning.\n\nThe official Pandas documentation should become a normal part of your workflow. You do not need to memorize every parameter. Learn the core patterns, and then use the documentation when you need details.\n\nThe Pandas user guide and the introductory tutorials are especially useful because they provide examples for selection, missing data, grouping, merging, reshaping, and many other common tasks.\n\n[tts-break]\n\nYour best next step is practice.\n\nChoose a small real CSV dataset and begin with a question, not with code.\n\nWrite down what you want to learn from the data.\n\nThen load the file, inspect it, identify quality problems, clean only what needs to be cleaned, create useful transformations, summarize the result, and validate what you produced.\n\nThat process is more valuable than memorizing a long list of functions.\n\nIn the next module, we can build on this foundation with more advanced Pandas workflows, reshaping, time-series analysis, and performance-oriented techniques.",
+      "seed": 1234,
+      "tts_text_tokens": 202,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        84,
+        117
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module10_slide_34.wav",
+      "audio": "audio/module10_slide_34.mp3",
+      "captions": "audio/module10_slide_34.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     }
   ]
 }

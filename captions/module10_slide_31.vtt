@@ -1,0 +1,43 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.332
+This slide summarizes the entire module into one practical sequence.
+
+00:00:04.332 --> 00:00:11.807
+Load the data. Profile it using head, shape, info, missing-value counts, and duplicate checks.
+
+00:00:11.807 --> 00:00:19.272
+Clean the important problems using tools such as to_numeric, fillna, drop_duplicates, and string methods.
+
+00:00:19.272 --> 00:00:22.652
+Select the rows and columns relevant to the question.
+
+00:00:22.652 --> 00:00:27.907
+Create useful transformations, including derived columns and date features.
+
+00:00:27.907 --> 00:00:30.227
+Summarize using groupby, agg, and pivot tables.
+
+00:00:30.227 --> 00:00:35.752
+Combine related sources using merge or concat.
+
+00:00:35.752 --> 00:00:39.247
+Then validate row counts, keys, missing values, and totals.
+
+00:00:39.247 --> 00:00:45.462
+If you remember this workflow, you do not need to memorize hundreds of Pandas functions.
+
+00:00:45.462 --> 00:00:50.307
+You can use documentation when you need a specific method.
+
+00:00:50.307 --> 00:00:55.442
+Also remember that Pandas is not always the best tool for every dataset.
+
+00:00:55.442 --> 00:01:01.947
+If the data is extremely large, it may be more appropriate to perform part of the work in
+
+00:01:01.947 --> 00:01:04.347
+SQL, Spark, Pollars, or another system.
+
+00:01:04.347 --> 00:01:11.050
+Knowing when to use Pandas and when not to use Pandas is also part of professional analytical judgment.

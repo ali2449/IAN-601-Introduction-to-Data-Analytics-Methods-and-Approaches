@@ -1,0 +1,46 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.552
+Small text differences can create fake categories.
+
+00:00:03.552 --> 00:00:09.767
+In this example, the channel column contains values such as Web with spaces, EMAIL in uppercase,
+
+00:00:09.767 --> 00:00:13.257
+web in lowercase, and Store with spaces.
+
+00:00:13.257 --> 00:00:15.262
+The status column has the same problem.
+
+00:00:15.262 --> 00:00:21.282
+We use the string accessor, str, to apply text methods to the entire column.
+
+00:00:21.282 --> 00:00:24.332
+Strip removes leading and trailing spaces.
+
+00:00:24.332 --> 00:00:27.587
+Lower converts the text to lowercase.
+
+00:00:27.587 --> 00:00:33.492
+Click Run and then look at value_counts for channel.
+
+00:00:33.492 --> 00:00:38.187
+Before cleaning, values that mean the same thing could be counted separately.
+
+00:00:38.187 --> 00:00:45.232
+After cleaning, Web, web, and values with extra spaces become one consistent category.
+
+00:00:45.232 --> 00:00:48.627
+This matters for groupby, pivot tables, charts, and machine-learning features.
+
+00:00:48.627 --> 00:00:52.237
+Be careful, however, not to standardize blindly.
+
+00:00:52.237 --> 00:00:56.582
+Sometimes capitalization or spacing is meaningful.
+
+00:00:56.582 --> 00:01:02.697
+The goal is to create consistent categories based on the meaning of the data,
+
+00:01:02.697 --> 00:01:06.319
+not simply to modify text because a method is available.

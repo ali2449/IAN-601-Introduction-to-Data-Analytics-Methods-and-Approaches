@@ -1,19 +1,43 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.829
-This slide is the roadmap for Module 10 Follow the
-progression from the basic structure
+00:00:00.019 --> 00:00:06.497
+When I say job-ready Pandas, I do not mean that you need to memorize every function in the
 
-00:00:05.855 --> 00:00:11.832
-to selection transformation and a small analytical
-workflow Create
+00:00:06.497 --> 00:00:12.667
+Pandas library. Pandas is a large library, and even experienced analysts look at the documentation regularly.
 
-00:00:11.858 --> 00:00:17.716
-table-shaped data Preview and understand columns
-Choose columns
+00:00:12.667 --> 00:00:19.542
+What matters is being comfortable with the core patterns that appear repeatedly.
 
-00:00:17.742 --> 00:00:23.263
-and rows Create new columns Summarize by
+00:00:19.542 --> 00:00:25.267
+You should know how to load data and inspect the rows, columns, data types, missing values, and duplicates.
 
-00:00:23.289 --> 00:00:26.539
-category Combine related tables
+00:00:25.267 --> 00:00:32.967
+You should be able to select the columns you need, filter rows using business conditions,
+
+00:00:32.967 --> 00:00:33.472
+and sort or rank records.
+
+00:00:33.472 --> 00:00:40.767
+You should also be comfortable cleaning values, converting data types, standardizing text, working with dates,
+
+00:00:40.767 --> 00:00:44.112
+creating new columns, and summarizing groups.
+
+00:00:44.112 --> 00:00:47.762
+Another important skill is combining tables correctly.
+
+00:00:47.762 --> 00:00:55.222
+A merge that looks successful can still be wrong if the relationship between the keys is not what
+
+00:00:55.222 --> 00:00:58.457
+you expected. Finally, you should validate your work.
+
+00:00:58.457 --> 00:01:05.627
+Check row counts, totals, unique keys, and missing values after major transformations.
+
+00:01:05.627 --> 00:01:08.647
+The goal is not just to make the code run.
+
+00:01:08.647 --> 00:01:13.523
+The goal is to produce an analytical result that you can explain and defend.

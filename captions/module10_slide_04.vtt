@@ -1,28 +1,49 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.513
-This slide focuses on Create a DataFrame Start with
-the data structure and what the
+00:00:00.000 --> 00:00:06.777
+This slide gives us the workflow we will follow throughout the module.
 
-00:00:05.539 --> 00:00:11.315
-operation is supposed to accomplish before looking
-closely at the syntax A
+00:00:06.777 --> 00:00:08.347
+First, we create or load a DataFrame.
 
-00:00:11.329 --> 00:00:16.581
-DataFrame is a table with column names A list of
-dictionaries is a common way
+00:00:08.347 --> 00:00:13.362
+In real projects, this may come from a CSV file, an Excel file, a database query,
 
-00:00:16.607 --> 00:00:22.197
-to create one Create a small DataFrame Before
+00:00:13.362 --> 00:00:18.467
+or another application. Second, we inspect the data.
 
-00:00:22.223 --> 00:00:27.778
-running the example predict the structure and output
-Run it in the browser inspect the
+00:00:18.467 --> 00:00:22.737
+Before changing anything, we need to understand what we received.
 
-00:00:27.805 --> 00:00:33.897
-values dimensions labels or summary then change one
-input and run it again Focus
+00:00:22.737 --> 00:00:28.527
+We look at sample rows, the shape of the table, column names, and data types.
 
-00:00:33.923 --> 00:00:37.963
-on how the operation changes the data rather than
-reading the code line by line
+00:00:28.527 --> 00:00:35.452
+Third, we select the rows and columns that are relevant to our question.
+
+00:00:35.452 --> 00:00:37.617
+Then we clean the data.
+
+00:00:37.617 --> 00:00:42.697
+This may include fixing types, handling missing values, removing true duplicates, and standardizing text.
+
+00:00:42.697 --> 00:00:47.942
+After cleaning, we can transform the data.
+
+00:00:47.942 --> 00:00:54.547
+We might create a profit column, extract the month from a date, or classify transactions into size categories.
+
+00:00:54.547 --> 00:01:01.927
+Next, we summarize the data using tools such as groupby, agg, pivot_table, and crosstab.
+
+00:01:01.927 --> 00:01:08.567
+If information is spread across multiple tables, we combine them using merge or concat.
+
+00:01:08.567 --> 00:01:10.937
+Finally, we validate.
+
+00:01:10.937 --> 00:01:15.457
+We compare row counts, inspect keys, check totals, and make sure our assumptions still hold.
+
+00:01:15.457 --> 00:01:23.647
+This sequence is useful because it gives structure to an otherwise messy analytical problem.

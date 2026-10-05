@@ -1,28 +1,46 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.487
-This slide focuses on Create new columns Start with
-the data structure and what the
+00:00:00.000 --> 00:00:04.182
+Most of the time, we will not type our data directly into Python.
 
-00:00:05.513 --> 00:00:11.397
-operation is supposed to accomplish before looking
-closely at the syntax New
+00:00:04.182 --> 00:00:06.752
+We will load it from somewhere.
 
-00:00:11.423 --> 00:00:17.176
-columns store calculated values or labels that help
-analysis Add calculated
+00:00:06.752 --> 00:00:14.257
+One of the most common formats is CSV, which stands for comma-separated values.
 
-00:00:17.202 --> 00:00:23.034
-columns Before running the example predict the
-structure and output
+00:00:14.257 --> 00:00:20.892
+In this example, we create CSV text inside Python and then use StringIO so Pandas can treat that
 
-00:00:23.971 --> 00:00:29.129
-Run it in the browser inspect the values dimensions
-labels or summary then change one
+00:00:20.892 --> 00:00:22.727
+text like a small file.
 
-00:00:29.142 --> 00:00:34.287
-input and run it again Focus on how the operation
-changes the data rather than
+00:00:22.727 --> 00:00:27.137
+The important function is pd.read_csv.
 
-00:00:34.313 --> 00:00:35.827
-reading the code line by line
+00:00:27.137 --> 00:00:31.337
+Click Run. Pandas reads the header row and uses those values as column names.
+
+00:00:31.337 --> 00:00:35.842
+Each later line becomes one row in the DataFrame.
+
+00:00:35.842 --> 00:00:43.867
+We also print the type of the result, and you should see that it is a Pandas DataFrame.
+
+00:00:43.867 --> 00:00:49.717
+In real work, the syntax may be as simple as pd.read_csv followed by the filename.
+
+00:00:49.717 --> 00:00:55.362
+The same general idea applies when data comes from SQL.
+
+00:00:55.362 --> 00:01:01.062
+SQL may retrieve the rows, and Pandas becomes the environment where we inspect, clean, transform,
+
+00:01:01.062 --> 00:01:09.082
+and summarize those rows. A good practice is to never assume that a file loaded perfectly.
+
+00:01:09.082 --> 00:01:11.562
+Loading is only the first step.
+
+00:01:11.562 --> 00:01:14.038
+The next step should always be inspection.

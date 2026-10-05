@@ -1,29 +1,37 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.737
-This slide focuses on Mini pandas workflow Start
-with the data structure and what the
+00:00:00.000 --> 00:00:05.392
+Analytical datasets often contain more columns than we need for a specific task.
 
-00:00:05.763 --> 00:00:11.542
-operation is supposed to accomplish before looking
-closely at the syntax A
+00:00:05.392 --> 00:00:10.102
+In this example, we select one column and then two columns.
 
-00:00:11.555 --> 00:00:17.542
-typical workflow loads data checks it filters it
-adds useful columns and summarizes results
+00:00:10.102 --> 00:00:16.287
+When we use one set of brackets with a single column name, Pandas usually returns a Series.
 
-00:00:18.466 --> 00:00:23.986
-Complete small workflow Before running the example
-predict the
+00:00:16.287 --> 00:00:22.037
+When we use a list of column names inside double brackets, Pandas returns a DataFrame.
 
-00:00:23.999 --> 00:00:29.568
-structure and output Run it in the browser inspect
-the values dimensions labels
+00:00:22.037 --> 00:00:24.802
+Click Run and compare the outputs.
 
-00:00:29.739 --> 00:00:35.015
-or summary then change one input and run it again
-Focus on how the operation
+00:00:24.802 --> 00:00:29.987
+Selecting only the variables you need can make an analysis easier to understand.
 
-00:00:35.028 --> 00:00:37.963
-changes the data rather than reading the code line
-by line
+00:00:29.987 --> 00:00:35.762
+Imagine a dataset with fifty columns, but your question only involves customer segment, order amount,
+
+00:00:35.762 --> 00:00:43.407
+and date. Keeping those three columns visible can reduce confusion while you develop the analysis.
+
+00:00:43.407 --> 00:00:46.857
+This also helps when sharing results with someone else.
+
+00:00:46.857 --> 00:00:52.822
+A small, focused table is often easier to review than a very wide DataFrame.
+
+00:00:52.822 --> 00:00:58.597
+Remember the key idea: one column selected directly usually gives you a Series.
+
+00:00:58.597 --> 00:01:00.976
+A list of columns gives you a DataFrame.
