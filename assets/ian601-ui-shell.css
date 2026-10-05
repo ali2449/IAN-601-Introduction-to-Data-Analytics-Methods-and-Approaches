@@ -999,3 +999,23 @@ body.ian601-course-nav-lock{overflow:hidden!important}
   body.ian601-shell .ian601-cmn-footer{padding:10px 16px 14px!important}
 }
 /* IAN601_COURSE_NAV_DRAWER_END */
+
+
+/* IAN601_CAPTION_HIDDEN_FIX_START
+   Some modules define .subtitle-bar with display:flex, which can override
+   the browser's default [hidden] behavior. CC Off must remove the strip. */
+body.ian601-shell .subtitle-bar[hidden],
+body.ian601-shell #subtitle-bar[hidden],
+body.ian601-shell #subtitleBar[hidden],
+body.ian601-shell .caption-strip[hidden],
+body.ian601-shell.shell-cc-off .subtitle-bar,
+body.ian601-shell.shell-cc-off .caption-strip{
+  display:none!important;
+  min-height:0!important;
+  height:0!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  overflow:hidden!important;
+}
+/* IAN601_CAPTION_HIDDEN_FIX_END */
