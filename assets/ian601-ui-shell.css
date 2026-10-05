@@ -1285,3 +1285,45 @@ body.ian601-shell .code-cell.ian601-python-focus .output.show{
   display:block!important;
 }
 /* IAN601_MODULE6_CODE_CELL_MATCH_END */
+
+
+/* IAN601_FOCUS_COMPACT_HEIGHT_START
+   Expanded Python workspace should be large enough to edit comfortably,
+   but should not turn a short example into a full-screen wall of empty Monaco space. */
+body.ian601-shell .code-cell.ian601-python-focus{
+  inset:12px 12px auto 12px!important;
+  height:auto!important;
+  max-height:calc(100vh - 24px)!important;
+  overflow:auto!important;
+}
+body.ian601-shell .ian601-python-focus .editor-shell{
+  flex:0 0 var(--ian601-focus-editor-height,clamp(280px,42vh,520px))!important;
+  height:var(--ian601-focus-editor-height,clamp(280px,42vh,520px))!important;
+  min-height:260px!important;
+  max-height:min(58vh,560px)!important;
+}
+body.ian601-shell .ian601-python-focus textarea.code-input,
+body.ian601-shell .ian601-python-focus .monaco-host{
+  flex:1 1 auto!important;
+  height:auto!important;
+  min-height:0!important;
+}
+body.ian601-shell .ian601-python-focus .cell-actions{
+  position:sticky!important;
+  bottom:0!important;
+  z-index:3!important;
+  background:#30465d!important;
+}
+@media(max-width:720px){
+  body.ian601-shell .code-cell.ian601-python-focus{
+    inset:6px 6px auto 6px!important;
+    max-height:calc(100vh - 12px)!important;
+  }
+  body.ian601-shell .ian601-python-focus .editor-shell{
+    flex-basis:var(--ian601-focus-editor-height,clamp(240px,44vh,420px))!important;
+    height:var(--ian601-focus-editor-height,clamp(240px,44vh,420px))!important;
+    min-height:220px!important;
+    max-height:52vh!important;
+  }
+}
+/* IAN601_FOCUS_COMPACT_HEIGHT_END */
