@@ -110,7 +110,35 @@
 @media(max-width:720px){
   .code-cell .code-input,.code-cell .monaco-host{height:230px!important}
 }
-</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-coursenav"><!-- IAN601_UI_SHELL_END --></head>
+</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-coursenav"><!-- IAN601_UI_SHELL_END -->
+<style id="module8-monaco-grid-collapse-fix">
+/* Module 8: allow both columns to shrink back after Monaco leaves
+   the expanded Python workspace. */
+body.ian601-shell .slide .two-col{
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+}
+body.ian601-shell .slide .two-col > *{
+  min-width:0;
+  max-width:100%;
+}
+body.ian601-shell .slide .two-col .code-cell,
+body.ian601-shell .slide .two-col .editor-shell,
+body.ian601-shell .slide .two-col .monaco-host{
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+}
+body.ian601-shell .slide .two-col .table-wrap{
+  min-width:0;
+  max-width:100%;
+}
+@media(max-width:1000px){
+  body.ian601-shell .slide .two-col{
+    grid-template-columns:minmax(0,1fr);
+  }
+}
+</style>
+</head>
 <body>
 <div class="app">
 <header class="topbar"><div class="brand"><div class="brand-mark">8</div><div>IAN 601 · Module 8<small>Professional Practices</small></div></div><div class="top-actions"><span id="pyStatus" class="status">Python loads when code runs</span><button class="control" id="themeBtn">Theme</button><button class="control" id="resetPythonBtn">Reset Python</button><button class="control" id="progressBtn">Progress <span id="progressPct">0%</span></button><button class="control" id="fullBtn">Fullscreen</button><button class="control primary" id="runSlideBtn">Run slide ▶</button><button class="control" id="modulesBtn">☰ Course Modules</button></div></header>
