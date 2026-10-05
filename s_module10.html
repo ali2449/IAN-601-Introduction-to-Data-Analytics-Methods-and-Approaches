@@ -82,7 +82,7 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
 .ian603-bottombar .bottom-nav-panel{align-self:center!important}
 .topbar>.toolbar,.topbar>.controls,.topbar>.top-controls{margin-left:auto!important}
 .topbar .ian603-tool{box-shadow:none!important}
-</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-module6code"><!-- IAN601_UI_SHELL_END -->
+</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-m10cc"><!-- IAN601_UI_SHELL_END -->
 <style id="module10-redesign-v2">
 body.ian601-shell main.stage>.slide{padding:clamp(24px,2.6vw,42px)!important}
 body.ian601-shell .slide-header{margin-bottom:14px!important}
@@ -1479,7 +1479,24 @@ async function loadCaptionsForCurrent(){const item=currentManifestItem();caption
 function fallbackCaption(){const item=currentManifestItem();if(!item?.text)return'';const sentences=item.text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)||[item.text];const duration=narrationAudio?.duration;if(!Number.isFinite(duration)||duration<=0)return sentences[0].trim();const idx=Math.min(sentences.length-1,Math.floor(((narrationAudio.currentTime||0)/duration)*sentences.length));return sentences[idx].trim();}
 function updateSubtitle(){if(!subtitleBar)return;if(!ccEnabled){subtitleBar.hidden=true;subtitleBar.textContent='';return;}subtitleBar.hidden=false;const t=narrationAudio?.currentTime||0;const cue=captionCues.find(c=>t>=c.start&&t<=c.end);subtitleBar.textContent=cue?.text||fallbackCaption()||'Captions will appear here when narration plays.';}
 function renderTranscript(){const item=currentManifestItem();if(!item)return;if(transcriptTitle)transcriptTitle.textContent='Slide '+item.slide+': '+item.title;if(transcriptBody)transcriptBody.textContent=vttTranscript||item.text||'Transcript unavailable.';}
-function updateNarrationButtons(){if(narrationToggleBtn)narrationToggleBtn.textContent=narrationEnabled?'Narration On':'Narration Off';if(ccToggleBtn)ccToggleBtn.textContent=ccEnabled?'CC On':'CC Off';if(subtitleBar)subtitleBar.hidden=!ccEnabled;}
+function updateNarrationButtons(){
+  if(narrationToggleBtn){
+    narrationToggleBtn.textContent=narrationEnabled?'Narration On':'Narration Off';
+    narrationToggleBtn.setAttribute('aria-pressed',narrationEnabled?'true':'false');
+  }
+  if(ccToggleBtn){
+    ccToggleBtn.textContent=ccEnabled?'CC On':'CC Off';
+    ccToggleBtn.setAttribute('aria-pressed',ccEnabled?'true':'false');
+  }
+  document.body.classList.toggle('shell-cc-off',!ccEnabled);
+  document.body.classList.toggle('cc-off',!ccEnabled);
+  if(subtitleBar){
+    subtitleBar.hidden=!ccEnabled;
+    if(ccEnabled && !subtitleBar.textContent.trim()){
+      subtitleBar.textContent='Captions will appear here when narration plays.';
+    }
+  }
+}
 function loadAudioForCurrent(){
   const item=currentManifestItem();
   if(!item||!narrationAudio)return;
@@ -1590,5 +1607,5 @@ function render(){const i=activeIndex();if(!visited.includes(i+1)){visited.push(
 const obs=new MutationObserver(()=>render());slides.forEach(s=>obs.observe(s,{attributes:true,attributeFilter:['class']}));setTimeout(render,60);
 document.getElementById('ian-progress-btn')?.addEventListener('click',()=>{render();document.getElementById('ian-progress-modal')?.classList.add('show')});document.getElementById('ian-progress-close')?.addEventListener('click',()=>document.getElementById('ian-progress-modal')?.classList.remove('show'));document.getElementById('ian-progress-reset')?.addEventListener('click',()=>{visited=[];save();render()});
 document.getElementById('ian-course-modules-btn')?.addEventListener('click',()=>document.getElementById('ian-course-modal')?.classList.add('show'));document.getElementById('ian-course-close')?.addEventListener('click',()=>document.getElementById('ian-course-modal')?.classList.remove('show'));document.getElementById('ian-fullscreen-btn')?.addEventListener('click',async()=>{if(!document.fullscreenElement)await document.documentElement.requestFullscreen?.();else await document.exitFullscreen?.()});document.querySelectorAll('.ian603-modal-backdrop').forEach(x=>x.addEventListener('click',e=>{if(e.target===x)x.classList.remove('show')}));})();
-</script><!-- IAN601_UI_SHELL_SCRIPT_START --><script src="assets/ian601-ui-shell.js?v=20261005-module6code"></script><!-- IAN601_UI_SHELL_SCRIPT_END --></body>
+</script><!-- IAN601_UI_SHELL_SCRIPT_START --><script src="assets/ian601-ui-shell.js?v=20261005-m10cc"></script><!-- IAN601_UI_SHELL_SCRIPT_END --></body>
 </html>
