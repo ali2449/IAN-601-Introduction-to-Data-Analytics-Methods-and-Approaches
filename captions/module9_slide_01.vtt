@@ -1,12 +1,40 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.105
-Welcome to Module 9 This module focuses on NumPy We
+00:00:00.000 --> 00:00:01.907
+Welcome to Module 9.
 
-00:00:06.118 --> 00:00:13.051
-will connect the new library tools to the Python
-foundations from earlier modules NumPy
+00:00:01.907 --> 00:00:10.002
+In this module, we are moving from regular Python collections into one of the most important tools for
 
-00:00:13.077 --> 00:00:18.880
-helps Python work efficiently with numeric arrays
-vectorized calculations and matrix-shaped data
+00:00:10.002 --> 00:00:11.357
+numerical analytics: NumPy.
+
+00:00:11.357 --> 00:00:18.592
+NumPy gives us arrays, which are designed for working efficiently with many numeric values at the same time.
+
+00:00:18.592 --> 00:00:25.022
+Instead of writing a loop for every small calculation, we can often describe the calculation once and let
+
+00:00:25.022 --> 00:00:28.307
+NumPy apply it across an entire array.
+
+00:00:28.307 --> 00:00:31.507
+Our goal is not to memorize every NumPy function.
+
+00:00:31.507 --> 00:00:34.752
+The goal is to become comfortable with array thinking.
+
+00:00:34.752 --> 00:00:43.042
+We will create arrays, inspect their structure, perform vectorized calculations, select values, reshape data,
+
+00:00:43.042 --> 00:00:49.222
+work with rows and columns, generate random data, and summarize numeric results.
+
+00:00:49.222 --> 00:00:55.167
+These skills appear again in Pandas, statistics, visualization, machine learning, and scientific computing.
+
+00:00:55.167 --> 00:01:02.232
+So while NumPy may look like one library among many, the ideas you learn here will support much
+
+00:01:02.232 --> 00:01:04.931
+of the analytics work you do later.

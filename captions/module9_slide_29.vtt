@@ -1,0 +1,43 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.377
+Now we will combine several NumPy concepts in a small sales project.
+
+00:00:04.377 --> 00:00:08.757
+The array contains three product rows and four month columns.
+
+00:00:08.757 --> 00:00:12.437
+Before calculating anything, we print the shape.
+
+00:00:12.437 --> 00:00:16.237
+That confirms we have three products and four months.
+
+00:00:16.237 --> 00:00:20.727
+Then we calculate product totals using sum with axis one.
+
+00:00:20.727 --> 00:00:25.847
+Because we want one result for each row, axis one is the correct choice.
+
+00:00:25.847 --> 00:00:30.217
+Next, we calculate monthly totals using axis zero.
+
+00:00:30.217 --> 00:00:33.122
+This gives one result for each column.
+
+00:00:33.122 --> 00:00:38.102
+Finally, argmax identifies the position of the product with the highest total sales.
+
+00:00:38.102 --> 00:00:43.687
+Click Run and compare the product totals with the monthly totals.
+
+00:00:43.687 --> 00:00:47.567
+This is a good example of why understanding axis matters.
+
+00:00:47.567 --> 00:00:52.577
+The same sum function answers two different questions depending on the axis.
+
+00:00:52.577 --> 00:00:57.717
+When interpreting the result, remember that argmax returns a row index.
+
+00:00:57.717 --> 00:01:03.245
+In a larger project, we would usually connect that index to a product name or identifier.

@@ -1,0 +1,40 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.207
+A two-dimensional NumPy array can be thought of as a grid of rows and columns.
+
+00:00:06.207 --> 00:00:08.652
+In this example, each row contains three scores.
+
+00:00:08.652 --> 00:00:12.802
+Click Run. Shape tells us the size of the matrix.
+
+00:00:12.802 --> 00:00:17.797
+The expression scores zero comma colon selects the entire first row.
+
+00:00:17.797 --> 00:00:22.572
+Scores colon comma one selects the entire second column.
+
+00:00:22.572 --> 00:00:26.912
+Scores two comma one selects one specific value: the element in the third row and second column.
+
+00:00:26.912 --> 00:00:34.797
+This row-and-column notation is fundamental when working with numerical datasets.
+
+00:00:34.797 --> 00:00:38.722
+In analytics, rows often represent observations and columns often represent variables,
+
+00:00:38.722 --> 00:00:41.177
+although the meaning depends on the project.
+
+00:00:41.177 --> 00:00:46.887
+For example, rows could represent patients and columns could represent measurements.
+
+00:00:46.887 --> 00:00:53.632
+Or rows could represent products and columns could represent months.
+
+00:00:53.632 --> 00:00:58.182
+Always connect the array dimensions to the real-world meaning of the data.
+
+00:00:58.182 --> 00:01:03.960
+A numerical matrix is much easier to understand when you know what each axis represents.

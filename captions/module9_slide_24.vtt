@@ -1,0 +1,43 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.517
+Now let's use random numbers for a simple simulation.
+
+00:00:03.517 --> 00:00:08.912
+Suppose we imagine that each customer has a thirty percent probability of converting.
+
+00:00:08.912 --> 00:00:14.537
+The random-number generator creates ten thousand values between zero and one.
+
+00:00:14.537 --> 00:00:18.197
+We compare each value with zero point three.
+
+00:00:18.197 --> 00:00:24.347
+Values below zero point three become True, representing a simulated conversion.
+
+00:00:24.347 --> 00:00:28.912
+The rest become False. Click Run and look at the results.
+
+00:00:28.912 --> 00:00:34.647
+Because Boolean True behaves like one and False behaves like zero in this context,
+
+00:00:34.647 --> 00:00:37.487
+sum counts the number of conversions.
+
+00:00:37.487 --> 00:00:42.587
+The mean of the Boolean array gives us the simulated conversion rate.
+
+00:00:42.587 --> 00:00:48.947
+With ten thousand trials, the estimated rate should usually be reasonably close to thirty percent,
+
+00:00:48.947 --> 00:00:52.767
+although it will not be exactly thirty percent every time.
+
+00:00:52.767 --> 00:00:56.927
+This example shows why NumPy is powerful for simulation.
+
+00:00:56.927 --> 00:01:01.677
+We can represent thousands of random outcomes with a few array operations and then summarize the result
+
+00:01:01.677 --> 00:01:04.088
+immediately.

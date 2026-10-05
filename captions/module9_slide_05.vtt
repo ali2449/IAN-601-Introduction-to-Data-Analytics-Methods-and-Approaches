@@ -1,28 +1,43 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.671
-This slide focuses on Create a NumPy array Start
-with the data structure and
+00:00:00.000 --> 00:00:03.662
+Let's compare a regular Python list with a NumPy array.
 
-00:00:05.697 --> 00:00:11.843
-what the operation is supposed to accomplish before
-looking closely at the syntax The
+00:00:03.662 --> 00:00:07.877
+A Python list is a flexible, general-purpose container.
 
-00:00:11.870 --> 00:00:17.399
-common alias for NumPy is np Arrays can be created
-from Python
+00:00:07.877 --> 00:00:13.247
+It can store many kinds of objects, and the plus operator usually means concatenation.
 
-00:00:17.425 --> 00:00:23.089
-lists Create and inspect an array Before running
+00:00:13.247 --> 00:00:20.962
+So if we add a list containing ten, twenty, and thirty to itself, Python creates a longer list.
 
-00:00:23.115 --> 00:00:28.854
-the example predict the structure and output Run it
-in the browser inspect the values
+00:00:20.962 --> 00:00:26.337
+A NumPy array behaves differently because it is designed for numerical computing.
 
-00:00:28.973 --> 00:00:34.473
-dimensions labels or summary then change one input
-and run it again Focus
+00:00:26.337 --> 00:00:29.007
+Click Run and compare the outputs.
 
-00:00:34.499 --> 00:00:38.539
-on how the operation changes the data rather than
-reading the code line by line
+00:00:29.007 --> 00:00:34.762
+When we add the NumPy array to itself, NumPy performs element-by-element addition.
+
+00:00:34.762 --> 00:00:42.397
+Ten plus ten becomes twenty, twenty plus twenty becomes forty, and thirty plus thirty becomes sixty.
+
+00:00:42.397 --> 00:00:45.392
+The multiplication example is also important.
+
+00:00:45.392 --> 00:00:50.172
+Multiplying the array by two doubles each individual value.
+
+00:00:50.172 --> 00:00:54.092
+This is our first example of array-oriented thinking.
+
+00:00:54.092 --> 00:01:01.412
+The expression describes what should happen to the entire collection rather than manually looping through each
+
+00:01:01.412 --> 00:01:01.742
+value.
+
+00:01:01.742 --> 00:01:08.535
+That difference becomes extremely useful when datasets contain thousands or millions of numeric observations.

@@ -1,0 +1,40 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.437
+Sometimes numerical data arrives in separate blocks and needs to be combined.
+
+00:00:04.437 --> 00:00:09.377
+In this example, January and February each contain three values.
+
+00:00:09.377 --> 00:00:17.032
+N P dot vstack places one array above the other, creating a two-dimensional array with one row for
+
+00:00:17.032 --> 00:00:19.047
+January and one row for February.
+
+00:00:19.047 --> 00:00:22.347
+Click Run and look at the vertical stack.
+
+00:00:22.347 --> 00:00:30.172
+Then N P dot concatenate joins the two one-dimensional arrays end to end, creating one longer sequence.
+
+00:00:30.172 --> 00:00:36.192
+These operations produce different shapes, even though they use the same source values.
+
+00:00:36.192 --> 00:00:38.572
+That is why shape matters.
+
+00:00:38.572 --> 00:00:43.127
+Before combining arrays, ask what the new dimensions should mean.
+
+00:00:43.127 --> 00:00:47.427
+If rows represent months, vertical stacking is sensible.
+
+00:00:47.427 --> 00:00:53.162
+If you simply want one continuous sequence, concatenation may be more appropriate.
+
+00:00:53.162 --> 00:00:58.962
+NumPy also provides horizontal stacking and more general concatenate operations for combining arrays along
+
+00:00:58.962 --> 00:01:01.598
+different axes.

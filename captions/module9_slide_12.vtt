@@ -1,28 +1,49 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.605
-This slide focuses on Mini NumPy workflow Start with
-the data structure and
+00:00:00.000 --> 00:00:03.542
+Boolean masks are one of the most useful ideas in NumPy,
 
-00:00:05.632 --> 00:00:11.877
-what the operation is supposed to accomplish before
-looking closely at the syntax This
+00:00:03.542 --> 00:00:06.517
+and you will see the same pattern again in Pandas.
 
-00:00:11.903 --> 00:00:18.590
-example calculates a simple standardized score using
-the mean and standard deviation Standardize
+00:00:06.517 --> 00:00:09.052
+We begin with an array of scores.
 
-00:00:18.616 --> 00:00:24.474
-values Before running the example predict the
-structure and output
+00:00:09.052 --> 00:00:12.312
+Then we compare the entire array to ninety.
 
-00:00:25.411 --> 00:00:30.569
-Run it in the browser inspect the values dimensions
-labels or summary then change one
+00:00:12.312 --> 00:00:19.322
+The expression scores greater than or equal to ninety does not return one True or False value.
 
-00:00:30.582 --> 00:00:35.727
-input and run it again Focus on how the operation
-changes the data rather than
+00:00:19.322 --> 00:00:24.032
+It returns an array of Boolean values, one for each score.
 
-00:00:35.753 --> 00:00:37.267
-reading the code line by line
+00:00:24.032 --> 00:00:26.687
+Click Run and look at the mask.
+
+00:00:26.687 --> 00:00:32.517
+Positions where the condition is true are marked True, and the other positions are False.
+
+00:00:32.517 --> 00:00:36.567
+Then we place that mask inside square brackets.
+
+00:00:36.567 --> 00:00:40.367
+NumPy keeps only the values where the mask is True.
+
+00:00:40.367 --> 00:00:44.077
+The result is a new array containing the high scores.
+
+00:00:44.077 --> 00:00:48.142
+We can also use size to count how many values were selected.
+
+00:00:48.142 --> 00:00:51.527
+This pattern is extremely common in analytics.
+
+00:00:51.527 --> 00:00:57.272
+We might select transactions above a threshold, measurements outside a normal range,
+
+00:00:57.272 --> 00:01:01.577
+customers with high activity, or model scores above a cutoff.
+
+00:01:01.577 --> 00:01:04.851
+Think of a Boolean mask as a reusable filter.

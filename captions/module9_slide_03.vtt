@@ -1,20 +1,40 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.776
-This slide is the roadmap for Module 9 Follow the
-progression from the basic structure
+00:00:00.000 --> 00:00:07.297
+By the end of this module, I want you to have a practical NumPy toolkit rather than a
 
-00:00:05.803 --> 00:00:11.784
-to selection transformation and a small analytical
-workflow Create
+00:00:07.297 --> 00:00:10.277
+long list of memorized commands.
 
-00:00:11.810 --> 00:00:17.668
-numeric arrays Inspect dimensions and types
-Calculate without
+00:00:10.277 --> 00:00:15.742
+You should know several ways to create arrays, including array, arange, linspace, zeros, and ones.
 
-00:00:17.681 --> 00:00:24.108
-manual loops Select rows columns and masks Combine
+00:00:15.742 --> 00:00:22.312
+You should be able to inspect an array using dtype, shape, ndim, and size.
 
-00:00:24.135 --> 00:00:28.490
-arrays and scalars Build numeric features for
-analytics
+00:00:22.312 --> 00:00:27.907
+You should also be comfortable performing calculations without writing unnecessary loops.
+
+00:00:27.907 --> 00:00:33.312
+That includes vectorized arithmetic, universal functions, and broadcasting.
+
+00:00:33.312 --> 00:00:35.697
+Selection is another major skill.
+
+00:00:35.697 --> 00:00:43.562
+You should know how indexing, slicing, Boolean masks, and where let us choose or classify values.
+
+00:00:43.562 --> 00:00:50.757
+For analysis, we will use functions such as mean, median, standard deviation, percentiles, minimum,
+
+00:00:50.757 --> 00:00:56.477
+and maximum. We will also reshape arrays, combine arrays, generate reproducible random values,
+
+00:00:56.477 --> 00:00:59.242
+and work with missing numeric data.
+
+00:00:59.242 --> 00:01:07.237
+Most importantly, you should develop the habit of checking an array's shape and data type before assuming that
+
+00:01:07.237 --> 00:01:09.865
+a calculation is correct.

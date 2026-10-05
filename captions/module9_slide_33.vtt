@@ -1,0 +1,46 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.272
+Let's summarize the practical NumPy skills from this module.
+
+00:00:05.272 --> 00:00:11.602
+For creation, you should recognize array, arange, linspace, zeros, and ones.
+
+00:00:11.602 --> 00:00:18.227
+For structure, you should be comfortable with dtype, shape, ndim, size, reshape, and transpose.
+
+00:00:18.227 --> 00:00:22.577
+For selection, know indexing, slicing, Boolean masks, and where.
+
+00:00:22.577 --> 00:00:29.702
+For mathematics, understand vectorized operations, universal functions, broadcasting,
+
+00:00:29.702 --> 00:00:32.187
+and the basic idea of a dot product.
+
+00:00:32.187 --> 00:00:39.507
+For statistical work, be able to calculate mean, median, standard deviation, percentiles,
+
+00:00:39.507 --> 00:00:45.482
+and nan-aware summaries. Professional habits are just as important as individual functions.
+
+00:00:45.482 --> 00:00:49.902
+Use a fixed seed when reproducibility matters.
+
+00:00:49.902 --> 00:00:52.132
+Inspect shape before combining arrays.
+
+00:00:52.132 --> 00:00:55.577
+Check dtype when results look strange.
+
+00:00:55.577 --> 00:01:01.642
+Investigate outliers instead of deleting them automatically.
+
+00:01:01.642 --> 00:01:05.632
+Use copies intentionally when modifying slices.
+
+00:01:05.632 --> 00:01:09.532
+You do not need to remember every NumPy function from memory.
+
+00:01:09.532 --> 00:01:18.668
+You need to recognize the patterns and know how to find the specific function when you need it.

@@ -1,28 +1,40 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.618
-This slide focuses on Indexing and slicing Start
-with the data structure and what the
+00:00:00.000 --> 00:00:06.037
+NumPy gives us several convenient functions for creating numeric sequences and placeholder arrays.
 
-00:00:05.645 --> 00:00:12.014
-operation is supposed to accomplish before looking
-closely at the syntax NumPy
+00:00:06.037 --> 00:00:12.242
+N P dot arange creates values using a start, stop, and optional step.
 
-00:00:12.041 --> 00:00:18.793
-uses zero-based indexing like Python lists Slices
-select ranges Select
+00:00:12.242 --> 00:00:16.042
+In this example, we create the days one through seven.
 
-00:00:18.820 --> 00:00:24.417
-array values Before running the example predict the
-structure and
+00:00:16.042 --> 00:00:19.072
+N P dot linspace works differently.
 
-00:00:24.444 --> 00:00:30.078
-output Run it in the browser inspect the values
-dimensions labels or summary
+00:00:19.072 --> 00:00:26.477
+Instead of specifying the step size, we specify how many evenly spaced values we want between two endpoints.
 
-00:00:30.249 --> 00:00:35.328
-then change one input and run it again Focus on how
-the operation changes the
+00:00:26.477 --> 00:00:30.022
+Here we create five values between zero and one.
 
-00:00:35.354 --> 00:00:37.723
-data rather than reading the code line by line
+00:00:30.022 --> 00:00:37.567
+Zeros and ones are useful when we need an array with a known shape before filling it with
+
+00:00:37.567 --> 00:00:39.292
+other values.
+
+00:00:39.292 --> 00:00:45.647
+For example, N P dot zeros with shape two by three creates two rows and three columns,
+
+00:00:45.647 --> 00:00:48.947
+all initialized to zero. Click Run and compare the four results.
+
+00:00:48.947 --> 00:00:56.857
+These creation functions appear frequently in simulations, model initialization, time grids, thresholds,
+
+00:00:56.857 --> 00:01:04.487
+matrices, and test data. The important distinction is this: arange is usually about step size,
+
+00:01:04.487 --> 00:01:09.237
+while linspace is usually about a requested number of evenly spaced points.

@@ -1,28 +1,49 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.632
-This slide focuses on Vectorized arithmetic Start
-with the data structure and what
+00:00:00.000 --> 00:00:05.327
+The most direct way to create a NumPy array is to start with a familiar Python sequence and
 
-00:00:05.658 --> 00:00:12.103
-the operation is supposed to accomplish before
-looking closely at the syntax Vectorized
+00:00:05.327 --> 00:00:07.872
+pass it to N P dot array.
 
-00:00:12.130 --> 00:00:17.961
-operations apply one calculation to every value in
-an array Apply one formula
+00:00:07.872 --> 00:00:12.032
+The standard import is import NumPy as N P.
 
-00:00:17.988 --> 00:00:23.566
-to all values Before running the example predict the
-structure
+00:00:12.032 --> 00:00:18.772
+The alias N P is used throughout NumPy documentation and in most professional Python code,
 
-00:00:23.592 --> 00:00:29.358
-and output Run it in the browser inspect the values
-dimensions labels or summary
+00:00:18.772 --> 00:00:21.447
+so I recommend following that convention.
 
-00:00:29.529 --> 00:00:34.608
-then change one input and run it again Focus on how
-the operation changes the
+00:00:21.447 --> 00:00:25.492
+In this example, we create an array of five scores.
 
-00:00:34.634 --> 00:00:37.003
-data rather than reading the code line by line
+00:00:25.492 --> 00:00:28.092
+Click Run. The first output displays the numeric array.
+
+00:00:28.092 --> 00:00:33.822
+The second output confirms that the object is a NumPy ndarray rather than a regular Python list.
+
+00:00:33.822 --> 00:00:39.867
+Then we call the mean method directly on the array.
+
+00:00:39.867 --> 00:00:42.622
+NumPy calculates the average across all five scores.
+
+00:00:42.622 --> 00:00:48.132
+Notice how the array carries useful numerical behavior with it.
+
+00:00:48.132 --> 00:00:52.667
+We do not need to manually add every score and divide by the count.
+
+00:00:52.667 --> 00:00:56.142
+Try changing one of the scores and run the code again.
+
+00:00:56.142 --> 00:00:58.467
+The average updates immediately.
+
+00:00:58.467 --> 00:01:04.532
+This small example introduces the basic pattern we will use repeatedly: create an array,
+
+00:01:04.532 --> 00:01:07.804
+then apply array operations to the entire collection.

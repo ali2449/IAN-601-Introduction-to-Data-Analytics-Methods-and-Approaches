@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:00.017 --> 00:00:04.037
+Percentiles tell us where values fall within a distribution.
+
+00:00:04.037 --> 00:00:10.417
+On this slide, we calculate the twenty-fifth, fiftieth, and seventy-fifth percentiles.
+
+00:00:10.417 --> 00:00:14.282
+The twenty-fifth percentile is often called Q one.
+
+00:00:14.282 --> 00:00:19.787
+The fiftieth percentile is the median, and the seventy-fifth percentile is Q three.
+
+00:00:19.787 --> 00:00:22.537
+Click Run and inspect these values.
+
+00:00:22.537 --> 00:00:29.452
+We also calculate the interquartile range, or I Q R, by subtracting Q one from Q three.
+
+00:00:29.452 --> 00:00:34.152
+The I Q R describes the spread of the middle fifty percent of the data.
+
+00:00:34.152 --> 00:00:39.777
+It is often used in box plots and in simple rules for flagging potential outliers.
+
+00:00:39.777 --> 00:00:43.622
+Percentiles are useful when the average alone is not enough.
+
+00:00:43.622 --> 00:00:50.902
+For example, income, transaction amounts, response times, and hospital length of stay can all have skewed
+
+00:00:50.902 --> 00:00:52.462
+distributions.
+
+00:00:52.462 --> 00:00:59.333
+A percentile helps us ask questions such as: what value separates the top twenty-five percent from the rest?

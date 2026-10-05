@@ -1,0 +1,43 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.722
+Axis is one of the most important NumPy concepts, and it is also one of the easiest to
+
+00:00:06.722 --> 00:00:08.857
+confuse at first.
+
+00:00:08.857 --> 00:00:14.867
+For a two-dimensional array, axis zero performs a calculation down the rows and returns one result for each
+
+00:00:14.867 --> 00:00:21.292
+column. Axis one performs a calculation across the columns and returns one result for each row.
+
+00:00:21.292 --> 00:00:25.527
+In this example, click Run and compare the two outputs.
+
+00:00:25.527 --> 00:00:28.137
+The column means use axis zero.
+
+00:00:28.137 --> 00:00:32.317
+We have three columns, so the result contains three averages.
+
+00:00:32.317 --> 00:00:35.092
+The row means use axis one.
+
+00:00:35.092 --> 00:00:39.322
+We have four rows, so the result contains four averages.
+
+00:00:39.322 --> 00:00:44.217
+A useful practical question is: what do I want one result for?
+
+00:00:44.217 --> 00:00:49.027
+If you want one result for each column, you will often use axis zero.
+
+00:00:49.027 --> 00:00:54.017
+If you want one result for each row, you will often use axis one.
+
+00:00:54.017 --> 00:00:59.037
+When you are unsure, look at the shape before and after the operation and connect each dimension to
+
+00:00:59.037 --> 00:01:01.420
+its meaning.

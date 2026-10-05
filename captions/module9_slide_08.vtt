@@ -1,25 +1,46 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.079
-This slide focuses on Boolean masks Start with the
-data structure and what the operation
+00:00:00.000 --> 00:00:04.622
+Before doing serious calculations with an array, inspect its structure.
 
-00:00:06.092 --> 00:00:11.728
-is supposed to accomplish before looking closely at
-the syntax A boolean
+00:00:04.622 --> 00:00:10.952
+Four attributes are especially useful: dtype, shape, ndim, and size.
 
-00:00:11.754 --> 00:00:18.837
-mask keeps values that meet a condition Filter with
-a condition Before
+00:00:10.952 --> 00:00:13.652
+Dtype tells us how NumPy is storing the values.
 
-00:00:18.863 --> 00:00:24.418
-running the example predict the structure and output
-Run it in the browser inspect the
+00:00:13.652 --> 00:00:16.502
+In this example, we explicitly request floating-point values.
 
-00:00:24.445 --> 00:00:30.537
-values dimensions labels or summary then change one
-input and run it again Focus
+00:00:16.502 --> 00:00:20.327
+Shape tells us the length of each dimension.
 
-00:00:30.563 --> 00:00:34.603
-on how the operation changes the data rather than
-reading the code line by line
+00:00:20.327 --> 00:00:26.322
+The sales array has two rows and three columns, so the shape is two by three.
+
+00:00:26.322 --> 00:00:28.752
+Ndim tells us the number of dimensions.
+
+00:00:28.752 --> 00:00:34.317
+Because we have rows and columns, this is a two-dimensional array.
+
+00:00:34.317 --> 00:00:36.692
+Size tells us the total number of elements.
+
+00:00:36.692 --> 00:00:40.007
+Two times three gives us six values.
+
+00:00:40.007 --> 00:00:42.792
+Click Run and confirm each attribute.
+
+00:00:42.792 --> 00:00:45.622
+This habit becomes extremely important later.
+
+00:00:45.622 --> 00:00:52.907
+Many bugs in numerical code are not really mathematical problems; they are shape problems.
+
+00:00:52.907 --> 00:00:59.042
+If a calculation gives an unexpected result, checking shape and dtype is often one of the fastest ways
+
+00:00:59.042 --> 00:01:02.347
+to understand what went wrong.

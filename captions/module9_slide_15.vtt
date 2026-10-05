@@ -1,0 +1,46 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.352
+NumPy provides common descriptive statistics directly on arrays.
+
+00:00:04.352 --> 00:00:07.682
+Here we have seven daily website-visit counts.
+
+00:00:07.682 --> 00:00:10.572
+Click Run and examine the results.
+
+00:00:10.572 --> 00:00:13.267
+Sum gives us the total activity.
+
+00:00:13.267 --> 00:00:16.162
+Mean gives us the average daily visits.
+
+00:00:16.162 --> 00:00:20.442
+Median gives us the middle value after ordering the observations.
+
+00:00:20.442 --> 00:00:26.947
+Standard deviation gives us a measure of variability, while minimum and maximum show the observed range.
+
+00:00:26.947 --> 00:00:34.502
+These summaries are useful during exploratory data analysis because they help us understand the center and
+
+00:00:34.502 --> 00:00:37.317
+spread of the data before building more complicated models.
+
+00:00:37.317 --> 00:00:41.447
+But remember that a single statistic never tells the whole story.
+
+00:00:41.447 --> 00:00:46.457
+Two datasets can have similar means but very different distributions.
+
+00:00:46.457 --> 00:00:52.232
+In real projects, use numerical summaries together with plots, domain knowledge,
+
+00:00:52.232 --> 00:00:55.297
+and checks for missing or unusual values.
+
+00:00:55.297 --> 00:00:57.862
+NumPy gives us the calculations.
+
+00:00:57.862 --> 00:01:01.829
+The analyst still has to interpret what those calculations mean.

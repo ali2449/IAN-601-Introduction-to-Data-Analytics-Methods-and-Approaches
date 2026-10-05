@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.132
+Real datasets often contain missing values.
+
+00:00:03.132 --> 00:00:10.357
+In NumPy floating-point arrays, missing numeric information is commonly represented with N P dot nan.
+
+00:00:10.357 --> 00:00:15.267
+Notice what happens if we calculate the regular mean of an array containing nan.
+
+00:00:15.267 --> 00:00:20.337
+The result becomes nan because the missing value propagates through the calculation.
+
+00:00:20.337 --> 00:00:26.547
+Click Run and compare the regular mean with N P dot nanmean and N P dot nanmedian.
+
+00:00:26.547 --> 00:00:31.022
+The nan-aware functions ignore missing values during the calculation.
+
+00:00:31.022 --> 00:00:39.167
+The final part of the example replaces the missing value with the mean using N P dot nan
+
+00:00:39.167 --> 00:00:42.097
+to num. This is useful for teaching the mechanics, but in a real project,
+
+00:00:42.097 --> 00:00:47.832
+do not automatically replace every missing value with the mean.
+
+00:00:47.832 --> 00:00:52.772
+The correct treatment depends on why the data is missing, how much is missing,
+
+00:00:52.772 --> 00:00:55.257
+and what the analysis requires.
+
+00:00:55.257 --> 00:00:59.456
+First detect missingness. Then decide how it should be handled.

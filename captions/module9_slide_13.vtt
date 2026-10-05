@@ -1,19 +1,43 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.671
-This slide summarizes Module 9 Focus on the
-operations you should recognize
+00:00:00.000 --> 00:00:04.467
+N P dot where gives us vectorized conditional logic.
 
-00:00:05.684 --> 00:00:11.398
-and the situations where they make analytical work
-easier Create numeric
+00:00:04.467 --> 00:00:08.967
+In this example, every score greater than or equal to ninety receives the label high.
 
-00:00:11.424 --> 00:00:17.236
-arrays Shape and dtype Inspect array structure Apply
+00:00:08.967 --> 00:00:12.502
+Every other score receives the label standard.
 
-00:00:17.249 --> 00:00:23.015
-formulas to all values Filter values with conditions
-Work
+00:00:12.502 --> 00:00:17.702
+Click Run and compare the numeric scores with the resulting labels.
 
-00:00:23.041 --> 00:00:24.317
-with rows and columns
+00:00:17.702 --> 00:00:24.952
+The output has the same number of positions as the input array because NumPy evaluates the condition for
+
+00:00:24.952 --> 00:00:30.397
+each score. This is similar to writing an if else decision for every element,
+
+00:00:30.397 --> 00:00:33.752
+but the operation is expressed across the whole array.
+
+00:00:33.752 --> 00:00:37.332
+N P dot where can also return numeric values.
+
+00:00:37.332 --> 00:00:43.737
+For example, you could replace negative values with zero, assign a risk score based on a threshold,
+
+00:00:43.737 --> 00:00:46.842
+or create categories from numerical measurements.
+
+00:00:46.842 --> 00:00:51.837
+Later, Pandas uses similar conditional patterns for working with columns.
+
+00:00:51.837 --> 00:00:56.777
+The main question to ask is: do I want to keep only matching values,
+
+00:00:56.777 --> 00:01:01.827
+or do I want to return one value for True and another value for False?
+
+00:01:01.827 --> 00:01:05.862
+For the second situation, where is often a useful choice.

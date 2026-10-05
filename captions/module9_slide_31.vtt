@@ -1,0 +1,43 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.372
+Most beginner NumPy problems come from a small set of recurring issues.
+
+00:00:04.372 --> 00:00:06.512
+The first is wrong shape.
+
+00:00:06.512 --> 00:00:13.092
+Before combining arrays, print the shapes and confirm that the dimensions match your intended operation.
+
+00:00:13.092 --> 00:00:15.562
+The second is wrong axis.
+
+00:00:15.562 --> 00:00:20.372
+Ask whether you want one result per row or one result per column.
+
+00:00:20.372 --> 00:00:23.377
+Another issue is unexpected dtype.
+
+00:00:23.377 --> 00:00:26.702
+If values behave strangely, inspect the data type.
+
+00:00:26.702 --> 00:00:30.607
+Broadcasting errors usually mean the shapes are not compatible.
+
+00:00:30.607 --> 00:00:33.382
+Compare both shapes rather than guessing.
+
+00:00:33.382 --> 00:00:40.987
+If a summary returns nan, check whether missing values are present and whether a nan-aware function is
+
+00:00:40.987 --> 00:00:45.077
+appropriate. Finally, remember the difference between views and copies.
+
+00:00:45.077 --> 00:00:48.332
+A slice may share memory with the original array.
+
+00:00:48.332 --> 00:00:55.942
+A strong debugging routine is simple: print the shape, print the dtype, inspect a small sample of values,
+
+00:00:55.942 --> 00:00:59.686
+and verify the axis before rewriting large sections of code.
