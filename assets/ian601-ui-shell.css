@@ -631,3 +631,118 @@ body.ian601-shell.shell-legacy-layout .audio-block .audio-player{
     grid-row:2!important;
   }
 }
+
+
+/* IAN601_PYTHON_FOCUS_SHARED_START
+   Shared full-screen Python workspace modeled on IAN 603 Module 6 SQL focus mode. */
+body.ian601-shell .python-focus-toggle{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:5px!important;
+  margin-left:auto!important;
+}
+body.ian601-shell .python-focus-toggle::before{
+  content:"⛶";
+  font-size:13px;
+  line-height:1;
+}
+body.ian601-shell.python-focus-open{
+  overflow:hidden!important;
+}
+body.ian601-shell .code-cell.ian601-python-focus{
+  position:fixed!important;
+  inset:12px!important;
+  z-index:6000!important;
+  width:auto!important;
+  max-width:none!important;
+  height:auto!important;
+  max-height:none!important;
+  margin:0!important;
+  display:flex!important;
+  flex-direction:column!important;
+  overflow:hidden!important;
+  border:1px solid #6b7280!important;
+  border-radius:12px!important;
+  background:#1e1e1e!important;
+  box-shadow:0 0 0 100vmax rgba(8,14,22,.72),0 24px 70px rgba(0,0,0,.50)!important;
+}
+body.ian601-shell .ian601-python-focus .cell-head{
+  flex:0 0 auto!important;
+  min-height:54px!important;
+  padding:9px 12px 9px 16px!important;
+}
+body.ian601-shell .ian601-python-focus .cell-head h3{
+  font-size:15px!important;
+}
+body.ian601-shell .ian601-python-focus .cell-head p{
+  font-size:11px!important;
+}
+body.ian601-shell .ian601-python-focus .editor-shell{
+  flex:1 1 auto!important;
+  min-height:250px!important;
+  height:auto!important;
+  max-height:none!important;
+  display:flex!important;
+  flex-direction:column!important;
+  overflow:hidden!important;
+}
+body.ian601-shell .ian601-python-focus .editor-topbar,
+body.ian601-shell .ian601-python-focus .editor-status,
+body.ian601-shell .ian601-python-focus .cell-actions{
+  flex:0 0 auto!important;
+}
+body.ian601-shell .ian601-python-focus textarea.code-input,
+body.ian601-shell .ian601-python-focus .monaco-host{
+  flex:1 1 auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  height:100%!important;
+  resize:none!important;
+  font-size:15px!important;
+  line-height:23px!important;
+}
+body.ian601-shell .ian601-python-focus .monaco-host .monaco-editor,
+body.ian601-shell .ian601-python-focus .monaco-host .overflow-guard{
+  min-height:100%!important;
+}
+body.ian601-shell .ian601-python-focus .cell-actions{
+  padding:8px 10px!important;
+  gap:7px!important;
+}
+body.ian601-shell .ian601-python-focus .output.show{
+  flex:0 0 min(32vh,340px)!important;
+  max-height:min(32vh,340px)!important;
+  min-height:120px!important;
+  overflow:auto!important;
+  border-top:2px solid #8fa1b3!important;
+}
+body.ian601-shell .ian601-python-focus .python-focus-toggle::before{
+  content:"↙";
+}
+body.ian601-shell .ian601-python-focus .python-focus-toggle{
+  background:#f8fafc!important;
+  border-color:#f8fafc!important;
+  color:#1f2937!important;
+}
+@media(max-width:720px){
+  body.ian601-shell .code-cell.ian601-python-focus{
+    inset:6px!important;
+    border-radius:8px!important;
+  }
+  body.ian601-shell .ian601-python-focus .cell-head{
+    align-items:flex-start!important;
+  }
+  body.ian601-shell .ian601-python-focus .cell-actions{
+    justify-content:flex-end!important;
+    flex-wrap:wrap!important;
+  }
+  body.ian601-shell .ian601-python-focus .editor-shell{
+    min-height:220px!important;
+  }
+  body.ian601-shell .ian601-python-focus .output.show{
+    flex-basis:min(28vh,250px)!important;
+    max-height:min(28vh,250px)!important;
+    min-height:90px!important;
+  }
+}
+/* IAN601_PYTHON_FOCUS_SHARED_END */
