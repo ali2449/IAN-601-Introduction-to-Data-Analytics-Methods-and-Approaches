@@ -620,6 +620,7 @@
       var box=activeBox;
       var btn=box.querySelector('.python-focus-toggle');
       box.classList.remove('ian601-python-focus');
+      box.style.removeProperty('--ian601-focus-editor-height');
       document.body.classList.remove('python-focus-open');
       if(btn){
         btn.textContent='Expand';
@@ -630,10 +631,36 @@
       activeBox=null;
       resizeEditors(box);
     }
+    function focusEditorHeight(box){
+      var lines=10;
+      try{
+        var fallback=editorTextarea(box);
+        if(fallback && typeof fallback.value==='string'){
+          lines=Math.max(lines,fallback.value.split(/\r?\n/).length);
+        }
+        if(window.monaco && window.monaco.editor && typeof window.monaco.editor.getEditors==='function'){
+          var host=box.querySelector('.monaco-host');
+          window.monaco.editor.getEditors().forEach(function(editor){
+            try{
+              var node=editor.getDomNode && editor.getDomNode();
+              if(host && node && host.contains(node) && editor.getModel()){
+                lines=Math.max(lines,editor.getModel().getLineCount());
+              }
+            }catch(e){}
+          });
+        }
+      }catch(e){}
+      var viewport=Math.max(520,window.innerHeight||800);
+      var desired=120+(lines*23);
+      var minHeight=viewport<=720?240:280;
+      var maxHeight=viewport<=720?Math.min(viewport*.52,420):Math.min(viewport*.58,560);
+      return Math.round(Math.max(minHeight,Math.min(desired,maxHeight)));
+    }
     function openFocus(box){
       if(activeBox && activeBox!==box) closeFocus();
       activeBox=box;
       var btn=box.querySelector('.python-focus-toggle');
+      box.style.setProperty('--ian601-focus-editor-height',focusEditorHeight(box)+'px');
       box.classList.add('ian601-python-focus');
       document.body.classList.add('python-focus-open');
       if(btn){
