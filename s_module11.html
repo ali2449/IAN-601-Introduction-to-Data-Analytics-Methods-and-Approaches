@@ -82,7 +82,7 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
 .ian603-bottombar .bottom-nav-panel{align-self:center!important}
 .topbar>.toolbar,.topbar>.controls,.topbar>.top-controls{margin-left:auto!important}
 .topbar .ian603-tool{box-shadow:none!important}
-</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-pyfocus"><!-- IAN601_UI_SHELL_END --></head>
+</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-pyfocus2"><!-- IAN601_UI_SHELL_END --></head>
 <body>
 <div class="deck">
   <header class="topbar">
@@ -561,5 +561,5 @@ function render(){const i=activeIndex();if(!visited.includes(i+1)){visited.push(
 const obs=new MutationObserver(()=>render());slides.forEach(s=>obs.observe(s,{attributes:true,attributeFilter:['class']}));setTimeout(render,60);
 document.getElementById('ian-progress-btn')?.addEventListener('click',()=>{render();document.getElementById('ian-progress-modal')?.classList.add('show')});document.getElementById('ian-progress-close')?.addEventListener('click',()=>document.getElementById('ian-progress-modal')?.classList.remove('show'));document.getElementById('ian-progress-reset')?.addEventListener('click',()=>{visited=[];save();render()});
 document.getElementById('ian-course-modules-btn')?.addEventListener('click',()=>document.getElementById('ian-course-modal')?.classList.add('show'));document.getElementById('ian-course-close')?.addEventListener('click',()=>document.getElementById('ian-course-modal')?.classList.remove('show'));document.getElementById('ian-fullscreen-btn')?.addEventListener('click',async()=>{if(!document.fullscreenElement)await document.documentElement.requestFullscreen?.();else await document.exitFullscreen?.()});document.querySelectorAll('.ian603-modal-backdrop').forEach(x=>x.addEventListener('click',e=>{if(e.target===x)x.classList.remove('show')}));})();
-</script><!-- IAN601_UI_SHELL_SCRIPT_START --><script src="assets/ian601-ui-shell.js?v=20261005-pyfocus"></script><!-- IAN601_UI_SHELL_SCRIPT_END --></body>
+</script><!-- IAN601_UI_SHELL_SCRIPT_START --><script src="assets/ian601-ui-shell.js?v=20261005-pyfocus2"></script><!-- IAN601_UI_SHELL_SCRIPT_END --></body>
 </html>
