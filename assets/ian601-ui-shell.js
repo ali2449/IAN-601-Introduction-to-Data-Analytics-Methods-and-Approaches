@@ -366,6 +366,23 @@
 
 
 
+
+
+  function setupSharedPythonTheme(){
+    var attempts=0;
+    function apply(){
+      attempts+=1;
+      try{
+        if(window.monaco && window.monaco.editor){
+          window.monaco.editor.setTheme('vs-dark');
+          return;
+        }
+      }catch(e){}
+      if(attempts<40) setTimeout(apply,150);
+    }
+    apply();
+  }
+
   function setupSlideMemory(){
     var meta=moduleMeta();
     var moduleNumber=Number(meta.number||0);
@@ -537,6 +554,7 @@
     setupCourseNav();
     setupFooter();
     setupCc();
+    setupSharedPythonTheme();
     setupSlideMemory();
     setupProgress();
   }
