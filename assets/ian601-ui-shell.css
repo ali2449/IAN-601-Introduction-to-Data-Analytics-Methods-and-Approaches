@@ -1352,3 +1352,36 @@ body.ian601-shell .code-cell.ian601-python-focus .output.show{
   padding:10px 12px!important;
 }
 /* IAN601_FOCUS_MONACO_HOST_FIX_END */
+
+
+/* IAN601_FOCUS_NATURAL_FLOW_FIX_START
+   In expanded mode use natural block flow rather than flex sizing.
+   This removes the empty dark gap between Monaco's status bar and actions. */
+body.ian601-shell .code-cell.ian601-python-focus{
+  display:block!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:calc(100vh - 24px)!important;
+  overflow:auto!important;
+}
+body.ian601-shell .code-cell.ian601-python-focus .editor-shell{
+  display:block!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  overflow:visible!important;
+}
+body.ian601-shell .code-cell.ian601-python-focus .editor-topbar,
+body.ian601-shell .code-cell.ian601-python-focus .editor-status,
+body.ian601-shell .code-cell.ian601-python-focus .cell-actions{
+  position:static!important;
+  flex:none!important;
+}
+body.ian601-shell .code-cell.ian601-python-focus .cell-actions{
+  margin:0!important;
+}
+body.ian601-shell .code-cell.ian601-python-focus .output.show{
+  display:block!important;
+  margin:0!important;
+}
+/* IAN601_FOCUS_NATURAL_FLOW_FIX_END */
