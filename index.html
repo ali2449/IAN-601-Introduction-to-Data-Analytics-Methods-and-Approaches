@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="IAN 601: Introduction to Data Analytics — Methods & Approaches. Course overview, Python environment setup, and fourteen-module learning path for MSIA students at UNC Greensboro.">
+  <meta name="description" content="IAN 601: Introduction to Data Analytics — Methods & Approaches. Course overview, Python setup, and direct access to fourteen interactive slide modules covering Python, data analysis, statistics, visualization, and machine learning.">
   <title>IAN 601: Introduction to Data Analytics — Methods & Approaches</title>
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%8D%3C/text%3E%3C/svg%3E">
@@ -585,6 +585,24 @@
     .module-card p { color: var(--muted-color); font-size: .93rem; margin-bottom: 1.1rem; }
     .module-card .module-link { margin-top: auto; align-self: flex-start; }
 
+    .module-actions {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      align-items: center;
+    }
+    .module-actions .module-link { margin-top: 0; }
+    .module-link.secondary {
+      background: transparent;
+      color: var(--muted-color);
+      font-weight: 600;
+    }
+    .module-link.secondary:hover {
+      color: var(--header-color);
+      background: var(--card-hover);
+    }
+
     .expect-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -735,23 +753,23 @@
         <li><a class="nav-link" href="#setup"><i class="fa-solid fa-laptop-code"></i> Setup</a></li>
         <li class="dropdown" id="modules-dropdown">
           <a class="nav-link" href="#modules" id="modules-toggle" aria-haspopup="true" aria-expanded="false">
-            <i class="fa-solid fa-layer-group"></i> Modules <i class="fa-solid fa-chevron-down fa-xs"></i>
+            <i class="fa-solid fa-layer-group"></i> Slides <i class="fa-solid fa-chevron-down fa-xs"></i>
           </a>
-          <div class="dropdown-content" aria-label="Course modules">
-            <a class="dropdown-link" href="module1.html"><span class="module-number">1</span><span><strong>Python Fundamentals</strong><br><small>Business context &amp; core syntax</small></span></a>
-            <a class="dropdown-link" href="module2.html"><span class="module-number">2</span><span><strong>Control Flow</strong><br><small>Decisions &amp; repetition</small></span></a>
-            <a class="dropdown-link" href="module3.html"><span class="module-number">3</span><span><strong>Functions</strong><br><small>Reusable analytical code</small></span></a>
-            <a class="dropdown-link" href="module4.html"><span class="module-number">4</span><span><strong>Lists &amp; Tuples</strong><br><small>Sequential data organization</small></span></a>
-            <a class="dropdown-link" href="module5.html"><span class="module-number">5</span><span><strong>Dictionaries &amp; Sets</strong><br><small>Relationships &amp; uniqueness</small></span></a>
-            <a class="dropdown-link" href="module6.html"><span class="module-number">6</span><span><strong>Modules, Packages &amp; OOP</strong><br><small>Organizing larger programs</small></span></a>
-            <a class="dropdown-link" href="module7.html"><span class="module-number">7</span><span><strong>Advanced Python</strong><br><small>Comprehensions, lambdas &amp; generators</small></span></a>
-            <a class="dropdown-link" href="module8.html"><span class="module-number">8</span><span><strong>Professional Practices</strong><br><small>Errors, regex, Git &amp; testing</small></span></a>
-            <a class="dropdown-link" href="module9.html"><span class="module-number">9</span><span><strong>NumPy</strong><br><small>Numerical computing</small></span></a>
-            <a class="dropdown-link" href="module10.html"><span class="module-number">10</span><span><strong>Pandas</strong><br><small>Tabular data manipulation</small></span></a>
-            <a class="dropdown-link" href="module11.html"><span class="module-number">11</span><span><strong>Advanced Pandas</strong><br><small>Grouping, merging &amp; time series</small></span></a>
-            <a class="dropdown-link" href="module12.html"><span class="module-number">12</span><span><strong>Cleaning &amp; EDA</strong><br><small>Quality, validation &amp; exploration</small></span></a>
-            <a class="dropdown-link" href="module13.html"><span class="module-number">13</span><span><strong>Statistics &amp; Visualization</strong><br><small>Inference &amp; communication</small></span></a>
-            <a class="dropdown-link" href="module14.html"><span class="module-number">14</span><span><strong>Machine Learning &amp; External Data</strong><br><small>Prediction, APIs &amp; web data</small></span></a>
+          <div class="dropdown-content" aria-label="Course slide modules">
+            <a class="dropdown-link" href="s_module1.html"><span class="module-number">1</span><span><strong>Python Fundamentals</strong><br><small>Business context &amp; core syntax</small></span></a>
+            <a class="dropdown-link" href="s_module2.html"><span class="module-number">2</span><span><strong>Control Flow</strong><br><small>Decisions &amp; repetition</small></span></a>
+            <a class="dropdown-link" href="s_module3.html"><span class="module-number">3</span><span><strong>Functions</strong><br><small>Reusable analytical code</small></span></a>
+            <a class="dropdown-link" href="s_module4.html"><span class="module-number">4</span><span><strong>Lists &amp; Tuples</strong><br><small>Sequential data organization</small></span></a>
+            <a class="dropdown-link" href="s_module5.html"><span class="module-number">5</span><span><strong>Dictionaries &amp; Sets</strong><br><small>Relationships &amp; uniqueness</small></span></a>
+            <a class="dropdown-link" href="s_module6.html"><span class="module-number">6</span><span><strong>Modules, Packages &amp; OOP</strong><br><small>Organizing larger programs</small></span></a>
+            <a class="dropdown-link" href="s_module7.html"><span class="module-number">7</span><span><strong>Advanced Python</strong><br><small>Comprehensions, lambdas &amp; generators</small></span></a>
+            <a class="dropdown-link" href="s_module8.html"><span class="module-number">8</span><span><strong>Professional Practices</strong><br><small>Errors, regex, Git &amp; testing</small></span></a>
+            <a class="dropdown-link" href="s_module9.html"><span class="module-number">9</span><span><strong>NumPy</strong><br><small>Numerical computing</small></span></a>
+            <a class="dropdown-link" href="s_module10.html"><span class="module-number">10</span><span><strong>Pandas</strong><br><small>Tabular data manipulation</small></span></a>
+            <a class="dropdown-link" href="s_module11.html"><span class="module-number">11</span><span><strong>Advanced Pandas</strong><br><small>Grouping, merging &amp; time series</small></span></a>
+            <a class="dropdown-link" href="s_module12.html"><span class="module-number">12</span><span><strong>Cleaning &amp; EDA</strong><br><small>Quality, validation &amp; exploration</small></span></a>
+            <a class="dropdown-link" href="s_module13.html"><span class="module-number">13</span><span><strong>Statistics &amp; Visualization</strong><br><small>Inference &amp; communication</small></span></a>
+            <a class="dropdown-link" href="s_module14.html"><span class="module-number">14</span><span><strong>Machine Learning &amp; External Data</strong><br><small>Prediction, APIs &amp; web data</small></span></a>
           </div>
         </li>
         <li><a class="nav-link" href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
@@ -768,9 +786,9 @@
       <h1>IAN 601<br>Introduction to Data Analytics</h1>
       <p class="hero-subtitle"><strong>Methods &amp; Approaches</strong> — a practical introduction to Python programming, numerical computing, data manipulation, exploratory analysis, statistics, visualization, and machine learning for analytics.</p>
       <div class="hero-actions">
-        <a class="btn-course primary" href="#modules"><i class="fa-solid fa-compass"></i> Explore Modules</a>
+        <a class="btn-course primary" href="s_module1.html"><i class="fa-solid fa-play"></i> Start Module 1 Slides</a>
+        <a class="btn-course" href="#modules"><i class="fa-solid fa-layer-group"></i> Browse All Slides</a>
         <a class="btn-course" href="#setup"><i class="fa-solid fa-screwdriver-wrench"></i> Set Up Python</a>
-        <a class="btn-course" href="#overview"><i class="fa-solid fa-circle-info"></i> Course Overview</a>
       </div>
     </div>
 
@@ -875,8 +893,8 @@
       <div class="section-heading">
         <div>
           <span class="eyebrow"><i class="fa-solid fa-layer-group"></i> Course Modules</span>
-          <h2>14-module learning sequence</h2>
-          <p>The sequence starts with Python itself, then adds the numerical and tabular analytics stack, and finishes with statistical visualization and introductory machine learning.</p>
+          <h2>Interactive slides for all 14 modules</h2>
+          <p>Open each module as an interactive slide deck with the course presentation controls, narration, captions, examples, and practice activities. The original module page remains available as a secondary reference.</p>
         </div>
       </div>
 
@@ -891,98 +909,140 @@
           <div class="module-card-top"><span class="module-card-number">01</span><span class="phase-chip">Foundations</span></div>
           <h3>Python Fundamentals &amp; Business Context</h3>
           <p>Variables, data types, arithmetic, formatted output, type conversion, and user input in applied analytics contexts.</p>
-          <a class="module-link" href="module1.html">Open Module 1 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="module-actions">
+            <a class="module-link" href="s_module1.html"><i class="fa-solid fa-play"></i> Open Slides</a>
+            <a class="module-link secondary" href="module1.html"><i class="fa-regular fa-file-lines"></i> Module Notes</a>
+          </div>
         </article>
 
         <article class="module-card">
           <div class="module-card-top"><span class="module-card-number">02</span><span class="phase-chip">Foundations</span></div>
           <h3>Control Flow &amp; Decision Making</h3>
           <p>Conditional logic, <code>for</code> loops, <code>while</code> loops, nesting, <code>break</code>, and <code>continue</code>.</p>
-          <a class="module-link" href="module2.html">Open Module 2 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="module-actions">
+            <a class="module-link" href="s_module2.html"><i class="fa-solid fa-play"></i> Open Slides</a>
+            <a class="module-link secondary" href="module2.html"><i class="fa-regular fa-file-lines"></i> Module Notes</a>
+          </div>
         </article>
 
         <article class="module-card">
           <div class="module-card-top"><span class="module-card-number">03</span><span class="phase-chip">Foundations</span></div>
           <h3>Functions &amp; Code Organization</h3>
           <p>Defining functions, parameters, return values, error handling, comments, and docstrings for reusable code.</p>
-          <a class="module-link" href="module3.html">Open Module 3 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="module-actions">
+            <a class="module-link" href="s_module3.html"><i class="fa-solid fa-play"></i> Open Slides</a>
+            <a class="module-link secondary" href="module3.html"><i class="fa-regular fa-file-lines"></i> Module Notes</a>
+          </div>
         </article>
 
         <article class="module-card">
           <div class="module-card-top"><span class="module-card-number">04</span><span class="phase-chip">Foundations</span></div>
           <h3>Lists &amp; Tuples for Data Organization</h3>
           <p>Ordered collections, indexing, mutation, immutability, and choosing the right structure for sequential data.</p>
-          <a class="module-link" href="module4.html">Open Module 4 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="module-actions">
+            <a class="module-link" href="s_module4.html"><i class="fa-solid fa-play"></i> Open Slides</a>
+            <a class="module-link secondary" href="module4.html"><i class="fa-regular fa-file-lines"></i> Module Notes</a>
+          </div>
         </article>
 
         <article class="module-card">
           <div class="module-card-top"><span class="module-card-number">05</span><span class="phase-chip">Foundations</span></div>
           <h3>Dictionaries &amp; Sets for Data Relationships</h3>
           <p>Key-value mappings, efficient lookup, unique values, union, intersection, and relationship-oriented data structures.</p>
-          <a class="module-link" href="module5.html">Open Module 5 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="module-actions">
+            <a class="module-link" href="s_module5.html"><i class="fa-solid fa-play"></i> Open Slides</a>
+            <a class="module-link secondary" href="module5.html"><i class="fa-regular fa-file-lines"></i> Module Notes</a>
+          </div>
         </article>
 
         <article class="module-card">
           <div class="module-card-top"><span class="module-card-number">06</span><span class="phase-chip">Foundations</span></div>
           <h3>Modules, Packages &amp; Object-Oriented Basics</h3>
           <p>Imports, modules, packages, classes, objects, attributes, methods, and organizing larger analytical programs.</p>
-          <a class="module-link" href="module6.html">Open Module 6 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="module-actions">
+            <a class="module-link" href="s_module6.html"><i class="fa-solid fa-play"></i> Open Slides</a>
+            <a class="module-link secondary" href="module6.html"><i class="fa-regular fa-file-lines"></i> Module Notes</a>
+          </div>
         </article>
 
         <article class="module-card">
           <div class="module-card-top"><span class="module-card-number">07</span><span class="phase-chip">Foundations</span></div>
           <h3>Advanced Python Techniques</h3>
           <p>List comprehensions, lambda functions, generators, debugging approaches, and basic performance thinking.</p>
-          <a class="module-link" href="module7.html">Open Module 7 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="module-actions">
+            <a class="module-link" href="s_module7.html"><i class="fa-solid fa-play"></i> Open Slides</a>
+            <a class="module-link secondary" href="module7.html"><i class="fa-regular fa-file-lines"></i> Module Notes</a>
+          </div>
         </article>
 
         <article class="module-card">
           <div class="module-card-top"><span class="module-card-number">08</span><span class="phase-chip">Foundations</span></div>
           <h3>Professional Development Practices</h3>
           <p>Exception handling, regular expressions, Git concepts, documentation, testing, and readable Python conventions.</p>
-          <a class="module-link" href="module8.html">Open Module 8 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="module-actions">
+            <a class="module-link" href="s_module8.html"><i class="fa-solid fa-play"></i> Open Slides</a>
+            <a class="module-link secondary" href="module8.html"><i class="fa-regular fa-file-lines"></i> Module Notes</a>
+          </div>
         </article>
 
         <article class="module-card">
           <div class="module-card-top"><span class="module-card-number">09</span><span class="phase-chip">Analytics Toolkit</span></div>
           <h3>NumPy — Numerical Computing Foundation</h3>
           <p>Arrays, vectorized operations, broadcasting, mathematical functions, descriptive statistics, and numerical efficiency.</p>
-          <a class="module-link" href="module9.html">Open Module 9 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="module-actions">
+            <a class="module-link" href="s_module9.html"><i class="fa-solid fa-play"></i> Open Slides</a>
+            <a class="module-link secondary" href="module9.html"><i class="fa-regular fa-file-lines"></i> Module Notes</a>
+          </div>
         </article>
 
         <article class="module-card">
           <div class="module-card-top"><span class="module-card-number">10</span><span class="phase-chip">Analytics Toolkit</span></div>
           <h3>Pandas — Data Manipulation Powerhouse</h3>
           <p>Series, DataFrames, loading data, exploration, selection, filtering, and the foundations of tabular analytics.</p>
-          <a class="module-link" href="module10.html">Open Module 10 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="module-actions">
+            <a class="module-link" href="s_module10.html"><i class="fa-solid fa-play"></i> Open Slides</a>
+            <a class="module-link secondary" href="module10.html"><i class="fa-regular fa-file-lines"></i> Module Notes</a>
+          </div>
         </article>
 
         <article class="module-card">
           <div class="module-card-top"><span class="module-card-number">11</span><span class="phase-chip">Analytics Toolkit</span></div>
           <h3>Advanced Pandas &amp; Time Series Analysis</h3>
           <p>Transformation, <code>groupby</code>, aggregation, merging, joining, datetime handling, and time-series resampling.</p>
-          <a class="module-link" href="module11.html">Open Module 11 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="module-actions">
+            <a class="module-link" href="s_module11.html"><i class="fa-solid fa-play"></i> Open Slides</a>
+            <a class="module-link secondary" href="module11.html"><i class="fa-regular fa-file-lines"></i> Module Notes</a>
+          </div>
         </article>
 
         <article class="module-card">
           <div class="module-card-top"><span class="module-card-number">12</span><span class="phase-chip">Analytics Toolkit</span></div>
           <h3>Data Cleaning &amp; Exploratory Data Analysis</h3>
           <p>Missing data, outliers, validation, descriptive exploration, correlation, and visual inspection of data quality.</p>
-          <a class="module-link" href="module12.html">Open Module 12 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="module-actions">
+            <a class="module-link" href="s_module12.html"><i class="fa-solid fa-play"></i> Open Slides</a>
+            <a class="module-link secondary" href="module12.html"><i class="fa-regular fa-file-lines"></i> Module Notes</a>
+          </div>
         </article>
 
         <article class="module-card">
           <div class="module-card-top"><span class="module-card-number">13</span><span class="phase-chip">Analytics Toolkit</span></div>
           <h3>Statistics &amp; Data Visualization</h3>
           <p>Descriptive statistics, probability distributions, hypothesis testing, Matplotlib, Seaborn, and analytical communication.</p>
-          <a class="module-link" href="module13.html">Open Module 13 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="module-actions">
+            <a class="module-link" href="s_module13.html"><i class="fa-solid fa-play"></i> Open Slides</a>
+            <a class="module-link secondary" href="module13.html"><i class="fa-regular fa-file-lines"></i> Module Notes</a>
+          </div>
         </article>
 
         <article class="module-card">
           <div class="module-card-top"><span class="module-card-number">14</span><span class="phase-chip">Applied Analytics</span></div>
           <h3>Machine Learning &amp; External Data Sources</h3>
           <p>Train/test splits, introductory regression and classification, APIs, and responsible approaches to web-based data acquisition.</p>
-          <a class="module-link" href="module14.html">Open Module 14 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="module-actions">
+            <a class="module-link" href="s_module14.html"><i class="fa-solid fa-play"></i> Open Slides</a>
+            <a class="module-link secondary" href="module14.html"><i class="fa-regular fa-file-lines"></i> Module Notes</a>
+          </div>
         </article>
       </div>
     </div>
@@ -994,7 +1054,7 @@
         <div>
           <span class="eyebrow"><i class="fa-solid fa-compass"></i> Learning Experience</span>
           <h2 id="expect-heading">What to expect in each module</h2>
-          <p>As we build the individual module pages, they will follow one consistent learning pattern so students know how to move through the course.</p>
+          <p>Each slide module follows a consistent learning pattern so students can move from explanation to runnable examples and practice without learning a new interface each week.</p>
         </div>
       </div>
 
