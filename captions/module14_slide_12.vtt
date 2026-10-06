@@ -1,28 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.671
-This slide focuses on Mini ML workflow Start with
-the analytical question and
+00:00:00.000 --> 00:00:03.492
+On this slide, we are focusing on mini ml workflow.
 
-00:00:05.684 --> 00:00:11.506
-the meaning of the output before focusing on the
-syntax This final example
+00:00:03.492 --> 00:00:08.147
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.532 --> 00:00:17.521
-joins the main steps data split train evaluate and
-report End-to-end
+00:00:08.147 --> 00:00:14.027
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.535 --> 00:00:23.137
-classifier Before running the example predict the
-structure of
+00:00:14.027 --> 00:00:17.452
+Before clicking Run, predict the structure of the output.
 
-00:00:23.163 --> 00:00:28.968
-the output Run it in the browser and inspect the
-features target split predictions
+00:00:17.452 --> 00:00:24.357
+After it runs, identify the features, target, split, prediction, or evaluation result involved.
 
-00:00:29.126 --> 00:00:34.850
-evaluation result or external-style records Then
-change one input and compare
+00:00:24.357 --> 00:00:29.592
+Change one input carefully and explain why the result did or did not change.
 
-00:00:34.876 --> 00:00:35.666
-what changes
+00:00:29.592 --> 00:00:33.387
+Machine learning is a workflow rather than a single fit command.
+
+00:00:33.387 --> 00:00:38.872
+Keep training information separate from evaluation data, compare against a baseline,
+
+00:00:38.872 --> 00:00:43.177
+and interpret model performance in the context of the real prediction problem.

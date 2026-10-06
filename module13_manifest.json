@@ -1,97 +1,274 @@
 {
-  "prefix": "module13",
-  "voice": "en-US-GuyNeural",
-  "rate": "-5%",
-  "volume": "+0%",
-  "pitch": "+0Hz",
-  "caption_words": 15,
-  "slide_count": 12,
-  "slide_markers_found": true,
-  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "module": "module13",
+  "filename_prefix": "module13",
+  "source_file": "IAN_601_Module_13_Narration.txt",
+  "voice_consistency_version": 3,
+  "reference_audio": "/home/ali/breeze-tts/voice_reference/course_instructor_consistent_v4.wav",
+  "reference_text": "Welcome to the course. We will work through each concept carefully, connect the\nideas step by step, and use practical examples to make technical topics easier\nto understand. When we introduce a new method, focus first on the problem it\nsolves and why it is useful. For example, in machine learning, features are the\ninformation we give the model, while the target is what we want it to predict.\nNow consider a simple question: what changes when the data contains missing\nvalues? We will think through the reason and then look at the code. In Python,\nwe can inspect the data, run one small step at a time, and explain what the\nresult means. The goal is to understand the logic, not simply memorize syntax.",
+  "locked_narration_seed": true,
+  "narration_seed": 1234,
+  "long_narration": {
+    "automatic_chunking": true,
+    "max_text_tokens_per_call": 260,
+    "chunk_pause_seconds": 0.38,
+    "manual_break_marker": "[tts-break]",
+    "breeze_max_new_tokens": 1500,
+    "breeze_max_seq_len": 2048
+  },
+  "subtitle_method": "whole_slide_silence_alignment",
+  "caption_settings": {
+    "max_words": 18,
+    "max_chars": 110,
+    "minimum_silence_seconds": 0.2,
+    "boundary_search_window_seconds": 1.4
+  },
   "slides": [
     {
       "slide": 1,
-      "audio": "module13_slide_01.mp3",
-      "captions": "module13_slide_01.vtt",
-      "text": "Welcome to Module 13. This module focuses on Statistics & Visualization. We will connect the methods to careful analytical interpretation and practical decision making.\n\n[pause=0.7]\n\nStatistics and visualization help summarize variation, compare groups, describe relationships, and communicate findings clearly.\n\n[pause=1.0]",
-      "pause_markers": 2
+      "title": "Statistics & Visualization",
+      "transcript": "Welcome to Module 13. Here we connect statistics with visualization and interpretation. We will summarize center and spread, examine distributions, compare groups, discuss correlation and uncertainty, and choose visual forms that fit the analytical question.\n\n[tts-break]\n\nChoose the visual based on the question: bars for categories, lines for time, histograms for distributions, and scatter plots for relationships.",
+      "seed": 1234,
+      "tts_text_tokens": 71,
+      "tts_chunk_count": 2,
+      "tts_chunk_tokens": [
+        44,
+        26
+      ],
+      "tts_explicit_breaks": 1,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module13_slide_01.wav",
+      "audio": "audio/module13_slide_01.mp3",
+      "captions": "audio/module13_slide_01.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 2,
-      "audio": "module13_slide_02.mp3",
-      "captions": "module13_slide_02.vtt",
-      "text": "Use this lesson interactively. Read the question first, predict the result, run the example, and then explain what the output does and does not tell you.\n\n[pause=0.7]\n\nStart with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.\n\n[pause=0.7]\n\nChange one value, variable, or condition. Apply the pattern to a new example.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "How to use this page",
+      "transcript": "Use this lesson actively. Read the idea first and make a prediction before running any code. When a Python cell is available, click Run, inspect the output, and then change one small value or condition. Run it again and explain what changed. This predict, run, modify, and explain cycle is more useful than copying a finished example.\n\n[tts-break]\n\nSeparate calculation from interpretation. A statistic summarizes the sample and a visualization reveals pattern, but both still require context, variability, and awareness of limitations.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 130,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        68,
+        29,
+        31
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module13_slide_02.wav",
+      "audio": "audio/module13_slide_02.mp3",
+      "captions": "audio/module13_slide_02.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 3,
-      "audio": "module13_slide_03.mp3",
-      "captions": "module13_slide_03.vtt",
-      "text": "This slide is the roadmap for Module 13. Follow the progression from the core idea to evaluation and the final integrated workflow.\n\n[pause=0.7]\n\nMean, median, spread. See shape and frequency. Summarize groups.\n\n[pause=0.7]\n\nCorrelation and association. Sample estimates vary. Choose visual forms carefully.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Learning path for Module 13",
+      "transcript": "Use this slide as a roadmap. The ideas are intentionally ordered so later examples build on earlier concepts. As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of treating each method as an isolated command.\n\n[tts-break]\n\nSeparate calculation from interpretation. A statistic summarizes the sample and a visualization reveals pattern, but both still require context, variability, and awareness of limitations.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 109,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        47,
+        29,
+        31
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module13_slide_03.wav",
+      "audio": "audio/module13_slide_03.mp3",
+      "captions": "audio/module13_slide_03.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 4,
-      "audio": "module13_slide_04.mp3",
-      "captions": "module13_slide_04.vtt",
-      "text": "This slide focuses on Descriptive statistics. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nDescriptive statistics summarize the center and spread of values. Calculate summary statistics\n\n[pause=0.8]\n\nBefore running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Descriptive statistics",
+      "transcript": "On this slide, we are focusing on descriptive statistics. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nDescriptive statistics summarize a dataset. Mean and median describe center, while range and standard deviation describe spread.\n\n[tts-break]\n\nBefore clicking Run, predict the statistic or pattern you expect. After it runs, interpret the result in words. Then change one value and see whether the interpretation changes. Focus on meaning and limitations, not only the calculation.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 145,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        46,
+        21,
+        44,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module13_slide_04.wav",
+      "audio": "audio/module13_slide_04.mp3",
+      "captions": "audio/module13_slide_04.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 5,
-      "audio": "module13_slide_05.mp3",
-      "captions": "module13_slide_05.vtt",
-      "text": "This slide focuses on Distribution with bins. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nA distribution shows how often values fall into ranges. Create a text histogram\n\n[pause=0.8]\n\nBefore running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Distribution with bins",
+      "transcript": "On this slide, we are focusing on distribution with bins. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA distribution shows how values are spread across ranges and can reveal concentration, skew, gaps, or unusual observations.\n\n[tts-break]\n\nBefore clicking Run, predict the statistic or pattern you expect. After it runs, interpret the result in words. Then change one value and see whether the interpretation changes. Focus on meaning and limitations, not only the calculation.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 147,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        47,
+        22,
+        44,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module13_slide_05.wav",
+      "audio": "audio/module13_slide_05.mp3",
+      "captions": "audio/module13_slide_05.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 6,
-      "audio": "module13_slide_06.mp3",
-      "captions": "module13_slide_06.vtt",
-      "text": "This slide focuses on Compare groups. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nGroup summaries help compare categories. Summarize by group\n\n[pause=0.8]\n\nBefore running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Compare groups",
+      "transcript": "On this slide, we are focusing on compare groups. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the statistic or pattern you expect. After it runs, interpret the result in words. Then change one value and see whether the interpretation changes. Focus on meaning and limitations, not only the calculation.\n\n[tts-break]\n\nSeparate calculation from interpretation. A statistic summarizes the sample and a visualization reveals pattern, but both still require context, variability, and awareness of limitations.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 153,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        46,
+        44,
+        29,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module13_slide_06.wav",
+      "audio": "audio/module13_slide_06.mp3",
+      "captions": "audio/module13_slide_06.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 7,
-      "audio": "module13_slide_07.mp3",
-      "captions": "module13_slide_07.vtt",
-      "text": "This slide focuses on Correlation. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nCorrelation measures the strength and direction of a linear relationship. It does not prove causation. Calculate correlation\n\n[pause=0.8]\n\nBefore running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Correlation",
+      "transcript": "On this slide, we are focusing on correlation. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nCorrelation describes the direction and strength of a linear relationship. It does not prove that one variable causes the other.\n\n[tts-break]\n\nBefore clicking Run, predict the statistic or pattern you expect. After it runs, interpret the result in words. Then change one value and see whether the interpretation changes. Focus on meaning and limitations, not only the calculation.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 145,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        45,
+        22,
+        44,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module13_slide_07.wav",
+      "audio": "audio/module13_slide_07.mp3",
+      "captions": "audio/module13_slide_07.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 8,
-      "audio": "module13_slide_08.mp3",
-      "captions": "module13_slide_08.vtt",
-      "text": "This slide focuses on Simple confidence interval idea. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nA sample mean is an estimate. A confidence interval communicates uncertainty around the estimate. Approximate interval for a mean\n\n[pause=0.8]\n\nBefore running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Simple confidence interval idea",
+      "transcript": "On this slide, we are focusing on simple confidence interval idea. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA sample estimate is uncertain. A confidence interval communicates a range around the estimate under the assumptions of the method.\n\n[tts-break]\n\nBefore clicking Run, predict the statistic or pattern you expect. After it runs, interpret the result in words. Then change one value and see whether the interpretation changes. Focus on meaning and limitations, not only the calculation.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 148,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        48,
+        22,
+        44,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module13_slide_08.wav",
+      "audio": "audio/module13_slide_08.mp3",
+      "captions": "audio/module13_slide_08.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 9,
-      "audio": "module13_slide_09.mp3",
-      "captions": "module13_slide_09.vtt",
-      "text": "This slide focuses on Choose the right visual. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nCompare categories. Show change over time. Show distribution shape.\n\n[pause=0.7]\n\nCompare spread across groups. Show relationship between two numeric variables. Show exact values.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Choose the right visual",
+      "transcript": "On this slide, we are focusing on choose the right visual. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nChoose the visual based on the question: bars for categories, lines for time, histograms for distributions, and scatter plots for relationships.\n\n[tts-break]\n\nSeparate calculation from interpretation. A statistic summarizes the sample and a visualization reveals pattern, but both still require context, variability, and awareness of limitations.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 137,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        48,
+        26,
+        29,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module13_slide_09.wav",
+      "audio": "audio/module13_slide_09.mp3",
+      "captions": "audio/module13_slide_09.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 10,
-      "audio": "module13_slide_10.mp3",
-      "captions": "module13_slide_10.vtt",
-      "text": "This slide focuses on Text-based bar chart. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nEven without a plotting library, a text chart can show the logic of visual comparison. Print a small bar chart\n\n[pause=0.8]\n\nBefore running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Text-based bar chart",
+      "transcript": "On this slide, we are focusing on text-based bar chart. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the statistic or pattern you expect. After it runs, interpret the result in words. Then change one value and see whether the interpretation changes. Focus on meaning and limitations, not only the calculation.\n\n[tts-break]\n\nSeparate calculation from interpretation. A statistic summarizes the sample and a visualization reveals pattern, but both still require context, variability, and awareness of limitations.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 156,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        49,
+        44,
+        29,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module13_slide_10.wav",
+      "audio": "audio/module13_slide_10.mp3",
+      "captions": "audio/module13_slide_10.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 11,
-      "audio": "module13_slide_11.mp3",
-      "captions": "module13_slide_11.vtt",
-      "text": "This slide focuses on Mini statistics report. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nA short report combines data summaries with a plain-language interpretation. Create a report sentence\n\n[pause=0.8]\n\nBefore running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Mini statistics report",
+      "transcript": "On this slide, we are focusing on mini statistics report. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the statistic or pattern you expect. After it runs, interpret the result in words. Then change one value and see whether the interpretation changes. Focus on meaning and limitations, not only the calculation.\n\n[tts-break]\n\nSeparate calculation from interpretation. A statistic summarizes the sample and a visualization reveals pattern, but both still require context, variability, and awareness of limitations.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 154,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        47,
+        44,
+        29,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module13_slide_11.wav",
+      "audio": "audio/module13_slide_11.mp3",
+      "captions": "audio/module13_slide_11.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 12,
-      "audio": "module13_slide_12.mp3",
-      "captions": "module13_slide_12.vtt",
-      "text": "This slide summarizes Module 13. Focus on the main analytical decisions, interpretation limits, and reusable workflow patterns.\n\n[pause=0.7]\n\nUse mean and median. Use range and standard deviation. Describe shape with frequencies.\n\n[pause=0.7]\n\nCompare category summaries. Use correlation carefully. Select visuals for the question.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Module 13 wrap-up",
+      "transcript": "This slide brings Module 13 together. Review the patterns you can now recognize and reuse. Focus on the decisions behind the syntax: what structure or method fits the problem, what assumptions are being made, and what you should check before trusting the result.\n\n[tts-break]\n\nSeparate calculation from interpretation. A statistic summarizes the sample and a visualization reveals pattern, but both still require context, variability, and awareness of limitations.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 113,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        51,
+        29,
+        31
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module13_slide_12.wav",
+      "audio": "audio/module13_slide_12.mp3",
+      "captions": "audio/module13_slide_12.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     }
   ]
 }

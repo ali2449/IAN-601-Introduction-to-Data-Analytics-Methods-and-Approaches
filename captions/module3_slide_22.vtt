@@ -1,24 +1,34 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.816
-Use this slide as practice Work in small steps
-predict the result and explain
+00:00:00.000 --> 00:00:04.307
+On this slide, we are focusing on defaults and documentation.
 
-00:00:05.829 --> 00:00:11.762
-why your result makes sense Mastery tax function
-Combine parameters
+00:00:04.307 --> 00:00:09.252
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.946 --> 00:00:17.589
-defaults return and documentation Before running the
-code
+00:00:09.252 --> 00:00:15.362
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.747 --> 00:00:23.302
-predict the output Run the example in the browser
-inspect the result then change
+00:00:15.362 --> 00:00:21.032
+A default parameter supplies a common value when the caller does not provide one,
 
-00:00:23.328 --> 00:00:28.315
-one input or value and run it again Focus on what
-changed and why rather
+00:00:21.032 --> 00:00:23.137
+while still allowing an override.
 
-00:00:28.341 --> 00:00:30.578
-than reading the code character by character
+00:00:23.137 --> 00:00:26.272
+Before clicking Run, predict the output.
+
+00:00:26.272 --> 00:00:32.422
+Then run the cell, inspect the result, and change one value or condition at a time.
+
+00:00:32.422 --> 00:00:35.767
+Rerun it and explain why the output changed.
+
+00:00:35.767 --> 00:00:40.942
+The goal is to understand the relationship between input, process, and output.
+
+00:00:40.942 --> 00:00:46.702
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:46.702 --> 00:00:52.118
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

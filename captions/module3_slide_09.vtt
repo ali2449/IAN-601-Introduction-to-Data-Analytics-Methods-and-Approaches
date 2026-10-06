@@ -1,24 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.776
-This slide focuses on Code pass one argument Start
-with the meaning of the idea
+00:00:00.000 --> 00:00:03.272
+On this slide, we are focusing on pass one argument.
 
-00:00:06.026 --> 00:00:11.828
-then connect it to the example and to analytical
-work Pass one argument
+00:00:03.272 --> 00:00:08.527
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.842 --> 00:00:17.459
-Change the argument and run again Before running the
-code predict the
+00:00:08.527 --> 00:00:14.727
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.472 --> 00:00:23.133
-output Run the example in the browser inspect the
-result then change one input
+00:00:14.727 --> 00:00:17.862
+Before clicking Run, predict the output.
 
-00:00:23.159 --> 00:00:28.001
-or value and run it again Focus on what changed and
-why rather than reading
+00:00:17.862 --> 00:00:24.012
+Then run the cell, inspect the result, and change one value or condition at a time.
 
-00:00:28.028 --> 00:00:29.738
-the code character by character
+00:00:24.012 --> 00:00:27.352
+Rerun it and explain why the output changed.
+
+00:00:27.352 --> 00:00:32.542
+The goal is to understand the relationship between input, process, and output.
+
+00:00:32.542 --> 00:00:36.242
+Think about where this function would appear in a larger project.
+
+00:00:36.242 --> 00:00:44.327
+Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
+
+00:00:44.327 --> 00:00:45.762
+across many rows, files, or notebooks.

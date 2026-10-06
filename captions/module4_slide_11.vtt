@@ -1,28 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.895
-This slide focuses on Lists can hold tuples Start
-with what the structure represents
+00:00:00.000 --> 00:00:04.102
+On this slide, we are focusing on lists can hold tuples.
 
-00:00:06.118 --> 00:00:11.713
-then connect that idea to the example on the slide A
-common pattern is
+00:00:04.102 --> 00:00:09.077
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.739 --> 00:00:17.308
-a list of records Each record can be a tuple List of
-tuple
+00:00:09.077 --> 00:00:15.457
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.334 --> 00:00:23.436
-records Before running the code predict the output
-Run
+00:00:15.457 --> 00:00:19.912
+A tuple is ordered like a list but is intended to stay fixed.
 
-00:00:23.462 --> 00:00:28.488
-the example in the browser inspect the result then
-change one item index or value
+00:00:19.912 --> 00:00:24.417
+It works well for compact records whose positions should not change.
 
-00:00:28.515 --> 00:00:34.054
-and run it again Notice which operations change the
-original list and which simply read
+00:00:24.417 --> 00:00:27.557
+Before clicking Run, predict the output.
 
-00:00:34.081 --> 00:00:34.488
-from it
+00:00:27.557 --> 00:00:33.707
+Then run the cell, inspect the result, and change one value or condition at a time.
+
+00:00:33.707 --> 00:00:37.052
+Rerun it and explain why the output changed.
+
+00:00:37.052 --> 00:00:42.063
+The goal is to understand the relationship between input, process, and output.

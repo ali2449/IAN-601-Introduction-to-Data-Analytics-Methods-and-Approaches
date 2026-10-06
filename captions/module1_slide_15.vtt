@@ -1,33 +1,34 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.763
-This code creates a small chain of calculations We
-begin with sales and costs
+00:00:00.000 --> 00:00:04.497
+On this slide, we are focusing on calculate profit and tax.
 
-00:00:06.684 --> 00:00:12.434
-Profit is sales minus costs Tax is calculated from
-profit and net profit
+00:00:04.497 --> 00:00:09.372
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:12.461 --> 00:00:18.108
-is what remains after subtracting the tax Run the
-example and follow
+00:00:09.372 --> 00:00:15.607
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:18.134 --> 00:00:23.900
-the dependency from top to bottom The later values
-depend on the earlier ones so
+00:00:15.607 --> 00:00:18.742
+Before clicking Run, predict the output.
 
-00:00:23.926 --> 00:00:29.876
-the order of the statements matters Try changing the
-tax rate from five percent
+00:00:18.742 --> 00:00:24.892
+Then run the cell, inspect the result, and change one value or condition at a time.
 
-00:00:29.902 --> 00:00:35.457
-to ten percent Profit should stay the same because
-the profit calculation does not use
+00:00:24.892 --> 00:00:28.237
+Rerun it and explain why the output changed.
 
-00:00:35.483 --> 00:00:40.483
-the tax rate Tax and net profit should change
-because they do depend on it
+00:00:28.237 --> 00:00:31.627
+The goal is to understand the relationship between input, process, and output.
 
-00:00:41.418 --> 00:00:46.010
-This is a good way to practice reasoning about which
-variables influence which results
+00:00:31.627 --> 00:00:36.582
+Connect the concept to a small analytics task.
+
+00:00:36.582 --> 00:00:41.657
+Imagine the value came from a sales file, survey, or operational system.
+
+00:00:41.657 --> 00:00:46.672
+Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+
+00:00:46.672 --> 00:00:49.089
+from the names and output.

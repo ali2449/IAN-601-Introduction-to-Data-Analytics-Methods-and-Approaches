@@ -1,29 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.658
-This practice example stores a small patient record
-using separate variables The
+00:00:00.000 --> 00:00:03.272
+On this slide, we are focusing on patient variables.
 
-00:00:05.671 --> 00:00:10.224
-values can include text numbers and a Boolean flag
-depending on what we want to
+00:00:03.272 --> 00:00:07.967
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:10.250 --> 00:00:16.183
-represent Run the code and identify the type and
-meaning of each variable
+00:00:07.967 --> 00:00:13.977
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.106 --> 00:00:22.619
-Then change the values while keeping the variable
-names clear You can also add another
+00:00:13.977 --> 00:00:17.647
+A variable is a meaningful name connected to a value.
 
-00:00:22.646 --> 00:00:28.274
-variable such as a condition or a blood pressure
-label The important
+00:00:17.647 --> 00:00:21.577
+Clear names help the code communicate what the data represents,
 
-00:00:28.301 --> 00:00:35.185
-idea is that healthcare data like business data
-contains different kinds of information Identifiers
+00:00:21.577 --> 00:00:26.572
+and later calculations can reuse the stored value.
 
-00:00:35.277 --> 00:00:40.316
-measurements categories and status flags should be
-represented in ways that match their meaning
+00:00:26.572 --> 00:00:29.652
+Before clicking Run, predict the output.
+
+00:00:29.652 --> 00:00:34.222
+Then run the cell, inspect the result, and change one value or condition at a time.
+
+00:00:34.222 --> 00:00:37.562
+Rerun it and explain why the output changed.
+
+00:00:37.562 --> 00:00:42.580
+The goal is to understand the relationship between input, process, and output.

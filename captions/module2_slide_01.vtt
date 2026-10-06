@@ -1,20 +1,13 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.855
-Welcome to Module 2 This module focuses on Control
-Flow & Decision Making
+00:00:00.000 --> 00:00:05.977
+Welcome to Module 2. In Module 1, most statements ran from top to bottom.
 
-00:00:06.789 --> 00:00:13.212
-We will build the ideas gradually and connect them
-to practical analytics work One
+00:00:05.977 --> 00:00:10.107
+Now Python will start choosing paths and repeating work.
 
-00:00:13.238 --> 00:00:18.803
-slide at a time Executable Python cells Self-paced
-version As
+00:00:10.107 --> 00:00:16.712
+Control flow is what lets a program apply rules, classify records, validate values,
 
-00:00:18.817 --> 00:00:23.790
-you review the slide connect the concept to the
-larger analytics workflow how data is
-
-00:00:23.817 --> 00:00:27.027
-represented transformed checked or communicated
+00:00:16.712 --> 00:00:19.532
+and process many observations automatically.

@@ -1,32 +1,25 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.697
-This slide focuses on Nested dictionaries Start with
-the meaning of the idea then
+00:00:00.000 --> 00:00:03.047
+On this slide, we are focusing on nested dictionaries.
 
-00:00:05.724 --> 00:00:11.574
-connect it to the example and the larger analytical
-workflow A dictionary
+00:00:03.047 --> 00:00:08.202
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.600 --> 00:00:18.129
-can contain another dictionary This is useful when
-one record has sections Use
+00:00:08.202 --> 00:00:14.212
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:18.155 --> 00:00:23.668
-nested dictionaries for organized records Access
-nested values one key at
+00:00:14.212 --> 00:00:16.582
+Choose the structure based on meaning.
 
-00:00:23.695 --> 00:00:29.385
-a time Before running the example predict what the
-output should look
+00:00:16.582 --> 00:00:21.847
+Use dictionaries for labeled fields and sets for uniqueness or membership.
 
-00:00:29.412 --> 00:00:35.112
-like Run it in the browser inspect the result then
-change one input key value
+00:00:21.847 --> 00:00:26.862
+A good data structure makes later code shorter and easier to reason about.
 
-00:00:35.322 --> 00:00:41.712
-or condition and run it again Focus on what changed
-and why Keep
+00:00:26.862 --> 00:00:32.622
+Before moving on, explain the main idea in one sentence without reading the slide.
 
-00:00:41.725 --> 00:00:43.725
-structure readable and consistent
+00:00:32.622 --> 00:00:38.039
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

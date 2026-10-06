@@ -1,32 +1,34 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.882
-When a user types into an input prompt Python
-receives the response as text This
+00:00:00.000 --> 00:00:04.322
+On this slide, we are focusing on input usually starts as text.
 
-00:00:05.895 --> 00:00:11.262
-is true even if the person typed digits that look
-like a number If we
+00:00:04.322 --> 00:00:09.457
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.288 --> 00:00:16.672
-want to use that input in arithmetic we usually need
-to convert it The integer
+00:00:09.457 --> 00:00:15.667
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:16.699 --> 00:00:21.172
-function creates a whole number and the float
-function creates a numeric value that can
+00:00:15.667 --> 00:00:20.872
+Values from forms, keyboards, files, and APIs often arrive as text.
 
-00:00:21.199 --> 00:00:27.901
-include decimals This pattern appears far beyond
-keyboard input Data
+00:00:20.872 --> 00:00:24.872
+Inspect and convert them deliberately before performing arithmetic.
 
-00:00:27.927 --> 00:00:33.862
-from forms CSV files web pages and APIs can also
-arrive as text One
+00:00:24.872 --> 00:00:28.047
+Connect the concept to a small analytics task.
 
-00:00:33.875 --> 00:00:38.283
-of the first tasks in data preparation is often
-checking whether values have the correct
+00:00:28.047 --> 00:00:33.117
+Imagine the value came from a sales file, survey, or operational system.
 
-00:00:38.309 --> 00:00:39.849
-type for the work we want to do
+00:00:33.117 --> 00:00:38.742
+Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+
+00:00:38.742 --> 00:00:40.727
+from the names and output.
+
+00:00:40.727 --> 00:00:46.497
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:46.497 --> 00:00:51.913
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

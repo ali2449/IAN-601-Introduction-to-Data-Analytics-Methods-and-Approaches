@@ -1,33 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.632
-Real data does not always contain valid values If
-Python tries to convert the
+00:00:00.000 --> 00:00:03.492
+On this slide, we are focusing on preview a conversion error.
 
-00:00:05.658 --> 00:00:10.211
-text abc into a number the conversion fails because
-the text does not represent a
+00:00:03.492 --> 00:00:08.152
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:10.224 --> 00:00:15.780
-numeric value The example uses a small try and
-except structure so
+00:00:08.152 --> 00:00:14.042
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:15.807 --> 00:00:21.467
-the program can respond to the problem instead of
-stopping unexpectedly We will study error
+00:00:14.042 --> 00:00:18.777
+A conversion error tells us the input does not satisfy our assumption.
 
-00:00:21.493 --> 00:00:25.888
-handling in more detail later so you do not need to
-memorize this syntax now
+00:00:18.777 --> 00:00:25.187
+Real analytical workflows validate messy input instead of silently pretending it is correct.
 
-00:00:27.615 --> 00:00:33.115
-The main lesson is analytical rather than syntactic
-never assume every incoming value is valid
+00:00:25.187 --> 00:00:28.372
+Connect the concept to a small analytics task.
 
-00:00:34.051 --> 00:00:39.709
-Data validation is part of reliable analysis Try
-replacing abc with forty
+00:00:28.372 --> 00:00:33.447
+Imagine the value came from a sales file, survey, or operational system.
 
-00:00:39.736 --> 00:00:42.749
-two point five and notice that the conversion then
-succeeds
+00:00:33.447 --> 00:00:38.462
+Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+
+00:00:38.462 --> 00:00:40.877
+from the names and output.

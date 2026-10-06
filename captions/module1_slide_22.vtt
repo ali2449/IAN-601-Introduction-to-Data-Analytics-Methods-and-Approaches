@@ -1,29 +1,34 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.566
-This example begins with price and quantity stored
-as strings They look like numbers to
+00:00:00.000 --> 00:00:04.572
+On this slide, we are focusing on convert text into numbers.
 
-00:00:05.579 --> 00:00:11.987
-us but Python still sees text because the values are
-inside quotation marks The
+00:00:04.572 --> 00:00:10.072
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:12.001 --> 00:00:16.922
-float conversion turns the price into a decimal
-number and the integer conversion turns the
+00:00:10.072 --> 00:00:16.377
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:16.948 --> 00:00:22.806
-quantity into a whole number After conversion Python
-can multiply them to calculate
+00:00:16.377 --> 00:00:18.017
+Before clicking Run, predict the output.
 
-00:00:22.832 --> 00:00:28.479
-the total Run the example and then change the
-quantity text from five
+00:00:18.017 --> 00:00:25.662
+Then run the cell, inspect the result, and change one value or condition at a time.
 
-00:00:28.506 --> 00:00:34.193
-to eight Notice that conversion is not only a
-technical detail It
+00:00:25.662 --> 00:00:26.992
+Rerun it and explain why the output changed.
 
-00:00:34.219 --> 00:00:38.732
-determines whether the data can participate
-correctly in a numerical calculation
+00:00:26.992 --> 00:00:32.397
+The goal is to understand the relationship between input, process, and output.
+
+00:00:32.397 --> 00:00:37.357
+Connect the concept to a small analytics task.
+
+00:00:37.357 --> 00:00:40.752
+Imagine the value came from a sales file, survey, or operational system.
+
+00:00:40.752 --> 00:00:47.452
+Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+
+00:00:47.452 --> 00:00:49.861
+from the names and output.

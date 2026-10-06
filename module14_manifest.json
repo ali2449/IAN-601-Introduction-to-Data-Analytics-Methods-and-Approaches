@@ -1,104 +1,292 @@
 {
-  "prefix": "module14",
-  "voice": "en-US-GuyNeural",
-  "rate": "-5%",
-  "volume": "+0%",
-  "pitch": "+0Hz",
-  "caption_words": 15,
-  "slide_count": 13,
-  "slide_markers_found": true,
-  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "module": "module14",
+  "filename_prefix": "module14",
+  "source_file": "IAN_601_Module_14_Narration.txt",
+  "voice_consistency_version": 3,
+  "reference_audio": "/home/ali/breeze-tts/voice_reference/course_instructor_consistent_v4.wav",
+  "reference_text": "Welcome to the course. We will work through each concept carefully, connect the\nideas step by step, and use practical examples to make technical topics easier\nto understand. When we introduce a new method, focus first on the problem it\nsolves and why it is useful. For example, in machine learning, features are the\ninformation we give the model, while the target is what we want it to predict.\nNow consider a simple question: what changes when the data contains missing\nvalues? We will think through the reason and then look at the code. In Python,\nwe can inspect the data, run one small step at a time, and explain what the\nresult means. The goal is to understand the logic, not simply memorize syntax.",
+  "locked_narration_seed": true,
+  "narration_seed": 1234,
+  "long_narration": {
+    "automatic_chunking": true,
+    "max_text_tokens_per_call": 260,
+    "chunk_pause_seconds": 0.38,
+    "manual_break_marker": "[tts-break]",
+    "breeze_max_new_tokens": 1500,
+    "breeze_max_seq_len": 2048
+  },
+  "subtitle_method": "whole_slide_silence_alignment",
+  "caption_settings": {
+    "max_words": 18,
+    "max_chars": 110,
+    "minimum_silence_seconds": 0.2,
+    "boundary_search_window_seconds": 1.4
+  },
   "slides": [
     {
       "slide": 1,
-      "audio": "module14_slide_01.mp3",
-      "captions": "module14_slide_01.vtt",
-      "text": "Welcome to Module 14. This module focuses on Machine Learning & External Data. We will connect the methods to careful analytical interpretation and practical decision making.\n\n[pause=0.7]\n\nMachine learning uses data to train models that make predictions, but good results depend on clean data, careful evaluation, and responsible interpretation.\n\n[pause=1.0]",
-      "pause_markers": 2
+      "title": "Machine Learning & External Data",
+      "transcript": "Welcome to Module 14. This module introduces a compact machine-learning workflow using external-style data. We will separate features and target, create training and test data, fit a simple classifier, evaluate predictions, compare against a baseline, and discuss leakage and responsible interpretation.",
+      "seed": 1234,
+      "tts_text_tokens": 55,
+      "tts_chunk_count": 1,
+      "tts_chunk_tokens": [
+        55
+      ],
+      "tts_explicit_breaks": 0,
+      "tts_chunk_limit": 260,
+      "stitched_audio": false,
+      "wav": "wav/module14_slide_01.wav",
+      "audio": "audio/module14_slide_01.mp3",
+      "captions": "audio/module14_slide_01.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 2,
-      "audio": "module14_slide_02.mp3",
-      "captions": "module14_slide_02.vtt",
-      "text": "Use this lesson interactively. Read the question first, predict the result, run the example, and then explain what the output does and does not tell you.\n\n[pause=0.7]\n\nStart with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.\n\n[pause=0.7]\n\nChange one value, variable, or condition. Apply the pattern to a new example.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "How to use this page",
+      "transcript": "Use this lesson actively. Read the idea first and make a prediction before running any code. When a Python cell is available, click Run, inspect the output, and then change one small value or condition. Run it again and explain what changed. This predict, run, modify, and explain cycle is more useful than copying a finished example.\n\n[tts-break]\n\nMachine learning is a workflow rather than a single fit command. Keep training information separate from evaluation data, compare against a baseline, and interpret model performance in the context of the real prediction problem.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 139,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        68,
+        38,
+        31
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module14_slide_02.wav",
+      "audio": "audio/module14_slide_02.mp3",
+      "captions": "audio/module14_slide_02.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 3,
-      "audio": "module14_slide_03.mp3",
-      "captions": "module14_slide_03.vtt",
-      "text": "This slide is the roadmap for Module 14. Follow the progression from the core idea to evaluation and the final integrated workflow.\n\n[pause=0.7]\n\nRead CSV-style data. Choose inputs and target. Separate training and testing.\n\n[pause=0.7]\n\nTrain a simple classifier. Use accuracy and confusion matrix. Compare to baseline and explain limits.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Learning path for Module 14",
+      "transcript": "Use this slide as a roadmap. The ideas are intentionally ordered so later examples build on earlier concepts. As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of treating each method as an isolated command.\n\n[tts-break]\n\nMachine learning is a workflow rather than a single fit command. Keep training information separate from evaluation data, compare against a baseline, and interpret model performance in the context of the real prediction problem.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 118,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        47,
+        38,
+        31
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module14_slide_03.wav",
+      "audio": "audio/module14_slide_03.mp3",
+      "captions": "audio/module14_slide_03.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 4,
-      "audio": "module14_slide_04.mp3",
-      "captions": "module14_slide_04.vtt",
-      "text": "This slide focuses on Read external-style data. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nMany analytics projects begin by reading data from a CSV file. In this browser example, the CSV is stored as text. Read CSV text with pandas\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Read external-style data",
+      "transcript": "On this slide, we are focusing on read external-style data. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the structure of the output. After it runs, identify the features, target, split, prediction, or evaluation result involved. Change one input carefully and explain why the result did or did not change.\n\n[tts-break]\n\nMachine learning is a workflow rather than a single fit command. Keep training information separate from evaluation data, compare against a baseline, and interpret model performance in the context of the real prediction problem.",
+      "seed": 1234,
+      "tts_text_tokens": 134,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        49,
+        45,
+        38
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module14_slide_04.wav",
+      "audio": "audio/module14_slide_04.mp3",
+      "captions": "audio/module14_slide_04.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 5,
-      "audio": "module14_slide_05.mp3",
-      "captions": "module14_slide_05.vtt",
-      "text": "This slide focuses on Inputs and target. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nFeatures are input columns. The target is what the model learns to predict. Separate X and y\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Inputs and target",
+      "transcript": "On this slide, we are focusing on inputs and target. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nFeatures are the input columns used by the model. The target is the outcome the model learns to predict. Keep the target out of the feature set.\n\n[tts-break]\n\nBefore clicking Run, predict the structure of the output. After it runs, identify the features, target, split, prediction, or evaluation result involved. Change one input carefully and explain why the result did or did not change.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 156,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        47,
+        30,
+        45,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module14_slide_05.wav",
+      "audio": "audio/module14_slide_05.mp3",
+      "captions": "audio/module14_slide_05.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 6,
-      "audio": "module14_slide_06.mp3",
-      "captions": "module14_slide_06.vtt",
-      "text": "This slide focuses on Train/test split. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nA model should be evaluated on data it did not use for learning. Split a dataset\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Train/test split",
+      "transcript": "On this slide, we are focusing on train/test split. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nThe test set represents unseen data. Keeping it separate gives a more honest estimate of how the model may perform on future cases.\n\n[tts-break]\n\nBefore clicking Run, predict the structure of the output. After it runs, identify the features, target, split, prediction, or evaluation result involved. Change one input carefully and explain why the result did or did not change.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 152,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        48,
+        25,
+        45,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module14_slide_06.wav",
+      "audio": "audio/module14_slide_06.mp3",
+      "captions": "audio/module14_slide_06.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 7,
-      "audio": "module14_slide_07.mp3",
-      "captions": "module14_slide_07.vtt",
-      "text": "This slide focuses on Train a simple classifier. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nA classifier learns patterns from features and predicts a category. Train logistic regression\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Train a simple classifier",
+      "transcript": "On this slide, we are focusing on train a simple classifier. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA classifier learns patterns from features and predicts a category. Training fits the model, while prediction applies the learned relationship to rows.\n\n[tts-break]\n\nBefore clicking Run, predict the structure of the output. After it runs, identify the features, target, split, prediction, or evaluation result involved. Change one input carefully and explain why the result did or did not change.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 152,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        48,
+        25,
+        45,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module14_slide_07.wav",
+      "audio": "audio/module14_slide_07.mp3",
+      "captions": "audio/module14_slide_07.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 8,
-      "audio": "module14_slide_08.mp3",
-      "captions": "module14_slide_08.vtt",
-      "text": "This slide focuses on Evaluate predictions. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nAccuracy is the percent of correct predictions. A confusion matrix shows correct and incorrect predictions by class. Accuracy and confusion matrix\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Evaluate predictions",
+      "transcript": "On this slide, we are focusing on evaluate predictions. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nAccuracy summarizes the fraction of correct predictions, while a confusion matrix shows which classes were confused.\n\n[tts-break]\n\nBefore clicking Run, predict the structure of the output. After it runs, identify the features, target, split, prediction, or evaluation result involved. Change one input carefully and explain why the result did or did not change.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 143,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        46,
+        18,
+        45,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module14_slide_08.wav",
+      "audio": "audio/module14_slide_08.mp3",
+      "captions": "audio/module14_slide_08.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 9,
-      "audio": "module14_slide_09.mp3",
-      "captions": "module14_slide_09.vtt",
-      "text": "This slide focuses on Compare with a baseline. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nA model should beat a simple baseline. Otherwise, it may not be useful. Baseline accuracy\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Compare with a baseline",
+      "transcript": "On this slide, we are focusing on compare with a baseline. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA model should be compared with a simple baseline such as always predicting the most common class.\n\n[tts-break]\n\nBefore clicking Run, predict the structure of the output. After it runs, identify the features, target, split, prediction, or evaluation result involved. Change one input carefully and explain why the result did or did not change.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 145,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        48,
+        18,
+        45,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module14_slide_09.wav",
+      "audio": "audio/module14_slide_09.mp3",
+      "captions": "audio/module14_slide_09.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 10,
-      "audio": "module14_slide_10.mp3",
-      "captions": "module14_slide_10.vtt",
-      "text": "This slide focuses on Predict a new case. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nAfter training, a model can predict new rows with the same feature structure. Make one prediction\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Predict a new case",
+      "transcript": "On this slide, we are focusing on predict a new case. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nNew data must use the same feature structure and preprocessing as the training data.\n\n[tts-break]\n\nBefore clicking Run, predict the structure of the output. After it runs, identify the features, target, split, prediction, or evaluation result involved. Change one input carefully and explain why the result did or did not change.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 142,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        48,
+        15,
+        45,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module14_slide_10.wav",
+      "audio": "audio/module14_slide_10.mp3",
+      "captions": "audio/module14_slide_10.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 11,
-      "audio": "module14_slide_11.mp3",
-      "captions": "module14_slide_11.vtt",
-      "text": "This slide focuses on Avoid leakage. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nData leakage happens when training uses information that would not be available at prediction time. Split data before final evaluation. Do not let the target leak into features.\n\n[pause=0.7]\n\nClean training data and test data consistently. Report limitations clearly.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Avoid leakage",
+      "transcript": "On this slide, we are focusing on avoid leakage. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nLeakage happens when training uses information that would not be available at prediction time. It can make evaluation look unrealistically strong.\n\n[tts-break]\n\nMachine learning is a workflow rather than a single fit command. Keep training information separate from evaluation data, compare against a baseline, and interpret model performance in the context of the real prediction problem.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 143,
+      "tts_chunk_count": 4,
+      "tts_chunk_tokens": [
+        46,
+        25,
+        38,
+        31
+      ],
+      "tts_explicit_breaks": 3,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module14_slide_11.wav",
+      "audio": "audio/module14_slide_11.mp3",
+      "captions": "audio/module14_slide_11.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 12,
-      "audio": "module14_slide_12.mp3",
-      "captions": "module14_slide_12.vtt",
-      "text": "This slide focuses on Mini ML workflow. Start with the analytical question and the meaning of the output before focusing on the syntax.\n\n[pause=0.7]\n\nThis final example joins the main steps: data, split, train, evaluate, and report. End-to-end classifier\n\n[pause=0.8]\n\nBefore running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Mini ML workflow",
+      "transcript": "On this slide, we are focusing on mini ml workflow. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the structure of the output. After it runs, identify the features, target, split, prediction, or evaluation result involved. Change one input carefully and explain why the result did or did not change.\n\n[tts-break]\n\nMachine learning is a workflow rather than a single fit command. Keep training information separate from evaluation data, compare against a baseline, and interpret model performance in the context of the real prediction problem.",
+      "seed": 1234,
+      "tts_text_tokens": 132,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        47,
+        45,
+        38
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module14_slide_12.wav",
+      "audio": "audio/module14_slide_12.mp3",
+      "captions": "audio/module14_slide_12.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 13,
-      "audio": "module14_slide_13.mp3",
-      "captions": "module14_slide_13.vtt",
-      "text": "This slide summarizes Module 14. Focus on the main analytical decisions, interpretation limits, and reusable workflow patterns.\n\n[pause=0.7]\n\nLoad CSV-style data. Separate features and target. Evaluate on unseen rows.\n\n[pause=0.7]\n\nFit a classifier. Use accuracy and confusion matrix. Interpret responsibly\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Module 14 wrap-up",
+      "transcript": "This slide brings Module 14 together. Review the patterns you can now recognize and reuse. Focus on the decisions behind the syntax: what structure or method fits the problem, what assumptions are being made, and what you should check before trusting the result.\n\n[tts-break]\n\nMachine learning is a workflow rather than a single fit command. Keep training information separate from evaluation data, compare against a baseline, and interpret model performance in the context of the real prediction problem.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 122,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        51,
+        38,
+        31
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module14_slide_13.wav",
+      "audio": "audio/module14_slide_13.mp3",
+      "captions": "audio/module14_slide_13.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     }
   ]
 }

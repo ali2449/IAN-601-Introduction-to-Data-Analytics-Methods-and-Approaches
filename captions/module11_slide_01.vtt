@@ -1,17 +1,10 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.382
-Welcome to Module 11 This module focuses on Advanced
-Pandas We
+00:00:00.000 --> 00:00:07.907
+Welcome to Module 11. We are extending the Pandas foundation from Module 10 into more advanced workflows.
 
-00:00:06.395 --> 00:00:13.457
-will connect the techniques to realistic analytical
-workflows and careful interpretation Advanced
+00:00:07.907 --> 00:00:14.957
+The emphasis is on chaining operations, reshaping tables, working with dates and rolling summaries,
 
-00:00:13.484 --> 00:00:19.115
-pandas helps transform messy tables into
-analysis-ready summaries using chaining reshaping
-dates
-
-00:00:19.260 --> 00:00:21.300
-windows and reusable functions
+00:00:14.957 --> 00:00:20.201
+checking joins, and packaging repeated Pandas logic into reusable functions.

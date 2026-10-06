@@ -1,32 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.750
-This slide focuses on Change a list Start with what
-the structure represents then
+00:00:00.000 --> 00:00:03.472
+On this slide, we are focusing on change a list.
 
-00:00:05.776 --> 00:00:11.413
-connect that idea to the example on the slide Lists
-are mutable which
+00:00:03.472 --> 00:00:08.517
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.440 --> 00:00:16.982
-means Python lets us change them after creation
-append adds one value to the
+00:00:08.517 --> 00:00:14.737
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.008 --> 00:00:23.829
-end pop removes a value by position and returns it
-Before
+00:00:14.737 --> 00:00:17.982
+A list is an ordered collection that can change.
 
-00:00:23.855 --> 00:00:29.595
-running the code predict the output Run the example
-in the browser inspect the result
+00:00:17.982 --> 00:00:24.847
+It is useful when values may be added, removed, replaced, sorted, or processed over time.
 
-00:00:29.818 --> 00:00:35.371
-then change one item index or value and run it again
-Notice which operations
+00:00:24.847 --> 00:00:27.987
+Before clicking Run, predict the output.
 
-00:00:35.397 --> 00:00:41.003
-change the original list and which simply read from
-it Assignment changes
+00:00:27.987 --> 00:00:34.137
+Then run the cell, inspect the result, and change one value or condition at a time.
 
-00:00:41.029 --> 00:00:45.426
-an existing position Append update and remove
+00:00:34.137 --> 00:00:37.482
+Rerun it and explain why the output changed.
+
+00:00:37.482 --> 00:00:42.493
+The goal is to understand the relationship between input, process, and output.

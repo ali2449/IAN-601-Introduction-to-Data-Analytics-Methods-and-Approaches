@@ -1,25 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.816
-This slide focuses on Method chaining Start with
-what the operation changes in the data
+00:00:00.000 --> 00:00:02.752
+On this slide, we are focusing on method chaining.
 
-00:00:06.118 --> 00:00:11.759
-then connect that change to the analytical question
-Method chaining connects
+00:00:02.752 --> 00:00:07.487
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.773 --> 00:00:17.473
-several DataFrame steps into one readable workflow
-Filter assign group
+00:00:07.487 --> 00:00:13.382
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:19.315 --> 00:00:24.988
-Before running the example predict the table summary
-or transformed output Run
+00:00:13.382 --> 00:00:17.862
+Method chaining connects several DataFrame operations into one workflow.
 
-00:00:25.015 --> 00:00:30.146
-it in the browser and inspect the row count column
-values grouping dates missing values
+00:00:17.862 --> 00:00:23.957
+Each step should remain readable so another analyst can understand what changes.
 
-00:00:30.396 --> 00:00:35.238
-or flags that matter Then change one input and
-compare the result
+00:00:23.957 --> 00:00:29.092
+Before clicking Run, predict how the table should change.
+
+00:00:29.092 --> 00:00:34.542
+Then run the cell and inspect the row count, column values, grouping, dates, missing values,
+
+00:00:34.542 --> 00:00:37.207
+or flags that matter. Change one input and rerun it.
+
+00:00:37.207 --> 00:00:43.385
+Connect the DataFrame operation to an analytical question rather than simply making the code execute.

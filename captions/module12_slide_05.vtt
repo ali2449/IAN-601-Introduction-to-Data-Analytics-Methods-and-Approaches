@@ -1,28 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.684
-This slide focuses on Check missing values Start
-with what the operation changes in
+00:00:00.000 --> 00:00:03.642
+On this slide, we are focusing on check missing values.
 
-00:00:05.711 --> 00:00:11.293
-the data then connect that change to the analytical
-question Missing
+00:00:03.642 --> 00:00:08.527
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.319 --> 00:00:17.611
-values can change summaries First count them then
-decide what to do Count
+00:00:08.527 --> 00:00:14.592
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.638 --> 00:00:23.263
-and fill missing values Before running the example
-predict the table
+00:00:14.592 --> 00:00:18.017
+Count missing values before deciding how to handle them.
 
-00:00:23.408 --> 00:00:29.029
-summary or transformed output Run it in the browser
-and inspect the row count column
+00:00:18.017 --> 00:00:26.447
+Missingness can be random, systematic, or meaningful, so the handling rule should match the context.
 
-00:00:29.055 --> 00:00:34.674
-values grouping dates missing values or flags that
-matter Then change
+00:00:26.447 --> 00:00:28.717
+Before clicking Run, predict how the table should change.
 
-00:00:34.700 --> 00:00:36.726
-one input and compare the result
+00:00:28.717 --> 00:00:34.252
+Then run the cell and inspect the row count, column values, grouping, dates, missing values,
+
+00:00:34.252 --> 00:00:39.692
+or flags that matter. Change one input and rerun it.
+
+00:00:39.692 --> 00:00:45.875
+Connect the DataFrame operation to an analytical question rather than simply making the code execute.

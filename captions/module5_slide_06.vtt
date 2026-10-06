@@ -1,27 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.987
-This slide focuses on Access values safely Start
-with the meaning of the idea then
+00:00:00.000 --> 00:00:03.517
+On this slide, we are focusing on access values safely.
 
-00:00:06.013 --> 00:00:11.572
-connect it to the example and the larger analytical
-workflow Square
+00:00:03.517 --> 00:00:08.152
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.585 --> 00:00:16.667
-brackets work when the key exists The get method is
-safer when a key may
+00:00:08.152 --> 00:00:14.222
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:16.693 --> 00:00:22.295
-be missing Use brackets and get Before running the
+00:00:14.222 --> 00:00:18.502
+Bracket access expects a dictionary key to exist.
 
-00:00:22.321 --> 00:00:27.666
-example predict what the output should look like Run
-it in the browser inspect the
+00:00:18.502 --> 00:00:23.112
+The get method can provide a safer fallback when a key may be missing.
 
-00:00:27.679 --> 00:00:33.679
-result then change one input key value or condition
-and run it again Focus
+00:00:23.112 --> 00:00:25.472
+Choose the structure based on meaning.
 
-00:00:33.706 --> 00:00:35.048
-on what changed and why
+00:00:25.472 --> 00:00:30.747
+Use dictionaries for labeled fields and sets for uniqueness or membership.
+
+00:00:30.747 --> 00:00:35.757
+A good data structure makes later code shorter and easier to reason about.
+
+00:00:35.757 --> 00:00:41.517
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:41.517 --> 00:00:46.937
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

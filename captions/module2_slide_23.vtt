@@ -1,20 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.592
-Use this slide as guided practice Work through the
-task in small steps and explain
+00:00:00.000 --> 00:00:03.877
+Treat these as guided practice rather than a checklist to rush through.
 
-00:00:05.605 --> 00:00:11.378
-why each step produces the result you see Guided
-exercises Threshold
+00:00:03.877 --> 00:00:08.377
+Solve one task at a time, predict what Python should do,
 
-00:00:11.391 --> 00:00:18.695
-check Create a variable called score Print pass when
-it is at least 70 Two-way
+00:00:08.377 --> 00:00:11.612
+and explain your reasoning before running the code.
 
-00:00:18.721 --> 00:00:24.421
-decision Create a variable called balance Print
-whether it is positive or zero /
+00:00:11.612 --> 00:00:18.472
+If the result differs from the prediction, inspect intermediate values instead of immediately replacing your
 
-00:00:24.435 --> 00:00:27.092
-negative Known repetition
+00:00:18.472 --> 00:00:25.432
+work. In real analytics, this pattern can support thresholds, validation rules, category assignment, alerts,
+
+00:00:25.432 --> 00:00:28.462
+and repeated processing.
+
+00:00:28.462 --> 00:00:34.412
+The examples are intentionally small so you can trace the logic from the condition to the result.
+
+00:00:34.412 --> 00:00:40.172
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:40.172 --> 00:00:45.592
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

@@ -1,33 +1,34 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.263
-Arithmetic lets us turn stored values into new
-analytical measures Addition subtraction
+00:00:00.000 --> 00:00:04.557
+On this slide, we are focusing on arithmetic creates derived metrics.
 
-00:00:06.434 --> 00:00:12.224
-multiplication and division are the most familiar
-operators but Python also supports powers floor
+00:00:04.557 --> 00:00:09.892
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:12.237 --> 00:00:17.879
-division and remainders In analytics the result of a
-calculation
+00:00:09.892 --> 00:00:16.372
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.905 --> 00:00:23.356
-is often more useful than the raw input Sales and
-costs are useful but profit
+00:00:16.372 --> 00:00:22.497
+Arithmetic turns raw values into derived metrics such as profit, margin, tax, rates, and growth.
 
-00:00:23.382 --> 00:00:28.882
-gives us another view of performance Profit divided
-by sales can become a margin
+00:00:22.497 --> 00:00:25.102
+Understand the formula before trusting the output.
 
-00:00:29.816 --> 00:00:35.577
-A current value compared with a previous value can
-become a growth rate As
+00:00:25.102 --> 00:00:28.487
+Connect the concept to a small analytics task.
 
-00:00:35.603 --> 00:00:41.330
-you create derived metrics keep the units in mind
-Dollars counts percentages
+00:00:28.487 --> 00:00:34.322
+Imagine the value came from a sales file, survey, or operational system.
 
-00:00:41.501 --> 00:00:45.132
-and rates have different meanings even when they are
-all stored as numbers
+00:00:34.322 --> 00:00:41.752
+Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+
+00:00:41.752 --> 00:00:44.342
+from the names and output.
+
+00:00:44.342 --> 00:00:50.112
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:50.112 --> 00:00:55.530
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

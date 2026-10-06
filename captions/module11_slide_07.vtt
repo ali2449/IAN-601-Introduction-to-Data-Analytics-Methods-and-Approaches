@@ -1,28 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.513
-This slide focuses on Work with dates Start with
-what the operation changes in the
+00:00:00.000 --> 00:00:02.792
+On this slide, we are focusing on work with dates.
 
-00:00:05.526 --> 00:00:11.218
-data then connect that change to the analytical
-question Date columns
+00:00:02.792 --> 00:00:07.442
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.244 --> 00:00:17.523
-can be converted to datetime and used to create
-month weekday or time-based summaries Extract
+00:00:07.442 --> 00:00:15.132
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.549 --> 00:00:23.332
-date features Before running the example predict the
-table summary
+00:00:15.132 --> 00:00:17.407
+Before clicking Run, predict how the table should change.
 
-00:00:23.463 --> 00:00:28.979
-or transformed output Run it in the browser and
-inspect the row count column values
+00:00:17.407 --> 00:00:25.717
+Then run the cell and inspect the row count, column values, grouping, dates, missing values,
 
-00:00:29.124 --> 00:00:34.874
-grouping dates missing values or flags that matter
-Then change one input
+00:00:25.717 --> 00:00:28.377
+or flags that matter. Change one input and rerun it.
 
-00:00:34.900 --> 00:00:36.150
-and compare the result
+00:00:28.377 --> 00:00:34.702
+Connect the DataFrame operation to an analytical question rather than simply making the code execute.
+
+00:00:34.702 --> 00:00:40.482
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:40.482 --> 00:00:45.902
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

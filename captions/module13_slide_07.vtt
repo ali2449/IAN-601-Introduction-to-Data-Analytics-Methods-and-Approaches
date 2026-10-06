@@ -1,28 +1,34 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.724
-This slide focuses on Correlation Start with the
-analytical question and the meaning
+00:00:00.000 --> 00:00:02.782
+On this slide, we are focusing on correlation.
 
-00:00:05.737 --> 00:00:11.247
-of the output before focusing on the syntax
-Correlation measures the
+00:00:02.782 --> 00:00:07.247
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.273 --> 00:00:18.052
-strength and direction of a linear relationship It
-does not prove causation Calculate
+00:00:07.247 --> 00:00:12.917
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:18.079 --> 00:00:23.601
-correlation Before running the example predict the
-statistic
+00:00:12.917 --> 00:00:17.842
+Correlation describes the direction and strength of a linear relationship.
 
-00:00:23.615 --> 00:00:29.275
-or visualization input Run it in the browser and
-inspect the center spread group
+00:00:17.842 --> 00:00:22.732
+It does not prove that one variable causes the other.
 
-00:00:29.288 --> 00:00:34.828
-difference association or interval being calculated
-Then change one value
+00:00:22.732 --> 00:00:27.197
+Before clicking Run, predict the statistic or pattern you expect.
 
-00:00:34.841 --> 00:00:36.972
-and see how the interpretation changes
+00:00:27.197 --> 00:00:29.477
+After it runs, interpret the result in words.
+
+00:00:29.477 --> 00:00:33.927
+Then change one value and see whether the interpretation changes.
+
+00:00:33.927 --> 00:00:38.137
+Focus on meaning and limitations, not only the calculation.
+
+00:00:38.137 --> 00:00:43.882
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:43.882 --> 00:00:49.298
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

@@ -1,25 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.829
-This slide focuses on Pivot tables Start with what
-the operation changes in the data
+00:00:00.000 --> 00:00:02.762
+On this slide, we are focusing on pivot tables.
 
-00:00:06.132 --> 00:00:12.139
-then connect that change to the analytical question
-A pivot table summarizes
+00:00:02.762 --> 00:00:07.512
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:12.165 --> 00:00:18.882
-numeric values across categories Create a pivot
-table Before
+00:00:07.512 --> 00:00:13.772
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:18.909 --> 00:00:24.490
-running the example predict the table summary or
-transformed output Run it in the
+00:00:13.772 --> 00:00:18.157
+A pivot table summarizes a numeric measure across categories.
 
-00:00:24.504 --> 00:00:30.096
-browser and inspect the row count column values
-grouping dates missing values or flags
+00:00:18.157 --> 00:00:24.947
+Always be clear about what the rows, columns, and cell values represent.
 
-00:00:30.122 --> 00:00:34.398
-that matter Then change one input and compare the
-result
+00:00:24.947 --> 00:00:27.217
+Before clicking Run, predict how the table should change.
+
+00:00:27.217 --> 00:00:32.752
+Then run the cell and inspect the row count, column values, grouping, dates, missing values,
+
+00:00:32.752 --> 00:00:38.192
+or flags that matter. Change one input and rerun it.
+
+00:00:38.192 --> 00:00:44.372
+Connect the DataFrame operation to an analytical question rather than simply making the code execute.

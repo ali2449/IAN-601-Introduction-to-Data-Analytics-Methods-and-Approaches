@@ -1,20 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.908
-This slide is the roadmap for Module 14 Follow the
-progression from the core idea
+00:00:00.000 --> 00:00:01.802
+Use this slide as a roadmap.
 
-00:00:05.934 --> 00:00:11.843
-to evaluation and the final integrated workflow Read
-CSV-style
+00:00:01.802 --> 00:00:07.152
+The ideas are intentionally ordered so later examples build on earlier concepts.
 
-00:00:11.856 --> 00:00:17.438
-data Choose inputs and target Separate training and
-testing
+00:00:07.152 --> 00:00:12.917
+As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of
 
-00:00:19.191 --> 00:00:25.522
-Train a simple classifier Use accuracy and confusion
-matrix Compare
+00:00:12.917 --> 00:00:16.242
+treating each method as an isolated command.
 
-00:00:25.549 --> 00:00:27.430
-to baseline and explain limits
+00:00:16.242 --> 00:00:20.027
+Machine learning is a workflow rather than a single fit command.
+
+00:00:20.027 --> 00:00:25.517
+Keep training information separate from evaluation data, compare against a baseline,
+
+00:00:25.517 --> 00:00:29.982
+and interpret model performance in the context of the real prediction problem.
+
+00:00:29.982 --> 00:00:35.742
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:35.742 --> 00:00:41.160
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

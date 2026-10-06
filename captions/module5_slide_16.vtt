@@ -1,20 +1,25 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.421
-This slide focuses on Choose the right structure
-Start with the meaning of the idea
+00:00:00.000 --> 00:00:03.397
+On this slide, we are focusing on choose the right structure.
 
-00:00:05.645 --> 00:00:11.363
-then connect it to the example and the larger
-analytical workflow The best
+00:00:03.397 --> 00:00:08.202
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.376 --> 00:00:17.273
-structure depends on how the data will be used Order
-matters and duplicates are allowed
+00:00:08.202 --> 00:00:14.007
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:18.194 --> 00:00:23.819
-The record should not change Use a dictionary Values
-need names or
+00:00:14.007 --> 00:00:16.367
+Choose the structure based on meaning.
 
-00:00:23.845 --> 00:00:27.887
-labels You need unique values or group comparison
+00:00:16.367 --> 00:00:21.637
+Use dictionaries for labeled fields and sets for uniqueness or membership.
+
+00:00:21.637 --> 00:00:26.647
+A good data structure makes later code shorter and easier to reason about.
+
+00:00:26.647 --> 00:00:32.407
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:32.407 --> 00:00:37.827
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

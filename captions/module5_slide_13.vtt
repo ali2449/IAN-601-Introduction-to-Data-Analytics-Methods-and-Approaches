@@ -1,24 +1,34 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.605
-This slide focuses on Set operations Start with the
-meaning of the idea then
+00:00:00.000 --> 00:00:03.697
+On this slide, we are focusing on set operations.
 
-00:00:05.632 --> 00:00:11.333
-connect it to the example and the larger analytical
-workflow Sets make
+00:00:03.697 --> 00:00:08.772
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.346 --> 00:00:18.261
-it easy to compare groups Union intersection
-difference Before
+00:00:08.772 --> 00:00:15.067
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:18.287 --> 00:00:23.435
-running the example predict what the output should
-look like Run it in the browser
+00:00:15.067 --> 00:00:17.587
+A set stores unique values.
 
-00:00:23.553 --> 00:00:28.645
-inspect the result then change one input key value
-or condition and run it again
+00:00:17.587 --> 00:00:23.937
+It is useful for distinct categories, membership tests, and comparing overlap between groups.
 
-00:00:29.579 --> 00:00:31.448
-Focus on what changed and why
+00:00:23.937 --> 00:00:27.077
+Before clicking Run, predict the output.
+
+00:00:27.077 --> 00:00:33.227
+Then run the cell, inspect the result, and change one value or condition at a time.
+
+00:00:33.227 --> 00:00:36.572
+Rerun it and explain why the output changed.
+
+00:00:36.572 --> 00:00:41.747
+The goal is to understand the relationship between input, process, and output.
+
+00:00:41.747 --> 00:00:47.507
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:47.507 --> 00:00:52.924
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

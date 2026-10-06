@@ -1,25 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.105
-This slide summarizes Module 12 Focus on the
-decisions and checks that make the workflow
+00:00:00.000 --> 00:00:04.332
+On this slide, we are focusing on basic eda summary.
 
-00:00:06.132 --> 00:00:11.785
-reliable and reusable EDA uses summaries to
-understand what
+00:00:04.332 --> 00:00:09.367
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.799 --> 00:00:19.050
-is in the data before formal analysis Create an EDA
-summary Before
+00:00:09.367 --> 00:00:15.482
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:19.077 --> 00:00:24.658
-running the example predict the table summary or
-transformed output Run it in the
+00:00:15.482 --> 00:00:19.402
+Before clicking Run, predict how the table should change.
 
-00:00:24.672 --> 00:00:30.264
-browser and inspect the row count column values
-grouping dates missing values or flags
+00:00:19.402 --> 00:00:24.932
+Then run the cell and inspect the row count, column values, grouping, dates, missing values,
 
-00:00:30.290 --> 00:00:34.566
-that matter Then change one input and compare the
-result
+00:00:24.932 --> 00:00:30.377
+or flags that matter. Change one input and rerun it.
+
+00:00:30.377 --> 00:00:36.697
+Connect the DataFrame operation to an analytical question rather than simply making the code execute.
+
+00:00:36.697 --> 00:00:42.482
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:42.482 --> 00:00:47.899
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

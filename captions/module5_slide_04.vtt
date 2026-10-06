@@ -1,24 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.447
-This slide focuses on Why dictionaries and sets
-matter Start with the meaning of the
+00:00:00.000 --> 00:00:03.707
+On this slide, we are focusing on why dictionaries and sets matter.
 
-00:00:05.474 --> 00:00:11.882
-idea then connect it to the example and the larger
-analytical workflow Lists
+00:00:03.707 --> 00:00:08.172
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.908 --> 00:00:17.543
-are useful when order matters Dictionaries and sets
-are useful when meaning or uniqueness
+00:00:08.172 --> 00:00:16.407
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.569 --> 00:00:23.687
-matters Dictionary stores data as key value pairs
-Set
+00:00:16.407 --> 00:00:17.712
+A set stores unique values.
 
-00:00:23.937 --> 00:00:29.457
-stores unique values without duplicates Analytics
-use labeled
+00:00:17.712 --> 00:00:22.762
+It is useful for distinct categories, membership tests, and comparing overlap between groups.
 
-00:00:29.483 --> 00:00:33.325
-records category counts unique IDs and lookup tables
+00:00:22.762 --> 00:00:25.122
+Choose the structure based on meaning.
+
+00:00:25.122 --> 00:00:30.392
+Use dictionaries for labeled fields and sets for uniqueness or membership.
+
+00:00:30.392 --> 00:00:35.407
+A good data structure makes later code shorter and easier to reason about.
+
+00:00:35.407 --> 00:00:41.167
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:41.167 --> 00:00:46.584
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

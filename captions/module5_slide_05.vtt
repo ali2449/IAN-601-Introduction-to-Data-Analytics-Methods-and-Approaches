@@ -1,25 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.671
-This slide focuses on Create a dictionary Start with
-the meaning of the idea then
+00:00:00.000 --> 00:00:03.452
+On this slide, we are focusing on create a dictionary.
 
-00:00:05.697 --> 00:00:11.589
-connect it to the example and the larger analytical
-workflow A dictionary
+00:00:03.452 --> 00:00:08.702
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.616 --> 00:00:17.566
-uses curly braces Each key has one value Create and
-inspect
+00:00:08.702 --> 00:00:15.082
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.592 --> 00:00:23.119
-a dictionary Before running the example predict what
-the output
+00:00:15.082 --> 00:00:18.067
+A dictionary stores key-value pairs.
 
-00:00:23.145 --> 00:00:28.332
-should look like Run it in the browser inspect the
-result then change one input
+00:00:18.067 --> 00:00:26.702
+Meaningful keys such as name, status, amount, or category make the structure easier to understand than
 
-00:00:28.503 --> 00:00:33.872
-key value or condition and run it again Focus on
-what changed and why
+00:00:26.702 --> 00:00:29.842
+position alone. Before clicking Run, predict the output.
+
+00:00:29.842 --> 00:00:35.992
+Then run the cell, inspect the result, and change one value or condition at a time.
+
+00:00:35.992 --> 00:00:39.332
+Rerun it and explain why the output changed.
+
+00:00:39.332 --> 00:00:44.346
+The goal is to understand the relationship between input, process, and output.

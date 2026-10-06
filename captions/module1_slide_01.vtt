@@ -1,42 +1,13 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.750
-Welcome to Module 1 of IAN 601 In this module we are
-going to build
+00:00:00.000 --> 00:00:07.757
+Welcome to Module 1. We are building the Python foundation that every later analytics module depends on.
 
-00:00:05.763 --> 00:00:10.987
-the Python foundation that we will use throughout
-the course You do not need prior
+00:00:07.757 --> 00:00:14.977
+We will focus on how Python stores values, understands data types, performs calculations,
 
-00:00:11.000 --> 00:00:16.658
-programming experience The goal is to work with
-small pieces of code understand what
+00:00:14.977 --> 00:00:21.072
+and produces readable output. The goal is not memorizing isolated syntax.
 
-00:00:16.684 --> 00:00:22.310
-each line is doing and connect the code to
-analytical work A useful
-
-00:00:22.336 --> 00:00:27.444
-mental model for this module is simple We start with
-data we give that data
-
-00:00:27.457 --> 00:00:32.970
-meaningful names we perform calculations or
-transformations and then we communicate the result
-
-00:00:33.891 --> 00:00:40.391
-That basic pattern appears again and again in
-business analytics healthcare analytics data
-cleaning visualization
-
-00:00:40.549 --> 00:00:46.327
-statistics and machine learning As you move through
-the slides try to predict
-
-00:00:46.353 --> 00:00:51.553
-the result before you run a Python example Then
-change one value and run it
-
-00:00:51.580 --> 00:00:56.948
-again That small habit will help you understand the
-code instead of only copying it
+00:00:21.072 --> 00:00:26.240
+The goal is to understand how small pieces of code represent a real analytical idea.

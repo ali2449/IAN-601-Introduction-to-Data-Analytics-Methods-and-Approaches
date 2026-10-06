@@ -1,25 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.908
-This slide summarizes Module 5 Focus on the patterns
-you should be able to explain
+00:00:00.000 --> 00:00:02.627
+This slide brings Module 5 together.
 
-00:00:05.921 --> 00:00:11.797
-and reuse after completing the examples Create
-labeled records and access
+00:00:02.627 --> 00:00:06.407
+Review the patterns you can now recognize and reuse.
 
-00:00:11.810 --> 00:00:18.629
-values by key Add change remove and safely retrieve
-values Process
+00:00:06.407 --> 00:00:12.117
+Focus on the decisions behind the syntax: what structure or method fits the problem,
 
-00:00:18.642 --> 00:00:24.439
-keys values and key-value pairs Build category
-frequency
+00:00:12.117 --> 00:00:16.737
+what assumptions are being made, and what you should check before trusting the result.
 
-00:00:24.466 --> 00:00:30.455
-tables with dictionaries Remove duplicates and
-compare groups Module
+00:00:16.737 --> 00:00:19.102
+Choose the structure based on meaning.
 
-00:00:30.481 --> 00:00:34.850
-6 uses packages and object-oriented thinking to
-organize larger programs
+00:00:19.102 --> 00:00:24.367
+Use dictionaries for labeled fields and sets for uniqueness or membership.
+
+00:00:24.367 --> 00:00:29.382
+A good data structure makes later code shorter and easier to reason about.
+
+00:00:29.382 --> 00:00:35.142
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:35.142 --> 00:00:40.560
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

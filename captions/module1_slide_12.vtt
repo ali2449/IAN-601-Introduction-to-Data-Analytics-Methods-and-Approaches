@@ -1,32 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:04.458
-Python provides the type function so we can inspect
-how it has classified a value
+00:00:00.000 --> 00:00:03.497
+On this slide, we are focusing on inspect data types.
 
-00:00:05.382 --> 00:00:09.566
-In this example age is an integer height is a float
-name is a string
+00:00:03.497 --> 00:00:08.267
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:09.816 --> 00:00:15.448
-and the student flag is Boolean Run the example and
-compare the result
+00:00:08.267 --> 00:00:14.532
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:15.474 --> 00:00:21.068
-with the values that were assigned Then place
-quotation marks around the age value and run
+00:00:14.532 --> 00:00:22.292
+A data type tells Python what a value means and which operations are valid.
 
-00:00:21.095 --> 00:00:26.384
-it again Even though the characters still look like
-the number thirty Python will now
+00:00:22.292 --> 00:00:28.002
+Numeric values support arithmetic, strings represent text, and Boolean values represent True or False logic.
 
-00:00:26.397 --> 00:00:31.983
-treat the value as text This distinction becomes
-very important when we
+00:00:28.002 --> 00:00:31.187
+Before clicking Run, predict the output.
 
-00:00:31.996 --> 00:00:37.775
-import data from CSV files forms or APIs A value may
-look numeric
+00:00:31.187 --> 00:00:37.337
+Then run the cell, inspect the result, and change one value or condition at a time.
 
-00:00:37.801 --> 00:00:40.301
-to us but still arrive in Python as a string
+00:00:37.337 --> 00:00:40.682
+Rerun it and explain why the output changed.
+
+00:00:40.682 --> 00:00:45.693
+The goal is to understand the relationship between input, process, and output.

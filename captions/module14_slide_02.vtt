@@ -1,20 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.803
-Use this lesson interactively Read the question
-first predict the result run
+00:00:00.000 --> 00:00:06.022
+Use this lesson actively. Read the idea first and make a prediction before running any code.
 
-00:00:05.829 --> 00:00:11.629
-the example and then explain what the output does
-and does not tell you Start
+00:00:06.022 --> 00:00:09.242
+When a Python cell is available, click Run, inspect the output,
 
-00:00:11.655 --> 00:00:18.039
-with the main idea on the slide Execute the Python
-code in the browser Connect
+00:00:09.242 --> 00:00:13.632
+and then change one small value or condition.
 
-00:00:18.066 --> 00:00:24.121
-the output to the concept Change one value variable
-or condition
+00:00:13.632 --> 00:00:16.432
+Run it again and explain what changed.
 
-00:00:25.058 --> 00:00:27.176
-Apply the pattern to a new example
+00:00:16.432 --> 00:00:22.577
+This predict, run, modify, and explain cycle is more useful than copying a finished example.
+
+00:00:22.577 --> 00:00:26.347
+Machine learning is a workflow rather than a single fit command.
+
+00:00:26.347 --> 00:00:31.837
+Keep training information separate from evaluation data, compare against a baseline,
+
+00:00:31.837 --> 00:00:36.302
+and interpret model performance in the context of the real prediction problem.
+
+00:00:36.302 --> 00:00:42.062
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:42.062 --> 00:00:47.480
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

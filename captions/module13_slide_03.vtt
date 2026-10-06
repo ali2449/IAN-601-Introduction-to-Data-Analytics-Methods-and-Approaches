@@ -1,20 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.895
-This slide is the roadmap for Module 13 Follow the
-progression from the core idea
+00:00:00.000 --> 00:00:01.807
+Use this slide as a roadmap.
 
-00:00:05.921 --> 00:00:11.646
-to evaluation and the final integrated workflow Mean
-median
+00:00:01.807 --> 00:00:07.152
+The ideas are intentionally ordered so later examples build on earlier concepts.
 
-00:00:11.856 --> 00:00:19.716
-spread See shape and frequency Summarize groups
-Correlation
+00:00:07.152 --> 00:00:12.917
+As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of
 
-00:00:19.729 --> 00:00:25.548
-and association Sample estimates vary Choose visual
-forms
+00:00:12.917 --> 00:00:16.237
+treating each method as an isolated command.
 
-00:00:25.574 --> 00:00:26.179
-carefully
+00:00:16.237 --> 00:00:19.202
+Separate calculation from interpretation.
+
+00:00:19.202 --> 00:00:26.772
+A statistic summarizes the sample and a visualization reveals pattern, but both still require context,
+
+00:00:26.772 --> 00:00:29.982
+variability, and awareness of limitations.
+
+00:00:29.982 --> 00:00:35.742
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:35.742 --> 00:00:41.160
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

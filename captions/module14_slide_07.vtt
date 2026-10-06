@@ -1,25 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.000
-This slide focuses on Train a simple classifier
-Start with the analytical question
+00:00:00.000 --> 00:00:03.742
+On this slide, we are focusing on train a simple classifier.
 
-00:00:06.026 --> 00:00:11.701
-and the meaning of the output before focusing on the
-syntax A classifier
+00:00:03.742 --> 00:00:08.512
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.727 --> 00:00:17.269
-learns patterns from features and predicts a
-category Train logistic regression
+00:00:08.512 --> 00:00:14.642
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:19.099 --> 00:00:24.680
-Before running the example predict the structure of
-the output Run it in the browser
+00:00:14.642 --> 00:00:19.432
+A classifier learns patterns from features and predicts a category.
 
-00:00:24.693 --> 00:00:30.338
-and inspect the features target split predictions
-evaluation result or external-style
+00:00:19.432 --> 00:00:24.547
+Training fits the model, while prediction applies the learned relationship to rows.
 
-00:00:30.351 --> 00:00:34.562
-records Then change one input and compare what
-changes
+00:00:24.547 --> 00:00:27.972
+Before clicking Run, predict the structure of the output.
+
+00:00:27.972 --> 00:00:34.887
+After it runs, identify the features, target, split, prediction, or evaluation result involved.
+
+00:00:34.887 --> 00:00:40.127
+Change one input carefully and explain why the result did or did not change.
+
+00:00:40.127 --> 00:00:45.882
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:45.882 --> 00:00:51.302
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

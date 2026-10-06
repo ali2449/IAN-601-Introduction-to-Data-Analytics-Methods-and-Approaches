@@ -1,28 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.618
-This slide focuses on Flag outliers with IQR Start
-with what the operation
+00:00:00.000 --> 00:00:04.777
+On this slide, we are focusing on flag outliers with iqr.
 
-00:00:05.632 --> 00:00:11.446
-changes in the data then connect that change to the
-analytical question The
+00:00:04.777 --> 00:00:10.282
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.459 --> 00:00:17.423
-IQR rule is one simple way to flag unusually high or
-low values Flag possible
+00:00:10.282 --> 00:00:16.457
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.436 --> 00:00:23.068
-outliers Before running the example predict the
-table summary
+00:00:16.457 --> 00:00:22.152
+The I Q R rule flags values far below or above the central fifty percent.
 
-00:00:23.199 --> 00:00:28.715
-or transformed output Run it in the browser and
-inspect the row count column values
+00:00:22.152 --> 00:00:27.997
+A flagged value is not automatically wrong; it is a value that deserves investigation.
 
-00:00:28.860 --> 00:00:34.610
-grouping dates missing values or flags that matter
-Then change one input
+00:00:27.997 --> 00:00:31.917
+Before clicking Run, predict how the table should change.
 
-00:00:34.636 --> 00:00:35.886
-and compare the result
+00:00:31.917 --> 00:00:37.452
+Then run the cell and inspect the row count, column values, grouping, dates, missing values,
+
+00:00:37.452 --> 00:00:42.892
+or flags that matter. Change one input and rerun it.
+
+00:00:42.892 --> 00:00:49.072
+Connect the DataFrame operation to an analytical question rather than simply making the code execute.

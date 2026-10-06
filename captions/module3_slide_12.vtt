@@ -1,25 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.303
-This slide focuses on return is different from print
-Start with the meaning of the
+00:00:00.000 --> 00:00:04.287
+On this slide, we are focusing on return is different from print.
 
-00:00:05.329 --> 00:00:11.118
-idea then connect it to the example and to
-analytical work Shows
+00:00:04.287 --> 00:00:09.392
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.144 --> 00:00:17.292
-a value in the output area Useful for checking and
-communication Sends
+00:00:09.392 --> 00:00:15.687
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.318 --> 00:00:21.121
-a value back so another line of code can store it
-format it or use
+00:00:15.687 --> 00:00:21.212
+Return sends a value back to the program so later code can store it, combine it, test it,
 
-00:00:21.134 --> 00:00:26.847
-it in another calculation Connect this idea to the
-larger workflow how
+00:00:21.212 --> 00:00:24.267
+or pass it into another function.
 
-00:00:26.873 --> 00:00:30.662
-data is organized transformed checked or
-communicated
+00:00:24.267 --> 00:00:26.667
+Print only displays a value.
+
+00:00:26.667 --> 00:00:30.362
+Think about where this function would appear in a larger project.
+
+00:00:30.362 --> 00:00:37.622
+Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
+
+00:00:37.622 --> 00:00:39.886
+across many rows, files, or notebooks.

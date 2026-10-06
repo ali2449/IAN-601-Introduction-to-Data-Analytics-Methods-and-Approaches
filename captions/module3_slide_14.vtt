@@ -1,24 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.632
-This slide focuses on Code return more than one
-value Start with the meaning of
+00:00:00.000 --> 00:00:03.857
+On this slide, we are focusing on return more than one value.
 
-00:00:05.658 --> 00:00:11.745
-the idea then connect it to the example and to
-analytical work Return
+00:00:03.857 --> 00:00:08.607
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.771 --> 00:00:17.292
-more than one value Before running the code predict
-the output
+00:00:08.607 --> 00:00:14.667
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:18.215 --> 00:00:22.992
-Run the example in the browser inspect the result
-then change one input or value
+00:00:14.667 --> 00:00:20.952
+Return sends a value back to the program so later code can store it, combine it, test it,
 
-00:00:23.005 --> 00:00:27.689
-and run it again Focus on what changed and why
-rather than reading the code
+00:00:20.952 --> 00:00:23.247
+or pass it into another function.
 
-00:00:27.715 --> 00:00:29.018
-character by character
+00:00:23.247 --> 00:00:25.637
+Print only displays a value.
+
+00:00:25.637 --> 00:00:28.777
+Before clicking Run, predict the output.
+
+00:00:28.777 --> 00:00:34.927
+Then run the cell, inspect the result, and change one value or condition at a time.
+
+00:00:34.927 --> 00:00:38.272
+Rerun it and explain why the output changed.
+
+00:00:38.272 --> 00:00:43.284
+The goal is to understand the relationship between input, process, and output.

@@ -1,32 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.434
-A data type describes what kind of value Python is
-working with In this module
+00:00:00.000 --> 00:00:04.592
+On this slide, we are focusing on data types tell python what values mean.
 
-00:00:05.645 --> 00:00:12.267
-we focus on four fundamental types integer float
-string and Boolean An
+00:00:04.592 --> 00:00:09.247
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:12.293 --> 00:00:17.506
-integer is a whole number such as twelve visits A
-float is a decimal number
+00:00:09.247 --> 00:00:15.227
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.769 --> 00:00:23.269
-such as nineteen point ninety nine A string stores
-text labels and codes
+00:00:15.227 --> 00:00:20.452
+A data type tells Python what a value means and which operations are valid.
 
-00:00:24.177 --> 00:00:29.840
-A Boolean stores either true or false The type
-matters because it affects
+00:00:20.452 --> 00:00:28.892
+Numeric values support arithmetic, strings represent text, and Boolean values represent True or False logic.
 
-00:00:29.866 --> 00:00:36.580
-which operations make sense Adding two numeric
-measurements may be reasonable Adding
+00:00:28.892 --> 00:00:32.112
+Connect the concept to a small analytics task.
 
-00:00:36.606 --> 00:00:42.461
-an employee identifier to a ZIP code is not Good
-analytics begins by representing
+00:00:32.112 --> 00:00:37.187
+Imagine the value came from a sales file, survey, or operational system.
 
-00:00:42.487 --> 00:00:44.974
-each value in a way that matches its real meaning
+00:00:37.187 --> 00:00:42.202
+Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+
+00:00:42.202 --> 00:00:44.616
+from the names and output.

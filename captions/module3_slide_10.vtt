@@ -1,28 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.605
-This slide focuses on Code pass two analytical
-inputs Start with the meaning
+00:00:00.000 --> 00:00:04.052
+On this slide, we are focusing on pass two analytical inputs.
 
-00:00:05.632 --> 00:00:11.606
-of the idea then connect it to the example and to
-analytical work Pass
+00:00:04.052 --> 00:00:08.992
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.633 --> 00:00:17.872
-two analytical inputs Parameters make the same
-calculation work with different data Analytics
+00:00:08.992 --> 00:00:15.007
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.885 --> 00:00:24.012
-pattern Before running the code predict the output
-Run
+00:00:15.007 --> 00:00:18.142
+Before clicking Run, predict the output.
 
-00:00:24.038 --> 00:00:28.643
-the example in the browser inspect the result then
-change one input or value and
+00:00:18.142 --> 00:00:24.292
+Then run the cell, inspect the result, and change one value or condition at a time.
 
-00:00:28.670 --> 00:00:33.709
-run it again Focus on what changed and why rather
-than reading the code character
+00:00:24.292 --> 00:00:27.632
+Rerun it and explain why the output changed.
 
-00:00:33.735 --> 00:00:34.538
-by character
+00:00:27.632 --> 00:00:32.822
+The goal is to understand the relationship between input, process, and output.
+
+00:00:32.822 --> 00:00:36.517
+Think about where this function would appear in a larger project.
+
+00:00:36.517 --> 00:00:44.607
+Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
+
+00:00:44.607 --> 00:00:46.040
+across many rows, files, or notebooks.

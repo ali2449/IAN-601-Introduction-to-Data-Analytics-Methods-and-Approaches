@@ -1,25 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.776
-This slide focuses on Melt wide data into long data
-Start with what the operation
+00:00:00.000 --> 00:00:04.097
+On this slide, we are focusing on melt wide data into long data.
 
-00:00:05.789 --> 00:00:11.825
-changes in the data then connect that change to the
-analytical question Long
+00:00:04.097 --> 00:00:08.892
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.838 --> 00:00:17.706
-format is often easier for analysis plotting and
-grouping Before
+00:00:08.892 --> 00:00:15.037
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.733 --> 00:00:23.314
-running the example predict the table summary or
-transformed output Run it in the
+00:00:15.037 --> 00:00:19.287
+Melting converts wide columns into a longer key-value structure.
 
-00:00:23.328 --> 00:00:28.920
-browser and inspect the row count column values
-grouping dates missing values or flags
+00:00:19.287 --> 00:00:27.157
+Long format is often easier for grouping, plotting, and repeated analysis across variables.
 
-00:00:28.946 --> 00:00:33.222
-that matter Then change one input and compare the
-result
+00:00:27.157 --> 00:00:29.427
+Before clicking Run, predict how the table should change.
+
+00:00:29.427 --> 00:00:34.962
+Then run the cell and inspect the row count, column values, grouping, dates, missing values,
+
+00:00:34.962 --> 00:00:40.402
+or flags that matter. Change one input and rerun it.
+
+00:00:40.402 --> 00:00:46.584
+Connect the DataFrame operation to an analytical question rather than simply making the code execute.

@@ -1,28 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.711
-This slide focuses on Create a list Start with what
-the structure represents then
+00:00:00.000 --> 00:00:03.602
+On this slide, we are focusing on create a list.
 
-00:00:05.737 --> 00:00:11.771
-connect that idea to the example on the slide A list
-uses square brackets
+00:00:03.602 --> 00:00:08.472
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:12.681 --> 00:00:17.655
-Values stay in the same order unless we change the
-list Use a list when
+00:00:08.472 --> 00:00:14.622
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.800 --> 00:00:23.652
-Create and inspect a list Before running the code
-predict the output
+00:00:14.622 --> 00:00:17.872
+A list is an ordered collection that can change.
 
-00:00:24.575 --> 00:00:29.510
-Run the example in the browser inspect the result
-then change one item index or
+00:00:17.872 --> 00:00:24.742
+It is useful when values may be added, removed, replaced, sorted, or processed over time.
 
-00:00:29.523 --> 00:00:35.247
-value and run it again Notice which operations
-change the original list and which simply
+00:00:24.742 --> 00:00:27.882
+Before clicking Run, predict the output.
 
-00:00:35.273 --> 00:00:35.904
-read from it
+00:00:27.882 --> 00:00:34.032
+Then run the cell, inspect the result, and change one value or condition at a time.
+
+00:00:34.032 --> 00:00:37.372
+Rerun it and explain why the output changed.
+
+00:00:37.372 --> 00:00:42.386
+The goal is to understand the relationship between input, process, and output.

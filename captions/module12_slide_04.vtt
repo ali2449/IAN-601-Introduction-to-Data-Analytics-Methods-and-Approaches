@@ -1,28 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.776
-This slide focuses on Create a messy dataset Start
-with what the operation changes
+00:00:00.000 --> 00:00:03.332
+On this slide, we are focusing on create a messy dataset.
 
-00:00:05.803 --> 00:00:11.395
-in the data then connect that change to the
-analytical question Messy
+00:00:03.332 --> 00:00:10.332
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.421 --> 00:00:17.132
-data can include missing values duplicate rows
-inconsistent labels and values stored as text
+00:00:10.332 --> 00:00:16.567
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:18.056 --> 00:00:23.686
-Build a small messy DataFrame Before running the
-example predict
+00:00:16.567 --> 00:00:17.872
+A set stores unique values.
 
-00:00:23.712 --> 00:00:29.070
-the table summary or transformed output Run it in
-the browser and inspect the row
+00:00:17.872 --> 00:00:24.572
+It is useful for distinct categories, membership tests, and comparing overlap between groups.
 
-00:00:29.097 --> 00:00:35.254
-count column values grouping dates missing values or
-flags that matter Then
+00:00:24.572 --> 00:00:26.842
+Before clicking Run, predict how the table should change.
 
-00:00:35.281 --> 00:00:37.662
-change one input and compare the result
+00:00:26.842 --> 00:00:32.372
+Then run the cell and inspect the row count, column values, grouping, dates, missing values,
+
+00:00:32.372 --> 00:00:37.817
+or flags that matter. Change one input and rerun it.
+
+00:00:37.817 --> 00:00:43.997
+Connect the DataFrame operation to an analytical question rather than simply making the code execute.

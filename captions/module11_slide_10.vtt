@@ -1,25 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.697
-This slide focuses on Join checks Start with what
-the operation changes in the data
+00:00:00.000 --> 00:00:02.807
+On this slide, we are focusing on join checks.
 
-00:00:06.000 --> 00:00:11.692
-then connect that change to the analytical question
-After a merge check
+00:00:02.807 --> 00:00:07.307
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.718 --> 00:00:18.186
-whether keys matched as expected Use merge indicator
-Before
+00:00:07.307 --> 00:00:13.572
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:18.213 --> 00:00:23.794
-running the example predict the table summary or
-transformed output Run it in the
+00:00:13.572 --> 00:00:19.597
+A successful merge is not proof of a correct merge.
 
-00:00:23.808 --> 00:00:29.400
-browser and inspect the row count column values
-grouping dates missing values or flags
+00:00:19.597 --> 00:00:24.647
+Check matched and unmatched keys, row counts, and the expected key relationship.
 
-00:00:29.426 --> 00:00:33.702
-that matter Then change one input and compare the
-result
+00:00:24.647 --> 00:00:26.917
+Before clicking Run, predict how the table should change.
+
+00:00:26.917 --> 00:00:32.452
+Then run the cell and inspect the row count, column values, grouping, dates, missing values,
+
+00:00:32.452 --> 00:00:37.892
+or flags that matter. Change one input and rerun it.
+
+00:00:37.892 --> 00:00:44.072
+Connect the DataFrame operation to an analytical question rather than simply making the code execute.

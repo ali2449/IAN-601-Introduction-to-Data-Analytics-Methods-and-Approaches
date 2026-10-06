@@ -1,16 +1,25 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.382
-Welcome to Module 4 This module focuses on Lists &
-Tuples We
+00:00:00.000 --> 00:00:05.642
+Welcome to Module 4. We are moving from individual values to collections.
 
-00:00:06.408 --> 00:00:11.961
-will organize multiple values with Python sequences
-and connect the examples to analytics work
+00:00:05.642 --> 00:00:12.712
+Lists and tuples let Python organize several related observations so we can access, change, loop through,
 
-00:00:13.691 --> 00:00:18.427
-Lists and tuples help organize more than one value
-so Python can analyze a collection
+00:00:12.712 --> 00:00:19.292
+and summarize them. A tuple is ordered like a list but is intended to stay fixed.
 
-00:00:18.454 --> 00:00:19.664
-instead of a single item
+00:00:19.292 --> 00:00:23.797
+It works well for compact records whose positions should not change.
+
+00:00:23.797 --> 00:00:26.942
+Before clicking Run, predict the output.
+
+00:00:26.942 --> 00:00:33.087
+Then run the cell, inspect the result, and change one value or condition at a time.
+
+00:00:33.087 --> 00:00:36.432
+Rerun it and explain why the output changed.
+
+00:00:36.432 --> 00:00:41.444
+The goal is to understand the relationship between input, process, and output.

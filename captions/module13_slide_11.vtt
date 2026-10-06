@@ -1,25 +1,37 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.803
-This slide focuses on Mini statistics report Start
-with the analytical question
+00:00:00.000 --> 00:00:03.802
+On this slide, we are focusing on mini statistics report.
 
-00:00:05.829 --> 00:00:11.550
-and the meaning of the output before focusing on the
-syntax A short report
+00:00:03.802 --> 00:00:08.437
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.577 --> 00:00:17.343
-combines data summaries with a plain-language
-interpretation Create a report sentence
+00:00:08.437 --> 00:00:16.312
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:19.171 --> 00:00:24.818
-Before running the example predict the statistic or
-visualization input Run
+00:00:16.312 --> 00:00:20.777
+Before clicking Run, predict the statistic or pattern you expect.
 
-00:00:24.844 --> 00:00:30.186
-it in the browser and inspect the center spread
-group difference association or interval being
+00:00:20.777 --> 00:00:23.052
+After it runs, interpret the result in words.
 
-00:00:30.213 --> 00:00:35.436
-calculated Then change one value and see how the
-interpretation changes
+00:00:23.052 --> 00:00:27.502
+Then change one value and see whether the interpretation changes.
+
+00:00:27.502 --> 00:00:31.702
+Focus on meaning and limitations, not only the calculation.
+
+00:00:31.702 --> 00:00:34.652
+Separate calculation from interpretation.
+
+00:00:34.652 --> 00:00:42.232
+A statistic summarizes the sample and a visualization reveals pattern, but both still require context,
+
+00:00:42.232 --> 00:00:45.437
+variability, and awareness of limitations.
+
+00:00:45.437 --> 00:00:51.192
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:51.192 --> 00:00:56.612
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

@@ -1,29 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.658
-This slide focuses on Evaluate predictions Start
-with the analytical question
+00:00:00.000 --> 00:00:03.437
+On this slide, we are focusing on evaluate predictions.
 
-00:00:05.684 --> 00:00:11.209
-and the meaning of the output before focusing on the
-syntax Accuracy
+00:00:03.437 --> 00:00:08.047
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.235 --> 00:00:16.791
-is the percent of correct predictions A confusion
-matrix shows correct and incorrect
+00:00:08.047 --> 00:00:13.682
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:16.817 --> 00:00:23.397
-predictions by class Accuracy and confusion matrix
-Before
+00:00:13.682 --> 00:00:21.182
+Accuracy summarizes the fraction of correct predictions, while a confusion matrix shows which classes were
 
-00:00:23.423 --> 00:00:28.650
-running the example predict the structure of the
-output Run it in the browser and
+00:00:21.182 --> 00:00:24.612
+confused. Before clicking Run, predict the structure of the output.
 
-00:00:28.676 --> 00:00:34.202
-inspect the features target split predictions
-evaluation result or external-style
+00:00:24.612 --> 00:00:31.517
+After it runs, identify the features, target, split, prediction, or evaluation result involved.
 
-00:00:34.215 --> 00:00:38.426
-records Then change one input and compare what
-changes
+00:00:31.517 --> 00:00:36.757
+Change one input carefully and explain why the result did or did not change.
+
+00:00:36.757 --> 00:00:42.517
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:42.517 --> 00:00:47.936
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

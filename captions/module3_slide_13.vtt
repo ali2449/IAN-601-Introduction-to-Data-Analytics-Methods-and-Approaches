@@ -1,24 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.658
-This slide focuses on Code return a value Start with
-the meaning of the idea
+00:00:00.000 --> 00:00:03.152
+On this slide, we are focusing on return a value.
 
-00:00:05.908 --> 00:00:11.458
-then connect it to the example and to analytical
-work Unlike print
+00:00:03.152 --> 00:00:07.662
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.695 --> 00:00:17.712
-return gives the value back to the program Before
-running the code predict
+00:00:07.662 --> 00:00:16.327
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.738 --> 00:00:23.517
-the output Run the example in the browser inspect
-the result then change one input
+00:00:16.327 --> 00:00:19.792
+Return sends a value back to the program so later code can store it, combine it, test it,
 
-00:00:23.543 --> 00:00:28.385
-or value and run it again Focus on what changed and
-why rather than reading
+00:00:19.792 --> 00:00:22.087
+or pass it into another function.
 
-00:00:28.412 --> 00:00:30.122
-the code character by character
+00:00:22.087 --> 00:00:26.117
+Print only displays a value.
+
+00:00:26.117 --> 00:00:27.617
+Before clicking Run, predict the output.
+
+00:00:27.617 --> 00:00:33.767
+Then run the cell, inspect the result, and change one value or condition at a time.
+
+00:00:33.767 --> 00:00:37.112
+Rerun it and explain why the output changed.
+
+00:00:37.112 --> 00:00:42.122
+The goal is to understand the relationship between input, process, and output.

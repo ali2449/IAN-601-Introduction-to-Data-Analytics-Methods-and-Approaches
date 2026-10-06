@@ -1,28 +1,37 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.645
-This slide focuses on Text-based bar chart Start
-with the analytical question and
+00:00:00.000 --> 00:00:03.467
+On this slide, we are focusing on text-based bar chart.
 
-00:00:05.658 --> 00:00:11.192
-the meaning of the output before focusing on the
-syntax Even without a
+00:00:03.467 --> 00:00:08.232
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.205 --> 00:00:16.721
-plotting library a text chart can show the logic of
-visual comparison Print a
+00:00:08.232 --> 00:00:15.987
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:16.734 --> 00:00:22.593
-small bar chart Before running the example predict
-the statistic
+00:00:15.987 --> 00:00:20.457
+Before clicking Run, predict the statistic or pattern you expect.
 
-00:00:22.607 --> 00:00:28.267
-or visualization input Run it in the browser and
-inspect the center spread group
+00:00:20.457 --> 00:00:22.732
+After it runs, interpret the result in words.
 
-00:00:28.280 --> 00:00:33.820
-difference association or interval being calculated
-Then change one value
+00:00:22.732 --> 00:00:27.177
+Then change one value and see whether the interpretation changes.
 
-00:00:33.833 --> 00:00:35.964
-and see how the interpretation changes
+00:00:27.177 --> 00:00:31.377
+Focus on meaning and limitations, not only the calculation.
+
+00:00:31.377 --> 00:00:34.332
+Separate calculation from interpretation.
+
+00:00:34.332 --> 00:00:41.902
+A statistic summarizes the sample and a visualization reveals pattern, but both still require context,
+
+00:00:41.902 --> 00:00:45.107
+variability, and awareness of limitations.
+
+00:00:45.107 --> 00:00:50.872
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:50.872 --> 00:00:56.291
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

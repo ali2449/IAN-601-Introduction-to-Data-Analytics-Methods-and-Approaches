@@ -1,27 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.671
-This slide focuses on Code compare values The goal
-is to understand the idea
+00:00:00.000 --> 00:00:03.072
+On this slide, we are focusing on compare values.
 
-00:00:05.684 --> 00:00:11.722
-in plain language before connecting it to code or
-analytical use Executable
+00:00:03.072 --> 00:00:07.792
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.749 --> 00:00:18.021
-example Compare two values A comparison produces
-True or False Before
+00:00:07.792 --> 00:00:15.567
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:18.047 --> 00:00:23.221
-running the example predict what the output should
-look like Run it in the browser
+00:00:15.567 --> 00:00:18.642
+Before clicking Run, predict the output.
 
-00:00:23.339 --> 00:00:29.221
-inspect the result then change one value condition
-or input and run it again Pay
+00:00:18.642 --> 00:00:23.217
+Then run the cell, inspect the result, and change one value or condition at a time.
 
-00:00:29.247 --> 00:00:35.078
-attention to what changed and why compare_values.py
+00:00:23.217 --> 00:00:26.562
+Rerun it and explain why the output changed.
 
-00:00:35.105 --> 00:00:36.552
-What happens Why it matters
+00:00:26.562 --> 00:00:33.257
+The goal is to understand the relationship between input, process, and output.
+
+00:00:33.257 --> 00:00:38.692
+In real analytics, this pattern can support thresholds, validation rules, category assignment, alerts,
+
+00:00:38.692 --> 00:00:41.722
+and repeated processing.
+
+00:00:41.722 --> 00:00:47.514
+The examples are intentionally small so you can trace the logic from the condition to the result.

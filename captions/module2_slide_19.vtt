@@ -1,32 +1,25 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.211
-This slide focuses on Nested loops a loop inside a
-loop The goal is to
+00:00:00.000 --> 00:00:04.887
+On this slide, we are focusing on nested loops: a loop inside a loop.
 
-00:00:05.237 --> 00:00:11.844
-understand the idea in plain language before
-connecting it to code or analytical use Use
+00:00:04.887 --> 00:00:09.747
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.870 --> 00:00:16.620
-carefully A nested loop is useful for grids or
-paired combinations but too many layers
+00:00:09.747 --> 00:00:15.722
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:16.647 --> 00:00:22.941
-become difficult to read Use nested loops carefully
-Before
+00:00:15.722 --> 00:00:19.882
+A nested loop runs an inner loop for every outer item.
 
-00:00:22.967 --> 00:00:28.141
-running the example predict what the output should
-look like Run it in the browser
+00:00:19.882 --> 00:00:26.457
+It can model combinations, but it can also become expensive and hard to read as data grows.
 
-00:00:28.259 --> 00:00:34.141
-inspect the result then change one value condition
-or input and run it again Pay
+00:00:26.457 --> 00:00:33.427
+In real analytics, this pattern can support thresholds, validation rules, category assignment, alerts,
 
-00:00:34.167 --> 00:00:39.959
-attention to what changed and why The inner loop
-finishes for each outer-loop
+00:00:33.427 --> 00:00:36.457
+and repeated processing.
 
-00:00:39.972 --> 00:00:45.080
-row nested_loops.py Control Flow & Decision Making
+00:00:36.457 --> 00:00:42.245
+The examples are intentionally small so you can trace the logic from the condition to the result.

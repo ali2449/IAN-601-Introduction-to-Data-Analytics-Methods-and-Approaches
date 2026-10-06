@@ -1,97 +1,265 @@
 {
-  "prefix": "module11",
-  "voice": "en-US-GuyNeural",
-  "rate": "-5%",
-  "volume": "+0%",
-  "pitch": "+0Hz",
-  "caption_words": 15,
-  "slide_count": 12,
-  "slide_markers_found": true,
-  "pause_marker_format": "[pause=seconds] or [pause=millisecondsms]",
+  "module": "module11",
+  "filename_prefix": "module11",
+  "source_file": "IAN_601_Module_11_Narration.txt",
+  "voice_consistency_version": 3,
+  "reference_audio": "/home/ali/breeze-tts/voice_reference/course_instructor_consistent_v4.wav",
+  "reference_text": "Welcome to the course. We will work through each concept carefully, connect the\nideas step by step, and use practical examples to make technical topics easier\nto understand. When we introduce a new method, focus first on the problem it\nsolves and why it is useful. For example, in machine learning, features are the\ninformation we give the model, while the target is what we want it to predict.\nNow consider a simple question: what changes when the data contains missing\nvalues? We will think through the reason and then look at the code. In Python,\nwe can inspect the data, run one small step at a time, and explain what the\nresult means. The goal is to understand the logic, not simply memorize syntax.",
+  "locked_narration_seed": true,
+  "narration_seed": 1234,
+  "long_narration": {
+    "automatic_chunking": true,
+    "max_text_tokens_per_call": 260,
+    "chunk_pause_seconds": 0.38,
+    "manual_break_marker": "[tts-break]",
+    "breeze_max_new_tokens": 1500,
+    "breeze_max_seq_len": 2048
+  },
+  "subtitle_method": "whole_slide_silence_alignment",
+  "caption_settings": {
+    "max_words": 18,
+    "max_chars": 110,
+    "minimum_silence_seconds": 0.2,
+    "boundary_search_window_seconds": 1.4
+  },
   "slides": [
     {
       "slide": 1,
-      "audio": "module11_slide_01.mp3",
-      "captions": "module11_slide_01.vtt",
-      "text": "Welcome to Module 11. This module focuses on Advanced Pandas. We will connect the techniques to realistic analytical workflows and careful interpretation.\n\n[pause=0.7]\n\nAdvanced pandas helps transform messy tables into analysis-ready summaries using chaining, reshaping, dates, windows, and reusable functions.\n\n[pause=1.0]",
-      "pause_markers": 2
+      "title": "Advanced Pandas",
+      "transcript": "Welcome to Module 11. We are extending the Pandas foundation from Module 10 into more advanced workflows. The emphasis is on chaining operations, reshaping tables, working with dates and rolling summaries, checking joins, and packaging repeated Pandas logic into reusable functions.",
+      "seed": 1234,
+      "tts_text_tokens": 52,
+      "tts_chunk_count": 1,
+      "tts_chunk_tokens": [
+        52
+      ],
+      "tts_explicit_breaks": 0,
+      "tts_chunk_limit": 260,
+      "stitched_audio": false,
+      "wav": "wav/module11_slide_01.wav",
+      "audio": "audio/module11_slide_01.mp3",
+      "captions": "audio/module11_slide_01.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 2,
-      "audio": "module11_slide_02.mp3",
-      "captions": "module11_slide_02.vtt",
-      "text": "Use this lesson interactively. Read the idea, predict the result, run the example, then change one input and compare the output.\n\n[pause=0.7]\n\nStart with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept.\n\n[pause=0.7]\n\nChange one value, variable, or condition. Apply the pattern to a new example.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "How to use this page",
+      "transcript": "Use this lesson actively. Read the idea first and make a prediction before running any code. When a Python cell is available, click Run, inspect the output, and then change one small value or condition. Run it again and explain what changed. This predict, run, modify, and explain cycle is more useful than copying a finished example.\n\n[tts-break]\n\nIn a real Pandas workflow, check the shape and meaning of the DataFrame after important transformations. Compact code is useful only when another analyst can still understand what each step changes.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 135,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        68,
+        34,
+        31
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module11_slide_02.wav",
+      "audio": "audio/module11_slide_02.mp3",
+      "captions": "audio/module11_slide_02.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 3,
-      "audio": "module11_slide_03.mp3",
-      "captions": "module11_slide_03.vtt",
-      "text": "This slide is the roadmap for Module 11. Follow how the workflow moves from individual operations toward a complete analytical process.\n\n[pause=0.7]\n\nConnect DataFrame steps. Create summary tables. Convert wide data to long data.\n\n[pause=0.7]\n\nExtract time features. Calculate moving summaries. Make reusable pandas workflows.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Learning path for Module 11",
+      "transcript": "Use this slide as a roadmap. The ideas are intentionally ordered so later examples build on earlier concepts. As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of treating each method as an isolated command.\n\n[tts-break]\n\nIn a real Pandas workflow, check the shape and meaning of the DataFrame after important transformations. Compact code is useful only when another analyst can still understand what each step changes.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 114,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        47,
+        34,
+        31
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module11_slide_03.wav",
+      "audio": "audio/module11_slide_03.mp3",
+      "captions": "audio/module11_slide_03.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 4,
-      "audio": "module11_slide_04.mp3",
-      "captions": "module11_slide_04.vtt",
-      "text": "This slide focuses on Method chaining. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nMethod chaining connects several DataFrame steps into one readable workflow. Filter, assign, group\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Method chaining",
+      "transcript": "On this slide, we are focusing on method chaining. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nMethod chaining connects several DataFrame operations into one workflow. Each step should remain readable so another analyst can understand what changes.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
+      "seed": 1234,
+      "tts_text_tokens": 130,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        46,
+        23,
+        59
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module11_slide_04.wav",
+      "audio": "audio/module11_slide_04.mp3",
+      "captions": "audio/module11_slide_04.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 5,
-      "audio": "module11_slide_05.mp3",
-      "captions": "module11_slide_05.vtt",
-      "text": "This slide focuses on Pivot tables. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nA pivot table summarizes numeric values across categories. Create a pivot table\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Pivot tables",
+      "transcript": "On this slide, we are focusing on pivot tables. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA pivot table summarizes a numeric measure across categories. Always be clear about what the rows, columns, and cell values represent.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
+      "seed": 1234,
+      "tts_text_tokens": 132,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        46,
+        25,
+        59
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module11_slide_05.wav",
+      "audio": "audio/module11_slide_05.mp3",
+      "captions": "audio/module11_slide_05.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 6,
-      "audio": "module11_slide_06.mp3",
-      "captions": "module11_slide_06.vtt",
-      "text": "This slide focuses on Melt wide data into long data. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nLong format is often easier for analysis, plotting, and grouping.\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Melt wide data into long data",
+      "transcript": "On this slide, we are focusing on melt wide data into long data. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nMelting converts wide columns into a longer key-value structure. Long format is often easier for grouping, plotting, and repeated analysis across variables.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
+      "seed": 1234,
+      "tts_text_tokens": 140,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        50,
+        29,
+        59
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module11_slide_06.wav",
+      "audio": "audio/module11_slide_06.mp3",
+      "captions": "audio/module11_slide_06.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 7,
-      "audio": "module11_slide_07.mp3",
-      "captions": "module11_slide_07.vtt",
-      "text": "This slide focuses on Work with dates. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nDate columns can be converted to datetime and used to create month, weekday, or time-based summaries. Extract date features\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Work with dates",
+      "transcript": "On this slide, we are focusing on work with dates. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 139,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        47,
+        59,
+        31
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module11_slide_07.wav",
+      "audio": "audio/module11_slide_07.mp3",
+      "captions": "audio/module11_slide_07.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 8,
-      "audio": "module11_slide_08.mp3",
-      "captions": "module11_slide_08.vtt",
-      "text": "This slide focuses on Rolling summaries. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nA rolling calculation summarizes a moving window of rows. Calculate rolling average\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Rolling summaries",
+      "transcript": "On this slide, we are focusing on rolling summaries. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA rolling calculation summarizes a moving window of rows. The chosen window size directly affects the pattern you see.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
+      "seed": 1234,
+      "tts_text_tokens": 128,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        46,
+        21,
+        59
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module11_slide_08.wav",
+      "audio": "audio/module11_slide_08.mp3",
+      "captions": "audio/module11_slide_08.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 9,
-      "audio": "module11_slide_09.mp3",
-      "captions": "module11_slide_09.vtt",
-      "text": "This slide focuses on Map categories. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nmap() replaces values using a dictionary. This is useful for readable labels or grouped categories.\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Map categories",
+      "transcript": "On this slide, we are focusing on map categories. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 138,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        46,
+        59,
+        31
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module11_slide_09.wav",
+      "audio": "audio/module11_slide_09.mp3",
+      "captions": "audio/module11_slide_09.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 10,
-      "audio": "module11_slide_10.mp3",
-      "captions": "module11_slide_10.vtt",
-      "text": "This slide focuses on Join checks. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nAfter a merge, check whether keys matched as expected. Use merge indicator\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Join checks",
+      "transcript": "On this slide, we are focusing on join checks. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA successful merge is not proof of a correct merge. Check matched and unmatched keys, row counts, and the expected key relationship.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
+      "seed": 1234,
+      "tts_text_tokens": 133,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        46,
+        26,
+        59
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module11_slide_10.wav",
+      "audio": "audio/module11_slide_10.mp3",
+      "captions": "audio/module11_slide_10.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 11,
-      "audio": "module11_slide_11.mp3",
-      "captions": "module11_slide_11.vtt",
-      "text": "This slide focuses on Reusable pandas function. Start with what the operation changes in the data, then connect that change to the analytical question.\n\n[pause=0.7]\n\nA function can package common pandas steps so they can be reused safely. Summarize orders with a function\n\n[pause=0.8]\n\nBefore running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Reusable pandas function",
+      "transcript": "On this slide, we are focusing on reusable pandas function. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA function gives a reusable task a clear name. In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
+      "seed": 1234,
+      "tts_text_tokens": 137,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        47,
+        29,
+        59
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module11_slide_11.wav",
+      "audio": "audio/module11_slide_11.mp3",
+      "captions": "audio/module11_slide_11.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     },
     {
       "slide": 12,
-      "audio": "module11_slide_12.mp3",
-      "captions": "module11_slide_12.vtt",
-      "text": "This slide summarizes Module 11. Focus on the decisions and checks that make the workflow reliable and reusable.\n\n[pause=0.7]\n\nConnect clean steps. Create summary tables. Reshape wide to long.\n\n[pause=0.7]\n\nCreate time features. Summarize trends. Reuse pandas workflows.\n\n[pause=1.0]",
-      "pause_markers": 3
+      "title": "Module 11 wrap-up",
+      "transcript": "This slide brings Module 11 together. Review the patterns you can now recognize and reuse. Focus on the decisions behind the syntax: what structure or method fits the problem, what assumptions are being made, and what you should check before trusting the result.\n\n[tts-break]\n\nIn a real Pandas workflow, check the shape and meaning of the DataFrame after important transformations. Compact code is useful only when another analyst can still understand what each step changes.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
+      "seed": 1234,
+      "tts_text_tokens": 118,
+      "tts_chunk_count": 3,
+      "tts_chunk_tokens": [
+        51,
+        34,
+        31
+      ],
+      "tts_explicit_breaks": 2,
+      "tts_chunk_limit": 260,
+      "stitched_audio": true,
+      "wav": "wav/module11_slide_12.wav",
+      "audio": "audio/module11_slide_12.mp3",
+      "captions": "audio/module11_slide_12.vtt",
+      "sync_method": "whole_slide_silence_alignment"
     }
   ]
 }

@@ -1,32 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.618
-This slide focuses on Analytics example classify
-sales days The goal is to
+00:00:00.000 --> 00:00:05.097
+On this slide, we are focusing on analytics example: classify sales days.
 
-00:00:05.645 --> 00:00:12.199
-understand the idea in plain language before
-connecting it to code or analytical use This
+00:00:05.097 --> 00:00:09.962
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:12.226 --> 00:00:18.018
-example counts how many sales days are low target or
-high Run the cell then
+00:00:09.962 --> 00:00:16.137
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:18.044 --> 00:00:23.965
-change the sales values and run again Classify sales
-into three groups Loop compare
+00:00:16.137 --> 00:00:19.277
+Before clicking Run, predict the output.
 
-00:00:24.163 --> 00:00:29.863
-and update counters Before running the example
-predict what the output
+00:00:19.277 --> 00:00:25.427
+Then run the cell, inspect the result, and change one value or condition at a time.
 
-00:00:29.889 --> 00:00:35.195
-should look like Run it in the browser inspect the
-result then change one value
+00:00:25.427 --> 00:00:28.772
+Rerun it and explain why the output changed.
 
-00:00:35.326 --> 00:00:44.552
-condition or input and run it again Pay attention to
-what changed and why classify_sales.py
+00:00:28.772 --> 00:00:33.952
+The goal is to understand the relationship between input, process, and output.
 
-00:00:44.578 --> 00:00:46.302
-Control Flow & Decision Making
+00:00:33.952 --> 00:00:39.707
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:39.707 --> 00:00:45.125
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

@@ -1,20 +1,25 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.105
-This slide is the roadmap for Module 11 Follow how
-the workflow moves from individual
+00:00:00.000 --> 00:00:01.807
+Use this slide as a roadmap.
 
-00:00:06.132 --> 00:00:11.711
-operations toward a complete analytical process
-Connect DataFrame
+00:00:01.807 --> 00:00:07.152
+The ideas are intentionally ordered so later examples build on earlier concepts.
 
-00:00:11.737 --> 00:00:17.687
-steps Create summary tables Convert wide data to
-long data
+00:00:07.152 --> 00:00:12.917
+As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of
 
-00:00:19.431 --> 00:00:24.933
-Extract time features Calculate moving summaries
-Make
+00:00:12.917 --> 00:00:16.247
+treating each method as an isolated command.
 
-00:00:24.946 --> 00:00:26.762
-reusable pandas workflows
+00:00:16.247 --> 00:00:22.882
+In a real Pandas workflow, check the shape and meaning of the DataFrame after important transformations.
+
+00:00:22.882 --> 00:00:28.767
+Compact code is useful only when another analyst can still understand what each step changes.
+
+00:00:28.767 --> 00:00:34.527
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:34.527 --> 00:00:39.946
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

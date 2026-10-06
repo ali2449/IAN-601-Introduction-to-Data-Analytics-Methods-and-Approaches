@@ -1,19 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.066
-This slide is the roadmap for Module 12 Follow how
-the workflow moves from individual
+00:00:00.000 --> 00:00:01.802
+Use this slide as a roadmap.
 
-00:00:06.092 --> 00:00:11.729
-operations toward a complete analytical process Find
-data quality
+00:00:01.802 --> 00:00:07.152
+The ideas are intentionally ordered so later examples build on earlier concepts.
 
-00:00:11.755 --> 00:00:17.468
-issues Count and fill missing values Detect repeated
-records
+00:00:07.152 --> 00:00:12.917
+As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of
 
-00:00:19.191 --> 00:00:24.956
-Convert columns safely Flag unusual values Summarize
+00:00:12.917 --> 00:00:16.252
+treating each method as an isolated command.
 
-00:00:24.983 --> 00:00:26.614
-patterns before decisions
+00:00:16.252 --> 00:00:20.262
+Do not treat cleaning as automatic deletion or filling.
+
+00:00:20.262 --> 00:00:26.152
+Measure the problem first, decide what the value means, apply a defensible rule,
+
+00:00:26.152 --> 00:00:28.362
+and then validate the data again.
+
+00:00:28.362 --> 00:00:34.122
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:34.122 --> 00:00:39.541
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

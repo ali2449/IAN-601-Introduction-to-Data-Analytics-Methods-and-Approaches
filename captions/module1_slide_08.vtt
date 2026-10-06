@@ -1,31 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.184
-A variable can be given a new value later in a
-program If sales first
+00:00:00.000 --> 00:00:03.662
+On this slide, we are focusing on variables can be reassigned.
 
-00:00:05.197 --> 00:00:09.816
-stores one thousand and then we assign fifteen
-hundred to sales the variable now refers
+00:00:03.662 --> 00:00:08.182
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:09.842 --> 00:00:15.475
-to the newer value This is called reassignment It is
+00:00:08.182 --> 00:00:14.267
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:15.502 --> 00:00:21.265
-useful because analytical values often change during
-a workflow We may clean a value
+00:00:14.267 --> 00:00:17.937
+A variable is a meaningful name connected to a value.
 
-00:00:21.397 --> 00:00:25.975
-convert its units apply a correction or replace an
-old observation with a new one
+00:00:17.937 --> 00:00:21.867
+Clear names help the code communicate what the data represents,
 
-00:00:27.711 --> 00:00:32.500
-When you run this example compare the value printed
-before the reassignment with the value
+00:00:21.867 --> 00:00:25.212
+and later calculations can reuse the stored value.
 
-00:00:32.526 --> 00:00:37.674
-printed after it Python processes the lines in order
-so the point at which a
+00:00:25.212 --> 00:00:28.392
+Connect the concept to a small analytics task.
 
-00:00:37.700 --> 00:00:39.095
-value changes matters
+00:00:28.392 --> 00:00:33.467
+Imagine the value came from a sales file, survey, or operational system.
+
+00:00:33.467 --> 00:00:38.482
+Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+
+00:00:38.482 --> 00:00:40.899
+from the names and output.

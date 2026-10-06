@@ -1,28 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.829
-This slide focuses on Find duplicate records Start
-with what the operation changes
+00:00:00.000 --> 00:00:03.512
+On this slide, we are focusing on find duplicate records.
 
-00:00:05.855 --> 00:00:11.730
-in the data then connect that change to the
-analytical question Duplicates
+00:00:03.512 --> 00:00:08.377
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.757 --> 00:00:17.325
-can inflate counts and totals Check before
-summarizing Detect
+00:00:08.377 --> 00:00:14.512
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.351 --> 00:00:22.999
-and remove duplicates Before running the example
-predict the table
+00:00:14.512 --> 00:00:19.257
+Duplicates can inflate counts and totals.
 
-00:00:23.144 --> 00:00:28.765
-summary or transformed output Run it in the browser
-and inspect the row count column
+00:00:19.257 --> 00:00:25.552
+Before removing them, define what one row represents and which columns form the business key.
 
-00:00:28.791 --> 00:00:34.410
-values grouping dates missing values or flags that
-matter Then change
+00:00:25.552 --> 00:00:27.827
+Before clicking Run, predict how the table should change.
 
-00:00:34.436 --> 00:00:36.462
-one input and compare the result
+00:00:27.827 --> 00:00:33.362
+Then run the cell and inspect the row count, column values, grouping, dates, missing values,
+
+00:00:33.362 --> 00:00:38.797
+or flags that matter. Change one input and rerun it.
+
+00:00:38.797 --> 00:00:44.981
+Connect the DataFrame operation to an analytical question rather than simply making the code execute.

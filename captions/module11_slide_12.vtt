@@ -1,16 +1,25 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.605
-This slide summarizes Module 11 Focus on the
-decisions and checks that make the
+00:00:00.000 --> 00:00:02.417
+This slide brings Module 11 together.
 
-00:00:05.632 --> 00:00:11.996
-workflow reliable and reusable Connect clean steps
-Create
+00:00:02.417 --> 00:00:05.757
+Review the patterns you can now recognize and reuse.
 
-00:00:12.023 --> 00:00:17.635
-summary tables Reshape wide to long Create
+00:00:05.757 --> 00:00:11.077
+Focus on the decisions behind the syntax: what structure or method fits the problem,
 
-00:00:17.661 --> 00:00:23.533
-time features Summarize trends Reuse pandas
-workflows
+00:00:11.077 --> 00:00:15.677
+what assumptions are being made, and what you should check before trusting the result.
+
+00:00:15.677 --> 00:00:22.332
+In a real Pandas workflow, check the shape and meaning of the DataFrame after important transformations.
+
+00:00:22.332 --> 00:00:28.212
+Compact code is useful only when another analyst can still understand what each step changes.
+
+00:00:28.212 --> 00:00:33.972
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:33.972 --> 00:00:39.390
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

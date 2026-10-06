@@ -1,21 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.895
-This slide focuses on Index and slice a list Start
-with what the structure represents
+00:00:00.000 --> 00:00:03.787
+On this slide, we are focusing on index and slice a list.
 
-00:00:06.118 --> 00:00:12.055
-then connect that idea to the example on the slide
-Indexing and slicing
+00:00:03.787 --> 00:00:08.452
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:13.891 --> 00:00:19.512
-Before running the code predict the output Run the
-example in the browser inspect
+00:00:08.452 --> 00:00:16.617
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:19.525 --> 00:00:25.156
-the result then change one item index or value and
-run it again Notice which
+00:00:16.617 --> 00:00:18.997
+Indexing retrieves one position, while slicing retrieves a range.
 
-00:00:25.183 --> 00:00:28.656
-operations change the original list and which simply
-read from it
+00:00:18.997 --> 00:00:24.397
+Python indexing starts at zero and slice endpoints are usually exclusive.
+
+00:00:24.397 --> 00:00:27.602
+Before clicking Run, predict the output.
+
+00:00:27.602 --> 00:00:33.752
+Then run the cell, inspect the result, and change one value or condition at a time.
+
+00:00:33.752 --> 00:00:37.092
+Rerun it and explain why the output changed.
+
+00:00:37.092 --> 00:00:42.106
+The goal is to understand the relationship between input, process, and output.

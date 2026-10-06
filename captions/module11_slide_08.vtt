@@ -1,25 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.697
-This slide focuses on Rolling summaries Start with
-what the operation changes in the
+00:00:00.000 --> 00:00:03.052
+On this slide, we are focusing on rolling summaries.
 
-00:00:05.711 --> 00:00:11.239
-data then connect that change to the analytical
-question A rolling
+00:00:03.052 --> 00:00:07.662
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.265 --> 00:00:16.794
-calculation summarizes a moving window of rows
-Calculate rolling average
+00:00:07.662 --> 00:00:13.702
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:18.643 --> 00:00:24.316
-Before running the example predict the table summary
-or transformed output Run
+00:00:13.702 --> 00:00:17.852
+A rolling calculation summarizes a moving window of rows.
 
-00:00:24.343 --> 00:00:29.474
-it in the browser and inspect the row count column
-values grouping dates missing values
+00:00:17.852 --> 00:00:23.317
+The chosen window size directly affects the pattern you see.
 
-00:00:29.724 --> 00:00:34.566
-or flags that matter Then change one input and
-compare the result
+00:00:23.317 --> 00:00:25.587
+Before clicking Run, predict how the table should change.
+
+00:00:25.587 --> 00:00:33.902
+Then run the cell and inspect the row count, column values, grouping, dates, missing values,
+
+00:00:33.902 --> 00:00:36.567
+or flags that matter. Change one input and rerun it.
+
+00:00:36.567 --> 00:00:42.745
+Connect the DataFrame operation to an analytical question rather than simply making the code execute.

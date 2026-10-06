@@ -1,37 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.447
-At this stage think of Python as a tool that follows
-instructions in order We
+00:00:00.000 --> 00:00:04.892
+On this slide, we are focusing on what is python doing for us?.
 
-00:00:05.474 --> 00:00:12.677
-provide values Python stores them performs
-operations on them and gives us a result For
+00:00:04.892 --> 00:00:09.872
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:12.690 --> 00:00:17.032
-example imagine that we have sales of one thousand
-dollars and costs of eight hundred
+00:00:09.872 --> 00:00:16.082
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.059 --> 00:00:22.680
-dollars Python can store those two values and
-calculate profit by subtracting costs
+00:00:16.082 --> 00:00:19.287
+Connect the concept to a small analytics task.
 
-00:00:22.706 --> 00:00:28.246
-from sales The calculation is simple but the
-important idea is that the process
+00:00:19.287 --> 00:00:24.362
+Imagine the value came from a sales file, survey, or operational system.
 
-00:00:28.272 --> 00:00:33.997
-is repeatable In real analytics work the same
-pattern can be applied
+00:00:24.362 --> 00:00:29.382
+Ask whether Python is interpreting it correctly and whether another person could understand the calculation
 
-00:00:34.010 --> 00:00:39.618
-to thousands or millions of records Later in the
-course libraries such as NumPy
+00:00:29.382 --> 00:00:31.967
+from the names and output.
 
-00:00:39.644 --> 00:00:44.750
-and Pandas will help us work with larger datasets
-For now we are learning the
+00:00:31.967 --> 00:00:37.737
+Before moving on, explain the main idea in one sentence without reading the slide.
 
-00:00:44.763 --> 00:00:48.000
-small building blocks that those larger workflows
-depend on
+00:00:37.737 --> 00:00:43.155
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

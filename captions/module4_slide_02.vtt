@@ -1,20 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.776
-Use this page interactively Read the idea predict
-the result run the code
+00:00:00.000 --> 00:00:06.022
+Use this lesson actively. Read the idea first and make a prediction before running any code.
 
-00:00:06.039 --> 00:00:11.938
-and then modify one small part so you can see how
-the sequence changes Start
+00:00:06.022 --> 00:00:10.677
+When a Python cell is available, click Run, inspect the output,
 
-00:00:11.965 --> 00:00:17.770
-with the idea on the slide Execute the code in the
-browser Match
+00:00:10.677 --> 00:00:13.632
+and then change one small value or condition.
 
-00:00:17.796 --> 00:00:23.548
-the output with the explanation Change one value or
-line at a time
+00:00:13.632 --> 00:00:16.427
+Run it again and explain what changed.
 
-00:00:24.472 --> 00:00:26.340
-Apply the pattern to a new list
+00:00:16.427 --> 00:00:22.602
+This predict, run, modify, and explain cycle is more useful than copying a finished example.
+
+00:00:22.602 --> 00:00:26.457
+Think of the sequence as a small collection of observations.
+
+00:00:26.457 --> 00:00:32.197
+Ask whether order matters, whether values need to change, and whether you need one item, a range,
+
+00:00:32.197 --> 00:00:35.542
+or a summary of the entire collection.
+
+00:00:35.542 --> 00:00:41.302
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:41.302 --> 00:00:46.720
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

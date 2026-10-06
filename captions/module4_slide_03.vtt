@@ -1,24 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.066
-This is the learning path for Module 4 We move from
-creating sequences to accessing
+00:00:00.000 --> 00:00:01.802
+Use this slide as a roadmap.
 
-00:00:06.250 --> 00:00:12.135
-changing summarizing and choosing the right
-structure for a task Store
+00:00:01.802 --> 00:00:07.152
+The ideas are intentionally ordered so later examples build on earlier concepts.
 
-00:00:12.161 --> 00:00:18.546
-multiple values in order Retrieve one value or a
-slice of values Add
+00:00:07.152 --> 00:00:12.917
+As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of
 
-00:00:18.743 --> 00:00:24.322
-remove and change values in a list Process each
-value one at
+00:00:12.917 --> 00:00:16.267
+treating each method as an isolated command.
 
-00:00:24.348 --> 00:00:29.929
-a time Keep fixed records safe from accidental edits
-Apply
+00:00:16.267 --> 00:00:20.137
+Think of the sequence as a small collection of observations.
 
-00:00:29.956 --> 00:00:32.482
-sequences to small analytics examples
+00:00:20.137 --> 00:00:26.842
+Ask whether order matters, whether values need to change, and whether you need one item, a range,
+
+00:00:26.842 --> 00:00:29.222
+or a summary of the entire collection.
+
+00:00:29.222 --> 00:00:34.982
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:34.982 --> 00:00:40.400
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

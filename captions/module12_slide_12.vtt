@@ -1,14 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.105
-This slide summarizes Module 12 Focus on the
-decisions and checks that make the workflow
+00:00:00.000 --> 00:00:02.477
+This slide brings Module 12 together.
 
-00:00:06.132 --> 00:00:12.209
-reliable and reusable Count and handle blanks Find
+00:00:02.477 --> 00:00:05.877
+Review the patterns you can now recognize and reuse.
 
-00:00:12.222 --> 00:00:18.486
-repeated records Convert values safely Standardize
+00:00:05.877 --> 00:00:11.282
+Focus on the decisions behind the syntax: what structure or method fits the problem,
 
-00:00:18.512 --> 00:00:24.383
-labels Flag unusual values Summarize before deciding
+00:00:11.282 --> 00:00:15.992
+what assumptions are being made, and what you should check before trusting the result.
+
+00:00:15.992 --> 00:00:20.052
+Do not treat cleaning as automatic deletion or filling.
+
+00:00:20.052 --> 00:00:25.937
+Measure the problem first, decide what the value means, apply a defensible rule,
+
+00:00:25.937 --> 00:00:28.157
+and then validate the data again.
+
+00:00:28.157 --> 00:00:33.917
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:33.917 --> 00:00:39.334
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

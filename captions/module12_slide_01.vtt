@@ -1,16 +1,10 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.474
-Welcome to Module 12 This module focuses on Cleaning
-& EDA We
+00:00:00.000 --> 00:00:07.482
+Welcome to Module 12. This module focuses on data cleaning and exploratory data analysis.
 
-00:00:06.487 --> 00:00:13.514
-will connect the techniques to realistic analytical
-workflows and careful interpretation Cleaning
+00:00:07.482 --> 00:00:13.927
+Before formal analysis or modeling, we need to understand missingness, duplicate records,
 
-00:00:13.540 --> 00:00:19.343
-and exploratory data analysis help you understand
-data quality patterns missingness outliers
-
-00:00:19.567 --> 00:00:21.264
-and relationships before modeling
+00:00:13.927 --> 00:00:21.422
+incorrect data types, inconsistent categories, unusual values, and the general shape of the data.

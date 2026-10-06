@@ -1,13 +1,13 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:06.671
-Welcome to Module 5 This module focuses on
-Dictionaries & Sets We
+00:00:00.000 --> 00:00:05.432
+Welcome to Module 5. We will add dictionaries and sets to our Python toolkit.
 
-00:00:06.684 --> 00:00:13.583
-will build the ideas in small steps and connect them
-to practical analytics work Dictionaries
+00:00:05.432 --> 00:00:12.582
+Dictionaries store labeled information using key-value pairs, while sets help us work with unique values,
 
-00:00:13.609 --> 00:00:17.320
-and sets help Python work with labeled values and
-unique collections
+00:00:12.582 --> 00:00:17.012
+membership, and overlap. A set stores unique values.
+
+00:00:17.012 --> 00:00:23.198
+It is useful for distinct categories, membership tests, and comparing overlap between groups.

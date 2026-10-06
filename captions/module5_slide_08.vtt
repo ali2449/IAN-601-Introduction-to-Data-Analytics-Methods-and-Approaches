@@ -1,24 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.382
-This slide focuses on Loop through a dictionary
-Start with the meaning of the idea
+00:00:00.000 --> 00:00:03.172
+On this slide, we are focusing on loop through a dictionary.
 
-00:00:05.605 --> 00:00:11.683
-then connect it to the example and the larger
-analytical workflow A dictionary
+00:00:03.172 --> 00:00:10.147
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.709 --> 00:00:19.101
-can be looped in three common ways key and value
-together Loop through items Before
+00:00:10.147 --> 00:00:16.817
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:19.127 --> 00:00:24.275
-running the example predict what the output should
-look like Run it in the browser
+00:00:16.817 --> 00:00:19.132
+A dictionary stores key-value pairs.
 
-00:00:24.393 --> 00:00:29.485
-inspect the result then change one input key value
-or condition and run it again
+00:00:19.132 --> 00:00:25.457
+Meaningful keys such as name, status, amount, or category make the structure easier to understand than
 
-00:00:30.419 --> 00:00:32.288
-Focus on what changed and why
+00:00:25.457 --> 00:00:28.592
+position alone. Before clicking Run, predict the output.
+
+00:00:28.592 --> 00:00:34.742
+Then run the cell, inspect the result, and change one value or condition at a time.
+
+00:00:34.742 --> 00:00:38.087
+Rerun it and explain why the output changed.
+
+00:00:38.087 --> 00:00:43.098
+The goal is to understand the relationship between input, process, and output.

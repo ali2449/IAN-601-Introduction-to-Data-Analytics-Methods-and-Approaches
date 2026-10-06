@@ -1,20 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.803
-Use this lesson actively Read the concept predict
-the result run the example
+00:00:00.000 --> 00:00:06.022
+Use this lesson actively. Read the idea first and make a prediction before running any code.
 
-00:00:05.829 --> 00:00:11.650
-when code is available then change one part and
-compare what happens Start
+00:00:06.022 --> 00:00:10.677
+When a Python cell is available, click Run, inspect the output,
 
-00:00:11.677 --> 00:00:17.390
-with the idea on the slide Execute the code in the
-browser Read
+00:00:10.677 --> 00:00:13.632
+and then change one small value or condition.
 
-00:00:17.416 --> 00:00:22.919
-the output and connect it to the concept Change one
-key value
+00:00:13.632 --> 00:00:16.427
+Run it again and explain what changed.
 
-00:00:23.142 --> 00:00:27.053
-or set item Apply the same pattern to a new record
+00:00:16.427 --> 00:00:22.587
+This predict, run, modify, and explain cycle is more useful than copying a finished example.
+
+00:00:22.587 --> 00:00:24.927
+Choose the structure based on meaning.
+
+00:00:24.927 --> 00:00:30.197
+Use dictionaries for labeled fields and sets for uniqueness or membership.
+
+00:00:30.197 --> 00:00:35.207
+A good data structure makes later code shorter and easier to reason about.
+
+00:00:35.207 --> 00:00:40.967
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:40.967 --> 00:00:46.388
+That quick explanation is a useful check that the concept is becoming reusable knowledge.

@@ -1,24 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.816
-Use this slide as practice Work in small steps
-predict the result and explain
+00:00:00.000 --> 00:00:03.517
+On this slide, we are focusing on foundation and building.
 
-00:00:05.829 --> 00:00:11.394
-why your result makes sense Foundation say hello
-Define and call
+00:00:03.517 --> 00:00:07.957
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.420 --> 00:00:17.988
-a simple function Before running the code predict
-the output Run
+00:00:07.957 --> 00:00:15.677
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:18.014 --> 00:00:22.619
-the example in the browser inspect the result then
-change one input or value and
+00:00:15.677 --> 00:00:17.182
+Before clicking Run, predict the output.
 
-00:00:22.646 --> 00:00:27.685
-run it again Focus on what changed and why rather
-than reading the code character
+00:00:17.182 --> 00:00:23.332
+Then run the cell, inspect the result, and change one value or condition at a time.
 
-00:00:27.711 --> 00:00:28.514
-by character
+00:00:23.332 --> 00:00:26.672
+Rerun it and explain why the output changed.
+
+00:00:26.672 --> 00:00:31.862
+The goal is to understand the relationship between input, process, and output.
+
+00:00:31.862 --> 00:00:35.557
+Think about where this function would appear in a larger project.
+
+00:00:35.557 --> 00:00:43.647
+Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
+
+00:00:43.647 --> 00:00:45.079
+across many rows, files, or notebooks.

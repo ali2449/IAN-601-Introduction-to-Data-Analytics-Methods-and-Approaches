@@ -1,23 +1,31 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.816
-Use this slide as practice Work in small steps
-predict the result and explain
+00:00:00.000 --> 00:00:03.742
+On this slide, we are focusing on return and error handling.
 
-00:00:05.829 --> 00:00:11.775
-why your result makes sense Intermediate return a
-sum Use a returned
+00:00:03.742 --> 00:00:08.187
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.802 --> 00:00:17.844
-value Before running the code predict the output Run
+00:00:08.187 --> 00:00:16.892
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.870 --> 00:00:22.475
-the example in the browser inspect the result then
-change one input or value and
+00:00:16.892 --> 00:00:20.362
+Return sends a value back to the program so later code can store it, combine it, test it,
 
-00:00:22.502 --> 00:00:27.541
-run it again Focus on what changed and why rather
-than reading the code character
+00:00:20.362 --> 00:00:22.647
+or pass it into another function.
 
-00:00:27.567 --> 00:00:28.370
-by character
+00:00:22.647 --> 00:00:26.677
+Print only displays a value.
+
+00:00:26.677 --> 00:00:28.182
+Before clicking Run, predict the output.
+
+00:00:28.182 --> 00:00:34.332
+Then run the cell, inspect the result, and change one value or condition at a time.
+
+00:00:34.332 --> 00:00:37.672
+Rerun it and explain why the output changed.
+
+00:00:37.672 --> 00:00:42.687
+The goal is to understand the relationship between input, process, and output.

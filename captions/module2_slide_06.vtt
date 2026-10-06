@@ -1,28 +1,25 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:04.921
-This slide focuses on The if statement runs only
-when true The goal is to
+00:00:00.000 --> 00:00:04.362
+On this slide, we are focusing on the if statement runs only when true.
 
-00:00:04.947 --> 00:00:11.793
-understand the idea in plain language before
-connecting it to code or analytical use Decision
+00:00:04.362 --> 00:00:09.382
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.806 --> 00:00:17.423
-structure Skip the indented block Simple if
-statement Before running the
+00:00:09.382 --> 00:00:15.842
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.449 --> 00:00:22.820
-example predict what the output should look like Run
-it in the browser inspect the
+00:00:15.842 --> 00:00:19.767
+An if statement runs a block only when its condition is true.
 
-00:00:22.834 --> 00:00:28.702
-result then change one value condition or input and
-run it again Pay attention
+00:00:19.767 --> 00:00:27.517
+Indentation is part of the structure, so the indented lines are the lines controlled by the decision.
 
-00:00:28.728 --> 00:00:34.652
-to what changed and why Only the indented line
-belongs to the if statement
+00:00:27.517 --> 00:00:32.962
+In real analytics, this pattern can support thresholds, validation rules, category assignment, alerts,
 
-00:00:35.588 --> 00:00:39.259
-simple_if.py Control Flow & Decision Making
+00:00:32.962 --> 00:00:35.987
+and repeated processing.
+
+00:00:35.987 --> 00:00:41.777
+The examples are intentionally small so you can trace the logic from the condition to the result.

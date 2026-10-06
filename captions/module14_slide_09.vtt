@@ -1,28 +1,28 @@
 WEBVTT
 
-00:00:00.103 --> 00:00:05.671
-This slide focuses on Compare with a baseline Start
-with the analytical question and
+00:00:00.000 --> 00:00:03.807
+On this slide, we are focusing on compare with a baseline.
 
-00:00:05.684 --> 00:00:11.203
-the meaning of the output before focusing on the
-syntax A model should
+00:00:03.807 --> 00:00:08.852
+Start with the meaning of the idea before worrying about the exact syntax.
 
-00:00:11.229 --> 00:00:17.087
-beat a simple baseline Otherwise it may not be
-useful Baseline
+00:00:08.852 --> 00:00:14.837
+Ask what information is going in, what Python is doing with it, and what result should come out.
 
-00:00:17.100 --> 00:00:22.633
-accuracy Before running the example predict the
-structure of
+00:00:14.837 --> 00:00:20.462
+A model should be compared with a simple baseline such as always predicting the most common class.
 
-00:00:22.659 --> 00:00:28.464
-the output Run it in the browser and inspect the
-features target split predictions
+00:00:20.462 --> 00:00:23.887
+Before clicking Run, predict the structure of the output.
 
-00:00:28.622 --> 00:00:34.346
-evaluation result or external-style records Then
-change one input and compare
+00:00:23.887 --> 00:00:30.797
+After it runs, identify the features, target, split, prediction, or evaluation result involved.
 
-00:00:34.372 --> 00:00:35.162
-what changes
+00:00:30.797 --> 00:00:36.037
+Change one input carefully and explain why the result did or did not change.
+
+00:00:36.037 --> 00:00:41.792
+Before moving on, explain the main idea in one sentence without reading the slide.
+
+00:00:41.792 --> 00:00:47.212
+That quick explanation is a useful check that the concept is becoming reusable knowledge.
