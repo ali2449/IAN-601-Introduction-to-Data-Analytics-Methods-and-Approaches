@@ -78,59 +78,134 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
 .ian603-bottombar .audio-player{grid-area:auto!important;grid-column:auto!important;grid-row:auto!important;width:100%!important}
 .ian603-bottombar .nav-left,.ian603-bottombar .nav-right,.ian603-bottombar .bottom-nav-panel{align-self:center!important}
 .topbar>.toolbar,.topbar>.controls,.topbar>.top-controls{margin-left:auto!important}.topbar .ian603-tool{box-shadow:none!important}
-</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-focusflow"><!-- IAN601_UI_SHELL_END --></head>
+</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-focusflow"><!-- IAN601_UI_SHELL_END -->
+<style id="module12-revision-style">
+.module12-title-grid{grid-template-columns:minmax(0,1.12fr) minmax(300px,.78fr)!important;gap:34px!important}
+.module12-hero-lead{font-size:clamp(1.9rem,3.05vw,3.3rem)!important;line-height:1.07!important;letter-spacing:-.045em!important;margin:0 0 16px!important}
+.module12-hero-sub{font-size:clamp(1rem,1.35vw,1.22rem)!important;line-height:1.55!important;margin:0!important;color:var(--ian-muted,var(--muted))}
+.module12-flow{display:grid;gap:10px;padding:24px;border:1px solid var(--ian-border,var(--line));border-radius:22px;background:linear-gradient(145deg,rgba(31,95,155,.08),rgba(79,70,229,.08));text-align:center}
+.module12-flow.compact{padding:18px}.module12-flow div{padding:14px 18px;border:1px solid var(--ian-border,var(--line));border-radius:14px;background:var(--ian-surface,var(--panel));display:grid;gap:2px}
+.module12-flow strong{font-size:1.02rem}.module12-flow small{color:var(--ian-muted,var(--muted));font-weight:650}.module12-flow span{font-size:.78rem;font-weight:850;color:var(--ian-primary,var(--accent));text-transform:uppercase;letter-spacing:.07em}
+.module12-path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}.module12-path>div{border:1px solid var(--ian-border,var(--line));border-radius:16px;padding:18px;background:var(--ian-surface2,var(--panel2))}.module12-path>div.current{border-color:var(--ian-primary,var(--accent));box-shadow:0 0 0 2px color-mix(in srgb,var(--ian-primary,var(--accent)) 18%,transparent)}.module12-path span{font-size:.75rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--ian-primary,var(--accent))}.module12-path h3{margin:5px 0 6px}.module12-path p{margin:0;color:var(--ian-muted,var(--muted))}
+.module12-mini-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}.module12-mini-compare>div{border:1px solid var(--ian-border,var(--line));border-radius:14px;padding:14px;background:var(--ian-surface2,var(--panel2));display:grid;gap:5px}.module12-mini-compare strong{color:var(--ian-primary,var(--accent))}.module12-mini-compare span{color:var(--ian-muted,var(--muted))}
+.module12-decision-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:8px 0 18px}.module12-decision-grid>div{border:1px solid var(--ian-border,var(--line));border-radius:14px;padding:15px;background:var(--ian-surface2,var(--panel2))}.module12-decision-grid h3{margin:0 0 6px;color:var(--ian-primary,var(--accent))}.module12-decision-grid p{margin:0;color:var(--ian-muted,var(--muted))}
+.compact-top{margin-top:14px;align-items:start}.compact-top .lead{font-size:1.04rem}
+.module12-outlier-cards{display:grid;gap:10px;margin-top:18px}.module12-outlier-cards>div{border:1px solid var(--ian-border,var(--line));border-radius:12px;padding:12px 14px;background:var(--ian-surface2,var(--panel2));display:grid}.module12-outlier-cards strong{color:var(--ian-primary,var(--accent))}.module12-outlier-cards span{color:var(--ian-muted,var(--muted))}
+.module12-log{display:grid;gap:10px}.module12-log>div{border:1px solid var(--ian-border,var(--line));border-radius:12px;padding:12px 14px;background:var(--ian-surface2,var(--panel2));display:grid;gap:4px}.module12-log strong{color:var(--ian-primary,var(--accent));text-transform:uppercase;font-size:.76rem;letter-spacing:.06em}.module12-log span{color:var(--ian-muted,var(--muted))}
+.module12-process{display:grid;gap:8px;margin:18px 0}.module12-process span{padding:10px 12px;border-left:4px solid var(--ian-primary,var(--accent));border-radius:8px;background:var(--ian-surface2,var(--panel2));font-weight:750}
+.module12-next{margin-top:18px!important}.slide .table-wrap table{font-size:.86rem}.slide .table-wrap th,.slide .table-wrap td{padding:7px 8px}
+@media(max-width:1000px){.module12-decision-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.module12-title-grid,.module12-path,.module12-mini-compare,.module12-decision-grid{grid-template-columns:1fr!important}}
+@media(max-height:850px) and (min-width:901px){.slide{padding:28px!important}.slide-header{margin-bottom:12px!important}.module12-hero-lead{font-size:clamp(1.75rem,2.7vw,2.9rem)!important}.module12-flow{padding:18px}.code-input{min-height:150px}.monaco-host{height:190px}.module12-decision-grid>div{padding:11px}.module12-decision-grid p{font-size:.88rem}}
+</style>
+</head>
 <body>
 <div class="deck">
   <header class="topbar">
     <div class="brand"><span class="brand-mark">12</span><span>IAN 601 · Module 12</span></div>
     <div class="top-controls"><div id="runtime" class="runtime"><span class="runtime-dot"></span><span id="runtime-text">Python not loaded yet</span></div><button class="btn ghost" id="theme-btn" type="button"><i class="fa-solid fa-moon"></i> Theme</button><button class="btn ghost" id="restart-python" type="button">Reset Python</button><button class="ian603-tool" id="ian-progress-btn" type="button">Progress <span id="ian-progress-pct">0%</span></button><button class="ian603-tool" id="ian-fullscreen-btn" type="button">Fullscreen</button><button class="ian603-tool primary" id="run-slide-btn" type="button">Run slide ▶</button><button class="ian603-tool" id="ian-course-modules-btn" type="button">☰ Course Modules</button></div>
   </header>
-  <main class="stage" id="stage"><section class="slide" data-title="Cleaning &amp; EDA">
+  <main class="stage" id="stage">
+
+<section class="slide" data-title="Cleaning &amp;amp; EDA">
   <div class="slide-inner">
     <header class="slide-header"><div><span class="kicker">Module 12 · Interactive slide lesson</span><h2>Cleaning &amp; EDA</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
-    <div class="slide-content"><div class="title-grid">
-               <div><p class="big-lead">Cleaning and exploratory data analysis help you understand data quality, patterns, missingness, outliers, and relationships before modeling.</p><div class="pill-row"><span>Self-paced slides</span><span>Executable Python cells</span><span>VS Code-style editor</span><span>Separate study notes</span></div>
-               <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div></div>
-               <div><div class="flow-visual"><div>Messy data</div><span>check</span><div>clean</div><span>summarize</span><div>EDA</div><span>decide</span><div>analysis</div></div></div>
-             </div><div class="callout"><strong>Goal:</strong> Identify missing values, duplicates, type issues, outliers, inconsistent categories, and create basic exploratory summaries.</div></div>
+    <div class="slide-content">
+<div class="title-grid module12-title-grid">
+  <div>
+    <p class="big-lead module12-hero-lead">Turn messy data into trustworthy data, then explore what the cleaned table is actually telling you.</p>
+    <p class="lead module12-hero-sub">Cleaning fixes quality problems. Exploratory data analysis, or EDA, helps you understand distributions, categories, unusual values, and patterns before formal analysis.</p>
+    <div class="pill-row"><span>Audit</span><span>Clean</span><span>Validate</span><span>Summarize</span><span>Interpret</span></div>
+  </div>
+  <div class="module12-flow" aria-label="Cleaning and EDA workflow">
+    <div><strong>Messy data</strong><small>missing, duplicated, inconsistent</small></div><span>inspect</span>
+    <div><strong>Clean &amp; validate</strong><small>types, labels, ranges, rules</small></div><span>explore</span>
+    <div><strong>EDA</strong><small>summaries, groups, possible patterns</small></div>
+  </div>
+</div></div>
     <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 1</span></footer>
   </div>
 </section>
-<section class="slide" data-title="How to use this page">
+
+<section class="slide" data-title="From advanced Pandas to Cleaning &amp;amp; EDA">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Self-paced workflow</span><h2>How to use this page</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
-    <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Read</h3><p>Start with the main idea on the slide.</p></div><div class="timeline-item"><span>2</span><h3>Run</h3><p>Execute the Python code in the browser.</p></div><div class="timeline-item"><span>3</span><h3>Compare</h3><p>Connect the output to the concept.</p></div><div class="timeline-item"><span>4</span><h3>Edit</h3><p>Change one value, variable, or condition.</p></div><div class="timeline-item"><span>5</span><h3>Reuse</h3><p>Apply the pattern to a new example.</p></div></div><div class="callout secondary">All slide points are visible. Use Next, Previous, arrow keys, or the slide menu.</div></div>
+    <header class="slide-header"><div><span class="kicker">Build on Module 11</span><h2>From advanced Pandas to Cleaning &amp; EDA</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<p class="lead">Module 11 gave us the Pandas tools. Module 12 uses those tools to answer a more important question: can we trust the data enough to analyze it?</p>
+<div class="module12-path">
+  <div><span>Module 11</span><h3>Advanced Pandas</h3><p>Transform, reshape, group, merge, and build reusable workflows.</p></div>
+  <div class="current"><span>Module 12</span><h3>Cleaning &amp; EDA</h3><p>Find quality problems, make cleaning decisions, and explore the cleaned data.</p></div>
+  <div><span>Module 13</span><h3>Statistics &amp; Visualization</h3><p>Use numerical summaries and visual evidence to investigate relationships more formally.</p></div>
+</div>
+<div class="callout secondary"><strong>Important:</strong> cleaning is not just “removing bad rows.” Every change should have a reason that you can explain.</div></div>
     <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 2</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Learning path for Module 12">
+
+<section class="slide" data-title="Our messy working dataset">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Roadmap</span><h2>Learning path for Module 12</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
-    <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Diagnose</h3><p>Find data quality issues.</p></div><div class="timeline-item"><span>2</span><h3>Missing</h3><p>Count and fill missing values.</p></div><div class="timeline-item"><span>3</span><h3>Duplicates</h3><p>Detect repeated records.</p></div><div class="timeline-item"><span>4</span><h3>Types</h3><p>Convert columns safely.</p></div><div class="timeline-item"><span>5</span><h3>Outliers</h3><p>Flag unusual values.</p></div><div class="timeline-item"><span>6</span><h3>EDA</h3><p>Summarize patterns before decisions.</p></div></div></div>
+    <header class="slide-header"><div><span class="kicker">Realistic problems in a small table</span><h2>Our messy working dataset</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">This dataset intentionally contains several problems. We will diagnose them before we change anything.</p>
+    <ul class="clean-list"><li>A duplicated order</li><li>Missing values</li><li>Numbers stored as text</li><li>An invalid date</li><li>Inconsistent region and channel labels</li><li>Suspicious numeric values</li></ul>
+  </div>
+  <div class="table-wrap">
+    <table><thead><tr><th>order_id</th><th>date</th><th>region</th><th>channel</th><th>amount</th><th>satisfaction</th></tr></thead>
+    <tbody><tr><td>101</td><td>2026-01-03</td><td>North</td><td>Web</td><td>45</td><td>4</td></tr>
+    <tr><td>102</td><td>2026-01-04</td><td>South</td><td>Store</td><td>120</td><td>5</td></tr>
+    <tr><td>102</td><td>2026-01-04</td><td>South</td><td>Store</td><td>120</td><td>5</td></tr>
+    <tr><td>103</td><td>bad-date</td><td> north </td><td>web</td><td>missing</td><td>3</td></tr>
+    <tr><td>105</td><td>2026-01-07</td><td>West</td><td> email </td><td>1100</td><td>2</td></tr></tbody></table>
+  </div>
+</div>
+<div class="callout"><strong>Do not clean yet.</strong> First create an inventory of what looks wrong and what needs investigation.</div></div>
     <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 3</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Create a messy dataset">
+
+<section class="slide" data-title="Start with a data audit">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Practice data</span><h2>Create a messy dataset</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Messy data can include missing values, duplicate rows, inconsistent labels, and values stored as text.</p></div><div><div class="code-cell" data-filename="module12_messy_data.py">
+    <header class="slide-header"><div><span class="kicker">Inspect before changing anything</span><h2>Start with a data audit</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A quick audit helps you understand the shape, columns, data types, missingness, and sample values before you make cleaning decisions.</p>
+  <ol class="clean-list"><li>Check rows and columns with <code>shape</code>.</li><li>Inspect data types with <code>dtypes</code>.</li><li>Look at a sample with <code>head()</code>.</li><li>Count missing values.</li><li>Inspect unique category values.</li></ol>
+  <div class="callout secondary"><strong>Why audit first?</strong> If you start changing values immediately, you may hide the evidence that explains where the data problem came from.</div>
+</div><div>
+<div class="code-cell" data-filename="module12_audit.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Build a small messy DataFrame</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module12_messy_data.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Run a first-pass audit</h3><p>Do not fix anything yet. Observe and list the problems.</p></div>
+    <span class="file-pill">module12_audit.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_messy_data.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_audit.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
+import numpy as np
 
 orders = pd.DataFrame({
-    &quot;order_id&quot;: [1, 2, 2, 3, 4],
-    &quot;channel&quot;: [&quot;Web&quot;, &quot;email&quot;, &quot;email&quot;, &quot; web &quot;, None],
-    &quot;amount&quot;: [45, &quot;72&quot;, &quot;72&quot;, None, 999]
+    "order_id": [101, 102, 102, 103, 104, 105, 106, 107],
+    "date": ["2026-01-03", "2026-01-04", "2026-01-04",
+             "bad-date", "2026-01-06", "2026-01-07",
+             "2026-01-08", "2026-01-09"],
+    "region": ["North", "South", "South", " north ",
+               "WEST", "West", None, "North"],
+    "channel": ["Web", "Store", "Store", "web",
+                "Email", " email ", "Web", "Store"],
+    "amount": ["45", "120", "120", None, "95", "1100", "58", "-20"],
+    "satisfaction": [4, 5, 5, 3, np.nan, 2, 4, 9]
 })
 
-print(orders)
-print(&quot;Column types:&quot;)
-print(orders.dtypes)</textarea>
+print("Shape:", orders.shape)
+print("\nData types:")
+print(orders.dtypes)
+
+print("\nMissing values:")
+print(orders.isna().sum())
+
+print("\nRegion values:")
+print(orders["region"].value_counts(dropna=False))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -140,30 +215,45 @@ print(orders.dtypes)</textarea>
     <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 4</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Check missing values">
+
+<section class="slide" data-title="Missing values: count and percentage">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Missingness</span><h2>Check missing values</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Missing values can change summaries. First count them, then decide what to do.</p></div><div><div class="code-cell" data-filename="module12_missing.py">
+    <header class="slide-header"><div><span class="kicker">Measure the problem first</span><h2>Missing values: count and percentage</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A missing-value count is useful, but the percentage often tells you more about how serious the problem is.</p>
+  <div class="module12-mini-compare"><div><strong>Count</strong><span>How many values are missing?</span></div><div><strong>Percent</strong><span>What share of the column is missing?</span></div></div>
+  <div class="callout"><strong>Context matters:</strong> one missing value in ten rows is very different from one missing value in one million rows.</div>
+</div><div>
+<div class="code-cell" data-filename="module12_missing_report.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Count and fill missing values</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module12_missing.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Build a missingness report</h3><p>Sort the report so the most incomplete columns appear first.</p></div>
+    <span class="file-pill">module12_missing_report.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_missing.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_missing_report.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
+import numpy as np
 
 orders = pd.DataFrame({
-    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, None, &quot;store&quot;],
-    &quot;amount&quot;: [45, None, 38, 91]
+    "order_id": [101, 102, 102, 103, 104, 105, 106, 107],
+    "date": ["2026-01-03", "2026-01-04", "2026-01-04",
+             "bad-date", "2026-01-06", "2026-01-07",
+             "2026-01-08", "2026-01-09"],
+    "region": ["North", "South", "South", " north ",
+               "WEST", "West", None, "North"],
+    "channel": ["Web", "Store", "Store", "web",
+                "Email", " email ", "Web", "Store"],
+    "amount": ["45", "120", "120", None, "95", "1100", "58", "-20"],
+    "satisfaction": [4, 5, 5, 3, np.nan, 2, 4, 9]
 })
 
-print(&quot;Missing values:&quot;)
-print(orders.isna().sum())
+missing_report = pd.DataFrame({
+    "missing_count": orders.isna().sum(),
+    "missing_percent": orders.isna().mean() * 100
+}).sort_values("missing_percent", ascending=False)
 
-orders[&quot;channel&quot;] = orders[&quot;channel&quot;].fillna(&quot;unknown&quot;)
-orders[&quot;amount&quot;] = orders[&quot;amount&quot;].fillna(orders[&quot;amount&quot;].median())
-
-print(orders)</textarea>
+print(missing_report.round(1))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -173,29 +263,47 @@ print(orders)</textarea>
     <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 5</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Find duplicate records">
+
+<section class="slide" data-title="Decide how to handle missing values">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Duplicates</span><h2>Find duplicate records</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Duplicates can inflate counts and totals. Check before summarizing.</p></div><div><div class="code-cell" data-filename="module12_duplicates.py">
+    <header class="slide-header"><div><span class="kicker">Drop, fill, preserve, or investigate?</span><h2>Decide how to handle missing values</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="module12-decision-grid">
+  <div><h3>Drop</h3><p>Reasonable when the row or column is unusable and enough data remains.</p></div>
+  <div><h3>Fill</h3><p>Use a justified value such as a median, mode, domain default, or model-based estimate.</p></div>
+  <div><h3>Preserve</h3><p>Sometimes missingness is meaningful and should remain visible.</p></div>
+  <div><h3>Investigate</h3><p>The best next step may be finding why the value is missing before changing it.</p></div>
+</div>
+<div class="callout secondary"><strong>Avoid automatic cleaning.</strong> Filling every numeric column with the mean or deleting every incomplete row can introduce bias or remove useful information.</div>
+<div class="two-col compact-top"><div><p class="lead">For a simple teaching example, we can fill a missing satisfaction score with the median, but only after deciding that this is reasonable for our purpose.</p></div><div>
+<div class="code-cell" data-filename="module12_missing_fill.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Detect and remove duplicates</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module12_duplicates.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Fill one column deliberately</h3><p>The code changes only the column we have decided to handle.</p></div>
+    <span class="file-pill">module12_missing_fill.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_duplicates.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_missing_fill.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
+import numpy as np
 
 orders = pd.DataFrame({
-    &quot;order_id&quot;: [1, 2, 2, 3],
-    &quot;amount&quot;: [45, 72, 72, 91]
+    "order_id": [101, 102, 102, 103, 104, 105, 106, 107],
+    "date": ["2026-01-03", "2026-01-04", "2026-01-04",
+             "bad-date", "2026-01-06", "2026-01-07",
+             "2026-01-08", "2026-01-09"],
+    "region": ["North", "South", "South", " north ",
+               "WEST", "West", None, "North"],
+    "channel": ["Web", "Store", "Store", "web",
+                "Email", " email ", "Web", "Store"],
+    "amount": ["45", "120", "120", None, "95", "1100", "58", "-20"],
+    "satisfaction": [4, 5, 5, 3, np.nan, 2, 4, 9]
 })
 
-print(&quot;Duplicate rows:&quot;)
-print(orders[orders.duplicated()])
+median_score = orders["satisfaction"].median()
+orders["satisfaction"] = orders["satisfaction"].fillna(median_score)
 
-clean_orders = orders.drop_duplicates()
-print(&quot;After removing duplicates:&quot;)
-print(clean_orders)</textarea>
+print("Median used:", median_score)
+print(orders[["order_id", "satisfaction"]])</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -205,24 +313,53 @@ print(clean_orders)</textarea>
     <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 6</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Convert data types">
+
+<section class="slide" data-title="Find duplicate records">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Type cleaning</span><h2>Convert data types</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Numbers stored as text cannot be analyzed correctly until converted.</p></div><div><div class="code-cell" data-filename="module12_types.py">
+    <header class="slide-header"><div><span class="kicker">Exact duplicates and duplicate keys</span><h2>Find duplicate records</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Not every repeated value is a duplicate record. First decide which columns define a unique observation.</p>
+  <div class="module12-mini-compare"><div><strong>Exact duplicate</strong><span>Every compared field is repeated.</span></div><div><strong>Duplicate key</strong><span>An identifier such as order_id appears more than once.</span></div></div>
+  <div class="callout secondary"><strong>Be careful:</strong> one customer can legitimately have many orders. A repeated customer ID is not automatically a duplicate.</div>
+</div><div>
+<div class="code-cell" data-filename="module12_duplicates.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Convert text to numeric</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module12_types.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Check duplicate order IDs</h3><p>Inspect duplicates before removing anything.</p></div>
+    <span class="file-pill">module12_duplicates.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_types.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_duplicates.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
+import numpy as np
 
-orders = pd.DataFrame({&quot;amount&quot;: [&quot;45&quot;, &quot;72&quot;, &quot;missing&quot;, &quot;91&quot;]})
-orders[&quot;amount_numeric&quot;] = pd.to_numeric(orders[&quot;amount&quot;], errors=&quot;coerce&quot;)
+orders = pd.DataFrame({
+    "order_id": [101, 102, 102, 103, 104, 105, 106, 107],
+    "date": ["2026-01-03", "2026-01-04", "2026-01-04",
+             "bad-date", "2026-01-06", "2026-01-07",
+             "2026-01-08", "2026-01-09"],
+    "region": ["North", "South", "South", " north ",
+               "WEST", "West", None, "North"],
+    "channel": ["Web", "Store", "Store", "web",
+                "Email", " email ", "Web", "Store"],
+    "amount": ["45", "120", "120", None, "95", "1100", "58", "-20"],
+    "satisfaction": [4, 5, 5, 3, np.nan, 2, 4, 9]
+})
 
-print(orders)
-print(&quot;Missing after conversion:&quot;)
-print(orders[&quot;amount_numeric&quot;].isna().sum())</textarea>
+duplicate_ids = orders[
+    orders.duplicated(subset="order_id", keep=False)
+]
+
+print("Possible duplicate order IDs:")
+print(duplicate_ids)
+
+clean_orders = orders.drop_duplicates(
+    subset="order_id",
+    keep="first"
+)
+
+print("\nRows before:", len(orders))
+print("Rows after:", len(clean_orders))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -232,24 +369,52 @@ print(orders[&quot;amount_numeric&quot;].isna().sum())</textarea>
     <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 7</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Clean categories">
+
+<section class="slide" data-title="Convert data types safely">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Consistency</span><h2>Clean categories</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Text categories often need case, spacing, and spelling cleanup.</p></div><div><div class="code-cell" data-filename="module12_categories.py">
+    <header class="slide-header"><div><span class="kicker">Coerce invalid values so you can inspect them</span><h2>Convert data types safely</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Numbers and dates often arrive as text. Use conversion functions that make invalid values visible instead of crashing or silently producing incorrect analysis.</p>
+  <ul class="clean-list"><li><code>pd.to_numeric(..., errors="coerce")</code></li><li><code>pd.to_datetime(..., errors="coerce")</code></li><li>Invalid values become missing values that you can investigate.</li></ul>
+  <div class="callout"><strong>Key idea:</strong> conversion can reveal a data-quality problem. It is not always the final cleaning step.</div>
+</div><div>
+<div class="code-cell" data-filename="module12_types.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Standardize category labels</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module12_categories.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Convert amount and date columns</h3><p>Watch what happens to bad-date and missing amount values.</p></div>
+    <span class="file-pill">module12_types.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_categories.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_types.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
+import numpy as np
 
-orders = pd.DataFrame({&quot;channel&quot;: [&quot;Web&quot;, &quot; web &quot;, &quot;EMAIL&quot;, &quot;email&quot;, &quot;Store&quot;]})
-orders[&quot;channel_clean&quot;] = orders[&quot;channel&quot;].str.strip().str.lower()
+orders = pd.DataFrame({
+    "order_id": [101, 102, 102, 103, 104, 105, 106, 107],
+    "date": ["2026-01-03", "2026-01-04", "2026-01-04",
+             "bad-date", "2026-01-06", "2026-01-07",
+             "2026-01-08", "2026-01-09"],
+    "region": ["North", "South", "South", " north ",
+               "WEST", "West", None, "North"],
+    "channel": ["Web", "Store", "Store", "web",
+                "Email", " email ", "Web", "Store"],
+    "amount": ["45", "120", "120", None, "95", "1100", "58", "-20"],
+    "satisfaction": [4, 5, 5, 3, np.nan, 2, 4, 9]
+})
 
-print(orders)
-print(&quot;Clean category counts:&quot;)
-print(orders[&quot;channel_clean&quot;].value_counts())</textarea>
+orders["amount"] = pd.to_numeric(
+    orders["amount"],
+    errors="coerce"
+)
+
+orders["date"] = pd.to_datetime(
+    orders["date"],
+    errors="coerce"
+)
+
+print(orders[["order_id", "date", "amount"]])
+print("\nData types:")
+print(orders[["date", "amount"]].dtypes)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -259,28 +424,51 @@ print(orders[&quot;channel_clean&quot;].value_counts())</textarea>
     <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 8</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Flag outliers with IQR">
+
+<section class="slide" data-title="Clean text categories">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Unusual values</span><h2>Flag outliers with IQR</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">The IQR rule is one simple way to flag unusually high or low values.</p></div><div><div class="code-cell" data-filename="module12_outliers.py">
+    <header class="slide-header"><div><span class="kicker">Standardize case, spacing, and labels</span><h2>Clean text categories</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Small text differences can create fake categories. For example, <code>Web</code>, <code>web</code>, and <code> web </code> may represent the same channel.</p>
+  <ol class="clean-list"><li>Remove extra spaces with <code>.str.strip()</code>.</li><li>Standardize case with <code>.str.title()</code> or another rule.</li><li>Map known variants when spelling differs.</li></ol>
+  <div class="callout secondary"><strong>Check before and after.</strong> Use <code>value_counts()</code> to confirm that categories were combined as expected.</div>
+</div><div>
+<div class="code-cell" data-filename="module12_categories.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Flag possible outliers</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module12_outliers.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Standardize region and channel</h3><p>Compare unique values before and after cleaning.</p></div>
+    <span class="file-pill">module12_categories.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_outliers.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_categories.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
+import numpy as np
 
-amounts = pd.Series([38, 45, 55, 72, 91, 999])
-q1 = amounts.quantile(0.25)
-q3 = amounts.quantile(0.75)
-iqr = q3 - q1
-upper_limit = q3 + 1.5 * iqr
+orders = pd.DataFrame({
+    "order_id": [101, 102, 102, 103, 104, 105, 106, 107],
+    "date": ["2026-01-03", "2026-01-04", "2026-01-04",
+             "bad-date", "2026-01-06", "2026-01-07",
+             "2026-01-08", "2026-01-09"],
+    "region": ["North", "South", "South", " north ",
+               "WEST", "West", None, "North"],
+    "channel": ["Web", "Store", "Store", "web",
+                "Email", " email ", "Web", "Store"],
+    "amount": ["45", "120", "120", None, "95", "1100", "58", "-20"],
+    "satisfaction": [4, 5, 5, 3, np.nan, 2, 4, 9]
+})
 
-print(&quot;Q1:&quot;, q1, &quot;Q3:&quot;, q3, &quot;IQR:&quot;, iqr)
-print(&quot;Upper limit:&quot;, upper_limit)
-print(&quot;Possible outliers:&quot;)
-print(amounts[amounts &gt; upper_limit].to_list())</textarea>
+for col in ["region", "channel"]:
+    orders[col] = (
+        orders[col]
+        .str.strip()
+        .str.title()
+    )
+
+print("Regions:")
+print(orders["region"].value_counts(dropna=False))
+
+print("\nChannels:")
+print(orders["channel"].value_counts(dropna=False))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -290,27 +478,51 @@ print(amounts[amounts &gt; upper_limit].to_list())</textarea>
     <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 9</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Basic EDA summary">
+
+<section class="slide" data-title="Validate ranges and business rules">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Explore patterns</span><h2>Basic EDA summary</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">EDA uses summaries to understand what is in the data before formal analysis.</p></div><div><div class="code-cell" data-filename="module12_eda_summary.py">
+    <header class="slide-header"><div><span class="kicker">Some errors are valid Python values</span><h2>Validate ranges and business rules</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A value can have the correct data type and still be impossible or invalid for the project.</p>
+  <ul class="clean-list"><li>A negative order amount may violate a business rule.</li><li>A satisfaction score of 9 is invalid if the scale is 1 through 5.</li><li>A future date might be invalid for a historical dataset.</li></ul>
+  <div class="callout"><strong>Domain rules catch problems that dtypes cannot.</strong> These rules should come from the meaning of the data, not only from statistics.</div>
+</div><div>
+<div class="code-cell" data-filename="module12_rules.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Create an EDA summary</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module12_eda_summary.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Flag values outside expected ranges</h3><p>Flag first. Do not automatically delete the rows.</p></div>
+    <span class="file-pill">module12_rules.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_eda_summary.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_rules.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
+import numpy as np
 
 orders = pd.DataFrame({
-    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;, &quot;store&quot;, &quot;email&quot;],
-    &quot;amount&quot;: [45, 72, 38, 91, 55]
+    "order_id": [101, 102, 102, 103, 104, 105, 106, 107],
+    "date": ["2026-01-03", "2026-01-04", "2026-01-04",
+             "bad-date", "2026-01-06", "2026-01-07",
+             "2026-01-08", "2026-01-09"],
+    "region": ["North", "South", "South", " north ",
+               "WEST", "West", None, "North"],
+    "channel": ["Web", "Store", "Store", "web",
+                "Email", " email ", "Web", "Store"],
+    "amount": ["45", "120", "120", None, "95", "1100", "58", "-20"],
+    "satisfaction": [4, 5, 5, 3, np.nan, 2, 4, 9]
 })
 
-print(&quot;Numeric summary:&quot;)
-print(orders[&quot;amount&quot;].describe())
-print(&quot;Channel counts:&quot;)
-print(orders[&quot;channel&quot;].value_counts())</textarea>
+orders["amount"] = pd.to_numeric(
+    orders["amount"], errors="coerce"
+)
+
+invalid_amount = orders["amount"].lt(0)
+invalid_score = ~orders["satisfaction"].between(1, 5, inclusive="both") &amp; orders["satisfaction"].notna()
+
+print("Invalid amounts:")
+print(orders.loc[invalid_amount, ["order_id", "amount"]])
+
+print("\nInvalid satisfaction scores:")
+print(orders.loc[invalid_score, ["order_id", "satisfaction"]])</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -320,137 +532,556 @@ print(orders[&quot;channel&quot;].value_counts())</textarea>
     <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 10</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Mini cleaning pipeline">
+
+<section class="slide" data-title="Outliers are questions, not automatic deletions">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Applied workflow</span><h2>Mini cleaning pipeline</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A cleaning pipeline applies several checks in a consistent order.</p></div><div><div class="code-cell" data-filename="module12_pipeline.py">
+    <header class="slide-header"><div><span class="kicker">Understand the context first</span><h2>Outliers are questions, not automatic deletions</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">An outlier is an observation that looks unusual compared with the rest of the data. It may be an error, but it may also be a real and important event.</p>
+    <div class="module12-outlier-cards"><div><strong>Possible error</strong><span>A misplaced decimal point</span></div><div><strong>Rare but real</strong><span>A very large legitimate order</span></div><div><strong>Different process</strong><span>A wholesale order mixed with retail orders</span></div></div>
+  </div>
+  <div class="module12-flow compact"><div><strong>Detect</strong><small>flag unusual values</small></div><span>then</span><div><strong>Investigate</strong><small>check source and context</small></div><span>then</span><div><strong>Decide</strong><small>keep, correct, transform, or exclude</small></div></div>
+</div>
+<div class="callout secondary"><strong>Do not write:</strong> “I removed all outliers.” Explain how they were identified and why the chosen treatment is appropriate.</div></div>
+    <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 11</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Flag outliers with the IQR rule">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">A simple statistical screening method</span><h2>Flag outliers with the IQR rule</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">The interquartile range, or IQR, uses the middle fifty percent of the data to define lower and upper fences.</p>
+  <div class="formula-card"><code>IQR = Q3 - Q1</code><span>Lower fence = Q1 − 1.5 × IQR<br>Upper fence = Q3 + 1.5 × IQR</span></div>
+  <div class="callout"><strong>Remember:</strong> the IQR rule flags unusual values. It does not prove that those values are wrong.</div>
+</div><div>
+<div class="code-cell" data-filename="module12_iqr.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Clean and summarize</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module12_pipeline.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Flag possible amount outliers</h3><p>Inspect the flagged rows instead of immediately removing them.</p></div>
+    <span class="file-pill">module12_iqr.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_pipeline.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_iqr.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
-raw = pd.DataFrame({
-    &quot;order_id&quot;: [1, 2, 2, 3, 4],
-    &quot;channel&quot;: [&quot;Web&quot;, &quot;email&quot;, &quot;email&quot;, &quot; web &quot;, None],
-    &quot;amount&quot;: [&quot;45&quot;, &quot;72&quot;, &quot;72&quot;, None, &quot;91&quot;]
-})
+amounts = pd.Series(
+    [45, 58, 72, 90, 95, 120, 140, 1100],
+    name="amount"
+)
 
-clean = raw.drop_duplicates().copy()
-clean[&quot;channel&quot;] = clean[&quot;channel&quot;].fillna(&quot;unknown&quot;).str.strip().str.lower()
-clean[&quot;amount&quot;] = pd.to_numeric(clean[&quot;amount&quot;], errors=&quot;coerce&quot;)
-clean[&quot;amount&quot;] = clean[&quot;amount&quot;].fillna(clean[&quot;amount&quot;].median())
+q1 = amounts.quantile(0.25)
+q3 = amounts.quantile(0.75)
+iqr = q3 - q1
 
-print(clean)
-print(clean.groupby(&quot;channel&quot;)[&quot;amount&quot;].sum())</textarea>
+lower = q1 - 1.5 * iqr
+upper = q3 + 1.5 * iqr
+
+outliers = amounts[(amounts &lt; lower) | (amounts &gt; upper)]
+
+print("Q1:", q1)
+print("Q3:", q3)
+print("Lower fence:", lower)
+print("Upper fence:", upper)
+print("\nFlagged values:")
+print(outliers)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
   <pre class="output">Click Run to execute this cell.</pre>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 11</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="Module 12 wrap-up">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">What you can now do</span><h2>Module 12 wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
-    <div class="slide-content"><div class="summary-grid"><div><h3>Missing values</h3><p>Count and handle blanks.</p></div><div><h3>Duplicates</h3><p>Find repeated records.</p></div><div><h3>Types</h3><p>Convert values safely.</p></div><div><h3>Categories</h3><p>Standardize labels.</p></div><div><h3>Outliers</h3><p>Flag unusual values.</p></div><div><h3>EDA</h3><p>Summarize before deciding.</p></div></div><div class="callout success">You can now clean and explore data before analysis or modeling.</div></div>
     <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 12</span></footer>
   </div>
-</section></main>
-  <footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"></select><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 12</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
+</section>
+
+<section class="slide" data-title="Explore categorical variables">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Counts and proportions reveal the composition</span><h2>Explore categorical variables</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">For categorical columns, start with frequencies. Counts tell you how many observations are in each group, while proportions make groups easier to compare.</p>
+  <ul class="clean-list"><li><code>value_counts()</code> for counts</li><li><code>value_counts(normalize=True)</code> for proportions</li><li><code>dropna=False</code> when missing values should stay visible</li></ul>
+  <div class="callout secondary"><strong>EDA question:</strong> Are some categories unexpectedly rare, dominant, or missing?</div>
+</div><div>
+<div class="code-cell" data-filename="module12_categorical_eda.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Summarize channel frequencies</h3><p>Clean the labels first, then examine the distribution.</p></div>
+    <span class="file-pill">module12_categorical_eda.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_categorical_eda.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+import numpy as np
+
+orders = pd.DataFrame({
+    "order_id": [101, 102, 102, 103, 104, 105, 106, 107],
+    "date": ["2026-01-03", "2026-01-04", "2026-01-04",
+             "bad-date", "2026-01-06", "2026-01-07",
+             "2026-01-08", "2026-01-09"],
+    "region": ["North", "South", "South", " north ",
+               "WEST", "West", None, "North"],
+    "channel": ["Web", "Store", "Store", "web",
+                "Email", " email ", "Web", "Store"],
+    "amount": ["45", "120", "120", None, "95", "1100", "58", "-20"],
+    "satisfaction": [4, 5, 5, 3, np.nan, 2, 4, 9]
+})
+
+orders["channel"] = (
+    orders["channel"]
+    .str.strip()
+    .str.title()
+)
+
+print("Counts:")
+print(orders["channel"].value_counts(dropna=False))
+
+print("\nPercent:")
+print(
+    orders["channel"]
+    .value_counts(normalize=True, dropna=False)
+    .mul(100)
+    .round(1)
+)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 13</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Explore numeric variables">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Center, spread, and range</span><h2>Explore numeric variables</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">For numeric columns, EDA usually begins with summary statistics that describe the center and spread of the values.</p>
+  <ul class="clean-list"><li><strong>mean and median</strong> describe center</li><li><strong>standard deviation</strong> describes spread</li><li><strong>min and max</strong> reveal range</li><li><strong>quartiles</strong> help identify skew and unusual values</li></ul>
+  <div class="callout"><strong>Compare mean and median.</strong> A large difference can be a clue that the distribution is skewed or contains extreme values.</div>
+</div><div>
+<div class="code-cell" data-filename="module12_numeric_eda.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Describe order amounts</h3><p>Notice how the extreme value affects the mean.</p></div>
+    <span class="file-pill">module12_numeric_eda.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_numeric_eda.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+amounts = pd.Series(
+    [45, 58, 72, 90, 95, 120, 140, 1100],
+    name="amount"
+)
+
+print(amounts.describe())
+
+print("\nMean:", round(amounts.mean(), 2))
+print("Median:", round(amounts.median(), 2))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 14</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Compare groups during EDA">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Ask where the pattern is different</span><h2>Compare groups during EDA</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Overall summaries can hide differences between groups. Grouped EDA helps you compare categories such as regions, channels, departments, or customer segments.</p>
+  <div class="callout secondary"><strong>Example question:</strong> Is the overall average order amount being driven by one region?</div>
+  <p class="concept-note">At this stage, treat group differences as observations to investigate. A difference in a summary table is not automatically evidence of a meaningful statistical effect.</p>
+</div><div>
+<div class="code-cell" data-filename="module12_grouped_eda.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Compare regional order amounts</h3><p>Summarize count, median, mean, and maximum for each region.</p></div>
+    <span class="file-pill">module12_grouped_eda.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_grouped_eda.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+orders = pd.DataFrame({
+    "region": ["North", "North", "South", "South", "West", "West"],
+    "amount": [45, 72, 58, 120, 95, 1100]
+})
+
+summary = (
+    orders
+    .groupby("region")["amount"]
+    .agg(["count", "median", "mean", "max"])
+    .round(2)
+)
+
+print(summary)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 15</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Document your cleaning decisions">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">A clean dataset should be reproducible</span><h2>Document your cleaning decisions</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">Good cleaning is not only about the final DataFrame. You should be able to explain what changed and why.</p>
+    <ul class="clean-list"><li>What issue was found?</li><li>Which rows or columns were affected?</li><li>What rule was applied?</li><li>How many values changed?</li><li>Why was that decision reasonable?</li></ul>
+  </div>
+  <div class="module12-log">
+    <div><strong>Issue</strong><span>Channel labels had extra spaces and inconsistent case.</span></div>
+    <div><strong>Action</strong><span>Applied strip and title-case standardization.</span></div>
+    <div><strong>Check</strong><span>Compared value counts before and after.</span></div>
+    <div><strong>Reason</strong><span>Values represented the same business categories.</span></div>
+  </div>
+</div>
+<div class="callout"><strong>In a real project:</strong> keep cleaning code in a notebook, script, or pipeline rather than editing the source file manually.</div></div>
+    <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 16</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Mini cleaning pipeline">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Connect the decisions into one workflow</span><h2>Mini cleaning pipeline</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Now we combine several cleaning steps: remove a confirmed duplicate, convert types, standardize categories, and flag invalid values.</p>
+  <div class="module12-process"><span>1. Deduplicate</span><span>2. Convert types</span><span>3. Clean text</span><span>4. Validate rules</span><span>5. Inspect result</span></div>
+  <div class="callout secondary"><strong>Notice:</strong> suspicious rows are flagged. The workflow does not silently delete every unusual observation.</div>
+</div><div>
+<div class="code-cell" data-filename="module12_pipeline.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Build a transparent cleaning workflow</h3><p>Read each step and identify what problem it addresses.</p></div>
+    <span class="file-pill">module12_pipeline.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_pipeline.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+import numpy as np
+
+orders = pd.DataFrame({
+    "order_id": [101, 102, 102, 103, 104, 105, 106, 107],
+    "date": ["2026-01-03", "2026-01-04", "2026-01-04",
+             "bad-date", "2026-01-06", "2026-01-07",
+             "2026-01-08", "2026-01-09"],
+    "region": ["North", "South", "South", " north ",
+               "WEST", "West", None, "North"],
+    "channel": ["Web", "Store", "Store", "web",
+                "Email", " email ", "Web", "Store"],
+    "amount": ["45", "120", "120", None, "95", "1100", "58", "-20"],
+    "satisfaction": [4, 5, 5, 3, np.nan, 2, 4, 9]
+})
+
+clean = (
+    orders
+    .drop_duplicates(subset="order_id", keep="first")
+    .assign(
+        amount=lambda df: pd.to_numeric(df["amount"], errors="coerce"),
+        date=lambda df: pd.to_datetime(df["date"], errors="coerce"),
+        region=lambda df: df["region"].str.strip().str.title(),
+        channel=lambda df: df["channel"].str.strip().str.title()
+    )
+)
+
+clean["invalid_amount"] = clean["amount"].lt(0)
+clean["invalid_score"] = (
+    ~clean["satisfaction"].between(1, 5, inclusive="both")
+    &amp; clean["satisfaction"].notna()
+)
+
+print(clean)
+print("\nMissing values after conversion:")
+print(clean.isna().sum())</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 17</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Check the data after cleaning">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Never assume the workflow worked</span><h2>Check the data after cleaning</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Cleaning ends with quality checks. Compare the cleaned data with the rules you intended to apply.</p>
+  <ol class="clean-list"><li>Recheck duplicates.</li><li>Recheck missing values.</li><li>Inspect data types.</li><li>Review category values.</li><li>Count rule violations.</li><li>Compare row counts before and after.</li></ol>
+  <div class="callout"><strong>Quality assurance:</strong> the code running without an error is not proof that the dataset is clean.</div>
+</div><div>
+<div class="code-cell" data-filename="module12_qa.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Run simple post-cleaning checks</h3><p>These checks can be turned into reusable validation functions later.</p></div>
+    <span class="file-pill">module12_qa.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_qa.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+clean = pd.DataFrame({
+    "order_id": [101, 102, 103, 104, 105, 106],
+    "region": ["North", "South", "North", "West", "West", None],
+    "amount": [45, 120, None, 95, 1100, 58]
+})
+
+print("Duplicate order IDs:",
+      clean["order_id"].duplicated().sum())
+
+print("\nMissing values:")
+print(clean.isna().sum())
+
+print("\nRegion values:")
+print(clean["region"].value_counts(dropna=False))
+
+print("\nNegative amounts:",
+      clean["amount"].lt(0).sum())</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 18</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Practice challenge">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Clean, validate, then summarize</span><h2>Practice challenge</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Use the starter DataFrame and create your own cleaning and EDA workflow. There is no completed solution on this slide.</p>
+  <ol class="clean-list"><li>Audit the data.</li><li>Remove the confirmed duplicate order.</li><li>Convert <code>date</code> and <code>amount</code> safely.</li><li>Standardize <code>region</code> and <code>channel</code>.</li><li>Flag invalid amounts and satisfaction scores.</li><li>Create a missing-value report.</li><li>Summarize amount by region.</li></ol>
+  <div class="callout secondary"><strong>Final check:</strong> write two or three sentences explaining what you found during EDA.</div>
+</div><div>
+<div class="code-cell" data-filename="module12_practice.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Complete the cleaning workflow</h3><p>Build and test the solution one step at a time.</p></div>
+    <span class="file-pill">module12_practice.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module12_practice.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+import numpy as np
+
+orders = pd.DataFrame({
+    "order_id": [101, 102, 102, 103, 104, 105, 106, 107],
+    "date": ["2026-01-03", "2026-01-04", "2026-01-04",
+             "bad-date", "2026-01-06", "2026-01-07",
+             "2026-01-08", "2026-01-09"],
+    "region": ["North", "South", "South", " north ",
+               "WEST", "West", None, "North"],
+    "channel": ["Web", "Store", "Store", "web",
+                "Email", " email ", "Web", "Store"],
+    "amount": ["45", "120", "120", None, "95", "1100", "58", "-20"],
+    "satisfaction": [4, 5, 5, 3, np.nan, 2, 4, 9]
+})
+
+# 1. Audit the DataFrame.
+
+# 2. Remove the confirmed duplicate order_id.
+
+# 3. Convert date and amount safely.
+
+# 4. Standardize region and channel.
+
+# 5. Flag invalid values.
+
+# 6. Build a missing-value report.
+
+# 7. Summarize amount by region.
+
+# 8. Print your final results.
+</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 19</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Module 12 wrap-up">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Trust the data before you trust the result</span><h2>Module 12 wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 12</div></header>
+    <div class="slide-content">
+<div class="summary-grid">
+  <div><h3>Audit</h3><p>Inspect shape, types, sample values, missingness, and categories before changing data.</p></div>
+  <div><h3>Clean</h3><p>Handle missing values, duplicates, types, and text inconsistencies with explicit decisions.</p></div>
+  <div><h3>Validate</h3><p>Use domain rules and post-cleaning checks to confirm the data makes sense.</p></div>
+  <div><h3>Investigate</h3><p>Treat outliers and unusual records as questions, not automatic deletions.</p></div>
+  <div><h3>Explore</h3><p>Use counts, proportions, numeric summaries, and grouped summaries to understand the dataset.</p></div>
+  <div><h3>Document</h3><p>Keep cleaning decisions reproducible so someone else can understand what changed and why.</p></div>
+</div>
+<div class="callout success module12-next"><strong>Next: Module 13 — Statistics &amp; Visualization.</strong> We will build on this clean-data foundation and use statistical summaries and visualizations to investigate distributions, comparisons, and relationships more clearly.</div></div>
+    <footer class="slide-footer"><span>Cleaning &amp; EDA · Understand Before Modeling</span><span>IAN 601 · Module 12 · Slide 20</span></footer>
+  </div>
+</section>
+</main>
+  <footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"></select><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 20</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
 </div>
 <script>
 const MANIFEST = {
   "prefix": "module12",
-  "slide_count": 12,
+  "slide_count": 20,
   "slides": [
     {
       "slide": 1,
       "title": "Cleaning & EDA",
       "audio": "audio/module12_slide_01.mp3",
       "captions": "captions/module12_slide_01.vtt",
-      "text": "Welcome to Module 12. This module focuses on Cleaning & EDA. We will connect the techniques to realistic analytical workflows and careful interpretation. Cleaning and exploratory data analysis help you understand data quality, patterns, missingness, outliers, and relationships before modeling."
+      "text": "Welcome to Module 12, Cleaning and Exploratory Data Analysis. We will use the Pandas skills from the previous module to turn messy data into trustworthy data and then explore what the cleaned table is telling us. The goal is to inspect, clean, validate, summarize, and interpret the data before we move into more formal statistical analysis."
     },
     {
       "slide": 2,
-      "title": "How to use this page",
+      "title": "From advanced Pandas to Cleaning & EDA",
       "audio": "audio/module12_slide_02.mp3",
       "captions": "captions/module12_slide_02.vtt",
-      "text": "Use this lesson interactively. Read the idea, predict the result, run the example, then change one input and compare the output. Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept. Change one value, variable, or condition. Apply the pattern to a new example."
+      "text": "Module 11 gave us advanced Pandas tools. Module 12 applies those tools to data quality. Before we trust a summary, model, or visualization, we need to know whether the underlying data is complete, consistent, correctly typed, and reasonable. After this module, Module 13 will build on the cleaned data with statistics and visualization."
     },
     {
       "slide": 3,
-      "title": "Learning path for Module 12",
+      "title": "Our messy working dataset",
       "audio": "audio/module12_slide_03.mp3",
       "captions": "captions/module12_slide_03.vtt",
-      "text": "This slide is the roadmap for Module 12. Follow how the workflow moves from individual operations toward a complete analytical process. Find data quality issues. Count and fill missing values. Detect repeated records. Convert columns safely. Flag unusual values. Summarize patterns before decisions."
+      "text": "Our working dataset intentionally contains several realistic problems: a duplicate order, missing values, inconsistent text labels, numbers stored as strings, an invalid date, and suspicious numeric values. We will not clean anything immediately. First, we will identify what is wrong and decide which issues require investigation."
     },
     {
       "slide": 4,
-      "title": "Create a messy dataset",
+      "title": "Start with a data audit",
       "audio": "audio/module12_slide_04.mp3",
       "captions": "captions/module12_slide_04.vtt",
-      "text": "This slide focuses on Create a messy dataset. Start with what the operation changes in the data, then connect that change to the analytical question. Messy data can include missing values, duplicate rows, inconsistent labels, and values stored as text. Build a small messy DataFrame Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "A data audit is the first pass through an unfamiliar dataset. Check the shape, data types, missing values, sample rows, and category values. The purpose is to create an inventory of possible quality problems before changing the data. This preserves evidence and helps us make deliberate cleaning decisions."
     },
     {
       "slide": 5,
-      "title": "Check missing values",
+      "title": "Missing values: count and percentage",
       "audio": "audio/module12_slide_05.mp3",
       "captions": "captions/module12_slide_05.vtt",
-      "text": "This slide focuses on Check missing values. Start with what the operation changes in the data, then connect that change to the analytical question. Missing values can change summaries. First count them, then decide what to do. Count and fill missing values Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "Missing values should be measured before they are handled. A raw count tells us how many values are absent, while a percentage tells us how large the problem is relative to the column. The same count can mean very different things in a small dataset and a very large dataset."
     },
     {
       "slide": 6,
-      "title": "Find duplicate records",
+      "title": "Decide how to handle missing values",
       "audio": "audio/module12_slide_06.mp3",
       "captions": "captions/module12_slide_06.vtt",
-      "text": "This slide focuses on Find duplicate records. Start with what the operation changes in the data, then connect that change to the analytical question. Duplicates can inflate counts and totals. Check before summarizing. Detect and remove duplicates Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "There is no single correct rule for every missing value. Depending on the context, we may drop records, fill values, preserve the missingness, or investigate the source. Avoid automatic cleaning rules such as filling every numeric column with the mean without considering what the variable represents."
     },
     {
       "slide": 7,
-      "title": "Convert data types",
+      "title": "Find duplicate records",
       "audio": "audio/module12_slide_07.mp3",
       "captions": "captions/module12_slide_07.vtt",
-      "text": "This slide focuses on Convert data types. Start with what the operation changes in the data, then connect that change to the analytical question. Numbers stored as text cannot be analyzed correctly until converted. Convert text to numeric Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "A repeated value is not automatically a duplicate record. Decide which columns define a unique observation. An order ID may need to be unique, while a customer ID may legitimately appear many times. Inspect possible duplicates before removing them so that valid repeated records are not lost."
     },
     {
       "slide": 8,
-      "title": "Clean categories",
+      "title": "Convert data types safely",
       "audio": "audio/module12_slide_08.mp3",
       "captions": "captions/module12_slide_08.vtt",
-      "text": "This slide focuses on Clean categories. Start with what the operation changes in the data, then connect that change to the analytical question. Text categories often need case, spacing, and spelling cleanup. Standardize category labels Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "Numbers and dates often arrive as text. Pandas conversion functions can safely coerce invalid values to missing values so the problems become visible. This is useful because conversion is not only a formatting step; it can also expose unexpected values that need investigation."
     },
     {
       "slide": 9,
-      "title": "Flag outliers with IQR",
+      "title": "Clean text categories",
       "audio": "audio/module12_slide_09.mp3",
       "captions": "captions/module12_slide_09.vtt",
-      "text": "This slide focuses on Flag outliers with IQR. Start with what the operation changes in the data, then connect that change to the analytical question. The IQR rule is one simple way to flag unusually high or low values. Flag possible outliers Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "Text categories frequently contain inconsistent capitalization, spacing, or spelling. These differences can create fake groups in an analysis. Standardize the labels, then compare value counts before and after cleaning to confirm that the intended categories were combined correctly."
     },
     {
       "slide": 10,
-      "title": "Basic EDA summary",
+      "title": "Validate ranges and business rules",
       "audio": "audio/module12_slide_10.mp3",
       "captions": "captions/module12_slide_10.vtt",
-      "text": "This slide summarizes Module 12. Focus on the decisions and checks that make the workflow reliable and reusable. EDA uses summaries to understand what is in the data before formal analysis. Create an EDA summary Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "A value can have the correct Python data type and still violate the meaning of the dataset. Negative sales, impossible scores, or invalid dates require domain rules. These checks catch errors that data types alone cannot identify."
     },
     {
       "slide": 11,
-      "title": "Mini cleaning pipeline",
+      "title": "Outliers are questions, not automatic deletions",
       "audio": "audio/module12_slide_11.mp3",
       "captions": "captions/module12_slide_11.vtt",
-      "text": "This slide focuses on Mini cleaning pipeline. Start with what the operation changes in the data, then connect that change to the analytical question. A cleaning pipeline applies several checks in a consistent order. Clean and summarize Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "An outlier is an unusual observation, but unusual does not automatically mean wrong. It could be a data-entry error, a rare but legitimate case, or evidence that multiple processes are mixed together. Detect the value, investigate the context, and then decide whether to keep, correct, transform, or exclude it."
     },
     {
       "slide": 12,
-      "title": "Module 12 wrap-up",
+      "title": "Flag outliers with the IQR rule",
       "audio": "audio/module12_slide_12.mp3",
       "captions": "captions/module12_slide_12.vtt",
-      "text": "This slide summarizes Module 12. Focus on the decisions and checks that make the workflow reliable and reusable. Count and handle blanks. Find repeated records. Convert values safely. Standardize labels. Flag unusual values. Summarize before deciding."
+      "text": "The interquartile range is a simple statistical method for screening unusually low or high values. It uses the first and third quartiles to define lower and upper fences. Values outside those fences are flagged for investigation, not automatically removed."
+    },
+    {
+      "slide": 13,
+      "title": "Explore categorical variables",
+      "audio": "audio/module12_slide_13.mp3",
+      "captions": "captions/module12_slide_13.vtt",
+      "text": "Categorical EDA often begins with counts and proportions. Value counts show how observations are distributed across groups and can reveal rare categories, dominant categories, unexpected labels, or missing values. These are descriptive observations that help us understand the composition of the dataset."
+    },
+    {
+      "slide": 14,
+      "title": "Explore numeric variables",
+      "audio": "audio/module12_slide_14.mp3",
+      "captions": "captions/module12_slide_14.vtt",
+      "text": "Numeric EDA uses statistics such as the mean, median, standard deviation, minimum, maximum, and quartiles. Compare the mean and median because a large difference can signal skewness or extreme values. Summary statistics are clues that guide the next question rather than final conclusions by themselves."
+    },
+    {
+      "slide": 15,
+      "title": "Compare groups during EDA",
+      "audio": "audio/module12_slide_15.mp3",
+      "captions": "captions/module12_slide_15.vtt",
+      "text": "Overall summaries can hide important group differences. Grouped EDA compares measures across regions, channels, departments, or other categories. At this stage, treat differences as patterns to investigate. A difference in a summary table is not automatically evidence of a statistically meaningful effect."
+    },
+    {
+      "slide": 16,
+      "title": "Document your cleaning decisions",
+      "audio": "audio/module12_slide_16.mp3",
+      "captions": "captions/module12_slide_16.vtt",
+      "text": "A clean DataFrame should be reproducible. Record what issue was found, what rule was applied, how many values changed, and why the decision was appropriate. Keeping these steps in code makes the process more transparent and repeatable than manually editing the original file."
+    },
+    {
+      "slide": 17,
+      "title": "Mini cleaning pipeline",
+      "audio": "audio/module12_slide_17.mp3",
+      "captions": "captions/module12_slide_17.vtt",
+      "text": "A realistic cleaning workflow combines several decisions. In this example, we remove a confirmed duplicate, convert numeric and date fields, standardize text categories, and flag rule violations. Notice that suspicious rows are not silently deleted. The workflow keeps the cleaning logic visible."
+    },
+    {
+      "slide": 18,
+      "title": "Check the data after cleaning",
+      "audio": "audio/module12_slide_18.mp3",
+      "captions": "captions/module12_slide_18.vtt",
+      "text": "Cleaning should end with quality checks. Recheck duplicates, missing values, data types, category values, rule violations, and row counts. Code that runs without an error is not proof that the data is correct. Validation confirms that the cleaning steps produced the result you intended."
+    },
+    {
+      "slide": 19,
+      "title": "Practice challenge",
+      "audio": "audio/module12_slide_19.mp3",
+      "captions": "captions/module12_slide_19.vtt",
+      "text": "Now build the workflow yourself. Audit the starter data, remove the confirmed duplicate, convert the date and amount fields, standardize category labels, flag invalid values, create a missing-value report, and summarize order amount by region. There is intentionally no completed answer on the slide."
+    },
+    {
+      "slide": 20,
+      "title": "Module 12 wrap-up",
+      "audio": "audio/module12_slide_20.mp3",
+      "captions": "captions/module12_slide_20.vtt",
+      "text": "Module 12 focused on trusting the data before trusting the result. You learned to audit, clean, validate, investigate unusual observations, explore categorical and numeric variables, compare groups, and document decisions. In Module 13, we will use this clean-data foundation for statistics and visualization so we can investigate distributions, comparisons, and relationships more clearly."
     }
   ]
 };
@@ -472,7 +1103,7 @@ const audioPlayBtn=document.getElementById('audio-play-btn');
 const audioSeek=document.getElementById('audio-seek');
 const audioTime=document.getElementById('audio-time');
 const speedSelect=document.getElementById('speed-select');
-const NARRATION_STORAGE_KEY='ian601_module12_presentation';
+const NARRATION_STORAGE_KEY='ian601_module12_presentation_v2';
 let narrationEnabled=false;
 let narrationStarted=false;
 let ccEnabled=false;
@@ -554,7 +1185,7 @@ initMonaco();const initialSlide=initNarr();
 showSlide(initialSlide);
 </script>
 <div class="ian603-modal-backdrop" id="ian-course-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">IAN 601 Course Modules</h2><button class="ian603-tool" id="ian-course-close" type="button">Close</button></div><div class="ian603-module-links"><a class="" href="s_module1.html">Module 1</a><a class="" href="s_module2.html">Module 2</a><a class="" href="s_module3.html">Module 3</a><a class="" href="s_module4.html">Module 4</a><a class="" href="s_module5.html">Module 5</a><a class="" href="s_module6.html">Module 6</a><a class="" href="s_module7.html">Module 7</a><a class="" href="s_module8.html">Module 8</a><a class="" href="s_module9.html">Module 9</a><a class="" href="s_module10.html">Module 10</a><a class="" href="s_module11.html">Module 11</a><a class="current" href="s_module12.html">Module 12 · Current</a><a class="" href="s_module13.html">Module 13</a><a class="" href="s_module14.html">Module 14</a></div></div></div><div class="ian603-modal-backdrop" id="ian-progress-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">Module 12 Progress</h2><button class="ian603-tool" id="ian-progress-close" type="button">Close</button></div><p style="color:var(--ian-muted)">Progress is saved only in this browser.</p><div style="height:12px;background:var(--ian-border);border-radius:999px;overflow:hidden"><div id="ian-progress-meter" style="height:100%;width:0;background:var(--ian-good)"></div></div><div id="ian-progress-text" style="margin:8px 0;color:var(--ian-muted)"></div><div id="ian-progress-list" class="ian603-module-links"></div><button class="ian603-tool" id="ian-progress-reset" type="button" style="margin-top:14px">Reset saved progress</button></div></div><script id="ian603-generic-ui">
-(()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module12_shell_progress_v1';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
+(()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module12_shell_progress_v2';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
 const activeIndex=()=>Math.max(0,slides.findIndex(s=>s.classList.contains('active')));
 function save(){localStorage.setItem(key,JSON.stringify(visited))}
 function render(){const i=activeIndex();if(!visited.includes(i+1)){visited.push(i+1);save()}const count=new Set(visited).size,pct=slides.length?Math.round(count/slides.length*100):0;const p=document.getElementById('ian-progress-pct');if(p)p.textContent=pct+'%';const meter=document.getElementById('ian-progress-meter');if(meter)meter.style.width=pct+'%';const text=document.getElementById('ian-progress-text');if(text)text.textContent=count+' of '+slides.length+' slides visited';const list=document.getElementById('ian-progress-list');if(list){list.innerHTML=slides.map((s,j)=>'<a href="#" data-shell-go="'+j+'" class="'+(visited.includes(j+1)?'current':'')+'">Slide '+(j+1)+': '+(s.dataset.title||'Slide')+'</a>').join('');list.querySelectorAll('[data-shell-go]').forEach(a=>a.onclick=e=>{e.preventDefault();const j=Number(a.dataset.shellGo);const sel=document.getElementById('slide-select');if(sel){sel.value=String(j);sel.dispatchEvent(new Event('change',{bubbles:true}))}document.getElementById('ian-progress-modal')?.classList.remove('show')})}}
