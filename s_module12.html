@@ -1103,7 +1103,7 @@ const audioPlayBtn=document.getElementById('audio-play-btn');
 const audioSeek=document.getElementById('audio-seek');
 const audioTime=document.getElementById('audio-time');
 const speedSelect=document.getElementById('speed-select');
-const NARRATION_STORAGE_KEY='ian601_module12_presentation_v2';
+const NARRATION_STORAGE_KEY='ian601_module12_presentation_v3';
 let narrationEnabled=false;
 let narrationStarted=false;
 let ccEnabled=false;
@@ -1134,7 +1134,7 @@ function updateNarrationButtons(){if(narrationToggleBtn)narrationToggleBtn.textC
 function loadAudioForCurrent(){const item=currentManifestItem();if(!item||!narrationAudio)return;if(audioTitle){audioTitle.classList.remove('audio-error');audioTitle.textContent='Slide '+item.slide+': '+item.title;}if(loadedSlideNumber!==item.slide){loadedSlideNumber=item.slide;narrationAudio.pause();narrationAudio.src=item.audio;narrationAudio.load();if(audioSeek)audioSeek.value='0';if(audioTime)audioTime.textContent='0:00 / 0:00';if(audioPlayBtn)audioPlayBtn.textContent='Play';loadCaptionsForCurrent();}}
 async function playCurrentNarration(restart=false){if(!narrationAudio)return;loadAudioForCurrent();if(restart)narrationAudio.currentTime=0;narrationAudio.playbackRate=Number(speedSelect?.value)||1;try{await narrationAudio.play();}catch{}}
 function syncNarrationForSlide(){loadAudioForCurrent();renderTranscript();if(narrationEnabled&&narrationStarted){narrationAudio.currentTime=0;playCurrentNarration(false);}}
-function initNarr(){const saved=readDeckState();narrationEnabled=Boolean(saved.narrationEnabled);ccEnabled=Boolean(saved.ccEnabled);const speed=[0.75,1,1.25,1.5,2].includes(Number(saved.speed))?Number(saved.speed):1;if(speedSelect)speedSelect.value=String(speed);if(narrationAudio)narrationAudio.playbackRate=speed;updateNarrationButtons();return Number.isInteger(saved.slide)?Math.max(0,Math.min(saved.slide,MANIFEST.slide_count-1)):0;}
+function initNarr(){const saved=readDeckState();narrationEnabled=Boolean(saved.narrationEnabled);ccEnabled=saved.ccEnabled===undefined?true:Boolean(saved.ccEnabled);const speed=[0.75,1,1.25,1.5,2].includes(Number(saved.speed))?Number(saved.speed):1;if(speedSelect)speedSelect.value=String(speed);if(narrationAudio)narrationAudio.playbackRate=speed;updateNarrationButtons();return Number.isInteger(saved.slide)?Math.max(0,Math.min(saved.slide,MANIFEST.slide_count-1)):0;}
 startNarrationBtn?.addEventListener('click',()=>{narrationEnabled=true;narrationStarted=true;updateNarrationButtons();saveDeckState();playCurrentNarration(true);});
 narrationToggleBtn?.addEventListener('click',()=>{narrationEnabled=!narrationEnabled;narrationStarted=narrationEnabled;updateNarrationButtons();saveDeckState();if(narrationEnabled)playCurrentNarration(false);else narrationAudio?.pause();});
 ccToggleBtn?.addEventListener('click',()=>{ccEnabled=!ccEnabled;updateNarrationButtons();updateSubtitle();saveDeckState();});
