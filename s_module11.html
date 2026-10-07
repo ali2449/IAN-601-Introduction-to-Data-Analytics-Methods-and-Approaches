@@ -82,44 +82,102 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
 .ian603-bottombar .bottom-nav-panel{align-self:center!important}
 .topbar>.toolbar,.topbar>.controls,.topbar>.top-controls{margin-left:auto!important}
 .topbar .ian603-tool{box-shadow:none!important}
-</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-focusflow"><!-- IAN601_UI_SHELL_END --></head>
+</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-focusflow"><!-- IAN601_UI_SHELL_END -->
+<style id="module11-revision-style">
+.module11-title-grid{grid-template-columns:minmax(0,1.15fr) minmax(300px,.75fr)!important;gap:34px!important}
+.module11-hero-lead{font-size:clamp(1.9rem,3.05vw,3.35rem)!important;line-height:1.07!important;letter-spacing:-.045em!important;margin:0 0 16px!important}
+.module11-hero-sub{font-size:clamp(1rem,1.35vw,1.22rem)!important;line-height:1.55!important;margin:0!important;color:var(--ian-muted,var(--muted))}
+.module11-flow{display:grid;gap:10px;padding:24px;border:1px solid var(--ian-border,var(--line));border-radius:22px;background:linear-gradient(145deg,rgba(31,95,155,.08),rgba(79,70,229,.08));text-align:center}
+.module11-flow div{padding:15px 18px;border:1px solid var(--ian-border,var(--line));border-radius:14px;background:var(--ian-surface,var(--panel));display:grid;gap:2px}
+.module11-flow strong{font-size:1.02rem}.module11-flow small{color:var(--ian-muted,var(--muted));font-weight:650}.module11-flow span{font-size:.78rem;font-weight:850;color:var(--ian-primary,var(--accent));text-transform:uppercase;letter-spacing:.07em}
+.module11-path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}.module11-path>div{border:1px solid var(--ian-border,var(--line));border-radius:16px;padding:18px;background:var(--ian-surface2,var(--panel2))}.module11-path>div.current{border-color:var(--ian-primary,var(--accent));box-shadow:0 0 0 2px color-mix(in srgb,var(--ian-primary,var(--accent)) 18%,transparent)}.module11-path span{font-size:.75rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--ian-primary,var(--accent))}.module11-path h3{margin:5px 0 6px}.module11-path p{margin:0;color:var(--ian-muted,var(--muted))}
+.module11-mini-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}.module11-mini-compare.three{grid-template-columns:repeat(3,minmax(0,1fr))}.module11-mini-compare>div{border:1px solid var(--ian-border,var(--line));border-radius:14px;padding:14px;background:var(--ian-surface2,var(--panel2));display:grid;gap:5px}.module11-mini-compare strong{color:var(--ian-primary,var(--accent))}.module11-mini-compare span,.concept-note{color:var(--ian-muted,var(--muted))}
+.module11-shape{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin:20px 0}.module11-shape div{border:1px solid var(--ian-border,var(--line));border-radius:14px;padding:16px;text-align:center;background:var(--ian-surface2,var(--panel2));display:grid}.module11-shape small{color:var(--ian-muted,var(--muted));margin-top:4px}.module11-shape>span{font-weight:900;color:var(--ian-primary,var(--accent))}
+.module11-window{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:20px 0}.module11-window span{padding:10px 12px;border:1px solid var(--ian-border,var(--line));border-radius:10px;background:var(--ian-surface2,var(--panel2))}.module11-window strong{color:var(--ian-primary,var(--accent))}
+.module11-process{display:grid;gap:8px;margin:18px 0}.module11-process span{padding:10px 12px;border-left:4px solid var(--ian-primary,var(--accent));border-radius:8px;background:var(--ian-surface2,var(--panel2));font-weight:750}
+.module11-next{margin-top:18px!important}
+.slide .table-wrap table{font-size:.9rem}.slide .table-wrap th,.slide .table-wrap td{padding:8px 10px}
+@media(max-width:900px){.module11-title-grid,.module11-path,.module11-mini-compare,.module11-mini-compare.three{grid-template-columns:1fr!important}.module11-shape{grid-template-columns:1fr}.module11-shape>span{transform:rotate(90deg);justify-self:center}}
+@media(max-height:850px) and (min-width:901px){.slide{padding:28px!important}.slide-header{margin-bottom:12px!important}.module11-hero-lead{font-size:clamp(1.75rem,2.7vw,2.9rem)!important}.module11-flow{padding:18px}.code-input{min-height:150px}.monaco-host{height:190px}}
+</style>
+</head>
 <body>
 <div class="deck">
   <header class="topbar">
     <div class="brand"><span class="brand-mark">11</span><span>IAN 601 · Module 11</span></div>
     <div class="top-controls"><div id="runtime" class="runtime"><span class="runtime-dot"></span><span id="runtime-text">Python not loaded yet</span></div><button class="btn ghost" id="theme-btn" type="button"><i class="fa-solid fa-moon"></i> Theme</button><button class="btn ghost" id="restart-python" type="button">Reset Python</button><button class="ian603-tool" id="ian-progress-btn" type="button">Progress <span id="ian-progress-pct">0%</span></button><button class="ian603-tool" id="ian-fullscreen-btn" type="button">Fullscreen</button><button class="ian603-tool primary" id="run-slide-btn" type="button">Run slide ▶</button><button class="ian603-tool" id="ian-course-modules-btn" type="button">☰ Course Modules</button></div>
   </header>
-  <main class="stage" id="stage"><section class="slide" data-title="Advanced Pandas">
+  <main class="stage" id="stage">
+
+<section class="slide" data-title="Advanced Pandas">
   <div class="slide-inner">
     <header class="slide-header"><div><span class="kicker">Module 11 · Interactive slide lesson</span><h2>Advanced Pandas</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
-    <div class="slide-content"><div class="title-grid">
-               <div><p class="big-lead">Advanced pandas helps transform messy tables into analysis-ready summaries using chaining, reshaping, dates, windows, and reusable functions.</p><div class="pill-row"><span>Self-paced slides</span><span>Executable Python cells</span><span>VS Code-style editor</span><span>Separate study notes</span></div>
-               <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div></div>
-               <div><div class="flow-visual"><div>Raw table</div><span>clean</span><div>reshape</div><span>group</span><div>summary</div><span>report</span><div>insight</div></div></div>
-             </div><div class="callout"><strong>Goal:</strong> Use method chaining, pivot tables, melting, date features, rolling summaries, mapping, joins, and reusable pandas functions.</div></div>
+    <div class="slide-content">
+<div class="title-grid module11-title-grid">
+  <div>
+    <p class="big-lead module11-hero-lead">Move beyond basic DataFrame operations and build reusable workflows for reshaping, summarizing, validating, and analyzing real-world data.</p>
+    <p class="lead module11-hero-sub">The goal is not to memorize more functions. The goal is to combine Pandas tools into a clear analytical workflow.</p>
+    <div class="pill-row"><span>Chaining</span><span>Grouping</span><span>Reshaping</span><span>Time series</span><span>Validation</span></div>
+  </div>
+  <div class="module11-flow" aria-label="Advanced pandas workflow">
+    <div><strong>Raw data</strong><small>rows and columns</small></div><span>clean + transform</span>
+    <div><strong>Reshape</strong><small>long, wide, grouped</small></div><span>analyze + validate</span>
+    <div><strong>Insight</strong><small>reliable summaries</small></div>
+  </div>
+</div></div>
     <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 1</span></footer>
   </div>
 </section>
-<section class="slide" data-title="How to use this page">
+
+<section class="slide" data-title="From basic Pandas to advanced workflows">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Self-paced workflow</span><h2>How to use this page</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
-    <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Read</h3><p>Start with the main idea on the slide.</p></div><div class="timeline-item"><span>2</span><h3>Run</h3><p>Execute the Python code in the browser.</p></div><div class="timeline-item"><span>3</span><h3>Compare</h3><p>Connect the output to the concept.</p></div><div class="timeline-item"><span>4</span><h3>Edit</h3><p>Change one value, variable, or condition.</p></div><div class="timeline-item"><span>5</span><h3>Reuse</h3><p>Apply the pattern to a new example.</p></div></div><div class="callout secondary">All slide points are visible. Use Next, Previous, arrow keys, or the slide menu.</div></div>
+    <header class="slide-header"><div><span class="kicker">Build on Module 10</span><h2>From basic Pandas to advanced workflows</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<p class="lead">Module 10 introduced the DataFrame. Module 11 focuses on how several Pandas operations work together in a realistic analysis.</p>
+<div class="module11-path">
+  <div><span>Module 10</span><h3>Basic Pandas</h3><p>Select, filter, sort, inspect, and summarize a DataFrame.</p></div>
+  <div class="current"><span>Module 11</span><h3>Advanced Pandas</h3><p>Chain operations, reshape data, work with dates, validate merges, and reuse workflows.</p></div>
+  <div><span>Module 12</span><h3>Cleaning &amp; EDA</h3><p>Apply these skills to diagnose data quality and explore patterns.</p></div>
+</div>
+<div class="callout secondary"><strong>Think in workflows:</strong> each Pandas method changes the table in a specific way. Good analysis comes from knowing why each change is needed.</div></div>
     <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 2</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Learning path for Module 11">
+
+<section class="slide" data-title="Our working dataset">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Roadmap</span><h2>Learning path for Module 11</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
-    <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Chaining</h3><p>Connect DataFrame steps.</p></div><div class="timeline-item"><span>2</span><h3>Pivot</h3><p>Create summary tables.</p></div><div class="timeline-item"><span>3</span><h3>Melt</h3><p>Convert wide data to long data.</p></div><div class="timeline-item"><span>4</span><h3>Dates</h3><p>Extract time features.</p></div><div class="timeline-item"><span>5</span><h3>Rolling</h3><p>Calculate moving summaries.</p></div><div class="timeline-item"><span>6</span><h3>Functions</h3><p>Make reusable pandas workflows.</p></div></div></div>
+    <header class="slide-header"><div><span class="kicker">One small dataset, many techniques</span><h2>Our working dataset</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">We will reuse a small order table so the focus stays on the Pandas operation rather than on a complicated dataset.</p>
+    <ul class="clean-list"><li><strong>order_id</strong> identifies an order.</li><li><strong>date</strong> supports time-based analysis.</li><li><strong>region, channel, category</strong> are grouping variables.</li><li><strong>amount</strong> is the numeric measure we will summarize.</li></ul>
+  </div>
+  <div class="table-wrap">
+    <table><thead><tr><th>order_id</th><th>date</th><th>region</th><th>channel</th><th>category</th><th>amount</th></tr></thead>
+    <tbody><tr><td>101</td><td>2026-01-03</td><td>North</td><td>Web</td><td>Books</td><td>45</td></tr>
+    <tr><td>102</td><td>2026-01-03</td><td>South</td><td>Store</td><td>Tech</td><td>120</td></tr>
+    <tr><td>103</td><td>2026-01-04</td><td>North</td><td>Web</td><td>Books</td><td>72</td></tr>
+    <tr><td>104</td><td>2026-01-05</td><td>West</td><td>Email</td><td>Tech</td><td>90</td></tr></tbody></table>
+  </div>
+</div>
+<div class="callout"><strong>Why reuse one dataset?</strong> You can see how the same table changes as we filter, group, reshape, join, and summarize it.</div></div>
     <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 3</span></footer>
   </div>
 </section>
+
 <section class="slide" data-title="Method chaining">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Readable workflow</span><h2>Method chaining</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Method chaining connects several DataFrame steps into one readable workflow.</p></div><div><div class="code-cell" data-filename="module11_chaining.py">
+    <header class="slide-header"><div><span class="kicker">Readable multi-step transformations</span><h2>Method chaining</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Method chaining keeps related DataFrame steps together. Read the chain from top to bottom as a sequence of transformations.</p>
+  <ol class="clean-list"><li>Start with the DataFrame.</li><li>Keep the rows you need.</li><li>Create or change columns.</li><li>Sort or summarize the result.</li></ol>
+  <div class="callout secondary"><strong>Tip:</strong> put each method on a new line inside parentheses. The workflow becomes easier to scan and debug.</div>
+</div><div>
+<div class="code-cell" data-filename="module11_chaining.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Filter, assign, group</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Filter, create a column, and sort</h3><p>Predict which orders remain before you run the code.</p></div>
     <span class="file-pill">module11_chaining.py</span>
   </div>
   <div class="editor-shell">
@@ -127,18 +185,23 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
 orders = pd.DataFrame({
-    &quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;, &quot;store&quot;, &quot;email&quot;],
-    &quot;amount&quot;: [45, 72, 38, 91, 55]
+    "order_id": [101, 102, 103, 104, 105, 106],
+    "date": ["2026-01-03", "2026-01-03", "2026-01-04",
+             "2026-01-05", "2026-01-05", "2026-01-06"],
+    "region": ["North", "South", "North", "West", "South", "West"],
+    "channel": ["Web", "Store", "Web", "Email", "Web", "Store"],
+    "category": ["Books", "Tech", "Books", "Tech", "Home", "Home"],
+    "amount": [45, 120, 72, 90, 55, 140]
 })
 
-summary = (
+result = (
     orders
-    .assign(large_order=lambda df: df[&quot;amount&quot;] &gt;= 70)
-    .groupby(&quot;channel&quot;, as_index=False)
-    .agg(total=(&quot;amount&quot;, &quot;sum&quot;), large_orders=(&quot;large_order&quot;, &quot;sum&quot;))
+    .query("amount &gt;= 70")
+    .assign(fee=lambda df: df["amount"] * 0.05)
+    .sort_values("amount", ascending=False)
 )
 
-print(summary)</textarea>
+print(result[["order_id", "amount", "fee"]])</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -148,26 +211,42 @@ print(summary)</textarea>
     <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 4</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Pivot tables">
+
+<section class="slide" data-title="query() and assign()">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Cross-tab summaries</span><h2>Pivot tables</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A pivot table summarizes numeric values across categories.</p></div><div><div class="code-cell" data-filename="module11_pivot.py">
+    <header class="slide-header"><div><span class="kicker">Readable filtering and new columns</span><h2>query() and assign()</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead"><code>query()</code> can make filters easier to read, while <code>assign()</code> adds columns without breaking a method chain.</p>
+  <div class="module11-mini-compare"><div><strong>query()</strong><span>Choose rows using a readable expression.</span></div><div><strong>assign()</strong><span>Create columns and keep the workflow moving.</span></div></div>
+  <p class="concept-note">Use regular bracket filtering when it is clearer. Advanced Pandas is about readability, not about forcing one style everywhere.</p>
+</div><div>
+<div class="code-cell" data-filename="module11_query_assign.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Create a pivot table</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module11_pivot.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Filter web orders and calculate tax</h3><p>Change the threshold or channel and compare the result.</p></div>
+    <span class="file-pill">module11_query_assign.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_pivot.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_query_assign.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
-sales = pd.DataFrame({
-    &quot;region&quot;: [&quot;East&quot;, &quot;East&quot;, &quot;West&quot;, &quot;West&quot;, &quot;East&quot;],
-    &quot;channel&quot;: [&quot;web&quot;, &quot;store&quot;, &quot;web&quot;, &quot;store&quot;, &quot;web&quot;],
-    &quot;amount&quot;: [45, 72, 38, 91, 55]
+orders = pd.DataFrame({
+    "order_id": [101, 102, 103, 104, 105, 106],
+    "date": ["2026-01-03", "2026-01-03", "2026-01-04",
+             "2026-01-05", "2026-01-05", "2026-01-06"],
+    "region": ["North", "South", "North", "West", "South", "West"],
+    "channel": ["Web", "Store", "Web", "Email", "Web", "Store"],
+    "category": ["Books", "Tech", "Books", "Tech", "Home", "Home"],
+    "amount": [45, 120, 72, 90, 55, 140]
 })
 
-pivot = pd.pivot_table(sales, values=&quot;amount&quot;, index=&quot;region&quot;, columns=&quot;channel&quot;, aggfunc=&quot;sum&quot;, fill_value=0)
-print(pivot)</textarea>
+web_orders = (
+    orders
+    .query("channel == 'Web' and amount &gt;= 50")
+    .assign(tax=lambda df: df["amount"] * 0.07)
+)
+
+print(web_orders[["order_id", "channel", "amount", "tax"]])</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -177,26 +256,46 @@ print(pivot)</textarea>
     <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 5</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Melt wide data into long data">
+
+<section class="slide" data-title="Named aggregation with groupby()">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Reshaping</span><h2>Melt wide data into long data</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Long format is often easier for analysis, plotting, and grouping.</p></div><div><div class="code-cell" data-filename="module11_melt.py">
+    <header class="slide-header"><div><span class="kicker">Several summaries in one table</span><h2>Named aggregation with groupby()</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Named aggregation lets you calculate multiple statistics and give the output columns useful names at the same time.</p>
+  <ul class="clean-list"><li><strong>total_sales</strong> answers “how much?”</li><li><strong>average_order</strong> answers “what is typical?”</li><li><strong>orders</strong> answers “how many?”</li></ul>
+  <div class="callout"><strong>Real-world use:</strong> this pattern is common when creating a report table for regions, departments, products, or customer segments.</div>
+</div><div>
+<div class="code-cell" data-filename="module11_named_agg.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Use melt</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module11_melt.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Summarize by region</h3><p>One groupby can return several business measures.</p></div>
+    <span class="file-pill">module11_named_agg.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_melt.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_named_agg.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
-wide = pd.DataFrame({
-    &quot;student_id&quot;: [&quot;S1&quot;, &quot;S2&quot;],
-    &quot;quiz1&quot;: [82, 91],
-    &quot;quiz2&quot;: [88, 95]
+orders = pd.DataFrame({
+    "order_id": [101, 102, 103, 104, 105, 106],
+    "date": ["2026-01-03", "2026-01-03", "2026-01-04",
+             "2026-01-05", "2026-01-05", "2026-01-06"],
+    "region": ["North", "South", "North", "West", "South", "West"],
+    "channel": ["Web", "Store", "Web", "Email", "Web", "Store"],
+    "category": ["Books", "Tech", "Books", "Tech", "Home", "Home"],
+    "amount": [45, 120, 72, 90, 55, 140]
 })
 
-long = wide.melt(id_vars=&quot;student_id&quot;, var_name=&quot;quiz&quot;, value_name=&quot;score&quot;)
-print(long)</textarea>
+region_summary = (
+    orders
+    .groupby("region", as_index=False)
+    .agg(
+        total_sales=("amount", "sum"),
+        average_order=("amount", "mean"),
+        orders=("order_id", "count")
+    )
+)
+
+print(region_summary.round(2))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -206,28 +305,47 @@ print(long)</textarea>
     <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 6</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Work with dates">
+
+<section class="slide" data-title="agg() versus transform()">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Time features</span><h2>Work with dates</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Date columns can be converted to datetime and used to create month, weekday, or time-based summaries.</p></div><div><div class="code-cell" data-filename="module11_dates.py">
+    <header class="slide-header"><div><span class="kicker">Summary table or row-level feature?</span><h2>agg() versus transform()</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Both functions work with groups, but they return different shapes.</p>
+  <div class="module11-mini-compare"><div><strong>agg()</strong><span>Reduces each group to summary rows.</span></div><div><strong>transform()</strong><span>Returns a value for every original row.</span></div></div>
+  <div class="callout secondary"><strong>Question to ask:</strong> Do I want a smaller summary table, or do I need a group statistic attached to every row?</div>
+</div><div>
+<div class="code-cell" data-filename="module11_transform.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Extract date features</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module11_dates.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Compare each order with its regional average</h3><p>Notice that the number of rows stays the same.</p></div>
+    <span class="file-pill">module11_transform.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_dates.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_transform.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
 orders = pd.DataFrame({
-    &quot;date&quot;: [&quot;2026-01-03&quot;, &quot;2026-01-10&quot;, &quot;2026-02-02&quot;],
-    &quot;amount&quot;: [45, 72, 91]
+    "order_id": [101, 102, 103, 104, 105, 106],
+    "date": ["2026-01-03", "2026-01-03", "2026-01-04",
+             "2026-01-05", "2026-01-05", "2026-01-06"],
+    "region": ["North", "South", "North", "West", "South", "West"],
+    "channel": ["Web", "Store", "Web", "Email", "Web", "Store"],
+    "category": ["Books", "Tech", "Books", "Tech", "Home", "Home"],
+    "amount": [45, 120, 72, 90, 55, 140]
 })
 
-orders[&quot;date&quot;] = pd.to_datetime(orders[&quot;date&quot;])
-orders[&quot;month&quot;] = orders[&quot;date&quot;].dt.month
-orders[&quot;weekday&quot;] = orders[&quot;date&quot;].dt.day_name()
+orders["region_average"] = (
+    orders.groupby("region")["amount"].transform("mean")
+)
 
-print(orders)</textarea>
+orders["difference"] = (
+    orders["amount"] - orders["region_average"]
+)
+
+print(
+    orders[["order_id", "region", "amount",
+            "region_average", "difference"]].round(2)
+)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -237,25 +355,45 @@ print(orders)</textarea>
     <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 7</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Rolling summaries">
+
+<section class="slide" data-title="Pivot tables">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Trends</span><h2>Rolling summaries</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A rolling calculation summarizes a moving window of rows.</p></div><div><div class="code-cell" data-filename="module11_rolling.py">
+    <header class="slide-header"><div><span class="kicker">Turn categories into a report layout</span><h2>Pivot tables</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead"><code>pivot_table()</code> creates a matrix-like summary. One category becomes rows, another becomes columns, and a numeric field is aggregated.</p>
+  <ul class="clean-list"><li><code>index</code>: row groups</li><li><code>columns</code>: column groups</li><li><code>values</code>: number to summarize</li><li><code>aggfunc</code>: calculation to apply</li></ul>
+  <div class="callout"><strong>Use it when:</strong> the final report needs a cross-tab view that people can compare quickly.</div>
+</div><div>
+<div class="code-cell" data-filename="module11_pivot.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Calculate rolling average</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module11_rolling.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Sales by region and channel</h3><p>Missing combinations are filled with zero.</p></div>
+    <span class="file-pill">module11_pivot.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_rolling.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_pivot.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
-series = pd.Series([10, 12, 14, 13, 18, 20, 19])
-rolling_average = series.rolling(window=3).mean()
+orders = pd.DataFrame({
+    "order_id": [101, 102, 103, 104, 105, 106],
+    "date": ["2026-01-03", "2026-01-03", "2026-01-04",
+             "2026-01-05", "2026-01-05", "2026-01-06"],
+    "region": ["North", "South", "North", "West", "South", "West"],
+    "channel": ["Web", "Store", "Web", "Email", "Web", "Store"],
+    "category": ["Books", "Tech", "Books", "Tech", "Home", "Home"],
+    "amount": [45, 120, 72, 90, 55, 140]
+})
 
-print(&quot;Values:&quot;)
-print(series.to_list())
-print(&quot;3-period rolling average:&quot;)
-print(rolling_average.round(2).to_list())</textarea>
+report = pd.pivot_table(
+    orders,
+    index="region",
+    columns="channel",
+    values="amount",
+    aggfunc="sum",
+    fill_value=0
+)
+
+print(report)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -265,27 +403,41 @@ print(rolling_average.round(2).to_list())</textarea>
     <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 8</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Map categories">
+
+<section class="slide" data-title="Melt wide data into long data">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Feature creation</span><h2>Map categories</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead"><code>map()</code> replaces values using a dictionary. This is useful for readable labels or grouped categories.</p></div><div><div class="code-cell" data-filename="module11_map.py">
+    <header class="slide-header"><div><span class="kicker">Reshape for analysis</span><h2>Melt wide data into long data</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead"><code>melt()</code> converts repeated columns into rows. Long format is usually easier for grouping, plotting, and statistical analysis.</p>
+  <div class="module11-shape">
+    <div><strong>Wide</strong><small>Jan | Feb | Mar</small></div><span>melt()</span><div><strong>Long</strong><small>month | sales</small></div>
+  </div>
+  <div class="callout secondary"><strong>Common situation:</strong> spreadsheets often arrive in a wide human-readable format, but analysis tools usually work better with tidy long data.</div>
+</div><div>
+<div class="code-cell" data-filename="module11_melt.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Map segments</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module11_map.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Convert monthly columns into rows</h3><p>Compare the number of rows before and after melting.</p></div>
+    <span class="file-pill">module11_melt.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_map.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_melt.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
-customers = pd.DataFrame({
-    &quot;customer_id&quot;: [&quot;C101&quot;, &quot;C102&quot;, &quot;C103&quot;],
-    &quot;segment_code&quot;: [1, 2, 1]
+wide = pd.DataFrame({
+    "region": ["North", "South"],
+    "Jan": [120, 90],
+    "Feb": [135, 110],
+    "Mar": [150, 105]
 })
 
-segment_labels = {1: &quot;returning&quot;, 2: &quot;new&quot;}
-customers[&quot;segment&quot;] = customers[&quot;segment_code&quot;].map(segment_labels)
+long = wide.melt(
+    id_vars="region",
+    var_name="month",
+    value_name="sales"
+)
 
-print(customers)</textarea>
+print(long)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -295,25 +447,39 @@ print(customers)</textarea>
     <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 9</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Join checks">
+
+<section class="slide" data-title="explode() for list-like data">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Data integrity</span><h2>Join checks</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">After a merge, check whether keys matched as expected.</p></div><div><div class="code-cell" data-filename="module11_merge_indicator.py">
+    <header class="slide-header"><div><span class="kicker">One item per row</span><h2>explode() for list-like data</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Sometimes one cell contains several values. <code>explode()</code> expands a list-like column so each value gets its own row.</p>
+  <ul class="clean-list"><li>Useful for tags, diagnoses, product lists, skills, or categories.</li><li>Other columns are repeated automatically.</li><li>The result is easier to count and group.</li></ul>
+  <div class="callout"><strong>Example:</strong> a customer with three interests becomes three rows, one interest per row.</div>
+</div><div>
+<div class="code-cell" data-filename="module11_explode.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Use merge indicator</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module11_merge_indicator.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Expand customer interests</h3><p>After exploding, count how often each interest appears.</p></div>
+    <span class="file-pill">module11_explode.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_merge_indicator.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_explode.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
-orders = pd.DataFrame({&quot;customer_id&quot;: [&quot;C101&quot;, &quot;C102&quot;, &quot;C999&quot;], &quot;amount&quot;: [45, 72, 38]})
-customers = pd.DataFrame({&quot;customer_id&quot;: [&quot;C101&quot;, &quot;C102&quot;], &quot;segment&quot;: [&quot;returning&quot;, &quot;new&quot;]})
+customers = pd.DataFrame({
+    "customer": ["Ava", "Noah", "Mia"],
+    "interests": [
+        ["Books", "Tech"],
+        ["Home"],
+        ["Books", "Home", "Tech"]
+    ]
+})
 
-merged = orders.merge(customers, on=&quot;customer_id&quot;, how=&quot;left&quot;, indicator=True)
-print(merged)
-print(&quot;Merge status counts:&quot;)
-print(merged[&quot;_merge&quot;].value_counts())</textarea>
+long = customers.explode("interests")
+
+print(long)
+print("\nCounts:")
+print(long["interests"].value_counts())</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -323,28 +489,40 @@ print(merged[&quot;_merge&quot;].value_counts())</textarea>
     <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 10</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Reusable pandas function">
+
+<section class="slide" data-title="Work with dates">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Workflow function</span><h2>Reusable pandas function</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A function can package common pandas steps so they can be reused safely.</p></div><div><div class="code-cell" data-filename="module11_function.py">
+    <header class="slide-header"><div><span class="kicker">Convert strings into time features</span><h2>Work with dates</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A date stored as text cannot support reliable time operations. Convert it with <code>pd.to_datetime()</code>, then use the <code>.dt</code> accessor.</p>
+  <ul class="clean-list"><li><code>.dt.month</code></li><li><code>.dt.day_name()</code></li><li><code>.dt.to_period()</code></li></ul>
+  <div class="callout secondary"><strong>Always inspect the result:</strong> invalid or inconsistent dates can silently damage a time-based analysis.</div>
+</div><div>
+<div class="code-cell" data-filename="module11_dates.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Summarize orders with a function</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module11_function.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Create date features</h3><p>The original date column becomes a real datetime value.</p></div>
+    <span class="file-pill">module11_dates.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_function.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_dates.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
-def summarize_orders(df):
-    return (
-        df
-        .assign(large_order=lambda x: x[&quot;amount&quot;] &gt;= 70)
-        .groupby(&quot;channel&quot;, as_index=False)
-        .agg(total=(&quot;amount&quot;, &quot;sum&quot;), count=(&quot;amount&quot;, &quot;count&quot;), large=(&quot;large_order&quot;, &quot;sum&quot;))
-    )
+orders = pd.DataFrame({
+    "order_id": [101, 102, 103, 104, 105, 106],
+    "date": ["2026-01-03", "2026-01-03", "2026-01-04",
+             "2026-01-05", "2026-01-05", "2026-01-06"],
+    "region": ["North", "South", "North", "West", "South", "West"],
+    "channel": ["Web", "Store", "Web", "Email", "Web", "Store"],
+    "category": ["Books", "Tech", "Books", "Tech", "Home", "Home"],
+    "amount": [45, 120, 72, 90, 55, 140]
+})
 
-orders = pd.DataFrame({&quot;channel&quot;: [&quot;web&quot;, &quot;email&quot;, &quot;web&quot;], &quot;amount&quot;: [45, 72, 91]})
-print(summarize_orders(orders))</textarea>
+orders["date"] = pd.to_datetime(orders["date"])
+orders["weekday"] = orders["date"].dt.day_name()
+orders["month"] = orders["date"].dt.to_period("M")
+
+print(orders[["order_id", "date", "weekday", "month"]])</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -354,103 +532,507 @@ print(summarize_orders(orders))</textarea>
     <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 11</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Module 11 wrap-up">
+
+<section class="slide" data-title="Time-based summaries with resample()">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">What you can now do</span><h2>Module 11 wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
-    <div class="slide-content"><div class="summary-grid"><div><h3>Chain</h3><p>Connect clean steps.</p></div><div><h3>Pivot</h3><p>Create summary tables.</p></div><div><h3>Melt</h3><p>Reshape wide to long.</p></div><div><h3>Dates</h3><p>Create time features.</p></div><div><h3>Rolling</h3><p>Summarize trends.</p></div><div><h3>Functions</h3><p>Reuse pandas workflows.</p></div></div><div class="callout success">You can now transform pandas tables into cleaner, richer summaries.</div></div>
+    <header class="slide-header"><div><span class="kicker">Group by time intervals</span><h2>Time-based summaries with resample()</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead"><code>resample()</code> groups observations into regular time periods such as days, weeks, months, or quarters.</p>
+  <ul class="clean-list"><li>Convert the date column first.</li><li>Use a DatetimeIndex or the <code>on=</code> argument.</li><li>Choose a frequency such as <code>D</code>, <code>W</code>, or <code>MS</code>.</li></ul>
+  <div class="callout"><strong>Real-world use:</strong> turn thousands of transactions into weekly or monthly trend data.</div>
+</div><div>
+<div class="code-cell" data-filename="module11_resample.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Create daily sales totals</h3><p>Try changing D to W and compare the output.</p></div>
+    <span class="file-pill">module11_resample.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_resample.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+orders = pd.DataFrame({
+    "order_id": [101, 102, 103, 104, 105, 106],
+    "date": ["2026-01-03", "2026-01-03", "2026-01-04",
+             "2026-01-05", "2026-01-05", "2026-01-06"],
+    "region": ["North", "South", "North", "West", "South", "West"],
+    "channel": ["Web", "Store", "Web", "Email", "Web", "Store"],
+    "category": ["Books", "Tech", "Books", "Tech", "Home", "Home"],
+    "amount": [45, 120, 72, 90, 55, 140]
+})
+
+orders["date"] = pd.to_datetime(orders["date"])
+
+daily = (
+    orders
+    .resample("D", on="date")["amount"]
+    .sum()
+)
+
+print(daily)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
     <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 12</span></footer>
   </div>
-</section></main>
-  <footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"></select><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 12</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
+</section>
+
+<section class="slide" data-title="Rolling summaries">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Smooth short-term variation</span><h2>Rolling summaries</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A rolling calculation looks at a moving window of nearby observations. It is commonly used for moving averages and short-term trends.</p>
+  <div class="module11-window"><span>Day 1</span><span>Day 2</span><span>Day 3</span><strong>→ 3-day mean</strong></div>
+  <div class="callout secondary"><strong>Why are early values NaN?</strong> A three-row window needs three observations before a complete average can be calculated. <code>min_periods</code> can change that behavior.</div>
+</div><div>
+<div class="code-cell" data-filename="module11_rolling.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Calculate a 3-day moving average</h3><p>Compare the raw sales column with the smoother rolling mean.</p></div>
+    <span class="file-pill">module11_rolling.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_rolling.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+daily = pd.DataFrame({
+    "date": pd.date_range("2026-01-01", periods=7),
+    "sales": [90, 120, 75, 150, 130, 160, 110]
+})
+
+daily["rolling_3"] = (
+    daily["sales"]
+    .rolling(window=3)
+    .mean()
+)
+
+print(daily.round(2))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 13</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Create categories">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">map(), replace(), and cut()</span><h2>Create categories</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Pandas offers several ways to turn raw values into meaningful analytical categories.</p>
+  <div class="module11-mini-compare three"><div><strong>map()</strong><span>Dictionary-based labels.</span></div><div><strong>replace()</strong><span>Replace selected values.</span></div><div><strong>cut()</strong><span>Convert numbers into ranges.</span></div></div>
+  <div class="callout"><strong>Choose the simplest tool</strong> that clearly expresses the rule you need.</div>
+</div><div>
+<div class="code-cell" data-filename="module11_categories.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Label order size and channel</h3><p>cut() is useful when numeric ranges have business meaning.</p></div>
+    <span class="file-pill">module11_categories.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_categories.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+orders = pd.DataFrame({
+    "order_id": [101, 102, 103, 104, 105, 106],
+    "date": ["2026-01-03", "2026-01-03", "2026-01-04",
+             "2026-01-05", "2026-01-05", "2026-01-06"],
+    "region": ["North", "South", "North", "West", "South", "West"],
+    "channel": ["Web", "Store", "Web", "Email", "Web", "Store"],
+    "category": ["Books", "Tech", "Books", "Tech", "Home", "Home"],
+    "amount": [45, 120, 72, 90, 55, 140]
+})
+
+orders["channel_label"] = orders["channel"].map({
+    "Web": "Online",
+    "Email": "Online",
+    "Store": "In person"
+})
+
+orders["order_size"] = pd.cut(
+    orders["amount"],
+    bins=[0, 60, 100, float("inf")],
+    labels=["Small", "Medium", "Large"]
+)
+
+print(orders[["order_id", "amount", "channel_label", "order_size"]])</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 14</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Safer joins with merge()">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Validate keys, not just output</span><h2>Safer joins with merge()</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A merge can run without an error and still be analytically wrong. Advanced Pandas includes tools to check the relationship between keys.</p>
+  <ul class="clean-list"><li><code>validate="many_to_one"</code> checks the expected key relationship.</li><li><code>indicator=True</code> shows which rows matched.</li><li>Inspect unmatched rows before continuing.</li></ul>
+  <div class="callout secondary"><strong>Data integrity rule:</strong> never assume that a successful merge is a correct merge.</div>
+</div><div>
+<div class="code-cell" data-filename="module11_merge_checks.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Merge orders with customer data</h3><p>The indicator column makes missing matches visible.</p></div>
+    <span class="file-pill">module11_merge_checks.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_merge_checks.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+orders = pd.DataFrame({
+    "order_id": [1, 2, 3, 4],
+    "customer_id": [10, 20, 10, 40],
+    "amount": [45, 80, 60, 120]
+})
+
+customers = pd.DataFrame({
+    "customer_id": [10, 20, 30],
+    "segment": ["Gold", "Silver", "Gold"]
+})
+
+merged = orders.merge(
+    customers,
+    on="customer_id",
+    how="left",
+    validate="many_to_one",
+    indicator=True
+)
+
+print(merged)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 15</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Reusable workflows with pipe()">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Package repeated logic</span><h2>Reusable workflows with pipe()</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A small function can describe one transformation. <code>pipe()</code> lets that function fit naturally inside a Pandas chain.</p>
+  <ul class="clean-list"><li>Functions make repeated steps consistent.</li><li>Names document the purpose of each transformation.</li><li>Small functions are easier to test than one long block of code.</li></ul>
+  <div class="callout"><strong>Good pattern:</strong> one function, one clear responsibility.</div>
+</div><div>
+<div class="code-cell" data-filename="module11_pipe.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Add an order-size label with pipe()</h3><p>The function receives a DataFrame and returns a DataFrame.</p></div>
+    <span class="file-pill">module11_pipe.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_pipe.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+orders = pd.DataFrame({
+    "order_id": [101, 102, 103, 104, 105, 106],
+    "date": ["2026-01-03", "2026-01-03", "2026-01-04",
+             "2026-01-05", "2026-01-05", "2026-01-06"],
+    "region": ["North", "South", "North", "West", "South", "West"],
+    "channel": ["Web", "Store", "Web", "Email", "Web", "Store"],
+    "category": ["Books", "Tech", "Books", "Tech", "Home", "Home"],
+    "amount": [45, 120, 72, 90, 55, 140]
+})
+
+def add_order_size(df):
+    return df.assign(
+        order_size=pd.cut(
+            df["amount"],
+            bins=[0, 60, 100, float("inf")],
+            labels=["Small", "Medium", "Large"]
+        )
+    )
+
+result = (
+    orders
+    .pipe(add_order_size)
+    .sort_values("amount", ascending=False)
+)
+
+print(result[["order_id", "amount", "order_size"]])</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 16</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Mini workflow: raw orders to report">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Put the pieces together</span><h2>Mini workflow: raw orders to report</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Real analysis rarely uses one Pandas method. A workflow combines several small, understandable transformations.</p>
+  <div class="module11-process"><span>1. Convert dates</span><span>2. Filter valid rows</span><span>3. Add features</span><span>4. Group</span><span>5. Report</span></div>
+  <div class="callout secondary"><strong>Notice the structure:</strong> every line answers a specific data question, and the final table is ready to communicate.</div>
+</div><div>
+<div class="code-cell" data-filename="module11_workflow.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Build a regional summary</h3><p>Read the chain from top to bottom before running it.</p></div>
+    <span class="file-pill">module11_workflow.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_workflow.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+orders = pd.DataFrame({
+    "order_id": [101, 102, 103, 104, 105, 106],
+    "date": ["2026-01-03", "2026-01-03", "2026-01-04",
+             "2026-01-05", "2026-01-05", "2026-01-06"],
+    "region": ["North", "South", "North", "West", "South", "West"],
+    "channel": ["Web", "Store", "Web", "Email", "Web", "Store"],
+    "category": ["Books", "Tech", "Books", "Tech", "Home", "Home"],
+    "amount": [45, 120, 72, 90, 55, 140]
+})
+
+report = (
+    orders
+    .assign(date=lambda df: pd.to_datetime(df["date"]))
+    .query("amount &gt; 0")
+    .assign(month=lambda df: df["date"].dt.to_period("M"))
+    .groupby(["month", "region"], as_index=False)
+    .agg(
+        sales=("amount", "sum"),
+        orders=("order_id", "count")
+    )
+    .sort_values(["month", "sales"], ascending=[True, False])
+)
+
+print(report)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 17</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Practice challenge">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Try the workflow yourself</span><h2>Practice challenge</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Use the starter data and build a summary without looking for a completed solution.</p>
+  <ol class="clean-list"><li>Convert <code>date</code> to datetime.</li><li>Keep orders of at least 50.</li><li>Create an <code>order_size</code> category.</li><li>Group by <code>region</code>.</li><li>Return total sales, average order amount, and order count.</li></ol>
+  <div class="callout secondary"><strong>Extension:</strong> sort the final table from highest to lowest total sales.</div>
+</div><div>
+<div class="code-cell" data-filename="module11_practice.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Complete the missing Pandas steps</h3><p>The exercise intentionally does not include the finished answer.</p></div>
+    <span class="file-pill">module11_practice.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module11_practice.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+orders = pd.DataFrame({
+    "order_id": [101, 102, 103, 104, 105, 106],
+    "date": ["2026-01-03", "2026-01-03", "2026-01-04",
+             "2026-01-05", "2026-01-05", "2026-01-06"],
+    "region": ["North", "South", "North", "West", "South", "West"],
+    "channel": ["Web", "Store", "Web", "Email", "Web", "Store"],
+    "category": ["Books", "Tech", "Books", "Tech", "Home", "Home"],
+    "amount": [45, 120, 72, 90, 55, 140]
+})
+
+# 1. Convert the date column to datetime.
+
+# 2. Keep orders with amount &gt;= 50.
+
+# 3. Create an order_size category:
+#    Small: 0-60, Medium: 60-100, Large: above 100.
+
+# 4. Group by region.
+
+# 5. Calculate:
+#    total_sales, average_order, and orders.
+
+# 6. Print your final summary.
+</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 18</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Module 11 wrap-up">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Advanced Pandas as a workflow</span><h2>Module 11 wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 11</div></header>
+    <div class="slide-content">
+<div class="summary-grid">
+  <div><h3>Transform</h3><p>Use chaining, query, assign, map, and cut to create readable steps.</p></div>
+  <div><h3>Summarize</h3><p>Use groupby, agg, transform, pivot tables, resample, and rolling windows.</p></div>
+  <div><h3>Reshape</h3><p>Use melt and explode when the current table shape does not fit the analysis.</p></div>
+  <div><h3>Validate</h3><p>Check merge relationships and inspect unmatched rows instead of assuming joins are correct.</p></div>
+  <div><h3>Reuse</h3><p>Package repeated transformations in small functions and connect them with pipe.</p></div>
+  <div><h3>Interpret</h3><p>Always connect the DataFrame operation to the analytical question it is answering.</p></div>
+</div>
+<div class="callout success module11-next"><strong>Next: Module 12 — Cleaning &amp; EDA.</strong> We will use these Pandas skills to identify missing values, duplicates, unusual values, inconsistent data, and patterns that deserve closer exploration.</div></div>
+    <footer class="slide-footer"><span>Advanced Pandas · Reshape, Time, and Workflows</span><span>IAN 601 · Module 11 · Slide 19</span></footer>
+  </div>
+</section>
+</main>
+  <footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"></select><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 19</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
 </div>
 <script>
 const MANIFEST = {
   "prefix": "module11",
-  "slide_count": 12,
+  "slide_count": 19,
   "slides": [
     {
       "slide": 1,
       "title": "Advanced Pandas",
       "audio": "audio/module11_slide_01.mp3",
       "captions": "captions/module11_slide_01.vtt",
-      "text": "Welcome to Module 11. This module focuses on Advanced Pandas. We will connect the techniques to realistic analytical workflows and careful interpretation. Advanced pandas helps transform messy tables into analysis-ready summaries using chaining, reshaping, dates, windows, and reusable functions."
+      "text": "Welcome to Module 11. We are moving beyond basic DataFrame operations and into complete Pandas workflows. The goal is not to memorize a long list of functions. Instead, focus on how transformations, summaries, reshaping, time operations, and validation work together to turn raw tables into reliable analytical results."
     },
     {
       "slide": 2,
-      "title": "How to use this page",
+      "title": "From basic Pandas to advanced workflows",
       "audio": "audio/module11_slide_02.mp3",
       "captions": "captions/module11_slide_02.vtt",
-      "text": "Use this lesson interactively. Read the idea, predict the result, run the example, then change one input and compare the output. Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept. Change one value, variable, or condition. Apply the pattern to a new example."
+      "text": "Module 10 introduced the basic DataFrame operations. In Module 11, we connect those ideas into larger workflows. You will see how filtering, grouping, reshaping, date handling, validation, and reusable functions can work together. These skills also prepare us for Module 12, where we will apply Pandas to cleaning and exploratory data analysis."
     },
     {
       "slide": 3,
-      "title": "Learning path for Module 11",
+      "title": "Our working dataset",
       "audio": "audio/module11_slide_03.mp3",
       "captions": "captions/module11_slide_03.vtt",
-      "text": "This slide is the roadmap for Module 11. Follow how the workflow moves from individual operations toward a complete analytical process. Connect DataFrame steps. Create summary tables. Convert wide data to long data. Extract time features. Calculate moving summaries. Make reusable pandas workflows."
+      "text": "Throughout the module, we will reuse a small order dataset. It contains an order identifier, a date, a region, a channel, a category, and an amount. Reusing one small table makes it easier to see exactly how each Pandas operation changes the data and why that change is useful."
     },
     {
       "slide": 4,
       "title": "Method chaining",
       "audio": "audio/module11_slide_04.mp3",
       "captions": "captions/module11_slide_04.vtt",
-      "text": "This slide focuses on Method chaining. Start with what the operation changes in the data, then connect that change to the analytical question. Method chaining connects several DataFrame steps into one readable workflow. Filter, assign, group Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "Method chaining places related DataFrame operations in one readable sequence. Read the chain from top to bottom. We start with the DataFrame, filter rows, create a new column, and sort the result. Putting one method on each line helps us understand and debug the workflow."
     },
     {
       "slide": 5,
-      "title": "Pivot tables",
+      "title": "query() and assign()",
       "audio": "audio/module11_slide_05.mp3",
       "captions": "captions/module11_slide_05.vtt",
-      "text": "This slide focuses on Pivot tables. Start with what the operation changes in the data, then connect that change to the analytical question. A pivot table summarizes numeric values across categories. Create a pivot table Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "The query method can make some filters easier to read, and assign can add columns while keeping a method chain intact. The important idea is readability. Use these tools when they make the analytical logic clearer, and use regular bracket notation when that is easier to understand."
     },
     {
       "slide": 6,
-      "title": "Melt wide data into long data",
+      "title": "Named aggregation with groupby()",
       "audio": "audio/module11_slide_06.mp3",
       "captions": "captions/module11_slide_06.vtt",
-      "text": "This slide focuses on Melt wide data into long data. Start with what the operation changes in the data, then connect that change to the analytical question. Long format is often easier for analysis, plotting, and grouping. Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "Named aggregation lets us calculate several statistics in one groupby operation while giving the output columns useful names. For example, a regional report may need total sales, average order amount, and the number of orders. One grouped summary can create all three."
     },
     {
       "slide": 7,
-      "title": "Work with dates",
+      "title": "agg() versus transform()",
       "audio": "audio/module11_slide_07.mp3",
       "captions": "captions/module11_slide_07.vtt",
-      "text": "This slide focuses on Work with dates. Start with what the operation changes in the data, then connect that change to the analytical question. Date columns can be converted to datetime and used to create month, weekday, or time-based summaries. Extract date features Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "Aggregation and transformation both work with groups, but they answer different needs. agg reduces each group to summary rows. transform calculates a group statistic and returns a value for every original row. Ask whether you need a smaller summary table or a group-level feature attached to each observation."
     },
     {
       "slide": 8,
-      "title": "Rolling summaries",
+      "title": "Pivot tables",
       "audio": "audio/module11_slide_08.mp3",
       "captions": "captions/module11_slide_08.vtt",
-      "text": "This slide focuses on Rolling summaries. Start with what the operation changes in the data, then connect that change to the analytical question. A rolling calculation summarizes a moving window of rows. Calculate rolling average Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "A pivot table creates a cross-tab summary. One category becomes the rows, another becomes the columns, and a numeric value is summarized inside the table. Pivot tables are especially useful when the final result needs to be quickly compared by people reading a report."
     },
     {
       "slide": 9,
-      "title": "Map categories",
+      "title": "Melt wide data into long data",
       "audio": "audio/module11_slide_09.mp3",
       "captions": "captions/module11_slide_09.vtt",
-      "text": "This slide focuses on Map categories. Start with what the operation changes in the data, then connect that change to the analytical question. map() replaces values using a dictionary. This is useful for readable labels or grouped categories. Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "Melt changes a wide table into long format. Columns such as January, February, and March can become values in a single month column. Long format is often easier for grouping, plotting, and statistical analysis, even when the original spreadsheet was easier for a person to read."
     },
     {
       "slide": 10,
-      "title": "Join checks",
+      "title": "explode() for list-like data",
       "audio": "audio/module11_slide_10.mp3",
       "captions": "captions/module11_slide_10.vtt",
-      "text": "This slide focuses on Join checks. Start with what the operation changes in the data, then connect that change to the analytical question. After a merge, check whether keys matched as expected. Use merge indicator Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "The explode method is useful when one cell contains several values, such as tags, diagnoses, skills, or product categories. Explode creates one row per item while repeating the other columns. The new shape is much easier to count, group, and analyze."
     },
     {
       "slide": 11,
-      "title": "Reusable pandas function",
+      "title": "Work with dates",
       "audio": "audio/module11_slide_11.mp3",
       "captions": "captions/module11_slide_11.vtt",
-      "text": "This slide focuses on Reusable pandas function. Start with what the operation changes in the data, then connect that change to the analytical question. A function can package common pandas steps so they can be reused safely. Summarize orders with a function Before running the example, predict the table, summary, or transformed output. Run it in the browser and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Then change one input and compare the result."
+      "text": "Date values are often imported as text. Convert them with pandas to_datetime before doing time-based analysis. After conversion, the dt accessor can extract parts such as the month, weekday, or reporting period. Always inspect the converted result because invalid dates can affect the analysis."
     },
     {
       "slide": 12,
-      "title": "Module 11 wrap-up",
+      "title": "Time-based summaries with resample()",
       "audio": "audio/module11_slide_12.mp3",
       "captions": "captions/module11_slide_12.vtt",
-      "text": "This slide summarizes Module 11. Focus on the decisions and checks that make the workflow reliable and reusable. Connect clean steps. Create summary tables. Reshape wide to long. Create time features. Summarize trends. Reuse pandas workflows."
+      "text": "Resample groups observations into regular time intervals such as days, weeks, months, or quarters. It is especially useful for transactional data. Thousands of individual records can become a smaller trend table that shows how a measure changes over time."
+    },
+    {
+      "slide": 13,
+      "title": "Rolling summaries",
+      "audio": "audio/module11_slide_13.mp3",
+      "captions": "captions/module11_slide_13.vtt",
+      "text": "A rolling calculation uses a moving window of nearby observations. A three-day moving average, for example, summarizes each day together with the recent observations around it. Early values may be missing because the full window is not yet available."
+    },
+    {
+      "slide": 14,
+      "title": "Create categories",
+      "audio": "audio/module11_slide_14.mp3",
+      "captions": "captions/module11_slide_14.vtt",
+      "text": "Pandas provides several tools for creating categories. map is useful for dictionary-based labels, replace changes selected values, and cut converts numeric values into ranges. Choose the simplest tool that clearly expresses the rule you need."
+    },
+    {
+      "slide": 15,
+      "title": "Safer joins with merge()",
+      "audio": "audio/module11_slide_15.mp3",
+      "captions": "captions/module11_slide_15.vtt",
+      "text": "A merge can run successfully and still be analytically wrong. Use validate to check the expected relationship between keys and indicator to see which rows matched. A reliable workflow inspects unmatched records instead of assuming that a successful merge is automatically correct."
+    },
+    {
+      "slide": 16,
+      "title": "Reusable workflows with pipe()",
+      "audio": "audio/module11_slide_16.mp3",
+      "captions": "captions/module11_slide_16.vtt",
+      "text": "Small functions make repeated transformations easier to reuse and test. The pipe method lets a DataFrame flow through those functions as part of a readable chain. A useful design rule is to give each function one clear responsibility."
+    },
+    {
+      "slide": 17,
+      "title": "Mini workflow: raw orders to report",
+      "audio": "audio/module11_slide_17.mp3",
+      "captions": "captions/module11_slide_17.vtt",
+      "text": "This example combines several ideas into one workflow. We convert dates, filter rows, create a time feature, group the data, calculate summary measures, and sort the final report. Real analytical work usually looks like this: several small, understandable steps working together."
+    },
+    {
+      "slide": 18,
+      "title": "Practice challenge",
+      "audio": "audio/module11_slide_18.mp3",
+      "captions": "captions/module11_slide_18.vtt",
+      "text": "Now try the workflow yourself. Convert the date, filter orders, create an order-size category, group by region, and calculate several summary measures. The slide gives you starter data but does not provide the completed answer. Use the previous examples as patterns and test each step."
+    },
+    {
+      "slide": 19,
+      "title": "Module 11 wrap-up",
+      "audio": "audio/module11_slide_19.mp3",
+      "captions": "captions/module11_slide_19.vtt",
+      "text": "Module 11 connected advanced Pandas tools into a complete analytical workflow. You can now transform, summarize, reshape, validate, and reuse DataFrame operations more systematically. In Module 12, we will apply these skills to data cleaning and exploratory data analysis, including missing values, duplicates, unusual values, and patterns that need investigation."
     }
   ]
 };
@@ -472,7 +1054,7 @@ const audioPlayBtn=document.getElementById('audio-play-btn');
 const audioSeek=document.getElementById('audio-seek');
 const audioTime=document.getElementById('audio-time');
 const speedSelect=document.getElementById('speed-select');
-const NARRATION_STORAGE_KEY='ian601_module11_presentation';
+const NARRATION_STORAGE_KEY='ian601_module11_presentation_v2';
 let narrationEnabled=false;
 let narrationStarted=false;
 let ccEnabled=false;
@@ -554,7 +1136,7 @@ initMonaco();const initialSlide=initNarr();
 showSlide(initialSlide);
 </script>
 <div class="ian603-modal-backdrop" id="ian-course-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">IAN 601 Course Modules</h2><button class="ian603-tool" id="ian-course-close" type="button">Close</button></div><div class="ian603-module-links"><a class="" href="s_module1.html">Module 1</a><a class="" href="s_module2.html">Module 2</a><a class="" href="s_module3.html">Module 3</a><a class="" href="s_module4.html">Module 4</a><a class="" href="s_module5.html">Module 5</a><a class="" href="s_module6.html">Module 6</a><a class="" href="s_module7.html">Module 7</a><a class="" href="s_module8.html">Module 8</a><a class="" href="s_module9.html">Module 9</a><a class="" href="s_module10.html">Module 10</a><a class="current" href="s_module11.html">Module 11 · Current</a><a class="" href="s_module12.html">Module 12</a><a class="" href="s_module13.html">Module 13</a><a class="" href="s_module14.html">Module 14</a></div></div></div><div class="ian603-modal-backdrop" id="ian-progress-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">Module 11 Progress</h2><button class="ian603-tool" id="ian-progress-close" type="button">Close</button></div><p style="color:var(--ian-muted)">Progress is saved only in this browser.</p><div style="height:12px;background:var(--ian-border);border-radius:999px;overflow:hidden"><div id="ian-progress-meter" style="height:100%;width:0;background:var(--ian-good)"></div></div><div id="ian-progress-text" style="margin:8px 0;color:var(--ian-muted)"></div><div id="ian-progress-list" class="ian603-module-links"></div><button class="ian603-tool" id="ian-progress-reset" type="button" style="margin-top:14px">Reset saved progress</button></div></div><script id="ian603-generic-ui">
-(()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module11_shell_progress_v1';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
+(()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module11_shell_progress_v2';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
 const activeIndex=()=>Math.max(0,slides.findIndex(s=>s.classList.contains('active')));
 function save(){localStorage.setItem(key,JSON.stringify(visited))}
 function render(){const i=activeIndex();if(!visited.includes(i+1)){visited.push(i+1);save()}const count=new Set(visited).size,pct=slides.length?Math.round(count/slides.length*100):0;const p=document.getElementById('ian-progress-pct');if(p)p.textContent=pct+'%';const meter=document.getElementById('ian-progress-meter');if(meter)meter.style.width=pct+'%';const text=document.getElementById('ian-progress-text');if(text)text.textContent=count+' of '+slides.length+' slides visited';const list=document.getElementById('ian-progress-list');if(list){list.innerHTML=slides.map((s,j)=>'<a href="#" data-shell-go="'+j+'" class="'+(visited.includes(j+1)?'current':'')+'">Slide '+(j+1)+': '+(s.dataset.title||'Slide')+'</a>').join('');list.querySelectorAll('[data-shell-go]').forEach(a=>a.onclick=e=>{e.preventDefault();const j=Number(a.dataset.shellGo);const sel=document.getElementById('slide-select');if(sel){sel.value=String(j);sel.dispatchEvent(new Event('change',{bubbles:true}))}document.getElementById('ian-progress-modal')?.classList.remove('show')})}}
