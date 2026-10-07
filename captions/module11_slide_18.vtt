@@ -1,0 +1,46 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.487
+Now it is your turn to build the workflow.
+
+00:00:02.487 --> 00:00:05.507
+The starter DataFrame is already provided.
+
+00:00:05.507 --> 00:00:10.312
+Your task is to complete the missing Pandas steps.
+
+00:00:10.312 --> 00:00:13.977
+First, convert the date column to datetime.
+
+00:00:13.977 --> 00:00:17.162
+Then keep orders with an amount of at least fifty.
+
+00:00:17.162 --> 00:00:22.422
+Create an order-size category using the ranges shown in the instructions.
+
+00:00:22.422 --> 00:00:30.421
+After that, group the data by region and calculate total sales, average order amount, and the number of orders.
+
+00:00:30.968 --> 00:00:34.790
+There is intentionally no completed solution on this slide.
+
+00:00:34.790 --> 00:00:39.915
+Use the earlier examples as patterns, but write the workflow yourself.
+
+00:00:39.915 --> 00:00:46.135
+I recommend running your code after each major step instead of writing everything at once.
+
+00:00:46.135 --> 00:00:50.425
+For example, first confirm that the date conversion works.
+
+00:00:50.425 --> 00:00:54.430
+Then check the filtering. Then inspect the categories.
+
+00:00:54.430 --> 00:00:57.170
+Finally, build the grouped summary.
+
+00:00:57.170 --> 00:01:03.125
+As an extension, sort the final table from the highest total sales to the lowest.
+
+00:01:03.125 --> 00:01:08.200
+The goal is not only to get an answer, but to build a workflow that you can explain.

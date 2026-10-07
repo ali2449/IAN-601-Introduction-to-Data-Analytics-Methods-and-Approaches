@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:08.322
+You have now moved beyond basic DataFrame commands and into complete Pandas workflows.
+
+00:00:08.322 --> 00:00:15.407
+We worked with method chaining, query and assign, named aggregation, transform, pivot tables, melt, explode,
+
+00:00:15.407 --> 00:00:25.237
+datetime operations, resampling, rolling calculations, category creation, safer merges, reusable functions, and pipe.
+
+00:00:25.237 --> 00:00:33.612
+The common idea across all of these tools is that each operation changes the data for a reason.
+
+00:00:33.612 --> 00:00:44.013
+A strong Pandas workflow is readable, produces the shape you expect, and includes checks when something could go wrong.
+
+00:00:44.481 --> 00:00:52.768
+Before moving on, make sure you can explain the difference between aggregation and transformation, wide and long data,
+
+00:00:52.768 --> 00:00:59.948
+a regular groupby and a time-based resample, and a basic merge versus a validated merge.
+
+00:00:59.948 --> 00:01:07.253
+In Module 12, we will use these Pandas skills for Cleaning and Exploratory Data Analysis.
+
+00:01:07.253 --> 00:01:12.658
+We will focus on missing values, duplicates, inconsistent data, unusual values,
+
+00:01:12.658 --> 00:01:17.317
+and patterns that deserve closer investigation.

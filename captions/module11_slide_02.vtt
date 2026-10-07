@@ -1,16 +1,37 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.827
-Treat each example as a small workflow rather than an isolated command.
+00:00:00.000 --> 00:00:09.367
+Think of Module 10 as learning individual Pandas tools, and Module 11 as learning how to combine those tools into a
 
-00:00:04.827 --> 00:00:11.982
-Before you run a cell, look at the starting table and predict what the shape or columns should look like afterward.
+00:00:09.367 --> 00:00:14.152
+workflow. For example, filtering a DataFrame is useful by itself.
 
-00:00:11.982 --> 00:00:15.598
-Then run the code and compare the result with your expectation.
+00:00:14.152 --> 00:00:17.212
+Grouping data is useful by itself.
 
-00:00:16.091 --> 00:00:20.783
-Change one value, category, or condition and run it again.
+00:00:17.212 --> 00:00:21.197
+Creating a new column is also useful by itself.
 
-00:00:20.783 --> 00:00:26.183
-Pandas becomes much easier when you can visualize how each step changes the table.
+00:00:21.197 --> 00:00:26.547
+But in a real project, you usually do several of these things together.
+
+00:00:26.547 --> 00:00:34.532
+You might filter out records that do not belong in the analysis, create a new variable, group the rows by region,
+
+00:00:34.532 --> 00:00:38.505
+calculate summary measures, and then sort the final report.
+
+00:00:38.985 --> 00:00:41.587
+That is the transition we are making here.
+
+00:00:41.587 --> 00:00:50.502
+We are moving from isolated commands toward a sequence of steps that has a clear analytical purpose.
+
+00:00:50.502 --> 00:00:56.377
+After this module, we will move into Module 12, Cleaning and Exploratory Data Analysis.
+
+00:00:56.377 --> 00:01:04.697
+The advanced Pandas techniques you learn here will be important there because cleaning and EDA often require several
+
+00:01:04.697 --> 00:01:08.585
+connected transformations rather than one single command.

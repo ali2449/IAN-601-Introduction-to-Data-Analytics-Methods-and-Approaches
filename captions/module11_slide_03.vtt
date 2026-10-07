@@ -1,13 +1,46 @@
 WEBVTT
 
-00:00:00.008 --> 00:00:08.257
-We’ll start with method chaining, which connects DataFrame operations into one readable sequence.
+00:00:00.000 --> 00:00:05.427
+We will reuse one small order dataset throughout many of the examples in this module.
 
-00:00:08.257 --> 00:00:13.462
-Then we’ll create pivot tables, reshape wide data into long data, extract features from dates,
+00:00:05.427 --> 00:00:11.312
+Keeping the dataset simple makes it easier to see what each Pandas operation is doing.
 
-00:00:13.462 --> 00:00:22.927
-calculate rolling summaries, map category codes, inspect joins, and finally wrap a Pandas workflow inside a function.
+00:00:11.312 --> 00:00:13.732
+Each row represents an order.
 
-00:00:23.573 --> 00:00:30.009
-These are practical patterns you will see in reporting, data preparation, and production analytics code.
+00:00:13.732 --> 00:00:17.087
+The order ID identifies the transaction.
+
+00:00:17.087 --> 00:00:19.997
+The date tells us when the order occurred.
+
+00:00:19.997 --> 00:00:27.022
+Region, channel, and category give us different ways to group the data, and amount is the numeric value that we will
+
+00:00:27.022 --> 00:00:28.793
+summarize.
+
+00:00:29.331 --> 00:00:33.718
+This is a useful structure because it resembles many real datasets.
+
+00:00:33.718 --> 00:00:38.853
+In a business setting, the rows could represent purchases.
+
+00:00:38.853 --> 00:00:41.983
+In healthcare, the rows might represent visits or claims.
+
+00:00:41.983 --> 00:00:47.808
+In education, they could represent course registrations or student activities.
+
+00:00:47.808 --> 00:00:53.633
+The Pandas techniques are the same even when the subject of the data changes.
+
+00:00:53.633 --> 00:00:58.308
+As we continue, watch how the shape of this table changes.
+
+00:00:58.308 --> 00:01:03.068
+Sometimes we will keep the same number of rows and add information.
+
+00:01:03.068 --> 00:01:09.078
+Other times we will reduce the table into summaries or reshape it into a different format.

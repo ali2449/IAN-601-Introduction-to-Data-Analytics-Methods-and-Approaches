@@ -1,16 +1,37 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.192
-Date columns should usually be converted from plain text into a datetime type before we analyze them.
+00:00:00.000 --> 00:00:06.452
+Aggregation and transformation can both be used with groups, but they return different kinds of results.
 
-00:00:06.192 --> 00:00:10.577
-Pd dot to_datetime performs that conversion.
+00:00:06.452 --> 00:00:10.577
+Agg reduces each group to one or more summary rows.
 
-00:00:10.577 --> 00:00:17.972
-Once the column is a real datetime, the dt accessor lets us extract features such as month and weekday name.
+00:00:10.577 --> 00:00:18.217
+If we group by region and calculate the average amount, the result is a smaller table with one average per region.
 
-00:00:18.422 --> 00:00:27.149
-For these three dates, we can immediately see which orders occurred in January or February and which weekday each date
+00:00:18.217 --> 00:00:26.202
+Transform works differently. It calculates a group statistic but returns a value for every original row.
 
-00:00:27.149 --> 00:00:34.778
-represents. Date features are useful for seasonality, reporting periods, weekday patterns, and time-based grouping.
+00:00:26.202 --> 00:00:29.209
+That means the number of rows stays the same.
+
+00:00:29.684 --> 00:00:37.356
+In the example, we calculate the average amount for each region and attach that regional average to every order.
+
+00:00:37.356 --> 00:00:43.561
+Then we calculate the difference between each individual order and its regional average.
+
+00:00:43.561 --> 00:00:48.586
+This is very useful when you want to compare each record with its group.
+
+00:00:48.586 --> 00:00:55.346
+For example, you could compare each employee's salary with the average salary in the department,
+
+00:00:55.346 --> 00:01:00.696
+or each hospital visit with the average cost for that diagnosis group.
+
+00:01:00.696 --> 00:01:04.161
+Run the code and pay attention to the row count.
+
+00:01:04.161 --> 00:01:06.640
+That is the key difference to remember.

@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.832
+Rolling calculations are useful when we want to understand short-term trends.
+
+00:00:04.832 --> 00:00:08.722
+A rolling window looks at a group of nearby observations.
+
+00:00:08.722 --> 00:00:16.207
+In this example, the window size is three, so each rolling mean uses three consecutive sales values.
+
+00:00:16.207 --> 00:00:22.181
+This creates a smoother series that can make patterns easier to see than the original daily values.
+
+00:00:22.631 --> 00:00:26.643
+You may notice missing values at the beginning of the rolling average.
+
+00:00:26.643 --> 00:00:33.903
+That happens because a three-row window needs three observations before a complete average can be calculated.
+
+00:00:33.903 --> 00:00:39.893
+In some situations, you can change that behavior using the min periods argument,
+
+00:00:39.893 --> 00:00:44.373
+but first make sure you understand what the default result means.
+
+00:00:44.373 --> 00:00:50.048
+Run the code and compare the original sales column with the rolling three-day average.
+
+00:00:50.048 --> 00:00:53.278
+Then change the window from three to five.
+
+00:00:53.278 --> 00:00:59.765
+A larger window usually produces a smoother trend, but it can also hide short-term changes.

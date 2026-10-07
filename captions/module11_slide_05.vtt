@@ -1,19 +1,40 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.762
-A pivot table summarizes numeric values across two categorical dimensions.
+00:00:00.000 --> 00:00:04.567
+Two useful methods for readable workflows are query and assign.
 
-00:00:05.762 --> 00:00:14.932
-Here region becomes the row index, channel becomes the columns, and amount is the value being summed.
+00:00:04.567 --> 00:00:07.652
+Query is another way to filter rows.
 
-00:00:14.932 --> 00:00:20.881
-Fill_value zero makes missing combinations display as zero instead of NaN.
+00:00:07.652 --> 00:00:15.387
+Instead of writing a Boolean expression inside square brackets, you can often write the condition as a readable
 
-00:00:21.589 --> 00:00:28.361
-This is useful when you want a compact matrix-like report, such as sales by region and channel.
+00:00:15.387 --> 00:00:20.652
+expression. In this example, we keep Web orders with an amount of at least fifty.
 
-00:00:28.361 --> 00:00:34.976
-Before running the code, identify which region-channel combinations appear in the raw data and predict where their
+00:00:20.652 --> 00:00:28.247
+Assign creates a new column and returns a new DataFrame, which makes it convenient inside a method chain.
 
-00:00:34.976 --> 00:00:37.472
-totals should land.
+00:00:28.247 --> 00:00:32.200
+Here, we calculate a tax value based on the amount.
+
+00:00:32.701 --> 00:00:37.023
+These methods are not automatically better than every other Pandas style.
+
+00:00:37.023 --> 00:00:39.283
+The important goal is clarity.
+
+00:00:39.283 --> 00:00:45.258
+If regular bracket filtering is easier to understand for a particular condition, use it.
+
+00:00:45.258 --> 00:00:49.903
+If query makes the condition easier to read, use query.
+
+00:00:49.903 --> 00:00:52.813
+Run the code and inspect the result.
+
+00:00:52.813 --> 00:00:57.003
+Then change Web to Store, or change the minimum amount.
+
+00:00:57.003 --> 00:01:03.574
+Small experiments like this are a good way to understand exactly how each condition affects the DataFrame.

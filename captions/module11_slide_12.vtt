@@ -1,31 +1,37 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.052
-Let’s review the major patterns.
+00:00:00.000 --> 00:00:03.827
+Resample is designed for data that has a time component.
 
-00:00:02.052 --> 00:00:08.422
-Method chaining connects transformations. Pivot tables summarize across categories.
+00:00:03.827 --> 00:00:12.442
+Instead of grouping by a regular category such as region or channel, resample groups observations into time intervals.
 
-00:00:08.422 --> 00:00:12.007
-Melt reshapes wide data to long format.
+00:00:12.442 --> 00:00:18.142
+Those intervals might be days, weeks, months, quarters, or years.
 
-00:00:12.007 --> 00:00:15.342
-Datetime tools create time features.
+00:00:18.142 --> 00:00:24.895
+In the example, we convert the date column to datetime and then calculate daily sales totals.
 
-00:00:15.342 --> 00:00:18.247
-Rolling windows summarize trends.
+00:00:25.545 --> 00:00:29.867
+This pattern becomes very useful with transactional datasets.
 
-00:00:18.247 --> 00:00:26.866
-Mapping translates categories, join indicators help validate merges, and functions package workflows for reuse.
+00:00:29.867 --> 00:00:34.202
+Imagine a table with hundreds of thousands of purchases.
 
-00:00:27.789 --> 00:00:34.440
-The larger goal is to make complex table transformations readable, testable, and repeatable.
+00:00:34.202 --> 00:00:41.377
+Looking at every transaction individually may not reveal a trend, but summarizing the data by week or month can make the
 
-00:00:34.936 --> 00:00:42.623
-Module 12 shifts the focus from transforming data to checking whether the data is actually ready for analysis.
+00:00:41.377 --> 00:00:44.297
+pattern much easier to see.
 
-00:00:42.623 --> 00:00:51.738
-We’ll work with missing values, duplicates, incorrect data types, inconsistent categories, possible outliers,
+00:00:44.297 --> 00:00:47.592
+Run the code using the daily frequency.
 
-00:00:51.738 --> 00:00:58.744
-and exploratory summaries. The goal is to understand the dataset before trusting any result from it.
+00:00:47.592 --> 00:00:52.892
+Then change the frequency from D to W and compare the result.
+
+00:00:52.892 --> 00:00:58.237
+The important concept is that resample changes the level of time detail.
+
+00:00:58.237 --> 00:01:02.902
+We are moving from individual observations to regular time-based summaries.

@@ -1,0 +1,43 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.047
+Raw values are not always the form we want for analysis.
+
+00:00:04.047 --> 00:00:08.197
+Sometimes we need to convert them into meaningful categories.
+
+00:00:08.197 --> 00:00:15.232
+Map is useful when you have a dictionary that connects one value to another.
+
+00:00:15.232 --> 00:00:20.372
+Replace is useful when you want to substitute selected values.
+
+00:00:20.372 --> 00:00:25.142
+Cut is useful when you want to turn a numeric variable into ranges.
+
+00:00:25.142 --> 00:00:31.737
+In the example, we map Web and Email into an Online category, while Store becomes In person.
+
+00:00:31.737 --> 00:00:37.900
+We also use cut to classify order amounts as Small, Medium, or Large.
+
+00:00:38.381 --> 00:00:41.913
+These techniques are common in feature engineering and reporting.
+
+00:00:41.913 --> 00:00:44.193
+Age might become age groups.
+
+00:00:44.193 --> 00:00:47.678
+Income might become low, medium, and high.
+
+00:00:47.678 --> 00:00:51.078
+Product codes might become readable product names.
+
+00:00:51.078 --> 00:00:53.813
+Run the code and inspect the categories.
+
+00:00:53.813 --> 00:00:58.833
+Then change one of the bin boundaries and see which orders move into a different group.
+
+00:00:58.833 --> 00:01:06.130
+Always choose category boundaries carefully because those boundaries affect the interpretation of the analysis.
