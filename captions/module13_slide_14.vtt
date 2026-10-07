@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.427
+Choosing a chart should begin with the analytical question.
+
+00:00:03.427 --> 00:00:08.827
+If you want to understand one numeric distribution, use a histogram.
+
+00:00:08.827 --> 00:00:14.937
+If you want to compare numeric distributions across groups, a boxplot may help.
+
+00:00:14.937 --> 00:00:21.052
+If you want to compare categories by count or summary value, use a bar chart.
+
+00:00:21.052 --> 00:00:27.022
+If you want to study the relationship between two numeric variables, use a scatter plot.
+
+00:00:27.788 --> 00:00:32.680
+For measurements across ordered time, a line chart is often appropriate.
+
+00:00:32.680 --> 00:00:38.280
+And sometimes a table is better than a chart when readers need exact values.
+
+00:00:38.280 --> 00:00:41.950
+There is no single best chart for every dataset.
+
+00:00:41.950 --> 00:00:48.135
+The best visual is the one that makes the relevant comparison or pattern easiest to understand without distorting the
+
+00:00:48.135 --> 00:00:50.042
+evidence.

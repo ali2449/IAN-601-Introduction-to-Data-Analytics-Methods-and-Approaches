@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.092
+A useful analytical report combines a clear question, numerical summaries, an appropriate visual,
+
+00:00:07.092 --> 00:00:14.217
+and a short interpretation. The example asks how order amount differs across regions.
+
+00:00:14.217 --> 00:00:21.637
+We calculate count, mean, and median, then create a boxplot to compare the group distributions.
+
+00:00:22.201 --> 00:00:24.398
+Read the table and chart together.
+
+00:00:24.398 --> 00:00:27.143
+The table provides exact values.
+
+00:00:27.143 --> 00:00:31.318
+The boxplot helps you see differences in center and spread.
+
+00:00:31.318 --> 00:00:36.488
+If the table and chart seem to tell different stories, investigate why.
+
+00:00:36.488 --> 00:00:43.653
+For example, an extreme value may increase the mean while the median stays relatively stable.
+
+00:00:43.653 --> 00:00:47.113
+A good report does not end with code output.
+
+00:00:47.113 --> 00:00:54.106
+End with a sentence that explains what the evidence suggests and any limitations that affect the interpretation.

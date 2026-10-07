@@ -1,19 +1,40 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.012
-Grouped summaries help us compare categories using the same statistics.
+00:00:00.000 --> 00:00:04.602
+A histogram helps us understand how a numeric variable is distributed.
 
-00:00:05.012 --> 00:00:09.402
-The DataFrame contains scores for groups A and B.
+00:00:04.602 --> 00:00:09.802
+The horizontal axis represents numeric ranges, called bins.
 
-00:00:09.402 --> 00:00:18.325
-Groupby separates the records, and agg calculates count, mean, median, and standard deviation for each group.
+00:00:09.802 --> 00:00:15.027
+The vertical axis shows how many observations fall inside each range.
 
-00:00:18.934 --> 00:00:21.081
-Compare both center and spread.
+00:00:15.027 --> 00:00:19.343
+Run the Python code and examine the distribution of order amounts.
 
-00:00:21.081 --> 00:00:26.596
-A higher mean does not automatically mean every observation in that group is higher.
+00:00:19.872 --> 00:00:21.574
+Look for the general shape.
 
-00:00:26.596 --> 00:00:32.940
-Group summaries are a starting point for comparison, not a complete explanation of why groups differ.
+00:00:21.574 --> 00:00:25.214
+Is it roughly symmetric? Is it skewed?
+
+00:00:25.214 --> 00:00:27.534
+Are there gaps or clusters?
+
+00:00:27.534 --> 00:00:30.844
+Is one observation far away from the others?
+
+00:00:30.844 --> 00:00:34.109
+Also experiment with the number of bins.
+
+00:00:34.109 --> 00:00:39.674
+A histogram is a summary, so the appearance can change when the bin width changes.
+
+00:00:39.674 --> 00:00:45.444
+That is why you should not overinterpret very small details in one histogram.
+
+00:00:45.444 --> 00:00:52.304
+The main purpose is to see the overall distribution and compare what you see with the descriptive statistics from the
+
+00:00:52.304 --> 00:00:53.571
+previous slides.

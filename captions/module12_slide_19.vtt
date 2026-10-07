@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.657
+Now you will build the cleaning and EDA workflow yourself.
+
+00:00:03.657 --> 00:00:07.992
+Start with the provided messy dataset.
+
+00:00:07.992 --> 00:00:10.342
+First audit it.
+
+00:00:10.342 --> 00:00:15.652
+Then remove the confirmed duplicate, convert date and amount safely, standardize region and channel labels,
+
+00:00:15.652 --> 00:00:23.406
+and flag invalid values. After that, create a missing-value report and summarize amount by region.
+
+00:00:23.997 --> 00:00:27.189
+Do not try to write the entire solution at once.
+
+00:00:27.189 --> 00:00:33.059
+Complete one step, run it, inspect the result, and then continue.
+
+00:00:33.059 --> 00:00:39.794
+That approach makes debugging easier and helps you understand what each transformation changes.
+
+00:00:39.794 --> 00:00:45.604
+At the end, write two or three sentences about what you found during EDA.
+
+00:00:45.604 --> 00:00:49.059
+The goal is not only to produce a cleaned table.
+
+00:00:49.059 --> 00:00:56.585
+The goal is to explain the quality problems, the decisions you made, and the patterns you observed after cleaning.

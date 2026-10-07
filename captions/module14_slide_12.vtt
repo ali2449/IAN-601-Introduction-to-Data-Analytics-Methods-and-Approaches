@@ -1,22 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.582
-This final example puts the main modeling steps into one sequence.
+00:00:00.000 --> 00:00:04.637
+The word supervised means that the training examples include the correct target.
 
-00:00:04.582 --> 00:00:10.237
-A synthetic dataset is created, then split into training and test sets.
+00:00:04.637 --> 00:00:11.977
+During training, the model receives X, the feature matrix, and y, the known target values.
 
-00:00:10.237 --> 00:00:15.832
-A decision tree with maximum depth three is fitted on the training data.
+00:00:11.977 --> 00:00:17.017
+The algorithm uses those labeled examples to estimate model parameters.
 
-00:00:15.832 --> 00:00:20.723
-Predictions are generated for the test set, and accuracy is calculated.
+00:00:17.017 --> 00:00:22.423
+After training, the fitted model receives a new feature vector and produces a prediction.
 
-00:00:21.249 --> 00:00:28.021
-The exact accuracy is less important than the workflow: data, split, train, predict, evaluate.
+00:00:23.226 --> 00:00:26.283
+This sequence is central to supervised learning.
 
-00:00:28.021 --> 00:00:33.781
-Change the tree depth or the random state and compare what happens.
+00:00:26.283 --> 00:00:28.818
+Known examples teach the model.
 
-00:00:33.781 --> 00:00:40.539
-Small modeling decisions can change performance, which is why reproducibility and evaluation matter.
+00:00:28.818 --> 00:00:33.108
+New cases test whether the learned pattern generalizes.
+
+00:00:33.108 --> 00:00:37.698
+You will see this same pattern with many algorithms next semester.
+
+00:00:37.698 --> 00:00:45.648
+The internal mathematics may be different, but the workflow remains recognizable: collect labeled examples,
+
+00:00:45.648 --> 00:00:53.789
+represent them numerically, fit the model, evaluate on unseen data, and then use the model for new predictions.

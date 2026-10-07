@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.342
+A correlation matrix gives us a quick view of pairwise linear relationships among numeric variables.
+
+00:00:07.342 --> 00:00:11.377
+The values range from minus one to plus one.
+
+00:00:11.377 --> 00:00:17.592
+The plot uses a matrix layout so we can inspect many variable pairs at once.
+
+00:00:17.592 --> 00:00:21.424
+Run the code and look at both the numbers and the visual pattern.
+
+00:00:22.002 --> 00:00:28.609
+Correlation can help us notice features that move together or variables that appear related to the target.
+
+00:00:28.609 --> 00:00:35.599
+But do not treat high correlation as proof that a feature is important, useful, or causal.
+
+00:00:35.599 --> 00:00:42.464
+Two features can be highly correlated with each other and still add little new information to a model.
+
+00:00:42.464 --> 00:00:48.739
+A nonlinear relationship can also be useful even when linear correlation is low.
+
+00:00:48.739 --> 00:00:55.336
+Use the correlation matrix as an exploratory tool, not an automatic feature-selection rule.

@@ -1,19 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.192
-Now we fit a logistic regression classifier.
+00:00:00.000 --> 00:00:06.552
+If the fitted line does not pass through every point, how does the algorithm decide which line is best?
 
-00:00:03.192 --> 00:00:07.637
-The training features and training labels are passed to model dot fit.
+00:00:06.552 --> 00:00:10.552
+For each observation, the model makes a prediction.
 
-00:00:07.637 --> 00:00:12.082
-That is the stage where the model learns patterns from the training data.
+00:00:10.552 --> 00:00:16.057
+The difference between the actual value and the predicted value is called a residual.
 
-00:00:12.082 --> 00:00:18.196
-After fitting, predict is used on the first five test rows to produce class predictions.
+00:00:16.057 --> 00:00:23.112
+If the actual value is ten and the prediction is nine point two, the residual is zero point eight.
 
-00:00:18.909 --> 00:00:22.086
-At this point, seeing predictions is not enough.
+00:00:23.572 --> 00:00:26.279
+Run the code and inspect the residuals.
 
-00:00:22.086 --> 00:00:27.911
-We still need to compare them with the true test labels to know whether the model is performing well.
+00:00:26.279 --> 00:00:33.169
+The dashed vertical segments in the plot show the distance between each observed point and the fitted line.
+
+00:00:33.169 --> 00:00:39.999
+Machine learning algorithms often choose model parameters by minimizing some measure of overall error,
+
+00:00:39.999 --> 00:00:45.339
+called a loss function. You do not need to master optimization in this course.
+
+00:00:45.339 --> 00:00:52.344
+The important idea is that training means adjusting model parameters so predictions fit the training examples according
+
+00:00:52.344 --> 00:00:54.115
+to a defined objective.

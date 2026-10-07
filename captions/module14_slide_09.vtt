@@ -1,19 +1,34 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.922
-A machine learning model should be compared with a simple reference point.
+00:00:00.000 --> 00:00:03.852
+Machine learning algorithms usually expect numerical input.
 
-00:00:03.922 --> 00:00:10.222
-The DummyClassifier uses a basic strategy: always predict the most frequent class.
+00:00:03.852 --> 00:00:07.117
+One observation can be represented as a vector.
 
-00:00:10.222 --> 00:00:14.467
-That gives us baseline accuracy with almost no intelligence.
+00:00:07.117 --> 00:00:14.887
+For example, a customer might be represented as seven visits, sixteen pages viewed, two previous orders,
 
-00:00:14.467 --> 00:00:18.334
-Logistic regression is then evaluated on the same test data.
+00:00:14.887 --> 00:00:17.942
+and fifteen days since the last activity.
 
-00:00:18.840 --> 00:00:26.842
-If a more complex model cannot beat a simple baseline, we should question whether the model adds useful predictive
+00:00:17.942 --> 00:00:21.213
+That becomes a numeric vector with four positions.
 
-00:00:26.842 --> 00:00:30.782
-value. Baselines help put performance numbers into context.
+00:00:21.848 --> 00:00:27.542
+When we place many observations together, the vectors form a matrix called X.
+
+00:00:27.542 --> 00:00:32.517
+Rows represent observations. Columns represent features.
+
+00:00:32.517 --> 00:00:37.637
+This is one reason NumPy and Pandas were important earlier in the course.
+
+00:00:37.637 --> 00:00:43.642
+A Data frame is convenient for people because it includes column names and labels.
+
+00:00:43.642 --> 00:00:49.937
+Underneath, many machine learning algorithms operate on numerical arrays and matrices.
+
+00:00:49.937 --> 00:00:54.860
+When you see capital X in machine learning code, think feature matrix.

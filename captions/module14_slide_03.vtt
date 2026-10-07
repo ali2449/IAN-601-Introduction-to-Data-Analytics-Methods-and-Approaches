@@ -1,13 +1,34 @@
 WEBVTT
 
-00:00:00.008 --> 00:00:06.292
-We’ll begin with CSV-style external data and then separate features from the target.
+00:00:00.000 --> 00:00:05.177
+At its simplest, a model is a rule that maps an input to an output.
 
-00:00:06.292 --> 00:00:14.047
-Next, we create training and testing sets, fit a simple classifier, measure performance,
+00:00:05.177 --> 00:00:10.647
+If we already know the rule, we can write it directly.
 
-00:00:14.047 --> 00:00:19.491
-compare the model with a baseline, make a new prediction, and discuss leakage.
+00:00:10.647 --> 00:00:15.727
+For example, if y equals two x plus one, the model is already known.
 
-00:00:20.126 --> 00:00:24.829
-The final example puts the main stages together in one compact workflow.
+00:00:15.727 --> 00:00:19.197
+Give me x, and I can calculate y.
+
+00:00:19.197 --> 00:00:26.593
+Machine learning becomes useful when the exact rule is unknown or too complicated to specify manually.
+
+00:00:27.172 --> 00:00:34.569
+Instead of writing every coefficient ourselves, we provide examples and let an algorithm estimate the relationship.
+
+00:00:34.569 --> 00:00:41.569
+That is why I want you to think of machine learning as learning a useful mathematical rule from data.
+
+00:00:41.569 --> 00:00:45.384
+The output of the learning process is still a model.
+
+00:00:45.384 --> 00:00:49.584
+The model takes features as input and produces a prediction.
+
+00:00:49.584 --> 00:00:57.339
+This basic structure appears again and again, whether the algorithm is linear regression, logistic regression,
+
+00:00:57.339 --> 00:01:02.343
+a decision tree, a neural network, or something much more complex.

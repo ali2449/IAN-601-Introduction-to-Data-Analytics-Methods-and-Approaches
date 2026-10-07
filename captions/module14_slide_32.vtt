@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.182
+You have now reached the end of IAN 601.
+
+00:00:03.182 --> 00:00:11.822
+Across the course, you moved from Python fundamentals into reusable functions, NumPy arrays, Pandas Data frames,
+
+00:00:11.822 --> 00:00:19.617
+data cleaning, exploratory analysis, statistics, visualization, external data, and introductory machine learning.
+
+00:00:19.617 --> 00:00:27.531
+Those topics may look different, but they are connected by one analytical workflow.
+
+00:00:28.046 --> 00:00:29.633
+We begin with a question.
+
+00:00:29.633 --> 00:00:32.678
+We represent data in a useful form.
+
+00:00:32.678 --> 00:00:37.428
+We inspect quality. We transform and summarize the data.
+
+00:00:37.428 --> 00:00:39.773
+We select an appropriate method.
+
+00:00:39.773 --> 00:00:43.988
+Then we interpret the result and communicate its limitations.
+
+00:00:43.988 --> 00:00:50.893
+The most important habit I want you to carry forward is this: always connect the code to a question,
+
+00:00:50.893 --> 00:00:56.558
+the output to an interpretation, and the interpretation to the limits of the evidence.
+
+00:00:56.558 --> 00:01:00.170
+That habit matters in every data analytics project.

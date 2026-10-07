@@ -1,19 +1,37 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.712
-A useful report combines numerical summaries with a sentence a reader can understand.
+00:00:00.000 --> 00:00:06.607
+Correlation gives us a numerical summary of the linear relationship between two numeric variables.
 
-00:00:05.712 --> 00:00:12.742
-The code calculates mean, median, minimum, maximum, and overall spread.
+00:00:06.607 --> 00:00:11.072
+Pearson correlation ranges from minus one to plus one.
 
-00:00:12.742 --> 00:00:17.043
-Then f-strings turn those results into two short statements.
+00:00:11.072 --> 00:00:15.402
+A positive value means the variables tend to increase together.
 
-00:00:17.631 --> 00:00:19.563
-This is a good reporting habit.
+00:00:15.402 --> 00:00:20.072
+A negative value means one tends to decrease as the other increases.
 
-00:00:19.563 --> 00:00:26.698
-Do not dump raw statistical output when a concise interpretation can communicate the result more clearly.
+00:00:20.072 --> 00:00:24.058
+A value near zero means there is little linear association.
 
-00:00:26.698 --> 00:00:31.098
-Always keep the wording tied to what the statistic actually supports.
+00:00:24.687 --> 00:00:29.414
+Run the code and compare the coefficient with the scatter plot from the previous slide.
+
+00:00:29.414 --> 00:00:31.779
+The word linear is important.
+
+00:00:31.779 --> 00:00:36.274
+A correlation near zero does not prove that there is no relationship.
+
+00:00:36.274 --> 00:00:41.599
+The relationship could be curved or affected by other structure in the data.
+
+00:00:41.599 --> 00:00:45.394
+Also remember that correlation is not causation.
+
+00:00:45.394 --> 00:00:48.679
+It describes association in the observed data.
+
+00:00:48.679 --> 00:00:53.645
+It does not prove that changing one variable will cause the other variable to change.

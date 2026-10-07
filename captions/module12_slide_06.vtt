@@ -1,19 +1,34 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.657
-Duplicates can quietly inflate totals, counts, and frequencies.
+00:00:00.000 --> 00:00:03.707
+There is no single rule for handling every missing value.
 
-00:00:04.657 --> 00:00:13.482
-Duplicated identifies the repeated row where order ID two and amount seventy-two appear a second time.
+00:00:03.707 --> 00:00:06.552
+Sometimes dropping a row is reasonable.
 
-00:00:13.482 --> 00:00:16.802
-Drop_duplicates removes the exact duplicate.
+00:00:06.552 --> 00:00:09.457
+Sometimes filling the value is appropriate.
 
-00:00:17.555 --> 00:00:21.537
-The important question is whether the repetition is truly an error.
+00:00:09.457 --> 00:00:15.147
+Sometimes the missing value should remain because the missingness itself is meaningful.
 
-00:00:21.537 --> 00:00:29.002
-Two legitimate orders can have the same amount, so we should understand the record definition before deleting anything.
+00:00:15.147 --> 00:00:20.855
+And sometimes the best decision is to investigate the source of the data before doing anything.
 
-00:00:29.002 --> 00:00:33.790
-Here the example is intentionally an exact duplicate for teaching purposes.
+00:00:21.514 --> 00:00:26.626
+In the example, we use the median to fill a missing satisfaction score.
+
+00:00:26.626 --> 00:00:29.366
+This is only a teaching example.
+
+00:00:29.366 --> 00:00:37.711
+In a real project, you should first ask whether the median makes sense for that variable and for the analytical purpose.
+
+00:00:37.711 --> 00:00:46.006
+Be careful with automatic rules such as filling every numeric column with the mean or deleting every row that contains
+
+00:00:46.006 --> 00:00:52.711
+any missing value. Those choices can introduce bias or remove useful information.
+
+00:00:52.711 --> 00:00:58.250
+The important habit is to connect each cleaning decision to a reason that you can explain.

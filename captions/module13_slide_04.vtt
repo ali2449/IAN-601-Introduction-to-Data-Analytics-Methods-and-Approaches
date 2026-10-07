@@ -1,25 +1,37 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.627
-Let’s summarize a small set of scores.
+00:00:00.000 --> 00:00:06.082
+Descriptive statistics summarize the main characteristics of the data you currently have.
 
-00:00:02.627 --> 00:00:05.602
-The mean gives the arithmetic average.
+00:00:06.082 --> 00:00:09.947
+The mean describes the arithmetic average.
 
-00:00:05.602 --> 00:00:09.517
-The median gives the middle value after ordering the data.
+00:00:09.947 --> 00:00:13.317
+The median describes the middle value.
 
-00:00:09.517 --> 00:00:15.482
-Minimum and maximum define the observed range, while standard deviation describes how spread out the values are around
+00:00:13.317 --> 00:00:18.852
+Standard deviation describes how spread out values are around the mean.
 
-00:00:15.482 --> 00:00:17.706
-the mean.
+00:00:18.852 --> 00:00:22.907
+Quartiles describe positions within the ordered data.
 
-00:00:18.156 --> 00:00:21.083
-No single statistic tells the whole story.
+00:00:22.907 --> 00:00:26.592
+Run the code and inspect the describe output for order amount.
 
-00:00:21.083 --> 00:00:29.913
-Mean and median can respond differently to extreme values, and spread matters even when two datasets have the same
+00:00:27.180 --> 00:00:30.677
+Notice that no single statistic tells the whole story.
 
-00:00:29.913 --> 00:00:36.950
-average. Run the cell, then change one score to an extreme value and see which statistics move the most.
+00:00:30.677 --> 00:00:35.862
+Two datasets can have the same mean but very different variability.
+
+00:00:35.862 --> 00:00:42.367
+A mean can also be affected by extreme values, while the median is usually more resistant.
+
+00:00:42.367 --> 00:00:46.987
+A good descriptive summary therefore uses several measures together.
+
+00:00:46.987 --> 00:00:52.427
+When you report statistics, always connect the number to the variable and units.
+
+00:00:52.427 --> 00:00:58.650
+Saying the mean is ninety is less informative than saying the mean order amount is ninety dollars.

@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.757
+Before celebrating a model's accuracy, compare it with a simple baseline.
+
+00:00:04.757 --> 00:00:11.232
+For classification, a useful baseline is predicting the most common class every time.
+
+00:00:11.232 --> 00:00:15.397
+This sounds simplistic, and that is exactly the point.
+
+00:00:15.397 --> 00:00:19.109
+The real model should add value beyond a trivial rule.
+
+00:00:19.711 --> 00:00:22.968
+Run the baseline code and record the accuracy.
+
+00:00:22.968 --> 00:00:26.788
+Later, compare that number with logistic regression.
+
+00:00:26.788 --> 00:00:34.058
+If the machine learning model performs about the same as the baseline, it may not be learning anything useful.
+
+00:00:34.058 --> 00:00:37.233
+Baselines give performance context.
+
+00:00:37.233 --> 00:00:46.098
+They prevent us from being impressed by a number that only looks good because the prediction problem is easy or the
+
+00:00:46.098 --> 00:00:49.022
+classes are unbalanced. Always ask, better than what?

@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.127
+APIs often return JSON rather than a simple table.
+
+00:00:04.127 --> 00:00:13.612
+JSON can contain nested structures, such as a customer object containing an activity object with visits and order
+
+00:00:13.612 --> 00:00:20.291
+counts. Pandas provides tools such as json normalize to flatten those nested records into columns.
+
+00:00:20.985 --> 00:00:24.227
+Run the example and inspect the resulting table.
+
+00:00:24.227 --> 00:00:33.552
+In a real API project, you also need to read the API documentation, understand authentication, respect rate limits,
+
+00:00:33.552 --> 00:00:40.672
+and handle errors. Never publish a private API key in a notebook or GitHub repository.
+
+00:00:40.672 --> 00:00:46.242
+External data access is both a technical and security responsibility.
+
+00:00:46.242 --> 00:00:52.692
+The goal is to transform the external response into a stable, well-defined feature table that can be inspected and
+
+00:00:52.692 --> 00:00:54.969
+analyzed.

@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.672
+Line charts are useful when observations have a meaningful order in time.
+
+00:00:04.672 --> 00:00:11.687
+In the example, the horizontal axis contains dates and the vertical axis contains sales.
+
+00:00:11.687 --> 00:00:18.926
+Connecting the points helps us see whether the series is increasing, decreasing, or fluctuating over time.
+
+00:00:19.524 --> 00:00:23.061
+Before plotting, make sure the dates are sorted.
+
+00:00:23.061 --> 00:00:25.746
+Also think about the time interval.
+
+00:00:25.746 --> 00:00:31.411
+Daily, weekly, and monthly summaries can reveal different patterns.
+
+00:00:31.411 --> 00:00:35.371
+Do not use a line simply because it looks attractive.
+
+00:00:35.371 --> 00:00:38.751
+A line implies continuity and order.
+
+00:00:38.751 --> 00:00:46.471
+It makes sense for days, months, or years, but not for unrelated categories such as region names.
+
+00:00:46.471 --> 00:00:53.545
+Run the example and look for the general direction of the trend rather than focusing on every small change.

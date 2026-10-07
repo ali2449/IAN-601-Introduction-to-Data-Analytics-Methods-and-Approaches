@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.577
+Accuracy gives us one summary number, but it does not tell us which mistakes the model made.
+
+00:00:06.577 --> 00:00:11.962
+A confusion matrix separates predictions into four categories.
+
+00:00:11.962 --> 00:00:16.687
+True negatives and true positives are correct predictions.
+
+00:00:16.687 --> 00:00:22.467
+False positives are cases predicted positive that were actually negative.
+
+00:00:22.467 --> 00:00:27.007
+False negatives are actual positives that the model missed.
+
+00:00:27.610 --> 00:00:33.222
+Run the code and inspect both the numeric matrix and the visual confusion matrix.
+
+00:00:33.222 --> 00:00:36.032
+Think about the meaning of each error.
+
+00:00:36.032 --> 00:00:43.382
+In a medical screening problem, a false negative could mean missing a patient who actually has the condition.
+
+00:00:43.382 --> 00:00:50.457
+In a spam filter, a false positive could mean moving an important legitimate email into spam.
+
+00:00:50.457 --> 00:00:54.482
+The importance of each error depends on the application.
+
+00:00:54.482 --> 00:00:59.388
+That is why evaluating classification requires more than accuracy alone.

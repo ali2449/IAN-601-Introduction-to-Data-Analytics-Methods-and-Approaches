@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.157
+A classifier often produces a probability before producing a class label.
+
+00:00:05.157 --> 00:00:09.832
+The threshold determines when the probability becomes class one.
+
+00:00:09.832 --> 00:00:13.032
+A common default is zero point five.
+
+00:00:13.032 --> 00:00:17.617
+If the probability is at least zero point five, predict one.
+
+00:00:17.617 --> 00:00:19.582
+Otherwise, predict zero.
+
+00:00:20.304 --> 00:00:24.611
+Run the example and then change the threshold to zero point three.
+
+00:00:24.611 --> 00:00:27.621
+You should see more positive predictions.
+
+00:00:27.621 --> 00:00:31.831
+Change it to zero point seven and you should see fewer.
+
+00:00:31.831 --> 00:00:37.206
+This tradeoff affects false positives, false negatives, precision, and recall.
+
+00:00:37.206 --> 00:00:44.551
+The default threshold is not automatically the best threshold for every application.
+
+00:00:44.551 --> 00:00:49.615
+The appropriate choice depends on the costs and goals of the real decision problem.

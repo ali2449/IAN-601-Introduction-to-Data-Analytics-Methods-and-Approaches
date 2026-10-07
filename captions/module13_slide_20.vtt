@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:09.237
+Module 13 combined statistics and visualization to help us describe and communicate data more clearly.
+
+00:00:09.237 --> 00:00:14.727
+You used mean, median, standard deviation, quartiles, and grouped summaries.
+
+00:00:14.727 --> 00:00:20.592
+You created histograms, boxplots, bar charts, scatter plots, and line charts.
+
+00:00:20.592 --> 00:00:28.823
+You also introduced correlation and the idea of uncertainty through a simple confidence interval.
+
+00:00:29.428 --> 00:00:36.430
+The most important lesson is that numbers and visuals should support the same analytical question.
+
+00:00:36.430 --> 00:00:40.970
+In Module 14, we will take one more step.
+
+00:00:40.970 --> 00:00:48.315
+We will introduce machine learning by connecting simple algebra to learned relationships, features, numeric vectors,
+
+00:00:48.315 --> 00:00:51.540
+train and test data, prediction, and evaluation.
+
+00:00:51.540 --> 00:01:00.637
+That final module is designed as a bridge into the machine learning course you will take next semester.

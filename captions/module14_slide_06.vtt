@@ -1,19 +1,34 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.132
-A model should be evaluated on data it did not use for learning.
+00:00:00.008 --> 00:00:04.647
+Perfect lines are useful for learning, but real data is rarely perfect.
 
-00:00:04.132 --> 00:00:08.182
-Make_classification creates a small synthetic dataset.
+00:00:04.647 --> 00:00:08.672
+Measurements contain noise. People behave differently.
 
-00:00:08.182 --> 00:00:15.752
-Train_test_split then places seventy-five percent of the rows in the training set and twenty-five percent in the test
+00:00:08.672 --> 00:00:12.207
+Important variables may be missing from the dataset.
 
-00:00:15.752 --> 00:00:21.067
-set. With eighty rows total, that gives sixty training rows and twenty test rows.
+00:00:12.207 --> 00:00:18.057
+Sensors can contain error. Real processes have natural variation.
 
-00:00:21.838 --> 00:00:29.350
-Random_state keeps the split reproducible so we get the same rows each time we run the example.
+00:00:18.057 --> 00:00:25.956
+So even when an underlying linear relationship exists, the observations usually do not sit exactly on one line.
 
-00:00:29.350 --> 00:00:33.408
-The test set acts as unseen data for evaluation.
+00:00:26.406 --> 00:00:29.408
+Run the example and look at the scattered points.
+
+00:00:29.408 --> 00:00:34.268
+The Linear Regression model still finds a best-fit line through the data.
+
+00:00:34.268 --> 00:00:37.893
+Notice that the line does not pass through every point.
+
+00:00:37.893 --> 00:00:45.333
+That is expected. The purpose of the model is not necessarily to memorize every training observation.
+
+00:00:45.333 --> 00:00:50.848
+It is to capture a useful overall relationship that can generalize to new data.
+
+00:00:50.848 --> 00:00:57.588
+This difference between fitting patterns and memorizing data becomes very important later in machine learning.

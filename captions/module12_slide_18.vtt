@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.127
+Cleaning does not end when the code finishes running.
+
+00:00:03.127 --> 00:00:10.707
+You need to verify that the result actually matches the rules you intended to apply.
+
+00:00:10.707 --> 00:00:12.787
+Recheck duplicates. Recount missing values.
+
+00:00:12.787 --> 00:00:16.982
+Inspect the data types. Look at category values.
+
+00:00:16.982 --> 00:00:22.425
+Count rule violations. Compare the number of rows before and after cleaning.
+
+00:00:23.222 --> 00:00:27.149
+The code on this slide demonstrates simple quality checks.
+
+00:00:27.149 --> 00:00:32.999
+In larger projects, these checks can become functions or automated tests.
+
+00:00:32.999 --> 00:00:39.264
+For example, you might assert that order IDs are unique, that amount is never negative,
+
+00:00:39.264 --> 00:00:43.259
+or that satisfaction values stay between one and five.
+
+00:00:43.259 --> 00:00:49.294
+The important idea is that successful execution is not proof of correctness.
+
+00:00:49.294 --> 00:00:54.929
+A program can run perfectly and still produce a logically wrong dataset.
+
+00:00:54.929 --> 00:00:57.869
+Always validate the result after cleaning.

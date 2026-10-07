@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.092
+The sigmoid function is an S-shaped curve.
+
+00:00:03.092 --> 00:00:06.892
+Its input, z, can be any real number.
+
+00:00:06.892 --> 00:00:10.782
+Its output always stays between zero and one.
+
+00:00:10.782 --> 00:00:14.817
+When z equals zero, the probability is one half.
+
+00:00:14.817 --> 00:00:18.892
+Large positive scores move the probability toward one.
+
+00:00:18.892 --> 00:00:21.740
+Large negative scores move it toward zero.
+
+00:00:22.190 --> 00:00:24.382
+Run the code and inspect the curve.
+
+00:00:24.382 --> 00:00:29.067
+Notice that the probability changes most rapidly around the center.
+
+00:00:29.067 --> 00:00:36.012
+The important connection is this: logistic regression still creates a linear score from the features,
+
+00:00:36.012 --> 00:00:42.877
+but instead of treating that score as the final prediction, it transforms the score into a probability.
+
+00:00:42.877 --> 00:00:50.133
+This visualization helps explain what the model is doing mathematically without requiring advanced calculus.

@@ -1,16 +1,40 @@
 WEBVTT
 
-00:00:00.003 --> 00:00:04.787
-For each example, focus on the issue first and the code second.
+00:00:00.000 --> 00:00:07.972
+Module 11 gave us the Pandas tools we need to transform, group, reshape, and validate tables.
 
-00:00:04.787 --> 00:00:08.387
-Ask what could go wrong if the problem is ignored.
+00:00:07.972 --> 00:00:13.092
+In this module, we use those tools for a more practical purpose:
 
-00:00:08.387 --> 00:00:16.314
-Then run the code, inspect the result, and think about whether the cleaning decision is appropriate for that context.
+00:00:13.092 --> 00:00:19.277
+improving data quality and understanding the dataset before formal analysis.
 
-00:00:16.948 --> 00:00:21.265
-There is rarely one universal cleaning rule.
+00:00:19.277 --> 00:00:23.212
+Think of the process as a sequence.
 
-00:00:21.265 --> 00:00:27.237
-Missing values, duplicates, and outliers all require interpretation, not just syntax.
+00:00:23.212 --> 00:00:25.987
+First, we inspect the data.
+
+00:00:25.987 --> 00:00:32.132
+Then we identify problems. Next, we make careful cleaning decisions.
+
+00:00:32.132 --> 00:00:38.487
+Finally, we explore the cleaned data to understand distributions and group differences.
+
+00:00:38.964 --> 00:00:42.996
+The important point is that cleaning and EDA are connected.
+
+00:00:42.996 --> 00:00:47.951
+If categories are inconsistent, your group summaries may be wrong.
+
+00:00:47.951 --> 00:00:52.396
+If duplicate rows remain, your totals may be inflated.
+
+00:00:52.396 --> 00:01:00.051
+If numeric values are stored as text, calculations may fail or produce misleading results.
+
+00:01:00.051 --> 00:01:08.096
+This module also prepares us for Module 13, where we will use statistics and visualization on data that we have already
+
+00:01:08.096 --> 00:01:10.620
+inspected and cleaned.

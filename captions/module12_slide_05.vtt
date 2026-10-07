@@ -1,22 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.537
-The first step with missing data is usually to count it.
+00:00:00.009 --> 00:00:04.532
+When we find missing values, the first step is to measure the problem.
 
-00:00:03.537 --> 00:00:08.267
-Isna dot sum tells us how many missing values appear in each column.
+00:00:04.532 --> 00:00:08.562
+A count tells us how many values are missing in each column.
 
-00:00:08.267 --> 00:00:14.102
-Here channel has one missing value and amount has one missing value.
+00:00:08.562 --> 00:00:14.292
+A percentage tells us how large that problem is relative to the size of the dataset.
 
-00:00:14.102 --> 00:00:19.992
-The example fills the missing channel with “unknown” and replaces the missing amount with the median of the available
+00:00:14.292 --> 00:00:20.777
+One missing value in a ten-row dataset means ten percent of the data in that column is missing.
 
-00:00:19.992 --> 00:00:22.009
-amounts.
+00:00:20.777 --> 00:00:25.452
+One missing value in a million-row dataset is usually much less important.
 
-00:00:22.459 --> 00:00:26.021
-Those are example decisions, not universal rules.
+00:00:25.980 --> 00:00:29.432
+Run the code and look at both the count and percentage.
 
-00:00:26.021 --> 00:00:32.840
-In a real project, the correct treatment depends on why the data is missing and how the field will be used.
+00:00:29.432 --> 00:00:37.472
+Notice that the code creates a small missingness report and sorts the columns so the most incomplete columns appear
+
+00:00:37.472 --> 00:00:44.132
+first. This pattern is useful in real projects because it gives you a quick overview of data completeness.
+
+00:00:44.132 --> 00:00:47.662
+Do not decide what to do with missing values yet.
+
+00:00:47.662 --> 00:00:53.219
+The goal here is only to understand where they are and how serious the problem may be.

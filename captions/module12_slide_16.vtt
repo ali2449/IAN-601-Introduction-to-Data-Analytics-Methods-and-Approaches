@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.252
+A clean Data frame is useful, but a reproducible cleaning process is much more valuable.
+
+00:00:06.252 --> 00:00:13.532
+You should be able to explain what issue you found, what action you took, how many values were affected,
+
+00:00:13.532 --> 00:00:16.097
+and why the decision was reasonable.
+
+00:00:16.097 --> 00:00:19.575
+The example on the slide shows a simple cleaning log.
+
+00:00:20.126 --> 00:00:24.513
+Imagine that another analyst receives your dataset six months later.
+
+00:00:24.513 --> 00:00:32.323
+They should not have to guess why Web and web became the same category or why certain rows disappeared.
+
+00:00:32.323 --> 00:00:39.737
+In real projects, keep cleaning steps in code rather than manually editing the original file.
+
+00:00:39.737 --> 00:00:47.372
+A notebook, script, or pipeline creates an audit trail that can be rerun when new data arrives.
+
+00:00:47.372 --> 00:00:51.788
+Good documentation also protects you from your own memory.
+
+00:00:51.788 --> 00:00:58.496
+If you return to the project later, the code and notes explain exactly what was changed and why.

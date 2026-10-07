@@ -1,13 +1,31 @@
 WEBVTT
 
-00:00:00.008 --> 00:00:07.742
-We’ll begin with descriptive statistics such as mean and median, then look at distributions and group comparisons.
+00:00:00.000 --> 00:00:07.257
+For this module, we will use one small cleaned dataset with region, channel, amount, and satisfaction.
 
-00:00:07.742 --> 00:00:13.477
-Next comes correlation, followed by a simple introduction to confidence intervals.
+00:00:07.257 --> 00:00:12.212
+Region and channel are categorical variables.
 
-00:00:13.477 --> 00:00:19.887
-We’ll finish by matching visual forms to analytical questions and building a short statistical report.
+00:00:12.212 --> 00:00:12.672
+Amount is a numeric variable.
 
-00:00:20.476 --> 00:00:28.660
-Think of the sequence as summarize, compare, relate, quantify uncertainty, and communicate.
+00:00:12.672 --> 00:00:20.852
+Satisfaction is a numeric rating that we will use carefully for introductory examples.
+
+00:00:20.852 --> 00:00:26.694
+Before choosing a statistic or chart, identify the type of variable you are working with.
+
+00:00:27.272 --> 00:00:31.960
+Variable type matters because different questions require different tools.
+
+00:00:31.960 --> 00:00:37.095
+If you want to understand the distribution of amount, a histogram may help.
+
+00:00:37.095 --> 00:00:44.415
+If you want to compare average amount across regions, a grouped summary or bar chart may be useful.
+
+00:00:44.415 --> 00:00:52.365
+If you want to examine the relationship between two numeric variables, a scatter plot is usually a better choice.
+
+00:00:52.365 --> 00:00:57.797
+The question and variable types should guide the method, not the other way around.

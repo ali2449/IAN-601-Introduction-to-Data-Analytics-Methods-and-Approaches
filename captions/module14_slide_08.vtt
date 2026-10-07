@@ -1,19 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.202
-Evaluation compares model predictions with the correct answers in the test set.
+00:00:00.000 --> 00:00:03.412
+So far, we have used one input variable, x.
 
-00:00:05.202 --> 00:00:09.557
-Accuracy is the proportion of predictions that are correct.
+00:00:03.412 --> 00:00:07.722
+Real prediction problems usually use several inputs.
 
-00:00:09.557 --> 00:00:16.579
-The confusion matrix gives more detail by separating correct and incorrect predictions for each class.
+00:00:07.722 --> 00:00:19.092
+Imagine predicting an order amount using customer visits, pages viewed, previous orders, and days since the last visit.
 
-00:00:17.029 --> 00:00:20.956
-Do not rely on accuracy alone in every problem.
+00:00:19.092 --> 00:00:23.936
+Instead of one x, we now have x one, x two, x three, and x four.
 
-00:00:20.956 --> 00:00:28.406
-If one class is rare, a model can look accurate while still performing poorly on the cases that matter.
+00:00:24.525 --> 00:00:27.417
+The algebraic structure is still familiar.
 
-00:00:28.406 --> 00:00:35.488
-For this introductory example, focus on understanding that evaluation must happen on unseen data.
+00:00:27.417 --> 00:00:33.687
+A multiple linear model combines an intercept with a coefficient multiplied by each feature.
+
+00:00:33.687 --> 00:00:37.487
+The model learns those coefficients from the training data.
+
+00:00:37.487 --> 00:00:44.437
+This is an important connection: machine learning with many features is still built on the idea of inputs being combined
+
+00:00:44.437 --> 00:00:47.602
+mathematically to produce an output.
+
+00:00:47.602 --> 00:00:53.417
+The number of features can become very large, but the conceptual structure remains the same.

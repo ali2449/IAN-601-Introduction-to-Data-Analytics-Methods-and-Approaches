@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.132
+Now you will create a small statistical story using the starter dataset.
+
+00:00:05.132 --> 00:00:10.422
+Begin by describing the amount column and comparing the mean with the median.
+
+00:00:10.422 --> 00:00:14.892
+Then create a histogram and summarize amount by region.
+
+00:00:14.892 --> 00:00:21.537
+Create one group-comparison chart, followed by a scatter plot of amount and satisfaction.
+
+00:00:21.537 --> 00:00:24.504
+Finally, calculate the correlation.
+
+00:00:25.029 --> 00:00:27.146
+Do not stop with the code.
+
+00:00:27.146 --> 00:00:33.176
+Write three interpretation sentences. One sentence should describe the distribution.
+
+00:00:33.176 --> 00:00:35.531
+One should compare the groups.
+
+00:00:35.531 --> 00:00:40.081
+One should describe the relationship between the two numeric variables.
+
+00:00:40.081 --> 00:00:45.351
+Check that your written statements match both the statistics and the visualizations.
+
+00:00:45.351 --> 00:00:51.530
+The goal is to practice moving from data to evidence and then from evidence to careful interpretation.

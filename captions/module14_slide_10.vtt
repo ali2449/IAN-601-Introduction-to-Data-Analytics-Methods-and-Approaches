@@ -1,16 +1,37 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:10.077
-After training, a model can generate a prediction for a new row—as long as the new row has the same feature structure
+00:00:00.000 --> 00:00:02.912
+Not every useful feature begins as a number.
 
-00:00:10.077 --> 00:00:17.677
-used during training. The example contains four feature values because the model was trained with four input features.
+00:00:02.912 --> 00:00:07.662
+Suppose the sales channel is Web, Store, or Email.
 
-00:00:17.677 --> 00:00:25.258
-Predict returns the class, and predict_proba returns estimated class probabilities.
+00:00:07.662 --> 00:00:12.107
+A linear model cannot multiply a coefficient by the word Web.
 
-00:00:25.892 --> 00:00:33.979
-The largest probability is printed as a confidence-like value, but remember that a probability estimate is not a
+00:00:12.107 --> 00:00:15.442
+So we need to create a numeric representation.
 
-00:00:33.979 --> 00:00:37.822
-guarantee. New data must be prepared in the same way as the training data.
+00:00:15.442 --> 00:00:18.121
+One common method is one-hot encoding.
+
+00:00:18.670 --> 00:00:23.472
+Run the example and see how Pandas creates separate indicator columns.
+
+00:00:23.472 --> 00:00:31.272
+If the observation belongs to Web, the Web column becomes one and the other channel columns become zero.
+
+00:00:31.272 --> 00:00:36.927
+The feature is still categorical in meaning, but the model now receives numbers.
+
+00:00:36.927 --> 00:00:40.162
+This idea is called representation.
+
+00:00:40.162 --> 00:00:44.372
+Different types of data require different representations.
+
+00:00:44.372 --> 00:00:50.972
+In your next machine learning course, you will see preprocessing tools that perform these transformations automatically
+
+00:00:50.972 --> 00:00:52.575
+inside pipelines.

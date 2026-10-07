@@ -1,22 +1,37 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.787
-Let’s begin with intentionally messy data.
+00:00:00.000 --> 00:00:04.792
+A data audit is the first systematic look at an unfamiliar dataset.
 
-00:00:02.787 --> 00:00:06.017
-Order ID two appears twice.
+00:00:04.792 --> 00:00:09.027
+Before we clean, we want to understand the structure.
 
-00:00:06.017 --> 00:00:12.452
-Channel labels use different capitalization and spacing, and one channel is missing.
+00:00:09.027 --> 00:00:15.367
+Start with the shape to see how many rows and columns you have.
 
-00:00:12.452 --> 00:00:20.602
-Amount contains numeric-looking text, a missing value, and an unusually large value of nine hundred ninety-nine.
+00:00:15.367 --> 00:00:17.162
+Check the data types. Look at a few rows.
 
-00:00:21.250 --> 00:00:23.852
-The dtypes output is also important.
+00:00:17.162 --> 00:00:24.510
+Count missing values. For categorical columns, inspect the unique values or value counts.
 
-00:00:23.852 --> 00:00:31.017
-Because amount contains strings and missing data, Pandas may not treat the column as a clean numeric type.
+00:00:25.287 --> 00:00:28.879
+Run the code and look carefully at what Pandas reports.
 
-00:00:31.017 --> 00:00:35.852
-This is what real data often looks like before preparation begins.
+00:00:28.879 --> 00:00:32.159
+Do not focus only on whether the code runs.
+
+00:00:32.159 --> 00:00:34.764
+Ask what each output tells you.
+
+00:00:34.764 --> 00:00:42.989
+For example, if amount is stored as an object instead of a numeric type, that is a clue that the column may contain text
+
+00:00:42.989 --> 00:00:45.024
+or inconsistent values.
+
+00:00:45.024 --> 00:00:52.679
+If the region column contains North, north, and north with spaces, those may represent the same category but appear as
+
+00:00:52.679 --> 00:01:00.287
+different groups. A good audit gives you a list of issues to investigate before you start changing the data.

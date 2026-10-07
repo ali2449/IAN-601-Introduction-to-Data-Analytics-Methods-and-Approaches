@@ -1,25 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:08.167
-Data leakage happens when the model receives information during training that would not truly be available when making a
+00:00:00.000 --> 00:00:08.252
+Supervised machine learning often begins with two major problem types: regression and classification.
 
-00:00:08.167 --> 00:00:08.532
-future prediction.
+00:00:08.252 --> 00:00:11.782
+Regression predicts a numeric value.
 
-00:00:08.532 --> 00:00:15.217
-A direct example would be accidentally including the target itself—or a variable derived from the future answer—inside
+00:00:11.782 --> 00:00:20.352
+Examples include predicting a house price, sales amount, temperature, or hospital length of stay.
 
-00:00:15.217 --> 00:00:16.668
-the feature set.
+00:00:20.352 --> 00:00:24.592
+Classification predicts a category or class.
 
-00:00:17.207 --> 00:00:21.149
-Leakage can make evaluation look unrealistically strong.
+00:00:24.592 --> 00:00:32.574
+Examples include yes or no, fraud or not fraud, or one of several diagnosis categories.
 
-00:00:21.149 --> 00:00:27.054
-Split data before final evaluation, keep target information out of the features,
+00:00:33.201 --> 00:00:38.888
+Both problem types use features, targets, training data, fitted models, and evaluation.
 
-00:00:27.054 --> 00:00:33.934
-and make sure cleaning steps are applied consistently without using test information improperly.
+00:00:38.888 --> 00:00:48.378
+What changes is the type of target, the algorithms we may choose, and the metrics used for evaluation.
 
-00:00:33.934 --> 00:00:40.542
-A model is only useful if its evaluation resembles the conditions in which it will actually be used.
+00:00:48.378 --> 00:00:54.478
+In this module, we first used linear regression to connect algebra with learning.
+
+00:00:54.478 --> 00:01:01.823
+Now we will move into binary classification using logistic regression, where the target has two values:
+
+00:01:01.823 --> 00:01:04.259
+responded or did not respond.

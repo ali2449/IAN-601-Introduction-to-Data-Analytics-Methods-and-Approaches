@@ -1,34 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.037
-Let’s bring the ideas together.
+00:00:00.000 --> 00:00:06.257
+Correlation is useful, but it can be misleading when we ignore the shape and context of the data.
 
-00:00:02.037 --> 00:00:04.692
-Mean and median describe center.
+00:00:06.257 --> 00:00:10.482
+A curved relationship may have a low linear correlation.
 
-00:00:04.692 --> 00:00:08.382
-Range and standard deviation describe spread.
+00:00:10.482 --> 00:00:14.827
+One extreme observation can change the coefficient dramatically.
 
-00:00:08.382 --> 00:00:11.492
-Frequencies help describe a distribution.
+00:00:14.827 --> 00:00:17.962
+Subgroups can create or hide a pattern.
 
-00:00:11.492 --> 00:00:14.477
-Grouped statistics support comparisons.
+00:00:17.962 --> 00:00:21.798
+Restricted ranges can also weaken an apparent relationship.
 
-00:00:14.477 --> 00:00:22.207
-Correlation describes linear association, and confidence intervals remind us that estimates contain uncertainty.
+00:00:22.453 --> 00:00:26.625
+This is why correlation should not be the first and only analysis.
 
-00:00:22.878 --> 00:00:29.403
-Good visualization and reporting connect those statistics back to the question the audience actually cares about.
+00:00:26.625 --> 00:00:33.895
+A better sequence is to plot the variables, inspect outliers and groups, calculate the coefficient,
 
-00:00:29.853 --> 00:00:36.835
-Module 14 brings many of the course ideas together in an introductory machine learning workflow.
+00:00:33.895 --> 00:00:36.585
+and then interpret it in context.
 
-00:00:36.835 --> 00:00:45.175
-We’ll read data, separate features from a target, create training and testing sets, train a simple model,
+00:00:36.585 --> 00:00:45.285
+When you see a correlation, ask what the scatter plot looks like and whether another variable could be affecting both
 
-00:00:45.175 --> 00:00:52.125
-evaluate its predictions, compare it with a baseline, and discuss issues such as data leakage and responsible
-
-00:00:52.125 --> 00:00:54.186
-interpretation.
+00:00:45.285 --> 00:00:50.789
+measurements. Good statistical reasoning combines the number with the data-generating process.

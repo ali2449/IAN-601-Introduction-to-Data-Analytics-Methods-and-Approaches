@@ -1,16 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:07.217
-Category labels often look different even when they mean the same thing.
+00:00:00.000 --> 00:00:05.947
+Data types matter because Pandas uses them to decide what operations are possible.
 
-00:00:07.217 --> 00:00:14.297
-Web, space-web-space, EMAIL, email, and Store contain differences in capitalization and whitespace.
+00:00:05.947 --> 00:00:11.782
+A number stored as text cannot be summarized correctly until we convert it.
 
-00:00:14.297 --> 00:00:22.239
-Str dot strip removes extra spaces, and str dot lower converts everything to lowercase.
+00:00:11.782 --> 00:00:20.017
+A date stored as a string cannot support reliable date operations until it becomes a datetime value.
 
-00:00:22.722 --> 00:00:29.034
-After standardization, web values group together and email values group together correctly.
+00:00:20.017 --> 00:00:26.647
+In the example, we use to numeric and to datetime with errors set to coerce.
 
-00:00:29.034 --> 00:00:33.372
-This kind of cleanup is essential before counting or grouping categories.
+00:00:27.180 --> 00:00:34.007
+Coerce means that invalid values are converted to missing values instead of causing the program to stop.
+
+00:00:34.007 --> 00:00:38.627
+This is useful because conversion becomes part of the quality audit.
+
+00:00:38.627 --> 00:00:47.112
+The invalid date becomes visible as a missing datetime value, and a missing or malformed amount becomes a missing
+
+00:00:47.112 --> 00:00:52.927
+numeric value. Run the code and compare the values and data types before and after conversion.
+
+00:00:52.927 --> 00:00:57.072
+Remember that conversion does not automatically solve the problem.
+
+00:00:57.072 --> 00:01:01.079
+It helps us identify which values need further investigation.

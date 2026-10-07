@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.372
+Numeric EDA helps us understand the center, spread, and range of a variable.
+
+00:00:06.372 --> 00:00:16.537
+The describe function gives us several useful statistics at once, including count, mean, standard deviation, minimum,
+
+00:00:16.537 --> 00:00:24.070
+quartiles, and maximum. In the example, pay special attention to the mean and median.
+
+00:00:24.520 --> 00:00:33.007
+If the mean is much larger than the median, that can be a clue that the distribution is right-skewed or contains an
+
+00:00:33.007 --> 00:00:37.602
+extreme high value. The maximum can also help us notice unusual observations.
+
+00:00:37.602 --> 00:00:41.642
+Do not treat these statistics as conclusions by themselves.
+
+00:00:41.642 --> 00:00:44.607
+They are clues that guide the next question.
+
+00:00:44.607 --> 00:00:52.377
+For example, if the maximum is much larger than the seventy-fifth percentile, you may want to look at the distribution
+
+00:00:52.377 --> 00:00:55.325
+or inspect that specific record more carefully.

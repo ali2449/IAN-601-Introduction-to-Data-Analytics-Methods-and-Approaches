@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.772
+Module 12 focused on one central idea: trust the data before you trust the result.
+
+00:00:06.772 --> 00:00:14.297
+You learned how to audit a dataset, measure missingness, handle duplicates, convert types safely,
+
+00:00:14.297 --> 00:00:23.287
+standardize categories, apply domain rules, investigate outliers, and validate the result after cleaning.
+
+00:00:23.287 --> 00:00:30.436
+You also used simple EDA to examine categorical and numeric variables and compare groups.
+
+00:00:30.886 --> 00:00:37.508
+These skills are foundational because every later analytical method depends on the quality of the input.
+
+00:00:37.508 --> 00:00:42.043
+In Module 13, we will build directly on this work.
+
+00:00:42.043 --> 00:00:47.578
+We will use descriptive statistics and visualization to study distributions, compare groups,
+
+00:00:47.578 --> 00:00:51.733
+and examine relationships more clearly.
+
+00:00:51.733 --> 00:00:58.838
+When you move to the next module, keep the same habit: do not calculate a statistic or create a chart until you
+
+00:00:58.838 --> 00:01:02.186
+understand what the underlying data represents.

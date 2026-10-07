@@ -1,16 +1,34 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.132
-Even without a plotting library, we can demonstrate the logic of a bar chart.
+00:00:00.000 --> 00:00:05.287
+A scatter plot is one of the most useful visuals when both variables are numeric.
 
-00:00:05.132 --> 00:00:09.097
-The dictionary stores counts for web, email, and store.
+00:00:05.287 --> 00:00:08.592
+Each point represents one observation.
 
-00:00:09.097 --> 00:00:15.185
-Repeating the block character creates a bar whose length matches the count.
+00:00:08.592 --> 00:00:14.822
+One variable is placed on the horizontal axis and the other on the vertical axis.
 
-00:00:15.922 --> 00:00:23.989
-Web has the longest bar because it has twelve observations, followed by email with seven and store with four.
+00:00:14.822 --> 00:00:22.515
+The pattern of points can tell us about direction, shape, strength, clusters, and unusual observations.
 
-00:00:23.989 --> 00:00:29.194
-The visual encoding is simple: larger values produce longer bars.
+00:00:22.973 --> 00:00:26.755
+Run the example and look at amount versus satisfaction.
+
+00:00:26.755 --> 00:00:32.230
+Before calculating any correlation coefficient, describe what you see.
+
+00:00:32.230 --> 00:00:36.385
+Do higher amounts generally appear with higher satisfaction?
+
+00:00:36.385 --> 00:00:38.630
+Is the pattern roughly linear?
+
+00:00:38.630 --> 00:00:40.850
+Are there unusual points?
+
+00:00:40.850 --> 00:00:48.835
+This visual inspection is important because a single number can hide nonlinear patterns or influential observations.
+
+00:00:48.835 --> 00:00:54.527
+A good workflow is plot first, summarize second, interpret last.

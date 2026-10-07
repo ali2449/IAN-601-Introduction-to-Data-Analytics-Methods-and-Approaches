@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.642
+Different classification metrics answer different questions.
+
+00:00:05.642 --> 00:00:10.772
+Accuracy asks what fraction of all predictions were correct.
+
+00:00:10.772 --> 00:00:15.717
+Precision asks, among the cases predicted positive, how many were actually positive.
+
+00:00:15.717 --> 00:00:22.462
+Recall asks, among the actual positive cases, how many did the model find.
+
+00:00:22.462 --> 00:00:26.624
+F1 combines precision and recall into one measure.
+
+00:00:27.180 --> 00:00:30.577
+Run the classification report and compare the metrics.
+
+00:00:30.577 --> 00:00:33.652
+Do not try to memorize formulas first.
+
+00:00:33.652 --> 00:00:37.042
+Focus on the questions each metric answers.
+
+00:00:37.042 --> 00:00:43.127
+In some applications, recall matters more because missing a true positive is costly.
+
+00:00:43.127 --> 00:00:47.787
+In others, precision matters because false alarms are expensive.
+
+00:00:47.787 --> 00:00:50.712
+There is no universally best metric.
+
+00:00:50.712 --> 00:00:57.017
+The correct evaluation depends on the decision the model will support and the consequences of its mistakes.

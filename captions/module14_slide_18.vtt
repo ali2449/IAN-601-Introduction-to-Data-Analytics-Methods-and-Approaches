@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.082
+Machine learning code commonly separates the input features from the target.
+
+00:00:07.082 --> 00:00:09.262
+X is the feature matrix.
+
+00:00:09.262 --> 00:00:11.322
+y is the target vector.
+
+00:00:11.322 --> 00:00:18.082
+In our example, X contains visits, pages viewed, past orders, and days since the last activity.
+
+00:00:18.082 --> 00:00:20.035
+The target is responded.
+
+00:00:20.485 --> 00:00:22.907
+Run the code and inspect the shapes.
+
+00:00:22.907 --> 00:00:27.487
+Each row in X corresponds to one target value in y.
+
+00:00:27.487 --> 00:00:31.412
+Also look at the first feature vector as a NumPy array.
+
+00:00:31.412 --> 00:00:34.452
+This makes the matrix idea concrete.
+
+00:00:34.452 --> 00:00:39.827
+It is extremely important that the target does not accidentally appear inside X.
+
+00:00:39.827 --> 00:00:46.492
+If the answer is included as an input, the model will appear to perform very well for the wrong reason.
+
+00:00:46.492 --> 00:00:49.233
+That is a simple example of data leakage.

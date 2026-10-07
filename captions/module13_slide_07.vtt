@@ -1,19 +1,34 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:07.617
-Correlation measures the strength and direction of a linear relationship between two numeric variables.
+00:00:00.000 --> 00:00:05.367
+A boxplot provides a compact visual summary of a numeric distribution.
 
-00:00:07.617 --> 00:00:14.512
-Here hours studied increases as score increases, so we expect a strong positive correlation.
+00:00:05.367 --> 00:00:08.892
+The line inside the box represents the median.
 
-00:00:14.512 --> 00:00:20.025
-A value close to one indicates a strong positive linear relationship.
+00:00:08.892 --> 00:00:14.957
+The box covers the middle fifty percent of the data, from Q1 to Q3.
 
-00:00:20.475 --> 00:00:23.377
-But correlation does not prove causation.
+00:00:14.957 --> 00:00:22.039
+The whiskers extend beyond the box, and points beyond the whiskers may be flagged as potential outliers.
 
-00:00:23.377 --> 00:00:30.357
-Two variables can move together because of other factors, reverse direction, or coincidence.
+00:00:22.717 --> 00:00:27.994
+Boxplots become especially useful when we place several groups side by side.
 
-00:00:30.357 --> 00:00:37.090
-Use correlation as evidence of association, not as proof that one variable causes the other.
+00:00:27.994 --> 00:00:32.414
+Run the code and compare order amount across North, South, and West.
+
+00:00:32.414 --> 00:00:37.119
+Look at the medians and the spread within each region.
+
+00:00:37.119 --> 00:00:41.379
+Do not focus only on which group has the highest maximum.
+
+00:00:41.379 --> 00:00:49.169
+A useful comparison asks whether one group tends to be higher overall, whether one group has more variability,
+
+00:00:49.169 --> 00:00:52.139
+and whether any unusual values appear.
+
+00:00:52.139 --> 00:00:56.952
+The visual should support the same interpretation as your numerical summary.

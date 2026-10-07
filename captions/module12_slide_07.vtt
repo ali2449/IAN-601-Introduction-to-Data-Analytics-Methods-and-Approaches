@@ -1,19 +1,34 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.152
-Numeric values stored as text need conversion before reliable numerical analysis.
+00:00:00.000 --> 00:00:07.827
+Duplicates can inflate counts, totals, and averages, but not every repeated value is a duplicate.
 
-00:00:06.152 --> 00:00:11.217
-The amount column contains “45”, “72”, “missing”, and “91”.
+00:00:07.827 --> 00:00:12.602
+You first need to decide what defines a unique observation.
 
-00:00:11.217 --> 00:00:15.872
-Pd dot to_numeric attempts to convert them.
+00:00:12.602 --> 00:00:17.877
+In this dataset, order ID is supposed to identify one order.
 
-00:00:15.872 --> 00:00:24.986
-Errors equals coerce turns anything that cannot be converted into NaN instead of raising an exception.
+00:00:17.877 --> 00:00:24.507
+If the same order ID appears twice with the same information, that may be a true duplicate.
 
-00:00:25.461 --> 00:00:30.643
-After conversion, the word “missing” becomes a missing numeric value.
+00:00:24.507 --> 00:00:31.444
+But a customer ID could legitimately appear many times because one customer can place many orders.
 
-00:00:30.643 --> 00:00:36.528
-That makes the problem visible and lets us handle it using standard missing-data tools.
+00:00:31.926 --> 00:00:37.503
+Run the code and inspect the rows that share the same order ID before removing anything.
+
+00:00:37.503 --> 00:00:41.318
+This is safer than calling drop duplicates immediately.
+
+00:00:41.318 --> 00:00:48.018
+The code uses the subset argument to focus on the column that should be unique.
+
+00:00:48.018 --> 00:00:54.358
+In a real project, you may need several columns together to define uniqueness, such as patient ID plus visit date,
+
+00:00:54.358 --> 00:00:57.538
+or product ID plus transaction ID.
+
+00:00:57.538 --> 00:01:03.759
+The key idea is to understand the meaning of the identifier before deciding what is duplicated.

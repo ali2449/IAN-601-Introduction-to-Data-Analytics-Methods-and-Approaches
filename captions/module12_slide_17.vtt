@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.017
+Now we combine several cleaning decisions into one workflow.
+
+00:00:04.017 --> 00:00:12.647
+The example removes a confirmed duplicate, converts amount and date safely, standardizes region and channel labels,
+
+00:00:12.647 --> 00:00:16.582
+and creates flags for invalid numeric values.
+
+00:00:16.582 --> 00:00:22.840
+Read the code from top to bottom and connect each line to a specific data-quality problem.
+
+00:00:23.575 --> 00:00:28.152
+Notice that the pipeline does not silently delete every suspicious row.
+
+00:00:28.152 --> 00:00:33.427
+Invalid amounts and scores are flagged so they remain visible for review.
+
+00:00:33.427 --> 00:00:39.602
+This is a strong pattern for real analytical work: automate what you know is safe,
+
+00:00:39.602 --> 00:00:46.042
+preserve uncertainty where investigation is still needed, and keep the transformations readable.
+
+00:00:46.042 --> 00:00:53.177
+Run the code and inspect both the cleaned Data frame and the missing-value summary after conversion.
+
+00:00:53.177 --> 00:00:59.811
+A good pipeline should make the data better while also making the cleaning logic easy to understand.

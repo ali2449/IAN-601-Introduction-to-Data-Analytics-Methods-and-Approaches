@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.727
+Overall summaries can hide differences between groups.
+
+00:00:03.727 --> 00:00:12.397
+For example, the overall average order amount may look reasonable, but one region may have much higher values than the
+
+00:00:12.397 --> 00:00:20.540
+others. Grouped EDA helps us compare categories such as regions, departments, channels, or customer segments.
+
+00:00:21.071 --> 00:00:25.138
+Run the code and compare count, median, mean, and maximum for each region.
+
+00:00:25.138 --> 00:00:33.868
+The count matters because a group with only one or two observations should be interpreted cautiously.
+
+00:00:33.868 --> 00:00:38.488
+Also notice the difference between mean and median within each group.
+
+00:00:38.488 --> 00:00:44.198
+If one group has an extreme value, the mean may move much more than the median.
+
+00:00:44.198 --> 00:00:49.238
+At this stage, treat group differences as patterns to investigate.
+
+00:00:49.238 --> 00:00:55.943
+A difference in a summary table does not automatically mean the groups are statistically different in the larger
+
+00:00:55.943 --> 00:00:56.806
+population.

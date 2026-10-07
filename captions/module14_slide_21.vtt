@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.042
+Logistic regression is a useful bridge between the linear algebra we started with and classification.
+
+00:00:07.042 --> 00:00:10.777
+First, the model creates a weighted linear score.
+
+00:00:10.777 --> 00:00:19.337
+That score looks similar to a multiple linear regression equation: intercept plus coefficients multiplied by features.
+
+00:00:19.337 --> 00:00:24.131
+Then logistic regression passes that score through a sigmoid function.
+
+00:00:24.608 --> 00:00:31.725
+The sigmoid converts the score into a value between zero and one, which we interpret as a probability.
+
+00:00:31.725 --> 00:00:39.800
+That is why logistic regression can be used for binary classification even though the word regression appears in the
+
+00:00:39.800 --> 00:00:42.600
+name. The linear part combines the features.
+
+00:00:42.600 --> 00:00:45.900
+The sigmoid turns the result into a probability.
+
+00:00:45.900 --> 00:00:50.586
+Then a decision threshold can convert that probability into a class label.

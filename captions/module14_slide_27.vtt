@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.362
+After a model is trained, we can use it on a new observation.
+
+00:00:04.362 --> 00:00:12.677
+The new customer must have the same feature meanings used during training: visits, pages viewed, past orders,
+
+00:00:12.677 --> 00:00:15.362
+and days since the last activity.
+
+00:00:15.362 --> 00:00:20.643
+Run the code and inspect both the predicted class and predicted probability.
+
+00:00:21.250 --> 00:00:26.032
+Then change one or two feature values and see how the probability responds.
+
+00:00:26.032 --> 00:00:30.562
+The model is applying the relationship it learned from the training examples.
+
+00:00:30.562 --> 00:00:34.052
+But remember that a probability is not certainty.
+
+00:00:34.052 --> 00:00:41.442
+It is the model's estimate based on the training data, selected features, learned parameters, and assumptions.
+
+00:00:41.442 --> 00:00:47.449
+A prediction should always be interpreted together with the model's evaluation results and limitations.

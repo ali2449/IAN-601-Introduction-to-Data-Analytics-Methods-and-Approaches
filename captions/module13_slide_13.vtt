@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.537
+Descriptive statistics summarize the sample we have.
+
+00:00:03.537 --> 00:00:07.357
+But often we are interested in a larger population.
+
+00:00:07.357 --> 00:00:14.082
+A sample mean is an estimate of the population mean, and that estimate contains uncertainty.
+
+00:00:14.082 --> 00:00:19.510
+A confidence interval gives us a range around the estimate using a statistical procedure.
+
+00:00:19.960 --> 00:00:27.297
+In this introductory example, we use the sample mean plus or minus one point nine six times the standard error.
+
+00:00:27.297 --> 00:00:30.622
+Focus on the idea more than the formula.
+
+00:00:30.622 --> 00:00:36.002
+If the sample is small or highly variable, the interval tends to be wider.
+
+00:00:36.002 --> 00:00:41.792
+With more information and less variability, the estimate can become more precise.
+
+00:00:41.792 --> 00:00:47.507
+This simple formula relies on assumptions, so it is not a universal rule.
+
+00:00:47.507 --> 00:00:54.728
+The goal here is to introduce the idea that sample statistics are estimates, not exact population truths.

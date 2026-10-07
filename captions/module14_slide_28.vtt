@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.827
+Data leakage occurs when the model receives information that would not truly be available when the prediction is needed.
+
+00:00:06.827 --> 00:00:11.832
+A simple example is including the target itself inside the features.
+
+00:00:11.832 --> 00:00:17.617
+Another example is using information that is only known after the outcome happened.
+
+00:00:17.617 --> 00:00:24.972
+Leakage can also happen during preprocessing if information from the test set influences transformations fitted before
+
+00:00:24.972 --> 00:00:26.159
+evaluation.
+
+00:00:26.933 --> 00:00:33.250
+Leakage is dangerous because it can make a weak model appear extremely accurate.
+
+00:00:33.250 --> 00:00:42.275
+Then, when the model is used in the real world, that future or target information is no longer available and performance
+
+00:00:42.275 --> 00:00:48.725
+collapses. For every feature, ask: would I genuinely know this value at prediction time?
+
+00:00:48.725 --> 00:00:53.334
+That question is one of the best practical defenses against leakage.

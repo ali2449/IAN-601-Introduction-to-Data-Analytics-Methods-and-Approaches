@@ -1,16 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.247
-Exploratory data analysis gives us a quick picture of the dataset before deeper analysis.
+00:00:00.000 --> 00:00:04.042
+A value can have the correct data type and still be wrong.
 
-00:00:06.247 --> 00:00:16.722
-Describe summarizes the numeric amount column with count, mean, standard deviation, quartiles, minimum, and maximum.
+00:00:04.042 --> 00:00:08.952
+For example, negative twenty is a valid number in Python.
 
-00:00:16.722 --> 00:00:20.727
-Value_counts tells us how often each channel appears.
+00:00:08.952 --> 00:00:15.707
+But if the variable represents a purchase amount, a negative value may violate a business rule.
 
-00:00:21.320 --> 00:00:30.232
-These simple summaries can reveal skew, unexpected ranges, dominant categories, and other patterns worth investigating.
+00:00:15.707 --> 00:00:23.822
+A satisfaction score of nine is also numeric, but it is invalid if the allowed scale is one through five.
 
-00:00:30.232 --> 00:00:34.895
-EDA is about asking better questions before making conclusions.
+00:00:24.604 --> 00:00:27.061
+This is why domain knowledge matters.
+
+00:00:27.061 --> 00:00:35.216
+Run the code and notice that we create Boolean conditions to flag invalid values rather than deleting them
+
+00:00:35.216 --> 00:00:37.711
+automatically. That is an important workflow.
+
+00:00:37.711 --> 00:00:45.436
+First detect the problem, then inspect the affected rows, and only then decide what action is appropriate.
+
+00:00:45.436 --> 00:00:53.546
+Business rules are often more useful than generic statistical rules because they reflect what the data is supposed to
+
+00:00:53.546 --> 00:00:58.893
+mean. Always ask whether a value is possible in the real process that generated the data.

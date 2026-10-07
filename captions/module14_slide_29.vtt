@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.307
+Preprocessing should be applied consistently to training, test, and future data.
+
+00:00:06.307 --> 00:00:13.262
+A scikit-learn Pipeline allows us to connect transformations and the model into one object.
+
+00:00:13.262 --> 00:00:20.627
+In the example, the pipeline first standardizes the numeric features and then trains logistic regression.
+
+00:00:21.080 --> 00:00:24.252
+The important benefit is not only convenience.
+
+00:00:24.252 --> 00:00:27.892
+The scaler learns its parameters from the training data.
+
+00:00:27.892 --> 00:00:34.952
+When test data arrives, the same learned transformation is applied without refitting on the test set.
+
+00:00:34.952 --> 00:00:40.637
+That helps prevent leakage and keeps the workflow reproducible.
+
+00:00:40.637 --> 00:00:48.202
+Next semester, you will likely build larger pipelines that include missing-value imputation, categorical encoding,
+
+00:00:48.202 --> 00:00:51.507
+scaling, feature selection, and the model itself.
+
+00:00:51.507 --> 00:00:54.336
+The same basic pattern begins here.

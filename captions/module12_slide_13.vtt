@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.352
+For categorical variables, a good starting point is frequency.
+
+00:00:04.352 --> 00:00:09.502
+Value counts tell us how many observations belong to each category.
+
+00:00:09.502 --> 00:00:14.897
+Normalized value counts convert those counts into proportions or percentages.
+
+00:00:14.897 --> 00:00:17.926
+Run the code and inspect the channel distribution.
+
+00:00:18.411 --> 00:00:24.663
+Ask whether one category dominates the data, whether any categories are unexpectedly rare,
+
+00:00:24.663 --> 00:00:27.553
+and whether missing values are still present.
+
+00:00:27.553 --> 00:00:34.928
+These simple summaries can reveal important information before we create charts or statistical models.
+
+00:00:34.928 --> 00:00:40.323
+For example, if ninety-five percent of transactions come from one channel,
+
+00:00:40.323 --> 00:00:47.878
+later comparisons across channels may be unstable because the smaller groups contain very few observations.
+
+00:00:47.878 --> 00:00:56.316
+Categorical EDA is not complicated, but it gives you important context about the structure and balance of the dataset.

@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.562
+A model should not be evaluated only on the data it used for learning.
+
+00:00:04.562 --> 00:00:09.472
+We therefore separate the dataset into training data and test data.
+
+00:00:09.472 --> 00:00:13.317
+The training set is used to estimate the model parameters.
+
+00:00:13.317 --> 00:00:19.074
+The test set is held aside and used later to evaluate performance on unseen cases.
+
+00:00:19.696 --> 00:00:22.153
+Run the code and inspect the shapes.
+
+00:00:22.153 --> 00:00:29.653
+The random state makes the split reproducible, which means you and your students can get the same partition each time.
+
+00:00:29.653 --> 00:00:35.938
+Stratify helps preserve the proportion of the target classes in both training and test sets.
+
+00:00:35.938 --> 00:00:40.398
+This separation is one of the most important ideas in machine learning.
+
+00:00:40.398 --> 00:00:44.238
+Training asks, can the model learn from examples?
+
+00:00:44.238 --> 00:00:49.718
+Testing asks, does what it learned generalize to data it did not see during fitting?

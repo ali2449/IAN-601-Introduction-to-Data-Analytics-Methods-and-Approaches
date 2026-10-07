@@ -1,22 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.657
-The best visual depends on the question.
+00:00:00.000 --> 00:00:04.537
+A bar chart is useful for comparing values across categories.
 
-00:00:02.657 --> 00:00:08.952
-Bar charts compare categories. Line charts emphasize change over time.
+00:00:04.537 --> 00:00:12.787
+In the example, we first calculate the average order amount for each region, then plot those regional averages.
 
-00:00:08.952 --> 00:00:15.362
-Histograms show distributions. Box plots compare spread across groups.
+00:00:12.787 --> 00:00:18.539
+The categories are on one axis, and the summary value is represented by bar height.
 
-00:00:15.362 --> 00:00:20.377
-Scatter plots show relationships between two numeric variables.
+00:00:19.188 --> 00:00:22.285
+A bar chart is different from a histogram.
 
-00:00:20.377 --> 00:00:23.704
-Tables are useful when exact values matter.
+00:00:22.285 --> 00:00:28.470
+A histogram shows the distribution of one numeric variable across numeric ranges.
 
-00:00:24.255 --> 00:00:27.707
-Do not choose a chart because it looks impressive.
+00:00:28.470 --> 00:00:32.360
+A bar chart compares discrete categories.
 
-00:00:27.707 --> 00:00:32.525
-Choose the form that makes the analytical question easiest to answer.
+00:00:32.360 --> 00:00:42.220
+When bar length represents magnitude, the numeric axis should usually begin at zero so the visual difference is not
+
+00:00:42.220 --> 00:00:47.110
+exaggerated. Keep labels readable and avoid unnecessary decoration.
+
+00:00:47.110 --> 00:00:54.190
+The purpose of the chart is to make the category comparison easier to understand than the table alone.

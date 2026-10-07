@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.297
+Before fitting a model, inspect the modeling dataset carefully.
+
+00:00:04.297 --> 00:00:10.547
+Check for missing values, strange ranges, duplicates, inconsistent types, and class imbalance.
+
+00:00:10.547 --> 00:00:18.197
+Also ask whether each feature would actually be available at the moment the prediction is needed.
+
+00:00:18.760 --> 00:00:21.857
+Run the code and inspect the target counts.
+
+00:00:21.857 --> 00:00:26.992
+If the classes are highly imbalanced, accuracy may become misleading.
+
+00:00:26.992 --> 00:00:34.217
+For example, if ninety-five percent of cases are class zero, a model that predicts zero every time already achieves
+
+00:00:34.217 --> 00:00:37.517
+ninety-five percent accuracy.
+
+00:00:37.517 --> 00:00:44.612
+Data quality remains important because machine learning does not automatically know which values are mistakes.
+
+00:00:44.612 --> 00:00:50.012
+A model can learn an incorrect pattern just as efficiently as a correct one.
+
+00:00:50.012 --> 00:00:53.126
+Good modeling starts with good data inspection.

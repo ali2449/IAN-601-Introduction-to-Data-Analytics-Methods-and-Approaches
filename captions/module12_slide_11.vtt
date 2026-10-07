@@ -1,22 +1,37 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.632
-Now we combine several cleaning steps in a consistent order.
+00:00:00.000 --> 00:00:05.107
+An outlier is an observation that looks unusual compared with the rest of the data.
 
-00:00:03.632 --> 00:00:06.562
-First, exact duplicates are removed.
+00:00:05.107 --> 00:00:11.532
+It may be an error, but it may also be a legitimate and important case.
 
-00:00:06.562 --> 00:00:12.757
-Missing channel values are filled, then channel text is stripped and converted to lowercase.
+00:00:11.532 --> 00:00:16.772
+For example, a very large order could be a misplaced decimal point, a wholesale customer,
 
-00:00:12.757 --> 00:00:18.072
-Amount is converted to numeric, and conversion failures become missing values.
+00:00:16.772 --> 00:00:19.452
+or a real high-value transaction.
 
-00:00:18.072 --> 00:00:21.404
-Finally, missing amounts are filled with the median.
+00:00:19.452 --> 00:00:22.472
+Those possibilities require different actions.
 
-00:00:22.007 --> 00:00:27.914
-Once the table is clean enough for this example, we group by channel and sum the amounts.
+00:00:22.971 --> 00:00:28.718
+This is why I want you to think of outliers as questions rather than automatic deletions.
 
-00:00:27.914 --> 00:00:35.742
-The value of a pipeline is consistency: the same ordered steps can be reviewed, reused, and tested.
+00:00:28.718 --> 00:00:33.698
+A useful workflow is detect, investigate, then decide.
+
+00:00:33.698 --> 00:00:41.618
+You may keep the value, correct it using a trusted source, transform the variable, analyze it separately,
+
+00:00:41.618 --> 00:00:44.878
+or exclude it when you have a defensible reason.
+
+00:00:44.878 --> 00:00:49.613
+Simply writing “I removed all outliers” is not enough.
+
+00:00:49.613 --> 00:00:57.023
+In a professional analysis, you should explain how the unusual values were identified and why the chosen treatment makes
+
+00:00:57.023 --> 00:00:57.881
+sense.

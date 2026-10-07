@@ -1,16 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.082
-Treat each code cell as one stage of a larger workflow.
+00:00:00.000 --> 00:00:03.762
+Machine learning brings together many ideas from this course.
 
-00:00:04.082 --> 00:00:09.917
-Before you run it, identify what goes into the step and what should come out.
+00:00:03.762 --> 00:00:06.912
+Python gives us the programming foundation.
 
-00:00:09.917 --> 00:00:17.860
-For example, a train-test split takes one dataset and produces separate training and testing subsets.
+00:00:06.912 --> 00:00:14.022
+NumPy and Pandas give us arrays, Data frames, vectors, and numerical representations.
 
-00:00:18.405 --> 00:00:24.522
-Run the example, inspect shapes and outputs, and then change one setting at a time.
+00:00:14.022 --> 00:00:17.567
+Data cleaning helps us improve input quality.
 
-00:00:24.522 --> 00:00:29.724
-Machine learning code becomes easier when you understand the purpose of each stage.
+00:00:17.567 --> 00:00:24.105
+Statistics and visualization help us understand distributions and relationships before modeling.
+
+00:00:24.685 --> 00:00:32.302
+Machine learning adds a new goal: learning a relationship from examples so we can make predictions for new cases.
+
+00:00:32.302 --> 00:00:37.372
+That means the work you have already done is not separate from machine learning.
+
+00:00:37.372 --> 00:00:45.347
+It is the foundation. Next semester, you will learn more algorithms and more advanced evaluation techniques.
+
+00:00:45.347 --> 00:00:52.972
+But those methods will be much easier to understand if you already know what features are, how data becomes numeric,
+
+00:00:52.972 --> 00:00:59.076
+why we separate training from testing, and why model evaluation must use unseen data.

@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.897
+A chart can be technically correct and still communicate poorly.
+
+00:00:03.897 --> 00:00:08.112
+Good visualization reduces unnecessary work for the reader.
+
+00:00:08.112 --> 00:00:11.637
+Use a specific title. Label the axes.
+
+00:00:11.637 --> 00:00:13.672
+Include units when they matter.
+
+00:00:13.672 --> 00:00:19.504
+Keep category labels readable. Avoid decorations that do not support interpretation.
+
+00:00:20.126 --> 00:00:22.632
+Be especially careful with scales.
+
+00:00:22.632 --> 00:00:26.483
+For example, truncating a bar chart axis can make a small difference look very large.
+
+00:00:26.483 --> 00:00:31.558
+Three-dimensional effects can also distort the apparent size of values.
+
+00:00:31.558 --> 00:00:36.947
+Color should have a purpose, such as distinguishing meaningful groups, not simply decorating the chart.
+
+00:00:36.947 --> 00:00:42.343
+Remember that design choices can influence what the reader notices.
+
+00:00:42.343 --> 00:00:46.694
+A strong analytical chart is clear, honest, and focused on the question being answered.

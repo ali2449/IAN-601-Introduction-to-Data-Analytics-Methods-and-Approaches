@@ -1,0 +1,40 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.912
+This slide brings the entire workflow together.
+
+00:00:02.912 --> 00:00:06.827
+Start with a question. Bring in external data.
+
+00:00:06.827 --> 00:00:11.427
+Inspect and clean it. Define features and the target.
+
+00:00:11.427 --> 00:00:14.497
+Split into training and test sets.
+
+00:00:14.497 --> 00:00:18.547
+Fit the model. Evaluate it against a baseline.
+
+00:00:18.547 --> 00:00:21.432
+Then use the fitted model for new predictions.
+
+00:00:22.190 --> 00:00:27.302
+The Python example demonstrates the core technical stages using a Pipeline.
+
+00:00:27.302 --> 00:00:32.032
+But a real machine learning project continues beyond one notebook.
+
+00:00:32.032 --> 00:00:36.512
+Models need monitoring. Data distributions can change.
+
+00:00:36.512 --> 00:00:40.867
+Performance can drift. New data may require retraining.
+
+00:00:40.867 --> 00:00:47.092
+Privacy, fairness, documentation, and operational constraints also matter.
+
+00:00:47.092 --> 00:00:50.867
+For now, focus on recognizing the structure.
+
+00:00:50.867 --> 00:00:58.324
+If you understand this workflow, you already have the conceptual map you need for a much deeper machine learning course.

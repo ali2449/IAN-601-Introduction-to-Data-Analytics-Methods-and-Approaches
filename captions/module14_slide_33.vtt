@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.492
+Next semester, your machine learning course will go much deeper.
+
+00:00:04.492 --> 00:00:14.802
+You may study linear and logistic regression in more detail, followed by decision trees, random forests,
+
+00:00:14.802 --> 00:00:23.527
+support vector machines, nearest-neighbor methods, cross-validation, model tuning, feature engineering, class imbalance,
+
+00:00:23.527 --> 00:00:28.111
+clustering, neural networks, and other predictive methods.
+
+00:00:28.561 --> 00:00:31.908
+You do not need to memorize all of those algorithms now.
+
+00:00:31.908 --> 00:00:35.693
+The important foundation is already in place.
+
+00:00:35.693 --> 00:00:43.608
+You understand that observations become feature vectors, many feature vectors form X, targets form y,
+
+00:00:43.608 --> 00:00:52.413
+training estimates model parameters, test data evaluates generalization, and metrics help us understand performance.
+
+00:00:52.413 --> 00:00:59.553
+You also understand that leakage, data quality, and interpretation matter as much as calling fit and predict.
+
+00:00:59.553 --> 00:01:07.533
+That foundation will make the next course easier to follow because the algorithms will fit into a workflow that you
+
+00:01:07.533 --> 00:01:09.584
+already understand.

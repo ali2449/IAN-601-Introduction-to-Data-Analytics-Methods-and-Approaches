@@ -1,43 +1,34 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.122
-Let’s finish with the full workflow.
+00:00:00.000 --> 00:00:06.447
+Real machine learning projects rarely begin with a small Data frame typed directly into Python.
 
-00:00:02.122 --> 00:00:05.507
-Read the data. Separate features and target.
+00:00:06.447 --> 00:00:14.552
+Data may come from CSV or TSV files, Excel workbooks, APIs that return JSON, or databases queried with SQL.
 
-00:00:05.507 --> 00:00:10.067
-Split before evaluation. Train a model on the training set.
+00:00:14.552 --> 00:00:20.356
+The technical loading step is only part of the problem.
 
-00:00:10.067 --> 00:00:12.947
-Evaluate on unseen test rows.
+00:00:20.825 --> 00:00:23.752
+You also need to understand data provenance.
 
-00:00:12.947 --> 00:00:15.412
-Compare performance with a baseline.
+00:00:23.752 --> 00:00:27.492
+Who produced the data? What does each field mean?
 
-00:00:15.412 --> 00:00:19.059
-Make new predictions carefully, and watch for leakage.
+00:00:27.492 --> 00:00:29.532
+When was the data collected?
 
-00:00:19.533 --> 00:00:24.005
-You now have a first end-to-end machine learning workflow in Python.
+00:00:29.532 --> 00:00:31.392
+How often is it updated?
 
-00:00:24.005 --> 00:00:32.710
-The next step in a dedicated machine learning course would be deeper work on preprocessing, model selection, validation,
+00:00:31.392 --> 00:00:34.182
+Are you allowed to use it for this purpose?
 
-00:00:32.710 --> 00:00:36.461
-metrics, tuning, and responsible deployment.
+00:00:34.182 --> 00:00:40.527
+Those questions are especially important in machine learning because a model can learn patterns that reflect the
 
-00:00:36.916 --> 00:00:42.833
-This is the final module in the course, so there is not another numbered module after this one.
+00:00:40.527 --> 00:00:44.047
+limitations or biases of the source data.
 
-00:00:42.833 --> 00:00:50.828
-The next step is to bring the full workflow together in your own analytics work: obtain data, prepare it carefully,
-
-00:00:50.828 --> 00:00:58.923
-explore it, summarize it, communicate what you find, and use predictive methods only when they fit the question.
-
-00:00:58.923 --> 00:01:05.928
-The goal is not simply to know individual Python commands, but to be able to choose and connect the right methods for a
-
-00:01:05.928 --> 00:01:07.628
-complete analytical problem.
+00:00:44.047 --> 00:00:50.966
+External data must still go through the same quality and interpretation checks you learned earlier in the course.

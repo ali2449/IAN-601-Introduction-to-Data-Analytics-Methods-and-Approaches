@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.032
+Now we put the classification workflow together.
+
+00:00:03.032 --> 00:00:10.817
+We create X and y, split the data, create a Logistic Regression model, fit it on the training rows,
+
+00:00:10.817 --> 00:00:12.942
+and then predict the test rows.
+
+00:00:12.942 --> 00:00:17.065
+Run the code and compare predicted labels with the actual labels.
+
+00:00:17.717 --> 00:00:22.159
+Remember that the model has not seen the test targets during training.
+
+00:00:22.159 --> 00:00:27.659
+That is why the comparison is meaningful.
+
+00:00:27.659 --> 00:00:35.119
+If we only evaluated the model on its training data, we would be measuring how well it fits known examples rather than
+
+00:00:35.119 --> 00:00:42.874
+how well it generalizes. This train-fit-predict pattern appears across many supervised algorithms.
+
+00:00:42.874 --> 00:00:50.309
+Next semester, you may replace Logistic Regression with a decision tree, random forest, support vector machine,
+
+00:00:50.309 --> 00:00:55.612
+or another classifier, but the surrounding workflow will look very familiar.

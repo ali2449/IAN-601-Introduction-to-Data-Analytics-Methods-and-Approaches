@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.277
+CSV is one of the most common formats for tabular data.
+
+00:00:04.277 --> 00:00:12.522
+In the browser example, the CSV is stored as text so the code can run without downloading a separate file.
+
+00:00:12.522 --> 00:00:18.452
+In VS Code or Jupyter, you would normally pass a file path to read CSV.
+
+00:00:18.902 --> 00:00:22.829
+After loading the data, do not jump directly into modeling.
+
+00:00:22.829 --> 00:00:31.459
+Inspect the Data frame. Check the shape, column names, data types, missing values, and target values.
+
+00:00:31.459 --> 00:00:38.199
+Machine learning workflows often fail because the analyst assumes the input is ready without checking it.
+
+00:00:38.199 --> 00:00:41.129
+Loading data is only the first step.
+
+00:00:41.129 --> 00:00:48.960
+A good modeling workflow treats inspection and validation as part of the pipeline, not as optional preparation.

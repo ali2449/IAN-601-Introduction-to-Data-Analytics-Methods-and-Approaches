@@ -1,31 +1,34 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.407
-Let’s summarize the cleaning workflow.
+00:00:00.000 --> 00:00:09.357
+The interquartile range, or IQR, is one simple statistical method for flagging unusually high or low values.
 
-00:00:02.407 --> 00:00:06.117
-Count missing values before deciding what to do.
+00:00:09.357 --> 00:00:17.367
+First, we calculate Q1, the twenty-fifth percentile, and Q3, the seventy-fifth percentile.
 
-00:00:06.117 --> 00:00:09.572
-Check duplicates before calculating totals.
+00:00:17.367 --> 00:00:21.552
+The IQR is Q3 minus Q1.
 
-00:00:09.572 --> 00:00:14.902
-Verify data types. Standardize categories before grouping.
+00:00:21.552 --> 00:00:27.660
+Then we create lower and upper fences using one point five times the IQR.
 
-00:00:14.902 --> 00:00:19.397
-Flag unusual values instead of automatically deleting them.
+00:00:28.396 --> 00:00:32.973
+Run the code and inspect the values that fall outside those fences.
 
-00:00:19.397 --> 00:00:24.446
-Use EDA to understand the data before formal analysis or modeling.
+00:00:32.973 --> 00:00:35.853
+The important word here is flagged.
 
-00:00:25.115 --> 00:00:29.034
-Good analysis starts with knowing what is actually in the dataset.
+00:00:35.853 --> 00:00:39.918
+The IQR rule does not prove that a value is incorrect.
 
-00:00:29.586 --> 00:00:36.148
-In Module 13, we’ll take the cleaned data and focus on evidence and communication.
+00:00:39.918 --> 00:00:45.418
+It tells us that the value is unusual relative to the middle part of the distribution.
 
-00:00:36.148 --> 00:00:42.418
-You’ll calculate descriptive statistics, examine distributions, compare groups, look at relationships,
+00:00:45.418 --> 00:00:50.668
+This method is useful for screening, but context still matters.
 
-00:00:42.418 --> 00:00:49.827
-discuss uncertainty, and choose visual forms that help explain the findings clearly.
+00:00:50.668 --> 00:00:56.248
+If the flagged value is eleven hundred, the next step might be checking the source record or understanding whether a
+
+00:00:56.248 --> 00:01:00.439
+different type of customer generated that order.

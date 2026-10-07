@@ -1,16 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.537
-A sample mean is an estimate of a larger population quantity, and estimates have uncertainty.
+00:00:00.000 --> 00:00:04.137
+Grouped statistics let us compare categories numerically.
 
-00:00:06.537 --> 00:00:10.887
-The code calculates the sample mean, standard deviation, standard error,
+00:00:04.137 --> 00:00:12.452
+In this example, we calculate count, mean, median, and standard deviation for each region.
 
-00:00:10.887 --> 00:00:18.716
-and then an approximate ninety-five percent interval using one point nine six times the standard error.
+00:00:12.452 --> 00:00:18.945
+Count is important because a group with very few observations can produce an unstable average.
 
-00:00:19.174 --> 00:00:27.646
-The interval gives a range of plausible values around the estimate under the assumptions of this simplified method.
+00:00:19.448 --> 00:00:27.041
+Mean and median describe the center in different ways, while standard deviation tells us about within-group variability.
 
-00:00:27.646 --> 00:00:34.261
-At this stage, focus on the idea: a single sample statistic should not be treated as perfectly precise.
+00:00:27.041 --> 00:00:29.850
+Run the code and compare the regions.
+
+00:00:29.850 --> 00:00:33.636
+Ask whether the mean and median tell a similar story.
+
+00:00:33.636 --> 00:00:39.326
+If they are far apart, the group may contain skewness or unusual values.
+
+00:00:39.326 --> 00:00:45.345
+Also be careful not to make strong population claims from a very small teaching dataset.
+
+00:00:45.345 --> 00:00:49.670
+At this stage, we are practicing descriptive comparison.
+
+00:00:49.670 --> 00:00:53.431
+Formal inference requires additional assumptions and methods.

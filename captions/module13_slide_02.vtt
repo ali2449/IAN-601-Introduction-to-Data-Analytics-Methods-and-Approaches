@@ -1,19 +1,37 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.927
-Before running each example, think about the question being answered.
+00:00:00.000 --> 00:00:04.492
+Module 12 answered the question, can we trust the data?
 
-00:00:03.927 --> 00:00:06.402
-Are we describing a typical value?
+00:00:04.492 --> 00:00:10.307
+Module 13 asks the next question: what does the data tell us?
 
-00:00:06.402 --> 00:00:09.797
-Comparing groups? Looking for a relationship?
+00:00:10.307 --> 00:00:16.192
+Once values are consistently coded and obvious quality problems are addressed,
 
-00:00:09.797 --> 00:00:12.669
-Measuring uncertainty? Choosing a visual?
+00:00:16.192 --> 00:00:20.030
+we can use statistics and charts with much more confidence.
 
-00:00:13.142 --> 00:00:17.024
-Then run the code and explain the result in plain language.
+00:00:20.491 --> 00:00:27.618
+We will move from descriptive summaries into distributions, group comparisons, scatter plots, correlation,
 
-00:00:17.024 --> 00:00:22.806
-That translation from output to interpretation is the core skill in this module.
+00:00:27.618 --> 00:00:32.687
+and a simple introduction to confidence intervals.
+
+00:00:32.687 --> 00:00:36.837
+Statistics and visualization work best together.
+
+00:00:36.837 --> 00:00:40.282
+A summary table gives us exact values.
+
+00:00:40.282 --> 00:00:43.917
+A chart makes patterns easier to see.
+
+00:00:43.917 --> 00:00:51.007
+After this module, Module 14 will introduce machine learning and external data.
+
+00:00:51.007 --> 00:00:58.367
+The ideas here are important preparation because machine learning also depends on understanding distributions,
+
+00:00:58.367 --> 00:01:02.562
+relationships, and variation before fitting a model.

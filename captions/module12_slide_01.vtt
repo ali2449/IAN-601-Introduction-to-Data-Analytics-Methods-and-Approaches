@@ -1,19 +1,37 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.217
-Welcome to Module 12.
+00:00:00.000 --> 00:00:05.352
+Welcome to Module 12, Cleaning and Exploratory Data Analysis.
 
-00:00:02.217 --> 00:00:11.042
-Before we trust an analysis or build a model, we need to understand the quality of the data going into it.
+00:00:05.352 --> 00:00:10.152
+In the previous module, we learned how to build more advanced Pandas workflows.
 
-00:00:11.042 --> 00:00:17.932
-Cleaning and exploratory data analysis help us find missing values, duplicates, incorrect types,
+00:00:10.152 --> 00:00:17.197
+Now we are going to use those tools for one of the most important parts of analytics:
 
-00:00:17.932 --> 00:00:23.174
-inconsistent categories, unusual values, and basic patterns.
+00:00:17.197 --> 00:00:21.442
+deciding whether the data is trustworthy enough to analyze.
 
-00:00:23.901 --> 00:00:26.633
-The goal is not to make data look perfect.
+00:00:21.442 --> 00:00:25.652
+Cleaning is not simply deleting rows that look unusual.
 
-00:00:26.633 --> 00:00:34.031
-The goal is to understand what is present, what is questionable, and what decisions we are making before analysis.
+00:00:25.652 --> 00:00:31.722
+It means understanding the quality of the data, correcting problems when we have a good reason,
+
+00:00:31.722 --> 00:00:33.914
+and documenting what we changed.
+
+00:00:34.491 --> 00:00:39.622
+After cleaning, we move into exploratory data analysis, or EDA.
+
+00:00:39.622 --> 00:00:45.503
+EDA helps us understand what is in the dataset before we make stronger conclusions.
+
+00:00:45.503 --> 00:00:54.912
+We look at missing values, duplicate records, data types, categories, unusual values, and basic patterns.
+
+00:00:54.912 --> 00:00:59.342
+Throughout this module, keep asking two questions: what problem do I see in the data,
+
+00:00:59.342 --> 00:01:05.350
+and what evidence supports the cleaning decision I am making?

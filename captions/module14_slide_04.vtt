@@ -1,16 +1,37 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.737
-Many analytics projects begin with a CSV file.
+00:00:00.000 --> 00:00:06.112
+We begin with a relationship that we already know: y equals two x plus one.
 
-00:00:03.737 --> 00:00:12.437
-In this browser example, the CSV content is stored as text so the lesson can run without uploading a file.
+00:00:06.112 --> 00:00:10.807
+Here, two is the slope and one is the intercept.
 
-00:00:12.437 --> 00:00:19.808
-StringIO makes that text behave like a file, and Pandas read_csv converts it into a DataFrame.
+00:00:10.807 --> 00:00:13.902
+If x is one, y is three.
 
-00:00:20.474 --> 00:00:27.201
-The table has two input columns—hours and practice—and one outcome column called passed.
+00:00:13.902 --> 00:00:15.472
+If x is two, y is five.
 
-00:00:27.201 --> 00:00:33.263
-In a real project, the same read_csv call could point to an actual file path.
+00:00:15.472 --> 00:00:18.657
+If x is three, y is seven.
+
+00:00:18.657 --> 00:00:25.204
+Because the relationship is linear, these points fall on a straight line.
+
+00:00:25.725 --> 00:00:30.422
+Run the Python code and look at both the x and y values and the plot.
+
+00:00:30.422 --> 00:00:33.942
+Then change the slope from two to three and run it again.
+
+00:00:33.942 --> 00:00:38.107
+Notice how the line becomes steeper.
+
+00:00:38.107 --> 00:00:43.492
+Change the intercept from one to five and observe how the line moves upward.
+
+00:00:43.492 --> 00:00:47.912
+This is not machine learning yet because we already know the rule.
+
+00:00:47.912 --> 00:00:53.469
+But it gives us the mathematical structure that a linear model will later try to learn from data.
