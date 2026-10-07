@@ -78,345 +78,825 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
 .ian603-bottombar .audio-player{grid-area:auto!important;grid-column:auto!important;grid-row:auto!important;width:100%!important}
 .ian603-bottombar .nav-left,.ian603-bottombar .nav-right,.ian603-bottombar .bottom-nav-panel{align-self:center!important}
 .topbar>.toolbar,.topbar>.controls,.topbar>.top-controls{margin-left:auto!important}.topbar .ian603-tool{box-shadow:none!important}
-</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-focusflow"><!-- IAN601_UI_SHELL_END --></head>
+</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-focusflow"><!-- IAN601_UI_SHELL_END -->
+<style id="module13-revision-style">
+.module13-title-grid{grid-template-columns:minmax(0,1.12fr) minmax(300px,.78fr)!important;gap:34px!important}
+.module13-hero-lead{font-size:clamp(1.9rem,3.05vw,3.3rem)!important;line-height:1.07!important;letter-spacing:-.045em!important;margin:0 0 16px!important}
+.module13-hero-sub{font-size:clamp(1rem,1.35vw,1.22rem)!important;line-height:1.55!important;margin:0!important;color:var(--ian-muted,var(--muted))}
+.module13-flow{display:grid;gap:10px;padding:24px;border:1px solid var(--ian-border,var(--line));border-radius:22px;background:linear-gradient(145deg,rgba(31,95,155,.08),rgba(79,70,229,.08));text-align:center}
+.module13-flow div{padding:14px 18px;border:1px solid var(--ian-border,var(--line));border-radius:14px;background:var(--ian-surface,var(--panel));display:grid;gap:2px}.module13-flow strong{font-size:1.02rem}.module13-flow small{color:var(--ian-muted,var(--muted));font-weight:650}.module13-flow span{font-size:.78rem;font-weight:850;color:var(--ian-primary,var(--accent));text-transform:uppercase;letter-spacing:.07em}
+.module13-path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}.module13-path>div{border:1px solid var(--ian-border,var(--line));border-radius:16px;padding:18px;background:var(--ian-surface2,var(--panel2))}.module13-path>div.current{border-color:var(--ian-primary,var(--accent));box-shadow:0 0 0 2px color-mix(in srgb,var(--ian-primary,var(--accent)) 18%,transparent)}.module13-path span{font-size:.75rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--ian-primary,var(--accent))}.module13-path h3{margin:5px 0 6px}.module13-path p{margin:0;color:var(--ian-muted,var(--muted))}
+.module13-mini-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}.module13-mini-compare.three{grid-template-columns:repeat(3,minmax(0,1fr))}.module13-mini-compare>div{border:1px solid var(--ian-border,var(--line));border-radius:14px;padding:14px;background:var(--ian-surface2,var(--panel2));display:grid;gap:5px}.module13-mini-compare strong{color:var(--ian-primary,var(--accent))}.module13-mini-compare span{color:var(--ian-muted,var(--muted))}
+.module13-number-demo{display:grid;gap:12px}.module13-number-demo>div{border:1px solid var(--ian-border,var(--line));border-radius:14px;padding:16px;background:var(--ian-surface2,var(--panel2));display:grid;gap:6px}.module13-number-demo small{color:var(--ian-primary,var(--accent));font-weight:850;text-transform:uppercase}.module13-number-demo strong{font-family:"Source Code Pro",monospace}.module13-number-demo span{color:var(--ian-muted,var(--muted))}
+.module13-corr-scale{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.module13-corr-scale span{padding:14px;border:1px solid var(--ian-border,var(--line));border-radius:12px;text-align:center;background:var(--ian-surface2,var(--panel2));font-weight:900}.module13-corr-scale small{font-weight:650;color:var(--ian-muted,var(--muted))}
+.module13-warning{display:grid;gap:9px;border:1px solid var(--ian-border,var(--line));border-radius:16px;padding:18px;background:var(--ian-surface2,var(--panel2))}.module13-warning strong{color:var(--ian-primary,var(--accent));font-size:1.05rem}.module13-warning span{padding:8px 10px;border-left:3px solid var(--ian-primary,var(--accent));background:var(--ian-surface,var(--panel));border-radius:6px}
+.module13-ci{border:1px solid var(--ian-border,var(--line));border-radius:16px;padding:18px;background:var(--ian-surface2,var(--panel2));display:grid;gap:8px;margin:18px 0}.module13-ci strong{font-size:1.25rem;color:var(--ian-primary,var(--accent))}.module13-ci span{color:var(--ian-muted,var(--muted))}
+.module13-chart-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.module13-chart-grid>div{border:1px solid var(--ian-border,var(--line));border-radius:15px;padding:16px;background:var(--ian-surface2,var(--panel2))}.module13-chart-grid h3{margin:0 0 7px;color:var(--ian-primary,var(--accent))}.module13-chart-grid p{margin:0;color:var(--ian-muted,var(--muted))}
+.module13-process{display:grid;gap:8px;margin:18px 0}.module13-process span{padding:10px 12px;border-left:4px solid var(--ian-primary,var(--accent));border-radius:8px;background:var(--ian-surface2,var(--panel2));font-weight:750}
+.module13-interpret-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.module13-interpret-grid>div{border:1px solid var(--ian-border,var(--line));border-radius:15px;padding:16px;background:var(--ian-surface2,var(--panel2))}.module13-interpret-grid h3{margin:0 0 7px;color:var(--ian-primary,var(--accent))}.module13-interpret-grid p{margin:0}.module13-next{margin-top:18px!important}
+.output-wrap{background:var(--terminal)}.plot-output{padding:0 14px 14px;display:grid;gap:10px}.plot-output:empty{display:none}.plot-output img{display:block;max-width:100%;max-height:300px;margin:0 auto;border-radius:10px;background:#fff;border:1px solid var(--line)}
+@media(max-width:900px){.module13-title-grid,.module13-path,.module13-mini-compare,.module13-mini-compare.three,.module13-chart-grid,.module13-interpret-grid{grid-template-columns:1fr!important}.module13-corr-scale{grid-template-columns:1fr}}
+@media(max-height:850px) and (min-width:901px){.slide{padding:28px!important}.slide-header{margin-bottom:12px!important}.module13-hero-lead{font-size:clamp(1.75rem,2.7vw,2.9rem)!important}.module13-flow{padding:18px}.code-input{min-height:150px}.monaco-host{height:190px}.plot-output img{max-height:220px}}
+</style>
+</head>
 <body>
 <div class="deck">
   <header class="topbar">
     <div class="brand"><span class="brand-mark">13</span><span>IAN 601 · Module 13</span></div>
     <div class="top-controls"><div id="runtime" class="runtime"><span class="runtime-dot"></span><span id="runtime-text">Python not loaded yet</span></div><button class="btn ghost" id="theme-btn" type="button"><i class="fa-solid fa-moon"></i> Theme</button><button class="btn ghost" id="restart-python" type="button">Reset Python</button><button class="ian603-tool" id="ian-progress-btn" type="button">Progress <span id="ian-progress-pct">0%</span></button><button class="ian603-tool" id="ian-fullscreen-btn" type="button">Fullscreen</button><button class="ian603-tool primary" id="run-slide-btn" type="button">Run slide ▶</button><button class="ian603-tool" id="ian-course-modules-btn" type="button">☰ Course Modules</button></div>
   </header>
-  <main class="stage" id="stage"><section class="slide" data-title="Statistics &amp; Visualization">
+  <main class="stage" id="stage">
+
+<section class="slide" data-title="Statistics &amp;amp; Visualization">
   <div class="slide-inner">
     <header class="slide-header"><div><span class="kicker">Module 13 · Interactive slide lesson</span><h2>Statistics &amp; Visualization</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
-    <div class="slide-content"><div class="title-grid">
-               <div><p class="big-lead">Statistics and visualization help summarize variation, compare groups, describe relationships, and communicate findings clearly.</p><div class="pill-row"><span>Self-paced slides</span><span>Executable Python cells</span><span>VS Code-style editor</span><span>Separate study notes</span></div>
-               <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div></div>
-               <div><div class="chart-visual"><div style="height:34%"></div><div style="height:58%"></div><div style="height:82%"></div><div style="height:48%"></div><span>summary → visual → interpretation</span></div></div>
-             </div><div class="callout"><strong>Goal:</strong> Calculate descriptive statistics, compare groups, understand distributions, build text-based visuals, and connect evidence to interpretation.</div></div>
-    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>IAN 601 · Module 13 · Slide 1</span></footer>
+    <div class="slide-content">
+<div class="title-grid module13-title-grid">
+  <div>
+    <p class="big-lead module13-hero-lead">Use statistics and visualizations together to describe data, compare groups, and investigate relationships clearly.</p>
+    <p class="lead module13-hero-sub">Statistics summarize what the data says numerically. Visualizations help you see shape, spread, differences, and patterns that a single number can hide.</p>
+    <div class="pill-row"><span>Describe</span><span>Compare</span><span>Visualize</span><span>Relate</span><span>Interpret</span></div>
+  </div>
+  <div class="module13-flow">
+    <div><strong>Clean data</strong><small>trust the inputs</small></div><span>summarize</span>
+    <div><strong>Statistics</strong><small>center, spread, groups</small></div><span>visualize</span>
+    <div><strong>Evidence</strong><small>patterns and relationships</small></div>
+  </div>
+</div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 1</span></footer>
   </div>
 </section>
-<section class="slide" data-title="How to use this page">
+
+<section class="slide" data-title="From Cleaning &amp;amp; EDA to Statistics &amp;amp; Visualization">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Self-paced workflow</span><h2>How to use this page</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
-    <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Read</h3><p>Start with the main idea on the slide.</p></div><div class="timeline-item"><span>2</span><h3>Run</h3><p>Execute the Python code in the browser.</p></div><div class="timeline-item"><span>3</span><h3>Compare</h3><p>Connect the output to the concept.</p></div><div class="timeline-item"><span>4</span><h3>Edit</h3><p>Change one value, variable, or condition.</p></div><div class="timeline-item"><span>5</span><h3>Reuse</h3><p>Apply the pattern to a new example.</p></div></div><div class="callout secondary">All slide points are visible. Use Next, Previous, arrow keys, or the slide menu.</div></div>
-    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>IAN 601 · Module 13 · Slide 2</span></footer>
+    <header class="slide-header"><div><span class="kicker">Build on Module 12</span><h2>From Cleaning &amp; EDA to Statistics &amp; Visualization</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<p class="lead">Module 12 focused on making data trustworthy. Module 13 asks what the cleaned data is telling us.</p>
+<div class="module13-path">
+  <div><span>Module 12</span><h3>Cleaning &amp; EDA</h3><p>Audit, clean, validate, and explore data quality.</p></div>
+  <div class="current"><span>Module 13</span><h3>Statistics &amp; Visualization</h3><p>Describe distributions, compare groups, and examine relationships.</p></div>
+  <div><span>Module 14</span><h3>Machine Learning &amp; External Data</h3><p>Use prepared data in simple predictive workflows and connect external sources.</p></div>
+</div>
+<div class="callout secondary"><strong>Main idea:</strong> a statistic and a chart should support the same analytical question from different angles.</div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 2</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Learning path for Module 13">
+
+<section class="slide" data-title="Our working dataset">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Roadmap</span><h2>Learning path for Module 13</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
-    <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Describe</h3><p>Mean, median, spread.</p></div><div class="timeline-item"><span>2</span><h3>Distribution</h3><p>See shape and frequency.</p></div><div class="timeline-item"><span>3</span><h3>Compare</h3><p>Summarize groups.</p></div><div class="timeline-item"><span>4</span><h3>Relationship</h3><p>Correlation and association.</p></div><div class="timeline-item"><span>5</span><h3>Uncertainty</h3><p>Sample estimates vary.</p></div><div class="timeline-item"><span>6</span><h3>Communicate</h3><p>Choose visual forms carefully.</p></div></div></div>
-    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>IAN 601 · Module 13 · Slide 3</span></footer>
+    <header class="slide-header"><div><span class="kicker">One small dataset for the whole module</span><h2>Our working dataset</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">We will use a small cleaned order dataset so we can focus on statistical thinking rather than data preparation.</p>
+    <ul class="clean-list"><li><strong>region</strong> and <strong>channel</strong> are categorical variables.</li><li><strong>amount</strong> is a numeric variable.</li><li><strong>satisfaction</strong> is an ordinal-style score from 1 to 5.</li></ul>
+  </div>
+  <div class="table-wrap">
+    <table><thead><tr><th>region</th><th>channel</th><th>amount</th><th>satisfaction</th></tr></thead>
+    <tbody><tr><td>North</td><td>Web</td><td>45</td><td>4</td></tr><tr><td>North</td><td>Store</td><td>72</td><td>5</td></tr><tr><td>South</td><td>Web</td><td>58</td><td>3</td></tr><tr><td>South</td><td>Store</td><td>120</td><td>5</td></tr><tr><td>West</td><td>Web</td><td>160</td><td>5</td></tr></tbody></table>
+  </div>
+</div>
+<div class="callout"><strong>Before calculating anything:</strong> identify which variables are numeric and which are categorical. That decision affects both the statistics and the charts you should use.</div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 3</span></footer>
   </div>
 </section>
+
 <section class="slide" data-title="Descriptive statistics">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Summary numbers</span><h2>Descriptive statistics</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Descriptive statistics summarize the center and spread of values.</p></div><div><div class="code-cell" data-filename="module13_descriptive.py">
+    <header class="slide-header"><div><span class="kicker">Start with center and spread</span><h2>Descriptive statistics</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Descriptive statistics summarize the basic shape of a numeric variable.</p>
+  <ul class="clean-list"><li><strong>Mean</strong> is the arithmetic average.</li><li><strong>Median</strong> is the middle value.</li><li><strong>Standard deviation</strong> measures spread.</li><li><strong>Quartiles</strong> divide the data into four parts.</li></ul>
+  <div class="callout secondary"><strong>Do not stop at one number.</strong> Mean, median, and spread answer different questions.</div>
+</div><div>
+<div class="code-cell" data-filename="module13_describe.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Calculate summary statistics</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module13_descriptive.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Describe order amounts</h3><p>Compare the mean and median, then inspect the quartiles.</p></div>
+    <span class="file-pill">module13_describe.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_descriptive.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_describe.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
-scores = pd.Series([82, 91, 76, 88, 95, 79, 84])
+orders = pd.DataFrame({
+    "region": ["North", "North", "North", "South", "South", "South", "West", "West", "West", "West"],
+    "channel": ["Web", "Store", "Web", "Web", "Store", "Email", "Web", "Store", "Email", "Web"],
+    "amount": [45, 72, 65, 58, 120, 95, 88, 140, 110, 160],
+    "satisfaction": [4, 5, 4, 3, 5, 4, 4, 5, 3, 5]
+})
 
-print(&quot;Mean:&quot;, round(scores.mean(), 2))
-print(&quot;Median:&quot;, scores.median())
-print(&quot;Minimum:&quot;, scores.min())
-print(&quot;Maximum:&quot;, scores.max())
-print(&quot;Standard deviation:&quot;, round(scores.std(), 2))</textarea>
+print(orders["amount"].describe())
+print("\nMean:", orders["amount"].mean())
+print("Median:", orders["amount"].median())
+print("Std. dev.:", round(orders["amount"].std(), 2))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>IAN 601 · Module 13 · Slide 4</span></footer>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 4</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Distribution with bins">
+
+<section class="slide" data-title="Mean versus median">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Frequency</span><h2>Distribution with bins</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A distribution shows how often values fall into ranges.</p></div><div><div class="code-cell" data-filename="module13_histogram.py">
+    <header class="slide-header"><div><span class="kicker">Extreme values can pull the mean</span><h2>Mean versus median</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">The mean uses every value, so an unusually large or small observation can move it. The median depends on the middle position and is usually more resistant to extremes.</p>
+    <div class="module13-mini-compare"><div><strong>Mean</strong><span>Useful when values are fairly balanced.</span></div><div><strong>Median</strong><span>Often useful for skewed data or strong outliers.</span></div></div>
+  </div>
+  <div class="module13-number-demo"><div><small>Original</small><strong>20, 25, 30, 35, 40</strong><span>Mean = 30 · Median = 30</span></div><div><small>Add one extreme value</small><strong>20, 25, 30, 35, 400</strong><span>Mean = 102 · Median = 30</span></div></div>
+</div>
+<div class="callout secondary"><strong>Interpretation:</strong> the median can sometimes represent a typical observation better than the mean when the distribution is strongly skewed.</div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 5</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Visualize a distribution with a histogram">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">See the shape, not only the average</span><h2>Visualize a distribution with a histogram</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A histogram groups numeric values into bins and shows how many observations fall into each range.</p>
+  <ul class="clean-list"><li>Look for symmetry or skew.</li><li>Look for gaps or clusters.</li><li>Look for unusually distant values.</li><li>Remember that changing the number of bins can change the appearance.</li></ul>
+  <div class="callout"><strong>A histogram answers:</strong> how are the numeric values distributed?</div>
+</div><div>
+<div class="code-cell" data-filename="module13_histogram.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Create a text histogram</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Plot an amount histogram</h3><p>Run the code, then try changing bins from 5 to 8.</p></div>
     <span class="file-pill">module13_histogram.py</span>
   </div>
   <div class="editor-shell">
     <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_histogram.py</span></div>
-    <textarea class="code-input" spellcheck="false">values = [42, 48, 51, 55, 57, 62, 66, 71, 78, 83]
-bins = {&quot;40-49&quot;: 0, &quot;50-59&quot;: 0, &quot;60-69&quot;: 0, &quot;70-79&quot;: 0, &quot;80-89&quot;: 0}
+    <textarea class="code-input" spellcheck="false">import pandas as pd
 
-for value in values:
-    if value &lt; 50:
-        bins[&quot;40-49&quot;] += 1
-    elif value &lt; 60:
-        bins[&quot;50-59&quot;] += 1
-    elif value &lt; 70:
-        bins[&quot;60-69&quot;] += 1
-    elif value &lt; 80:
-        bins[&quot;70-79&quot;] += 1
-    else:
-        bins[&quot;80-89&quot;] += 1
+orders = pd.DataFrame({
+    "region": ["North", "North", "North", "South", "South", "South", "West", "West", "West", "West"],
+    "channel": ["Web", "Store", "Web", "Web", "Store", "Email", "Web", "Store", "Email", "Web"],
+    "amount": [45, 72, 65, 58, 120, 95, 88, 140, 110, 160],
+    "satisfaction": [4, 5, 4, 3, 5, 4, 4, 5, 3, 5]
+})
+import matplotlib.pyplot as plt
 
-for label, count in bins.items():
-    print(label, &quot;|&quot;, &quot;#&quot; * count)</textarea>
+plt.figure(figsize=(6, 3.5))
+plt.hist(orders["amount"], bins=5, edgecolor="black")
+plt.xlabel("Order amount")
+plt.ylabel("Frequency")
+plt.title("Distribution of Order Amounts")
+plt.tight_layout()
+plt.show()</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>IAN 601 · Module 13 · Slide 5</span></footer>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 6</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Compare groups">
+
+<section class="slide" data-title="Boxplots summarize distributions">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Grouped statistics</span><h2>Compare groups</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Group summaries help compare categories.</p></div><div><div class="code-cell" data-filename="module13_group_compare.py">
+    <header class="slide-header"><div><span class="kicker">Compare center, spread, and possible outliers</span><h2>Boxplots summarize distributions</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A boxplot compresses a distribution into a small visual summary using the median, quartiles, and whiskers.</p>
+  <ul class="clean-list"><li>The line inside the box is the median.</li><li>The box covers the interquartile range.</li><li>Whiskers show the typical range beyond the box.</li><li>Points beyond the whiskers may be flagged as outliers.</li></ul>
+  <div class="callout secondary"><strong>Boxplots are especially useful for comparing the same numeric variable across groups.</strong></div>
+</div><div>
+<div class="code-cell" data-filename="module13_boxplot.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Summarize by group</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Compare amount by region</h3><p>Look for differences in center and spread, not just the highest value.</p></div>
+    <span class="file-pill">module13_boxplot.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_boxplot.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+orders = pd.DataFrame({
+    "region": ["North", "North", "North", "South", "South", "South", "West", "West", "West", "West"],
+    "channel": ["Web", "Store", "Web", "Web", "Store", "Email", "Web", "Store", "Email", "Web"],
+    "amount": [45, 72, 65, 58, 120, 95, 88, 140, 110, 160],
+    "satisfaction": [4, 5, 4, 3, 5, 4, 4, 5, 3, 5]
+})
+import matplotlib.pyplot as plt
+
+groups = [
+    orders.loc[orders["region"] == region, "amount"]
+    for region in ["North", "South", "West"]
+]
+
+plt.figure(figsize=(6, 3.5))
+plt.boxplot(groups, labels=["North", "South", "West"])
+plt.ylabel("Order amount")
+plt.title("Order Amount by Region")
+plt.tight_layout()
+plt.show()</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 7</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Compare groups with summary statistics">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Numbers and visuals should agree</span><h2>Compare groups with summary statistics</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Grouped summaries help us compare categories numerically before we make any statistical claim.</p>
+  <div class="module13-mini-compare three"><div><strong>Count</strong><span>How much data is in each group?</span></div><div><strong>Mean / median</strong><span>Where is the center?</span></div><div><strong>Std. dev.</strong><span>How variable is the group?</span></div></div>
+  <div class="callout"><strong>Small groups need caution.</strong> A large mean difference based on only two or three observations may not be stable.</div>
+</div><div>
+<div class="code-cell" data-filename="module13_group_compare.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Summarize amount by region</h3><p>Compare count, mean, median, and standard deviation.</p></div>
     <span class="file-pill">module13_group_compare.py</span>
   </div>
   <div class="editor-shell">
     <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_group_compare.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
-data = pd.DataFrame({
-    &quot;group&quot;: [&quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;],
-    &quot;score&quot;: [82, 88, 91, 76, 79, 84]
+orders = pd.DataFrame({
+    "region": ["North", "North", "North", "South", "South", "South", "West", "West", "West", "West"],
+    "channel": ["Web", "Store", "Web", "Web", "Store", "Email", "Web", "Store", "Email", "Web"],
+    "amount": [45, 72, 65, 58, 120, 95, 88, 140, 110, 160],
+    "satisfaction": [4, 5, 4, 3, 5, 4, 4, 5, 3, 5]
 })
 
-summary = data.groupby(&quot;group&quot;)[&quot;score&quot;].agg([&quot;count&quot;, &quot;mean&quot;, &quot;median&quot;, &quot;std&quot;])
-print(summary.round(2))</textarea>
+summary = (
+    orders
+    .groupby("region")["amount"]
+    .agg(["count", "mean", "median", "std"])
+    .round(2)
+)
+
+print(summary)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>IAN 601 · Module 13 · Slide 6</span></footer>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 8</span></footer>
   </div>
 </section>
+
+<section class="slide" data-title="Bar charts for categorical comparisons">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Compare categories, not distributions</span><h2>Bar charts for categorical comparisons</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A bar chart is a good choice for category counts or category-level summary values.</p>
+  <ul class="clean-list"><li>Use bars for discrete categories.</li><li>Start the quantitative axis at zero when bar length represents magnitude.</li><li>Keep labels readable.</li><li>Avoid unnecessary 3D effects.</li></ul>
+  <div class="callout secondary"><strong>Do not confuse a bar chart with a histogram.</strong> Histograms display numeric distributions; bar charts display categories.</div>
+</div><div>
+<div class="code-cell" data-filename="module13_bar.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Plot mean order amount by region</h3><p>The height of each bar represents a regional summary, not individual orders.</p></div>
+    <span class="file-pill">module13_bar.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_bar.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+orders = pd.DataFrame({
+    "region": ["North", "North", "North", "South", "South", "South", "West", "West", "West", "West"],
+    "channel": ["Web", "Store", "Web", "Web", "Store", "Email", "Web", "Store", "Email", "Web"],
+    "amount": [45, 72, 65, 58, 120, 95, 88, 140, 110, 160],
+    "satisfaction": [4, 5, 4, 3, 5, 4, 4, 5, 3, 5]
+})
+import matplotlib.pyplot as plt
+
+regional_mean = (
+    orders.groupby("region")["amount"].mean().sort_values()
+)
+
+plt.figure(figsize=(6, 3.5))
+regional_mean.plot(kind="bar")
+plt.ylabel("Mean order amount")
+plt.title("Average Order Amount by Region")
+plt.xticks(rotation=0)
+plt.tight_layout()
+plt.show()</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 9</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Scatter plots for numeric relationships">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Look for direction, form, and unusual points</span><h2>Scatter plots for numeric relationships</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A scatter plot is useful when both variables are numeric and you want to inspect how they move together.</p>
+  <ul class="clean-list"><li><strong>Direction:</strong> positive, negative, or no clear direction</li><li><strong>Form:</strong> linear or curved</li><li><strong>Strength:</strong> tight or widely scattered</li><li><strong>Outliers:</strong> unusual points</li></ul>
+  <div class="callout"><strong>Visual inspection comes before correlation.</strong> A single correlation value can hide nonlinear patterns or influential points.</div>
+</div><div>
+<div class="code-cell" data-filename="module13_scatter.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Plot amount versus satisfaction</h3><p>Look at the pattern before calculating correlation.</p></div>
+    <span class="file-pill">module13_scatter.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_scatter.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+orders = pd.DataFrame({
+    "region": ["North", "North", "North", "South", "South", "South", "West", "West", "West", "West"],
+    "channel": ["Web", "Store", "Web", "Web", "Store", "Email", "Web", "Store", "Email", "Web"],
+    "amount": [45, 72, 65, 58, 120, 95, 88, 140, 110, 160],
+    "satisfaction": [4, 5, 4, 3, 5, 4, 4, 5, 3, 5]
+})
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(6, 3.5))
+plt.scatter(orders["amount"], orders["satisfaction"])
+plt.xlabel("Order amount")
+plt.ylabel("Satisfaction")
+plt.title("Amount vs Satisfaction")
+plt.tight_layout()
+plt.show()</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 10</span></footer>
+  </div>
+</section>
+
 <section class="slide" data-title="Correlation">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Relationship</span><h2>Correlation</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Correlation measures the strength and direction of a linear relationship. It does not prove causation.</p></div><div><div class="code-cell" data-filename="module13_correlation.py">
+    <header class="slide-header"><div><span class="kicker">Measure linear association</span><h2>Correlation</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Pearson correlation ranges from minus one to plus one and summarizes the direction and strength of a linear relationship between two numeric variables.</p>
+  <div class="module13-corr-scale"><span>-1<br><small>strong negative</small></span><span>0<br><small>little linear relation</small></span><span>+1<br><small>strong positive</small></span></div>
+  <div class="callout secondary"><strong>Correlation is not causation.</strong> Two variables can move together because of a third factor, selection effects, or chance.</div>
+</div><div>
+<div class="code-cell" data-filename="module13_correlation.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Calculate correlation</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Calculate a correlation matrix</h3><p>Compare the numeric value with what you saw in the scatter plot.</p></div>
     <span class="file-pill">module13_correlation.py</span>
   </div>
   <div class="editor-shell">
     <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_correlation.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
-data = pd.DataFrame({
-    &quot;hours_studied&quot;: [1, 2, 3, 4, 5, 6],
-    &quot;score&quot;: [60, 65, 72, 78, 85, 88]
+orders = pd.DataFrame({
+    "region": ["North", "North", "North", "South", "South", "South", "West", "West", "West", "West"],
+    "channel": ["Web", "Store", "Web", "Web", "Store", "Email", "Web", "Store", "Email", "Web"],
+    "amount": [45, 72, 65, 58, 120, 95, 88, 140, 110, 160],
+    "satisfaction": [4, 5, 4, 3, 5, 4, 4, 5, 3, 5]
 })
 
-correlation = data[&quot;hours_studied&quot;].corr(data[&quot;score&quot;])
-print(&quot;Correlation:&quot;, round(correlation, 3))</textarea>
+corr = orders[["amount", "satisfaction"]].corr()
+
+print(corr)
+print("\nAmount/satisfaction correlation:",
+      round(corr.loc["amount", "satisfaction"], 3))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>IAN 601 · Module 13 · Slide 7</span></footer>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 11</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Simple confidence interval idea">
+
+<section class="slide" data-title="Correlation can be misleading">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Uncertainty</span><h2>Simple confidence interval idea</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A sample mean is an estimate. A confidence interval communicates uncertainty around the estimate.</p></div><div><div class="code-cell" data-filename="module13_interval.py">
+    <header class="slide-header"><div><span class="kicker">Always examine the data visually</span><h2>Correlation can be misleading</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">A correlation coefficient describes linear association. It does not tell the entire story.</p>
+    <ul class="clean-list"><li>A curved relationship may have a low linear correlation.</li><li>One extreme point can strongly change the coefficient.</li><li>Subgroups can create or hide a pattern.</li><li>Restricted ranges can weaken an apparent relationship.</li></ul>
+  </div>
+  <div class="module13-warning"><strong>Better workflow</strong><span>1. Plot the variables</span><span>2. Inspect outliers and groups</span><span>3. Calculate correlation</span><span>4. Interpret in context</span></div>
+</div>
+<div class="callout"><strong>Use correlation as one piece of evidence, not as a complete explanation.</strong></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 12</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="A simple confidence interval idea">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Estimate with uncertainty</span><h2>A simple confidence interval idea</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A sample mean is an estimate. A confidence interval adds a range that reflects uncertainty around that estimate.</p>
+  <div class="module13-ci"><strong>estimate ± margin of error</strong><span>sample mean → plausible range for the population mean under the method's assumptions</span></div>
+  <div class="callout secondary"><strong>For this introductory example:</strong> we use a simple normal-based interval to demonstrate the idea. More advanced courses examine assumptions and methods in greater detail.</div>
+</div><div>
+<div class="code-cell" data-filename="module13_ci.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Approximate interval for a mean</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module13_interval.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Compute a simple 95% interval</h3><p>Focus on the interpretation, not only the formula.</p></div>
+    <span class="file-pill">module13_ci.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_interval.py</span></div>
-    <textarea class="code-input" spellcheck="false">import math
-import statistics as stats
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_ci.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
 
-sample = [82, 88, 91, 76, 79, 84, 90, 86]
-mean = stats.mean(sample)
-sd = stats.stdev(sample)
-n = len(sample)
-standard_error = sd / math.sqrt(n)
-margin = 1.96 * standard_error
+orders = pd.DataFrame({
+    "region": ["North", "North", "North", "South", "South", "South", "West", "West", "West", "West"],
+    "channel": ["Web", "Store", "Web", "Web", "Store", "Email", "Web", "Store", "Email", "Web"],
+    "amount": [45, 72, 65, 58, 120, 95, 88, 140, 110, 160],
+    "satisfaction": [4, 5, 4, 3, 5, 4, 4, 5, 3, 5]
+})
+import math
 
-print(&quot;Mean:&quot;, round(mean, 2))
-print(&quot;Approximate 95% interval:&quot;, round(mean - margin, 2), &quot;to&quot;, round(mean + margin, 2))</textarea>
+x = orders["amount"]
+mean = x.mean()
+se = x.std(ddof=1) / math.sqrt(len(x))
+margin = 1.96 * se
+
+lower = mean - margin
+upper = mean + margin
+
+print("Sample mean:", round(mean, 2))
+print("95% interval:",
+      round(lower, 2), "to", round(upper, 2))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>IAN 601 · Module 13 · Slide 8</span></footer>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 13</span></footer>
   </div>
 </section>
+
 <section class="slide" data-title="Choose the right visual">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Communication</span><h2>Choose the right visual</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
-    <div class="slide-content"><div class="summary-grid"><div><h3>Bar chart</h3><p>Compare categories.</p></div><div><h3>Line chart</h3><p>Show change over time.</p></div><div><h3>Histogram</h3><p>Show distribution shape.</p></div><div><h3>Box plot</h3><p>Compare spread across groups.</p></div><div><h3>Scatter plot</h3><p>Show relationship between two numeric variables.</p></div><div><h3>Table</h3><p>Show exact values.</p></div></div></div>
-    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>IAN 601 · Module 13 · Slide 9</span></footer>
+    <header class="slide-header"><div><span class="kicker">Match the chart to the question</span><h2>Choose the right visual</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="module13-chart-grid">
+  <div><h3>Histogram</h3><p><strong>Question:</strong> What does one numeric distribution look like?</p></div>
+  <div><h3>Boxplot</h3><p><strong>Question:</strong> How do numeric distributions compare across groups?</p></div>
+  <div><h3>Bar chart</h3><p><strong>Question:</strong> How do categories compare by count or summary value?</p></div>
+  <div><h3>Scatter plot</h3><p><strong>Question:</strong> How are two numeric variables related?</p></div>
+  <div><h3>Line chart</h3><p><strong>Question:</strong> How does a measure change over ordered time?</p></div>
+  <div><h3>Table</h3><p><strong>Question:</strong> Do readers need exact values more than a visual pattern?</p></div>
+</div>
+<div class="callout secondary"><strong>Good visualization starts with the question, not with the chart library.</strong></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 14</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Text-based bar chart">
+
+<section class="slide" data-title="Make charts easier to read">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Visual logic</span><h2>Text-based bar chart</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Even without a plotting library, a text chart can show the logic of visual comparison.</p></div><div><div class="code-cell" data-filename="module13_text_bars.py">
+    <header class="slide-header"><div><span class="kicker">Titles, labels, scales, and clutter matter</span><h2>Make charts easier to read</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">A chart can be technically correct and still communicate poorly.</p>
+    <ul class="clean-list"><li>Use a title that tells readers what the chart represents.</li><li>Label axes with meaningful variable names and units.</li><li>Use readable category labels.</li><li>Remove decoration that does not help interpretation.</li><li>Use consistent scales when comparing charts.</li></ul>
+  </div>
+  <div class="module13-warning"><strong>Avoid</strong><span>3D bars that distort length</span><span>truncated axes that exaggerate differences</span><span>too many categories in one figure</span><span>unexplained colors or abbreviations</span></div>
+</div>
+<div class="callout"><strong>Visualization is part of analysis.</strong> Design choices can change what a reader notices and how large a difference appears.</div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 15</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Line charts for time trends">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Use ordered time on the horizontal axis</span><h2>Line charts for time trends</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A line chart connects measurements across ordered time and makes trend direction easier to see.</p>
+  <ul class="clean-list"><li>Sort the data by date first.</li><li>Use regular time intervals when possible.</li><li>Do not connect unrelated categories with a line.</li></ul>
+  <div class="callout secondary"><strong>Typical uses:</strong> daily visits, monthly sales, weekly website traffic, or yearly enrollment.</div>
+</div><div>
+<div class="code-cell" data-filename="module13_line.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Print a small bar chart</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module13_text_bars.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Plot a simple time trend</h3><p>The line is meaningful because dates have a natural order.</p></div>
+    <span class="file-pill">module13_line.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_text_bars.py</span></div>
-    <textarea class="code-input" spellcheck="false">channel_counts = {&quot;web&quot;: 12, &quot;email&quot;: 7, &quot;store&quot;: 4}
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_line.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+import matplotlib.pyplot as plt
 
-for channel, count in channel_counts.items():
-    bar = &quot;█&quot; * count
-    print(f&quot;{channel:&gt;6} | {bar} {count}&quot;)</textarea>
+daily = pd.DataFrame({
+    "date": pd.date_range("2026-01-01", periods=7),
+    "sales": [90, 105, 98, 130, 125, 150, 145]
+})
+
+plt.figure(figsize=(6, 3.5))
+plt.plot(daily["date"], daily["sales"], marker="o")
+plt.xlabel("Date")
+plt.ylabel("Sales")
+plt.title("Daily Sales Trend")
+plt.xticks(rotation=30)
+plt.tight_layout()
+plt.show()</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>IAN 601 · Module 13 · Slide 10</span></footer>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 16</span></footer>
   </div>
 </section>
+
 <section class="slide" data-title="Mini statistics report">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Applied summary</span><h2>Mini statistics report</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A short report combines data summaries with a plain-language interpretation.</p></div><div><div class="code-cell" data-filename="module13_report.py">
+    <header class="slide-header"><div><span class="kicker">Combine numbers and visuals</span><h2>Mini statistics report</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A useful report combines descriptive statistics with a chart and a short interpretation.</p>
+  <div class="module13-process"><span>1. State the question</span><span>2. Calculate a summary</span><span>3. Create the matching chart</span><span>4. Describe the pattern</span><span>5. Note limitations</span></div>
+  <div class="callout"><strong>Example question:</strong> How does order amount differ across regions?</div>
+</div><div>
+<div class="code-cell" data-filename="module13_report.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Create a report sentence</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Create a regional summary and chart</h3><p>Use the printed table and chart together when interpreting the result.</p></div>
     <span class="file-pill">module13_report.py</span>
   </div>
   <div class="editor-shell">
     <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_report.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
-scores = pd.Series([82, 91, 76, 88, 95, 79, 84])
-mean = scores.mean()
-median = scores.median()
-spread = scores.max() - scores.min()
+orders = pd.DataFrame({
+    "region": ["North", "North", "North", "South", "South", "South", "West", "West", "West", "West"],
+    "channel": ["Web", "Store", "Web", "Web", "Store", "Email", "Web", "Store", "Email", "Web"],
+    "amount": [45, 72, 65, 58, 120, 95, 88, 140, 110, 160],
+    "satisfaction": [4, 5, 4, 3, 5, 4, 4, 5, 3, 5]
+})
+import matplotlib.pyplot as plt
 
-print(f&quot;The average score was {mean:.1f}, with a median of {median:.1f}.&quot;)
-print(f&quot;Scores ranged from {scores.min()} to {scores.max()}, a spread of {spread} points.&quot;)</textarea>
+summary = (
+    orders.groupby("region")["amount"]
+    .agg(["count", "mean", "median"])
+    .round(2)
+)
+
+print(summary)
+
+plt.figure(figsize=(6, 3.5))
+orders.boxplot(column="amount", by="region")
+plt.suptitle("")
+plt.title("Order Amount by Region")
+plt.xlabel("Region")
+plt.ylabel("Order amount")
+plt.tight_layout()
+plt.show()</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>IAN 601 · Module 13 · Slide 11</span></footer>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 17</span></footer>
   </div>
 </section>
+
+<section class="slide" data-title="Interpret carefully">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Describe evidence without overclaiming</span><h2>Interpret carefully</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="module13-interpret-grid">
+  <div><h3>Good wording</h3><p>“West has the highest mean order amount in this sample.”</p></div>
+  <div><h3>Too strong</h3><p>“West customers always spend more.”</p></div>
+  <div><h3>Good wording</h3><p>“The sample shows a positive association between these variables.”</p></div>
+  <div><h3>Too strong</h3><p>“One variable causes the other.”</p></div>
+</div>
+<div class="callout secondary"><strong>Keep the claim at the same level as the evidence.</strong> Descriptive statistics describe the sample. Causal conclusions require much stronger study designs and assumptions.</div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 18</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Practice challenge">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Build a small statistical story</span><h2>Practice challenge</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Use the starter data to create a short analysis without a completed solution.</p>
+  <ol class="clean-list"><li>Describe the <code>amount</code> column.</li><li>Compare mean and median.</li><li>Create a histogram of <code>amount</code>.</li><li>Summarize amount by region.</li><li>Create one comparison chart.</li><li>Create a scatter plot for amount and satisfaction.</li><li>Calculate their correlation.</li><li>Write three careful interpretation sentences.</li></ol>
+</div><div>
+<div class="code-cell" data-filename="module13_practice.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Complete the analysis</h3><p>Build the solution step by step and explain what each output tells you.</p></div>
+    <span class="file-pill">module13_practice.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module13_practice.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+orders = pd.DataFrame({
+    "region": ["North", "North", "North", "South", "South", "South", "West", "West", "West", "West"],
+    "channel": ["Web", "Store", "Web", "Web", "Store", "Email", "Web", "Store", "Email", "Web"],
+    "amount": [45, 72, 65, 58, 120, 95, 88, 140, 110, 160],
+    "satisfaction": [4, 5, 4, 3, 5, 4, 4, 5, 3, 5]
+})
+
+# 1. Descriptive statistics for amount.
+
+# 2. Compare mean and median.
+
+# 3. Create a histogram.
+
+# 4. Summarize amount by region.
+
+# 5. Create a group comparison chart.
+
+# 6. Plot amount versus satisfaction.
+
+# 7. Calculate correlation.
+
+# 8. Write your interpretation in your notes.
+</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 19</span></footer>
+  </div>
+</section>
+
 <section class="slide" data-title="Module 13 wrap-up">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">What you can now do</span><h2>Module 13 wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
-    <div class="slide-content"><div class="summary-grid"><div><h3>Center</h3><p>Use mean and median.</p></div><div><h3>Spread</h3><p>Use range and standard deviation.</p></div><div><h3>Distribution</h3><p>Describe shape with frequencies.</p></div><div><h3>Groups</h3><p>Compare category summaries.</p></div><div><h3>Relationships</h3><p>Use correlation carefully.</p></div><div><h3>Communication</h3><p>Select visuals for the question.</p></div></div><div class="callout success">You can now summarize data and communicate evidence more clearly.</div></div>
-    <footer class="slide-footer"><span>Statistics &amp; Visualization · Evidence and Communication</span><span>IAN 601 · Module 13 · Slide 12</span></footer>
+    <header class="slide-header"><div><span class="kicker">Use numbers and visuals together</span><h2>Module 13 wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 13</div></header>
+    <div class="slide-content">
+<div class="summary-grid">
+  <div><h3>Describe</h3><p>Use mean, median, standard deviation, quartiles, and counts to summarize the sample.</p></div>
+  <div><h3>Visualize</h3><p>Use histograms, boxplots, bar charts, scatter plots, and line charts for different analytical questions.</p></div>
+  <div><h3>Compare</h3><p>Use grouped statistics and matching charts to examine differences across categories.</p></div>
+  <div><h3>Relate</h3><p>Use scatter plots and correlation to investigate linear relationships between numeric variables.</p></div>
+  <div><h3>Estimate</h3><p>Recognize that sample statistics have uncertainty and can be accompanied by intervals.</p></div>
+  <div><h3>Interpret</h3><p>Describe what the evidence supports without turning association into causation.</p></div>
+</div>
+<div class="callout success module13-next"><strong>Next: Module 14 — Machine Learning &amp; External Data.</strong> We will use the prepared analytical foundation from the course to introduce simple predictive workflows and ways to bring external data into an analysis.</div></div>
+    <footer class="slide-footer"><span>Statistics &amp; Visualization · Describe, Compare, Interpret</span><span>IAN 601 · Module 13 · Slide 20</span></footer>
   </div>
-</section></main>
-  <footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"></select><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 12</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
+</section>
+</main>
+  <footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"></select><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 20</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
 </div>
 <script>
 const MANIFEST = {
   "prefix": "module13",
-  "slide_count": 12,
+  "slide_count": 20,
   "slides": [
     {
       "slide": 1,
       "title": "Statistics & Visualization",
       "audio": "audio/module13_slide_01.mp3",
       "captions": "captions/module13_slide_01.vtt",
-      "text": "Welcome to Module 13. This module focuses on Statistics & Visualization. We will connect the methods to careful analytical interpretation and practical decision making. Statistics and visualization help summarize variation, compare groups, describe relationships, and communicate findings clearly."
+      "text": "Welcome to Module 13, Statistics and Visualization. We will use numerical summaries and charts together to describe data, compare groups, and investigate relationships. The key idea is that a statistic and a visualization should support the same analytical question from different angles."
     },
     {
       "slide": 2,
-      "title": "How to use this page",
+      "title": "From Cleaning & EDA to Statistics & Visualization",
       "audio": "audio/module13_slide_02.mp3",
       "captions": "captions/module13_slide_02.vtt",
-      "text": "Use this lesson interactively. Read the question first, predict the result, run the example, and then explain what the output does and does not tell you. Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept. Change one value, variable, or condition. Apply the pattern to a new example."
+      "text": "Module 12 focused on making data trustworthy. Module 13 asks what the cleaned data is telling us. We will move from quality checks into descriptive statistics, group comparisons, distributions, correlations, and charts. Module 14 will then build on this foundation with machine learning and external data."
     },
     {
       "slide": 3,
-      "title": "Learning path for Module 13",
+      "title": "Our working dataset",
       "audio": "audio/module13_slide_03.mp3",
       "captions": "captions/module13_slide_03.vtt",
-      "text": "This slide is the roadmap for Module 13. Follow the progression from the core idea to evaluation and the final integrated workflow. Mean, median, spread. See shape and frequency. Summarize groups. Correlation and association. Sample estimates vary. Choose visual forms carefully."
+      "text": "We will use a small cleaned order dataset throughout the module. Region and channel are categorical variables, while amount and satisfaction are numeric. Identifying variable types before analysis is important because the type of variable determines which statistics and visualizations make sense."
     },
     {
       "slide": 4,
       "title": "Descriptive statistics",
       "audio": "audio/module13_slide_04.mp3",
       "captions": "captions/module13_slide_04.vtt",
-      "text": "This slide focuses on Descriptive statistics. Start with the analytical question and the meaning of the output before focusing on the syntax. Descriptive statistics summarize the center and spread of values. Calculate summary statistics Before running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes."
+      "text": "Descriptive statistics summarize the center and spread of a numeric variable. The mean, median, standard deviation, and quartiles answer different questions. A good first summary usually uses several of these measures together rather than relying on one number."
     },
     {
       "slide": 5,
-      "title": "Distribution with bins",
+      "title": "Mean versus median",
       "audio": "audio/module13_slide_05.mp3",
       "captions": "captions/module13_slide_05.vtt",
-      "text": "This slide focuses on Distribution with bins. Start with the analytical question and the meaning of the output before focusing on the syntax. A distribution shows how often values fall into ranges. Create a text histogram Before running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes."
+      "text": "The mean uses every value and can move substantially when an extreme value is present. The median depends on the middle position and is usually more resistant to extremes. Comparing mean and median can help reveal skewness or unusual values."
     },
     {
       "slide": 6,
-      "title": "Compare groups",
+      "title": "Visualize a distribution with a histogram",
       "audio": "audio/module13_slide_06.mp3",
       "captions": "captions/module13_slide_06.vtt",
-      "text": "This slide focuses on Compare groups. Start with the analytical question and the meaning of the output before focusing on the syntax. Group summaries help compare categories. Summarize by group Before running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes."
+      "text": "A histogram groups numeric observations into bins and shows the shape of a distribution. Look for symmetry, skewness, gaps, clusters, and unusually distant values. The number of bins matters, so experiment with more than one reasonable setting before interpreting the shape."
     },
     {
       "slide": 7,
-      "title": "Correlation",
+      "title": "Boxplots summarize distributions",
       "audio": "audio/module13_slide_07.mp3",
       "captions": "captions/module13_slide_07.vtt",
-      "text": "This slide focuses on Correlation. Start with the analytical question and the meaning of the output before focusing on the syntax. Correlation measures the strength and direction of a linear relationship. It does not prove causation. Calculate correlation Before running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes."
+      "text": "A boxplot summarizes a distribution using the median, quartiles, whiskers, and possible outliers. Boxplots are particularly useful when comparing the same numeric variable across several groups because they make center and spread easy to compare."
     },
     {
       "slide": 8,
-      "title": "Simple confidence interval idea",
+      "title": "Compare groups with summary statistics",
       "audio": "audio/module13_slide_08.mp3",
       "captions": "captions/module13_slide_08.vtt",
-      "text": "This slide focuses on Simple confidence interval idea. Start with the analytical question and the meaning of the output before focusing on the syntax. A sample mean is an estimate. A confidence interval communicates uncertainty around the estimate. Approximate interval for a mean Before running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes."
+      "text": "Grouped summaries help us compare categories numerically. Count tells us how much data is available, mean and median describe center, and standard deviation describes spread. Small group sizes deserve caution because summary values based on only a few observations may be unstable."
     },
     {
       "slide": 9,
-      "title": "Choose the right visual",
+      "title": "Bar charts for categorical comparisons",
       "audio": "audio/module13_slide_09.mp3",
       "captions": "captions/module13_slide_09.vtt",
-      "text": "This slide focuses on Choose the right visual. Start with the analytical question and the meaning of the output before focusing on the syntax. Compare categories. Show change over time. Show distribution shape. Compare spread across groups. Show relationship between two numeric variables. Show exact values."
+      "text": "Bar charts are useful for category counts or category-level summary values. They are different from histograms: histograms show numeric distributions, while bar charts compare discrete categories. Keep the quantitative axis honest and labels easy to read."
     },
     {
       "slide": 10,
-      "title": "Text-based bar chart",
+      "title": "Scatter plots for numeric relationships",
       "audio": "audio/module13_slide_10.mp3",
       "captions": "captions/module13_slide_10.vtt",
-      "text": "This slide focuses on Text-based bar chart. Start with the analytical question and the meaning of the output before focusing on the syntax. Even without a plotting library, a text chart can show the logic of visual comparison. Print a small bar chart Before running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes."
+      "text": "Scatter plots display two numeric variables and help us inspect direction, form, strength, and unusual observations. Plot the variables before calculating correlation because a single correlation coefficient can hide nonlinear patterns or influential points."
     },
     {
       "slide": 11,
-      "title": "Mini statistics report",
+      "title": "Correlation",
       "audio": "audio/module13_slide_11.mp3",
       "captions": "captions/module13_slide_11.vtt",
-      "text": "This slide focuses on Mini statistics report. Start with the analytical question and the meaning of the output before focusing on the syntax. A short report combines data summaries with a plain-language interpretation. Create a report sentence Before running the example, predict the statistic or visualization input. Run it in the browser and inspect the center, spread, group difference, association, or interval being calculated. Then change one value and see how the interpretation changes."
+      "text": "Pearson correlation summarizes the direction and strength of a linear association and ranges from minus one to plus one. A value near zero means little linear association, not necessarily no relationship. Correlation is evidence of association, not proof of causation."
     },
     {
       "slide": 12,
-      "title": "Module 13 wrap-up",
+      "title": "Correlation can be misleading",
       "audio": "audio/module13_slide_12.mp3",
       "captions": "captions/module13_slide_12.vtt",
-      "text": "This slide summarizes Module 13. Focus on the main analytical decisions, interpretation limits, and reusable workflow patterns. Use mean and median. Use range and standard deviation. Describe shape with frequencies. Compare category summaries. Use correlation carefully. Select visuals for the question."
+      "text": "Correlation does not tell the whole story. Curved relationships, outliers, subgroups, and restricted ranges can all affect the coefficient. A better workflow is to plot the variables, inspect the data, calculate correlation, and then interpret the result in context."
+    },
+    {
+      "slide": 13,
+      "title": "A simple confidence interval idea",
+      "audio": "audio/module13_slide_13.mp3",
+      "captions": "captions/module13_slide_13.vtt",
+      "text": "A sample mean is an estimate of a larger population quantity. A confidence interval adds a range that reflects uncertainty around the estimate. In this introductory example, we use a simple normal-based calculation to demonstrate the concept rather than explore advanced assumptions."
+    },
+    {
+      "slide": 14,
+      "title": "Choose the right visual",
+      "audio": "audio/module13_slide_14.mp3",
+      "captions": "captions/module13_slide_14.vtt",
+      "text": "Choose the chart based on the question. Histograms show one numeric distribution. Boxplots compare numeric distributions across groups. Bar charts compare categories. Scatter plots examine two numeric variables. Line charts show change over ordered time. Tables are useful when exact values matter more than visual pattern."
+    },
+    {
+      "slide": 15,
+      "title": "Make charts easier to read",
+      "audio": "audio/module13_slide_15.mp3",
+      "captions": "captions/module13_slide_15.vtt",
+      "text": "A technically correct chart can still communicate poorly. Use meaningful titles, clear axis labels, readable category names, and appropriate scales. Avoid decoration that distorts or distracts, such as unnecessary 3D effects or truncated axes that exaggerate differences."
+    },
+    {
+      "slide": 16,
+      "title": "Line charts for time trends",
+      "audio": "audio/module13_slide_16.mp3",
+      "captions": "captions/module13_slide_16.vtt",
+      "text": "Line charts are useful for values observed over ordered time. Sort the data by date, use meaningful intervals, and remember that connecting points with a line implies an ordered sequence. Do not use lines to connect unrelated categories."
+    },
+    {
+      "slide": 17,
+      "title": "Mini statistics report",
+      "audio": "audio/module13_slide_17.mp3",
+      "captions": "captions/module13_slide_17.vtt",
+      "text": "A useful statistics report combines a clear question, numerical summaries, an appropriate chart, a short interpretation, and limitations. The table and chart should support the same story. If they seem to disagree, investigate the reason instead of choosing the output you prefer."
+    },
+    {
+      "slide": 18,
+      "title": "Interpret carefully",
+      "audio": "audio/module13_slide_18.mp3",
+      "captions": "captions/module13_slide_18.vtt",
+      "text": "Good interpretation keeps the claim at the same level as the evidence. Descriptive statistics describe the sample. Correlation describes association. Neither one proves causation. Use careful language such as appears higher, is associated with, or in this sample when that matches the evidence."
+    },
+    {
+      "slide": 19,
+      "title": "Practice challenge",
+      "audio": "audio/module13_slide_19.mp3",
+      "captions": "captions/module13_slide_19.vtt",
+      "text": "Now build a small statistical story yourself. Describe the amount variable, compare mean and median, create a histogram, summarize amount by region, create a comparison chart, inspect amount versus satisfaction, calculate correlation, and write a few careful interpretation sentences."
+    },
+    {
+      "slide": 20,
+      "title": "Module 13 wrap-up",
+      "audio": "audio/module13_slide_20.mp3",
+      "captions": "captions/module13_slide_20.vtt",
+      "text": "Module 13 combined statistics and visualization. You learned to describe distributions, compare groups, choose appropriate charts, examine numeric relationships, calculate correlation, recognize uncertainty, and interpret results carefully. In Module 14, we will use this analytical foundation to introduce machine learning and external data."
     }
   ]
 };
@@ -438,7 +918,7 @@ const audioPlayBtn=document.getElementById('audio-play-btn');
 const audioSeek=document.getElementById('audio-seek');
 const audioTime=document.getElementById('audio-time');
 const speedSelect=document.getElementById('speed-select');
-const NARRATION_STORAGE_KEY='ian601_module13_presentation';
+const NARRATION_STORAGE_KEY='ian601_module13_presentation_v2';
 let narrationEnabled=false;
 let narrationStarted=false;
 let ccEnabled=false;
@@ -491,7 +971,7 @@ document.getElementById('prev-btn').onclick=()=>showSlide(current-1);document.ge
 document.getElementById('theme-btn').onclick=()=>{const root=document.documentElement;root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';if(window.monaco){monaco.editor.setTheme(root.dataset.theme==='dark'?'vs-dark':'vs');}};
 function packagesFor(code){const pkgs=[];if(/(^|\n)\s*(import|from)\s+numpy\b/.test(code))pkgs.push('numpy');if(/(^|\n)\s*(import|from)\s+pandas\b/.test(code))pkgs.push('pandas');if(/(^|\n)\s*(import|from)\s+matplotlib\b/.test(code))pkgs.push('matplotlib');if(/(^|\n)\s*(import|from)\s+sklearn\b/.test(code))pkgs.push('scikit-learn');return [...new Set(pkgs)];}
 async function loadPython(){if(!pyodideLoading){setRuntime('','Loading Python...');pyodideLoading=loadPyodide().then(async py=>{await py.runPythonAsync(`
-import sys, io, traceback
+import sys, io, traceback, base64
 
 def _run_user_code(code):
     stdout = io.StringIO()
@@ -499,28 +979,45 @@ def _run_user_code(code):
     old_stdout, old_stderr = sys.stdout, sys.stderr
     sys.stdout, sys.stderr = stdout, stderr
     ns = globals()
+    images = []
     try:
+        try:
+            import matplotlib
+            matplotlib.use("Agg")
+            import matplotlib.pyplot as plt
+            plt.close("all")
+        except Exception:
+            plt = None
+
         exec(code, ns, ns)
         ok = True
+
+        if plt is not None:
+            for number in plt.get_fignums():
+                fig = plt.figure(number)
+                buffer = io.BytesIO()
+                fig.savefig(buffer, format="png", dpi=120, bbox_inches="tight")
+                images.append(base64.b64encode(buffer.getvalue()).decode("ascii"))
+            plt.close("all")
     except Exception:
         ok = False
         stderr.write(traceback.format_exc())
     finally:
         sys.stdout, sys.stderr = old_stdout, old_stderr
-    return {"ok": ok, "stdout": stdout.getvalue(), "stderr": stderr.getvalue()}
+    return {"ok": ok, "stdout": stdout.getvalue(), "stderr": stderr.getvalue(), "images": images}
 `);pyodide=py;setRuntime('ready','Python ready');return py;}).catch(err=>{setRuntime('error','Python failed to load');throw err;});}return pyodideLoading;}
 function getCellCode(cell){const host=cell.querySelector('.monaco-host');const ed=monacoEditors.get(host);return ed?ed.getValue():cell.querySelector('.code-input').value;}
 function setCellCode(cell,code){const host=cell.querySelector('.monaco-host');const ed=monacoEditors.get(host);if(ed)ed.setValue(code);cell.querySelector('.code-input').value=code;}
-async function runCell(cell){if(!cell)return;const btn=cell.querySelector('.run-cell');const output=cell.querySelector('.output');btn.classList.add('running');btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Running';output.className='output';output.textContent='Running...';try{const py=await loadPython();const code=getCellCode(cell);const pkgs=packagesFor(code);if(pkgs.length){setRuntime('', 'Loading package: '+pkgs.join(', '));for(const pkg of pkgs){await py.loadPackage(pkg);}setRuntime('ready','Python ready');}const result=py.globals.get('_run_user_code')(code).toJs({dict_converter:Object.fromEntries});const text=(result.stdout||'')+(result.stderr?('\n'+result.stderr):'');output.textContent=text.trim()||'Code ran successfully with no printed output.';output.className='output '+(result.ok?'success':'error');setRuntime(result.ok?'ready':'error',result.ok?'Python ready':'Python error');}catch(err){output.textContent=String(err);output.className='output error';setRuntime('error','Python error');}finally{btn.classList.remove('running');btn.innerHTML='<i class="fa-solid fa-play"></i> Run';}}
+async function runCell(cell){if(!cell)return;const btn=cell.querySelector('.run-cell');const output=cell.querySelector('.output');const plotOutput=cell.querySelector('.plot-output');btn.classList.add('running');btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Running';output.className='output';output.textContent='Running...';if(plotOutput)plotOutput.innerHTML='';try{const py=await loadPython();const code=getCellCode(cell);const pkgs=packagesFor(code);if(pkgs.length){setRuntime('', 'Loading package: '+pkgs.join(', '));for(const pkg of pkgs){await py.loadPackage(pkg);}setRuntime('ready','Python ready');}const result=py.globals.get('_run_user_code')(code).toJs({dict_converter:Object.fromEntries});const text=(result.stdout||'')+(result.stderr?('\n'+result.stderr):'');output.textContent=text.trim()||((result.images&&result.images.length)?'Chart generated below.':'Code ran successfully with no printed output.');output.className='output '+(result.ok?'success':'error');if(plotOutput&&result.images){for(const b64 of result.images){const img=document.createElement('img');img.src='data:image/png;base64,'+b64;img.alt='Python chart output';plotOutput.appendChild(img);}}setRuntime(result.ok?'ready':'error',result.ok?'Python ready':'Python error');}catch(err){output.textContent=String(err);output.className='output error';setRuntime('error','Python error');}finally{btn.classList.remove('running');btn.innerHTML='<i class="fa-solid fa-play"></i> Run';}}
 async function runActiveSlide(){const cells=[...slides[current].querySelectorAll('.code-cell')];for(const cell of cells)await runCell(cell);}
 document.getElementById('run-slide-btn')?.addEventListener('click',runActiveSlide);document.querySelectorAll('.run-all-btn').forEach(b=>b.onclick=runActiveSlide);document.getElementById('restart-python').onclick=()=>{pyodide=null;pyodideLoading=null;setRuntime('', 'Python reset. It will reload when a code cell runs.');document.querySelectorAll('.output').forEach(o=>{o.className='output';o.textContent='Python reset. Click Run to execute this cell.';});};
-document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');originalCode.set(cell,textarea.value);cell.querySelector('.run-cell').onclick=()=>runCell(cell);cell.querySelector('.reset-cell').onclick=()=>{setCellCode(cell,originalCode.get(cell));cell.querySelector('.output').className='output';cell.querySelector('.output').textContent='Code reset. Click Run to execute this cell.';};cell.querySelector('.copy-cell').onclick=async()=>{try{await navigator.clipboard.writeText(getCellCode(cell));const b=cell.querySelector('.copy-cell');b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1000);}catch(e){cell.querySelector('.output').textContent='Copy failed. You can select and copy manually.';}};});
+document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');originalCode.set(cell,textarea.value);cell.querySelector('.run-cell').onclick=()=>runCell(cell);cell.querySelector('.reset-cell').onclick=()=>{setCellCode(cell,originalCode.get(cell));cell.querySelector('.output').className='output';cell.querySelector('.output').textContent='Code reset. Click Run to execute this cell.';const p=cell.querySelector('.plot-output');if(p)p.innerHTML='';};cell.querySelector('.copy-cell').onclick=async()=>{try{await navigator.clipboard.writeText(getCellCode(cell));const b=cell.querySelector('.copy-cell');b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1000);}catch(e){cell.querySelector('.output').textContent='Copy failed. You can select and copy manually.';}};});
 function initMonaco(){if(!window.require)return;try{require.config({paths:{vs:'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs'}});require(['vs/editor/editor.main'],function(){monaco.editor.setTheme(document.documentElement.dataset.theme==='dark'?'vs-dark':'vs');document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');const host=cell.querySelector('.monaco-host');const editor=monaco.editor.create(host,{value:textarea.value,language:'python',theme:document.documentElement.dataset.theme==='dark'?'vs-dark':'vs',fontFamily:'Source Code Pro, Consolas, monospace',fontSize:14,lineNumbers:'on',minimap:{enabled:false},automaticLayout:true,scrollBeyondLastLine:false,tabSize:4,wordWrap:'on'});monacoEditors.set(host,editor);cell.classList.add('monaco-ready');editor.onDidChangeCursorPosition(e=>{const status=cell.querySelector('.editor-status span');if(status)status.textContent=`Ln ${e.position.lineNumber}, Col ${e.position.column}`;});});});}catch(e){console.warn('Monaco editor not available, using textarea fallback.',e);}}
 initMonaco();const initialSlide=initNarr();
 showSlide(initialSlide);
 </script>
 <div class="ian603-modal-backdrop" id="ian-course-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">IAN 601 Course Modules</h2><button class="ian603-tool" id="ian-course-close" type="button">Close</button></div><div class="ian603-module-links"><a class="" href="s_module1.html">Module 1</a><a class="" href="s_module2.html">Module 2</a><a class="" href="s_module3.html">Module 3</a><a class="" href="s_module4.html">Module 4</a><a class="" href="s_module5.html">Module 5</a><a class="" href="s_module6.html">Module 6</a><a class="" href="s_module7.html">Module 7</a><a class="" href="s_module8.html">Module 8</a><a class="" href="s_module9.html">Module 9</a><a class="" href="s_module10.html">Module 10</a><a class="" href="s_module11.html">Module 11</a><a class="" href="s_module12.html">Module 12</a><a class="current" href="s_module13.html">Module 13 · Current</a><a class="" href="s_module14.html">Module 14</a></div></div></div><div class="ian603-modal-backdrop" id="ian-progress-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">Module 13 Progress</h2><button class="ian603-tool" id="ian-progress-close" type="button">Close</button></div><p style="color:var(--ian-muted)">Progress is saved only in this browser.</p><div style="height:12px;background:var(--ian-border);border-radius:999px;overflow:hidden"><div id="ian-progress-meter" style="height:100%;width:0;background:var(--ian-good)"></div></div><div id="ian-progress-text" style="margin:8px 0;color:var(--ian-muted)"></div><div id="ian-progress-list" class="ian603-module-links"></div><button class="ian603-tool" id="ian-progress-reset" type="button" style="margin-top:14px">Reset saved progress</button></div></div><script id="ian603-generic-ui">
-(()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module13_shell_progress_v1';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
+(()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module13_shell_progress_v2';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
 const activeIndex=()=>Math.max(0,slides.findIndex(s=>s.classList.contains('active')));
 function save(){localStorage.setItem(key,JSON.stringify(visited))}
 function render(){const i=activeIndex();if(!visited.includes(i+1)){visited.push(i+1);save()}const count=new Set(visited).size,pct=slides.length?Math.round(count/slides.length*100):0;const p=document.getElementById('ian-progress-pct');if(p)p.textContent=pct+'%';const meter=document.getElementById('ian-progress-meter');if(meter)meter.style.width=pct+'%';const text=document.getElementById('ian-progress-text');if(text)text.textContent=count+' of '+slides.length+' slides visited';const list=document.getElementById('ian-progress-list');if(list){list.innerHTML=slides.map((s,j)=>'<a href="#" data-shell-go="'+j+'" class="'+(visited.includes(j+1)?'current':'')+'">Slide '+(j+1)+': '+(s.dataset.title||'Slide')+'</a>').join('');list.querySelectorAll('[data-shell-go]').forEach(a=>a.onclick=e=>{e.preventDefault();const j=Number(a.dataset.shellGo);const sel=document.getElementById('slide-select');if(sel){sel.value=String(j);sel.dispatchEvent(new Event('change',{bubbles:true}))}document.getElementById('ian-progress-modal')?.classList.remove('show')})}}
