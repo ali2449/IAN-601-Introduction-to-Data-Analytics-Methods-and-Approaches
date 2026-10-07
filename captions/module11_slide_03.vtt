@@ -1,15 +1,15 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.427
+00:00:00.000 --> 00:00:05.422
 We will reuse one small order dataset throughout many of the examples in this module.
 
-00:00:05.427 --> 00:00:11.312
+00:00:05.422 --> 00:00:11.307
 Keeping the dataset simple makes it easier to see what each Pandas operation is doing.
 
-00:00:11.312 --> 00:00:13.732
+00:00:11.307 --> 00:00:13.737
 Each row represents an order.
 
-00:00:13.732 --> 00:00:17.087
+00:00:13.737 --> 00:00:17.087
 The order ID identifies the transaction.
 
 00:00:17.087 --> 00:00:19.997
@@ -18,7 +18,7 @@ The date tells us when the order occurred.
 00:00:19.997 --> 00:00:27.022
 Region, channel, and category give us different ways to group the data, and amount is the numeric value that we will
 
-00:00:27.022 --> 00:00:28.793
+00:00:27.022 --> 00:00:28.789
 summarize.
 
 00:00:29.331 --> 00:00:33.718
@@ -39,8 +39,8 @@ The Pandas techniques are the same even when the subject of the data changes.
 00:00:53.633 --> 00:00:58.308
 As we continue, watch how the shape of this table changes.
 
-00:00:58.308 --> 00:01:03.068
+00:00:58.308 --> 00:01:03.063
 Sometimes we will keep the same number of rows and add information.
 
-00:01:03.068 --> 00:01:09.078
+00:01:03.063 --> 00:01:09.076
 Other times we will reduce the table into summaries or reshape it into a different format.

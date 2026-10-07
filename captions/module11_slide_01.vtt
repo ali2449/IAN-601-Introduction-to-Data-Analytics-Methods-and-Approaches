@@ -1,40 +1,40 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.582
+00:00:00.000 --> 00:00:03.492
 Welcome to Module 11, Advanced Pandas.
 
-00:00:03.582 --> 00:00:10.607
-In the previous module, we worked with the basic building blocks of a DataFrame: selecting columns, filtering rows,
+00:00:03.492 --> 00:00:10.117
+In the previous module, we worked with the basic building blocks of a Data frame: selecting columns, filtering rows,
 
-00:00:10.607 --> 00:00:15.892
+00:00:10.117 --> 00:00:15.302
 sorting values, and creating simple summaries.
 
-00:00:15.892 --> 00:00:21.702
+00:00:15.302 --> 00:00:20.887
 Now we are going to connect those skills into larger, more realistic workflows.
 
-00:00:21.702 --> 00:00:26.667
+00:00:20.887 --> 00:00:25.312
 The main idea is not to memorize a long list of Pandas functions.
 
-00:00:26.667 --> 00:00:32.582
+00:00:25.312 --> 00:00:30.857
 Instead, I want you to think about how a table changes from one step to the next.
 
-00:00:32.582 --> 00:00:38.937
+00:00:30.857 --> 00:00:37.067
 We may start with raw data, clean or transform it, reshape it when necessary, summarize it,
 
-00:00:38.937 --> 00:00:46.453
+00:00:37.067 --> 00:00:44.092
 check that our joins are correct, and then produce something that is ready for analysis or reporting.
 
-00:00:47.061 --> 00:00:54.683
+00:00:44.564 --> 00:00:52.181
 As you work through this module, keep asking yourself one question: what does this operation change in my data,
 
-00:00:54.683 --> 00:00:57.163
+00:00:52.181 --> 00:00:54.661
 and why do I need that change?
 
-00:00:57.163 --> 00:01:02.903
+00:00:54.661 --> 00:01:00.401
 That question will help you understand Pandas much better than memorizing syntax.
 
-00:01:02.903 --> 00:01:09.233
+00:01:00.401 --> 00:01:06.736
 We will work with a small order dataset throughout the module so you can focus on the logic.
 
-00:01:09.233 --> 00:01:17.370
+00:01:06.736 --> 00:01:14.880
 By the end, you should be able to build a complete Pandas workflow that is readable, reusable, and easier to validate.

@@ -1,34 +1,34 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.007
-Method chaining is a way to connect several DataFrame operations into one readable sequence.
+00:00:00.000 --> 00:00:06.342
+Method chaining is a way to connect several Data frame operations into one readable sequence.
 
-00:00:06.007 --> 00:00:08.717
+00:00:06.342 --> 00:00:09.217
 Look at the code from top to bottom.
 
-00:00:08.717 --> 00:00:11.387
-We start with the orders DataFrame.
+00:00:09.217 --> 00:00:12.237
+We start with the orders Data frame.
 
-00:00:11.387 --> 00:00:17.722
+00:00:12.237 --> 00:00:17.592
 Then we use query to keep only orders with an amount of at least seventy.
 
-00:00:17.722 --> 00:00:25.812
+00:00:17.592 --> 00:00:27.232
 After that, assign creates a new fee column, and sort values arranges the remaining rows from the largest amount to the
 
-00:00:25.812 --> 00:00:32.387
+00:00:27.232 --> 00:00:33.902
 smallest. Before you run the code, try to predict which orders will remain and which one will appear first.
 
-00:00:32.865 --> 00:00:41.794
+00:00:34.745 --> 00:00:43.669
 When you are writing a chain, placing each method on a separate line inside parentheses makes the logic much easier to
 
-00:00:41.794 --> 00:00:48.449
+00:00:43.669 --> 00:00:50.329
 follow. It also makes debugging easier because you can identify the step that may be causing a problem.
 
-00:00:48.449 --> 00:00:52.264
+00:00:50.329 --> 00:00:54.148
 Run the code in the browser and inspect the output.
 
-00:00:52.264 --> 00:00:57.804
+00:00:54.148 --> 00:00:59.684
 Then change the threshold from seventy to fifty and run it again.
 
-00:00:57.804 --> 00:01:04.156
+00:00:59.684 --> 00:01:06.027
 Notice how one small change near the beginning of the workflow changes everything that follows.

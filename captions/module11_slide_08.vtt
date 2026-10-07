@@ -1,34 +1,34 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.837
+00:00:00.000 --> 00:00:04.572
 A pivot table creates a cross-tab summary that is easy to compare.
 
-00:00:04.837 --> 00:00:10.767
+00:00:04.572 --> 00:00:10.897
 In this example, region becomes the rows and channel becomes the columns.
 
-00:00:10.767 --> 00:00:18.362
+00:00:10.897 --> 00:00:18.462
 The amount column provides the values, and we sum those values for each region and channel combination.
 
-00:00:18.362 --> 00:00:22.371
-The result looks more like a report than a raw DataFrame.
+00:00:18.462 --> 00:00:22.344
+The result looks more like a report than a raw Data frame.
 
-00:00:22.883 --> 00:00:28.955
+00:00:22.964 --> 00:00:29.041
 Pivot tables are useful when people need to scan across categories quickly.
 
-00:00:28.955 --> 00:00:36.190
+00:00:29.041 --> 00:00:36.271
 For example, a manager may want to compare online, store, and email sales across several regions.
 
-00:00:36.190 --> 00:00:43.510
+00:00:36.271 --> 00:00:43.591
 A regular groupby can calculate the same information, but the pivot table may be easier to read.
 
-00:00:43.510 --> 00:00:46.615
+00:00:43.591 --> 00:00:46.706
 Notice the fill value option in the code.
 
-00:00:46.615 --> 00:00:53.785
+00:00:46.706 --> 00:00:53.866
 If a region does not have a particular channel, Pandas can place a zero instead of leaving the cell empty.
 
-00:00:53.785 --> 00:01:00.330
+00:00:53.866 --> 00:01:00.406
 Run the example, then try changing the aggregation function from sum to mean.
 
-00:01:00.330 --> 00:01:05.269
+00:01:00.406 --> 00:01:05.350
 The table layout stays the same, but the meaning of the values changes.

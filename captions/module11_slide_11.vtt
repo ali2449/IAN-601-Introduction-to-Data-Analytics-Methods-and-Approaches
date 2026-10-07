@@ -1,34 +1,34 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:07.782
+00:00:00.000 --> 00:00:07.787
 Date columns often look like dates when we read a CSV file, but Pandas may still store them as text.
 
-00:00:07.782 --> 00:00:15.137
+00:00:07.787 --> 00:00:15.137
 Before doing reliable time-based analysis, convert the column with pandas to datetime.
 
-00:00:15.137 --> 00:00:22.907
+00:00:15.137 --> 00:00:22.917
 Once the values are real datetime objects, the dt accessor gives us many useful features.
 
-00:00:22.907 --> 00:00:28.973
+00:00:22.917 --> 00:00:28.973
 In the example, we create the weekday name and a monthly period from the date column.
 
-00:00:29.602 --> 00:00:34.699
+00:00:29.599 --> 00:00:34.696
 These features are useful because many analytical questions are based on time.
 
-00:00:34.699 --> 00:00:41.684
+00:00:34.696 --> 00:00:41.676
 We may want to compare weekdays and weekends, calculate monthly totals, study seasonal patterns,
 
-00:00:41.684 --> 00:00:45.044
+00:00:41.676 --> 00:00:45.041
 or filter records within a specific date range.
 
-00:00:45.044 --> 00:00:48.544
+00:00:45.041 --> 00:00:48.541
 Always inspect the result after converting dates.
 
-00:00:48.544 --> 00:00:55.619
+00:00:48.541 --> 00:00:55.611
 Real-world date columns can contain missing values, inconsistent formats, or invalid dates.
 
-00:00:55.619 --> 00:01:01.084
+00:00:55.611 --> 00:01:01.081
 Run the example and then try adding a year column or a numerical month column.
 
-00:01:01.084 --> 00:01:06.395
+00:01:01.081 --> 00:01:06.392
 The dt accessor gives you many options once the date has been converted correctly.

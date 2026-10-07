@@ -9,16 +9,16 @@ Instead of grouping by a regular category such as region or channel, resample gr
 00:00:12.442 --> 00:00:18.142
 Those intervals might be days, weeks, months, quarters, or years.
 
-00:00:18.142 --> 00:00:24.895
+00:00:18.142 --> 00:00:24.896
 In the example, we convert the date column to datetime and then calculate daily sales totals.
 
 00:00:25.545 --> 00:00:29.867
 This pattern becomes very useful with transactional datasets.
 
-00:00:29.867 --> 00:00:34.202
+00:00:29.867 --> 00:00:34.197
 Imagine a table with hundreds of thousands of purchases.
 
-00:00:34.202 --> 00:00:41.377
+00:00:34.197 --> 00:00:41.377
 Looking at every transaction individually may not reveal a trend, but summarizing the data by week or month can make the
 
 00:00:41.377 --> 00:00:44.297
@@ -30,8 +30,8 @@ Run the code using the daily frequency.
 00:00:47.592 --> 00:00:52.892
 Then change the frequency from D to W and compare the result.
 
-00:00:52.892 --> 00:00:58.237
+00:00:52.892 --> 00:00:58.232
 The important concept is that resample changes the level of time detail.
 
-00:00:58.237 --> 00:01:02.902
+00:00:58.232 --> 00:01:02.895
 We are moving from individual observations to regular time-based summaries.

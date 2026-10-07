@@ -1,27 +1,27 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:07.802
+00:00:00.000 --> 00:00:07.807
 Many datasets arrive in a wide format because that layout is easy for people to read in a spreadsheet.
 
-00:00:07.802 --> 00:00:12.782
+00:00:07.807 --> 00:00:12.782
 Here, the months January, February, and March are separate columns.
 
-00:00:12.782 --> 00:00:18.002
+00:00:12.782 --> 00:00:17.997
 That may look convenient, but it can make grouping and plotting more difficult.
 
-00:00:18.002 --> 00:00:22.042
+00:00:17.997 --> 00:00:22.042
 Melt converts those month columns into rows.
 
-00:00:22.042 --> 00:00:26.950
+00:00:22.042 --> 00:00:26.953
 After melting, we have one month column and one sales column.
 
-00:00:27.524 --> 00:00:33.061
+00:00:27.524 --> 00:00:33.066
 This is called long format, and long format is often better for analysis.
 
-00:00:33.061 --> 00:00:39.276
+00:00:33.066 --> 00:00:39.281
 It works naturally with grouping, plotting libraries, and many statistical tools.
 
-00:00:39.276 --> 00:00:48.101
+00:00:39.281 --> 00:00:48.101
 A useful way to think about melt is this: the values that are currently stored in column names become values inside a
 
 00:00:48.101 --> 00:00:53.521
@@ -30,5 +30,5 @@ new column. Run the example and compare the number of rows before and after melt
 00:00:53.521 --> 00:01:00.196
 Then imagine a spreadsheet with twelve month columns or fifty survey question columns.
 
-00:01:00.196 --> 00:01:05.511
+00:01:00.196 --> 00:01:05.503
 Melt can turn that wide structure into a much more analysis-friendly form.
