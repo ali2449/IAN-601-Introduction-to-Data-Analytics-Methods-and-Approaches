@@ -81,22 +81,36 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
 </style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-focusflow"><!-- IAN601_UI_SHELL_END -->
 <style id="module14-revision-style">
 .module14-title-grid{grid-template-columns:minmax(0,1.12fr) minmax(300px,.78fr)!important;gap:34px!important}
-.module14-hero-lead{font-size:clamp(1.9rem,3.05vw,3.3rem)!important;line-height:1.07!important;letter-spacing:-.045em!important;margin:0 0 16px!important}
-.module14-hero-sub{font-size:clamp(1rem,1.35vw,1.22rem)!important;line-height:1.55!important;margin:0!important;color:var(--ian-muted,var(--muted))}
-.module14-flow{display:grid;gap:10px;padding:24px;border:1px solid var(--ian-border,var(--line));border-radius:22px;background:linear-gradient(145deg,rgba(31,95,155,.08),rgba(79,70,229,.08));text-align:center}.module14-flow div{padding:14px 18px;border:1px solid var(--ian-border,var(--line));border-radius:14px;background:var(--ian-surface,var(--panel));display:grid;gap:2px}.module14-flow strong{font-size:1.02rem}.module14-flow small{color:var(--ian-muted,var(--muted));font-weight:650}.module14-flow span{font-size:.78rem;font-weight:850;color:var(--ian-primary,var(--accent));text-transform:uppercase;letter-spacing:.07em}
-.module14-path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}.module14-path>div{border:1px solid var(--ian-border,var(--line));border-radius:16px;padding:18px;background:var(--ian-surface2,var(--panel2))}.module14-path>div.current{border-color:var(--ian-primary,var(--accent));box-shadow:0 0 0 2px color-mix(in srgb,var(--ian-primary,var(--accent)) 18%,transparent)}.module14-path span{font-size:.75rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--ian-primary,var(--accent))}.module14-path h3{margin:5px 0 6px}.module14-path p{margin:0;color:var(--ian-muted,var(--muted))}
-.module14-task-grid,.module14-source-grid{display:grid;gap:14px;margin-top:18px}.module14-task-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.module14-source-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.module14-task-grid>div,.module14-source-grid>div{border:1px solid var(--ian-border,var(--line));border-radius:15px;padding:16px;background:var(--ian-surface2,var(--panel2))}.module14-task-grid h3,.module14-source-grid h3{margin:0 0 7px;color:var(--ian-primary,var(--accent))}.module14-task-grid p,.module14-source-grid p{margin:0 0 8px}.module14-task-grid span,.module14-source-grid code{color:var(--ian-muted,var(--muted));font-size:.9rem}
+.module14-hero-lead{font-size:clamp(1.8rem,2.85vw,3.15rem)!important;line-height:1.08!important;letter-spacing:-.045em!important;margin:0 0 16px!important}
+.module14-hero-sub{font-size:clamp(1rem,1.25vw,1.18rem)!important;line-height:1.55!important;margin:0!important;color:var(--ian-muted,var(--muted))}
+.module14-flow{display:grid;gap:10px;padding:24px;border:1px solid var(--ian-border,var(--line));border-radius:22px;background:linear-gradient(145deg,rgba(31,95,155,.08),rgba(79,70,229,.08));text-align:center}
+.module14-flow div{padding:14px 18px;border:1px solid var(--ian-border,var(--line));border-radius:14px;background:var(--ian-surface,var(--panel));display:grid;gap:2px}.module14-flow strong{font-size:1.02rem}.module14-flow small{color:var(--ian-muted,var(--muted));font-weight:650}.module14-flow span{font-size:.78rem;font-weight:850;color:var(--ian-primary,var(--accent));text-transform:uppercase;letter-spacing:.07em}
+.module14-path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}.module14-path.four{grid-template-columns:repeat(4,minmax(0,1fr))}.module14-path>div{border:1px solid var(--ian-border,var(--line));border-radius:16px;padding:16px;background:var(--ian-surface2,var(--panel2))}.module14-path>div.current{border-color:var(--ian-primary,var(--accent));box-shadow:0 0 0 2px color-mix(in srgb,var(--ian-primary,var(--accent)) 18%,transparent)}.module14-path span{font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--ian-primary,var(--accent))}.module14-path h3{margin:4px 0 6px}.module14-path p{margin:0;color:var(--ian-muted,var(--muted));font-size:.93rem}
+.module14-rule-cards,.module14-number-demo,.module14-leak{display:grid;gap:12px}.module14-rule-cards>div,.module14-number-demo>div,.module14-leak>div{border:1px solid var(--ian-border,var(--line));border-radius:14px;padding:16px;background:var(--ian-surface2,var(--panel2));display:grid;gap:6px}.module14-rule-cards strong,.module14-leak strong{color:var(--ian-primary,var(--accent))}
+.module14-model-box{display:flex;align-items:center;justify-content:center;gap:12px;min-height:210px;padding:22px;border:1px solid var(--ian-border,var(--line));border-radius:18px;background:var(--ian-surface2,var(--panel2));font-weight:800}.module14-model-box.compact{min-height:0;padding:16px}.module14-model-box>div{padding:14px 16px;border-radius:12px;background:var(--ian-surface,var(--panel));border:1px solid var(--ian-border,var(--line));text-align:center}.module14-model-box>span{color:var(--ian-primary,var(--accent));font-size:1.25rem}
+.module14-equation{border:1px solid var(--ian-border,var(--line));border-radius:16px;padding:18px;background:var(--ian-surface2,var(--panel2));display:grid;gap:7px;margin:14px 0}.module14-equation.large strong{font-size:1.45rem}.module14-equation strong{font-size:1.28rem;color:var(--ian-primary,var(--accent));font-family:"Source Code Pro",monospace}.module14-equation span{color:var(--ian-muted,var(--muted))}
+.module14-number-row,.module14-points{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.module14-number-row span,.module14-points span{padding:8px 10px;border:1px solid var(--ian-border,var(--line));border-radius:10px;background:var(--ian-surface2,var(--panel2));font-family:"Source Code Pro",monospace}
+.module14-feature-example{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.module14-feature-example>div{border:1px solid var(--ian-border,var(--line));border-radius:13px;padding:16px;background:var(--ian-surface2,var(--panel2));display:grid}.module14-feature-example strong{color:var(--ian-primary,var(--accent));font-family:"Source Code Pro",monospace}.module14-feature-example span{color:var(--ian-muted,var(--muted))}
+.module14-vector{border:1px solid var(--ian-border,var(--line));border-radius:16px;padding:18px;background:var(--ian-surface2,var(--panel2));display:grid;gap:7px;margin:16px 0}.module14-vector small{font-weight:850;color:var(--ian-primary,var(--accent));text-transform:uppercase}.module14-vector strong{font-family:"Source Code Pro",monospace;font-size:1.3rem}.module14-vector span{color:var(--ian-muted,var(--muted))}
+.module14-matrix-visual{border:1px solid var(--ian-border,var(--line));border-radius:16px;padding:18px;background:var(--ian-surface2,var(--panel2));display:grid;gap:7px}.module14-matrix-visual>small{color:var(--ian-muted,var(--muted));font-weight:800;text-align:center}.matrix-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.matrix-row span{padding:9px 6px;border:1px solid var(--ian-border,var(--line));border-radius:8px;text-align:center;background:var(--ian-surface,var(--panel));font-family:"Source Code Pro",monospace}
+.module14-encoding{display:grid;grid-template-columns:1fr auto 1.3fr;gap:10px;align-items:center;margin:18px 0}.module14-encoding>div{border:1px solid var(--ian-border,var(--line));border-radius:14px;padding:16px;background:var(--ian-surface2,var(--panel2));display:grid;gap:5px}.module14-encoding strong{color:var(--ian-primary,var(--accent))}
+.module14-task-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.module14-task-grid>div{border:1px solid var(--ian-border,var(--line));border-radius:15px;padding:16px;background:var(--ian-surface2,var(--panel2));display:grid;gap:7px}.module14-task-grid h3{margin:0;color:var(--ian-primary,var(--accent))}.module14-task-grid p,.module14-task-grid span{margin:0;color:var(--ian-muted,var(--muted))}.task-output{padding:9px 10px;border-radius:9px;background:var(--ian-surface,var(--panel));font-family:"Source Code Pro",monospace;font-weight:800}
+.module14-supervised-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr;gap:8px;align-items:center;margin:18px 0}.module14-supervised-flow.short{grid-template-columns:1fr auto 1fr auto 1fr}.module14-supervised-flow>div{border:1px solid var(--ian-border,var(--line));border-radius:13px;padding:14px;background:var(--ian-surface2,var(--panel2));display:grid;gap:4px;text-align:center}.module14-supervised-flow strong{color:var(--ian-primary,var(--accent))}.module14-supervised-flow span{color:var(--ian-muted,var(--muted));font-size:.86rem}.module14-supervised-flow b{color:var(--ian-primary,var(--accent))}
+.module14-source-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.module14-source-grid>div{border:1px solid var(--ian-border,var(--line));border-radius:15px;padding:16px;background:var(--ian-surface2,var(--panel2))}.module14-source-grid h3{margin:0 0 7px;color:var(--ian-primary,var(--accent))}.module14-source-grid p{margin:0 0 8px}.module14-source-grid code{color:var(--ian-muted,var(--muted));font-size:.88rem}
 .module14-feature-box{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin:18px 0}.module14-feature-box>div{border:1px solid var(--ian-border,var(--line));border-radius:14px;padding:14px;background:var(--ian-surface2,var(--panel2));display:flex;gap:7px;flex-wrap:wrap}.module14-feature-box strong{width:100%;color:var(--ian-primary,var(--accent))}.module14-feature-box span{padding:5px 8px;border-radius:999px;background:var(--ian-surface,var(--panel));border:1px solid var(--ian-border,var(--line));font-size:.82rem}
-.module14-split{display:grid;grid-template-columns:3fr 1fr;gap:10px;margin:18px 0}.module14-split>div{border:1px solid var(--ian-border,var(--line));border-radius:14px;padding:16px;background:var(--ian-surface2,var(--panel2));display:grid;gap:4px}.module14-split strong{color:var(--ian-primary,var(--accent))}.module14-split span{color:var(--ian-muted,var(--muted))}
-.module14-matrix{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:18px 0}.module14-matrix span{padding:14px;border:1px solid var(--ian-border,var(--line));border-radius:11px;background:var(--ian-surface2,var(--panel2));text-align:center;font-weight:750}
-.module14-metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:10px 0 18px}.module14-metric-grid>div{border:1px solid var(--ian-border,var(--line));border-radius:15px;padding:16px;background:var(--ian-surface2,var(--panel2))}.module14-metric-grid h3{margin:0 0 6px;color:var(--ian-primary,var(--accent))}.module14-metric-grid p{margin:0;color:var(--ian-muted,var(--muted))}
-.compact-top{margin-top:14px;align-items:start}.compact-top .lead{font-size:1.03rem}
-.module14-threshold{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;align-items:center;margin:20px 0}.module14-threshold span,.module14-threshold strong{padding:10px 6px;border:1px solid var(--ian-border,var(--line));border-radius:10px;text-align:center;background:var(--ian-surface2,var(--panel2))}.module14-threshold strong{color:var(--ian-primary,var(--accent))}
-.module14-leak{display:grid;gap:12px}.module14-leak>div{border:1px solid var(--ian-border,var(--line));border-radius:14px;padding:17px;background:var(--ian-surface2,var(--panel2));display:grid;gap:5px}.module14-leak strong{color:var(--ian-primary,var(--accent))}.module14-leak span{color:var(--ian-muted,var(--muted))}
-.module14-process{display:grid;gap:8px;margin:18px 0}.module14-process span{padding:10px 12px;border-left:4px solid var(--ian-primary,var(--accent));border-radius:8px;background:var(--ian-surface2,var(--panel2));font-weight:750}.module14-next{margin-top:18px!important}
-@media(max-width:1100px){.module14-source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:900px){.module14-title-grid,.module14-path,.module14-task-grid,.module14-source-grid,.module14-feature-box,.module14-metric-grid{grid-template-columns:1fr!important}.module14-threshold{grid-template-columns:1fr}.module14-split{grid-template-columns:1fr}}
-@media(max-height:850px) and (min-width:901px){.slide{padding:28px!important}.slide-header{margin-bottom:12px!important}.module14-hero-lead{font-size:clamp(1.75rem,2.7vw,2.9rem)!important}.module14-flow{padding:18px}.code-input{min-height:150px}.monaco-host{height:190px}.module14-source-grid>div,.module14-task-grid>div{padding:12px}}
+.module14-split-visual{display:grid;grid-template-columns:3fr 1fr;gap:8px;margin:17px 0}.module14-split-visual>div{padding:18px;border-radius:13px;border:1px solid var(--ian-border,var(--line));display:grid;gap:5px;text-align:center}.module14-split-visual .train{background:var(--ian-surface2,var(--panel2))}.module14-split-visual .test{background:color-mix(in srgb,var(--ian-primary,var(--accent)) 10%,var(--ian-surface2,var(--panel2)))}.module14-split-visual strong{color:var(--ian-primary,var(--accent))}
+.module14-baseline-box{border:1px solid var(--ian-border,var(--line));border-radius:15px;padding:18px;background:var(--ian-surface2,var(--panel2));display:grid;gap:6px;margin:18px 0}.module14-baseline-box strong{color:var(--ian-primary,var(--accent))}
+.module14-sigmoid-static{display:grid;gap:10px;place-items:center;border:1px solid var(--ian-border,var(--line));border-radius:18px;padding:20px;background:var(--ian-surface2,var(--panel2))}.sigmoid-curve{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;font-size:4.6rem;font-weight:900;font-style:italic;color:var(--ian-primary,var(--accent));background:var(--ian-surface,var(--panel));border:1px solid var(--ian-border,var(--line))}
+.module14-confusion-static{display:grid;grid-template-columns:90px repeat(2,1fr);gap:5px;margin:16px 0}.module14-confusion-static>div{padding:11px;border:1px solid var(--ian-border,var(--line));border-radius:8px;background:var(--ian-surface2,var(--panel2));text-align:center;font-size:.86rem}.module14-confusion-static .head{font-weight:850;color:var(--ian-primary,var(--accent))}.module14-confusion-static .corner{background:transparent;border:0}
+.module14-metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:10px 0 16px}.module14-metric-grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}.module14-metric-grid>div{border:1px solid var(--ian-border,var(--line));border-radius:15px;padding:14px;background:var(--ian-surface2,var(--panel2))}.module14-metric-grid h3{margin:0 0 6px;color:var(--ian-primary,var(--accent))}.module14-metric-grid p{margin:0;color:var(--ian-muted,var(--muted));font-size:.9rem}
+.module14-threshold-static{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin:18px 0}.module14-threshold-static .bar{height:14px;border-radius:999px;background:linear-gradient(90deg,var(--ian-surface2,var(--panel2)) 0 50%,color-mix(in srgb,var(--ian-primary,var(--accent)) 25%,var(--ian-surface2,var(--panel2))) 50% 100%);border:1px solid var(--ian-border,var(--line));position:relative}.module14-threshold-static .bar i{position:absolute;left:50%;top:-6px;width:2px;height:26px;background:var(--ian-primary,var(--accent))}.module14-threshold-static strong{grid-column:1/-1;text-align:center;color:var(--ian-primary,var(--accent))}
+.module14-end2end{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap;margin:14px 0}.module14-end2end>div{flex:1 1 115px;min-width:105px;border:1px solid var(--ian-border,var(--line));border-radius:12px;padding:11px;background:var(--ian-surface2,var(--panel2));display:grid;gap:3px;text-align:center}.module14-end2end>div span{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;margin:auto;background:var(--ian-primary,var(--accent));color:#fff;font-weight:850}.module14-end2end>div strong{font-size:.9rem}.module14-end2end>div small{color:var(--ian-muted,var(--muted))}.module14-end2end>b{align-self:center;color:var(--ian-primary,var(--accent))}
+.module14-next-course{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.module14-next-course>div{border:1px solid var(--ian-border,var(--line));border-radius:15px;padding:15px;background:var(--ian-surface2,var(--panel2));display:grid;gap:6px}.module14-next-course span{text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;font-weight:900;color:var(--ian-primary,var(--accent))}.module14-next-course strong{font-size:.98rem}.module14-next-course small{color:var(--ian-muted,var(--muted))}
+.output-wrap{background:var(--terminal)}.plot-output{padding:0 14px 14px;display:grid;gap:10px}.plot-output:empty{display:none}.plot-output img{display:block;max-width:100%;max-height:300px;margin:0 auto;border-radius:10px;background:#fff;border:1px solid var(--line)}
+.compact-top{margin-top:12px;align-items:start}.compact-top .lead{font-size:1.02rem}
+@media(max-width:1150px){.module14-source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.module14-next-course{grid-template-columns:repeat(3,minmax(0,1fr))}.module14-path.four{grid-template-columns:repeat(2,minmax(0,1fr))}.module14-metric-grid.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.module14-title-grid,.module14-path,.module14-path.four,.module14-task-grid,.module14-source-grid,.module14-feature-box,.module14-feature-example,.module14-next-course,.module14-metric-grid,.module14-metric-grid.four{grid-template-columns:1fr!important}.module14-supervised-flow,.module14-supervised-flow.short{grid-template-columns:1fr}.module14-supervised-flow>b{transform:rotate(90deg);justify-self:center}.module14-encoding{grid-template-columns:1fr}.module14-encoding>span{transform:rotate(90deg);justify-self:center}.module14-model-box{flex-direction:column}.module14-split-visual{grid-template-columns:1fr}.module14-end2end{display:grid;grid-template-columns:1fr}.module14-end2end>b{transform:rotate(90deg);justify-self:center}}
+@media(max-height:850px) and (min-width:901px){.slide{padding:26px!important}.slide-header{margin-bottom:10px!important}.module14-hero-lead{font-size:clamp(1.7rem,2.5vw,2.75rem)!important}.module14-flow{padding:16px}.code-input{min-height:145px}.monaco-host{height:185px}.plot-output img{max-height:215px}.module14-source-grid>div,.module14-task-grid>div,.module14-next-course>div{padding:11px}}
 </style>
 </head>
 <body>
@@ -109,80 +123,399 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
 
 <section class="slide" data-title="Machine Learning &amp;amp; External Data">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Module 14 · Final interactive lesson</span><h2>Machine Learning &amp; External Data</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">Module 14 · Final course module</span><h2>Machine Learning &amp; External Data</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="title-grid module14-title-grid">
   <div>
-    <p class="big-lead module14-hero-lead">Bring data into Python, prepare it carefully, and build a simple machine learning workflow that can make predictions on new cases.</p>
-    <p class="lead module14-hero-sub">This final module connects many ideas from the course: external data, Pandas, cleaning, statistics, evaluation, and responsible interpretation.</p>
-    <div class="pill-row"><span>External data</span><span>Features</span><span>Train/test</span><span>Classification</span><span>Evaluation</span></div>
+    <p class="big-lead module14-hero-lead">Start with a simple formula, let data reveal the relationship, and then build toward real machine learning.</p>
+    <p class="lead module14-hero-sub">This module is designed as a bridge into your next machine learning course. We begin with algebra and visual intuition before introducing features, numeric vectors, regression, classification, evaluation, leakage, and pipelines.</p>
+    <div class="pill-row"><span>Algebra → model</span><span>Vectors</span><span>Regression</span><span>Classification</span><span>Evaluation</span></div>
   </div>
   <div class="module14-flow">
-    <div><strong>External data</strong><small>CSV · JSON · API · database</small></div><span>prepare</span>
-    <div><strong>Model</strong><small>learn from training examples</small></div><span>evaluate</span>
-    <div><strong>Prediction</strong><small>new cases + clear limitations</small></div>
+    <div><strong>Known formula</strong><small>we already know the rule</small></div><span>reverse engineer</span>
+    <div><strong>Learn from data</strong><small>estimate the rule</small></div><span>generalize</span>
+    <div><strong>Predict new cases</strong><small>with honest evaluation</small></div>
   </div>
 </div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 1</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 1</span></footer>
   </div>
 </section>
 
-<section class="slide" data-title="From analysis to prediction">
+<section class="slide" data-title="Why end IAN 601 with machine learning?">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Connect the course to the final workflow</span><h2>From analysis to prediction</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">Bridge to next semester</span><h2>Why end IAN 601 with machine learning?</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
-<p class="lead">Earlier modules helped us organize, clean, summarize, and visualize data. Machine learning adds a new question: can patterns in existing data help us predict an outcome for a new case?</p>
-<div class="module14-path">
-  <div><span>Earlier modules</span><h3>Prepare</h3><p>Python, NumPy, Pandas, cleaning, reshaping, and external data structures.</p></div>
-  <div><span>Module 13</span><h3>Understand</h3><p>Statistics and visualization help us inspect distributions, differences, and relationships.</p></div>
-  <div class="current"><span>Module 14</span><h3>Predict</h3><p>Separate features and target, train a model, evaluate it, and use it carefully.</p></div>
+<p class="lead">Everything you have learned so far becomes part of the machine learning workflow.</p>
+<div class="module14-path four">
+  <div><span>Python</span><h3>Program</h3><p>Write reusable code and functions.</p></div>
+  <div><span>NumPy &amp; Pandas</span><h3>Represent data</h3><p>Work with arrays, tables, features, and transformations.</p></div>
+  <div><span>Cleaning &amp; Statistics</span><h3>Understand data</h3><p>Check quality, distributions, relationships, and unusual values.</p></div>
+  <div class="current"><span>Machine Learning</span><h3>Learn patterns</h3><p>Estimate a model from examples and test it on new data.</p></div>
 </div>
-<div class="callout secondary"><strong>Prediction is not magic.</strong> The model learns from the examples and variables we provide, so data quality and evaluation still matter.</div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 2</span></footer>
+<div class="callout secondary"><strong>Next semester:</strong> you can go deeper into algorithms because you will already understand how data becomes features, how training differs from testing, and why evaluation matters.</div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 2</span></footer>
   </div>
 </section>
 
-<section class="slide" data-title="Analytics questions and machine learning tasks">
+<section class="slide" data-title="What does a model actually do?">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Choose the method after the question</span><h2>Analytics questions and machine learning tasks</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">A model is a rule for turning inputs into outputs</span><h2>What does a model actually do?</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">If we already know the rule, prediction is easy. Machine learning becomes useful when the rule is unknown or too complicated to write by hand.</p>
+    <div class="module14-rule-cards">
+      <div><strong>Known rule</strong><span>We write the formula.</span><code>y = 2x + 1</code></div>
+      <div><strong>Learned rule</strong><span>We give examples and estimate the relationship.</span><code>data → fit → model</code></div>
+    </div>
+  </div>
+  <div class="module14-model-box"><div>Input <strong>x</strong></div><span>→</span><div>Model <strong>f(x)</strong></div><span>→</span><div>Prediction <strong>ŷ</strong></div></div>
+</div>
+<div class="callout"><strong>Machine learning does not remove the rule.</strong> It changes how we obtain the rule: instead of specifying every coefficient ourselves, we estimate them from data.</div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 3</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Start with algebra: y = 2x + 1">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">A formula is already a predictive model</span><h2>Start with algebra: y = 2x + 1</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Suppose we know the exact relationship <code>y = 2x + 1</code>. Once we know <code>x</code>, we can calculate <code>y</code>.</p>
+  <div class="module14-equation"><strong>y = 2x + 1</strong><span>slope = 2 · intercept = 1</span></div>
+  <div class="module14-number-row"><span>x=1 → y=3</span><span>x=2 → y=5</span><span>x=3 → y=7</span><span>x=4 → y=9</span></div>
+  <div class="callout secondary"><strong>This is prediction with a known rule.</strong> The graph is a straight line because the relationship is linear.</div>
+</div><div>
+<div class="code-cell" data-filename="module14_algebra_line.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Plot a known formula</h3><p>Change the slope or intercept and see how the line changes.</p></div>
+    <span class="file-pill">module14_algebra_line.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_algebra_line.py</span></div>
+    <textarea class="code-input" spellcheck="false">import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(0, 6)
+y = 2 * x + 1
+
+print("x:", x)
+print("y:", y)
+
+plt.figure(figsize=(6, 3.5))
+plt.plot(x, y, marker="o")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Known Relationship: y = 2x + 1")
+plt.grid(alpha=0.25)
+plt.tight_layout()
+plt.show()</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 4</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Reverse engineer the formula from data">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">What if we see the points but not the equation?</span><h2>Reverse engineer the formula from data</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Now imagine someone gives us the data points but hides the formula. Can we recover the relationship?</p>
+  <div class="module14-points"><span>(1, 3)</span><span>(2, 5)</span><span>(3, 7)</span><span>(4, 9)</span><span>(5, 11)</span></div>
+  <div class="callout"><strong>This is the key transition to machine learning:</strong> instead of manually solving for the rule, we ask an algorithm to estimate the coefficients from examples.</div>
+</div><div>
+<div class="code-cell" data-filename="module14_reverse_engineer.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Learn slope and intercept</h3><p>LinearRegression estimates the same rule from the data points.</p></div>
+    <span class="file-pill">module14_reverse_engineer.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_reverse_engineer.py</span></div>
+    <textarea class="code-input" spellcheck="false">import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+X = np.array([1, 2, 3, 4, 5]).reshape(-1, 1)
+y = np.array([3, 5, 7, 9, 11])
+
+model = LinearRegression()
+model.fit(X, y)
+
+print("Learned slope:", model.coef_[0])
+print("Learned intercept:", model.intercept_)
+
+pred = model.predict(X)
+
+plt.figure(figsize=(6, 3.5))
+plt.scatter(X[:, 0], y, label="Observed data")
+plt.plot(X[:, 0], pred, label="Learned line")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Learning the Hidden Relationship")
+plt.legend()
+plt.tight_layout()
+plt.show()</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 5</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Real data is noisy">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">The learned line usually will not pass through every point</span><h2>Real data is noisy</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Real measurements include variation. Even if a linear relationship exists, observations usually do not land exactly on one line.</p>
+  <ul class="clean-list"><li>Measurement error</li><li>Unobserved factors</li><li>Natural variation</li><li>Imperfect features</li></ul>
+  <div class="callout secondary"><strong>The model now estimates the best approximate line</strong> rather than recovering a perfect equation.</div>
+</div><div>
+<div class="code-cell" data-filename="module14_noisy_line.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Fit a line to noisy observations</h3><p>Compare the observed points with the fitted predictions.</p></div>
+    <span class="file-pill">module14_noisy_line.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_noisy_line.py</span></div>
+    <textarea class="code-input" spellcheck="false">import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+X = np.array([1, 2, 3, 4, 5, 6, 7]).reshape(-1, 1)
+y = np.array([4.0, 4.8, 7.5, 8.1, 11.4, 12.2, 15.0])
+
+model = LinearRegression()
+model.fit(X, y)
+pred = model.predict(X)
+
+print("Slope:", round(model.coef_[0], 3))
+print("Intercept:", round(model.intercept_, 3))
+
+plt.figure(figsize=(6, 3.5))
+plt.scatter(X[:, 0], y, label="Observed")
+plt.plot(X[:, 0], pred, label="Best-fit line")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Real Data: Approximate Linear Relationship")
+plt.legend()
+plt.tight_layout()
+plt.show()</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 6</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="What does “best fit” mean?">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Prediction error connects data to optimization</span><h2>What does “best fit” mean?</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">For each observation, the model makes a prediction. The difference between the observed value and predicted value is a <strong>residual</strong>.</p>
+  <div class="module14-equation"><strong>residual = actual − predicted</strong><span>smaller overall error → better-fitting line</span></div>
+  <p class="concept-note">Many machine learning algorithms choose parameters by minimizing some form of loss or error.</p>
+</div><div>
+<div class="code-cell" data-filename="module14_residuals.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Visualize prediction errors</h3><p>The vertical segments show the residual for each point.</p></div>
+    <span class="file-pill">module14_residuals.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_residuals.py</span></div>
+    <textarea class="code-input" spellcheck="false">import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+X = np.array([1, 2, 3, 4, 5, 6, 7]).reshape(-1, 1)
+y = np.array([4.0, 4.8, 7.5, 8.1, 11.4, 12.2, 15.0])
+
+model = LinearRegression().fit(X, y)
+pred = model.predict(X)
+
+print("Residuals:",
+      np.round(y - pred, 2))
+
+plt.figure(figsize=(6, 3.5))
+plt.scatter(X[:, 0], y)
+plt.plot(X[:, 0], pred)
+
+for x_i, actual, predicted in zip(X[:, 0], y, pred):
+    plt.plot([x_i, x_i], [predicted, actual],
+             linestyle="--", alpha=0.7)
+
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Residuals: Actual vs Predicted")
+plt.tight_layout()
+plt.show()</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 7</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="From one x to many features">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Real prediction usually uses more than one input</span><h2>From one x to many features</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">A single-feature linear model looks like <code>y = b₀ + b₁x</code>. With multiple features, the same idea expands naturally.</p>
+    <div class="module14-equation large"><strong>ŷ = b₀ + b₁x₁ + b₂x₂ + b₃x₃ + ...</strong><span>each feature receives a learned coefficient</span></div>
+  </div>
+  <div class="module14-feature-example">
+    <div><strong>x₁</strong><span>visits</span></div>
+    <div><strong>x₂</strong><span>pages viewed</span></div>
+    <div><strong>x₃</strong><span>past orders</span></div>
+    <div><strong>x₄</strong><span>days since last visit</span></div>
+  </div>
+</div>
+<div class="callout secondary"><strong>The structure is still algebra.</strong> Machine learning estimates the coefficients that connect the feature values to the target.</div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 8</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Features become numeric vectors">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">One row becomes a vector; many rows become a matrix</span><h2>Features become numeric vectors</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">Most machine learning algorithms expect numerical representations.</p>
+    <div class="module14-vector"><small>One customer</small><strong>x = [7, 16, 2, 15]</strong><span>[visits, pages viewed, past orders, days since last]</span></div>
+    <div class="callout"><strong>One row = one feature vector.</strong> Every position has a defined meaning.</div>
+  </div>
+  <div class="module14-matrix-visual">
+    <small>Feature matrix X</small>
+    <div class="matrix-row"><span>2</span><span>5</span><span>0</span><span>90</span></div>
+    <div class="matrix-row"><span>8</span><span>18</span><span>3</span><span>12</span></div>
+    <div class="matrix-row"><span>4</span><span>9</span><span>1</span><span>45</span></div>
+    <div class="matrix-row"><span>10</span><span>22</span><span>4</span><span>5</span></div>
+    <small>rows = cases · columns = features</small>
+  </div>
+</div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 9</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="What if a feature is text?">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Categorical values need a numeric representation</span><h2>What if a feature is text?</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">A model cannot multiply a coefficient by the word <code>Web</code>. Categories are usually converted into numeric indicators.</p>
+    <div class="module14-encoding">
+      <div><strong>Raw category</strong><span>Web</span></div><span>→</span>
+      <div><strong>One-hot representation</strong><span>[Web=1, Store=0, Email=0]</span></div>
+    </div>
+    <div class="callout secondary"><strong>This is representation.</strong> The meaning stays categorical, but the model receives numbers.</div>
+  </div>
+  <div>
+<div class="code-cell" data-filename="module14_one_hot.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>One-hot encode a category</h3><p>Pandas creates one indicator column per category.</p></div>
+    <span class="file-pill">module14_one_hot.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_one_hot.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+data = pd.DataFrame({
+    "channel": ["Web", "Store", "Email", "Web"]
+})
+
+encoded = pd.get_dummies(
+    data,
+    columns=["channel"],
+    dtype=int
+)
+
+print(encoded)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
+</div></div>
+</div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 10</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Regression versus classification">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">The target determines the type of supervised task</span><h2>Regression versus classification</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="module14-task-grid">
-  <div><h3>Descriptive analytics</h3><p>What happened?</p><span>Example: What was the average order amount?</span></div>
-  <div><h3>Classification</h3><p>Which category?</p><span>Example: Will a customer respond: yes or no?</span></div>
-  <div><h3>Regression</h3><p>What numeric value?</p><span>Example: What order amount should we expect?</span></div>
+  <div><h3>Regression</h3><p>Predict a numeric value.</p><span>Examples: price, demand, temperature, length of stay</span><div class="task-output">ŷ = 82.4</div></div>
+  <div><h3>Classification</h3><p>Predict a class or class probability.</p><span>Examples: yes/no, fraud/not fraud, category A/B/C</span><div class="task-output">P(class=1) = 0.78</div></div>
+  <div><h3>Same foundation</h3><p>Both use features, training data, a fitted model, and evaluation on new data.</p><span>The algorithm and evaluation metrics change with the target.</span></div>
+</div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 11</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Supervised learning workflow">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Learn from examples where the target is known</span><h2>Supervised learning workflow</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="module14-supervised-flow">
+  <div><strong>1 · Labeled examples</strong><span>X and known y</span></div><b>→</b>
+  <div><strong>2 · Training</strong><span>estimate model parameters</span></div><b>→</b>
+  <div><strong>3 · Learned model</strong><span>fitted relationship</span></div><b>→</b>
+  <div><strong>4 · New X</strong><span>unseen case</span></div><b>→</b>
+  <div><strong>5 · Prediction</strong><span>ŷ or probability</span></div>
 </div>
-<div class="callout"><strong>In this module:</strong> we use a simple binary classification problem because the target has two classes: responded or did not respond.</div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 3</span></footer>
+<div class="callout"><strong>“Supervised” means the training examples include the correct target.</strong> The target supervises the learning process.</div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 12</span></footer>
   </div>
 </section>
 
 <section class="slide" data-title="External data sources">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Analytics rarely begins with a hand-built DataFrame</span><h2>External data sources</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">Where real machine learning data comes from</span><h2>External data sources</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="module14-source-grid">
-  <div><h3>CSV / TSV</h3><p>Common exported table files.</p><code>pd.read_csv(...)</code></div>
-  <div><h3>Excel</h3><p>Workbooks with sheets and formatted tables.</p><code>pd.read_excel(...)</code></div>
-  <div><h3>JSON / APIs</h3><p>Nested records returned by web services.</p><code>pd.json_normalize(...)</code></div>
-  <div><h3>Databases</h3><p>Structured data retrieved with queries.</p><code>pd.read_sql(...)</code></div>
+  <div><h3>CSV / TSV</h3><p>Exports from applications, research systems, and analytics platforms.</p><code>pd.read_csv(...)</code></div>
+  <div><h3>Excel</h3><p>Operational workbooks and manually maintained datasets.</p><code>pd.read_excel(...)</code></div>
+  <div><h3>JSON / API</h3><p>Web services and application endpoints.</p><code>pd.json_normalize(...)</code></div>
+  <div><h3>Database</h3><p>Structured data queried from relational systems.</p><code>pd.read_sql(...)</code></div>
 </div>
-<div class="callout secondary"><strong>Before using any external source:</strong> understand where the data came from, what each field means, when it was updated, and whether you are allowed to use it.</div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 4</span></footer>
+<div class="callout secondary"><strong>Data provenance matters:</strong> know who produced the data, what each variable means, when it was collected, and whether you are permitted to use it.</div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 13</span></footer>
   </div>
 </section>
 
-<section class="slide" data-title="Read CSV data">
+<section class="slide" data-title="Read external CSV data">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Start by checking the structure</span><h2>Read CSV data</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">Loading is only the first step</span><h2>Read external CSV data</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="two-col tight"><div>
-  <p class="lead">CSV is one of the most common ways to exchange tabular data. In this browser example, we store the CSV as text so the code runs without downloading a file.</p>
-  <ul class="clean-list"><li>Read the data.</li><li>Inspect the first rows.</li><li>Check shape and data types.</li><li>Confirm the columns mean what you expect.</li></ul>
-  <div class="callout"><strong>In VS Code or Jupyter:</strong> replace <code>StringIO(csv_text)</code> with a real file path such as <code>"customers.csv"</code>.</div>
+  <p class="lead">After reading a file, immediately inspect the structure before moving toward modeling.</p>
+  <ul class="clean-list"><li>Rows and columns</li><li>Column names</li><li>Data types</li><li>Missing values</li><li>Target values</li></ul>
+  <div class="callout"><strong>In the browser</strong> we use CSV text. In VS Code or Jupyter, the same function can read a file path.</div>
 </div><div>
 <div class="code-cell" data-filename="module14_read_csv.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Read a CSV-style dataset</h3><p>The same Pandas function works with a real CSV file.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Read and inspect CSV-style data</h3><p>Think of this as the first checkpoint in a modeling project.</p></div>
     <span class="file-pill">module14_read_csv.py</span>
   </div>
   <div class="editor-shell">
@@ -190,12 +523,12 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
     <textarea class="code-input" spellcheck="false">import pandas as pd
 from io import StringIO
 
-csv_text = """customer_id,visits,past_orders,responded
-101,2,0,0
-102,8,3,1
-103,4,1,0
-104,10,4,1
-105,3,0,0
+csv_text = """visits,pages_viewed,past_orders,responded
+2,5,0,0
+8,18,3,1
+4,9,1,0
+10,22,4,1
+3,6,0,0
 """
 
 data = pd.read_csv(StringIO(csv_text))
@@ -208,32 +541,31 @@ print(data.dtypes)</textarea>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 5</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 14</span></footer>
   </div>
 </section>
 
 <section class="slide" data-title="JSON and API-style data">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Nested records need to become a table</span><h2>JSON and API-style data</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">Turn nested records into features</span><h2>JSON and API-style data</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="two-col tight"><div>
-  <p class="lead">Web APIs often return JSON rather than rows and columns. Pandas can normalize nested records into a DataFrame.</p>
-  <ul class="clean-list"><li>An API endpoint returns a response.</li><li>The response is commonly JSON.</li><li>Nested records may need normalization.</li><li>Authentication and rate limits must be respected.</li></ul>
-  <div class="callout secondary"><strong>Security rule:</strong> never put private API keys directly into code that will be published to GitHub.</div>
+  <p class="lead">APIs often return nested JSON. Before modeling, the nested structure must be converted into rows and columns with stable meanings.</p>
+  <ul class="clean-list"><li>Read API documentation.</li><li>Inspect the response structure.</li><li>Normalize nested fields.</li><li>Respect authentication and rate limits.</li></ul>
+  <div class="callout secondary"><strong>Never publish private API keys</strong> in notebooks or GitHub repositories.</div>
 </div><div>
 <div class="code-cell" data-filename="module14_json.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Normalize API-style JSON</h3><p>This simulates a response without making a live web request.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Normalize nested JSON</h3><p>The example simulates an API response without making a live request.</p></div>
     <span class="file-pill">module14_json.py</span>
   </div>
   <div class="editor-shell">
     <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_json.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
-api_response = {
-    "updated": "2026-10-01",
+response = {
     "customers": [
         {"id": 101, "activity": {"visits": 2, "orders": 0}},
         {"id": 102, "activity": {"visits": 8, "orders": 3}},
@@ -241,31 +573,31 @@ api_response = {
     ]
 }
 
-data = pd.json_normalize(api_response["customers"])
+table = pd.json_normalize(response["customers"])
 
-print(data)</textarea>
+print(table)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 6</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 15</span></footer>
   </div>
 </section>
 
-<section class="slide" data-title="Inspect external data before modeling">
+<section class="slide" data-title="Inspect modeling data before fitting">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Do not send raw input directly into a model</span><h2>Inspect external data before modeling</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">Machine learning cannot rescue bad input</span><h2>Inspect modeling data before fitting</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="two-col tight"><div>
-  <p class="lead">External data should go through the same quality checks you learned earlier in the course.</p>
-  <ol class="clean-list"><li>Check shape and column names.</li><li>Check missing values.</li><li>Check data types.</li><li>Check ranges and unusual values.</li><li>Check the target balance.</li></ol>
-  <div class="callout"><strong>Machine learning can learn bad patterns from bad data.</strong> A model does not automatically recognize that a source field is incorrect.</div>
+  <p class="lead">Before modeling, use the same data-quality habits from Module 12.</p>
+  <ol class="clean-list"><li>Check missing values.</li><li>Confirm numeric ranges.</li><li>Check duplicates.</li><li>Inspect class balance.</li><li>Ask whether each feature is available at prediction time.</li></ol>
+  <div class="callout"><strong>A model can learn a data error as if it were a real pattern.</strong></div>
 </div><div>
 <div class="code-cell" data-filename="module14_inspect.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Inspect the modeling dataset</h3><p>Pay special attention to the target counts.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Audit the classification dataset</h3><p>Pay attention to target balance before judging future accuracy.</p></div>
     <span class="file-pill">module14_inspect.py</span>
   </div>
   <div class="editor-shell">
@@ -288,38 +620,106 @@ customers = pd.DataFrame({
 print("Shape:", customers.shape)
 print("\nMissing values:")
 print(customers.isna().sum())
-
-print("\nData types:")
-print(customers.dtypes)
-
 print("\nTarget counts:")
-print(customers["responded"].value_counts())</textarea>
+print(customers["responded"].value_counts())
+print("\nTarget proportions:")
+print(customers["responded"].value_counts(normalize=True).round(3))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 7</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 16</span></footer>
   </div>
 </section>
 
-<section class="slide" data-title="Features and target">
+<section class="slide" data-title="Correlation matrix: inspect numeric relationships">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Separate what the model knows from what it predicts</span><h2>Features and target</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">A visual map before modeling</span><h2>Correlation matrix: inspect numeric relationships</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="two-col tight"><div>
-  <p class="lead">Features are the input columns available when a prediction is made. The target is the outcome the model is trained to predict.</p>
-  <div class="module14-feature-box"><div><strong>X · Features</strong><span>visits</span><span>pages_viewed</span><span>past_orders</span><span>days_since_last</span></div><div><strong>y · Target</strong><span>responded</span></div></div>
-  <div class="callout secondary"><strong>Question:</strong> would each feature actually be available at the moment we need to make the prediction?</div>
+  <p class="lead">A correlation matrix summarizes pairwise linear relationships between numeric variables.</p>
+  <ul class="clean-list"><li>Values near +1: strong positive linear association</li><li>Values near −1: strong negative linear association</li><li>Values near 0: little linear association</li></ul>
+  <div class="callout secondary"><strong>Do not use correlation as an automatic feature-selection rule.</strong> It is an exploratory clue, not proof of importance or causation.</div>
 </div><div>
-<div class="code-cell" data-filename="module14_features_target.py">
+<div class="code-cell" data-filename="module14_correlation_matrix.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Create X and y</h3><p>Inspect the feature columns and target separately.</p></div>
-    <span class="file-pill">module14_features_target.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Plot a correlation matrix</h3><p>Read both the signs and the magnitudes of the relationships.</p></div>
+    <span class="file-pill">module14_correlation_matrix.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_features_target.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_correlation_matrix.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+customers = pd.DataFrame({
+    "visits": [2, 8, 4, 10, 3, 7, 5, 9, 1, 6, 4, 8,
+               2, 9, 5, 7, 3, 10, 6, 8, 1, 5, 7, 9],
+    "pages_viewed": [5, 18, 9, 22, 6, 16, 11, 20, 3, 14, 8, 19,
+                     4, 21, 10, 17, 7, 24, 13, 18, 2, 12, 15, 23],
+    "past_orders": [0, 3, 1, 4, 0, 2, 1, 5, 0, 2, 1, 3,
+                    0, 4, 1, 2, 0, 5, 2, 3, 0, 1, 2, 4],
+    "days_since_last": [90, 12, 45, 5, 75, 18, 40, 7, 120, 25, 55, 10,
+                        100, 6, 48, 20, 80, 4, 28, 11, 140, 50, 22, 8],
+    "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+                  0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+})
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols = [
+    "visits",
+    "pages_viewed",
+    "past_orders",
+    "days_since_last",
+    "responded"
+]
+
+corr = customers[cols].corr()
+
+fig, ax = plt.subplots(figsize=(6, 4.5))
+image = ax.imshow(corr.values, vmin=-1, vmax=1)
+
+ax.set_xticks(range(len(cols)))
+ax.set_yticks(range(len(cols)))
+ax.set_xticklabels(cols, rotation=35, ha="right")
+ax.set_yticklabels(cols)
+
+for i in range(len(cols)):
+    for j in range(len(cols)):
+        ax.text(j, i, f"{corr.iloc[i, j]:.2f}",
+                ha="center", va="center")
+
+fig.colorbar(image, ax=ax, label="Correlation")
+ax.set_title("Correlation Matrix")
+plt.tight_layout()
+plt.show()</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 17</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Separate features X and target y">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">The model must not receive the answer as an input</span><h2>Separate features X and target y</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">The feature matrix <code>X</code> contains inputs. The target vector <code>y</code> contains the answers the model learns to predict.</p>
+  <div class="module14-feature-box"><div><strong>X · Feature matrix</strong><span>visits</span><span>pages_viewed</span><span>past_orders</span><span>days_since_last</span></div><div><strong>y · Target vector</strong><span>responded</span></div></div>
+  <div class="callout secondary"><strong>Never include <code>responded</code> inside X.</strong> That would directly leak the answer.</div>
+</div><div>
+<div class="code-cell" data-filename="module14_xy.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Build X and y</h3><p>Inspect their shapes so the matrix/vector idea is concrete.</p></div>
+    <span class="file-pill">module14_xy.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_xy.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
 customers = pd.DataFrame({
@@ -335,43 +735,43 @@ customers = pd.DataFrame({
                   0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
 })
 
-features = [
+feature_names = [
     "visits",
     "pages_viewed",
     "past_orders",
     "days_since_last"
 ]
 
-X = customers[features]
+X = customers[feature_names]
 y = customers["responded"]
 
-print("Features:")
-print(X.head())
-
-print("\nTarget:")
-print(y.head())</textarea>
+print("X shape:", X.shape)
+print("y shape:", y.shape)
+print("\nFirst feature vector:")
+print(X.iloc[0].to_numpy())
+print("First target:", y.iloc[0])</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 8</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 18</span></footer>
   </div>
 </section>
 
-<section class="slide" data-title="Train and test data">
+<section class="slide" data-title="Train/test split">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Evaluate on cases the model did not learn from</span><h2>Train and test data</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">Learning and evaluation must use different rows</span><h2>Train/test split</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="two-col tight"><div>
-  <p class="lead">Training data teaches the model. Test data is held aside and used later to estimate how the model performs on unseen cases.</p>
-  <div class="module14-split"><div><strong>Training set</strong><span>fit the model</span></div><div><strong>Test set</strong><span>evaluate only after training</span></div></div>
-  <ul class="clean-list"><li><code>random_state</code> makes the example reproducible.</li><li><code>stratify=y</code> helps preserve class proportions.</li></ul>
+  <p class="lead">The model learns from the training set. The test set stays hidden until evaluation.</p>
+  <div class="module14-split-visual"><div class="train"><strong>75% Train</strong><span>fit coefficients</span></div><div class="test"><strong>25% Test</strong><span>evaluate unseen cases</span></div></div>
+  <ul class="clean-list"><li><code>random_state</code> makes the split reproducible.</li><li><code>stratify=y</code> helps preserve class proportions.</li></ul>
 </div><div>
 <div class="code-cell" data-filename="module14_split.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Create a reproducible train/test split</h3><p>Check how many rows go into each set.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Create train and test sets</h3><p>Check the shapes and class counts after splitting.</p></div>
     <span class="file-pill">module14_split.py</span>
   </div>
   <div class="editor-shell">
@@ -399,37 +799,38 @@ X = customers[
 y = customers["responded"]
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X,
-    y,
+    X, y,
     test_size=0.25,
     random_state=42,
     stratify=y
 )
 
-print("Training rows:", len(X_train))
-print("Test rows:", len(X_test))</textarea>
+print("X_train:", X_train.shape)
+print("X_test:", X_test.shape)
+print("\nTraining target counts:")
+print(y_train.value_counts())</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 9</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 19</span></footer>
   </div>
 </section>
 
 <section class="slide" data-title="Start with a baseline">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">A model should beat a simple rule</span><h2>Start with a baseline</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">A model needs something simple to beat</span><h2>Start with a baseline</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="two-col tight"><div>
-  <p class="lead">Before evaluating a machine learning model, create a simple baseline. For classification, one baseline is predicting the most common class every time.</p>
-  <div class="callout"><strong>Why?</strong> An accuracy of 80 percent sounds good until you discover that 80 percent of all cases belong to the same class.</div>
-  <p class="concept-note">The baseline gives the model a minimum standard to beat.</p>
+  <p class="lead">A baseline tells us how well we could perform using a very simple strategy.</p>
+  <div class="module14-baseline-box"><strong>Majority-class baseline</strong><span>Always predict the most common class.</span></div>
+  <div class="callout"><strong>Why it matters:</strong> 80% accuracy is not impressive if 80% of the cases already belong to one class.</div>
 </div><div>
 <div class="code-cell" data-filename="module14_baseline.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Measure majority-class accuracy</h3><p>Compare this baseline with the trained model later.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Build a majority-class baseline</h3><p>Save this result so you can compare the real classifier against it.</p></div>
     <span class="file-pill">module14_baseline.py</span>
   </div>
   <div class="editor-shell">
@@ -459,45 +860,102 @@ X = customers[
 y = customers["responded"]
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y,
-    test_size=0.25,
-    random_state=42,
-    stratify=y
+    X, y, test_size=0.25,
+    random_state=42, stratify=y
 )
 
 baseline = DummyClassifier(strategy="most_frequent")
 baseline.fit(X_train, y_train)
 
-baseline_pred = baseline.predict(X_test)
+pred = baseline.predict(X_test)
 
 print("Baseline accuracy:",
-      round(accuracy_score(y_test, baseline_pred), 3))</textarea>
+      round(accuracy_score(y_test, pred), 3))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 10</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 20</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Logistic regression: from a linear score to probability">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Same algebra, different output</span><h2>Logistic regression: from a linear score to probability</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">Logistic regression first creates a weighted linear score, then converts that score into a probability between 0 and 1.</p>
+    <div class="module14-equation large"><strong>z = b₀ + b₁x₁ + b₂x₂ + ...</strong><span>linear score</span></div>
+    <div class="module14-model-box compact"><div>Linear score z</div><span>→</span><div>Sigmoid</div><span>→</span><div>Probability</div></div>
+  </div>
+  <div class="module14-sigmoid-static"><strong>Probability</strong><div class="sigmoid-curve">S</div><span>large negative score → near 0</span><span>large positive score → near 1</span></div>
+</div>
+<div class="callout secondary"><strong>This is why logistic regression belongs to classification even though the word “regression” is in its name.</strong></div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 21</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Visualize the sigmoid curve">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Convert any real-valued score into 0–1 probability</span><h2>Visualize the sigmoid curve</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">The sigmoid function compresses a linear score into the probability range.</p>
+  <div class="module14-equation"><strong>p = 1 / (1 + e<sup>−z</sup>)</strong><span>z can be any real number · p stays between 0 and 1</span></div>
+  <div class="callout"><strong>At z = 0, probability = 0.5.</strong> Higher scores move the probability toward 1; lower scores move it toward 0.</div>
+</div><div>
+<div class="code-cell" data-filename="module14_sigmoid.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Plot the logistic sigmoid</h3><p>This curve links a linear model to classification probability.</p></div>
+    <span class="file-pill">module14_sigmoid.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_sigmoid.py</span></div>
+    <textarea class="code-input" spellcheck="false">import numpy as np
+import matplotlib.pyplot as plt
+
+z = np.linspace(-6, 6, 200)
+p = 1 / (1 + np.exp(-z))
+
+plt.figure(figsize=(6, 3.5))
+plt.plot(z, p)
+plt.axhline(0.5, linestyle="--", alpha=0.7)
+plt.axvline(0, linestyle="--", alpha=0.7)
+plt.xlabel("Linear score z")
+plt.ylabel("Probability")
+plt.title("Logistic Sigmoid")
+plt.ylim(-0.05, 1.05)
+plt.tight_layout()
+plt.show()</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 22</span></footer>
   </div>
 </section>
 
 <section class="slide" data-title="Train a logistic regression classifier">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Fit a simple predictive model</span><h2>Train a logistic regression classifier</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">Fit on training rows, predict test rows</span><h2>Train a logistic regression classifier</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="two-col tight"><div>
-  <p class="lead">Logistic regression is a common starting model for binary classification. It learns how the feature values relate to the probability of class 1.</p>
-  <ol class="clean-list"><li>Create the model.</li><li>Fit it on training data.</li><li>Predict the unseen test rows.</li><li>Evaluate the predictions.</li></ol>
-  <div class="callout secondary"><strong>Important:</strong> training accuracy alone is not enough. We care about performance on data that was not used for fitting.</div>
+  <p class="lead">Now the workflow should feel familiar: data becomes X and y, training estimates model parameters, and the fitted model predicts unseen cases.</p>
+  <ol class="clean-list"><li>Split data.</li><li>Create model.</li><li>Fit on training data.</li><li>Predict test data.</li></ol>
+  <div class="callout secondary"><strong>Do not evaluate on the same rows used for fitting.</strong></div>
 </div><div>
-<div class="code-cell" data-filename="module14_train.py">
+<div class="code-cell" data-filename="module14_train_classifier.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Train and predict</h3><p>The model is fitted only on the training rows.</p></div>
-    <span class="file-pill">module14_train.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Train and compare predictions</h3><p>Look at predicted and actual labels side by side.</p></div>
+    <span class="file-pill">module14_train_classifier.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_train.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_train_classifier.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
 customers = pd.DataFrame({
@@ -522,45 +980,50 @@ X = customers[
 y = customers["responded"]
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y,
-    test_size=0.25,
-    random_state=42,
-    stratify=y
+    X, y, test_size=0.25,
+    random_state=42, stratify=y
 )
 
 model = LogisticRegression(max_iter=1000)
 model.fit(X_train, y_train)
 
-predictions = model.predict(X_test)
+pred = model.predict(X_test)
 
-print("Predictions:", predictions.tolist())
-print("Actual:     ", y_test.tolist())</textarea>
+result = X_test.copy()
+result["actual"] = y_test
+result["predicted"] = pred
+
+print(result)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 11</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 23</span></footer>
   </div>
 </section>
 
-<section class="slide" data-title="Accuracy and confusion matrix">
+<section class="slide" data-title="Confusion matrix">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">See what the model got right and wrong</span><h2>Accuracy and confusion matrix</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">See each type of classification outcome</span><h2>Confusion matrix</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="two-col tight"><div>
-  <p class="lead">Accuracy gives one overall percentage. A confusion matrix separates the predictions into correct and incorrect cases for each class.</p>
-  <div class="module14-matrix"><span>True Negative</span><span>False Positive</span><span>False Negative</span><span>True Positive</span></div>
-  <div class="callout"><strong>Use both.</strong> Two models can have the same accuracy but make very different types of mistakes.</div>
+  <p class="lead">A confusion matrix separates correct and incorrect predictions by class.</p>
+  <div class="module14-confusion-static">
+    <div class="corner"></div><div class="head">Pred 0</div><div class="head">Pred 1</div>
+    <div class="head">Actual 0</div><div>True Negative</div><div>False Positive</div>
+    <div class="head">Actual 1</div><div>False Negative</div><div>True Positive</div>
+  </div>
+  <div class="callout"><strong>Accuracy alone cannot tell you which mistake the model is making.</strong></div>
 </div><div>
-<div class="code-cell" data-filename="module14_evaluate.py">
+<div class="code-cell" data-filename="module14_confusion.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Evaluate test predictions</h3><p>Read the confusion matrix together with the accuracy.</p></div>
-    <span class="file-pill">module14_evaluate.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Plot a confusion matrix</h3><p>The visual makes false positives and false negatives easier to discuss.</p></div>
+    <span class="file-pill">module14_confusion.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_evaluate.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_confusion.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
 customers = pd.DataFrame({
@@ -575,9 +1038,10 @@ customers = pd.DataFrame({
     "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
                   0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
 })
+import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 X = customers[
     ["visits", "pages_viewed",
@@ -594,34 +1058,44 @@ model = LogisticRegression(max_iter=1000)
 model.fit(X_train, y_train)
 pred = model.predict(X_test)
 
-print("Accuracy:",
-      round(accuracy_score(y_test, pred), 3))
-print("\nConfusion matrix:")
-print(confusion_matrix(y_test, pred))</textarea>
+cm = confusion_matrix(y_test, pred)
+
+print("Confusion matrix:")
+print(cm)
+
+ConfusionMatrixDisplay(
+    confusion_matrix=cm,
+    display_labels=["No", "Yes"]
+).plot()
+
+plt.title("Confusion Matrix")
+plt.tight_layout()
+plt.show()</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 12</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 24</span></footer>
   </div>
 </section>
 
-<section class="slide" data-title="Precision, recall, and F1">
+<section class="slide" data-title="Accuracy, precision, recall, and F1">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Different mistakes matter in different projects</span><h2>Precision, recall, and F1</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">Metrics answer different questions</span><h2>Accuracy, precision, recall, and F1</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
-<div class="module14-metric-grid">
-  <div><h3>Precision</h3><p>Of the cases predicted positive, how many were actually positive?</p></div>
-  <div><h3>Recall</h3><p>Of the actual positive cases, how many did the model find?</p></div>
-  <div><h3>F1</h3><p>A combined measure that balances precision and recall.</p></div>
+<div class="module14-metric-grid four">
+  <div><h3>Accuracy</h3><p>What fraction of all predictions were correct?</p></div>
+  <div><h3>Precision</h3><p>When the model predicted positive, how often was it right?</p></div>
+  <div><h3>Recall</h3><p>Of all actual positives, how many did the model find?</p></div>
+  <div><h3>F1</h3><p>Balances precision and recall in one score.</p></div>
 </div>
-<div class="callout secondary"><strong>Choose metrics based on consequences.</strong> Missing a disease case, blocking a legitimate transaction, and sending an unnecessary marketing message have very different costs.</div>
-<div class="two-col compact-top"><div><p class="lead">Scikit-learn can calculate several classification metrics at once.</p></div><div>
+<div class="callout secondary"><strong>Metric choice depends on consequences.</strong> Missing a serious case can matter more than producing an extra false alarm—or the reverse, depending on the application.</div>
+<div class="two-col compact-top"><div><p class="lead">Use the classification report to see several metrics together.</p></div><div>
 <div class="code-cell" data-filename="module14_metrics.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Print a classification report</h3><p>Focus on the meaning of each metric rather than memorizing formulas.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Print a classification report</h3><p>Interpret metrics in the context of the positive class.</p></div>
     <span class="file-pill">module14_metrics.py</span>
   </div>
   <div class="editor-shell">
@@ -667,94 +1141,78 @@ print(classification_report(
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 13</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 25</span></footer>
   </div>
 </section>
 
-<section class="slide" data-title="Prediction probabilities and thresholds">
+<section class="slide" data-title="Probability threshold changes the decision">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">A prediction begins as a score</span><h2>Prediction probabilities and thresholds</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">0.5 is a default, not a universal law</span><h2>Probability threshold changes the decision</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="two-col tight"><div>
-  <p class="lead">Many classifiers can return a probability. A threshold converts that probability into a class label.</p>
-  <div class="module14-threshold"><span>0.18</span><span>0.42</span><strong>0.50 threshold</strong><span>0.67</span><span>0.91</span></div>
-  <div class="callout secondary"><strong>Changing the threshold changes the tradeoff</strong> between false positives and false negatives. The default threshold is not automatically the best choice for every application.</div>
+  <p class="lead">The model predicts a probability. We choose a threshold to convert that probability into a class.</p>
+  <div class="module14-threshold-static"><span>0.0</span><div class="bar"><i></i></div><span>1.0</span><strong>threshold = 0.5</strong></div>
+  <ul class="clean-list"><li>Lower threshold → more positive predictions</li><li>Higher threshold → fewer positive predictions</li><li>The tradeoff affects precision and recall</li></ul>
 </div><div>
-<div class="code-cell" data-filename="module14_probability.py">
+<div class="code-cell" data-filename="module14_threshold.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Inspect predicted probabilities</h3><p>Compare probabilities with the final class predictions.</p></div>
-    <span class="file-pill">module14_probability.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Visualize threshold behavior</h3><p>Change threshold from 0.50 to 0.30 or 0.70 and compare predictions.</p></div>
+    <span class="file-pill">module14_threshold.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_probability.py</span></div>
-    <textarea class="code-input" spellcheck="false">import pandas as pd
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_threshold.py</span></div>
+    <textarea class="code-input" spellcheck="false">import numpy as np
+import matplotlib.pyplot as plt
 
-customers = pd.DataFrame({
-    "visits": [2, 8, 4, 10, 3, 7, 5, 9, 1, 6, 4, 8,
-               2, 9, 5, 7, 3, 10, 6, 8, 1, 5, 7, 9],
-    "pages_viewed": [5, 18, 9, 22, 6, 16, 11, 20, 3, 14, 8, 19,
-                     4, 21, 10, 17, 7, 24, 13, 18, 2, 12, 15, 23],
-    "past_orders": [0, 3, 1, 4, 0, 2, 1, 5, 0, 2, 1, 3,
-                    0, 4, 1, 2, 0, 5, 2, 3, 0, 1, 2, 4],
-    "days_since_last": [90, 12, 45, 5, 75, 18, 40, 7, 120, 25, 55, 10,
-                        100, 6, 48, 20, 80, 4, 28, 11, 140, 50, 22, 8],
-    "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
-                  0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
-})
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
+probabilities = np.array([
+    0.08, 0.18, 0.32, 0.44, 0.51,
+    0.63, 0.72, 0.84, 0.93
+])
 
-X = customers[
-    ["visits", "pages_viewed",
-     "past_orders", "days_since_last"]
-]
-y = customers["responded"]
+threshold = 0.50
+predicted = (probabilities &gt;= threshold).astype(int)
 
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.25,
-    random_state=42, stratify=y
-)
+print("Probabilities:", probabilities)
+print("Predicted:", predicted)
 
-model = LogisticRegression(max_iter=1000)
-model.fit(X_train, y_train)
-
-probability = model.predict_proba(X_test)[:, 1]
-prediction = (probability &gt;= 0.50).astype(int)
-
-result = X_test.copy()
-result["probability"] = probability.round(3)
-result["prediction"] = prediction
-result["actual"] = y_test
-
-print(result)</textarea>
+plt.figure(figsize=(6, 3.5))
+plt.scatter(probabilities, predicted)
+plt.axvline(threshold, linestyle="--",
+            label=f"threshold = {threshold}")
+plt.yticks([0, 1], ["Class 0", "Class 1"])
+plt.xlabel("Predicted probability")
+plt.title("Probability Threshold → Class")
+plt.legend()
+plt.tight_layout()
+plt.show()</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 14</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 26</span></footer>
   </div>
 </section>
 
 <section class="slide" data-title="Predict a new case">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Use the same feature structure</span><h2>Predict a new case</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">A new vector goes through the fitted model</span><h2>Predict a new case</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="two-col tight"><div>
-  <p class="lead">After training, the model can predict a new row, but the new data must have the same feature meanings and preprocessing as the training data.</p>
-  <div class="callout"><strong>New case:</strong> 7 visits, 16 pages viewed, 2 past orders, and 15 days since the last activity.</div>
-  <p class="concept-note">A prediction is model output, not guaranteed truth. It should be interpreted with the model's evaluation results and limitations.</p>
+  <p class="lead">For a new customer, the features must have the same definitions and preprocessing used during training.</p>
+  <div class="module14-vector"><small>New customer</small><strong>[7, 16, 2, 15]</strong><span>visits · pages viewed · past orders · days since last</span></div>
+  <div class="callout"><strong>The probability is not certainty.</strong> It is the model's estimate based on training data and model assumptions.</div>
 </div><div>
-<div class="code-cell" data-filename="module14_new_case.py">
+<div class="code-cell" data-filename="module14_predict_new.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Predict one new customer</h3><p>Change the values and see how the probability changes.</p></div>
-    <span class="file-pill">module14_new_case.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Predict one new customer</h3><p>Edit the new feature values and see how the probability changes.</p></div>
+    <span class="file-pill">module14_predict_new.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_new_case.py</span></div>
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_predict_new.py</span></div>
     <textarea class="code-input" spellcheck="false">import pandas as pd
 
 customers = pd.DataFrame({
@@ -772,8 +1230,10 @@ customers = pd.DataFrame({
 from sklearn.linear_model import LogisticRegression
 
 features = [
-    "visits", "pages_viewed",
-    "past_orders", "days_since_last"
+    "visits",
+    "pages_viewed",
+    "past_orders",
+    "days_since_last"
 ]
 
 X = customers[features]
@@ -789,49 +1249,56 @@ new_customer = pd.DataFrame([{
     "days_since_last": 15
 }])
 
-pred = model.predict(new_customer)[0]
 prob = model.predict_proba(new_customer)[0, 1]
+pred = model.predict(new_customer)[0]
 
-print("Predicted class:", int(pred))
-print("Probability of response:", round(prob, 3))</textarea>
+print("Probability:", round(prob, 3))
+print("Predicted class:", int(pred))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 15</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 27</span></footer>
   </div>
 </section>
 
 <section class="slide" data-title="Avoid data leakage">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Do not let the model see the answer indirectly</span><h2>Avoid data leakage</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">Do not accidentally let the model see the future or the answer</span><h2>Avoid data leakage</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="two-col">
   <div>
-    <p class="lead">Data leakage occurs when training uses information that would not really be available when the future prediction is made.</p>
-    <ul class="clean-list"><li>Including the target itself in the features</li><li>Using information created after the outcome happened</li><li>Cleaning or scaling with knowledge from the test set</li><li>Duplicating the same person or event across train and test</li></ul>
+    <p class="lead">Leakage can make a weak model look excellent during evaluation and then fail in real use.</p>
+    <ul class="clean-list"><li>Target included in features</li><li>Future information used to predict the past</li><li>Preprocessing fitted using test data</li><li>Duplicate people or events split across train and test</li></ul>
   </div>
-  <div class="module14-leak"><div><strong>Correct</strong><span>Past information → model → future prediction</span></div><div><strong>Leakage</strong><span>Future/outcome information → training features</span></div></div>
+  <div class="module14-leak">
+    <div><strong>Correct workflow</strong><span>Past information → model → future outcome</span></div>
+    <div><strong>Leaky workflow</strong><span>Future/outcome information → training features</span></div>
+  </div>
 </div>
-<div class="callout secondary"><strong>Leakage can make a weak model look excellent during testing and fail badly in real use.</strong></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 16</span></footer>
+<div class="callout secondary"><strong>Ask this question for every feature:</strong> Would I truly know this value at the moment the prediction is needed?</div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 28</span></footer>
   </div>
 </section>
 
-<section class="slide" data-title="Keep preprocessing consistent with a pipeline">
+<section class="slide" data-title="Use a pipeline for consistent preprocessing">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Fit transformations on training data</span><h2>Keep preprocessing consistent with a pipeline</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">Keep transformations and the model together</span><h2>Use a pipeline for consistent preprocessing</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="two-col tight"><div>
-  <p class="lead">A scikit-learn Pipeline connects preprocessing and the model so the same steps are applied consistently to training, test, and new data.</p>
-  <ul class="clean-list"><li>Fit preprocessing only on training data.</li><li>Transform test data using what was learned from training.</li><li>Keep the workflow together for future predictions.</li></ul>
-  <div class="callout"><strong>Why this matters:</strong> consistency reduces mistakes and helps prevent leakage.</div>
+  <p class="lead">A scikit-learn Pipeline applies preprocessing and modeling as one reproducible workflow.</p>
+  <div class="module14-supervised-flow short">
+    <div><strong>Input X</strong><span>raw numeric features</span></div><b>→</b>
+    <div><strong>Scale</strong><span>fit on train only</span></div><b>→</b>
+    <div><strong>Classifier</strong><span>logistic regression</span></div>
+  </div>
+  <div class="callout"><strong>Benefit:</strong> the same learned preprocessing is automatically applied to test data and future cases.</div>
 </div><div>
 <div class="code-cell" data-filename="module14_pipeline.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Scale features and train in one pipeline</h3><p>The scaler and classifier are treated as one workflow.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Scale and classify in one pipeline</h3><p>The pipeline helps prevent inconsistent preprocessing.</p></div>
     <span class="file-pill">module14_pipeline.py</span>
   </div>
   <div class="editor-shell">
@@ -867,13 +1334,13 @@ X_train, X_test, y_train, y_test = train_test_split(
     random_state=42, stratify=y
 )
 
-model = Pipeline([
+workflow = Pipeline([
     ("scale", StandardScaler()),
-    ("classifier", LogisticRegression())
+    ("model", LogisticRegression())
 ])
 
-model.fit(X_train, y_train)
-pred = model.predict(X_test)
+workflow.fit(X_train, y_train)
+pred = workflow.predict(X_test)
 
 print("Accuracy:",
       round(accuracy_score(y_test, pred), 3))</textarea>
@@ -881,24 +1348,31 @@ print("Accuracy:",
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 17</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 29</span></footer>
   </div>
 </section>
 
-<section class="slide" data-title="Mini end-to-end ML workflow">
+<section class="slide" data-title="End-to-end machine learning workflow">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">External data to evaluated model</span><h2>Mini end-to-end ML workflow</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">See every stage in one picture</span><h2>End-to-end machine learning workflow</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
-<div class="two-col tight"><div>
-  <p class="lead">This final example connects the main machine learning steps into one reproducible workflow.</p>
-  <div class="module14-process"><span>1. Load data</span><span>2. Inspect quality</span><span>3. Define X and y</span><span>4. Split</span><span>5. Fit pipeline</span><span>6. Evaluate</span></div>
-  <div class="callout secondary"><strong>Real projects continue beyond this point:</strong> monitoring, retraining, documentation, privacy, fairness, and operational decisions all matter.</div>
-</div><div>
+<div class="module14-end2end">
+  <div><span>1</span><strong>Question</strong><small>What do we want to predict?</small></div>
+  <b>→</b><div><span>2</span><strong>External data</strong><small>CSV · API · DB</small></div>
+  <b>→</b><div><span>3</span><strong>Inspect &amp; clean</strong><small>quality and meaning</small></div>
+  <b>→</b><div><span>4</span><strong>X &amp; y</strong><small>numeric representation</small></div>
+  <b>→</b><div><span>5</span><strong>Split</strong><small>train vs test</small></div>
+  <b>→</b><div><span>6</span><strong>Fit</strong><small>learn parameters</small></div>
+  <b>→</b><div><span>7</span><strong>Evaluate</strong><small>baseline + metrics</small></div>
+  <b>→</b><div><span>8</span><strong>Predict</strong><small>new cases</small></div>
+</div>
+<div class="callout secondary"><strong>Real ML continues after deployment:</strong> monitor performance, watch for data drift, document limitations, retrain when needed, and consider privacy and fairness.</div>
+<div class="two-col compact-top"><div><p class="lead">The code below connects the core technical stages.</p></div><div>
 <div class="code-cell" data-filename="module14_end_to_end.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Build and evaluate the workflow</h3><p>Read each block as one stage of the analytical process.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Run the complete beginner workflow</h3><p>Use this as a preview of the structure you will see repeatedly in an ML course.</p></div>
     <span class="file-pill">module14_end_to_end.py</span>
   </div>
   <div class="editor-shell">
@@ -938,13 +1412,13 @@ X_train, X_test, y_train, y_test = train_test_split(
     stratify=y
 )
 
-workflow = Pipeline([
+model = Pipeline([
     ("scale", StandardScaler()),
-    ("model", LogisticRegression())
+    ("classifier", LogisticRegression())
 ])
 
-workflow.fit(X_train, y_train)
-pred = workflow.predict(X_test)
+model.fit(X_train, y_train)
+pred = model.predict(X_test)
 
 print("Accuracy:",
       round(accuracy_score(y_test, pred), 3))
@@ -954,9 +1428,9 @@ print(confusion_matrix(y_test, pred))</textarea>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 18</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 30</span></footer>
   </div>
 </section>
 
@@ -965,12 +1439,12 @@ print(confusion_matrix(y_test, pred))</textarea>
     <header class="slide-header"><div><span class="kicker">Build the workflow yourself</span><h2>Practice challenge</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="two-col tight"><div>
-  <p class="lead">Use the starter dataset to complete a small classification workflow. The completed answer is intentionally not provided.</p>
-  <ol class="clean-list"><li>Inspect the data and target balance.</li><li>Create <code>X</code> and <code>y</code>.</li><li>Create a stratified train/test split.</li><li>Build a baseline classifier.</li><li>Train logistic regression.</li><li>Calculate accuracy and a confusion matrix.</li><li>Predict the probability for one new customer.</li><li>Write two limitations of the model.</li></ol>
+  <p class="lead">Use the starter dataset to complete a small supervised-learning workflow. The completed answer is intentionally not provided.</p>
+  <ol class="clean-list"><li>Inspect data and target balance.</li><li>Create X and y.</li><li>Create a stratified train/test split.</li><li>Build a majority-class baseline.</li><li>Train logistic regression.</li><li>Calculate accuracy and confusion matrix.</li><li>Inspect predicted probabilities.</li><li>Predict one new customer.</li><li>Write two limitations.</li></ol>
 </div><div>
 <div class="code-cell" data-filename="module14_practice.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Complete the classification workflow</h3><p>Build and test one step at a time.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Complete the classification workflow</h3><p>Build and test one stage at a time.</p></div>
     <span class="file-pill">module14_practice.py</span>
   </div>
   <div class="editor-shell">
@@ -992,7 +1466,7 @@ customers = pd.DataFrame({
 
 # 1. Inspect the data.
 
-# 2. Separate features X and target y.
+# 2. Separate X and y.
 
 # 3. Create a train/test split.
 
@@ -1000,185 +1474,294 @@ customers = pd.DataFrame({
 
 # 5. Train logistic regression.
 
-# 6. Evaluate the model.
+# 6. Evaluate with appropriate metrics.
 
-# 7. Predict one new case.
+# 7. Inspect probabilities.
 
-# 8. Write two limitations in your notes.
+# 8. Predict one new case.
+
+# 9. Write two limitations in your notes.
 </textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
   <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
+  <div class="output-wrap"><pre class="output">Click Run to execute this cell.</pre><div class="plot-output" aria-live="polite"></div></div>
 </div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 19</span></footer>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 31</span></footer>
   </div>
 </section>
 
-<section class="slide" data-title="Course wrap-up">
+<section class="slide" data-title="IAN 601 course wrap-up">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">From raw data to analytical decisions</span><h2>Course wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <header class="slide-header"><div><span class="kicker">From raw data to analytical reasoning</span><h2>IAN 601 course wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
     <div class="slide-content">
 <div class="summary-grid">
   <div><h3>Program</h3><p>Use Python fundamentals, functions, modules, and reusable code.</p></div>
-  <div><h3>Work with data</h3><p>Use NumPy and Pandas to organize, transform, reshape, and summarize tables.</p></div>
-  <div><h3>Clean</h3><p>Identify missing values, duplicates, inconsistent types, unusual values, and quality problems.</p></div>
-  <div><h3>Explore</h3><p>Use descriptive statistics and visualization to understand distributions and relationships.</p></div>
-  <div><h3>Predict</h3><p>Separate features and target, train a simple model, and evaluate it on unseen data.</p></div>
-  <div><h3>Think critically</h3><p>Check assumptions, prevent leakage, document limitations, and connect every method to the analytical question.</p></div>
+  <div><h3>Represent</h3><p>Use NumPy arrays, Pandas DataFrames, vectors, matrices, and features.</p></div>
+  <div><h3>Prepare</h3><p>Clean missing values, duplicates, categories, types, and unusual observations.</p></div>
+  <div><h3>Explore</h3><p>Use statistics and visualization to understand distributions and relationships.</p></div>
+  <div><h3>Model</h3><p>Separate X and y, split data, fit a model, and evaluate on unseen cases.</p></div>
+  <div><h3>Interpret</h3><p>Check assumptions, prevent leakage, compare baselines, and communicate limitations.</p></div>
 </div>
-<div class="callout success module14-next"><strong>You have reached the final module of IAN 601.</strong> The next step is to apply these ideas in larger projects: begin with a real question, bring in data, inspect and clean it, explore it, choose an appropriate analytical method, evaluate the result, and communicate what the evidence does and does not support.</div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 20</span></footer>
+<div class="callout success"><strong>The most important habit from this course:</strong> always connect the code to a question, the output to an interpretation, and the interpretation to the limits of the data.</div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 32</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Next semester: Machine Learning &amp;amp; Predictive Analytics">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">You now have the foundation</span><h2>Next semester: Machine Learning &amp; Predictive Analytics</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="module14-next-course">
+  <div><span>Models</span><strong>Linear &amp; Logistic Regression</strong><small>go deeper into coefficients, assumptions, regularization, and evaluation</small></div>
+  <div><span>Classification</span><strong>Decision Trees · Random Forest · SVM · KNN</strong><small>compare how different algorithms learn decision boundaries</small></div>
+  <div><span>Workflow</span><strong>Cross-validation · Tuning · Pipelines</strong><small>evaluate models more reliably and choose hyperparameters</small></div>
+  <div><span>Data</span><strong>Feature Engineering · Selection · Imbalance</strong><small>improve the information available to models</small></div>
+  <div><span>Advanced</span><strong>Clustering · Neural Networks · Time Series</strong><small>move beyond basic supervised prediction</small></div>
+</div>
+<div class="callout success"><strong>You do not need to memorize every algorithm before that course.</strong> If you understand features, numeric representations, train/test separation, fitting, prediction, evaluation, and leakage, you already have the conceptual foundation to learn the algorithms well.</div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · A Bridge to ML</span><span>IAN 601 · Module 14 · Slide 33</span></footer>
   </div>
 </section>
 </main>
-  <footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"></select><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 20</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
+  <footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"></select><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 33</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
 </div>
 <script>
 const MANIFEST = {
   "prefix": "module14",
-  "slide_count": 20,
+  "slide_count": 33,
   "slides": [
     {
       "slide": 1,
       "title": "Machine Learning & External Data",
       "audio": "audio/module14_slide_01.mp3",
       "captions": "captions/module14_slide_01.vtt",
-      "text": "Welcome to Module 14, the final module of IAN 601. This lesson connects external data, Pandas, cleaning, statistics, and machine learning into one workflow. We will bring data into Python, define features and a target, train a simple classifier, evaluate it, and discuss how to interpret predictions responsibly."
+      "text": "Welcome to Module 14, the final module of IAN 601. This revised lesson is designed as a bridge into your next machine learning course. We begin with a simple algebraic formula, then reverse engineer the relationship from data, move into numeric feature vectors, and finally build a complete supervised machine learning workflow."
     },
     {
       "slide": 2,
-      "title": "From analysis to prediction",
+      "title": "Why end IAN 601 with machine learning?",
       "audio": "audio/module14_slide_02.mp3",
       "captions": "captions/module14_slide_02.vtt",
-      "text": "Earlier modules focused on preparing, cleaning, summarizing, and visualizing data. Machine learning adds a predictive question: can patterns in existing examples help us estimate an outcome for a new case? Prediction still depends on careful data preparation and honest evaluation."
+      "text": "Machine learning brings together nearly everything from the course. Python provides the programming foundation, NumPy and Pandas provide numerical and tabular representations, cleaning improves data quality, statistics and visualization help us understand patterns, and machine learning uses those prepared features to estimate predictive relationships."
     },
     {
       "slide": 3,
-      "title": "Analytics questions and machine learning tasks",
+      "title": "What does a model actually do?",
       "audio": "audio/module14_slide_03.mp3",
       "captions": "captions/module14_slide_03.vtt",
-      "text": "Different questions require different methods. Descriptive analytics asks what happened. Classification predicts a category such as yes or no. Regression predicts a numeric value. In this module, we focus on binary classification, where the target has two possible classes."
+      "text": "A model is a rule that transforms inputs into outputs. If we already know the rule, prediction is direct. Machine learning becomes useful when we do not know the exact rule and instead estimate it from examples. The learned model is still a mathematical relationship; the difference is how we obtain its parameters."
     },
     {
       "slide": 4,
-      "title": "External data sources",
+      "title": "Start with algebra: y = 2x + 1",
       "audio": "audio/module14_slide_04.mp3",
       "captions": "captions/module14_slide_04.vtt",
-      "text": "Real analytics projects often begin with external data from CSV files, Excel workbooks, JSON APIs, or databases. Before using an external source, understand where the data came from, what each field means, when it was updated, and whether you have permission to use it."
+      "text": "We start with a known linear equation. The slope is two and the intercept is one, so each x value maps to a predictable y value. Plotting the equation makes the relationship visible and gives us a simple example of prediction with a rule we already know."
     },
     {
       "slide": 5,
-      "title": "Read CSV data",
+      "title": "Reverse engineer the formula from data",
       "audio": "audio/module14_slide_05.mp3",
       "captions": "captions/module14_slide_05.vtt",
-      "text": "CSV is a common format for tabular data. In the browser example, we store CSV content as text so the code runs without a file download. In a normal Python environment, the same Pandas function can read a real file path. Always inspect shape, columns, and data types after loading."
+      "text": "Now the formula is hidden and only the data points remain. Linear regression estimates the slope and intercept from those examples. This is the first machine learning idea in the module: learn the relationship from data rather than manually specify every coefficient."
     },
     {
       "slide": 6,
-      "title": "JSON and API-style data",
+      "title": "Real data is noisy",
       "audio": "audio/module14_slide_06.mp3",
       "captions": "captions/module14_slide_06.vtt",
-      "text": "Web APIs commonly return JSON rather than a flat table. Pandas json_normalize can convert nested records into a DataFrame. In real API work, also consider authentication, rate limits, documentation, and data-use rules. Never publish private API keys in source code."
+      "text": "Real observations rarely fall exactly on a mathematical line. Measurement error, unobserved factors, and natural variation create noise. A linear model therefore estimates an approximate best-fit relationship rather than expecting every observation to be perfectly predicted."
     },
     {
       "slide": 7,
-      "title": "Inspect external data before modeling",
+      "title": "What does best fit mean?",
       "audio": "audio/module14_slide_07.mp3",
       "captions": "captions/module14_slide_07.vtt",
-      "text": "External data should be audited before modeling. Check shape, missingness, data types, value ranges, and the target distribution. A model can learn patterns from incorrect data just as easily as from correct data, so quality checks remain essential."
+      "text": "A residual is the difference between an actual value and its prediction. The fitting process searches for model parameters that reduce overall error according to a loss function. This idea of choosing parameters that minimize error appears throughout machine learning."
     },
     {
       "slide": 8,
-      "title": "Features and target",
+      "title": "From one x to many features",
       "audio": "audio/module14_slide_08.mp3",
       "captions": "captions/module14_slide_08.vtt",
-      "text": "Features are the input variables available at prediction time. The target is the outcome the model learns to predict. When selecting features, ask whether each value would truly be available when a future prediction needs to be made."
+      "text": "Real prediction usually uses several inputs. Multiple linear models extend the same algebraic idea by assigning a coefficient to each feature. The model combines these feature values into one predicted output."
     },
     {
       "slide": 9,
-      "title": "Train and test data",
+      "title": "Features become numeric vectors",
       "audio": "audio/module14_slide_09.mp3",
       "captions": "captions/module14_slide_09.vtt",
-      "text": "Training data is used to fit the model, while test data is held aside for later evaluation. This separation helps us estimate performance on unseen cases. A fixed random state makes the example reproducible, and stratification helps preserve class proportions."
+      "text": "Machine learning algorithms usually operate on numerical representations. One observation becomes a feature vector, and many observations become a feature matrix X. Rows represent cases and columns represent features, while the target is stored separately in y."
     },
     {
       "slide": 10,
-      "title": "Start with a baseline",
+      "title": "What if a feature is text?",
       "audio": "audio/module14_slide_10.mp3",
       "captions": "captions/module14_slide_10.vtt",
-      "text": "A predictive model should be compared with a simple baseline. In classification, one baseline is predicting the most common class every time. Without a baseline, an apparently high accuracy may be less impressive than it first appears."
+      "text": "Categorical values such as Web, Store, or Email cannot be multiplied directly by numerical coefficients. We convert categories into numerical indicators, such as one-hot encoded columns, while preserving their categorical meaning."
     },
     {
       "slide": 11,
-      "title": "Train a logistic regression classifier",
+      "title": "Regression versus classification",
       "audio": "audio/module14_slide_11.mp3",
       "captions": "captions/module14_slide_11.vtt",
-      "text": "Logistic regression is a common starting model for binary classification. We fit it on the training data and then ask it to predict the unseen test rows. Training performance alone is not enough because the goal is to generalize to new cases."
+      "text": "Regression predicts a numerical value, while classification predicts a category or class probability. Both use features, training examples, fitted models, and evaluation, but the model form and evaluation metrics depend on the target."
     },
     {
       "slide": 12,
-      "title": "Accuracy and confusion matrix",
+      "title": "Supervised learning workflow",
       "audio": "audio/module14_slide_12.mp3",
       "captions": "captions/module14_slide_12.vtt",
-      "text": "Accuracy measures the overall fraction of correct predictions. A confusion matrix separates correct and incorrect predictions by class. Use both because models with the same accuracy can make very different types of mistakes."
+      "text": "Supervised learning uses labeled examples where the correct target is known during training. The algorithm estimates model parameters from X and y, then uses the fitted model to predict targets for new feature vectors."
     },
     {
       "slide": 13,
-      "title": "Precision, recall, and F1",
+      "title": "External data sources",
       "audio": "audio/module14_slide_13.mp3",
       "captions": "captions/module14_slide_13.vtt",
-      "text": "Precision, recall, and F1 focus on different aspects of classification performance. The best metric depends on the consequences of errors in the real application. Missing an important positive case and generating an unnecessary false alarm may have very different costs."
+      "text": "Real machine learning projects often begin with external data from CSV files, Excel workbooks, APIs, JSON records, or databases. Data provenance, meaning, update timing, permissions, and documentation are part of the modeling process."
     },
     {
       "slide": 14,
-      "title": "Prediction probabilities and thresholds",
+      "title": "Read external CSV data",
       "audio": "audio/module14_slide_14.mp3",
       "captions": "captions/module14_slide_14.vtt",
-      "text": "Many classifiers produce probabilities before converting them into class labels. A decision threshold determines when a probability becomes a positive prediction. Changing the threshold changes the balance between false positives and false negatives, so the default threshold is not automatically best for every problem."
+      "text": "Loading a CSV is only the first step. Immediately inspect the shape, column names, data types, missing values, and target values before modeling. In a normal Python environment, pandas read_csv can read a real file path directly."
     },
     {
       "slide": 15,
-      "title": "Predict a new case",
+      "title": "JSON and API-style data",
       "audio": "audio/module14_slide_15.mp3",
       "captions": "captions/module14_slide_15.vtt",
-      "text": "A trained model can predict a new observation when the new row has the same feature meanings and preprocessing as the training data. A prediction is model output, not guaranteed truth. Interpret it together with the model's evaluation results and known limitations."
+      "text": "APIs commonly return nested JSON records. Pandas can normalize those records into a tabular structure. Real API work also requires attention to documentation, authentication, rate limits, and secure handling of API keys."
     },
     {
       "slide": 16,
-      "title": "Avoid data leakage",
+      "title": "Inspect modeling data before fitting",
       "audio": "audio/module14_slide_16.mp3",
       "captions": "captions/module14_slide_16.vtt",
-      "text": "Data leakage occurs when training uses information that would not truly be available at prediction time. The target itself, future information, test-set knowledge, or duplicate records across training and test data can all cause leakage. Leakage can make a model look excellent during testing and fail in real use."
+      "text": "Machine learning can learn incorrect patterns from incorrect input. Before fitting a model, inspect missingness, ranges, duplicates, class balance, and whether every feature would actually be available at prediction time."
     },
     {
       "slide": 17,
-      "title": "Keep preprocessing consistent with a pipeline",
+      "title": "Correlation matrix: inspect numeric relationships",
       "audio": "audio/module14_slide_17.mp3",
       "captions": "captions/module14_slide_17.vtt",
-      "text": "A scikit-learn Pipeline connects preprocessing and modeling so the same transformations are applied consistently to training, test, and future data. Keeping the steps together also reduces leakage risk and makes the workflow easier to reproduce."
+      "text": "A correlation matrix provides a visual summary of pairwise linear relationships among numerical variables. It is useful for exploration, but correlation is not causation and should not be treated as an automatic feature-selection rule."
     },
     {
       "slide": 18,
-      "title": "Mini end-to-end ML workflow",
+      "title": "Separate features X and target y",
       "audio": "audio/module14_slide_18.mp3",
       "captions": "captions/module14_slide_18.vtt",
-      "text": "The end-to-end workflow loads and inspects data, defines features and target, creates a train-test split, fits a preprocessing and modeling pipeline, and evaluates predictions. Real production projects continue with monitoring, documentation, privacy, fairness, and retraining decisions."
+      "text": "X contains the feature columns and y contains the outcome to predict. Keeping them separate makes the matrix and vector structure explicit and prevents the target from accidentally entering the feature set."
     },
     {
       "slide": 19,
-      "title": "Practice challenge",
+      "title": "Train/test split",
       "audio": "audio/module14_slide_19.mp3",
       "captions": "captions/module14_slide_19.vtt",
-      "text": "Now build the classification workflow yourself. Inspect the data, create features and target, split the data, establish a baseline, train logistic regression, evaluate predictions, predict a new case, and write down limitations. The completed solution is intentionally not included on the slide."
+      "text": "Training and test sets serve different purposes. The model learns from training rows and is evaluated on held-out test rows. Random state improves reproducibility, and stratification helps preserve class proportions."
     },
     {
       "slide": 20,
-      "title": "Course wrap-up",
+      "title": "Start with a baseline",
       "audio": "audio/module14_slide_20.mp3",
       "captions": "captions/module14_slide_20.vtt",
-      "text": "You have reached the final module of IAN 601. Across the course, you worked from Python fundamentals through NumPy, Pandas, data cleaning, exploratory analysis, statistics, visualization, external data, and introductory machine learning. The next step is to apply these methods to larger projects while continuing to question data quality, assumptions, evaluation, and interpretation."
+      "text": "A model should be compared with a simple baseline. For classification, predicting the most common class every time is a useful first benchmark. Without a baseline, an accuracy value can sound impressive even when the model adds little value."
+    },
+    {
+      "slide": 21,
+      "title": "Logistic regression: from a linear score to probability",
+      "audio": "audio/module14_slide_21.mp3",
+      "captions": "captions/module14_slide_21.vtt",
+      "text": "Logistic regression first calculates a weighted linear score from the features. It then passes that score through a sigmoid function to produce a probability between zero and one. This connects familiar linear algebra to binary classification."
+    },
+    {
+      "slide": 22,
+      "title": "Visualize the sigmoid curve",
+      "audio": "audio/module14_slide_22.mp3",
+      "captions": "captions/module14_slide_22.vtt",
+      "text": "The sigmoid function maps any real-valued linear score into the probability range. A score of zero maps to probability one half. Large positive scores approach one and large negative scores approach zero."
+    },
+    {
+      "slide": 23,
+      "title": "Train a logistic regression classifier",
+      "audio": "audio/module14_slide_23.mp3",
+      "captions": "captions/module14_slide_23.vtt",
+      "text": "The classifier is fitted only on training data. After fitting, it predicts the labels of unseen test rows. Comparing predictions with actual test labels gives us evidence about generalization."
+    },
+    {
+      "slide": 24,
+      "title": "Confusion matrix",
+      "audio": "audio/module14_slide_24.mp3",
+      "captions": "captions/module14_slide_24.vtt",
+      "text": "A confusion matrix separates true negatives, false positives, false negatives, and true positives. It makes the types of classification errors visible instead of compressing everything into a single accuracy number."
+    },
+    {
+      "slide": 25,
+      "title": "Accuracy, precision, recall, and F1",
+      "audio": "audio/module14_slide_25.mp3",
+      "captions": "captions/module14_slide_25.vtt",
+      "text": "Classification metrics answer different questions. Accuracy measures overall correctness, precision evaluates positive predictions, recall measures how many actual positives were found, and F1 balances precision and recall. Metric choice depends on real consequences."
+    },
+    {
+      "slide": 26,
+      "title": "Probability threshold changes the decision",
+      "audio": "audio/module14_slide_26.mp3",
+      "captions": "captions/module14_slide_26.vtt",
+      "text": "A classifier often produces a probability before producing a class. The decision threshold converts probability into a class label. Lowering or raising the threshold changes the balance between positive predictions, precision, recall, false positives, and false negatives."
+    },
+    {
+      "slide": 27,
+      "title": "Predict a new case",
+      "audio": "audio/module14_slide_27.mp3",
+      "captions": "captions/module14_slide_27.vtt",
+      "text": "A new observation must use the same feature definitions and preprocessing as the training data. The model returns a predicted class and often a probability. That probability is an estimate from the model, not guaranteed truth."
+    },
+    {
+      "slide": 28,
+      "title": "Avoid data leakage",
+      "audio": "audio/module14_slide_28.mp3",
+      "captions": "captions/module14_slide_28.vtt",
+      "text": "Leakage happens when the model receives information that would not truly be available when the prediction is needed. Target leakage, future information, test-set preprocessing, and duplicated cases across train and test can all produce misleading evaluation results."
+    },
+    {
+      "slide": 29,
+      "title": "Use a pipeline for consistent preprocessing",
+      "audio": "audio/module14_slide_29.mp3",
+      "captions": "captions/module14_slide_29.vtt",
+      "text": "A scikit-learn Pipeline keeps preprocessing and modeling together. Preprocessing is fitted on training data and then applied consistently to test and future cases, improving reproducibility and reducing leakage risk."
+    },
+    {
+      "slide": 30,
+      "title": "End-to-end machine learning workflow",
+      "audio": "audio/module14_slide_30.mp3",
+      "captions": "captions/module14_slide_30.vtt",
+      "text": "A complete beginner workflow moves from a prediction question to external data, data quality checks, feature and target definition, train-test split, model fitting, evaluation, and prediction. Real production work continues with monitoring, drift, retraining, privacy, fairness, and documentation."
+    },
+    {
+      "slide": 31,
+      "title": "Practice challenge",
+      "audio": "audio/module14_slide_31.mp3",
+      "captions": "captions/module14_slide_31.vtt",
+      "text": "The practice slide asks students to complete the supervised-learning workflow themselves: inspect data, create X and y, split, establish a baseline, train logistic regression, evaluate metrics, inspect probabilities, predict a new case, and document limitations."
+    },
+    {
+      "slide": 32,
+      "title": "IAN 601 course wrap-up",
+      "audio": "audio/module14_slide_32.mp3",
+      "captions": "captions/module14_slide_32.vtt",
+      "text": "IAN 601 has moved from Python fundamentals through arrays, DataFrames, cleaning, exploratory analysis, statistics, visualization, external data, and introductory machine learning. The central habit is connecting code to a question, output to an interpretation, and interpretation to the limits of the evidence."
+    },
+    {
+      "slide": 33,
+      "title": "Next semester: Machine Learning & Predictive Analytics",
+      "audio": "audio/module14_slide_33.mp3",
+      "captions": "captions/module14_slide_33.vtt",
+      "text": "The next machine learning course will go deeper into regression, classification algorithms, cross-validation, tuning, feature engineering, imbalance, clustering, neural networks, and other predictive methods. The key foundation is already here: features, numeric representation, train-test separation, fitting, prediction, evaluation, and leakage."
     }
   ]
 };
@@ -1200,7 +1783,7 @@ const audioPlayBtn=document.getElementById('audio-play-btn');
 const audioSeek=document.getElementById('audio-seek');
 const audioTime=document.getElementById('audio-time');
 const speedSelect=document.getElementById('speed-select');
-const NARRATION_STORAGE_KEY='ian601_module14_presentation_v2';
+const NARRATION_STORAGE_KEY='ian601_module14_presentation_v3';
 let narrationEnabled=false;
 let narrationStarted=false;
 let ccEnabled=false;
@@ -1253,7 +1836,7 @@ document.getElementById('prev-btn').onclick=()=>showSlide(current-1);document.ge
 document.getElementById('theme-btn').onclick=()=>{const root=document.documentElement;root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';if(window.monaco){monaco.editor.setTheme(root.dataset.theme==='dark'?'vs-dark':'vs');}};
 function packagesFor(code){const pkgs=[];if(/(^|\n)\s*(import|from)\s+numpy\b/.test(code))pkgs.push('numpy');if(/(^|\n)\s*(import|from)\s+pandas\b/.test(code))pkgs.push('pandas');if(/(^|\n)\s*(import|from)\s+matplotlib\b/.test(code))pkgs.push('matplotlib');if(/(^|\n)\s*(import|from)\s+sklearn\b/.test(code))pkgs.push('scikit-learn');return [...new Set(pkgs)];}
 async function loadPython(){if(!pyodideLoading){setRuntime('','Loading Python...');pyodideLoading=loadPyodide().then(async py=>{await py.runPythonAsync(`
-import sys, io, traceback
+import sys, io, traceback, base64
 
 def _run_user_code(code):
     stdout = io.StringIO()
@@ -1261,28 +1844,45 @@ def _run_user_code(code):
     old_stdout, old_stderr = sys.stdout, sys.stderr
     sys.stdout, sys.stderr = stdout, stderr
     ns = globals()
+    images = []
     try:
+        try:
+            import matplotlib
+            matplotlib.use("Agg")
+            import matplotlib.pyplot as plt
+            plt.close("all")
+        except Exception:
+            plt = None
+
         exec(code, ns, ns)
         ok = True
+
+        if plt is not None:
+            for number in plt.get_fignums():
+                fig = plt.figure(number)
+                buffer = io.BytesIO()
+                fig.savefig(buffer, format="png", dpi=120, bbox_inches="tight")
+                images.append(base64.b64encode(buffer.getvalue()).decode("ascii"))
+            plt.close("all")
     except Exception:
         ok = False
         stderr.write(traceback.format_exc())
     finally:
         sys.stdout, sys.stderr = old_stdout, old_stderr
-    return {"ok": ok, "stdout": stdout.getvalue(), "stderr": stderr.getvalue()}
+    return {"ok": ok, "stdout": stdout.getvalue(), "stderr": stderr.getvalue(), "images": images}
 `);pyodide=py;setRuntime('ready','Python ready');return py;}).catch(err=>{setRuntime('error','Python failed to load');throw err;});}return pyodideLoading;}
 function getCellCode(cell){const host=cell.querySelector('.monaco-host');const ed=monacoEditors.get(host);return ed?ed.getValue():cell.querySelector('.code-input').value;}
 function setCellCode(cell,code){const host=cell.querySelector('.monaco-host');const ed=monacoEditors.get(host);if(ed)ed.setValue(code);cell.querySelector('.code-input').value=code;}
-async function runCell(cell){if(!cell)return;const btn=cell.querySelector('.run-cell');const output=cell.querySelector('.output');btn.classList.add('running');btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Running';output.className='output';output.textContent='Running...';try{const py=await loadPython();const code=getCellCode(cell);const pkgs=packagesFor(code);if(pkgs.length){setRuntime('', 'Loading package: '+pkgs.join(', '));for(const pkg of pkgs){await py.loadPackage(pkg);}setRuntime('ready','Python ready');}const result=py.globals.get('_run_user_code')(code).toJs({dict_converter:Object.fromEntries});const text=(result.stdout||'')+(result.stderr?('\n'+result.stderr):'');output.textContent=text.trim()||'Code ran successfully with no printed output.';output.className='output '+(result.ok?'success':'error');setRuntime(result.ok?'ready':'error',result.ok?'Python ready':'Python error');}catch(err){output.textContent=String(err);output.className='output error';setRuntime('error','Python error');}finally{btn.classList.remove('running');btn.innerHTML='<i class="fa-solid fa-play"></i> Run';}}
+async function runCell(cell){if(!cell)return;const btn=cell.querySelector('.run-cell');const output=cell.querySelector('.output');const plotOutput=cell.querySelector('.plot-output');btn.classList.add('running');btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Running';output.className='output';output.textContent='Running...';if(plotOutput)plotOutput.innerHTML='';try{const py=await loadPython();const code=getCellCode(cell);const pkgs=packagesFor(code);if(pkgs.length){setRuntime('', 'Loading package: '+pkgs.join(', '));for(const pkg of pkgs){await py.loadPackage(pkg);}setRuntime('ready','Python ready');}const result=py.globals.get('_run_user_code')(code).toJs({dict_converter:Object.fromEntries});const text=(result.stdout||'')+(result.stderr?('\n'+result.stderr):'');output.textContent=text.trim()||((result.images&&result.images.length)?'Chart generated below.':'Code ran successfully with no printed output.');output.className='output '+(result.ok?'success':'error');if(plotOutput&&result.images){for(const b64 of result.images){const img=document.createElement('img');img.src='data:image/png;base64,'+b64;img.alt='Python chart output';plotOutput.appendChild(img);}}setRuntime(result.ok?'ready':'error',result.ok?'Python ready':'Python error');}catch(err){output.textContent=String(err);output.className='output error';setRuntime('error','Python error');}finally{btn.classList.remove('running');btn.innerHTML='<i class="fa-solid fa-play"></i> Run';}}
 async function runActiveSlide(){const cells=[...slides[current].querySelectorAll('.code-cell')];for(const cell of cells)await runCell(cell);}
 document.getElementById('run-slide-btn')?.addEventListener('click',runActiveSlide);document.querySelectorAll('.run-all-btn').forEach(b=>b.onclick=runActiveSlide);document.getElementById('restart-python').onclick=()=>{pyodide=null;pyodideLoading=null;setRuntime('', 'Python reset. It will reload when a code cell runs.');document.querySelectorAll('.output').forEach(o=>{o.className='output';o.textContent='Python reset. Click Run to execute this cell.';});};
-document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');originalCode.set(cell,textarea.value);cell.querySelector('.run-cell').onclick=()=>runCell(cell);cell.querySelector('.reset-cell').onclick=()=>{setCellCode(cell,originalCode.get(cell));cell.querySelector('.output').className='output';cell.querySelector('.output').textContent='Code reset. Click Run to execute this cell.';};cell.querySelector('.copy-cell').onclick=async()=>{try{await navigator.clipboard.writeText(getCellCode(cell));const b=cell.querySelector('.copy-cell');b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1000);}catch(e){cell.querySelector('.output').textContent='Copy failed. You can select and copy manually.';}};});
+document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');originalCode.set(cell,textarea.value);cell.querySelector('.run-cell').onclick=()=>runCell(cell);cell.querySelector('.reset-cell').onclick=()=>{setCellCode(cell,originalCode.get(cell));cell.querySelector('.output').className='output';cell.querySelector('.output').textContent='Code reset. Click Run to execute this cell.';const p=cell.querySelector('.plot-output');if(p)p.innerHTML='';};cell.querySelector('.copy-cell').onclick=async()=>{try{await navigator.clipboard.writeText(getCellCode(cell));const b=cell.querySelector('.copy-cell');b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1000);}catch(e){cell.querySelector('.output').textContent='Copy failed. You can select and copy manually.';}};});
 function initMonaco(){if(!window.require)return;try{require.config({paths:{vs:'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs'}});require(['vs/editor/editor.main'],function(){monaco.editor.setTheme(document.documentElement.dataset.theme==='dark'?'vs-dark':'vs');document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');const host=cell.querySelector('.monaco-host');const editor=monaco.editor.create(host,{value:textarea.value,language:'python',theme:document.documentElement.dataset.theme==='dark'?'vs-dark':'vs',fontFamily:'Source Code Pro, Consolas, monospace',fontSize:14,lineNumbers:'on',minimap:{enabled:false},automaticLayout:true,scrollBeyondLastLine:false,tabSize:4,wordWrap:'on'});monacoEditors.set(host,editor);cell.classList.add('monaco-ready');editor.onDidChangeCursorPosition(e=>{const status=cell.querySelector('.editor-status span');if(status)status.textContent=`Ln ${e.position.lineNumber}, Col ${e.position.column}`;});});});}catch(e){console.warn('Monaco editor not available, using textarea fallback.',e);}}
 initMonaco();const initialSlide=initNarr();
 showSlide(initialSlide);
 </script>
 <div class="ian603-modal-backdrop" id="ian-course-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">IAN 601 Course Modules</h2><button class="ian603-tool" id="ian-course-close" type="button">Close</button></div><div class="ian603-module-links"><a class="" href="s_module1.html">Module 1</a><a class="" href="s_module2.html">Module 2</a><a class="" href="s_module3.html">Module 3</a><a class="" href="s_module4.html">Module 4</a><a class="" href="s_module5.html">Module 5</a><a class="" href="s_module6.html">Module 6</a><a class="" href="s_module7.html">Module 7</a><a class="" href="s_module8.html">Module 8</a><a class="" href="s_module9.html">Module 9</a><a class="" href="s_module10.html">Module 10</a><a class="" href="s_module11.html">Module 11</a><a class="" href="s_module12.html">Module 12</a><a class="" href="s_module13.html">Module 13</a><a class="current" href="s_module14.html">Module 14 · Current</a></div></div></div><div class="ian603-modal-backdrop" id="ian-progress-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">Module 14 Progress</h2><button class="ian603-tool" id="ian-progress-close" type="button">Close</button></div><p style="color:var(--ian-muted)">Progress is saved only in this browser.</p><div style="height:12px;background:var(--ian-border);border-radius:999px;overflow:hidden"><div id="ian-progress-meter" style="height:100%;width:0;background:var(--ian-good)"></div></div><div id="ian-progress-text" style="margin:8px 0;color:var(--ian-muted)"></div><div id="ian-progress-list" class="ian603-module-links"></div><button class="ian603-tool" id="ian-progress-reset" type="button" style="margin-top:14px">Reset saved progress</button></div></div><script id="ian603-generic-ui">
-(()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module14_shell_progress_v2';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
+(()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module14_shell_progress_v3';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
 const activeIndex=()=>Math.max(0,slides.findIndex(s=>s.classList.contains('active')));
 function save(){localStorage.setItem(key,JSON.stringify(visited))}
 function render(){const i=activeIndex();if(!visited.includes(i+1)){visited.push(i+1);save()}const count=new Set(visited).size,pct=slides.length?Math.round(count/slides.length*100):0;const p=document.getElementById('ian-progress-pct');if(p)p.textContent=pct+'%';const meter=document.getElementById('ian-progress-meter');if(meter)meter.style.width=pct+'%';const text=document.getElementById('ian-progress-text');if(text)text.textContent=count+' of '+slides.length+' slides visited';const list=document.getElementById('ian-progress-list');if(list){list.innerHTML=slides.map((s,j)=>'<a href="#" data-shell-go="'+j+'" class="'+(visited.includes(j+1)?'current':'')+'">Slide '+(j+1)+': '+(s.dataset.title||'Slide')+'</a>').join('');list.querySelectorAll('[data-shell-go]').forEach(a=>a.onclick=e=>{e.preventDefault();const j=Number(a.dataset.shellGo);const sel=document.getElementById('slide-select');if(sel){sel.value=String(j);sel.dispatchEvent(new Event('change',{bubbles:true}))}document.getElementById('ian-progress-modal')?.classList.remove('show')})}}
