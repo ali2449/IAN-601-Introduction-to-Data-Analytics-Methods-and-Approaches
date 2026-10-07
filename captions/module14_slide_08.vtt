@@ -1,28 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.437
-On this slide, we are focusing on evaluate predictions.
+00:00:00.000 --> 00:00:05.202
+Evaluation compares model predictions with the correct answers in the test set.
 
-00:00:03.437 --> 00:00:08.047
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.202 --> 00:00:09.557
+Accuracy is the proportion of predictions that are correct.
 
-00:00:08.047 --> 00:00:13.682
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.557 --> 00:00:16.579
+The confusion matrix gives more detail by separating correct and incorrect predictions for each class.
 
-00:00:13.682 --> 00:00:21.182
-Accuracy summarizes the fraction of correct predictions, while a confusion matrix shows which classes were
+00:00:17.029 --> 00:00:20.956
+Do not rely on accuracy alone in every problem.
 
-00:00:21.182 --> 00:00:24.612
-confused. Before clicking Run, predict the structure of the output.
+00:00:20.956 --> 00:00:28.406
+If one class is rare, a model can look accurate while still performing poorly on the cases that matter.
 
-00:00:24.612 --> 00:00:31.517
-After it runs, identify the features, target, split, prediction, or evaluation result involved.
-
-00:00:31.517 --> 00:00:36.757
-Change one input carefully and explain why the result did or did not change.
-
-00:00:36.757 --> 00:00:42.517
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:42.517 --> 00:00:47.936
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:28.406 --> 00:00:35.488
+For this introductory example, focus on understanding that evaluation must happen on unseen data.

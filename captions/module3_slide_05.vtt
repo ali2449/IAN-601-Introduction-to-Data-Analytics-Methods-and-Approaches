@@ -1,31 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.312
-On this slide, we are focusing on a function has a definition and a call.
+00:00:00.000 --> 00:00:05.422
+Every function has two important moments: definition and call.
 
-00:00:04.312 --> 00:00:09.027
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.422 --> 00:00:10.272
+The definition tells Python what instructions belong to the function.
 
-00:00:09.027 --> 00:00:15.062
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.272 --> 00:00:17.422
+Def show_welcome with parentheses creates the function and the indented lines become its body.
 
-00:00:15.062 --> 00:00:18.547
-A function gives a reusable task a clear name.
+00:00:17.422 --> 00:00:24.062
+Calling show_welcome with parentheses tells Python to actually run those stored instructions.
 
-00:00:18.547 --> 00:00:26.757
-In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.
+00:00:24.606 --> 00:00:27.013
+The colon and indentation matter.
 
-00:00:26.757 --> 00:00:30.497
-Think about where this function would appear in a larger project.
-
-00:00:30.497 --> 00:00:38.587
-Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
-
-00:00:38.587 --> 00:00:40.172
-across many rows, files, or notebooks.
-
-00:00:40.172 --> 00:00:45.942
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:45.942 --> 00:00:51.359
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:27.013 --> 00:00:31.453
+They mark where the function body begins and which lines belong to it.

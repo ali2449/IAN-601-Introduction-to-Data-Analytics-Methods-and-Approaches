@@ -1,34 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.547
-On this slide, we are focusing on simple sales calculator.
+00:00:00.000 --> 00:00:03.222
+This mini project brings the whole module together.
 
-00:00:03.547 --> 00:00:08.592
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.222 --> 00:00:10.927
+Sales are forty-two hundred dollars, costs are thirty-one hundred dollars, and the tax rate is six percent.
 
-00:00:08.592 --> 00:00:14.787
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.927 --> 00:00:14.972
+Profit is eleven hundred. Tax is sixty-six.
 
-00:00:14.787 --> 00:00:17.927
-Before clicking Run, predict the output.
+00:00:14.972 --> 00:00:18.857
+Net profit becomes one thousand thirty-four dollars.
 
-00:00:17.927 --> 00:00:24.077
-Then run the cell, inspect the result, and change one value or condition at a time.
+00:00:18.857 --> 00:00:25.899
+Then net profit is divided by sales to get a net margin of about twenty-four point six percent.
 
-00:00:24.077 --> 00:00:27.422
-Rerun it and explain why the output changed.
+00:00:26.593 --> 00:00:35.410
+Notice how many Module 1 ideas appear here: meaningful variables, numeric types, arithmetic, derived metrics, f-strings,
 
-00:00:27.422 --> 00:00:30.807
-The goal is to understand the relationship between input, process, and output.
+00:00:35.410 --> 00:00:37.985
+money formatting, and percentages.
 
-00:00:30.807 --> 00:00:35.772
-Connect the concept to a small analytics task.
-
-00:00:35.772 --> 00:00:40.847
-Imagine the value came from a sales file, survey, or operational system.
-
-00:00:40.847 --> 00:00:45.862
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
-
-00:00:45.862 --> 00:00:48.274
-from the names and output.
+00:00:37.985 --> 00:00:46.513
+Change one input, predict which outputs should move, and then run the code to verify your reasoning.

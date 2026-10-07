@@ -1,31 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.022
-Use this lesson actively. Read the idea first and make a prediction before running any code.
+00:00:00.000 --> 00:00:03.927
+Before running each example, think about the question being answered.
 
-00:00:06.022 --> 00:00:10.677
-When a Python cell is available, click Run, inspect the output,
+00:00:03.927 --> 00:00:06.402
+Are we describing a typical value?
 
-00:00:10.677 --> 00:00:13.632
-and then change one small value or condition.
+00:00:06.402 --> 00:00:09.797
+Comparing groups? Looking for a relationship?
 
-00:00:13.632 --> 00:00:16.432
-Run it again and explain what changed.
+00:00:09.797 --> 00:00:12.669
+Measuring uncertainty? Choosing a visual?
 
-00:00:16.432 --> 00:00:22.572
-This predict, run, modify, and explain cycle is more useful than copying a finished example.
+00:00:13.142 --> 00:00:17.024
+Then run the code and explain the result in plain language.
 
-00:00:22.572 --> 00:00:25.522
-Separate calculation from interpretation.
-
-00:00:25.522 --> 00:00:33.092
-A statistic summarizes the sample and a visualization reveals pattern, but both still require context,
-
-00:00:33.092 --> 00:00:36.302
-variability, and awareness of limitations.
-
-00:00:36.302 --> 00:00:42.062
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:42.062 --> 00:00:47.480
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:17.024 --> 00:00:22.806
+That translation from output to interpretation is the core skill in this module.

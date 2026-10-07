@@ -1,28 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.077
-On this slide, we are focusing on map categories.
+00:00:00.000 --> 00:00:04.802
+Map is useful when one set of values needs to be translated into another.
 
-00:00:03.077 --> 00:00:07.672
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.802 --> 00:00:12.442
+Here segment codes one and two are replaced with the readable labels returning and new.
 
-00:00:07.672 --> 00:00:15.457
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:12.442 --> 00:00:17.608
+The original code column remains, and a new segment column is created.
 
-00:00:15.457 --> 00:00:17.732
-Before clicking Run, predict how the table should change.
+00:00:18.061 --> 00:00:25.728
+This pattern works well for lookup tables, code descriptions, grouped labels, and simple feature creation.
 
-00:00:17.732 --> 00:00:23.262
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:23.262 --> 00:00:28.707
-or flags that matter. Change one input and rerun it.
-
-00:00:28.707 --> 00:00:35.022
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
-
-00:00:35.022 --> 00:00:40.807
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:40.807 --> 00:00:46.225
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:25.728 --> 00:00:32.232
+Always check for codes that are missing from the mapping, because those can produce missing values in the result.

@@ -1,34 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.572
-On this slide, we are focusing on convert text into numbers.
+00:00:00.000 --> 00:00:02.277
+Let’s apply that conversion pattern.
 
-00:00:04.572 --> 00:00:10.072
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.277 --> 00:00:09.952
+Price begins as the text “29.99” and quantity begins as the text “5”.
 
-00:00:10.072 --> 00:00:16.377
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.952 --> 00:00:12.522
+Float converts the price to a decimal number.
 
-00:00:16.377 --> 00:00:18.017
-Before clicking Run, predict the output.
+00:00:12.522 --> 00:00:17.652
+Int converts the quantity to a whole number.
 
-00:00:18.017 --> 00:00:25.662
-Then run the cell, inspect the result, and change one value or condition at a time.
+00:00:17.652 --> 00:00:20.232
+Now Python can multiply them.
 
-00:00:25.662 --> 00:00:26.992
-Rerun it and explain why the output changed.
+00:00:20.232 --> 00:00:28.378
+Twenty-nine dollars and ninety-nine cents times five gives one hundred forty-nine dollars and ninety-five cents.
 
-00:00:26.992 --> 00:00:32.397
-The goal is to understand the relationship between input, process, and output.
+00:00:28.828 --> 00:00:31.960
+The final f-string formats that number as money.
 
-00:00:32.397 --> 00:00:37.357
-Connect the concept to a small analytics task.
+00:00:31.960 --> 00:00:38.015
+Change the quantity from five to eight, predict the new total, and then run the code.
 
-00:00:37.357 --> 00:00:40.752
-Imagine the value came from a sales file, survey, or operational system.
-
-00:00:40.752 --> 00:00:47.452
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
-
-00:00:47.452 --> 00:00:49.861
-from the names and output.
+00:00:38.015 --> 00:00:40.934
+This is a very typical data-cleaning step.

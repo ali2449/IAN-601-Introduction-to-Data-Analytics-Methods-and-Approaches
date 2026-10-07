@@ -1,28 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.992
-On this slide, we are focusing on final activity: simple customer flags.
+00:00:00.000 --> 00:00:06.022
+This activity combines a loop, several conditions, a counter, and readable output.
 
-00:00:04.992 --> 00:00:09.932
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:06.022 --> 00:00:13.147
+A customer becomes priority when spending is at least two hundred fifty and visits are at least three.
 
-00:00:09.932 --> 00:00:16.167
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:13.147 --> 00:00:18.972
+If that is not true but spending is at least one hundred, the customer is standard.
 
-00:00:16.167 --> 00:00:19.307
-Before clicking Run, predict the output.
+00:00:18.972 --> 00:00:21.273
+Otherwise the label is follow up.
 
-00:00:19.307 --> 00:00:25.457
-Then run the cell, inspect the result, and change one value or condition at a time.
+00:00:21.765 --> 00:00:24.707
+Trace the three customers one at a time.
 
-00:00:25.457 --> 00:00:28.802
-Rerun it and explain why the output changed.
+00:00:24.707 --> 00:00:27.442
+Carla should meet the priority rule.
 
-00:00:28.802 --> 00:00:33.982
-The goal is to understand the relationship between input, process, and output.
+00:00:27.442 --> 00:00:33.452
+Ava spends two hundred forty, so she does not reach the priority spending threshold.
 
-00:00:33.982 --> 00:00:39.737
-Before moving on, explain the main idea in one sentence without reading the slide.
+00:00:33.452 --> 00:00:36.567
+Ben falls into the follow-up category.
 
-00:00:39.737 --> 00:00:45.155
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:36.567 --> 00:00:39.227
+Also notice the priority counter.
+
+00:00:39.227 --> 00:00:43.224
+It summarizes how many customers met the highest-level rule.

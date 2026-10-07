@@ -1,28 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.787
-On this slide, we are focusing on index and slice a list.
+00:00:00.000 --> 00:00:05.607
+Python uses zero-based indexing, so the first value is at position zero.
 
-00:00:03.787 --> 00:00:08.452
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.607 --> 00:00:11.487
+Scores zero returns eighty-two. Scores one returns seventy-six.
 
-00:00:08.452 --> 00:00:16.617
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:11.487 --> 00:00:15.872
+A negative one means the last value, which is sixty-nine.
 
-00:00:16.617 --> 00:00:18.997
-Indexing retrieves one position, while slicing retrieves a range.
+00:00:15.872 --> 00:00:19.507
+A slice lets us retrieve several values.
 
-00:00:18.997 --> 00:00:24.397
-Python indexing starts at zero and slice endpoints are usually exclusive.
+00:00:19.507 --> 00:00:26.877
+Scores one through four starts at index one and stops before index four, giving seventy-six, ninety-one,
 
-00:00:24.397 --> 00:00:27.602
-Before clicking Run, predict the output.
+00:00:26.877 --> 00:00:28.966
+and eighty-eight.
 
-00:00:27.602 --> 00:00:33.752
-Then run the cell, inspect the result, and change one value or condition at a time.
+00:00:29.772 --> 00:00:31.704
+The stop position is excluded.
 
-00:00:33.752 --> 00:00:37.092
-Rerun it and explain why the output changed.
-
-00:00:37.092 --> 00:00:42.106
-The goal is to understand the relationship between input, process, and output.
+00:00:31.704 --> 00:00:36.644
+That detail appears throughout Python, so it is worth getting comfortable with early.

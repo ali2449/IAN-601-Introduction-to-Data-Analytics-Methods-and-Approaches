@@ -1,31 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:01.802
-Use this slide as a roadmap.
+00:00:00.007 --> 00:00:01.962
+Here is the path we’ll follow.
 
-00:00:01.802 --> 00:00:07.152
-The ideas are intentionally ordered so later examples build on earlier concepts.
+00:00:01.962 --> 00:00:07.242
+We begin with variables, because variables give names to values.
 
-00:00:07.152 --> 00:00:12.917
-As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of
+00:00:07.242 --> 00:00:15.377
+Then we look at data types so Python can distinguish numbers, text, and True or False values.
 
-00:00:12.917 --> 00:00:16.247
-treating each method as an isolated command.
+00:00:15.377 --> 00:00:24.732
+Next, we use arithmetic to create useful metrics, then we format results so they are easier for people to read.
 
-00:00:16.247 --> 00:00:19.412
-Connect the concept to a small analytics task.
+00:00:24.732 --> 00:00:32.757
+We also look at type conversion because data often arrives as text even when we eventually want to calculate with it.
 
-00:00:19.412 --> 00:00:24.487
-Imagine the value came from a sales file, survey, or operational system.
+00:00:33.207 --> 00:00:36.714
+Everything builds toward a small sales calculator.
 
-00:00:24.487 --> 00:00:30.662
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+00:00:36.714 --> 00:00:44.444
+If you can follow how a value moves from raw input to calculation and finally to readable output,
 
-00:00:30.662 --> 00:00:32.097
-from the names and output.
-
-00:00:32.097 --> 00:00:37.862
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:37.862 --> 00:00:43.282
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:44.444 --> 00:00:46.963
+you have the main idea of this module.

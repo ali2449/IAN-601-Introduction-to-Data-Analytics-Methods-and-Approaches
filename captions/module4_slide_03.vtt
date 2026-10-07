@@ -1,28 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:01.802
-Use this slide as a roadmap.
+00:00:00.000 --> 00:00:04.212
+We begin with lists, which store multiple values in order.
 
-00:00:01.802 --> 00:00:07.152
-The ideas are intentionally ordered so later examples build on earlier concepts.
+00:00:04.212 --> 00:00:09.392
+Then we use indexes and slices to retrieve specific parts of a list.
 
-00:00:07.152 --> 00:00:12.917
-As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of
+00:00:09.392 --> 00:00:15.622
+Next, we modify lists, loop through them, and summarize numeric values.
 
-00:00:12.917 --> 00:00:16.267
-treating each method as an isolated command.
+00:00:15.622 --> 00:00:21.659
+After that, tuples give us a similar ordered structure that is intended to stay fixed.
 
-00:00:16.267 --> 00:00:20.137
-Think of the sequence as a small collection of observations.
+00:00:22.455 --> 00:00:27.837
+By the end, you should be able to look at a data task and decide whether you need a flexible list or a fixed
 
-00:00:20.137 --> 00:00:26.842
-Ask whether order matters, whether values need to change, and whether you need one item, a range,
-
-00:00:26.842 --> 00:00:29.222
-or a summary of the entire collection.
-
-00:00:29.222 --> 00:00:34.982
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:34.982 --> 00:00:40.400
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:27.837 --> 00:00:29.340
+tuple.

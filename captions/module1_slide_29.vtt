@@ -1,31 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.322
-Use this self-check without looking back at the code first.
+00:00:00.000 --> 00:00:04.072
+Use these questions as a quick check before finishing the module.
 
-00:00:03.322 --> 00:00:07.967
-Explain the main concepts in your own words and give one small example.
+00:00:04.072 --> 00:00:06.862
+Can you explain what a variable is?
 
-00:00:07.967 --> 00:00:11.822
-If you can explain why a pattern works and when you would use it,
+00:00:06.862 --> 00:00:12.342
+Can you tell the difference between an integer, float, string, and Boolean?
 
-00:00:11.822 --> 00:00:16.257
-that is stronger evidence of understanding than remembering the exact syntax.
+00:00:12.342 --> 00:00:17.125
+Can you trace a calculation from input values to a final result?
 
-00:00:16.257 --> 00:00:19.412
-Connect the concept to a small analytics task.
+00:00:17.717 --> 00:00:20.679
+Also think about formatting and conversion.
 
-00:00:19.412 --> 00:00:24.487
-Imagine the value came from a sales file, survey, or operational system.
+00:00:20.679 --> 00:00:24.264
+Why would we display a decimal as a percentage?
 
-00:00:24.487 --> 00:00:32.097
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+00:00:24.264 --> 00:00:30.419
+Why might the text “29.99” need conversion before arithmetic?
 
-00:00:32.097 --> 00:00:33.632
-from the names and output.
+00:00:30.419 --> 00:00:33.814
+You do not need to memorize every symbol yet.
 
-00:00:33.632 --> 00:00:37.862
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:37.862 --> 00:00:43.282
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:33.814 --> 00:00:39.468
+What matters is understanding the concepts well enough to recognize what Python needs.

@@ -1,31 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.902
-On this slide, we are focusing on a condition asks a true/false question.
+00:00:00.000 --> 00:00:05.112
+A condition is simply a question that Python can answer with True or False.
 
-00:00:04.902 --> 00:00:09.762
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.112 --> 00:00:10.372
+Sales greater than target asks whether one number is larger than another.
 
-00:00:09.762 --> 00:00:15.812
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.372 --> 00:00:15.562
+Status equal to Open asks whether two values match exactly.
 
-00:00:15.812 --> 00:00:20.832
-A condition is a question whose answer is True or False.
+00:00:15.562 --> 00:00:20.474
+Returns not equal to zero asks whether a value is different from zero.
 
-00:00:20.832 --> 00:00:26.562
-Thresholds, flags, eligibility rules, and data-quality checks all use this kind of Boolean thinking.
+00:00:21.056 --> 00:00:27.188
+The comparison operators in the table are worth recognizing: double equals compares equality,
 
-00:00:26.562 --> 00:00:33.522
-In real analytics, this pattern can support thresholds, validation rules, category assignment, alerts,
+00:00:27.188 --> 00:00:34.523
+exclamation equals means not equal, and the greater-than and less-than symbols can also include equality.
 
-00:00:33.522 --> 00:00:34.512
-and repeated processing.
-
-00:00:34.512 --> 00:00:42.507
-The examples are intentionally small so you can trace the logic from the condition to the result.
-
-00:00:42.507 --> 00:00:48.267
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:48.267 --> 00:00:53.686
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:34.523 --> 00:00:38.493
+These comparisons become the decision points in if statements.

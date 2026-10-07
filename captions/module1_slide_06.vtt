@@ -1,31 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.387
-On this slide, we are focusing on store values in variables.
+00:00:00.000 --> 00:00:03.202
+Let’s run our first complete example with variables.
 
-00:00:04.387 --> 00:00:09.752
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.202 --> 00:00:11.777
+Sales is one thousand, costs is eight hundred, and profit is calculated by subtracting costs from sales.
 
-00:00:09.752 --> 00:00:16.292
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:11.777 --> 00:00:17.377
+So before you run the cell, you should already expect profit to be two hundred.
 
-00:00:16.292 --> 00:00:19.967
-A variable is a meaningful name connected to a value.
+00:00:17.377 --> 00:00:21.944
+The print statements simply make those three values visible in the output.
 
-00:00:19.967 --> 00:00:23.897
-Clear names help the code communicate what the data represents,
+00:00:22.713 --> 00:00:28.465
+Now change sales from one thousand to twelve hundred fifty and run the cell again.
 
-00:00:23.897 --> 00:00:27.252
-and later calculations can reuse the stored value.
+00:00:28.465 --> 00:00:32.445
+Notice that you do not need to rewrite the profit formula.
 
-00:00:27.252 --> 00:00:30.392
-Before clicking Run, predict the output.
+00:00:32.445 --> 00:00:36.835
+Python automatically uses the new value of sales.
 
-00:00:30.392 --> 00:00:36.542
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:36.542 --> 00:00:39.882
-Rerun it and explain why the output changed.
-
-00:00:39.882 --> 00:00:44.900
-The goal is to understand the relationship between input, process, and output.
+00:00:36.835 --> 00:00:44.658
+That is a basic but important idea in analytics: the logic can stay the same even when the data changes.

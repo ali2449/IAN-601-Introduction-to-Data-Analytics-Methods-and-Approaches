@@ -1,28 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.317
-On this slide, we are focusing on summarize values in a list.
+00:00:00.000 --> 00:00:03.787
+Lists work naturally with built-in summary functions.
 
-00:00:04.317 --> 00:00:09.262
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.787 --> 00:00:08.542
+The four monthly sales values add to fifty-three thousand two hundred.
 
-00:00:09.262 --> 00:00:15.397
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:08.542 --> 00:00:13.117
+Dividing by four gives an average of thirteen thousand three hundred.
 
-00:00:15.397 --> 00:00:18.642
-A list is an ordered collection that can change.
+00:00:13.117 --> 00:00:17.609
+Max identifies fourteen thousand nine hundred as the best month.
 
-00:00:18.642 --> 00:00:25.512
-It is useful when values may be added, removed, replaced, sorted, or processed over time.
+00:00:18.154 --> 00:00:25.001
+The pattern is simple but important: collect values, calculate a summary, then interpret it.
 
-00:00:25.512 --> 00:00:28.652
-Before clicking Run, predict the output.
-
-00:00:28.652 --> 00:00:34.802
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:34.802 --> 00:00:38.142
-Rerun it and explain why the output changed.
-
-00:00:38.142 --> 00:00:43.156
-The goal is to understand the relationship between input, process, and output.
+00:00:25.001 --> 00:00:31.306
+Later, Pandas will give us more advanced summary tools, but the underlying logic is the same.

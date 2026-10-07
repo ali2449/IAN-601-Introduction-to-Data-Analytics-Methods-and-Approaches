@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.452
-On this slide, we are focusing on create a dictionary.
+00:00:00.000 --> 00:00:02.752
+Let’s build a customer record as a dictionary.
 
-00:00:03.452 --> 00:00:08.702
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.752 --> 00:00:07.662
+The keys are id, visits, total_spent, and status.
 
-00:00:08.702 --> 00:00:15.082
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:07.662 --> 00:00:10.462
+Each key points to one value.
 
-00:00:15.082 --> 00:00:18.067
-A dictionary stores key-value pairs.
+00:00:10.462 --> 00:00:16.743
+Instead of remembering positions, we can ask directly for customer id or customer visits.
 
-00:00:18.067 --> 00:00:26.702
-Meaningful keys such as name, status, amount, or category make the structure easier to understand than
+00:00:17.469 --> 00:00:19.666
+That makes the code much more readable.
 
-00:00:26.702 --> 00:00:29.842
-position alone. Before clicking Run, predict the output.
+00:00:19.666 --> 00:00:25.551
+Customer bracket id clearly means “give me the customer ID.”
 
-00:00:29.842 --> 00:00:35.992
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:35.992 --> 00:00:39.332
-Rerun it and explain why the output changed.
-
-00:00:39.332 --> 00:00:44.346
-The goal is to understand the relationship between input, process, and output.
+00:00:25.551 --> 00:00:30.779
+Try adding another key such as region or membership level and print it.

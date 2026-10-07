@@ -1,28 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.792
-On this slide, we are focusing on reusable pandas function.
+00:00:00.000 --> 00:00:04.027
+Repeated DataFrame logic is a good candidate for a function.
 
-00:00:03.792 --> 00:00:08.532
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.027 --> 00:00:12.932
+Summarize_orders receives a DataFrame, creates a large_order flag, groups by channel, and returns total amount,
 
-00:00:08.532 --> 00:00:16.792
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:12.932 --> 00:00:15.598
+row count, and large-order count.
 
-00:00:16.792 --> 00:00:18.412
-A function gives a reusable task a clear name.
+00:00:16.086 --> 00:00:20.003
+The caller does not need to know every internal step each time.
 
-00:00:18.412 --> 00:00:26.242
-In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.
+00:00:20.003 --> 00:00:24.998
+It can simply pass in a compatible DataFrame and receive the summary.
 
-00:00:26.242 --> 00:00:30.207
-Before clicking Run, predict how the table should change.
-
-00:00:30.207 --> 00:00:35.742
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:35.742 --> 00:00:41.177
-or flags that matter. Change one input and rerun it.
-
-00:00:41.177 --> 00:00:47.361
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
+00:00:24.998 --> 00:00:30.290
+This is how we begin turning notebook experiments into reusable analytical code.

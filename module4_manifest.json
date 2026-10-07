@@ -1,348 +1,184 @@
 {
   "module": "module4",
+  "generation_version": "ian620_safe_v4_exact_reference_text_seed1234",
   "filename_prefix": "module4",
-  "source_file": "IAN_601_Module_04_Narration.txt",
-  "voice_consistency_version": 3,
+  "source_file": "IAN_601_Module_04_Narration_Natural_Final.txt",
   "reference_audio": "/home/ali/breeze-tts/voice_reference/course_instructor_consistent_v4.wav",
+  "reference_text_version": "course_instructor_consistent_v4_exact_transcript",
   "reference_text": "Welcome to the course. We will work through each concept carefully, connect the\nideas step by step, and use practical examples to make technical topics easier\nto understand. When we introduce a new method, focus first on the problem it\nsolves and why it is useful. For example, in machine learning, features are the\ninformation we give the model, while the target is what we want it to predict.\nNow consider a simple question: what changes when the data contains missing\nvalues? We will think through the reason and then look at the code. In Python,\nwe can inspect the data, run one small step at a time, and explain what the\nresult means. The goal is to understand the logic, not simply memorize syntax.",
-  "locked_narration_seed": true,
-  "narration_seed": 1234,
-  "long_narration": {
-    "automatic_chunking": true,
-    "max_text_tokens_per_call": 260,
-    "chunk_pause_seconds": 0.38,
-    "manual_break_marker": "[tts-break]",
-    "breeze_max_new_tokens": 1500,
-    "breeze_max_seq_len": 2048
+  "subtitle_method": "tts_break_section_generation",
+  "generation_boundary": "[tts-break]",
+  "instruction_mode": "disabled_to_prevent_spoken_prompt_leakage",
+  "spoken_instruction_sent_to_breeze": false,
+  "audio_settings": {
+    "speech_speed": 0.93,
+    "speed_method": "ffmpeg_atempo_before_vtt_alignment"
   },
-  "subtitle_method": "whole_slide_silence_alignment",
   "caption_settings": {
-    "max_words": 18,
-    "max_chars": 110,
-    "minimum_silence_seconds": 0.2,
-    "boundary_search_window_seconds": 1.4
+    "max_words": 24,
+    "max_chars": 120,
+    "tts_break_pause_seconds": 0.45
   },
   "slides": [
     {
       "slide": 1,
       "title": "Lists & Tuples",
-      "transcript": "Welcome to Module 4. We are moving from individual values to collections. Lists and tuples let Python organize several related observations so we can access, change, loop through, and summarize them.\n\n[tts-break]\n\nA tuple is ordered like a list but is intended to stay fixed. It works well for compact records whose positions should not change.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 118,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        38,
-        26,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Welcome to Module 4. Up to now, many of our variables have held one value at a time. Lists and tuples let us organize several related values inside one object.\n\nThat matters in analytics because we usually work with collections: several scores, several sales values, several ages, or several records.\n\n[tts-break]\n\nWe’ll learn how to create these collections, access individual values, update lists, loop through them, summarize them, and decide when a list or tuple is the better choice.",
       "wav": "wav/module4_slide_01.wav",
       "audio": "audio/module4_slide_01.mp3",
       "captions": "audio/module4_slide_01.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 2,
       "title": "How to use this page",
-      "transcript": "Use this lesson actively. Read the idea first and make a prediction before running any code. When a Python cell is available, click Run, inspect the output, and then change one small value or condition. Run it again and explain what changed. This predict, run, modify, and explain cycle is more useful than copying a finished example.\n\n[tts-break]\n\nThink of the sequence as a small collection of observations. Ask whether order matters, whether values need to change, and whether you need one item, a range, or a summary of the entire collection.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 141,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        68,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Work through the examples by reading the idea, running the code, and then making a small change.\n\nWith collections, small edits are especially useful. Add one value, remove one value, change an index, or adjust a slice and watch what happens.\n\n[tts-break]\n\nTry to describe the result before you run the cell. That habit helps you understand how Python is organizing the data instead of relying on trial and error.",
       "wav": "wav/module4_slide_02.wav",
       "audio": "audio/module4_slide_02.mp3",
       "captions": "audio/module4_slide_02.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 3,
       "title": "Learning path for Module 4",
-      "transcript": "Use this slide as a roadmap. The ideas are intentionally ordered so later examples build on earlier concepts. As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of treating each method as an isolated command.\n\n[tts-break]\n\nThink of the sequence as a small collection of observations. Ask whether order matters, whether values need to change, and whether you need one item, a range, or a summary of the entire collection.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 120,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "We begin with lists, which store multiple values in order. Then we use indexes and slices to retrieve specific parts of a list.\n\nNext, we modify lists, loop through them, and summarize numeric values. After that, tuples give us a similar ordered structure that is intended to stay fixed.\n\n[tts-break]\n\nBy the end, you should be able to look at a data task and decide whether you need a flexible list or a fixed tuple.",
       "wav": "wav/module4_slide_03.wav",
       "audio": "audio/module4_slide_03.mp3",
       "captions": "audio/module4_slide_03.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 4,
       "title": "Why sequences matter in analytics",
-      "transcript": "On this slide, we are focusing on why sequences matter in analytics. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nThink of the sequence as a small collection of observations. Ask whether order matters, whether values need to change, and whether you need one item, a range, or a summary of the entire collection.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 122,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "One observation is rarely enough in analytics. We usually want to work with a sequence of related values.\n\nA list is ordered and mutable, meaning we can change it. A tuple is ordered too, but it is intended to remain fixed. An index gives us a position number for accessing one value.\n\n[tts-break]\n\nThink about five exam scores or a week of daily sales. A sequence lets us store those values together and then summarize, filter, or process them as one collection.",
       "wav": "wav/module4_slide_04.wav",
       "audio": "audio/module4_slide_04.mp3",
       "captions": "audio/module4_slide_04.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 5,
       "title": "Create a list",
-      "transcript": "On this slide, we are focusing on create a list. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA list is an ordered collection that can change. It is useful when values may be added, removed, replaced, sorted, or processed over time.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 131,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        30,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s create a list of five scores.\n\nThe square brackets tell Python that these values belong to one list. Printing the list shows the full collection. Len tells us there are five values. Max returns ninety-one, and min returns sixty-nine.\n\n[tts-break]\n\nA list is a good choice here because scores may be added, removed, sorted, or updated later.\n\nTry adding another score and rerun the summary functions. Notice that the same code adapts to the larger collection.",
       "wav": "wav/module4_slide_05.wav",
       "audio": "audio/module4_slide_05.mp3",
       "captions": "audio/module4_slide_05.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 6,
       "title": "Index and slice a list",
-      "transcript": "On this slide, we are focusing on index and slice a list. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nIndexing retrieves one position, while slicing retrieves a range. Python indexing starts at zero and slice endpoints are usually exclusive.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 126,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        23,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Python uses zero-based indexing, so the first value is at position zero.\n\nScores zero returns eighty-two. Scores one returns seventy-six. A negative one means the last value, which is sixty-nine.\n\nA slice lets us retrieve several values. Scores one through four starts at index one and stops before index four, giving seventy-six, ninety-one, and eighty-eight.\n\n[tts-break]\n\nThe stop position is excluded. That detail appears throughout Python, so it is worth getting comfortable with early.",
       "wav": "wav/module4_slide_06.wav",
       "audio": "audio/module4_slide_06.mp3",
       "captions": "audio/module4_slide_06.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 7,
       "title": "Change a list",
-      "transcript": "On this slide, we are focusing on change a list. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA list is an ordered collection that can change. It is useful when values may be added, removed, replaced, sorted, or processed over time.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 131,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        30,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Lists are mutable, which means we can change them after they are created.\n\nWe start with twenty-one, nineteen, and twenty-four visits. Append adds twenty-seven to the end. Then index one is changed from nineteen to twenty.\n\nPop zero removes the first value, twenty-one, and also returns it so we can store it in removed_value.\n\n[tts-break]\n\nRun the example one line at a time mentally. The final list should contain twenty, twenty-four, and twenty-seven.\n\nThis ability to grow and change is one of the main reasons to use a list.",
       "wav": "wav/module4_slide_07.wav",
       "audio": "audio/module4_slide_07.mp3",
       "captions": "audio/module4_slide_07.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 8,
       "title": "Loop through a list",
-      "transcript": "On this slide, we are focusing on loop through a list. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA list is an ordered collection that can change. It is useful when values may be added, removed, replaced, sorted, or processed over time.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 132,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        30,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Now we combine lists with the control flow from Module 2.\n\nThe loop takes one wait time at a time. If the value is greater than ten minutes, the program labels it for review. Otherwise it labels the wait as acceptable.\n\n[tts-break]\n\nFor the current values, eleven and eighteen should be flagged for review. Four, seven, and six should be acceptable.\n\nThis is the bridge from storing a collection to actually analyzing each observation in it.",
       "wav": "wav/module4_slide_08.wav",
       "audio": "audio/module4_slide_08.mp3",
       "captions": "audio/module4_slide_08.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 9,
       "title": "Summarize values in a list",
-      "transcript": "On this slide, we are focusing on summarize values in a list. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA list is an ordered collection that can change. It is useful when values may be added, removed, replaced, sorted, or processed over time.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 133,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        30,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Lists work naturally with built-in summary functions.\n\nThe four monthly sales values add to fifty-three thousand two hundred. Dividing by four gives an average of thirteen thousand three hundred. Max identifies fourteen thousand nine hundred as the best month.\n\n[tts-break]\n\nThe pattern is simple but important: collect values, calculate a summary, then interpret it.\n\nLater, Pandas will give us more advanced summary tools, but the underlying logic is the same.",
       "wav": "wav/module4_slide_09.wav",
       "audio": "audio/module4_slide_09.mp3",
       "captions": "audio/module4_slide_09.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 10,
       "title": "Create and unpack a tuple",
-      "transcript": "On this slide, we are focusing on create and unpack a tuple. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA tuple is ordered like a list but is intended to stay fixed. It works well for compact records whose positions should not change.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 129,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        26,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A tuple is another ordered collection, but it is designed for values that should stay together and not be changed casually.\n\nThe example stores latitude and longitude as one location tuple. Python can then unpack those two values into separate variables.\n\n[tts-break]\n\nThis works nicely for fixed records such as coordinates, a pair of summary statistics, or several results returned from a function.\n\nThe tuple still supports indexing, so position zero gives the latitude.",
       "wav": "wav/module4_slide_10.wav",
       "audio": "audio/module4_slide_10.mp3",
       "captions": "audio/module4_slide_10.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 11,
       "title": "Lists can hold tuples",
-      "transcript": "On this slide, we are focusing on lists can hold tuples. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA tuple is ordered like a list but is intended to stay fixed. It works well for compact records whose positions should not change.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 128,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        26,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Collections can be combined. Here we have a list of transaction records, and each record is a tuple containing an ID and an amount.\n\nThe loop unpacks each tuple into transaction_id and amount, then prints the record.\n\nAfter that, a list comprehension extracts only the amounts so we can sum them.\n\n[tts-break]\n\nThis structure is a simple table-like representation: several rows in a list, with fixed fields inside each row.\n\nLater, Pandas will give us a more powerful table structure, but this is a useful bridge.",
       "wav": "wav/module4_slide_11.wav",
       "audio": "audio/module4_slide_11.mp3",
       "captions": "audio/module4_slide_11.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 12,
       "title": "Small practice steps",
-      "transcript": "Treat these as guided practice rather than a checklist to rush through. Solve one task at a time, predict what Python should do, and explain your reasoning before running the code. If the result differs from the prediction, inspect intermediate values instead of immediately replacing your work.\n\n[tts-break]\n\nThink of the sequence as a small collection of observations. Ask whether order matters, whether values need to change, and whether you need one item, a range, or a summary of the entire collection.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 126,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        53,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "This practice example combines several list operations in one short workflow.\n\nWe begin with ages twenty-three, thirty-one, and twenty-nine. Append adds forty-two. Pop removes the last value, so forty-two comes back out and the list returns to the original three ages.\n\n[tts-break]\n\nThe average of twenty-three, thirty-one, and twenty-nine is about twenty-seven point seven.\n\nTry changing the numbers or removing a different position. The goal is to become comfortable predicting how the list changes after each operation.",
       "wav": "wav/module4_slide_12.wav",
       "audio": "audio/module4_slide_12.mp3",
       "captions": "audio/module4_slide_12.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 13,
       "title": "Patient-age list management",
-      "transcript": "On this slide, we are focusing on patient-age list management. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA list is an ordered collection that can change. It is useful when values may be added, removed, replaced, sorted, or processed over time.\n\n[tts-break]\n\nThink of the sequence as a small collection of observations. Ask whether order matters, whether values need to change, and whether you need one item, a range, or a summary of the entire collection.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 153,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        49,
-        30,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Here is a small example of a list growing as a new record arrives.\n\nThe starting ages are forty-four, fifty-seven, thirty-nine, and sixty-three. We append fifty-one, so the list now contains five values.\n\nThe loop then builds a second list containing only ages above fifty. That should include fifty-seven, sixty-three, and fifty-one.\n\n[tts-break]\n\nNotice that we are using one list as the source and another list as the filtered result. That pattern appears frequently in data preparation.\n\nThese are generic fictional records, not real patient data.",
       "wav": "wav/module4_slide_13.wav",
       "audio": "audio/module4_slide_13.mp3",
       "captions": "audio/module4_slide_13.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 14,
       "title": "List + tuple capstone",
-      "transcript": "On this slide, we are focusing on list + tuple capstone. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA tuple is ordered like a list but is intended to stay fixed. It works well for compact records whose positions should not change.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 129,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        26,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "This example combines a list, a function, and a tuple return value.\n\nSummarize_range receives a list of weekly sales. It finds the lowest value, the highest value, and the spread between them. Those three results are returned together as a tuple.\n\nFor the current data, the low is thirty-nine hundred, the high is sixty-one hundred, and the range is twenty-two hundred.\n\n[tts-break]\n\nThe caller then unpacks those results into three variables. This is a clean way to package several related summary values.",
       "wav": "wav/module4_slide_14.wav",
       "audio": "audio/module4_slide_14.mp3",
       "captions": "audio/module4_slide_14.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 15,
       "title": "Choose the right sequence",
-      "transcript": "On this slide, we are focusing on choose the right sequence. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nThink of the sequence as a small collection of observations. Ask whether order matters, whether values need to change, and whether you need one item, a range, or a summary of the entire collection.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 121,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "The choice between a list and a tuple depends on how you expect the data to behave.\n\nUse a list when values may be added, removed, sorted, or updated. Use a tuple when the values form a fixed record or when you want to return several results that belong together.\n\n[tts-break]\n\nA simple rule is: lists are flexible collections; tuples are fixed records.\n\nThat rule will cover many beginner use cases.",
       "wav": "wav/module4_slide_15.wav",
       "audio": "audio/module4_slide_15.mp3",
       "captions": "audio/module4_slide_15.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 16,
       "title": "Key takeaways",
-      "transcript": "This slide brings Module 4 together. Review the patterns you can now recognize and reuse. Focus on the decisions behind the syntax: what structure or method fits the problem, what assumptions are being made, and what you should check before trusting the result.\n\n[tts-break]\n\nThink of the sequence as a small collection of observations. Ask whether order matters, whether values need to change, and whether you need one item, a range, or a summary of the entire collection.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 123,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        50,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s bring the sequence concepts together.\n\nLists are ordered and mutable. Indexes give access to individual positions. Slices retrieve ranges. Loops let us process each value. Tuples are ordered but intended to remain fixed.\n\n[tts-break]\n\nYou can now organize multiple values and write small workflows that summarize or filter collections.\n\nNext, dictionaries and sets will give us structures for labeled values and unique values.\n\n[tts-break]\n\nModule 5 moves from position-based collections to labeled and unique data. We’ll use dictionaries to represent records with meaningful keys, and sets to work with unique values, duplicates, and group comparisons. Those structures are especially useful as our examples start to look more like real datasets.",
       "wav": "wav/module4_slide_16.wav",
       "audio": "audio/module4_slide_16.mp3",
       "captions": "audio/module4_slide_16.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     }
   ]
 }

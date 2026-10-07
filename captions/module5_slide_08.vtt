@@ -1,28 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.172
-On this slide, we are focusing on loop through a dictionary.
+00:00:00.000 --> 00:00:02.912
+A dictionary can be looped in several ways.
 
-00:00:03.172 --> 00:00:10.147
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.912 --> 00:00:09.767
+Keys gives labels, values gives the stored values, and items gives both together.
 
-00:00:10.147 --> 00:00:16.817
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.767 --> 00:00:16.097
+Here items is the most useful because we want both the survey question and its score.
 
-00:00:16.817 --> 00:00:19.132
-A dictionary stores key-value pairs.
+00:00:16.097 --> 00:00:20.367
+After printing each pair, the values are averaged.
 
-00:00:19.132 --> 00:00:25.457
-Meaningful keys such as name, status, amount, or category make the structure easier to understand than
+00:00:20.367 --> 00:00:24.070
+Four, five, and three have an average of four.
 
-00:00:25.457 --> 00:00:28.592
-position alone. Before clicking Run, predict the output.
-
-00:00:28.592 --> 00:00:34.742
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:34.742 --> 00:00:38.087
-Rerun it and explain why the output changed.
-
-00:00:38.087 --> 00:00:43.098
-The goal is to understand the relationship between input, process, and output.
+00:00:24.520 --> 00:00:30.816
+This is a common pattern when the labels matter during reporting but the values are used for calculation.

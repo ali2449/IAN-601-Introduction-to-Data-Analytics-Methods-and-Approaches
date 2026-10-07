@@ -1,28 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.792
-On this slide, we are focusing on work with dates.
+00:00:00.000 --> 00:00:06.192
+Date columns should usually be converted from plain text into a datetime type before we analyze them.
 
-00:00:02.792 --> 00:00:07.442
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:06.192 --> 00:00:10.577
+Pd dot to_datetime performs that conversion.
 
-00:00:07.442 --> 00:00:15.132
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.577 --> 00:00:17.972
+Once the column is a real datetime, the dt accessor lets us extract features such as month and weekday name.
 
-00:00:15.132 --> 00:00:17.407
-Before clicking Run, predict how the table should change.
+00:00:18.422 --> 00:00:27.149
+For these three dates, we can immediately see which orders occurred in January or February and which weekday each date
 
-00:00:17.407 --> 00:00:25.717
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:25.717 --> 00:00:28.377
-or flags that matter. Change one input and rerun it.
-
-00:00:28.377 --> 00:00:34.702
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
-
-00:00:34.702 --> 00:00:40.482
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:40.482 --> 00:00:45.902
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:27.149 --> 00:00:34.778
+represents. Date features are useful for seasonality, reporting periods, weekday patterns, and time-based grouping.

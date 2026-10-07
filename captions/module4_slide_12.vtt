@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.877
-Treat these as guided practice rather than a checklist to rush through.
+00:00:00.000 --> 00:00:05.137
+This practice example combines several list operations in one short workflow.
 
-00:00:03.877 --> 00:00:08.372
-Solve one task at a time, predict what Python should do,
+00:00:05.137 --> 00:00:10.067
+We begin with ages twenty-three, thirty-one, and twenty-nine.
 
-00:00:08.372 --> 00:00:11.612
-and explain your reasoning before running the code.
+00:00:10.067 --> 00:00:12.582
+Append adds forty-two.
 
-00:00:11.612 --> 00:00:18.487
-If the result differs from the prediction, inspect intermediate values instead of immediately replacing your
+00:00:12.582 --> 00:00:19.829
+Pop removes the last value, so forty-two comes back out and the list returns to the original three ages.
 
-00:00:18.487 --> 00:00:22.372
-work. Think of the sequence as a small collection of observations.
+00:00:20.299 --> 00:00:27.021
+The average of twenty-three, thirty-one, and twenty-nine is about twenty-seven point seven.
 
-00:00:22.372 --> 00:00:29.072
-Ask whether order matters, whether values need to change, and whether you need one item, a range,
+00:00:27.021 --> 00:00:31.026
+Try changing the numbers or removing a different position.
 
-00:00:29.072 --> 00:00:31.452
-or a summary of the entire collection.
-
-00:00:31.452 --> 00:00:37.212
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:37.212 --> 00:00:42.631
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:31.026 --> 00:00:36.271
+The goal is to become comfortable predicting how the list changes after each operation.

@@ -1,28 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.577
-This slide brings Module 3 together.
+00:00:00.000 --> 00:00:02.152
+Let’s bring the main ideas together.
 
-00:00:02.577 --> 00:00:06.287
-Review the patterns you can now recognize and reuse.
+00:00:02.152 --> 00:00:06.112
+Def creates a function. Parentheses call it.
 
-00:00:06.287 --> 00:00:11.892
-Focus on the decisions behind the syntax: what structure or method fits the problem,
+00:00:06.112 --> 00:00:12.737
+Parameters make inputs flexible. Return sends reusable results back to the program.
 
-00:00:11.892 --> 00:00:16.592
-what assumptions are being made, and what you should check before trusting the result.
+00:00:12.737 --> 00:00:18.830
+Docstrings explain purpose, and small functions can be combined into larger workflows.
 
-00:00:16.592 --> 00:00:21.867
-Think about where this function would appear in a larger project.
+00:00:19.280 --> 00:00:25.667
+Next, we move into lists and tuples so functions can work with structured collections of values.
 
-00:00:21.867 --> 00:00:28.387
-Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
+00:00:26.158 --> 00:00:31.255
+In Module 4, we’ll give those functions more structured data to work with.
 
-00:00:28.387 --> 00:00:29.972
-across many rows, files, or notebooks.
+00:00:31.255 --> 00:00:38.320
+You’ll learn how lists and tuples store collections of values, how to access and update those values,
 
-00:00:29.972 --> 00:00:35.742
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:35.742 --> 00:00:41.159
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:38.320 --> 00:00:43.861
+and how to process an entire collection rather than working with one value at a time.

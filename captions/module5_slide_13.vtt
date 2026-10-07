@@ -1,34 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.697
-On this slide, we are focusing on set operations.
+00:00:00.000 --> 00:00:03.342
+Sets also make group comparison very convenient.
 
-00:00:03.697 --> 00:00:08.772
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.342 --> 00:00:07.392
+Union gives every customer who appeared in either season.
 
-00:00:08.772 --> 00:00:15.067
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:07.392 --> 00:00:13.087
+Intersection gives customers in both seasons, which here are C103 and C104.
 
-00:00:15.067 --> 00:00:17.587
-A set stores unique values.
+00:00:13.087 --> 00:00:22.012
+Spring minus summer gives customers who appeared only in spring, while summer minus spring gives those who appeared only
 
-00:00:17.587 --> 00:00:23.937
-It is useful for distinct categories, membership tests, and comparing overlap between groups.
+00:00:22.012 --> 00:00:23.069
+in summer.
 
-00:00:23.937 --> 00:00:27.077
-Before clicking Run, predict the output.
-
-00:00:27.077 --> 00:00:33.227
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:33.227 --> 00:00:36.572
-Rerun it and explain why the output changed.
-
-00:00:36.572 --> 00:00:41.747
-The goal is to understand the relationship between input, process, and output.
-
-00:00:41.747 --> 00:00:47.507
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:47.507 --> 00:00:52.924
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:23.738 --> 00:00:30.896
+These operations are useful for comparing cohorts, membership lists, categories, and other groups.

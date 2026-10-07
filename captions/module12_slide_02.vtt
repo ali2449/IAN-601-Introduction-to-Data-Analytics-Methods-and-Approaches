@@ -1,31 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.022
-Use this lesson actively. Read the idea first and make a prediction before running any code.
+00:00:00.003 --> 00:00:04.787
+For each example, focus on the issue first and the code second.
 
-00:00:06.022 --> 00:00:10.677
-When a Python cell is available, click Run, inspect the output,
+00:00:04.787 --> 00:00:08.387
+Ask what could go wrong if the problem is ignored.
 
-00:00:10.677 --> 00:00:13.632
-and then change one small value or condition.
+00:00:08.387 --> 00:00:16.314
+Then run the code, inspect the result, and think about whether the cleaning decision is appropriate for that context.
 
-00:00:13.632 --> 00:00:16.432
-Run it again and explain what changed.
+00:00:16.948 --> 00:00:21.265
+There is rarely one universal cleaning rule.
 
-00:00:16.432 --> 00:00:22.587
-This predict, run, modify, and explain cycle is more useful than copying a finished example.
-
-00:00:22.587 --> 00:00:26.582
-Do not treat cleaning as automatic deletion or filling.
-
-00:00:26.582 --> 00:00:32.472
-Measure the problem first, decide what the value means, apply a defensible rule,
-
-00:00:32.472 --> 00:00:34.682
-and then validate the data again.
-
-00:00:34.682 --> 00:00:40.442
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:40.442 --> 00:00:45.861
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:21.265 --> 00:00:27.237
+Missing values, duplicates, and outliers all require interpretation, not just syntax.

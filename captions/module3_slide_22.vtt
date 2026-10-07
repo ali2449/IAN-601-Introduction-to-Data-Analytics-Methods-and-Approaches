@@ -1,34 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.307
-On this slide, we are focusing on defaults and documentation.
+00:00:00.000 --> 00:00:03.067
+This function combines several ideas at once.
 
-00:00:04.307 --> 00:00:09.252
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.067 --> 00:00:09.532
+Amount is required, rate has a default of eight percent, the docstring explains the purpose,
 
-00:00:09.252 --> 00:00:15.362
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.532 --> 00:00:13.277
+and return sends the calculated tax back to the caller.
 
-00:00:15.362 --> 00:00:21.032
-A default parameter supplies a common value when the caller does not provide one,
+00:00:13.277 --> 00:00:18.517
+With an amount of two hundred fifty and the default rate, the result is twenty dollars.
 
-00:00:21.032 --> 00:00:23.137
-while still allowing an override.
+00:00:19.008 --> 00:00:23.470
+Call the function again with a ten percent rate and compare the result.
 
-00:00:23.137 --> 00:00:26.272
-Before clicking Run, predict the output.
-
-00:00:26.272 --> 00:00:32.422
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:32.422 --> 00:00:35.767
-Rerun it and explain why the output changed.
-
-00:00:35.767 --> 00:00:40.942
-The goal is to understand the relationship between input, process, and output.
-
-00:00:40.942 --> 00:00:46.702
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:46.702 --> 00:00:52.118
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:23.470 --> 00:00:30.510
+This pattern can be adapted to discounts, fees, commissions, and many other calculations.

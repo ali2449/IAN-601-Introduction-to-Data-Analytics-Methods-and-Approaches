@@ -1,31 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.677
-On this slide, we are focusing on patient-age list management.
+00:00:00.007 --> 00:00:04.597
+Here is a small example of a list growing as a new record arrives.
 
-00:00:03.677 --> 00:00:08.377
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.597 --> 00:00:11.197
+The starting ages are forty-four, fifty-seven, thirty-nine, and sixty-three.
 
-00:00:08.377 --> 00:00:14.397
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:11.197 --> 00:00:16.472
+We append fifty-one, so the list now contains five values.
 
-00:00:14.397 --> 00:00:17.652
-A list is an ordered collection that can change.
+00:00:16.472 --> 00:00:21.492
+The loop then builds a second list containing only ages above fifty.
 
-00:00:17.652 --> 00:00:24.527
-It is useful when values may be added, removed, replaced, sorted, or processed over time.
+00:00:21.492 --> 00:00:26.264
+That should include fifty-seven, sixty-three, and fifty-one.
 
-00:00:24.527 --> 00:00:28.412
-Think of the sequence as a small collection of observations.
+00:00:26.844 --> 00:00:32.411
+Notice that we are using one list as the source and another list as the filtered result.
 
-00:00:28.412 --> 00:00:34.147
-Ask whether order matters, whether values need to change, and whether you need one item, a range,
+00:00:32.411 --> 00:00:36.026
+That pattern appears frequently in data preparation.
 
-00:00:34.147 --> 00:00:37.492
-or a summary of the entire collection.
-
-00:00:37.492 --> 00:00:43.252
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:43.252 --> 00:00:48.670
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:36.026 --> 00:00:40.490
+These are generic fictional records, not real patient data.

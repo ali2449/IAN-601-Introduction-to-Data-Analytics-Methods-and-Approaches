@@ -1,28 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.477
-This slide brings Module 12 together.
+00:00:00.000 --> 00:00:02.407
+Let’s summarize the cleaning workflow.
 
-00:00:02.477 --> 00:00:05.877
-Review the patterns you can now recognize and reuse.
+00:00:02.407 --> 00:00:06.117
+Count missing values before deciding what to do.
 
-00:00:05.877 --> 00:00:11.282
-Focus on the decisions behind the syntax: what structure or method fits the problem,
+00:00:06.117 --> 00:00:09.572
+Check duplicates before calculating totals.
 
-00:00:11.282 --> 00:00:15.992
-what assumptions are being made, and what you should check before trusting the result.
+00:00:09.572 --> 00:00:14.902
+Verify data types. Standardize categories before grouping.
 
-00:00:15.992 --> 00:00:20.052
-Do not treat cleaning as automatic deletion or filling.
+00:00:14.902 --> 00:00:19.397
+Flag unusual values instead of automatically deleting them.
 
-00:00:20.052 --> 00:00:25.937
-Measure the problem first, decide what the value means, apply a defensible rule,
+00:00:19.397 --> 00:00:24.446
+Use EDA to understand the data before formal analysis or modeling.
 
-00:00:25.937 --> 00:00:28.157
-and then validate the data again.
+00:00:25.115 --> 00:00:29.034
+Good analysis starts with knowing what is actually in the dataset.
 
-00:00:28.157 --> 00:00:33.917
-Before moving on, explain the main idea in one sentence without reading the slide.
+00:00:29.586 --> 00:00:36.148
+In Module 13, we’ll take the cleaned data and focus on evidence and communication.
 
-00:00:33.917 --> 00:00:39.334
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:36.148 --> 00:00:42.418
+You’ll calculate descriptive statistics, examine distributions, compare groups, look at relationships,
+
+00:00:42.418 --> 00:00:49.827
+discuss uncertainty, and choose visual forms that help explain the findings clearly.

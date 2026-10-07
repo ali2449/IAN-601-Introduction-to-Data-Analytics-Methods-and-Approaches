@@ -1,28 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.497
-On this slide, we are focusing on inspect data types.
+00:00:00.000 --> 00:00:03.802
+Let’s inspect a few values with Python’s type function.
 
-00:00:03.497 --> 00:00:08.267
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.802 --> 00:00:07.757
+Age is thirty, so Python sees an integer.
 
-00:00:08.267 --> 00:00:14.532
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:07.757 --> 00:00:11.777
+Height is five point nine, so that is a float.
 
-00:00:14.532 --> 00:00:22.292
-A data type tells Python what a value means and which operations are valid.
+00:00:11.777 --> 00:00:15.622
+Jordan is text, so the type is string.
 
-00:00:22.292 --> 00:00:28.002
-Numeric values support arithmetic, strings represent text, and Boolean values represent True or False logic.
+00:00:15.622 --> 00:00:20.893
+True is a Boolean. Run the cell and verify those four results.
 
-00:00:28.002 --> 00:00:31.187
-Before clicking Run, predict the output.
+00:00:21.343 --> 00:00:24.270
+Then put quotation marks around thirty.
 
-00:00:31.187 --> 00:00:37.337
-Then run the cell, inspect the result, and change one value or condition at a time.
+00:00:24.270 --> 00:00:30.175
+To us it still looks like the number thirty, but Python now sees text.
 
-00:00:37.337 --> 00:00:40.682
-Rerun it and explain why the output changed.
+00:00:30.175 --> 00:00:34.765
+That small change can affect whether arithmetic works correctly.
 
-00:00:40.682 --> 00:00:45.693
-The goal is to understand the relationship between input, process, and output.
+00:00:34.765 --> 00:00:41.375
+Checking types is one of the simplest ways to diagnose confusing behavior in a data workflow.

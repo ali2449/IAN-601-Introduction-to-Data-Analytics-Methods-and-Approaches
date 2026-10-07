@@ -1,31 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.662
-On this slide, we are focusing on variables can be reassigned.
+00:00:00.000 --> 00:00:03.512
+A variable does not have to keep the same value forever.
 
-00:00:03.662 --> 00:00:08.182
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.512 --> 00:00:07.922
+Python lets us assign a new value to an existing variable.
 
-00:00:08.182 --> 00:00:14.267
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:07.922 --> 00:00:10.957
+At first, sales is one thousand.
 
-00:00:14.267 --> 00:00:17.937
-A variable is a meaningful name connected to a value.
+00:00:10.957 --> 00:00:15.227
+After the second assignment, sales becomes fifteen hundred.
 
-00:00:17.937 --> 00:00:21.867
-Clear names help the code communicate what the data represents,
+00:00:15.227 --> 00:00:20.587
+When Python reaches the second print statement, it uses the most recent value.
 
-00:00:21.867 --> 00:00:25.212
-and later calculations can reuse the stored value.
+00:00:21.249 --> 00:00:23.051
+This is called reassignment.
 
-00:00:25.212 --> 00:00:28.392
-Connect the concept to a small analytics task.
+00:00:23.051 --> 00:00:31.321
+It is common when information changes during a workflow—for example, replacing an estimate with an updated value.
 
-00:00:28.392 --> 00:00:33.467
-Imagine the value came from a sales file, survey, or operational system.
+00:00:31.321 --> 00:00:33.836
+Use reassignment carefully.
 
-00:00:33.467 --> 00:00:38.482
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
-
-00:00:38.482 --> 00:00:40.899
-from the names and output.
+00:00:33.836 --> 00:00:40.062
+The value may change, but the variable name should still describe the same kind of information.

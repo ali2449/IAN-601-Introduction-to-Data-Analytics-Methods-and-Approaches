@@ -1,34 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.322
-On this slide, we are focusing on input usually starts as text.
+00:00:00.000 --> 00:00:04.707
+A common source of confusion is that data often arrives as text.
 
-00:00:04.322 --> 00:00:09.457
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.707 --> 00:00:13.997
+Forms, CSV files, APIs, and user input frequently give us strings even when the characters look numeric.
 
-00:00:09.457 --> 00:00:15.667
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:13.997 --> 00:00:21.307
+The text “29.99” looks like a price to us, but Python may still treat it as a string.
 
-00:00:15.667 --> 00:00:20.872
-Values from forms, keyboards, files, and APIs often arrive as text.
+00:00:21.769 --> 00:00:26.856
+Before doing arithmetic, we convert the text to an appropriate numeric type.
 
-00:00:20.872 --> 00:00:24.872
-Inspect and convert them deliberately before performing arithmetic.
+00:00:26.856 --> 00:00:32.431
+Float is useful for decimal values, while int is useful for whole numbers.
 
-00:00:24.872 --> 00:00:28.047
-Connect the concept to a small analytics task.
-
-00:00:28.047 --> 00:00:33.117
-Imagine the value came from a sales file, survey, or operational system.
-
-00:00:33.117 --> 00:00:38.742
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
-
-00:00:38.742 --> 00:00:40.727
-from the names and output.
-
-00:00:40.727 --> 00:00:46.497
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:46.497 --> 00:00:51.913
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:32.431 --> 00:00:37.640
+The pattern is simple: receive text, convert it, then calculate.

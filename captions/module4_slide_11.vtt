@@ -1,28 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.102
-On this slide, we are focusing on lists can hold tuples.
+00:00:00.000 --> 00:00:01.832
+Collections can be combined.
 
-00:00:04.102 --> 00:00:09.077
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:01.832 --> 00:00:08.652
+Here we have a list of transaction records, and each record is a tuple containing an ID and an amount.
 
-00:00:09.077 --> 00:00:15.457
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:08.652 --> 00:00:14.767
+The loop unpacks each tuple into transaction_id and amount, then prints the record.
 
-00:00:15.457 --> 00:00:19.912
-A tuple is ordered like a list but is intended to stay fixed.
+00:00:14.767 --> 00:00:19.544
+After that, a list comprehension extracts only the amounts so we can sum them.
 
-00:00:19.912 --> 00:00:24.417
-It works well for compact records whose positions should not change.
+00:00:20.126 --> 00:00:28.317
+This structure is a simple table-like representation: several rows in a list, with fixed fields inside each row.
 
-00:00:24.417 --> 00:00:27.557
-Before clicking Run, predict the output.
-
-00:00:27.557 --> 00:00:33.707
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:33.707 --> 00:00:37.052
-Rerun it and explain why the output changed.
-
-00:00:37.052 --> 00:00:42.063
-The goal is to understand the relationship between input, process, and output.
+00:00:28.317 --> 00:00:34.362
+Later, Pandas will give us a more powerful table structure, but this is a useful bridge.

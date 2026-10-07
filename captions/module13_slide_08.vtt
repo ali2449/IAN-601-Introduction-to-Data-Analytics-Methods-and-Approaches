@@ -1,34 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.067
-On this slide, we are focusing on simple confidence interval idea.
+00:00:00.000 --> 00:00:06.537
+A sample mean is an estimate of a larger population quantity, and estimates have uncertainty.
 
-00:00:04.067 --> 00:00:08.777
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:06.537 --> 00:00:10.887
+The code calculates the sample mean, standard deviation, standard error,
 
-00:00:08.777 --> 00:00:14.947
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.887 --> 00:00:18.716
+and then an approximate ninety-five percent interval using one point nine six times the standard error.
 
-00:00:14.947 --> 00:00:17.187
-A sample estimate is uncertain.
+00:00:19.174 --> 00:00:27.646
+The interval gives a range of plausible values around the estimate under the assumptions of this simplified method.
 
-00:00:17.187 --> 00:00:24.042
-A confidence interval communicates a range around the estimate under the assumptions of the method.
-
-00:00:24.042 --> 00:00:28.507
-Before clicking Run, predict the statistic or pattern you expect.
-
-00:00:28.507 --> 00:00:30.787
-After it runs, interpret the result in words.
-
-00:00:30.787 --> 00:00:35.232
-Then change one value and see whether the interpretation changes.
-
-00:00:35.232 --> 00:00:39.442
-Focus on meaning and limitations, not only the calculation.
-
-00:00:39.442 --> 00:00:45.187
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:45.187 --> 00:00:50.603
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:27.646 --> 00:00:34.261
+At this stage, focus on the idea: a single sample statistic should not be treated as perfectly precise.

@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.622
-On this slide, we are focusing on compose small functions.
+00:00:00.000 --> 00:00:03.387
+Small functions become powerful when we combine them.
 
-00:00:03.622 --> 00:00:08.747
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.387 --> 00:00:06.187
+The first function calculates profit.
 
-00:00:08.747 --> 00:00:15.012
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:06.187 --> 00:00:12.517
+With sales of fifteen hundred and costs of ten fifty, profit is four hundred fifty.
 
-00:00:15.012 --> 00:00:18.622
-A function gives a reusable task a clear name.
+00:00:12.517 --> 00:00:18.282
+The second function receives that profit and divides it by sales to calculate margin.
 
-00:00:18.622 --> 00:00:26.492
-In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.
+00:00:18.282 --> 00:00:22.588
+Four hundred fifty divided by fifteen hundred gives thirty percent.
 
-00:00:26.492 --> 00:00:29.672
-Before clicking Run, predict the output.
+00:00:23.155 --> 00:00:29.327
+This is function composition: one small result becomes the input to another small function.
 
-00:00:29.672 --> 00:00:35.822
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:35.822 --> 00:00:39.172
-Rerun it and explain why the output changed.
-
-00:00:39.172 --> 00:00:44.182
-The goal is to understand the relationship between input, process, and output.
+00:00:29.327 --> 00:00:34.826
+Keeping each function focused on one job makes testing and reuse easier.

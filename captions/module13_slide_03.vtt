@@ -1,28 +1,13 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:01.807
-Use this slide as a roadmap.
+00:00:00.008 --> 00:00:07.742
+We’ll begin with descriptive statistics such as mean and median, then look at distributions and group comparisons.
 
-00:00:01.807 --> 00:00:07.152
-The ideas are intentionally ordered so later examples build on earlier concepts.
+00:00:07.742 --> 00:00:13.477
+Next comes correlation, followed by a simple introduction to confidence intervals.
 
-00:00:07.152 --> 00:00:12.917
-As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of
+00:00:13.477 --> 00:00:19.887
+We’ll finish by matching visual forms to analytical questions and building a short statistical report.
 
-00:00:12.917 --> 00:00:16.237
-treating each method as an isolated command.
-
-00:00:16.237 --> 00:00:19.202
-Separate calculation from interpretation.
-
-00:00:19.202 --> 00:00:26.772
-A statistic summarizes the sample and a visualization reveals pattern, but both still require context,
-
-00:00:26.772 --> 00:00:29.982
-variability, and awareness of limitations.
-
-00:00:29.982 --> 00:00:35.742
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:35.742 --> 00:00:41.160
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:20.476 --> 00:00:28.660
+Think of the sequence as summarize, compare, relate, quantify uncertainty, and communicate.

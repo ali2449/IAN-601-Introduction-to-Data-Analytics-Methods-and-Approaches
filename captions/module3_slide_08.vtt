@@ -1,31 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.867
-On this slide, we are focusing on parameters receive values.
+00:00:00.000 --> 00:00:04.592
+A parameter is a placeholder name inside the function definition.
 
-00:00:03.867 --> 00:00:08.597
-Start with the meaning of the idea before worrying about the exact syntax.
-
-00:00:08.597 --> 00:00:14.712
-Ask what information is going in, what Python is doing with it, and what result should come out.
-
-00:00:14.712 --> 00:00:18.822
-A parameter is the placeholder name in the function definition.
-
-00:00:18.822 --> 00:00:23.382
+00:00:04.592 --> 00:00:09.492
 An argument is the actual value supplied when the function is called.
 
-00:00:23.382 --> 00:00:28.647
-Think about where this function would appear in a larger project.
+00:00:09.492 --> 00:00:13.822
+In def greet name, name is the parameter.
 
-00:00:28.647 --> 00:00:35.167
-Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
+00:00:13.822 --> 00:00:18.103
+When we call greet with Avery, Avery is the argument.
 
-00:00:35.167 --> 00:00:36.752
-across many rows, files, or notebooks.
+00:00:18.593 --> 00:00:22.040
+Think of the parameter as an empty labeled slot.
 
-00:00:36.752 --> 00:00:42.522
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:42.522 --> 00:00:47.937
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:22.040 --> 00:00:27.645
+The argument is the value we place into that slot for one particular function call.

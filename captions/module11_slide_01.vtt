@@ -1,10 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:07.907
-Welcome to Module 11. We are extending the Pandas foundation from Module 10 into more advanced workflows.
+00:00:00.000 --> 00:00:05.732
+Welcome to Module 11. We already know how to create and work with DataFrames.
 
-00:00:07.907 --> 00:00:14.957
-The emphasis is on chaining operations, reshaping tables, working with dates and rolling summaries,
+00:00:05.732 --> 00:00:14.857
+Now we’ll focus on the Pandas patterns that make larger analytical workflows cleaner and more useful.
 
-00:00:14.957 --> 00:00:20.201
-checking joins, and packaging repeated Pandas logic into reusable functions.
+00:00:14.857 --> 00:00:20.412
+We’ll chain operations, reshape tables, work with dates, calculate rolling summaries, check joins,
+
+00:00:20.412 --> 00:00:24.506
+and package repeated steps into functions.
+
+00:00:24.956 --> 00:00:28.458
+The goal is not to memorize every Pandas method.
+
+00:00:28.458 --> 00:00:35.437
+Focus on recognizing the data problem and choosing a transformation that moves the table toward the form you need.

@@ -1,537 +1,274 @@
 {
   "module": "module2",
+  "generation_version": "ian620_safe_v4_exact_reference_text_seed1234",
   "filename_prefix": "module2",
-  "source_file": "IAN_601_Module_02_Narration.txt",
-  "voice_consistency_version": 3,
+  "source_file": "IAN_601_Module_02_Narration_Natural_Final.txt",
   "reference_audio": "/home/ali/breeze-tts/voice_reference/course_instructor_consistent_v4.wav",
+  "reference_text_version": "course_instructor_consistent_v4_exact_transcript",
   "reference_text": "Welcome to the course. We will work through each concept carefully, connect the\nideas step by step, and use practical examples to make technical topics easier\nto understand. When we introduce a new method, focus first on the problem it\nsolves and why it is useful. For example, in machine learning, features are the\ninformation we give the model, while the target is what we want it to predict.\nNow consider a simple question: what changes when the data contains missing\nvalues? We will think through the reason and then look at the code. In Python,\nwe can inspect the data, run one small step at a time, and explain what the\nresult means. The goal is to understand the logic, not simply memorize syntax.",
-  "locked_narration_seed": true,
-  "narration_seed": 1234,
-  "long_narration": {
-    "automatic_chunking": true,
-    "max_text_tokens_per_call": 260,
-    "chunk_pause_seconds": 0.38,
-    "manual_break_marker": "[tts-break]",
-    "breeze_max_new_tokens": 1500,
-    "breeze_max_seq_len": 2048
+  "subtitle_method": "tts_break_section_generation",
+  "generation_boundary": "[tts-break]",
+  "instruction_mode": "disabled_to_prevent_spoken_prompt_leakage",
+  "spoken_instruction_sent_to_breeze": false,
+  "audio_settings": {
+    "speech_speed": 0.93,
+    "speed_method": "ffmpeg_atempo_before_vtt_alignment"
   },
-  "subtitle_method": "whole_slide_silence_alignment",
   "caption_settings": {
-    "max_words": 18,
-    "max_chars": 110,
-    "minimum_silence_seconds": 0.2,
-    "boundary_search_window_seconds": 1.4
+    "max_words": 24,
+    "max_chars": 120,
+    "tts_break_pause_seconds": 0.45
   },
   "slides": [
     {
       "slide": 1,
       "title": "Control Flow & Decision Making",
-      "transcript": "Welcome to Module 2. In Module 1, most statements ran from top to bottom. Now Python will start choosing paths and repeating work. Control flow is what lets a program apply rules, classify records, validate values, and process many observations automatically.",
-      "seed": 1234,
-      "tts_text_tokens": 51,
-      "tts_chunk_count": 1,
-      "tts_chunk_tokens": [
-        51
-      ],
-      "tts_explicit_breaks": 0,
-      "tts_chunk_limit": 260,
-      "stitched_audio": false,
+      "transcript": "Welcome to Module 2. Python becomes much more useful once it can make decisions and repeat work automatically.\n\nUp to this point, most of our code has simply run from top to bottom. Now we’ll give Python rules: if something is true, do one thing; otherwise, do something else. We’ll also use loops so one block of code can process many values.\n\n[tts-break]\n\nThese ideas are the foundation for tasks such as classifying records, counting cases, applying business rules, and summarizing a dataset.",
       "wav": "wav/module2_slide_01.wav",
       "audio": "audio/module2_slide_01.mp3",
       "captions": "audio/module2_slide_01.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 2,
       "title": "What changes after Module 1?",
-      "transcript": "On this slide, we are focusing on what changes after module 1?. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 123,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        50,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Module 1 focused on values, calculations, and output. The big change now is that Python can choose a path.\n\nA condition asks a True or False question. A branch is the block of code that runs when a condition is satisfied. A loop repeats a block of work. Loop control changes when that repetition stops or skips.\n\n[tts-break]\n\nThink of the workflow as data value, condition, action, then the next value. That simple structure is behind a surprising amount of analytics logic.",
       "wav": "wav/module2_slide_02.wav",
       "audio": "audio/module2_slide_02.mp3",
       "captions": "audio/module2_slide_02.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 3,
       "title": "Learning path for this session",
-      "transcript": "Use this slide as a roadmap. The ideas are intentionally ordered so later examples build on earlier concepts. As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of treating each method as an isolated command.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 120,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "We’ll build control flow in a logical order. First come Boolean conditions. Then we’ll use if, elif, and else to choose among outcomes.\n\nAfter that, for loops let us repeat over known items, while loops repeat while a condition remains true, and finally we combine these ideas in common analytics patterns such as classification, counting, and flagging.\n\n[tts-break]\n\nAs you work through the examples, do not just ask whether the code runs. Ask which condition becomes true, which block executes, and how the values change from one repetition to the next.",
       "wav": "wav/module2_slide_03.wav",
       "audio": "audio/module2_slide_03.mp3",
       "captions": "audio/module2_slide_03.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 4,
       "title": "A condition asks a True/False question",
-      "transcript": "On this slide, we are focusing on a condition asks a true/false question. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA condition is a question whose answer is True or False. Thresholds, flags, eligibility rules, and data-quality checks all use this kind of Boolean thinking.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 159,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        52,
-        33,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A condition is simply a question that Python can answer with True or False.\n\nSales greater than target asks whether one number is larger than another. Status equal to Open asks whether two values match exactly. Returns not equal to zero asks whether a value is different from zero.\n\n[tts-break]\n\nThe comparison operators in the table are worth recognizing: double equals compares equality, exclamation equals means not equal, and the greater-than and less-than symbols can also include equality.\n\nThese comparisons become the decision points in if statements.",
       "wav": "wav/module2_slide_04.wav",
       "audio": "audio/module2_slide_04.mp3",
       "captions": "audio/module2_slide_04.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 5,
       "title": "Code: compare values",
-      "transcript": "On this slide, we are focusing on compare values. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.",
-      "seed": 1234,
-      "tts_text_tokens": 140,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        46,
-        52,
-        40
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s test a few comparisons.\n\nSales is one thousand and target is eight hundred. One thousand is greater than eight hundred, so the first result should be True. Sales is not equal to target, so the equality check should be False. Sales is different from target, so the final comparison should be True.\n\n[tts-break]\n\nRun the cell and confirm those predictions. Then change sales to eight hundred. Notice which answers flip.\n\nThis is the basic building block for every decision we write later.",
       "wav": "wav/module2_slide_05.wav",
       "audio": "audio/module2_slide_05.mp3",
       "captions": "audio/module2_slide_05.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 6,
       "title": "The if statement runs only when true",
-      "transcript": "On this slide, we are focusing on the if statement runs only when true. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nAn if statement runs a block only when its condition is true. Indentation is part of the structure, so the indented lines are the lines controlled by the decision.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.",
-      "seed": 1234,
-      "tts_text_tokens": 126,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        51,
-        33,
-        40
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "An if statement runs its indented block only when the condition is true.\n\nSales is one thousand and the condition asks whether sales is greater than eight hundred. Because that is true, Python prints “Good sales day.” Then the program continues and prints “Analysis complete.”\n\n[tts-break]\n\nNow imagine sales were seven hundred. The indented line would be skipped, but “Analysis complete” would still run because it is outside the if block.\n\nIndentation is not decoration in Python. It defines which lines belong to the decision.",
       "wav": "wav/module2_slide_06.wav",
       "audio": "audio/module2_slide_06.mp3",
       "captions": "audio/module2_slide_06.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 7,
       "title": "if / else chooses between two paths",
-      "transcript": "On this slide, we are focusing on if / else chooses between two paths. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nUse if and else when exactly one of two outcomes should happen. Only one branch runs for a particular evaluation.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 147,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        51,
-        22,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Use if and else when exactly one of two outcomes should happen.\n\nHere sales is seven hundred. The condition asks whether sales is greater than eight hundred. That is false, so Python skips the if block and runs the else block instead.\n\n[tts-break]\n\nChange sales to nine hundred and run the cell again. Now the first branch should run.\n\nThis two-way pattern appears everywhere: pass or fail, valid or invalid, above target or below target, approved or not approved.",
       "wav": "wav/module2_slide_07.wav",
       "audio": "audio/module2_slide_07.mp3",
       "captions": "audio/module2_slide_07.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 8,
       "title": "elif handles several categories",
-      "transcript": "On this slide, we are focusing on elif handles several categories. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nElif supports several possible categories. Python checks conditions from top to bottom and stops at the first true branch, so rule order matters.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 149,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        48,
-        27,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Sometimes we need more than two outcomes. Elif lets us test several rules in order.\n\nWith a score of eighty-six, the first condition—score at least ninety—is false. Python then checks score at least eighty, which is true, so it prints “Good” and stops checking the remaining branches.\n\n[tts-break]\n\nOrder matters because the first true branch wins. For threshold categories, it is often easiest to check from the highest threshold downward.\n\nTry scores of ninety-five, eighty-five, seventy-five, and sixty. Trace which branch should run before executing the code.",
       "wav": "wav/module2_slide_08.wav",
       "audio": "audio/module2_slide_08.mp3",
       "captions": "audio/module2_slide_08.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 9,
       "title": "Combine rules with Boolean logic",
-      "transcript": "On this slide, we are focusing on combine rules with boolean logic. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nAnd requires both conditions, or requires at least one, and not reverses a Boolean result. These operators let you express more realistic rules.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 150,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        49,
-        27,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Real decisions often depend on more than one condition. That is where and, or, and not become useful.\n\nFor a bonus, both sales above one thousand and returns below fifty must be true. That is an and condition. For “needs attention,” either low sales or high returns is enough, so or makes sense.\n\nThe not operator reverses a Boolean result.\n\n[tts-break]\n\nRead these expressions as plain language first. If you can explain the business rule clearly, the Python usually becomes much easier to write.",
       "wav": "wav/module2_slide_09.wav",
       "audio": "audio/module2_slide_09.mp3",
       "captions": "audio/module2_slide_09.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 10,
       "title": "Common beginner mistakes",
-      "transcript": "On this slide, we are focusing on common beginner mistakes. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 120,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Most early control-flow errors are structural rather than mathematical.\n\nA single equals sign assigns a value; double equals compares values. If statements need a colon at the end of the condition. The lines controlled by the statement must be indented consistently.\n\n[tts-break]\n\nA useful debugging trick is to read the code out loud: “If this is true, do this; otherwise, do that.” If the spoken logic sounds wrong, the code probably needs attention too.",
       "wav": "wav/module2_slide_10.wav",
       "audio": "audio/module2_slide_10.mp3",
       "captions": "audio/module2_slide_10.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 11,
       "title": "For loops repeat over a sequence",
-      "transcript": "On this slide, we are focusing on for loops repeat over a sequence. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA for loop repeats the same action for each item in a sequence. Read it as: for each item in this collection, perform this task.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 153,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        50,
-        29,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A for loop is a natural choice when you already have a collection of items to process.\n\nThe customers list contains Ava, Ben, and Carla. Python takes the first value, stores it temporarily in customer, runs the indented block, then moves to the next value.\n\n[tts-break]\n\nRead the loop as “for each customer in customers.” That plain-language reading often makes loops easier to understand.\n\nThis pattern scales well: the same block can process three records or three thousand records.",
       "wav": "wav/module2_slide_11.wav",
       "audio": "audio/module2_slide_11.mp3",
       "captions": "audio/module2_slide_11.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 12,
       "title": "range() creates a simple count",
-      "transcript": "On this slide, we are focusing on range() creates a simple count. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nRange is useful when the number of repetitions is known. Remember that range normally starts at zero and stops before the ending value.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 149,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        50,
-        25,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Range is useful when the repetition is based on numbers rather than an existing list.\n\nRange five produces zero, one, two, three, and four. The stop value is not included. Range one to six produces one through five, and a third argument can control the step size.\n\n[tts-break]\n\nThe important detail is that Python often starts counting at zero. That may feel unusual at first, but it appears throughout indexing, loops, and many libraries.",
       "wav": "wav/module2_slide_12.wav",
       "audio": "audio/module2_slide_12.mp3",
       "captions": "audio/module2_slide_12.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 13,
       "title": "Running totals are a core analytics pattern",
-      "transcript": "On this slide, we are focusing on running totals are a core analytics pattern. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nAn accumulator stores a result that changes during a loop. Totals and counters are common analytical examples of this pattern.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 148,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        51,
-        23,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A running total uses an accumulator—a variable that starts with an initial value and is updated during each repetition.\n\nTotal begins at zero. The loop adds one hundred, then two hundred, then one hundred fifty. The running values become one hundred, three hundred, and finally four hundred fifty.\n\n[tts-break]\n\nThis pattern is extremely common. Counters, sums, running balances, and category totals all use the same basic idea: initialize, update, finish.",
       "wav": "wav/module2_slide_13.wav",
       "audio": "audio/module2_slide_13.mp3",
       "captions": "audio/module2_slide_13.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 14,
       "title": "enumerate() gives position and value",
-      "transcript": "On this slide, we are focusing on enumerate() gives position and value. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nEnumerate gives both the position and the value while looping. This is useful when the order of observations matters.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 146,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        50,
-        22,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Sometimes we need both the item and its position. Enumerate gives us both at the same time.\n\nHere the customers are Ava, Ben, and Carla. Because start equals one, the output uses human-friendly numbering: one Ava, two Ben, three Carla.\n\n[tts-break]\n\nThis is useful in reports, ranked lists, and any output where the position matters as much as the value.",
       "wav": "wav/module2_slide_14.wav",
       "audio": "audio/module2_slide_14.mp3",
       "captions": "audio/module2_slide_14.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 15,
       "title": "while loops repeat until a condition changes",
-      "transcript": "On this slide, we are focusing on while loops repeat until a condition changes. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA while loop repeats while a condition remains true. Always identify what changes inside the loop so the condition can eventually become false.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 150,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        51,
-        25,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A while loop keeps repeating as long as its condition remains true.\n\nCount begins at five. Each repetition prints the current count and subtracts one. Eventually count reaches zero, the condition count greater than zero becomes false, and the loop stops.\n\n[tts-break]\n\nWhenever you write a while loop, ask one safety question: what changes inside the loop so it can eventually end?\n\nIf nothing changes the condition, you may accidentally create an infinite loop.",
       "wav": "wav/module2_slide_15.wav",
       "audio": "audio/module2_slide_15.mp3",
       "captions": "audio/module2_slide_15.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 16,
       "title": "while loops can model changing processes",
-      "transcript": "On this slide, we are focusing on while loops can model changing processes. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA while loop repeats while a condition remains true. Always identify what changes inside the loop so the condition can eventually become false.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 149,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        50,
-        25,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "While loops are especially useful when the stopping point depends on a changing value rather than a known number of items.\n\nIn the first example, balance starts at one hundred and decreases by twenty until it reaches zero. In the second, visits begins at one and doubles until it is no longer below eight.\n\n[tts-break]\n\nA useful rule of thumb is: use for when the items are known; use while when the stopping condition depends on how a value changes over time.",
       "wav": "wav/module2_slide_16.wav",
       "audio": "audio/module2_slide_16.mp3",
       "captions": "audio/module2_slide_16.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 17,
       "title": "break and continue change loop behavior",
-      "transcript": "On this slide, we are focusing on break and continue change loop behavior. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nContinue skips the rest of the current iteration, while break exits the loop completely.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 140,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        50,
-        16,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Break and continue let us change the normal flow of a loop.\n\nContinue skips the rest of the current repetition and moves to the next one. In the first example, the number two is skipped.\n\nBreak exits the loop completely. In the second example, once the number reaches four, the loop stops immediately.\n\n[tts-break]\n\nThese tools are useful, but use them carefully. If a loop becomes hard to follow, simpler logic is usually better.",
       "wav": "wav/module2_slide_17.wav",
       "audio": "audio/module2_slide_17.mp3",
       "captions": "audio/module2_slide_17.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 18,
       "title": "Combine loops and decisions",
-      "transcript": "On this slide, we are focusing on combine loops and decisions. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 121,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Most useful data-processing code combines repetition with a decision inside the loop.\n\nThe loop takes one sale at a time. The if statement checks whether that sale is at least one thousand. Each value is then labeled as either target met or below target.\n\n[tts-break]\n\nThis is a classic classification pattern: iterate over records, apply the same rule, and produce a category for each observation.",
       "wav": "wav/module2_slide_18.wav",
       "audio": "audio/module2_slide_18.mp3",
       "captions": "audio/module2_slide_18.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 19,
       "title": "Nested loops: a loop inside a loop",
-      "transcript": "On this slide, we are focusing on nested loops: a loop inside a loop. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA nested loop runs an inner loop for every outer item. It can model combinations, but it can also become expensive and hard to read as data grows.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.",
-      "seed": 1234,
-      "tts_text_tokens": 125,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        52,
-        31,
-        40
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A nested loop means one loop runs inside another.\n\nThe outer loop controls rows. For each row, the inner loop goes through three columns. That creates six row-column combinations in total.\n\n[tts-break]\n\nNested loops are useful for grids, pairwise combinations, and some matrix-style tasks. But readability drops quickly when too many loops are nested, so keep the structure as simple as possible.",
       "wav": "wav/module2_slide_19.wav",
       "audio": "audio/module2_slide_19.mp3",
       "captions": "audio/module2_slide_19.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 20,
       "title": "Analytics example: classify sales days",
-      "transcript": "On this slide, we are focusing on analytics example: classify sales days. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 135,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        50,
-        52,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "This example brings several ideas together in one small report.\n\nWe start with six daily sales values and three counters: low, target, and high. Each sale is checked. Values below one thousand increase the low counter. Values up to eighteen hundred increase the target counter. Anything larger increases the high counter.\n\n[tts-break]\n\nFor the current data, expect two low days, three target days, and one high day.\n\nNotice the pattern: initialize counters, loop through the values, classify each one, and update the correct counter. This is a very reusable analytics structure.",
       "wav": "wav/module2_slide_20.wav",
       "audio": "audio/module2_slide_20.mp3",
       "captions": "audio/module2_slide_20.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 21,
       "title": "Count values that meet a condition",
-      "transcript": "On this slide, we are focusing on count values that meet a condition. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA condition is a question whose answer is True or False. Thresholds, flags, eligibility rules, and data-quality checks all use this kind of Boolean thinking.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 157,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        50,
-        33,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Counting matches is another common pattern.\n\nThe counter starts at zero. Each measurement is checked against ninety-eight point six. When the condition is true, the counter increases by one.\n\n[tts-break]\n\nWith the current values, ninety-nine point four and one hundred point two are above the threshold, so the final count should be two.\n\nThe exact threshold can represent anything: response time, sales amount, temperature, score, or another business rule.",
       "wav": "wav/module2_slide_21.wav",
       "audio": "audio/module2_slide_21.mp3",
       "captions": "audio/module2_slide_21.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 22,
       "title": "Final activity: simple customer flags",
-      "transcript": "On this slide, we are focusing on final activity: simple customer flags. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 135,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        50,
-        52,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "This activity combines a loop, several conditions, a counter, and readable output.\n\nA customer becomes priority when spending is at least two hundred fifty and visits are at least three. If that is not true but spending is at least one hundred, the customer is standard. Otherwise the label is follow up.\n\n[tts-break]\n\nTrace the three customers one at a time. Carla should meet the priority rule. Ava spends two hundred forty, so she does not reach the priority spending threshold. Ben falls into the follow-up category.\n\nAlso notice the priority counter. It summarizes how many customers met the highest-level rule.",
       "wav": "wav/module2_slide_22.wav",
       "audio": "audio/module2_slide_22.mp3",
       "captions": "audio/module2_slide_22.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 23,
       "title": "Practice prompts for class",
-      "transcript": "Treat these as guided practice rather than a checklist to rush through. Solve one task at a time, predict what Python should do, and explain your reasoning before running the code. If the result differs from the prediction, inspect intermediate values instead of immediately replacing your work.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 126,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        53,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Use these tasks to practice the patterns rather than copy a finished solution.\n\nStart with a simple threshold check, then build a two-way decision, then a short range loop. After that, count how many values exceed ten and classify values into low, medium, or high categories.\n\n[tts-break]\n\nFor the final question, explain in your own words when a while loop makes more sense than a for loop. If you can explain the decision clearly, you are understanding the concept rather than memorizing syntax.",
       "wav": "wav/module2_slide_23.wav",
       "audio": "audio/module2_slide_23.mp3",
       "captions": "audio/module2_slide_23.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 24,
       "title": "Self-check",
-      "transcript": "Use this self-check without looking back at the code first. Explain the main concepts in your own words and give one small example. If you can explain why a pattern works and when you would use it, that is stronger evidence of understanding than remembering the exact syntax.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 127,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        54,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Before finishing, check whether you can trace control flow without running the code.\n\nCan you tell when a condition is true or false? Can you identify the indented block controlled by an if statement? Can you follow one repetition of a loop at a time?\n\n[tts-break]\n\nFor while loops, make sure you can point to the value that changes and eventually stops the loop. For analytics, make sure you can recognize the classify, count, flag, and summarize patterns.",
       "wav": "wav/module2_slide_24.wav",
       "audio": "audio/module2_slide_24.mp3",
       "captions": "audio/module2_slide_24.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 25,
       "title": "Summary",
-      "transcript": "This slide brings Module 2 together. Review the patterns you can now recognize and reuse. Focus on the decisions behind the syntax: what structure or method fits the problem, what assumptions are being made, and what you should check before trusting the result.\n\n[tts-break]\n\nIn real analytics, this pattern can support thresholds, validation rules, category assignment, alerts, and repeated processing. The examples are intentionally small so you can trace the logic from the condition to the result.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 123,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        50,
-        40,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s summarize the module.\n\nConditions produce True or False. If, elif, and else choose among paths. For loops repeat over known items or counts. While loops repeat until a condition changes. Break stops a loop and continue skips a repetition.\n\n[tts-break]\n\nTogether, these tools let us classify, count, flag, and summarize observations.\n\nNext, functions will help us package repeated logic into reusable pieces of code.\n\n[tts-break]\n\nModule 3 takes the logic you just practiced and makes it reusable. Instead of rewriting the same decision or calculation in several places, you’ll learn how to package that work inside functions, pass values into them, return results, and build cleaner analytical code.",
       "wav": "wav/module2_slide_25.wav",
       "audio": "audio/module2_slide_25.mp3",
       "captions": "audio/module2_slide_25.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     }
   ]
 }

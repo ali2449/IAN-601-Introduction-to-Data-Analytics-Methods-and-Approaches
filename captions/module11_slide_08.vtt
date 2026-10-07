@@ -1,28 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.052
-On this slide, we are focusing on rolling summaries.
+00:00:00.000 --> 00:00:03.927
+A rolling calculation looks at a moving window of values.
 
-00:00:03.052 --> 00:00:07.662
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.927 --> 00:00:11.837
+With a window size of three, each rolling mean is based on the current value and the previous two values.
 
-00:00:07.662 --> 00:00:13.702
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:11.837 --> 00:00:17.840
+The first two positions do not yet have three observations, so they appear as missing.
 
-00:00:13.702 --> 00:00:17.852
-A rolling calculation summarizes a moving window of rows.
+00:00:18.393 --> 00:00:24.780
+Rolling averages are useful for smoothing short-term variation and making trends easier to see.
 
-00:00:17.852 --> 00:00:23.317
-The chosen window size directly affects the pattern you see.
-
-00:00:23.317 --> 00:00:25.587
-Before clicking Run, predict how the table should change.
-
-00:00:25.587 --> 00:00:33.902
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:33.902 --> 00:00:36.567
-or flags that matter. Change one input and rerun it.
-
-00:00:36.567 --> 00:00:42.745
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
+00:00:24.780 --> 00:00:31.014
+Try a window of two or four and compare how quickly the rolling series reacts to changes.

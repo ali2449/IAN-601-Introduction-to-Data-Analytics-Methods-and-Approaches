@@ -1,34 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.557
-On this slide, we are focusing on arithmetic creates derived metrics.
+00:00:00.000 --> 00:00:04.482
+Arithmetic lets us turn raw values into useful metrics.
 
-00:00:04.557 --> 00:00:09.892
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.482 --> 00:00:07.737
+Sales minus costs gives profit.
 
-00:00:09.892 --> 00:00:16.372
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:07.737 --> 00:00:11.377
+Profit divided by sales can give a margin.
 
-00:00:16.372 --> 00:00:22.497
-Arithmetic turns raw values into derived metrics such as profit, margin, tax, rates, and growth.
+00:00:11.377 --> 00:00:14.962
+Profit minus tax can give net profit.
 
-00:00:22.497 --> 00:00:25.102
-Understand the formula before trusting the output.
+00:00:14.962 --> 00:00:19.586
+These are derived metrics because they are created from other values.
 
-00:00:25.102 --> 00:00:28.487
-Connect the concept to a small analytics task.
+00:00:20.212 --> 00:00:28.573
+Python uses familiar operators: plus for addition, minus for subtraction, an asterisk for multiplication,
 
-00:00:28.487 --> 00:00:34.322
-Imagine the value came from a sales file, survey, or operational system.
+00:00:28.573 --> 00:00:33.623
+a forward slash for division, and two asterisks for exponentiation.
 
-00:00:34.322 --> 00:00:41.752
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+00:00:33.623 --> 00:00:37.403
+The formula matters more than the syntax.
 
-00:00:41.752 --> 00:00:44.342
-from the names and output.
+00:00:37.403 --> 00:00:42.223
+Python can run a perfectly valid calculation that represents the wrong business idea,
 
-00:00:44.342 --> 00:00:50.112
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:50.112 --> 00:00:55.530
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:42.223 --> 00:00:48.373
+so always understand the meaning of the metric before trusting the result.

@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.777
-On this slide, we are focusing on flag outliers with iqr.
+00:00:00.000 --> 00:00:08.897
+The interquartile range, or IQR, gives us one simple rule for flagging unusually large or small values.
 
-00:00:04.777 --> 00:00:10.282
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:08.897 --> 00:00:14.337
+We calculate the first quartile, third quartile, and their difference.
 
-00:00:10.282 --> 00:00:16.457
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:14.337 --> 00:00:20.417
+The upper threshold is Q3 plus one point five times the IQR.
 
-00:00:16.457 --> 00:00:22.152
-The I Q R rule flags values far below or above the central fifty percent.
+00:00:20.417 --> 00:00:27.246
+With the current values, nine hundred ninety-nine is far above the rest and should be flagged.
 
-00:00:22.152 --> 00:00:27.997
-A flagged value is not automatically wrong; it is a value that deserves investigation.
+00:00:27.889 --> 00:00:31.015
+An outlier flag is not a delete command.
 
-00:00:27.997 --> 00:00:31.917
-Before clicking Run, predict how the table should change.
+00:00:31.015 --> 00:00:37.355
+Unusual values may be errors, but they may also be important real observations.
 
-00:00:31.917 --> 00:00:37.452
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:37.452 --> 00:00:42.892
-or flags that matter. Change one input and rerun it.
-
-00:00:42.892 --> 00:00:49.072
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
+00:00:37.355 --> 00:00:39.711
+The next step is investigation.

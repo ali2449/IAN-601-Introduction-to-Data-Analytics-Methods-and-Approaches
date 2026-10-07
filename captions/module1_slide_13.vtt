@@ -1,28 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.797
-On this slide, we are focusing on some numbers should stay as text.
+00:00:00.000 --> 00:00:02.977
+Not every value made of digits should be numeric.
 
-00:00:03.797 --> 00:00:08.752
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.977 --> 00:00:06.657
+Some values are identifiers rather than quantities.
 
-00:00:08.752 --> 00:00:15.032
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:06.657 --> 00:00:10.907
+Take employee ID zero zero one two five.
 
-00:00:15.032 --> 00:00:18.212
-Connect the concept to a small analytics task.
+00:00:10.907 --> 00:00:14.342
+We do not add or average employee IDs.
 
-00:00:18.212 --> 00:00:23.287
-Imagine the value came from a sales file, survey, or operational system.
+00:00:14.342 --> 00:00:16.972
+We use them to identify records.
 
-00:00:23.287 --> 00:00:29.462
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+00:00:16.972 --> 00:00:21.315
+If we store that ID as a number, the leading zeros disappear.
 
-00:00:29.462 --> 00:00:30.892
-from the names and output.
+00:00:21.776 --> 00:00:28.718
+The same issue appears with ZIP codes, account numbers, product codes, and many other identifiers.
 
-00:00:30.892 --> 00:00:36.657
-Before moving on, explain the main idea in one sentence without reading the slide.
+00:00:28.718 --> 00:00:36.433
+A better question than “Does this value contain digits?” is “Do I plan to calculate with this value?” If not,
 
-00:00:36.657 --> 00:00:42.078
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:36.433 --> 00:00:42.059
+and the exact formatting matters, text is often the right choice.

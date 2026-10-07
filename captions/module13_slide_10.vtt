@@ -1,37 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.467
-On this slide, we are focusing on text-based bar chart.
+00:00:00.000 --> 00:00:05.132
+Even without a plotting library, we can demonstrate the logic of a bar chart.
 
-00:00:03.467 --> 00:00:08.232
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.132 --> 00:00:09.097
+The dictionary stores counts for web, email, and store.
 
-00:00:08.232 --> 00:00:15.987
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.097 --> 00:00:15.185
+Repeating the block character creates a bar whose length matches the count.
 
-00:00:15.987 --> 00:00:20.457
-Before clicking Run, predict the statistic or pattern you expect.
+00:00:15.922 --> 00:00:23.989
+Web has the longest bar because it has twelve observations, followed by email with seven and store with four.
 
-00:00:20.457 --> 00:00:22.732
-After it runs, interpret the result in words.
-
-00:00:22.732 --> 00:00:27.177
-Then change one value and see whether the interpretation changes.
-
-00:00:27.177 --> 00:00:31.377
-Focus on meaning and limitations, not only the calculation.
-
-00:00:31.377 --> 00:00:34.332
-Separate calculation from interpretation.
-
-00:00:34.332 --> 00:00:41.902
-A statistic summarizes the sample and a visualization reveals pattern, but both still require context,
-
-00:00:41.902 --> 00:00:45.107
-variability, and awareness of limitations.
-
-00:00:45.107 --> 00:00:50.872
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:50.872 --> 00:00:56.291
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:23.989 --> 00:00:29.194
+The visual encoding is simple: larger values produce longer bars.

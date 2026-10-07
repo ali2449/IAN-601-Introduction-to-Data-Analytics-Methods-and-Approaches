@@ -1,31 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.707
-On this slide, we are focusing on why dictionaries and sets matter.
+00:00:00.000 --> 00:00:02.507
+Lists are great when position matters.
 
-00:00:03.707 --> 00:00:08.172
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.507 --> 00:00:09.667
+Dictionaries are better when labels matter, and sets are useful when uniqueness matters.
 
-00:00:08.172 --> 00:00:16.407
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.667 --> 00:00:18.037
+With a list, scores zero means “the first value.” With a dictionary, student score lets the key itself describe the
 
-00:00:16.407 --> 00:00:17.712
-A set stores unique values.
+00:00:18.037 --> 00:00:23.471
+meaning. A set is different again: it focuses on distinct values rather than position.
 
-00:00:17.712 --> 00:00:22.762
-It is useful for distinct categories, membership tests, and comparing overlap between groups.
+00:00:23.984 --> 00:00:31.296
+In analytics, dictionaries often represent records or counts, while sets help with unique categories, IDs,
 
-00:00:22.762 --> 00:00:25.122
-Choose the structure based on meaning.
-
-00:00:25.122 --> 00:00:30.392
-Use dictionaries for labeled fields and sets for uniqueness or membership.
-
-00:00:30.392 --> 00:00:35.407
-A good data structure makes later code shorter and easier to reason about.
-
-00:00:35.407 --> 00:00:41.167
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:41.167 --> 00:00:46.584
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:31.296 --> 00:00:33.685
+and group comparisons.

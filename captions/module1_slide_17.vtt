@@ -1,28 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.342
-On this slide, we are focusing on parentheses control calculation order.
+00:00:00.000 --> 00:00:02.157
+Calculation order matters.
 
-00:00:04.342 --> 00:00:09.632
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.157 --> 00:00:11.547
+Python follows the normal rules of arithmetic, so multiplication happens before addition unless parentheses change the
 
-00:00:09.632 --> 00:00:15.847
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:11.547 --> 00:00:18.207
+grouping. Ten plus five times two becomes twenty because five times two happens first.
 
-00:00:15.847 --> 00:00:20.177
-Parentheses make the intended calculation order explicit.
+00:00:18.207 --> 00:00:24.652
+But when we write parentheses around ten plus five, Python calculates fifteen first,
 
-00:00:20.177 --> 00:00:27.012
-Code can run without an error and still be analytically wrong if the formula is grouped incorrectly.
+00:00:24.652 --> 00:00:27.590
+then multiplies by two to get thirty.
 
-00:00:27.012 --> 00:00:30.187
-Connect the concept to a small analytics task.
+00:00:28.040 --> 00:00:32.162
+Both expressions are valid. Neither produces an error.
 
-00:00:30.187 --> 00:00:35.257
-Imagine the value came from a sales file, survey, or operational system.
+00:00:32.162 --> 00:00:36.662
+The danger is that a wrong formula can still run successfully.
 
-00:00:35.257 --> 00:00:40.282
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
-
-00:00:40.282 --> 00:00:42.714
-from the names and output.
+00:00:36.662 --> 00:00:43.336
+Use parentheses when they make the intended calculation clearer for you and for anyone else reading the code.

@@ -1,31 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.022
-Use this lesson actively. Read the idea first and make a prediction before running any code.
+00:00:00.000 --> 00:00:05.157
+As you work through the examples, pay attention to how the data is being accessed.
 
-00:00:06.022 --> 00:00:10.677
-When a Python cell is available, click Run, inspect the output,
+00:00:05.157 --> 00:00:09.582
+With a dictionary, ask which key identifies the value.
 
-00:00:10.677 --> 00:00:13.632
-and then change one small value or condition.
+00:00:09.582 --> 00:00:15.811
+With a set, ask what duplicates disappear or what group comparison is being performed.
 
-00:00:13.632 --> 00:00:16.427
-Run it again and explain what changed.
+00:00:16.442 --> 00:00:22.079
+Run the code, then change one key, one value, or one set item.
 
-00:00:16.427 --> 00:00:22.587
-This predict, run, modify, and explain cycle is more useful than copying a finished example.
-
-00:00:22.587 --> 00:00:24.927
-Choose the structure based on meaning.
-
-00:00:24.927 --> 00:00:30.197
-Use dictionaries for labeled fields and sets for uniqueness or membership.
-
-00:00:30.197 --> 00:00:35.207
-A good data structure makes later code shorter and easier to reason about.
-
-00:00:35.207 --> 00:00:40.967
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:40.967 --> 00:00:46.388
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:22.079 --> 00:00:26.303
+Small experiments will make the behavior much easier to remember.

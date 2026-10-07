@@ -1,34 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.497
-On this slide, we are focusing on calculate profit and tax.
+00:00:00.000 --> 00:00:02.757
+Let’s trace this calculation carefully.
 
-00:00:04.497 --> 00:00:09.372
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.757 --> 00:00:09.352
+Sales is one thousand and costs are eight hundred, so profit is two hundred.
 
-00:00:09.372 --> 00:00:15.607
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.352 --> 00:00:12.192
+Tax is five percent of profit.
 
-00:00:15.607 --> 00:00:18.742
-Before clicking Run, predict the output.
+00:00:12.192 --> 00:00:18.082
+Five percent is zero point zero five, so the tax becomes ten dollars.
 
-00:00:18.742 --> 00:00:24.892
-Then run the cell, inspect the result, and change one value or condition at a time.
+00:00:18.082 --> 00:00:23.708
+Net profit is two hundred minus ten, which gives one hundred ninety dollars.
 
-00:00:24.892 --> 00:00:28.237
-Rerun it and explain why the output changed.
+00:00:24.348 --> 00:00:28.720
+Notice the dependency chain. Net profit depends on tax.
 
-00:00:28.237 --> 00:00:31.627
-The goal is to understand the relationship between input, process, and output.
+00:00:28.720 --> 00:00:33.570
+Tax depends on profit. Profit depends on sales and costs.
 
-00:00:31.627 --> 00:00:36.582
-Connect the concept to a small analytics task.
+00:00:33.570 --> 00:00:36.510
+That kind of chain is common in analytics.
 
-00:00:36.582 --> 00:00:41.657
-Imagine the value came from a sales file, survey, or operational system.
-
-00:00:41.657 --> 00:00:46.672
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
-
-00:00:46.672 --> 00:00:49.089
-from the names and output.
+00:00:36.510 --> 00:00:42.881
+Change the tax rate to ten percent, predict the new result, and then run the cell to check yourself.

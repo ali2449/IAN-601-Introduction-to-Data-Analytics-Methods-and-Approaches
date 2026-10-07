@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.042
-On this slide, we are focusing on loop through a list.
+00:00:00.000 --> 00:00:04.022
+Now we combine lists with the control flow from Module 2.
 
-00:00:03.042 --> 00:00:09.997
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.022 --> 00:00:06.957
+The loop takes one wait time at a time.
 
-00:00:09.997 --> 00:00:15.262
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:06.957 --> 00:00:11.962
+If the value is greater than ten minutes, the program labels it for review.
 
-00:00:15.262 --> 00:00:20.232
-A list is an ordered collection that can change.
+00:00:11.962 --> 00:00:14.692
+Otherwise it labels the wait as acceptable.
 
-00:00:20.232 --> 00:00:23.872
-It is useful when values may be added, removed, replaced, sorted, or processed over time.
+00:00:15.398 --> 00:00:20.566
+For the current values, eleven and eighteen should be flagged for review.
 
-00:00:23.872 --> 00:00:27.012
-Before clicking Run, predict the output.
+00:00:20.566 --> 00:00:24.606
+Four, seven, and six should be acceptable.
 
-00:00:27.012 --> 00:00:33.162
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:33.162 --> 00:00:36.502
-Rerun it and explain why the output changed.
-
-00:00:36.502 --> 00:00:41.516
-The goal is to understand the relationship between input, process, and output.
+00:00:24.606 --> 00:00:30.290
+This is the bridge from storing a collection to actually analyzing each observation in it.

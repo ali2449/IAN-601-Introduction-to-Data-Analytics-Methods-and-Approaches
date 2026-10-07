@@ -1,28 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.762
-On this slide, we are focusing on pivot tables.
+00:00:00.000 --> 00:00:05.762
+A pivot table summarizes numeric values across two categorical dimensions.
 
-00:00:02.762 --> 00:00:07.512
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.762 --> 00:00:14.932
+Here region becomes the row index, channel becomes the columns, and amount is the value being summed.
 
-00:00:07.512 --> 00:00:13.772
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:14.932 --> 00:00:20.881
+Fill_value zero makes missing combinations display as zero instead of NaN.
 
-00:00:13.772 --> 00:00:18.157
-A pivot table summarizes a numeric measure across categories.
+00:00:21.589 --> 00:00:28.361
+This is useful when you want a compact matrix-like report, such as sales by region and channel.
 
-00:00:18.157 --> 00:00:24.947
-Always be clear about what the rows, columns, and cell values represent.
+00:00:28.361 --> 00:00:34.976
+Before running the code, identify which region-channel combinations appear in the raw data and predict where their
 
-00:00:24.947 --> 00:00:27.217
-Before clicking Run, predict how the table should change.
-
-00:00:27.217 --> 00:00:32.752
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:32.752 --> 00:00:38.192
-or flags that matter. Change one input and rerun it.
-
-00:00:38.192 --> 00:00:44.372
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
+00:00:34.976 --> 00:00:37.472
+totals should land.

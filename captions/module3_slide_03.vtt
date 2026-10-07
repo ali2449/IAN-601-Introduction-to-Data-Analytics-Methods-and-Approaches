@@ -1,28 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:01.802
-Use this slide as a roadmap.
+00:00:00.000 --> 00:00:05.427
+We begin with the basic structure of a function: define it, then call it.
 
-00:00:01.802 --> 00:00:07.152
-The ideas are intentionally ordered so later examples build on earlier concepts.
+00:00:05.427 --> 00:00:12.767
+Next, parameters make the function flexible, return values let us reuse results elsewhere,
 
-00:00:07.152 --> 00:00:12.917
-As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of
+00:00:12.767 --> 00:00:19.088
+docstrings help explain the purpose, and function composition lets small pieces work together.
 
-00:00:12.917 --> 00:00:16.257
-treating each method as an isolated command.
+00:00:19.873 --> 00:00:23.785
+The goal is to think of a function as a named analytical step.
 
-00:00:16.257 --> 00:00:21.522
-Think about where this function would appear in a larger project.
-
-00:00:21.522 --> 00:00:28.037
-Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
-
-00:00:28.037 --> 00:00:29.627
-across many rows, files, or notebooks.
-
-00:00:29.627 --> 00:00:35.392
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:35.392 --> 00:00:40.812
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:23.785 --> 00:00:30.422
+Inputs go in, the function performs one clear job, and useful results come back out.

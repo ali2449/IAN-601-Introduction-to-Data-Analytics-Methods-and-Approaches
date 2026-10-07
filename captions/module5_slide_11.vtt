@@ -1,25 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.047
-On this slide, we are focusing on nested dictionaries.
+00:00:00.000 --> 00:00:06.807
+A dictionary can contain another dictionary, which lets us organize related fields into sections.
 
-00:00:03.047 --> 00:00:08.202
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:06.807 --> 00:00:12.832
+The employee record contains basic information plus a skills dictionary.
 
-00:00:08.202 --> 00:00:14.212
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:12.832 --> 00:00:21.320
+To reach the Python skill level, we first access skills and then access python inside that nested dictionary.
 
-00:00:14.212 --> 00:00:16.582
-Choose the structure based on meaning.
+00:00:21.770 --> 00:00:28.607
+Nested structures are common in JSON files and APIs, so learning to follow one key at a time is a useful practical
 
-00:00:16.582 --> 00:00:21.847
-Use dictionaries for labeled fields and sets for uniqueness or membership.
-
-00:00:21.847 --> 00:00:26.862
-A good data structure makes later code shorter and easier to reason about.
-
-00:00:26.862 --> 00:00:32.622
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:32.622 --> 00:00:38.039
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:28.607 --> 00:00:30.687
+skill.

@@ -1,31 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.257
-On this slide, we are focusing on clean categories.
+00:00:00.000 --> 00:00:07.217
+Category labels often look different even when they mean the same thing.
 
-00:00:03.257 --> 00:00:08.207
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:07.217 --> 00:00:14.297
+Web, space-web-space, EMAIL, email, and Store contain differences in capitalization and whitespace.
 
-00:00:08.207 --> 00:00:14.342
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:14.297 --> 00:00:22.239
+Str dot strip removes extra spaces, and str dot lower converts everything to lowercase.
 
-00:00:14.342 --> 00:00:21.417
-Standardizing case and whitespace can prevent one real category from appearing as several fake categories.
+00:00:22.722 --> 00:00:29.034
+After standardization, web values group together and email values group together correctly.
 
-00:00:21.417 --> 00:00:25.342
-Before clicking Run, predict how the table should change.
-
-00:00:25.342 --> 00:00:30.872
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:30.872 --> 00:00:36.317
-or flags that matter. Change one input and rerun it.
-
-00:00:36.317 --> 00:00:42.632
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
-
-00:00:42.632 --> 00:00:48.417
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:48.417 --> 00:00:53.837
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:29.034 --> 00:00:33.372
+This kind of cleanup is essential before counting or grouping categories.

@@ -1,28 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.512
-On this slide, we are focusing on find duplicate records.
+00:00:00.000 --> 00:00:04.657
+Duplicates can quietly inflate totals, counts, and frequencies.
 
-00:00:03.512 --> 00:00:08.377
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.657 --> 00:00:13.482
+Duplicated identifies the repeated row where order ID two and amount seventy-two appear a second time.
 
-00:00:08.377 --> 00:00:14.512
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:13.482 --> 00:00:16.802
+Drop_duplicates removes the exact duplicate.
 
-00:00:14.512 --> 00:00:19.257
-Duplicates can inflate counts and totals.
+00:00:17.555 --> 00:00:21.537
+The important question is whether the repetition is truly an error.
 
-00:00:19.257 --> 00:00:25.552
-Before removing them, define what one row represents and which columns form the business key.
+00:00:21.537 --> 00:00:29.002
+Two legitimate orders can have the same amount, so we should understand the record definition before deleting anything.
 
-00:00:25.552 --> 00:00:27.827
-Before clicking Run, predict how the table should change.
-
-00:00:27.827 --> 00:00:33.362
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:33.362 --> 00:00:38.797
-or flags that matter. Change one input and rerun it.
-
-00:00:38.797 --> 00:00:44.981
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
+00:00:29.002 --> 00:00:33.790
+Here the example is intentionally an exact duplicate for teaching purposes.

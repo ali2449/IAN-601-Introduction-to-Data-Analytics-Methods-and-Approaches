@@ -1,10 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:07.482
-Welcome to Module 12. This module focuses on data cleaning and exploratory data analysis.
+00:00:00.000 --> 00:00:02.217
+Welcome to Module 12.
 
-00:00:07.482 --> 00:00:13.927
-Before formal analysis or modeling, we need to understand missingness, duplicate records,
+00:00:02.217 --> 00:00:11.042
+Before we trust an analysis or build a model, we need to understand the quality of the data going into it.
 
-00:00:13.927 --> 00:00:21.422
-incorrect data types, inconsistent categories, unusual values, and the general shape of the data.
+00:00:11.042 --> 00:00:17.932
+Cleaning and exploratory data analysis help us find missing values, duplicates, incorrect types,
+
+00:00:17.932 --> 00:00:23.174
+inconsistent categories, unusual values, and basic patterns.
+
+00:00:23.901 --> 00:00:26.633
+The goal is not to make data look perfect.
+
+00:00:26.633 --> 00:00:34.031
+The goal is to understand what is present, what is questionable, and what decisions we are making before analysis.

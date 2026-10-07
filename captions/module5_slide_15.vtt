@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.752
-On this slide, we are focusing on dictionary + set workflow.
+00:00:00.000 --> 00:00:04.342
+Now we combine the two structures in one order-processing example.
 
-00:00:03.752 --> 00:00:08.577
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.342 --> 00:00:09.557
+The dictionary totals_by_channel keeps a running sales total for each channel.
 
-00:00:08.577 --> 00:00:14.982
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.557 --> 00:00:14.100
+The set unique_customers stores customer IDs without duplicates.
 
-00:00:14.982 --> 00:00:17.767
-A dictionary stores key-value pairs.
+00:00:14.550 --> 00:00:20.352
+C101 appears twice, but the set still counts that customer only once.
 
-00:00:17.767 --> 00:00:26.407
-Meaningful keys such as name, status, amount, or category make the structure easier to understand than
+00:00:20.352 --> 00:00:25.342
+The dictionary, however, adds both web orders to the web total.
 
-00:00:26.407 --> 00:00:29.542
-position alone. Before clicking Run, predict the output.
+00:00:25.342 --> 00:00:32.322
+This is a nice example of choosing a structure based on the question: dictionaries for labeled totals,
 
-00:00:29.542 --> 00:00:35.692
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:35.692 --> 00:00:39.032
-Rerun it and explain why the output changed.
-
-00:00:39.032 --> 00:00:44.050
-The goal is to understand the relationship between input, process, and output.
+00:00:32.322 --> 00:00:34.131
+sets for uniqueness.

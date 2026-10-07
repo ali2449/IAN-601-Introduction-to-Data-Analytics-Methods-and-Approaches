@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.832
-On this slide, we are focusing on a function with no parameters.
+00:00:00.000 --> 00:00:02.772
+Let’s begin with the smallest useful function.
 
-00:00:03.832 --> 00:00:08.627
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.772 --> 00:00:08.302
+Show_welcome takes no inputs. Its only job is to print a message.
 
-00:00:08.627 --> 00:00:14.992
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:08.302 --> 00:00:13.002
+When Python reads the definition, it stores the instructions.
 
-00:00:14.992 --> 00:00:19.107
-A parameter is the placeholder name in the function definition.
+00:00:13.002 --> 00:00:16.785
+Nothing is printed until we call show_welcome at the bottom.
 
-00:00:19.107 --> 00:00:25.287
-An argument is the actual value supplied when the function is called.
+00:00:17.459 --> 00:00:21.491
+Change the message inside the function and run the cell again.
 
-00:00:25.287 --> 00:00:26.792
-Before clicking Run, predict the output.
+00:00:21.491 --> 00:00:26.326
+The structure stays the same even though the behavior changes.
 
-00:00:26.792 --> 00:00:32.942
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:32.942 --> 00:00:36.282
-Rerun it and explain why the output changed.
-
-00:00:36.282 --> 00:00:41.298
-The goal is to understand the relationship between input, process, and output.
+00:00:26.326 --> 00:00:33.028
+This example is simple, but the define-then-call pattern stays the same for more complex functions.

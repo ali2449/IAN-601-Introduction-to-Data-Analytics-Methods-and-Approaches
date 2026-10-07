@@ -1,31 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.877
-Treat these as guided practice rather than a checklist to rush through.
+00:00:00.000 --> 00:00:03.957
+Now it is time to combine the ideas in short exercises.
 
-00:00:03.877 --> 00:00:08.372
-Solve one task at a time, predict what Python should do,
+00:00:03.957 --> 00:00:08.797
+Start by creating variables for a fictional patient and printing them.
 
-00:00:08.372 --> 00:00:11.612
-and explain your reasoning before running the code.
+00:00:08.797 --> 00:00:14.822
+Then inspect types for an identifier, an amount, and a Boolean flag.
 
-00:00:11.612 --> 00:00:18.472
-If the result differs from the prediction, inspect intermediate values instead of immediately replacing your
+00:00:14.822 --> 00:00:19.815
+After that, calculate something simple such as area and perimeter.
 
-00:00:18.472 --> 00:00:21.647
-work. Connect the concept to a small analytics task.
+00:00:20.485 --> 00:00:27.817
+Move next to a revenue statement with formatted money, and then calculate profit and margin from sales and costs.
 
-00:00:21.647 --> 00:00:26.717
-Imagine the value came from a sales file, survey, or operational system.
+00:00:27.817 --> 00:00:30.302
+Do not rush through the tasks.
 
-00:00:26.717 --> 00:00:32.352
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
-
-00:00:32.352 --> 00:00:34.327
-from the names and output.
-
-00:00:34.327 --> 00:00:40.097
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:40.097 --> 00:00:45.513
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:30.302 --> 00:00:37.500
+For each one, explain what the variables represent, why their types make sense, and what the output means.

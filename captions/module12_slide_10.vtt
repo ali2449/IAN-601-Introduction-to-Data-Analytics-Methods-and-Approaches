@@ -1,28 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.332
-On this slide, we are focusing on basic eda summary.
+00:00:00.000 --> 00:00:06.247
+Exploratory data analysis gives us a quick picture of the dataset before deeper analysis.
 
-00:00:04.332 --> 00:00:09.367
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:06.247 --> 00:00:16.722
+Describe summarizes the numeric amount column with count, mean, standard deviation, quartiles, minimum, and maximum.
 
-00:00:09.367 --> 00:00:15.482
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:16.722 --> 00:00:20.727
+Value_counts tells us how often each channel appears.
 
-00:00:15.482 --> 00:00:19.402
-Before clicking Run, predict how the table should change.
+00:00:21.320 --> 00:00:30.232
+These simple summaries can reveal skew, unexpected ranges, dominant categories, and other patterns worth investigating.
 
-00:00:19.402 --> 00:00:24.932
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:24.932 --> 00:00:30.377
-or flags that matter. Change one input and rerun it.
-
-00:00:30.377 --> 00:00:36.697
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
-
-00:00:36.697 --> 00:00:42.482
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:42.482 --> 00:00:47.899
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:30.232 --> 00:00:34.895
+EDA is about asking better questions before making conclusions.

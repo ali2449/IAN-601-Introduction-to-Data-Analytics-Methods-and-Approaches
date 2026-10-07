@@ -1,31 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.742
-On this slide, we are focusing on train a simple classifier.
+00:00:00.000 --> 00:00:03.192
+Now we fit a logistic regression classifier.
 
-00:00:03.742 --> 00:00:08.512
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.192 --> 00:00:07.637
+The training features and training labels are passed to model dot fit.
 
-00:00:08.512 --> 00:00:14.642
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:07.637 --> 00:00:12.082
+That is the stage where the model learns patterns from the training data.
 
-00:00:14.642 --> 00:00:19.432
-A classifier learns patterns from features and predicts a category.
+00:00:12.082 --> 00:00:18.196
+After fitting, predict is used on the first five test rows to produce class predictions.
 
-00:00:19.432 --> 00:00:24.547
-Training fits the model, while prediction applies the learned relationship to rows.
+00:00:18.909 --> 00:00:22.086
+At this point, seeing predictions is not enough.
 
-00:00:24.547 --> 00:00:27.972
-Before clicking Run, predict the structure of the output.
-
-00:00:27.972 --> 00:00:34.887
-After it runs, identify the features, target, split, prediction, or evaluation result involved.
-
-00:00:34.887 --> 00:00:40.127
-Change one input carefully and explain why the result did or did not change.
-
-00:00:40.127 --> 00:00:45.882
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:45.882 --> 00:00:51.302
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:22.086 --> 00:00:27.911
+We still need to compare them with the true test labels to know whether the model is performing well.

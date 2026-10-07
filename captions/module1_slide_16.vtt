@@ -1,28 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.922
-On this slide, we are focusing on three useful operators.
+00:00:00.000 --> 00:00:04.807
+Here are three operators that are easy to overlook but very useful.
 
-00:00:03.922 --> 00:00:08.902
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.807 --> 00:00:11.827
+Two asterisks mean exponentiation, so two to the power of three equals eight.
 
-00:00:08.902 --> 00:00:15.052
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:11.827 --> 00:00:15.957
+Double forward slashes give whole-number division.
 
-00:00:15.052 --> 00:00:18.232
-Connect the concept to a small analytics task.
+00:00:15.957 --> 00:00:22.787
+One hundred twenty-five floor-divided by sixty gives two complete groups of sixty.
 
-00:00:18.232 --> 00:00:23.307
-Imagine the value came from a sales file, survey, or operational system.
+00:00:22.787 --> 00:00:29.508
+The percent sign gives the remainder, so one hundred twenty-five modulo sixty gives five.
 
-00:00:23.307 --> 00:00:28.322
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+00:00:30.190 --> 00:00:33.387
+Floor division and modulo often work together.
 
-00:00:28.322 --> 00:00:30.912
-from the names and output.
+00:00:33.387 --> 00:00:42.627
+For one hundred twenty-five minutes, floor division tells us there are two full hours and modulo tells us five minutes
 
-00:00:30.912 --> 00:00:36.682
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:36.682 --> 00:00:42.100
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:42.627 --> 00:00:47.666
+remain. Run the example and make sure the logic makes sense, not just the output.

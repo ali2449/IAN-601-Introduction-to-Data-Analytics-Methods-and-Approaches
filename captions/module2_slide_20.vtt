@@ -1,28 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.097
-On this slide, we are focusing on analytics example: classify sales days.
+00:00:00.000 --> 00:00:04.407
+This example brings several ideas together in one small report.
 
-00:00:05.097 --> 00:00:09.962
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.407 --> 00:00:11.477
+We start with six daily sales values and three counters: low, target, and high.
 
-00:00:09.962 --> 00:00:16.137
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:11.477 --> 00:00:17.527
+Each sale is checked. Values below one thousand increase the low counter.
 
-00:00:16.137 --> 00:00:19.277
-Before clicking Run, predict the output.
+00:00:17.527 --> 00:00:21.512
+Values up to eighteen hundred increase the target counter.
 
-00:00:19.277 --> 00:00:25.427
-Then run the cell, inspect the result, and change one value or condition at a time.
+00:00:21.512 --> 00:00:24.364
+Anything larger increases the high counter.
 
-00:00:25.427 --> 00:00:28.772
-Rerun it and explain why the output changed.
+00:00:24.962 --> 00:00:31.624
+For the current data, expect two low days, three target days, and one high day.
 
-00:00:28.772 --> 00:00:33.952
-The goal is to understand the relationship between input, process, and output.
+00:00:31.624 --> 00:00:40.874
+Notice the pattern: initialize counters, loop through the values, classify each one, and update the correct counter.
 
-00:00:33.952 --> 00:00:39.707
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:39.707 --> 00:00:45.125
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:40.874 --> 00:00:44.100
+This is a very reusable analytics structure.

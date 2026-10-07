@@ -1,31 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.517
-On this slide, we are focusing on access values safely.
+00:00:00.000 --> 00:00:03.872
+There are two common ways to retrieve dictionary values.
 
-00:00:03.517 --> 00:00:08.152
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.872 --> 00:00:08.032
+Square brackets work when you are confident the key exists.
 
-00:00:08.152 --> 00:00:14.222
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:08.032 --> 00:00:13.337
+Ticket priority is safe because priority is present in the record.
 
-00:00:14.222 --> 00:00:18.502
-Bracket access expects a dictionary key to exist.
+00:00:13.337 --> 00:00:16.522
+Get is useful when a key may be missing.
 
-00:00:18.502 --> 00:00:23.112
-The get method can provide a safer fallback when a key may be missing.
+00:00:16.522 --> 00:00:25.353
+Owner does not exist, so ticket dot get returns the default value “unassigned” instead of raising an error.
 
-00:00:23.112 --> 00:00:25.472
-Choose the structure based on meaning.
-
-00:00:25.472 --> 00:00:30.747
-Use dictionaries for labeled fields and sets for uniqueness or membership.
-
-00:00:30.747 --> 00:00:35.757
-A good data structure makes later code shorter and easier to reason about.
-
-00:00:35.757 --> 00:00:41.517
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:41.517 --> 00:00:46.937
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:25.812 --> 00:00:32.025
+This is especially helpful with real-world records where some fields may be optional or incomplete.

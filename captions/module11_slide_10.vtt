@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.807
-On this slide, we are focusing on join checks.
+00:00:00.000 --> 00:00:07.522
+A merge can run successfully and still produce unexpected matches, so join validation matters.
 
-00:00:02.807 --> 00:00:07.307
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:07.522 --> 00:00:14.082
+The orders table contains C101, C102, and C999.
 
-00:00:07.307 --> 00:00:13.572
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:14.082 --> 00:00:17.932
+The customer table contains only C101 and C102.
 
-00:00:13.572 --> 00:00:19.597
-A successful merge is not proof of a correct merge.
+00:00:17.932 --> 00:00:25.834
+A left join keeps every order and attaches customer information where a match exists.
 
-00:00:19.597 --> 00:00:24.647
-Check matched and unmatched keys, row counts, and the expected key relationship.
+00:00:26.582 --> 00:00:30.914
+Indicator equals True creates the _merge column.
 
-00:00:24.647 --> 00:00:26.917
-Before clicking Run, predict how the table should change.
+00:00:30.914 --> 00:00:38.654
+C101 and C102 should be both, while C999 should be left_only.
 
-00:00:26.917 --> 00:00:32.452
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:32.452 --> 00:00:37.892
-or flags that matter. Change one input and rerun it.
-
-00:00:37.892 --> 00:00:44.072
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
+00:00:38.654 --> 00:00:46.487
+That small check makes missing keys visible instead of letting them pass unnoticed.

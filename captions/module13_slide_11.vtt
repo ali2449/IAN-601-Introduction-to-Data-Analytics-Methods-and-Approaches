@@ -1,37 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.802
-On this slide, we are focusing on mini statistics report.
+00:00:00.000 --> 00:00:05.712
+A useful report combines numerical summaries with a sentence a reader can understand.
 
-00:00:03.802 --> 00:00:08.437
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.712 --> 00:00:12.742
+The code calculates mean, median, minimum, maximum, and overall spread.
 
-00:00:08.437 --> 00:00:16.312
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:12.742 --> 00:00:17.043
+Then f-strings turn those results into two short statements.
 
-00:00:16.312 --> 00:00:20.777
-Before clicking Run, predict the statistic or pattern you expect.
+00:00:17.631 --> 00:00:19.563
+This is a good reporting habit.
 
-00:00:20.777 --> 00:00:23.052
-After it runs, interpret the result in words.
+00:00:19.563 --> 00:00:26.698
+Do not dump raw statistical output when a concise interpretation can communicate the result more clearly.
 
-00:00:23.052 --> 00:00:27.502
-Then change one value and see whether the interpretation changes.
-
-00:00:27.502 --> 00:00:31.702
-Focus on meaning and limitations, not only the calculation.
-
-00:00:31.702 --> 00:00:34.652
-Separate calculation from interpretation.
-
-00:00:34.652 --> 00:00:42.232
-A statistic summarizes the sample and a visualization reveals pattern, but both still require context,
-
-00:00:42.232 --> 00:00:45.437
-variability, and awareness of limitations.
-
-00:00:45.437 --> 00:00:51.192
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:51.192 --> 00:00:56.612
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:26.698 --> 00:00:31.098
+Always keep the wording tied to what the statistic actually supports.

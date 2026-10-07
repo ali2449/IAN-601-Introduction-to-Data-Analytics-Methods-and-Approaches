@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.492
-On this slide, we are focusing on mini ml workflow.
+00:00:00.000 --> 00:00:04.582
+This final example puts the main modeling steps into one sequence.
 
-00:00:03.492 --> 00:00:08.147
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.582 --> 00:00:10.237
+A synthetic dataset is created, then split into training and test sets.
 
-00:00:08.147 --> 00:00:14.027
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.237 --> 00:00:15.832
+A decision tree with maximum depth three is fitted on the training data.
 
-00:00:14.027 --> 00:00:17.452
-Before clicking Run, predict the structure of the output.
+00:00:15.832 --> 00:00:20.723
+Predictions are generated for the test set, and accuracy is calculated.
 
-00:00:17.452 --> 00:00:24.357
-After it runs, identify the features, target, split, prediction, or evaluation result involved.
+00:00:21.249 --> 00:00:28.021
+The exact accuracy is less important than the workflow: data, split, train, predict, evaluate.
 
-00:00:24.357 --> 00:00:29.592
-Change one input carefully and explain why the result did or did not change.
+00:00:28.021 --> 00:00:33.781
+Change the tree depth or the random state and compare what happens.
 
-00:00:29.592 --> 00:00:33.387
-Machine learning is a workflow rather than a single fit command.
-
-00:00:33.387 --> 00:00:38.872
-Keep training information separate from evaluation data, compare against a baseline,
-
-00:00:38.872 --> 00:00:43.177
-and interpret model performance in the context of the real prediction problem.
+00:00:33.781 --> 00:00:40.539
+Small modeling decisions can change performance, which is why reproducibility and evaluation matter.

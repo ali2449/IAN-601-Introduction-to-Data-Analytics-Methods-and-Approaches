@@ -1,28 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.807
-On this slide, we are focusing on compare with a baseline.
+00:00:00.000 --> 00:00:03.922
+A machine learning model should be compared with a simple reference point.
 
-00:00:03.807 --> 00:00:08.852
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.922 --> 00:00:10.222
+The DummyClassifier uses a basic strategy: always predict the most frequent class.
 
-00:00:08.852 --> 00:00:14.837
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.222 --> 00:00:14.467
+That gives us baseline accuracy with almost no intelligence.
 
-00:00:14.837 --> 00:00:20.462
-A model should be compared with a simple baseline such as always predicting the most common class.
+00:00:14.467 --> 00:00:18.334
+Logistic regression is then evaluated on the same test data.
 
-00:00:20.462 --> 00:00:23.887
-Before clicking Run, predict the structure of the output.
+00:00:18.840 --> 00:00:26.842
+If a more complex model cannot beat a simple baseline, we should question whether the model adds useful predictive
 
-00:00:23.887 --> 00:00:30.797
-After it runs, identify the features, target, split, prediction, or evaluation result involved.
-
-00:00:30.797 --> 00:00:36.037
-Change one input carefully and explain why the result did or did not change.
-
-00:00:36.037 --> 00:00:41.792
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:41.792 --> 00:00:47.212
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:26.842 --> 00:00:30.782
+value. Baselines help put performance numbers into context.

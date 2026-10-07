@@ -1,16 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.212
-Welcome to Module 3. This module is about functions and code organization.
+00:00:00.000 --> 00:00:07.337
+Welcome to Module 3. Functions help us turn repeated steps into named, reusable pieces of logic.
 
-00:00:05.212 --> 00:00:12.537
-Functions let us give a name to a reusable analytical task instead of copying the same logic again
+00:00:07.337 --> 00:00:14.297
+Instead of copying the same calculation again and again, we can define it once, give it a clear name,
 
-00:00:12.537 --> 00:00:16.752
-and again. That makes code easier to test, explain, and maintain.
+00:00:14.297 --> 00:00:16.528
+and reuse it with different values.
 
-00:00:16.752 --> 00:00:20.232
-A function gives a reusable task a clear name.
+00:00:17.029 --> 00:00:23.926
+By the end of this module, you should be comfortable defining a function, passing values into it,
 
-00:00:20.232 --> 00:00:28.314
-In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.
+00:00:23.926 --> 00:00:29.654
+returning values from it, and combining small functions into a simple workflow.

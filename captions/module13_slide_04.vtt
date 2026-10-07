@@ -1,34 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.377
-On this slide, we are focusing on descriptive statistics.
+00:00:00.000 --> 00:00:02.627
+Let’s summarize a small set of scores.
 
-00:00:03.377 --> 00:00:08.112
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.627 --> 00:00:05.602
+The mean gives the arithmetic average.
 
-00:00:08.112 --> 00:00:14.047
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:05.602 --> 00:00:09.517
+The median gives the middle value after ordering the data.
 
-00:00:14.047 --> 00:00:17.212
-Descriptive statistics summarize a dataset.
+00:00:09.517 --> 00:00:15.482
+Minimum and maximum define the observed range, while standard deviation describes how spread out the values are around
 
-00:00:17.212 --> 00:00:23.312
-Mean and median describe center, while range and standard deviation describe spread.
+00:00:15.482 --> 00:00:17.706
+the mean.
 
-00:00:23.312 --> 00:00:27.957
-Before clicking Run, predict the statistic or pattern you expect.
+00:00:18.156 --> 00:00:21.083
+No single statistic tells the whole story.
 
-00:00:27.957 --> 00:00:31.767
-After it runs, interpret the result in words.
+00:00:21.083 --> 00:00:29.913
+Mean and median can respond differently to extreme values, and spread matters even when two datasets have the same
 
-00:00:31.767 --> 00:00:36.212
-Then change one value and see whether the interpretation changes.
-
-00:00:36.212 --> 00:00:40.427
-Focus on meaning and limitations, not only the calculation.
-
-00:00:40.427 --> 00:00:46.167
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:46.167 --> 00:00:51.584
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:29.913 --> 00:00:36.950
+average. Run the cell, then change one score to an extreme value and see which statistics move the most.

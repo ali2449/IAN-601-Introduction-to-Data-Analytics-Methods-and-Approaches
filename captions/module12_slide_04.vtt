@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.332
-On this slide, we are focusing on create a messy dataset.
+00:00:00.000 --> 00:00:02.787
+Let’s begin with intentionally messy data.
 
-00:00:03.332 --> 00:00:10.332
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.787 --> 00:00:06.017
+Order ID two appears twice.
 
-00:00:10.332 --> 00:00:16.567
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:06.017 --> 00:00:12.452
+Channel labels use different capitalization and spacing, and one channel is missing.
 
-00:00:16.567 --> 00:00:17.872
-A set stores unique values.
+00:00:12.452 --> 00:00:20.602
+Amount contains numeric-looking text, a missing value, and an unusually large value of nine hundred ninety-nine.
 
-00:00:17.872 --> 00:00:24.572
-It is useful for distinct categories, membership tests, and comparing overlap between groups.
+00:00:21.250 --> 00:00:23.852
+The dtypes output is also important.
 
-00:00:24.572 --> 00:00:26.842
-Before clicking Run, predict how the table should change.
+00:00:23.852 --> 00:00:31.017
+Because amount contains strings and missing data, Pandas may not treat the column as a clean numeric type.
 
-00:00:26.842 --> 00:00:32.372
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:32.372 --> 00:00:37.817
-or flags that matter. Change one input and rerun it.
-
-00:00:37.817 --> 00:00:43.997
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
+00:00:31.017 --> 00:00:35.852
+This is what real data often looks like before preparation begins.

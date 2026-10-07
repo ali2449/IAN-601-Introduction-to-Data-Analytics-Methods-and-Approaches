@@ -1,28 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.592
-On this slide, we are focusing on data types tell python what values mean.
+00:00:00.000 --> 00:00:03.382
+Now we move from variable names to data types.
 
-00:00:04.592 --> 00:00:09.247
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.382 --> 00:00:10.177
+A data type tells Python what kind of value it is working with and what operations make sense.
 
-00:00:09.247 --> 00:00:15.227
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.177 --> 00:00:12.482
+An integer is a whole number.
 
-00:00:15.227 --> 00:00:20.452
-A data type tells Python what a value means and which operations are valid.
+00:00:12.482 --> 00:00:14.722
+A float includes a decimal.
 
-00:00:20.452 --> 00:00:28.892
-Numeric values support arithmetic, strings represent text, and Boolean values represent True or False logic.
+00:00:14.722 --> 00:00:19.653
+A string represents text. A Boolean stores True or False.
 
-00:00:28.892 --> 00:00:32.112
-Connect the concept to a small analytics task.
+00:00:20.297 --> 00:00:25.669
+The meaning matters. Twelve visits is naturally an integer because it is a count.
 
-00:00:32.112 --> 00:00:37.187
-Imagine the value came from a sales file, survey, or operational system.
+00:00:25.669 --> 00:00:30.454
+Nineteen point ninety-nine is a float when it represents a price.
 
-00:00:37.187 --> 00:00:42.202
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+00:00:30.454 --> 00:00:34.874
+A city name is text, and an active flag is Boolean.
 
-00:00:42.202 --> 00:00:44.616
-from the names and output.
+00:00:34.874 --> 00:00:41.264
+Before calculating with any value, think about what it represents—not just what it looks like.

@@ -1,28 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.492
-On this slide, we are focusing on preview a conversion error.
+00:00:00.000 --> 00:00:04.252
+Now consider what happens when the text cannot be converted to a number.
 
-00:00:03.492 --> 00:00:08.152
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.252 --> 00:00:07.352
+The variable contains “abc”.
 
-00:00:08.152 --> 00:00:14.042
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:07.352 --> 00:00:14.437
+Calling float on that text would fail because those characters do not represent a numeric value.
 
-00:00:14.042 --> 00:00:18.777
-A conversion error tells us the input does not satisfy our assumption.
+00:00:14.437 --> 00:00:17.967
+The example performs a simple check first.
 
-00:00:18.777 --> 00:00:25.187
-Real analytical workflows validate messy input instead of silently pretending it is correct.
+00:00:17.967 --> 00:00:26.028
+It removes one decimal point if there is one, then uses isdigit to see whether the remaining characters are digits.
 
-00:00:25.187 --> 00:00:28.372
-Connect the concept to a small analytics task.
+00:00:26.503 --> 00:00:34.094
+With “abc”, the condition is false, so the program prints a warning instead of attempting the conversion.
 
-00:00:28.372 --> 00:00:33.447
-Imagine the value came from a sales file, survey, or operational system.
+00:00:34.094 --> 00:00:37.719
+This is only a simple preview of validation.
 
-00:00:33.447 --> 00:00:38.462
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+00:00:37.719 --> 00:00:46.169
+Real data can contain negative signs, spaces, commas, missing values, and other complications.
 
-00:00:38.462 --> 00:00:40.877
-from the names and output.
+00:00:46.169 --> 00:00:50.832
+The key idea is to check assumptions before trusting incoming data.

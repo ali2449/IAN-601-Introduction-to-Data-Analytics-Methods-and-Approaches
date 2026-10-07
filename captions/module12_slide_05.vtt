@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.642
-On this slide, we are focusing on check missing values.
+00:00:00.000 --> 00:00:03.537
+The first step with missing data is usually to count it.
 
-00:00:03.642 --> 00:00:08.527
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.537 --> 00:00:08.267
+Isna dot sum tells us how many missing values appear in each column.
 
-00:00:08.527 --> 00:00:14.592
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:08.267 --> 00:00:14.102
+Here channel has one missing value and amount has one missing value.
 
-00:00:14.592 --> 00:00:18.017
-Count missing values before deciding how to handle them.
+00:00:14.102 --> 00:00:19.992
+The example fills the missing channel with “unknown” and replaces the missing amount with the median of the available
 
-00:00:18.017 --> 00:00:26.447
-Missingness can be random, systematic, or meaningful, so the handling rule should match the context.
+00:00:19.992 --> 00:00:22.009
+amounts.
 
-00:00:26.447 --> 00:00:28.717
-Before clicking Run, predict how the table should change.
+00:00:22.459 --> 00:00:26.021
+Those are example decisions, not universal rules.
 
-00:00:28.717 --> 00:00:34.252
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:34.252 --> 00:00:39.692
-or flags that matter. Change one input and rerun it.
-
-00:00:39.692 --> 00:00:45.875
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
+00:00:26.021 --> 00:00:32.840
+In a real project, the correct treatment depends on why the data is missing and how the field will be used.

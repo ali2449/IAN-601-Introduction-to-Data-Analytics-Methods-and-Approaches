@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.912
-On this slide, we are focusing on applied example: classify a temperature.
+00:00:00.000 --> 00:00:03.932
+Here we wrap a simple classification rule inside a function.
 
-00:00:04.912 --> 00:00:09.752
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.932 --> 00:00:06.467
+Check_fever receives a temperature.
 
-00:00:09.752 --> 00:00:16.007
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:06.467 --> 00:00:14.237
+If the value is above ninety-eight point six, the function returns “Fever”; otherwise it returns “Normal.”
 
-00:00:16.007 --> 00:00:19.142
-Before clicking Run, predict the output.
+00:00:14.237 --> 00:00:18.203
+The loop then reuses that same rule for several values.
 
-00:00:19.142 --> 00:00:25.292
-Then run the cell, inspect the result, and change one value or condition at a time.
+00:00:18.920 --> 00:00:22.212
+The important programming idea is reusability.
 
-00:00:25.292 --> 00:00:28.637
-Rerun it and explain why the output changed.
+00:00:22.212 --> 00:00:26.212
+One rule can be applied repeatedly across a dataset.
 
-00:00:28.637 --> 00:00:33.817
-The goal is to understand the relationship between input, process, and output.
-
-00:00:33.817 --> 00:00:39.572
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:39.572 --> 00:00:44.992
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:26.212 --> 00:00:30.086
+This is only a coding example, not medical guidance.

@@ -1,37 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.887
-On this slide, we are focusing on compare groups.
+00:00:00.000 --> 00:00:05.012
+Grouped summaries help us compare categories using the same statistics.
 
-00:00:03.887 --> 00:00:08.912
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.012 --> 00:00:09.402
+The DataFrame contains scores for groups A and B.
 
-00:00:08.912 --> 00:00:15.267
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.402 --> 00:00:18.325
+Groupby separates the records, and agg calculates count, mean, median, and standard deviation for each group.
 
-00:00:15.267 --> 00:00:19.922
-Before clicking Run, predict the statistic or pattern you expect.
+00:00:18.934 --> 00:00:21.081
+Compare both center and spread.
 
-00:00:19.922 --> 00:00:23.727
-After it runs, interpret the result in words.
+00:00:21.081 --> 00:00:26.596
+A higher mean does not automatically mean every observation in that group is higher.
 
-00:00:23.727 --> 00:00:28.177
-Then change one value and see whether the interpretation changes.
-
-00:00:28.177 --> 00:00:32.377
-Focus on meaning and limitations, not only the calculation.
-
-00:00:32.377 --> 00:00:35.327
-Separate calculation from interpretation.
-
-00:00:35.327 --> 00:00:42.902
-A statistic summarizes the sample and a visualization reveals pattern, but both still require context,
-
-00:00:42.902 --> 00:00:46.107
-variability, and awareness of limitations.
-
-00:00:46.107 --> 00:00:51.867
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:51.867 --> 00:00:57.286
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:26.596 --> 00:00:32.940
+Group summaries are a starting point for comparison, not a complete explanation of why groups differ.

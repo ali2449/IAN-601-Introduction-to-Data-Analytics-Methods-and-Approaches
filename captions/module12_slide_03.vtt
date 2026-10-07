@@ -1,28 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:01.802
-Use this slide as a roadmap.
+00:00:00.008 --> 00:00:03.032
+We’ll move through a practical cleaning sequence.
 
-00:00:01.802 --> 00:00:07.152
-The ideas are intentionally ordered so later examples build on earlier concepts.
+00:00:03.032 --> 00:00:05.197
+First diagnose the data.
 
-00:00:07.152 --> 00:00:12.917
-As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of
+00:00:05.197 --> 00:00:14.422
+Then count missing values, detect duplicates, correct data types, standardize categories, flag possible outliers,
 
-00:00:12.917 --> 00:00:16.252
-treating each method as an isolated command.
+00:00:14.422 --> 00:00:16.912
+and create simple EDA summaries.
 
-00:00:16.252 --> 00:00:20.262
-Do not treat cleaning as automatic deletion or filling.
-
-00:00:20.262 --> 00:00:26.152
-Measure the problem first, decide what the value means, apply a defensible rule,
-
-00:00:26.152 --> 00:00:28.362
-and then validate the data again.
-
-00:00:28.362 --> 00:00:34.122
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:34.122 --> 00:00:39.541
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:17.631 --> 00:00:23.889
+The final example combines those steps into a small cleaning pipeline so you can see how they fit together.

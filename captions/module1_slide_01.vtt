@@ -1,13 +1,52 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:07.757
-Welcome to Module 1. We are building the Python foundation that every later analytics module depends on.
+00:00:00.000 --> 00:00:07.047
+Welcome to IAN 601, Introduction to Data Analytics Methods and Approaches.
 
-00:00:07.757 --> 00:00:14.977
-We will focus on how Python stores values, understands data types, performs calculations,
+00:00:07.047 --> 00:00:12.347
+This course is designed to build your data analytics skills step by step,
 
-00:00:14.977 --> 00:00:21.072
-and produces readable output. The goal is not memorizing isolated syntax.
+00:00:12.347 --> 00:00:18.827
+starting with Python fundamentals and gradually moving into practical data analysis.
 
-00:00:21.072 --> 00:00:26.240
-The goal is to understand how small pieces of code represent a real analytical idea.
+00:00:18.827 --> 00:00:27.757
+Across the fourteen modules, we begin with variables, decisions, functions, and core data structures.
+
+00:00:27.757 --> 00:00:36.617
+Then we move into organizing larger Python programs, more advanced Python techniques, professional coding practices,
+
+00:00:36.617 --> 00:00:39.062
+NumPy, and Pandas.
+
+00:00:39.062 --> 00:00:46.482
+In the later modules, we focus on advanced Pandas, data cleaning and exploratory analysis, statistics and visualization,
+
+00:00:46.482 --> 00:00:54.426
+and finally an introduction to machine learning and working with external data.
+
+00:00:54.982 --> 00:00:58.154
+Module 1 is where that foundation begins.
+
+00:00:58.154 --> 00:01:07.459
+We’ll learn how Python stores values, understands data types, performs calculations, and presents results clearly.
+
+00:01:07.459 --> 00:01:10.494
+You do not need to memorize every symbol.
+
+00:01:10.494 --> 00:01:12.519
+Focus on the logic.
+
+00:01:12.519 --> 00:01:21.919
+In analytics, we usually start with data, apply a rule or calculation, and produce a result that helps us answer a
+
+00:01:21.919 --> 00:01:26.284
+question. As we go, keep connecting the code to something real.
+
+00:01:26.284 --> 00:01:31.659
+A value might represent sales, cost, age, temperature, or another measurement.
+
+00:01:31.659 --> 00:01:40.284
+By the end of the module, you’ll combine these ideas in a small sales calculator and be able to explain what each line
+
+00:01:40.284 --> 00:01:42.002
+is doing.

@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.552
-On this slide, we are focusing on count categories with a dictionary.
+00:00:00.000 --> 00:00:04.062
+Frequency counting is one of the most useful dictionary patterns.
 
-00:00:04.552 --> 00:00:09.897
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.062 --> 00:00:06.702
+We begin with an empty dictionary.
 
-00:00:09.897 --> 00:00:16.122
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:06.702 --> 00:00:10.372
+For each channel, get looks for the current count.
 
-00:00:16.122 --> 00:00:19.107
-A dictionary stores key-value pairs.
+00:00:10.372 --> 00:00:14.462
+If the channel has not appeared yet, the default is zero.
 
-00:00:19.107 --> 00:00:27.742
-Meaningful keys such as name, status, amount, or category make the structure easier to understand than
+00:00:14.462 --> 00:00:15.784
+Then we add one.
 
-00:00:27.742 --> 00:00:30.877
-position alone. Before clicking Run, predict the output.
+00:00:16.514 --> 00:00:21.844
+For the current list, web appears three times, email twice, and store once.
 
-00:00:30.877 --> 00:00:37.027
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:37.027 --> 00:00:40.372
-Rerun it and explain why the output changed.
-
-00:00:40.372 --> 00:00:45.383
-The goal is to understand the relationship between input, process, and output.
+00:00:21.844 --> 00:00:29.782
+This initialize-and-increment pattern is the foundation of many category summaries.

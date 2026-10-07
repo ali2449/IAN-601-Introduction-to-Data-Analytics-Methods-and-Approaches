@@ -1,31 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.322
-On this slide, we are focusing on visual: variables become metrics.
+00:00:00.000 --> 00:00:02.357
+Now connect the code to the visual.
 
-00:00:05.322 --> 00:00:10.192
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.357 --> 00:00:09.942
+Sales is one thousand dollars, costs are eight hundred dollars, and profit becomes two hundred dollars.
 
-00:00:10.192 --> 00:00:16.452
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.942 --> 00:00:13.732
+The key idea is that profit was not directly entered.
 
-00:00:16.452 --> 00:00:20.127
-A variable is a meaningful name connected to a value.
+00:00:13.732 --> 00:00:16.352
+We created it from the other values.
 
-00:00:20.127 --> 00:00:24.067
-Clear names help the code communicate what the data represents,
+00:00:16.352 --> 00:00:18.479
+That makes it a derived metric.
 
-00:00:24.067 --> 00:00:27.407
-and later calculations can reuse the stored value.
+00:00:19.008 --> 00:00:21.675
+Many familiar measures work the same way.
 
-00:00:27.407 --> 00:00:30.587
-Connect the concept to a small analytics task.
+00:00:21.675 --> 00:00:29.100
+Profit margin, growth rate, average order value, and conversion rate are all built from other values.
 
-00:00:30.587 --> 00:00:35.657
-Imagine the value came from a sales file, survey, or operational system.
+00:00:29.100 --> 00:00:34.040
+If you change sales or costs, the profit bar should move too.
 
-00:00:35.657 --> 00:00:40.682
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
-
-00:00:40.682 --> 00:00:43.090
-from the names and output.
+00:00:34.040 --> 00:00:39.528
+That visual connection helps reinforce how inputs drive derived metrics.

@@ -1,31 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.272
-On this slide, we are focusing on patient variables.
+00:00:00.000 --> 00:00:07.847
+This practice example represents one fictional patient record with four different data types.
 
-00:00:03.272 --> 00:00:07.967
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:07.847 --> 00:00:14.397
+Patient_label is text, age is an integer, temperature is a float, and is_follow_up is Boolean.
 
-00:00:07.967 --> 00:00:13.977
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:14.397 --> 00:00:17.931
+The f-strings turn those values into readable output.
 
-00:00:13.977 --> 00:00:17.647
-A variable is a meaningful name connected to a value.
+00:00:18.585 --> 00:00:22.152
+Run the example once, then change the values.
 
-00:00:17.647 --> 00:00:21.577
-Clear names help the code communicate what the data represents,
+00:00:22.152 --> 00:00:26.287
+As you edit, ask why each type makes sense.
 
-00:00:21.577 --> 00:00:26.572
-and later calculations can reuse the stored value.
+00:00:26.287 --> 00:00:33.857
+You would not average a patient label, but averaging temperatures could be meaningful because temperature is numeric.
 
-00:00:26.572 --> 00:00:29.652
-Before clicking Run, predict the output.
-
-00:00:29.652 --> 00:00:34.222
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:34.222 --> 00:00:37.562
-Rerun it and explain why the output changed.
-
-00:00:37.562 --> 00:00:42.580
-The goal is to understand the relationship between input, process, and output.
+00:00:33.857 --> 00:00:38.181
+Thinking about meaning and type together is an important data habit.

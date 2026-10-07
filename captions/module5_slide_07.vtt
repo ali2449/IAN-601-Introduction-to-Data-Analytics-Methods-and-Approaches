@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.452
-On this slide, we are focusing on update a dictionary.
+00:00:00.000 --> 00:00:03.947
+Dictionaries are mutable, so a record can change over time.
 
-00:00:03.452 --> 00:00:08.262
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.947 --> 00:00:07.977
+Projects begins at two and is updated to three.
 
-00:00:08.262 --> 00:00:17.107
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:07.977 --> 00:00:12.367
+Department is a completely new key, so assignment adds it.
 
-00:00:17.107 --> 00:00:17.412
-A dictionary stores key-value pairs.
+00:00:12.367 --> 00:00:16.125
+Pop removes role and returns the removed value.
 
-00:00:17.412 --> 00:00:25.742
-Meaningful keys such as name, status, amount, or category make the structure easier to understand than
+00:00:16.609 --> 00:00:23.261
+This mirrors many real data workflows: a record arrives, fields are corrected or enriched,
 
-00:00:25.742 --> 00:00:28.877
-position alone. Before clicking Run, predict the output.
+00:00:23.261 --> 00:00:26.066
+and outdated fields may be removed.
 
-00:00:28.877 --> 00:00:35.027
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:35.027 --> 00:00:38.372
-Rerun it and explain why the output changed.
-
-00:00:38.372 --> 00:00:43.383
-The goal is to understand the relationship between input, process, and output.
+00:00:26.066 --> 00:00:30.091
+Run the example and watch the record change step by step.

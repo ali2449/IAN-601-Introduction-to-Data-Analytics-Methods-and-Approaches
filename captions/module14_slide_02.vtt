@@ -1,31 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.022
-Use this lesson actively. Read the idea first and make a prediction before running any code.
+00:00:00.000 --> 00:00:04.082
+Treat each code cell as one stage of a larger workflow.
 
-00:00:06.022 --> 00:00:09.242
-When a Python cell is available, click Run, inspect the output,
+00:00:04.082 --> 00:00:09.917
+Before you run it, identify what goes into the step and what should come out.
 
-00:00:09.242 --> 00:00:13.632
-and then change one small value or condition.
+00:00:09.917 --> 00:00:17.860
+For example, a train-test split takes one dataset and produces separate training and testing subsets.
 
-00:00:13.632 --> 00:00:16.432
-Run it again and explain what changed.
+00:00:18.405 --> 00:00:24.522
+Run the example, inspect shapes and outputs, and then change one setting at a time.
 
-00:00:16.432 --> 00:00:22.577
-This predict, run, modify, and explain cycle is more useful than copying a finished example.
-
-00:00:22.577 --> 00:00:26.347
-Machine learning is a workflow rather than a single fit command.
-
-00:00:26.347 --> 00:00:31.837
-Keep training information separate from evaluation data, compare against a baseline,
-
-00:00:31.837 --> 00:00:36.302
-and interpret model performance in the context of the real prediction problem.
-
-00:00:36.302 --> 00:00:42.062
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:42.062 --> 00:00:47.480
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:24.522 --> 00:00:29.724
+Machine learning code becomes easier when you understand the purpose of each stage.

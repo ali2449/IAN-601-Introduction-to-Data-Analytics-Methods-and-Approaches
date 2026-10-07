@@ -1,28 +1,13 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:01.802
-Use this slide as a roadmap.
+00:00:00.008 --> 00:00:06.292
+We’ll begin with CSV-style external data and then separate features from the target.
 
-00:00:01.802 --> 00:00:07.152
-The ideas are intentionally ordered so later examples build on earlier concepts.
+00:00:06.292 --> 00:00:14.047
+Next, we create training and testing sets, fit a simple classifier, measure performance,
 
-00:00:07.152 --> 00:00:12.917
-As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of
+00:00:14.047 --> 00:00:19.491
+compare the model with a baseline, make a new prediction, and discuss leakage.
 
-00:00:12.917 --> 00:00:16.242
-treating each method as an isolated command.
-
-00:00:16.242 --> 00:00:20.027
-Machine learning is a workflow rather than a single fit command.
-
-00:00:20.027 --> 00:00:25.517
-Keep training information separate from evaluation data, compare against a baseline,
-
-00:00:25.517 --> 00:00:29.982
-and interpret model performance in the context of the real prediction problem.
-
-00:00:29.982 --> 00:00:35.742
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:35.742 --> 00:00:41.160
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:20.126 --> 00:00:24.829
+The final example puts the main stages together in one compact workflow.

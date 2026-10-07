@@ -1,34 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.217
-On this slide, we are focusing on variables inside functions are local.
+00:00:00.000 --> 00:00:05.837
+Variables created inside a function usually belong to that function’s local workspace.
 
-00:00:04.217 --> 00:00:09.082
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.837 --> 00:00:10.172
+That means outside code does not automatically see them.
 
-00:00:09.082 --> 00:00:15.647
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.172 --> 00:00:17.415
+This is helpful because the internal details of one function do not have to interfere with the rest of the program.
 
-00:00:15.647 --> 00:00:19.317
-A variable is a meaningful name connected to a value.
+00:00:17.983 --> 00:00:24.612
+When a useful result needs to leave the function, return provides a clean and explicit path.
 
-00:00:19.317 --> 00:00:23.247
-Clear names help the code communicate what the data represents,
-
-00:00:23.247 --> 00:00:26.607
-and later calculations can reuse the stored value.
-
-00:00:26.607 --> 00:00:30.307
-Think about where this function would appear in a larger project.
-
-00:00:30.307 --> 00:00:38.397
-Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
-
-00:00:38.397 --> 00:00:39.982
-across many rows, files, or notebooks.
-
-00:00:39.982 --> 00:00:45.752
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:45.752 --> 00:00:51.169
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:24.612 --> 00:00:32.976
+Think of the function as a small workspace: inputs enter, local work happens, and selected outputs are returned.

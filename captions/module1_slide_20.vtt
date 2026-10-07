@@ -1,34 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.757
-On this slide, we are focusing on format money and percentages.
+00:00:00.000 --> 00:00:05.252
+Formatting changes how a number is displayed, not the numeric value itself.
 
-00:00:03.757 --> 00:00:08.552
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.252 --> 00:00:13.472
+For revenue, comma dot two f adds thousands separators and keeps two digits after the decimal point.
 
-00:00:08.552 --> 00:00:14.537
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:13.472 --> 00:00:17.577
+That makes large monetary values much easier to read.
 
-00:00:14.537 --> 00:00:18.672
-Formatting changes presentation, not the underlying value.
+00:00:17.577 --> 00:00:26.438
+For growth, percent formatting turns zero point one five six seven eight into fifteen point six eight percent.
 
-00:00:18.672 --> 00:00:24.667
-Keep the stored value numeric and add currency or percentage formatting only when displaying it.
+00:00:26.911 --> 00:00:29.528
+Different outputs call for different formats.
 
-00:00:24.667 --> 00:00:27.852
-Connect the concept to a small analytics task.
+00:00:29.528 --> 00:00:32.518
+Money usually needs commas and decimals.
 
-00:00:27.852 --> 00:00:32.927
-Imagine the value came from a sales file, survey, or operational system.
+00:00:32.518 --> 00:00:35.578
+Rates often make more sense as percentages.
 
-00:00:32.927 --> 00:00:37.942
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+00:00:35.578 --> 00:00:40.808
+Scientific notation is useful for very large or very small numbers.
 
-00:00:37.942 --> 00:00:40.532
-from the names and output.
-
-00:00:40.532 --> 00:00:46.297
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:46.297 --> 00:00:51.717
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:40.808 --> 00:00:44.609
+Good formatting helps the reader interpret the result quickly.

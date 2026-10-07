@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.782
-On this slide, we are focusing on mini cleaning pipeline.
+00:00:00.000 --> 00:00:03.632
+Now we combine several cleaning steps in a consistent order.
 
-00:00:03.782 --> 00:00:08.972
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.632 --> 00:00:06.562
+First, exact duplicates are removed.
 
-00:00:08.972 --> 00:00:15.252
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:06.562 --> 00:00:12.757
+Missing channel values are filled, then channel text is stripped and converted to lowercase.
 
-00:00:15.252 --> 00:00:19.177
-Before clicking Run, predict how the table should change.
+00:00:12.757 --> 00:00:18.072
+Amount is converted to numeric, and conversion failures become missing values.
 
-00:00:19.177 --> 00:00:24.712
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
+00:00:18.072 --> 00:00:21.404
+Finally, missing amounts are filled with the median.
 
-00:00:24.712 --> 00:00:30.152
-or flags that matter. Change one input and rerun it.
+00:00:22.007 --> 00:00:27.914
+Once the table is clean enough for this example, we group by channel and sum the amounts.
 
-00:00:30.152 --> 00:00:36.472
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
-
-00:00:36.472 --> 00:00:42.257
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:42.257 --> 00:00:47.674
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:27.914 --> 00:00:35.742
+The value of a pipeline is consistency: the same ordered steps can be reviewed, reused, and tested.

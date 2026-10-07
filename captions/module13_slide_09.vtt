@@ -1,31 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.917
-On this slide, we are focusing on choose the right visual.
+00:00:00.000 --> 00:00:02.657
+The best visual depends on the question.
 
-00:00:03.917 --> 00:00:08.532
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.657 --> 00:00:08.952
+Bar charts compare categories. Line charts emphasize change over time.
 
-00:00:08.532 --> 00:00:17.337
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:08.952 --> 00:00:15.362
+Histograms show distributions. Box plots compare spread across groups.
 
-00:00:17.337 --> 00:00:23.192
-Choose the visual based on the question: bars for categories, lines for time, histograms for distributions,
+00:00:15.362 --> 00:00:20.377
+Scatter plots show relationships between two numeric variables.
 
-00:00:23.192 --> 00:00:25.617
-and scatter plots for relationships.
+00:00:20.377 --> 00:00:23.704
+Tables are useful when exact values matter.
 
-00:00:25.617 --> 00:00:28.587
-Separate calculation from interpretation.
+00:00:24.255 --> 00:00:27.707
+Do not choose a chart because it looks impressive.
 
-00:00:28.587 --> 00:00:36.162
-A statistic summarizes the sample and a visualization reveals pattern, but both still require context,
-
-00:00:36.162 --> 00:00:39.367
-variability, and awareness of limitations.
-
-00:00:39.367 --> 00:00:45.127
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:45.127 --> 00:00:50.546
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:27.707 --> 00:00:32.525
+Choose the form that makes the analytical question easiest to answer.

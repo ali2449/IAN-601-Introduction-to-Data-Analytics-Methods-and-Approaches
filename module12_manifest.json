@@ -1,266 +1,144 @@
 {
   "module": "module12",
+  "generation_version": "ian620_safe_v4_exact_reference_text_seed1234",
   "filename_prefix": "module12",
-  "source_file": "IAN_601_Module_12_Narration.txt",
-  "voice_consistency_version": 3,
+  "source_file": "IAN_601_Module_12_Narration_Natural_Final.txt",
   "reference_audio": "/home/ali/breeze-tts/voice_reference/course_instructor_consistent_v4.wav",
+  "reference_text_version": "course_instructor_consistent_v4_exact_transcript",
   "reference_text": "Welcome to the course. We will work through each concept carefully, connect the\nideas step by step, and use practical examples to make technical topics easier\nto understand. When we introduce a new method, focus first on the problem it\nsolves and why it is useful. For example, in machine learning, features are the\ninformation we give the model, while the target is what we want it to predict.\nNow consider a simple question: what changes when the data contains missing\nvalues? We will think through the reason and then look at the code. In Python,\nwe can inspect the data, run one small step at a time, and explain what the\nresult means. The goal is to understand the logic, not simply memorize syntax.",
-  "locked_narration_seed": true,
-  "narration_seed": 1234,
-  "long_narration": {
-    "automatic_chunking": true,
-    "max_text_tokens_per_call": 260,
-    "chunk_pause_seconds": 0.38,
-    "manual_break_marker": "[tts-break]",
-    "breeze_max_new_tokens": 1500,
-    "breeze_max_seq_len": 2048
+  "subtitle_method": "tts_break_section_generation",
+  "generation_boundary": "[tts-break]",
+  "instruction_mode": "disabled_to_prevent_spoken_prompt_leakage",
+  "spoken_instruction_sent_to_breeze": false,
+  "audio_settings": {
+    "speech_speed": 0.93,
+    "speed_method": "ffmpeg_atempo_before_vtt_alignment"
   },
-  "subtitle_method": "whole_slide_silence_alignment",
   "caption_settings": {
-    "max_words": 18,
-    "max_chars": 110,
-    "minimum_silence_seconds": 0.2,
-    "boundary_search_window_seconds": 1.4
+    "max_words": 24,
+    "max_chars": 120,
+    "tts_break_pause_seconds": 0.45
   },
   "slides": [
     {
       "slide": 1,
       "title": "Cleaning & EDA",
-      "transcript": "Welcome to Module 12. This module focuses on data cleaning and exploratory data analysis. Before formal analysis or modeling, we need to understand missingness, duplicate records, incorrect data types, inconsistent categories, unusual values, and the general shape of the data.",
-      "seed": 1234,
-      "tts_text_tokens": 52,
-      "tts_chunk_count": 1,
-      "tts_chunk_tokens": [
-        52
-      ],
-      "tts_explicit_breaks": 0,
-      "tts_chunk_limit": 260,
-      "stitched_audio": false,
+      "transcript": "Welcome to Module 12. Before we trust an analysis or build a model, we need to understand the quality of the data going into it.\n\nCleaning and exploratory data analysis help us find missing values, duplicates, incorrect types, inconsistent categories, unusual values, and basic patterns.\n\n[tts-break]\n\nThe goal is not to make data look perfect. The goal is to understand what is present, what is questionable, and what decisions we are making before analysis.",
       "wav": "wav/module12_slide_01.wav",
       "audio": "audio/module12_slide_01.mp3",
       "captions": "audio/module12_slide_01.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 2,
       "title": "How to use this page",
-      "transcript": "Use this lesson actively. Read the idea first and make a prediction before running any code. When a Python cell is available, click Run, inspect the output, and then change one small value or condition. Run it again and explain what changed. This predict, run, modify, and explain cycle is more useful than copying a finished example.\n\n[tts-break]\n\nDo not treat cleaning as automatic deletion or filling. Measure the problem first, decide what the value means, apply a defensible rule, and then validate the data again.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 135,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        68,
-        34,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "For each example, focus on the issue first and the code second.\n\nAsk what could go wrong if the problem is ignored. Then run the code, inspect the result, and think about whether the cleaning decision is appropriate for that context.\n\n[tts-break]\n\nThere is rarely one universal cleaning rule. Missing values, duplicates, and outliers all require interpretation, not just syntax.",
       "wav": "wav/module12_slide_02.wav",
       "audio": "audio/module12_slide_02.mp3",
       "captions": "audio/module12_slide_02.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 3,
       "title": "Learning path for Module 12",
-      "transcript": "Use this slide as a roadmap. The ideas are intentionally ordered so later examples build on earlier concepts. As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of treating each method as an isolated command.\n\n[tts-break]\n\nDo not treat cleaning as automatic deletion or filling. Measure the problem first, decide what the value means, apply a defensible rule, and then validate the data again.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 114,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        34,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "We’ll move through a practical cleaning sequence.\n\nFirst diagnose the data. Then count missing values, detect duplicates, correct data types, standardize categories, flag possible outliers, and create simple EDA summaries.\n\n[tts-break]\n\nThe final example combines those steps into a small cleaning pipeline so you can see how they fit together.",
       "wav": "wav/module12_slide_03.wav",
       "audio": "audio/module12_slide_03.mp3",
       "captions": "audio/module12_slide_03.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 4,
       "title": "Create a messy dataset",
-      "transcript": "On this slide, we are focusing on create a messy dataset. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA set stores unique values. It is useful for distinct categories, membership tests, and comparing overlap between groups.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
-      "seed": 1234,
-      "tts_text_tokens": 131,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        22,
-        59
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s begin with intentionally messy data.\n\nOrder ID two appears twice. Channel labels use different capitalization and spacing, and one channel is missing. Amount contains numeric-looking text, a missing value, and an unusually large value of nine hundred ninety-nine.\n\n[tts-break]\n\nThe dtypes output is also important. Because amount contains strings and missing data, Pandas may not treat the column as a clean numeric type.\n\nThis is what real data often looks like before preparation begins.",
       "wav": "wav/module12_slide_04.wav",
       "audio": "audio/module12_slide_04.mp3",
       "captions": "audio/module12_slide_04.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 5,
       "title": "Check missing values",
-      "transcript": "On this slide, we are focusing on check missing values. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nCount missing values before deciding how to handle them. Missingness can be random, systematic, or meaningful, so the handling rule should match the context.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
-      "seed": 1234,
-      "tts_text_tokens": 138,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        30,
-        59
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "The first step with missing data is usually to count it.\n\nIsna dot sum tells us how many missing values appear in each column. Here channel has one missing value and amount has one missing value.\n\nThe example fills the missing channel with “unknown” and replaces the missing amount with the median of the available amounts.\n\n[tts-break]\n\nThose are example decisions, not universal rules. In a real project, the correct treatment depends on why the data is missing and how the field will be used.",
       "wav": "wav/module12_slide_05.wav",
       "audio": "audio/module12_slide_05.mp3",
       "captions": "audio/module12_slide_05.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 6,
       "title": "Find duplicate records",
-      "transcript": "On this slide, we are focusing on find duplicate records. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nDuplicates can inflate counts and totals. Before removing them, define what one row represents and which columns form the business key.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
-      "seed": 1234,
-      "tts_text_tokens": 132,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        24,
-        59
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Duplicates can quietly inflate totals, counts, and frequencies.\n\nDuplicated identifies the repeated row where order ID two and amount seventy-two appear a second time. Drop_duplicates removes the exact duplicate.\n\n[tts-break]\n\nThe important question is whether the repetition is truly an error. Two legitimate orders can have the same amount, so we should understand the record definition before deleting anything.\n\nHere the example is intentionally an exact duplicate for teaching purposes.",
       "wav": "wav/module12_slide_06.wav",
       "audio": "audio/module12_slide_06.mp3",
       "captions": "audio/module12_slide_06.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 7,
       "title": "Convert data types",
-      "transcript": "On this slide, we are focusing on convert data types. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nNumbers stored as text cannot be analyzed reliably. Convert deliberately and inspect values that fail conversion.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
-      "seed": 1234,
-      "tts_text_tokens": 126,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        18,
-        59
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Numeric values stored as text need conversion before reliable numerical analysis.\n\nThe amount column contains “45”, “72”, “missing”, and “91”. Pd dot to_numeric attempts to convert them. Errors equals coerce turns anything that cannot be converted into NaN instead of raising an exception.\n\n[tts-break]\n\nAfter conversion, the word “missing” becomes a missing numeric value. That makes the problem visible and lets us handle it using standard missing-data tools.",
       "wav": "wav/module12_slide_07.wav",
       "audio": "audio/module12_slide_07.mp3",
       "captions": "audio/module12_slide_07.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 8,
       "title": "Clean categories",
-      "transcript": "On this slide, we are focusing on clean categories. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nStandardizing case and whitespace can prevent one real category from appearing as several fake categories.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 156,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        46,
-        17,
-        59,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Category labels often look different even when they mean the same thing.\n\nWeb, space-web-space, EMAIL, email, and Store contain differences in capitalization and whitespace. Str dot strip removes extra spaces, and str dot lower converts everything to lowercase.\n\n[tts-break]\n\nAfter standardization, web values group together and email values group together correctly.\n\nThis kind of cleanup is essential before counting or grouping categories.",
       "wav": "wav/module12_slide_08.wav",
       "audio": "audio/module12_slide_08.mp3",
       "captions": "audio/module12_slide_08.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 9,
       "title": "Flag outliers with IQR",
-      "transcript": "On this slide, we are focusing on flag outliers with iqr. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nThe I Q R rule flags values far below or above the central fifty percent. A flagged value is not automatically wrong; it is a value that deserves investigation.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
-      "seed": 1234,
-      "tts_text_tokens": 142,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        32,
-        59
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "The interquartile range, or IQR, gives us one simple rule for flagging unusually large or small values.\n\nWe calculate the first quartile, third quartile, and their difference. The upper threshold is Q3 plus one point five times the IQR.\n\nWith the current values, nine hundred ninety-nine is far above the rest and should be flagged.\n\n[tts-break]\n\nAn outlier flag is not a delete command. Unusual values may be errors, but they may also be important real observations. The next step is investigation.",
       "wav": "wav/module12_slide_09.wav",
       "audio": "audio/module12_slide_09.mp3",
       "captions": "audio/module12_slide_09.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 10,
       "title": "Basic EDA summary",
-      "transcript": "On this slide, we are focusing on basic eda summary. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 140,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        59,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Exploratory data analysis gives us a quick picture of the dataset before deeper analysis.\n\nDescribe summarizes the numeric amount column with count, mean, standard deviation, quartiles, minimum, and maximum. Value_counts tells us how often each channel appears.\n\n[tts-break]\n\nThese simple summaries can reveal skew, unexpected ranges, dominant categories, and other patterns worth investigating.\n\nEDA is about asking better questions before making conclusions.",
       "wav": "wav/module12_slide_10.wav",
       "audio": "audio/module12_slide_10.mp3",
       "captions": "audio/module12_slide_10.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 11,
       "title": "Mini cleaning pipeline",
-      "transcript": "On this slide, we are focusing on mini cleaning pipeline. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 139,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        59,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Now we combine several cleaning steps in a consistent order.\n\nFirst, exact duplicates are removed. Missing channel values are filled, then channel text is stripped and converted to lowercase. Amount is converted to numeric, and conversion failures become missing values. Finally, missing amounts are filled with the median.\n\n[tts-break]\n\nOnce the table is clean enough for this example, we group by channel and sum the amounts.\n\nThe value of a pipeline is consistency: the same ordered steps can be reviewed, reused, and tested.",
       "wav": "wav/module12_slide_11.wav",
       "audio": "audio/module12_slide_11.mp3",
       "captions": "audio/module12_slide_11.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 12,
       "title": "Module 12 wrap-up",
-      "transcript": "This slide brings Module 12 together. Review the patterns you can now recognize and reuse. Focus on the decisions behind the syntax: what structure or method fits the problem, what assumptions are being made, and what you should check before trusting the result.\n\n[tts-break]\n\nDo not treat cleaning as automatic deletion or filling. Measure the problem first, decide what the value means, apply a defensible rule, and then validate the data again.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 118,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        51,
-        34,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s summarize the cleaning workflow.\n\nCount missing values before deciding what to do. Check duplicates before calculating totals. Verify data types. Standardize categories before grouping. Flag unusual values instead of automatically deleting them. Use EDA to understand the data before formal analysis or modeling.\n\n[tts-break]\n\nGood analysis starts with knowing what is actually in the dataset.\n\n[tts-break]\n\nIn Module 13, we’ll take the cleaned data and focus on evidence and communication. You’ll calculate descriptive statistics, examine distributions, compare groups, look at relationships, discuss uncertainty, and choose visual forms that help explain the findings clearly.",
       "wav": "wav/module12_slide_12.wav",
       "audio": "audio/module12_slide_12.mp3",
       "captions": "audio/module12_slide_12.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     }
   ]
 }

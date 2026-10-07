@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.982
-On this slide, we are focusing on reusable calculator function.
+00:00:00.000 --> 00:00:06.557
+The mini calculator combines parameters, return values, conditions, and a safety check.
 
-00:00:03.982 --> 00:00:09.077
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:06.557 --> 00:00:10.292
+The operation argument determines which branch runs.
 
-00:00:09.077 --> 00:00:15.312
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.292 --> 00:00:15.482
+Add, subtract, and multiply return direct calculations.
 
-00:00:15.312 --> 00:00:18.942
-A function gives a reusable task a clear name.
+00:00:15.482 --> 00:00:20.072
+Divide checks whether the second value is zero before dividing.
 
-00:00:18.942 --> 00:00:26.787
-In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.
+00:00:20.072 --> 00:00:26.855
+If the operation is unknown, the function returns a clear message instead of failing silently.
 
-00:00:26.787 --> 00:00:29.972
-Before clicking Run, predict the output.
+00:00:27.524 --> 00:00:34.296
+Try divide twenty by four, divide by zero, and an operation name that does not exist.
 
-00:00:29.972 --> 00:00:36.117
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:36.117 --> 00:00:39.462
-Rerun it and explain why the output changed.
-
-00:00:39.462 --> 00:00:44.474
-The goal is to understand the relationship between input, process, and output.
+00:00:34.296 --> 00:00:38.579
+Then extend the function with exponent or modulo.

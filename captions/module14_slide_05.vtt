@@ -1,34 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.157
-On this slide, we are focusing on inputs and target.
+00:00:00.000 --> 00:00:05.767
+Machine learning separates the information used for prediction from the outcome we want to predict.
 
-00:00:03.157 --> 00:00:07.782
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.767 --> 00:00:10.472
+The input columns are commonly called features and stored in X.
 
-00:00:07.782 --> 00:00:14.107
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.472 --> 00:00:14.717
+The outcome is the target and is commonly stored in y.
 
-00:00:14.107 --> 00:00:17.207
-Features are the input columns used by the model.
+00:00:14.717 --> 00:00:19.514
+Here hours and practice become X, while passed becomes y.
 
-00:00:17.207 --> 00:00:20.767
-The target is the outcome the model learns to predict.
+00:00:19.964 --> 00:00:22.861
+This separation is conceptually important.
 
-00:00:20.767 --> 00:00:23.432
-Keep the target out of the feature set.
+00:00:22.861 --> 00:00:26.016
+The model is allowed to learn from the features.
 
-00:00:23.432 --> 00:00:29.332
-Before clicking Run, predict the structure of the output.
-
-00:00:29.332 --> 00:00:33.767
-After it runs, identify the features, target, split, prediction, or evaluation result involved.
-
-00:00:33.767 --> 00:00:39.007
-Change one input carefully and explain why the result did or did not change.
-
-00:00:39.007 --> 00:00:44.767
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:44.767 --> 00:00:50.187
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:26.016 --> 00:00:29.327
+The target is the answer it is trying to learn to predict.

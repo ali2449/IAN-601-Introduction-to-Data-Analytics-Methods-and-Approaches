@@ -1,16 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.092
-Welcome to Module 13. Here we connect statistics with visualization and interpretation.
+00:00:00.000 --> 00:00:02.157
+Welcome to Module 13.
 
-00:00:06.092 --> 00:00:11.437
-We will summarize center and spread, examine distributions, compare groups,
+00:00:02.157 --> 00:00:11.102
+Statistics helps us summarize evidence, and visualization helps us communicate patterns in a form people can understand
 
-00:00:11.437 --> 00:00:17.137
-discuss correlation and uncertainty, and choose visual forms that fit the analytical question.
+00:00:11.102 --> 00:00:12.897
+quickly.
 
-00:00:17.137 --> 00:00:25.617
-Choose the visual based on the question: bars for categories, lines for time, histograms for distributions,
+00:00:12.897 --> 00:00:21.354
+We’ll work with center, spread, distributions, group comparisons, correlation, uncertainty, and basic visual choices.
 
-00:00:25.617 --> 00:00:27.894
-and scatter plots for relationships.
+00:00:21.852 --> 00:00:24.964
+The most important habit is interpretation.
+
+00:00:24.964 --> 00:00:30.773
+A statistic is useful only when we can explain what it means in the context of the data.

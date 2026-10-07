@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.807
-On this slide, we are focusing on put a calculation inside a function.
+00:00:00.000 --> 00:00:02.902
+Now we put a calculation inside the function.
 
-00:00:04.807 --> 00:00:10.162
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.902 --> 00:00:08.997
+Sales and costs are created inside calculate_profit, and the function prints the difference.
 
-00:00:10.162 --> 00:00:16.352
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:08.997 --> 00:00:14.583
+With one thousand in sales and eight hundred in costs, the result is two hundred.
 
-00:00:16.352 --> 00:00:19.837
-A function gives a reusable task a clear name.
+00:00:15.062 --> 00:00:17.609
+The limitation is that the numbers are fixed.
 
-00:00:19.837 --> 00:00:28.037
-In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.
+00:00:17.609 --> 00:00:20.464
+Every call produces the same result.
 
-00:00:28.037 --> 00:00:31.222
-Before clicking Run, predict the output.
+00:00:20.464 --> 00:00:24.399
+That leads naturally to the next idea: parameters.
 
-00:00:31.222 --> 00:00:37.372
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:37.372 --> 00:00:40.712
-Rerun it and explain why the output changed.
-
-00:00:40.712 --> 00:00:45.726
-The goal is to understand the relationship between input, process, and output.
+00:00:24.399 --> 00:00:28.369
+Parameters let us keep the calculation but change the inputs.

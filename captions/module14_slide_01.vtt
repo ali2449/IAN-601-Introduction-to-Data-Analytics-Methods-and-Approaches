@@ -1,10 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:08.002
-Welcome to Module 14. This module introduces a compact machine-learning workflow using external-style data.
+00:00:00.000 --> 00:00:08.262
+Welcome to Module 14. We’ll use the Python skills from the course to build a first end-to-end machine learning workflow.
 
-00:00:08.002 --> 00:00:14.642
-We will separate features and target, create training and test data, fit a simple classifier,
+00:00:08.262 --> 00:00:11.937
+The goal is not to master machine learning in one module.
 
-00:00:14.642 --> 00:00:21.518
-evaluate predictions, compare against a baseline, and discuss leakage and responsible interpretation.
+00:00:11.937 --> 00:00:20.977
+The goal is to understand the sequence: read data, define inputs and target, split the data, train a model, evaluate it,
+
+00:00:20.977 --> 00:00:25.167
+compare it with a baseline, and interpret the results carefully.
+
+00:00:25.641 --> 00:00:32.526
+Good modeling depends on good data preparation and honest evaluation, not just calling a model function.

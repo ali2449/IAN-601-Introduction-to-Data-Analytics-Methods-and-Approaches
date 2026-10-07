@@ -1,28 +1,13 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:01.807
-Use this slide as a roadmap.
+00:00:00.008 --> 00:00:07.037
+We’ll begin with dictionary basics: creating labeled data, retrieving values, and updating records.
 
-00:00:01.807 --> 00:00:07.152
-The ideas are intentionally ordered so later examples build on earlier concepts.
+00:00:07.037 --> 00:00:15.942
+Then we’ll loop through keys and values, count categories, represent small datasets, and work with nested dictionaries.
 
-00:00:07.152 --> 00:00:12.917
-As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of
+00:00:15.942 --> 00:00:22.256
+After that, sets help us remove duplicates, compare groups, and test membership.
 
-00:00:12.917 --> 00:00:16.252
-treating each method as an isolated command.
-
-00:00:16.252 --> 00:00:18.607
-Choose the structure based on meaning.
-
-00:00:18.607 --> 00:00:23.877
-Use dictionaries for labeled fields and sets for uniqueness or membership.
-
-00:00:23.877 --> 00:00:28.887
-A good data structure makes later code shorter and easier to reason about.
-
-00:00:28.887 --> 00:00:34.647
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:34.647 --> 00:00:40.068
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:22.706 --> 00:00:27.614
+The final examples combine dictionaries and sets in one analytics workflow.

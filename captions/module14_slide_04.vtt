@@ -1,28 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.767
-On this slide, we are focusing on read external-style data.
+00:00:00.000 --> 00:00:03.737
+Many analytics projects begin with a CSV file.
 
-00:00:03.767 --> 00:00:08.632
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.737 --> 00:00:12.437
+In this browser example, the CSV content is stored as text so the lesson can run without uploading a file.
 
-00:00:08.632 --> 00:00:14.772
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:12.437 --> 00:00:19.808
+StringIO makes that text behave like a file, and Pandas read_csv converts it into a DataFrame.
 
-00:00:14.772 --> 00:00:18.197
-Before clicking Run, predict the structure of the output.
+00:00:20.474 --> 00:00:27.201
+The table has two input columns—hours and practice—and one outcome column called passed.
 
-00:00:18.197 --> 00:00:25.107
-After it runs, identify the features, target, split, prediction, or evaluation result involved.
-
-00:00:25.107 --> 00:00:30.342
-Change one input carefully and explain why the result did or did not change.
-
-00:00:30.342 --> 00:00:34.132
-Machine learning is a workflow rather than a single fit command.
-
-00:00:34.132 --> 00:00:39.617
-Keep training information separate from evaluation data, compare against a baseline,
-
-00:00:39.617 --> 00:00:43.924
-and interpret model performance in the context of the real prediction problem.
+00:00:27.201 --> 00:00:33.263
+In a real project, the same read_csv call could point to an actual file path.

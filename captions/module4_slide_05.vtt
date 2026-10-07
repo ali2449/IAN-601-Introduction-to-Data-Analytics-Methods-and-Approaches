@@ -1,28 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.602
-On this slide, we are focusing on create a list.
+00:00:00.000 --> 00:00:02.207
+Let’s create a list of five scores.
 
-00:00:03.602 --> 00:00:08.472
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.207 --> 00:00:06.692
+The square brackets tell Python that these values belong to one list.
 
-00:00:08.472 --> 00:00:14.622
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:06.692 --> 00:00:09.552
+Printing the list shows the full collection.
 
-00:00:14.622 --> 00:00:17.872
-A list is an ordered collection that can change.
+00:00:09.552 --> 00:00:12.362
+Len tells us there are five values.
 
-00:00:17.872 --> 00:00:24.742
-It is useful when values may be added, removed, replaced, sorted, or processed over time.
+00:00:12.362 --> 00:00:16.720
+Max returns ninety-one, and min returns sixty-nine.
 
-00:00:24.742 --> 00:00:27.882
-Before clicking Run, predict the output.
+00:00:17.390 --> 00:00:24.627
+A list is a good choice here because scores may be added, removed, sorted, or updated later.
 
-00:00:27.882 --> 00:00:34.032
-Then run the cell, inspect the result, and change one value or condition at a time.
+00:00:24.627 --> 00:00:28.987
+Try adding another score and rerun the summary functions.
 
-00:00:34.032 --> 00:00:37.372
-Rerun it and explain why the output changed.
-
-00:00:37.372 --> 00:00:42.386
-The goal is to understand the relationship between input, process, and output.
+00:00:28.987 --> 00:00:32.589
+Notice that the same code adapts to the larger collection.

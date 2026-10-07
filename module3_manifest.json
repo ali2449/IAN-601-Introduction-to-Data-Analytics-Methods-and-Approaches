@@ -1,553 +1,284 @@
 {
   "module": "module3",
+  "generation_version": "ian620_safe_v4_exact_reference_text_seed1234",
   "filename_prefix": "module3",
-  "source_file": "IAN_601_Module_03_Narration.txt",
-  "voice_consistency_version": 3,
+  "source_file": "IAN_601_Module_03_Narration_Natural_Final.txt",
   "reference_audio": "/home/ali/breeze-tts/voice_reference/course_instructor_consistent_v4.wav",
+  "reference_text_version": "course_instructor_consistent_v4_exact_transcript",
   "reference_text": "Welcome to the course. We will work through each concept carefully, connect the\nideas step by step, and use practical examples to make technical topics easier\nto understand. When we introduce a new method, focus first on the problem it\nsolves and why it is useful. For example, in machine learning, features are the\ninformation we give the model, while the target is what we want it to predict.\nNow consider a simple question: what changes when the data contains missing\nvalues? We will think through the reason and then look at the code. In Python,\nwe can inspect the data, run one small step at a time, and explain what the\nresult means. The goal is to understand the logic, not simply memorize syntax.",
-  "locked_narration_seed": true,
-  "narration_seed": 1234,
-  "long_narration": {
-    "automatic_chunking": true,
-    "max_text_tokens_per_call": 260,
-    "chunk_pause_seconds": 0.38,
-    "manual_break_marker": "[tts-break]",
-    "breeze_max_new_tokens": 1500,
-    "breeze_max_seq_len": 2048
+  "subtitle_method": "tts_break_section_generation",
+  "generation_boundary": "[tts-break]",
+  "instruction_mode": "disabled_to_prevent_spoken_prompt_leakage",
+  "spoken_instruction_sent_to_breeze": false,
+  "audio_settings": {
+    "speech_speed": 0.93,
+    "speed_method": "ffmpeg_atempo_before_vtt_alignment"
   },
-  "subtitle_method": "whole_slide_silence_alignment",
   "caption_settings": {
-    "max_words": 18,
-    "max_chars": 110,
-    "minimum_silence_seconds": 0.2,
-    "boundary_search_window_seconds": 1.4
+    "max_words": 24,
+    "max_chars": 120,
+    "tts_break_pause_seconds": 0.45
   },
   "slides": [
     {
       "slide": 1,
       "title": "Functions",
-      "transcript": "Welcome to Module 3. This module is about functions and code organization. Functions let us give a name to a reusable analytical task instead of copying the same logic again and again. That makes code easier to test, explain, and maintain.\n\n[tts-break]\n\nA function gives a reusable task a clear name. In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.",
-      "seed": 1234,
-      "tts_text_tokens": 78,
-      "tts_chunk_count": 2,
-      "tts_chunk_tokens": [
-        48,
-        29
-      ],
-      "tts_explicit_breaks": 1,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Welcome to Module 3. Functions help us turn repeated steps into named, reusable pieces of logic.\n\nInstead of copying the same calculation again and again, we can define it once, give it a clear name, and reuse it with different values.\n\n[tts-break]\n\nBy the end of this module, you should be comfortable defining a function, passing values into it, returning values from it, and combining small functions into a simple workflow.",
       "wav": "wav/module3_slide_01.wav",
       "audio": "audio/module3_slide_01.mp3",
       "captions": "audio/module3_slide_01.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 2,
       "title": "How to use this page",
-      "transcript": "Use this lesson actively. Read the idea first and make a prediction before running any code. When a Python cell is available, click Run, inspect the output, and then change one small value or condition. Run it again and explain what changed. This predict, run, modify, and explain cycle is more useful than copying a finished example.\n\n[tts-break]\n\nThink about where this function would appear in a larger project. Cleaning one value, calculating one metric, or validating one record can become a reusable function applied across many rows, files, or notebooks.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 140,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        68,
-        39,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Work through the examples by reading, running, comparing, and then modifying the code.\n\nWhen a function is introduced, try to identify three things: the inputs, the work being done, and the output. That input-process-output mindset makes functions much easier to understand.\n\n[tts-break]\n\nUse the browser editor to test small changes. Change one argument, rename one variable, or adjust one return value and see what happens.",
       "wav": "wav/module3_slide_02.wav",
       "audio": "audio/module3_slide_02.mp3",
       "captions": "audio/module3_slide_02.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 3,
       "title": "Learning path for Module 3",
-      "transcript": "Use this slide as a roadmap. The ideas are intentionally ordered so later examples build on earlier concepts. As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of treating each method as an isolated command.\n\n[tts-break]\n\nThink about where this function would appear in a larger project. Cleaning one value, calculating one metric, or validating one record can become a reusable function applied across many rows, files, or notebooks.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 119,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        39,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "We begin with the basic structure of a function: define it, then call it.\n\nNext, parameters make the function flexible, return values let us reuse results elsewhere, docstrings help explain the purpose, and function composition lets small pieces work together.\n\n[tts-break]\n\nThe goal is to think of a function as a named analytical step. Inputs go in, the function performs one clear job, and useful results come back out.",
       "wav": "wav/module3_slide_03.wav",
       "audio": "audio/module3_slide_03.mp3",
       "captions": "audio/module3_slide_03.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 4,
       "title": "Why functions matter in analytics",
-      "transcript": "On this slide, we are focusing on why functions matter in analytics. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA function gives a reusable task a clear name. In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.\n\n[tts-break]\n\nThink about where this function would appear in a larger project. Cleaning one value, calculating one metric, or validating one record can become a reusable function applied across many rows, files, or notebooks.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 151,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        49,
-        29,
-        39,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Functions reduce repetition and make analytical code easier to manage.\n\nWithout functions, the same formula may be copied into several places. If the rule changes later, every copy has to be updated. With a function, the logic has one clear home.\n\n[tts-break]\n\nA name such as get_profit also communicates intent. It tells the reader what the code is supposed to do before they even inspect the details.\n\nFunctions are also easier to test because each small unit can be checked independently.",
       "wav": "wav/module3_slide_04.wav",
       "audio": "audio/module3_slide_04.mp3",
       "captions": "audio/module3_slide_04.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 5,
       "title": "A function has a definition and a call",
-      "transcript": "On this slide, we are focusing on a function has a definition and a call. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA function gives a reusable task a clear name. In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.\n\n[tts-break]\n\nThink about where this function would appear in a larger project. Cleaning one value, calculating one metric, or validating one record can become a reusable function applied across many rows, files, or notebooks.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 154,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        52,
-        29,
-        39,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Every function has two important moments: definition and call.\n\nThe definition tells Python what instructions belong to the function. Def show_welcome with parentheses creates the function and the indented lines become its body.\n\nCalling show_welcome with parentheses tells Python to actually run those stored instructions.\n\n[tts-break]\n\nThe colon and indentation matter. They mark where the function body begins and which lines belong to it.",
       "wav": "wav/module3_slide_05.wav",
       "audio": "audio/module3_slide_05.mp3",
       "captions": "audio/module3_slide_05.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 6,
       "title": "Code: a function with no parameters",
-      "transcript": "On this slide, we are focusing on a function with no parameters. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA parameter is the placeholder name in the function definition. An argument is the actual value supplied when the function is called.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 127,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        24,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s begin with the smallest useful function.\n\nShow_welcome takes no inputs. Its only job is to print a message. When Python reads the definition, it stores the instructions. Nothing is printed until we call show_welcome at the bottom.\n\n[tts-break]\n\nChange the message inside the function and run the cell again. The structure stays the same even though the behavior changes.\n\nThis example is simple, but the define-then-call pattern stays the same for more complex functions.",
       "wav": "wav/module3_slide_06.wav",
       "audio": "audio/module3_slide_06.mp3",
       "captions": "audio/module3_slide_06.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 7,
       "title": "Code: put a calculation inside a function",
-      "transcript": "On this slide, we are focusing on put a calculation inside a function. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA function gives a reusable task a clear name. In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 133,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        50,
-        29,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Now we put a calculation inside the function.\n\nSales and costs are created inside calculate_profit, and the function prints the difference. With one thousand in sales and eight hundred in costs, the result is two hundred.\n\n[tts-break]\n\nThe limitation is that the numbers are fixed. Every call produces the same result.\n\nThat leads naturally to the next idea: parameters. Parameters let us keep the calculation but change the inputs.",
       "wav": "wav/module3_slide_07.wav",
       "audio": "audio/module3_slide_07.mp3",
       "captions": "audio/module3_slide_07.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 8,
       "title": "Parameters receive values",
-      "transcript": "On this slide, we are focusing on parameters receive values. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA parameter is the placeholder name in the function definition. An argument is the actual value supplied when the function is called.\n\n[tts-break]\n\nThink about where this function would appear in a larger project. Cleaning one value, calculating one metric, or validating one record can become a reusable function applied across many rows, files, or notebooks.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 144,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        47,
-        24,
-        39,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A parameter is a placeholder name inside the function definition. An argument is the actual value supplied when the function is called.\n\nIn def greet name, name is the parameter. When we call greet with Avery, Avery is the argument.\n\n[tts-break]\n\nThink of the parameter as an empty labeled slot. The argument is the value we place into that slot for one particular function call.",
       "wav": "wav/module3_slide_08.wav",
       "audio": "audio/module3_slide_08.mp3",
       "captions": "audio/module3_slide_08.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 9,
       "title": "Code: pass one argument",
-      "transcript": "On this slide, we are focusing on pass one argument. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.\n\n[tts-break]\n\nThink about where this function would appear in a larger project. Cleaning one value, calculating one metric, or validating one record can become a reusable function applied across many rows, files, or notebooks.",
-      "seed": 1234,
-      "tts_text_tokens": 140,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        52,
-        39
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Here greet receives one argument.\n\nThe string Avery is assigned temporarily to the parameter name while the function runs. The f-string then inserts that value into the message.\n\n[tts-break]\n\nChange Avery to another fictional name or label. The function body does not need to change because the parameter makes the function flexible.\n\nThat is one of the main reasons functions are reusable.",
       "wav": "wav/module3_slide_09.wav",
       "audio": "audio/module3_slide_09.mp3",
       "captions": "audio/module3_slide_09.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 10,
       "title": "Code: pass two analytical inputs",
-      "transcript": "On this slide, we are focusing on pass two analytical inputs. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.\n\n[tts-break]\n\nThink about where this function would appear in a larger project. Cleaning one value, calculating one metric, or validating one record can become a reusable function applied across many rows, files, or notebooks.",
-      "seed": 1234,
-      "tts_text_tokens": 141,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        52,
-        39
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Now the function receives two values: sales and costs.\n\nWhen we call profit_report with twelve hundred fifty and nine hundred, those numbers flow into the two parameters. The function subtracts costs from sales, giving a profit of three hundred fifty dollars, then formats the result as money.\n\n[tts-break]\n\nTry a second call with two thousand and sixteen hundred. The same function should produce four hundred dollars in profit.\n\nThis is a common analytics pattern: define the metric once, then reuse it with different records.",
       "wav": "wav/module3_slide_10.wav",
       "audio": "audio/module3_slide_10.mp3",
       "captions": "audio/module3_slide_10.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 11,
       "title": "Default parameters supply common values",
-      "transcript": "On this slide, we are focusing on default parameters supply common values. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA parameter is the placeholder name in the function definition. An argument is the actual value supplied when the function is called.\n\n[tts-break]\n\nThink about where this function would appear in a larger project. Cleaning one value, calculating one metric, or validating one record can become a reusable function applied across many rows, files, or notebooks.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 146,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        49,
-        24,
-        39,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A default parameter gives the function a value to use when the caller does not provide one.\n\nHere the default tax rate is ten percent. Calling calculate_tax with only five hundred uses that rate and returns fifty.\n\nIf we supply zero point one five as a second argument, the default is overridden and the tax becomes seventy-five.\n\n[tts-break]\n\nDefaults are useful for common assumptions, but they should be chosen carefully and documented clearly so the caller knows what will happen.",
       "wav": "wav/module3_slide_11.wav",
       "audio": "audio/module3_slide_11.mp3",
       "captions": "audio/module3_slide_11.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 12,
       "title": "return is different from print",
-      "transcript": "On this slide, we are focusing on return is different from print. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nReturn sends a value back to the program so later code can store it, combine it, test it, or pass it into another function. Print only displays a value.\n\n[tts-break]\n\nThink about where this function would appear in a larger project. Cleaning one value, calculating one metric, or validating one record can become a reusable function applied across many rows, files, or notebooks.",
-      "seed": 1234,
-      "tts_text_tokens": 124,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        34,
-        39
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Print and return are not the same thing.\n\nPrint displays a value for a person to see. Return sends a value back to the rest of the program so it can be stored, formatted, or used in another calculation.\n\n[tts-break]\n\nA useful rule is: if the result will be reused later, return is usually the better choice.\n\nThis distinction becomes very important as programs grow.",
       "wav": "wav/module3_slide_12.wav",
       "audio": "audio/module3_slide_12.mp3",
       "captions": "audio/module3_slide_12.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 13,
       "title": "Code: return a value",
-      "transcript": "On this slide, we are focusing on return a value. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nReturn sends a value back to the program so later code can store it, combine it, test it, or pass it into another function. Print only displays a value.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 135,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        34,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Get_profit returns the difference between sales and costs.\n\nWhen we call it with one thousand and eight hundred, the returned value is two hundred. That value is stored in the variable profit and then printed.\n\n[tts-break]\n\nBecause the value was returned, we could just as easily use it in a tax calculation, a margin calculation, or another report.\n\nThat makes return much more flexible than printing inside every function.",
       "wav": "wav/module3_slide_13.wav",
       "audio": "audio/module3_slide_13.mp3",
       "captions": "audio/module3_slide_13.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 14,
       "title": "Code: return more than one value",
-      "transcript": "On this slide, we are focusing on return more than one value. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nReturn sends a value back to the program so later code can store it, combine it, test it, or pass it into another function. Print only displays a value.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 137,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        34,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A function can return more than one result.\n\nSummarize receives a list of values, finds the minimum and maximum, and returns both. Python then unpacks those two results into low and high.\n\nWith the current values, low is nine and high is twenty-one.\n\n[tts-break]\n\nThis pattern is useful when one analytical function naturally produces several related metrics.",
       "wav": "wav/module3_slide_14.wav",
       "audio": "audio/module3_slide_14.mp3",
       "captions": "audio/module3_slide_14.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 15,
       "title": "Variables inside functions are local",
-      "transcript": "On this slide, we are focusing on variables inside functions are local. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA variable is a meaningful name connected to a value. Clear names help the code communicate what the data represents, and later calculations can reuse the stored value.\n\n[tts-break]\n\nThink about where this function would appear in a larger project. Cleaning one value, calculating one metric, or validating one record can become a reusable function applied across many rows, files, or notebooks.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 153,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        49,
-        31,
-        39,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Variables created inside a function usually belong to that function’s local workspace.\n\nThat means outside code does not automatically see them. This is helpful because the internal details of one function do not have to interfere with the rest of the program.\n\n[tts-break]\n\nWhen a useful result needs to leave the function, return provides a clean and explicit path.\n\nThink of the function as a small workspace: inputs enter, local work happens, and selected outputs are returned.",
       "wav": "wav/module3_slide_15.wav",
       "audio": "audio/module3_slide_15.mp3",
       "captions": "audio/module3_slide_15.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 16,
       "title": "Code: catch a conversion error",
-      "transcript": "On this slide, we are focusing on catch a conversion error. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA conversion error tells us the input does not satisfy our assumption. Real analytical workflows validate messy input instead of silently pretending it is correct.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 129,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        27,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Real data is messy, so functions often need a safe way to handle predictable problems.\n\nSafe_integer tries to convert text to an integer. The string “42” converts successfully and returns forty-two. The text “forty-two” raises a ValueError, so the except block catches it and returns None instead.\n\n[tts-break]\n\nTry values such as “007”, “3.5”, and an empty string. Notice that not every string that looks numeric in some way is a valid integer.\n\nThis is a simple example of defensive programming.",
       "wav": "wav/module3_slide_16.wav",
       "audio": "audio/module3_slide_16.mp3",
       "captions": "audio/module3_slide_16.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 17,
       "title": "Code: add a docstring",
-      "transcript": "On this slide, we are focusing on add a docstring. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA docstring explains what a function is designed to do. Good documentation makes the expected inputs and returned result easier to understand.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 127,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        25,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A docstring documents the purpose of a function.\n\nThe triple-quoted text says that average returns the arithmetic mean of two numbers. That description becomes part of the function’s built-in documentation and can be accessed through average dot underscore underscore doc underscore underscore.\n\n[tts-break]\n\nGood documentation is especially useful when code will be reused by other people—or by you several months later.\n\nTry rewriting the docstring in your own words while keeping the meaning accurate.",
       "wav": "wav/module3_slide_17.wav",
       "audio": "audio/module3_slide_17.mp3",
       "captions": "audio/module3_slide_17.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 18,
       "title": "Code: compose small functions",
-      "transcript": "On this slide, we are focusing on compose small functions. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA function gives a reusable task a clear name. In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 130,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        29,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Small functions become powerful when we combine them.\n\nThe first function calculates profit. With sales of fifteen hundred and costs of ten fifty, profit is four hundred fifty.\n\nThe second function receives that profit and divides it by sales to calculate margin. Four hundred fifty divided by fifteen hundred gives thirty percent.\n\n[tts-break]\n\nThis is function composition: one small result becomes the input to another small function.\n\nKeeping each function focused on one job makes testing and reuse easier.",
       "wav": "wav/module3_slide_18.wav",
       "audio": "audio/module3_slide_18.mp3",
       "captions": "audio/module3_slide_18.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 19,
       "title": "Practice ladder",
-      "transcript": "Treat these as guided practice rather than a checklist to rush through. Solve one task at a time, predict what Python should do, and explain your reasoning before running the code. If the result differs from the prediction, inspect intermediate values instead of immediately replacing your work.\n\n[tts-break]\n\nThink about where this function would appear in a larger project. Cleaning one value, calculating one metric, or validating one record can become a reusable function applied across many rows, files, or notebooks.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 125,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        53,
-        39,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Use this practice ladder to build skill gradually.\n\nStart with a no-parameter function, then add one parameter, then return a value. After that, practice handling a predictable error and combine defaults, documentation, and return values.\n\n[tts-break]\n\nAt every level, explain the function in terms of input, process, and output. That explanation is more important than memorizing syntax.",
       "wav": "wav/module3_slide_19.wav",
       "audio": "audio/module3_slide_19.mp3",
       "captions": "audio/module3_slide_19.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 20,
       "title": "Practice code: foundation and building",
-      "transcript": "On this slide, we are focusing on foundation and building. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.\n\n[tts-break]\n\nThink about where this function would appear in a larger project. Cleaning one value, calculating one metric, or validating one record can become a reusable function applied across many rows, files, or notebooks.",
-      "seed": 1234,
-      "tts_text_tokens": 140,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        52,
-        39
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "The first practice function simply prints Hello. It has no parameters, so every call does the same thing.\n\nThe second function adds a name parameter. Now the same function can greet different people or labels.\n\n[tts-break]\n\nRun both examples, then change the argument in the second function. Compare how much more flexible the parameterized version is.",
       "wav": "wav/module3_slide_20.wav",
       "audio": "audio/module3_slide_20.mp3",
       "captions": "audio/module3_slide_20.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 21,
       "title": "Practice code: return and error handling",
-      "transcript": "On this slide, we are focusing on return and error handling. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nReturn sends a value back to the program so later code can store it, combine it, test it, or pass it into another function. Print only displays a value.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 136,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        34,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "The first function returns the sum of two inputs. Twelve plus eight gives twenty, and that returned value is stored in result.\n\nThe second function tries to convert age text to an integer. If the conversion fails, it returns the message “Invalid age.”\n\n[tts-break]\n\nThese examples combine two important habits: returning reusable results and handling expected errors without crashing the entire workflow.",
       "wav": "wav/module3_slide_21.wav",
       "audio": "audio/module3_slide_21.mp3",
       "captions": "audio/module3_slide_21.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 22,
       "title": "Practice code: defaults and documentation",
-      "transcript": "On this slide, we are focusing on defaults and documentation. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA default parameter supplies a common value when the caller does not provide one, while still allowing an override.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 154,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        47,
-        21,
-        52,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "This function combines several ideas at once.\n\nAmount is required, rate has a default of eight percent, the docstring explains the purpose, and return sends the calculated tax back to the caller.\n\nWith an amount of two hundred fifty and the default rate, the result is twenty dollars.\n\n[tts-break]\n\nCall the function again with a ten percent rate and compare the result. This pattern can be adapted to discounts, fees, commissions, and many other calculations.",
       "wav": "wav/module3_slide_22.wav",
       "audio": "audio/module3_slide_22.mp3",
       "captions": "audio/module3_slide_22.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 23,
       "title": "Applied example: classify a temperature",
-      "transcript": "On this slide, we are focusing on applied example: classify a temperature. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 135,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        50,
-        52,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Here we wrap a simple classification rule inside a function.\n\nCheck_fever receives a temperature. If the value is above ninety-eight point six, the function returns “Fever”; otherwise it returns “Normal.”\n\nThe loop then reuses that same rule for several values.\n\n[tts-break]\n\nThe important programming idea is reusability. One rule can be applied repeatedly across a dataset.\n\nThis is only a coding example, not medical guidance.",
       "wav": "wav/module3_slide_23.wav",
       "audio": "audio/module3_slide_23.mp3",
       "captions": "audio/module3_slide_23.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 24,
       "title": "Mini project: reusable calculator function",
-      "transcript": "On this slide, we are focusing on reusable calculator function. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA function gives a reusable task a clear name. In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 130,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        29,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "The mini calculator combines parameters, return values, conditions, and a safety check.\n\nThe operation argument determines which branch runs. Add, subtract, and multiply return direct calculations. Divide checks whether the second value is zero before dividing.\n\nIf the operation is unknown, the function returns a clear message instead of failing silently.\n\n[tts-break]\n\nTry divide twenty by four, divide by zero, and an operation name that does not exist. Then extend the function with exponent or modulo.",
       "wav": "wav/module3_slide_24.wav",
       "audio": "audio/module3_slide_24.mp3",
       "captions": "audio/module3_slide_24.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 25,
       "title": "Function design checklist",
-      "transcript": "On this slide, we are focusing on function design checklist. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA function gives a reusable task a clear name. In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.\n\n[tts-break]\n\nThink about where this function would appear in a larger project. Cleaning one value, calculating one metric, or validating one record can become a reusable function applied across many rows, files, or notebooks.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 149,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        47,
-        29,
-        39,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A good function should have a clear name, clear inputs, one focused job, and a useful output.\n\nAlso think about predictable problems. Should the function validate something? Should it handle a conversion error? Would a future reader understand its purpose from the name and documentation?\n\n[tts-break]\n\nSmall, focused functions are easier to test, easier to reuse, and easier to combine into larger workflows.",
       "wav": "wav/module3_slide_25.wav",
       "audio": "audio/module3_slide_25.mp3",
       "captions": "audio/module3_slide_25.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 26,
       "title": "Summary",
-      "transcript": "This slide brings Module 3 together. Review the patterns you can now recognize and reuse. Focus on the decisions behind the syntax: what structure or method fits the problem, what assumptions are being made, and what you should check before trusting the result.\n\n[tts-break]\n\nThink about where this function would appear in a larger project. Cleaning one value, calculating one metric, or validating one record can become a reusable function applied across many rows, files, or notebooks.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 122,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        50,
-        39,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s bring the main ideas together.\n\nDef creates a function. Parentheses call it. Parameters make inputs flexible. Return sends reusable results back to the program. Docstrings explain purpose, and small functions can be combined into larger workflows.\n\n[tts-break]\n\nNext, we move into lists and tuples so functions can work with structured collections of values.\n\n[tts-break]\n\nIn Module 4, we’ll give those functions more structured data to work with. You’ll learn how lists and tuples store collections of values, how to access and update those values, and how to process an entire collection rather than working with one value at a time.",
       "wav": "wav/module3_slide_26.wav",
       "audio": "audio/module3_slide_26.mp3",
       "captions": "audio/module3_slide_26.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     }
   ]
 }

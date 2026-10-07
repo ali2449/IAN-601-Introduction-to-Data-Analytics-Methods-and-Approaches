@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.752
-On this slide, we are focusing on method chaining.
+00:00:00.000 --> 00:00:03.727
+Method chaining lets us read a workflow from top to bottom.
 
-00:00:02.752 --> 00:00:07.487
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.727 --> 00:00:07.907
+The orders DataFrame contains channel and amount.
 
-00:00:07.487 --> 00:00:13.382
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:07.907 --> 00:00:14.407
+Assign creates a Boolean column called large_order using a threshold of seventy.
 
-00:00:13.382 --> 00:00:17.862
-Method chaining connects several DataFrame operations into one workflow.
+00:00:14.407 --> 00:00:21.558
+Groupby then groups rows by channel, and agg calculates total amount and the number of large orders.
 
-00:00:17.862 --> 00:00:23.957
-Each step should remain readable so another analyst can understand what changes.
+00:00:22.190 --> 00:00:26.257
+Notice how each step produces the table used by the next step.
 
-00:00:23.957 --> 00:00:29.092
-Before clicking Run, predict how the table should change.
+00:00:26.257 --> 00:00:32.292
+The parentheses let us spread the chain across several lines so it stays readable.
 
-00:00:29.092 --> 00:00:34.542
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:34.542 --> 00:00:37.207
-or flags that matter. Change one input and rerun it.
-
-00:00:37.207 --> 00:00:43.385
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
+00:00:32.292 --> 00:00:37.386
+Try changing the large-order threshold and see how the summary changes.

@@ -1,25 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.377
-On this slide, we are focusing on why sequences matter in analytics.
+00:00:00.000 --> 00:00:03.427
+One observation is rarely enough in analytics.
 
-00:00:04.377 --> 00:00:09.637
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.427 --> 00:00:07.692
+We usually want to work with a sequence of related values.
 
-00:00:09.637 --> 00:00:15.777
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:07.692 --> 00:00:12.527
+A list is ordered and mutable, meaning we can change it.
 
-00:00:15.777 --> 00:00:19.657
-Think of the sequence as a small collection of observations.
+00:00:12.527 --> 00:00:17.437
+A tuple is ordered too, but it is intended to remain fixed.
 
-00:00:19.657 --> 00:00:26.357
-Ask whether order matters, whether values need to change, and whether you need one item, a range,
+00:00:17.437 --> 00:00:21.708
+An index gives us a position number for accessing one value.
 
-00:00:26.357 --> 00:00:28.742
-or a summary of the entire collection.
+00:00:22.190 --> 00:00:26.297
+Think about five exam scores or a week of daily sales.
 
-00:00:28.742 --> 00:00:34.497
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:34.497 --> 00:00:39.916
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:26.297 --> 00:00:34.065
+A sequence lets us store those values together and then summarize, filter, or process them as one collection.

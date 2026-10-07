@@ -1,265 +1,144 @@
 {
   "module": "module11",
+  "generation_version": "ian620_safe_v4_exact_reference_text_seed1234",
   "filename_prefix": "module11",
-  "source_file": "IAN_601_Module_11_Narration.txt",
-  "voice_consistency_version": 3,
+  "source_file": "IAN_601_Module_11_Narration_Natural_Final.txt",
   "reference_audio": "/home/ali/breeze-tts/voice_reference/course_instructor_consistent_v4.wav",
+  "reference_text_version": "course_instructor_consistent_v4_exact_transcript",
   "reference_text": "Welcome to the course. We will work through each concept carefully, connect the\nideas step by step, and use practical examples to make technical topics easier\nto understand. When we introduce a new method, focus first on the problem it\nsolves and why it is useful. For example, in machine learning, features are the\ninformation we give the model, while the target is what we want it to predict.\nNow consider a simple question: what changes when the data contains missing\nvalues? We will think through the reason and then look at the code. In Python,\nwe can inspect the data, run one small step at a time, and explain what the\nresult means. The goal is to understand the logic, not simply memorize syntax.",
-  "locked_narration_seed": true,
-  "narration_seed": 1234,
-  "long_narration": {
-    "automatic_chunking": true,
-    "max_text_tokens_per_call": 260,
-    "chunk_pause_seconds": 0.38,
-    "manual_break_marker": "[tts-break]",
-    "breeze_max_new_tokens": 1500,
-    "breeze_max_seq_len": 2048
+  "subtitle_method": "tts_break_section_generation",
+  "generation_boundary": "[tts-break]",
+  "instruction_mode": "disabled_to_prevent_spoken_prompt_leakage",
+  "spoken_instruction_sent_to_breeze": false,
+  "audio_settings": {
+    "speech_speed": 0.93,
+    "speed_method": "ffmpeg_atempo_before_vtt_alignment"
   },
-  "subtitle_method": "whole_slide_silence_alignment",
   "caption_settings": {
-    "max_words": 18,
-    "max_chars": 110,
-    "minimum_silence_seconds": 0.2,
-    "boundary_search_window_seconds": 1.4
+    "max_words": 24,
+    "max_chars": 120,
+    "tts_break_pause_seconds": 0.45
   },
   "slides": [
     {
       "slide": 1,
       "title": "Advanced Pandas",
-      "transcript": "Welcome to Module 11. We are extending the Pandas foundation from Module 10 into more advanced workflows. The emphasis is on chaining operations, reshaping tables, working with dates and rolling summaries, checking joins, and packaging repeated Pandas logic into reusable functions.",
-      "seed": 1234,
-      "tts_text_tokens": 52,
-      "tts_chunk_count": 1,
-      "tts_chunk_tokens": [
-        52
-      ],
-      "tts_explicit_breaks": 0,
-      "tts_chunk_limit": 260,
-      "stitched_audio": false,
+      "transcript": "Welcome to Module 11. We already know how to create and work with DataFrames. Now we’ll focus on the Pandas patterns that make larger analytical workflows cleaner and more useful.\n\nWe’ll chain operations, reshape tables, work with dates, calculate rolling summaries, check joins, and package repeated steps into functions.\n\n[tts-break]\n\nThe goal is not to memorize every Pandas method. Focus on recognizing the data problem and choosing a transformation that moves the table toward the form you need.",
       "wav": "wav/module11_slide_01.wav",
       "audio": "audio/module11_slide_01.mp3",
       "captions": "audio/module11_slide_01.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 2,
       "title": "How to use this page",
-      "transcript": "Use this lesson actively. Read the idea first and make a prediction before running any code. When a Python cell is available, click Run, inspect the output, and then change one small value or condition. Run it again and explain what changed. This predict, run, modify, and explain cycle is more useful than copying a finished example.\n\n[tts-break]\n\nIn a real Pandas workflow, check the shape and meaning of the DataFrame after important transformations. Compact code is useful only when another analyst can still understand what each step changes.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 135,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        68,
-        34,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Treat each example as a small workflow rather than an isolated command.\n\nBefore you run a cell, look at the starting table and predict what the shape or columns should look like afterward. Then run the code and compare the result with your expectation.\n\n[tts-break]\n\nChange one value, category, or condition and run it again. Pandas becomes much easier when you can visualize how each step changes the table.",
       "wav": "wav/module11_slide_02.wav",
       "audio": "audio/module11_slide_02.mp3",
       "captions": "audio/module11_slide_02.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 3,
       "title": "Learning path for Module 11",
-      "transcript": "Use this slide as a roadmap. The ideas are intentionally ordered so later examples build on earlier concepts. As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of treating each method as an isolated command.\n\n[tts-break]\n\nIn a real Pandas workflow, check the shape and meaning of the DataFrame after important transformations. Compact code is useful only when another analyst can still understand what each step changes.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 114,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        34,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "We’ll start with method chaining, which connects DataFrame operations into one readable sequence.\n\nThen we’ll create pivot tables, reshape wide data into long data, extract features from dates, calculate rolling summaries, map category codes, inspect joins, and finally wrap a Pandas workflow inside a function.\n\n[tts-break]\n\nThese are practical patterns you will see in reporting, data preparation, and production analytics code.",
       "wav": "wav/module11_slide_03.wav",
       "audio": "audio/module11_slide_03.mp3",
       "captions": "audio/module11_slide_03.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 4,
       "title": "Method chaining",
-      "transcript": "On this slide, we are focusing on method chaining. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nMethod chaining connects several DataFrame operations into one workflow. Each step should remain readable so another analyst can understand what changes.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
-      "seed": 1234,
-      "tts_text_tokens": 130,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        46,
-        23,
-        59
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Method chaining lets us read a workflow from top to bottom.\n\nThe orders DataFrame contains channel and amount. Assign creates a Boolean column called large_order using a threshold of seventy. Groupby then groups rows by channel, and agg calculates total amount and the number of large orders.\n\n[tts-break]\n\nNotice how each step produces the table used by the next step. The parentheses let us spread the chain across several lines so it stays readable.\n\nTry changing the large-order threshold and see how the summary changes.",
       "wav": "wav/module11_slide_04.wav",
       "audio": "audio/module11_slide_04.mp3",
       "captions": "audio/module11_slide_04.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 5,
       "title": "Pivot tables",
-      "transcript": "On this slide, we are focusing on pivot tables. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA pivot table summarizes a numeric measure across categories. Always be clear about what the rows, columns, and cell values represent.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
-      "seed": 1234,
-      "tts_text_tokens": 132,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        46,
-        25,
-        59
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A pivot table summarizes numeric values across two categorical dimensions.\n\nHere region becomes the row index, channel becomes the columns, and amount is the value being summed. Fill_value zero makes missing combinations display as zero instead of NaN.\n\n[tts-break]\n\nThis is useful when you want a compact matrix-like report, such as sales by region and channel.\n\nBefore running the code, identify which region-channel combinations appear in the raw data and predict where their totals should land.",
       "wav": "wav/module11_slide_05.wav",
       "audio": "audio/module11_slide_05.mp3",
       "captions": "audio/module11_slide_05.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 6,
       "title": "Melt wide data into long data",
-      "transcript": "On this slide, we are focusing on melt wide data into long data. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nMelting converts wide columns into a longer key-value structure. Long format is often easier for grouping, plotting, and repeated analysis across variables.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
-      "seed": 1234,
-      "tts_text_tokens": 140,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        50,
-        29,
-        59
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Sometimes a table is convenient for people to read but awkward for analysis.\n\nThe starting table has separate quiz1 and quiz2 columns. Melt turns those column names into values inside a new quiz column, with the scores placed in one score column.\n\n[tts-break]\n\nEach student now has multiple rows—one row per quiz. This long format is often easier for grouping, plotting, and statistical analysis.\n\nThink of melt as moving information from column headers down into rows.",
       "wav": "wav/module11_slide_06.wav",
       "audio": "audio/module11_slide_06.mp3",
       "captions": "audio/module11_slide_06.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 7,
       "title": "Work with dates",
-      "transcript": "On this slide, we are focusing on work with dates. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 139,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        59,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Date columns should usually be converted from plain text into a datetime type before we analyze them.\n\nPd dot to_datetime performs that conversion. Once the column is a real datetime, the dt accessor lets us extract features such as month and weekday name.\n\n[tts-break]\n\nFor these three dates, we can immediately see which orders occurred in January or February and which weekday each date represents.\n\nDate features are useful for seasonality, reporting periods, weekday patterns, and time-based grouping.",
       "wav": "wav/module11_slide_07.wav",
       "audio": "audio/module11_slide_07.mp3",
       "captions": "audio/module11_slide_07.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 8,
       "title": "Rolling summaries",
-      "transcript": "On this slide, we are focusing on rolling summaries. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA rolling calculation summarizes a moving window of rows. The chosen window size directly affects the pattern you see.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
-      "seed": 1234,
-      "tts_text_tokens": 128,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        46,
-        21,
-        59
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A rolling calculation looks at a moving window of values.\n\nWith a window size of three, each rolling mean is based on the current value and the previous two values. The first two positions do not yet have three observations, so they appear as missing.\n\n[tts-break]\n\nRolling averages are useful for smoothing short-term variation and making trends easier to see.\n\nTry a window of two or four and compare how quickly the rolling series reacts to changes.",
       "wav": "wav/module11_slide_08.wav",
       "audio": "audio/module11_slide_08.mp3",
       "captions": "audio/module11_slide_08.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 9,
       "title": "Map categories",
-      "transcript": "On this slide, we are focusing on map categories. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 138,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        46,
-        59,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Map is useful when one set of values needs to be translated into another.\n\nHere segment codes one and two are replaced with the readable labels returning and new. The original code column remains, and a new segment column is created.\n\n[tts-break]\n\nThis pattern works well for lookup tables, code descriptions, grouped labels, and simple feature creation.\n\nAlways check for codes that are missing from the mapping, because those can produce missing values in the result.",
       "wav": "wav/module11_slide_09.wav",
       "audio": "audio/module11_slide_09.mp3",
       "captions": "audio/module11_slide_09.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 10,
       "title": "Join checks",
-      "transcript": "On this slide, we are focusing on join checks. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA successful merge is not proof of a correct merge. Check matched and unmatched keys, row counts, and the expected key relationship.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
-      "seed": 1234,
-      "tts_text_tokens": 133,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        46,
-        26,
-        59
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A merge can run successfully and still produce unexpected matches, so join validation matters.\n\nThe orders table contains C101, C102, and C999. The customer table contains only C101 and C102. A left join keeps every order and attaches customer information where a match exists.\n\n[tts-break]\n\nIndicator equals True creates the _merge column. C101 and C102 should be both, while C999 should be left_only.\n\nThat small check makes missing keys visible instead of letting them pass unnoticed.",
       "wav": "wav/module11_slide_10.wav",
       "audio": "audio/module11_slide_10.mp3",
       "captions": "audio/module11_slide_10.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 11,
       "title": "Reusable pandas function",
-      "transcript": "On this slide, we are focusing on reusable pandas function. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA function gives a reusable task a clear name. In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.\n\n[tts-break]\n\nBefore clicking Run, predict how the table should change. Then run the cell and inspect the row count, column values, grouping, dates, missing values, or flags that matter. Change one input and rerun it. Connect the DataFrame operation to an analytical question rather than simply making the code execute.",
-      "seed": 1234,
-      "tts_text_tokens": 137,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        29,
-        59
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Repeated DataFrame logic is a good candidate for a function.\n\nSummarize_orders receives a DataFrame, creates a large_order flag, groups by channel, and returns total amount, row count, and large-order count.\n\n[tts-break]\n\nThe caller does not need to know every internal step each time. It can simply pass in a compatible DataFrame and receive the summary.\n\nThis is how we begin turning notebook experiments into reusable analytical code.",
       "wav": "wav/module11_slide_11.wav",
       "audio": "audio/module11_slide_11.mp3",
       "captions": "audio/module11_slide_11.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 12,
       "title": "Module 11 wrap-up",
-      "transcript": "This slide brings Module 11 together. Review the patterns you can now recognize and reuse. Focus on the decisions behind the syntax: what structure or method fits the problem, what assumptions are being made, and what you should check before trusting the result.\n\n[tts-break]\n\nIn a real Pandas workflow, check the shape and meaning of the DataFrame after important transformations. Compact code is useful only when another analyst can still understand what each step changes.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 118,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        51,
-        34,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s review the major patterns.\n\nMethod chaining connects transformations. Pivot tables summarize across categories. Melt reshapes wide data to long format. Datetime tools create time features. Rolling windows summarize trends. Mapping translates categories, join indicators help validate merges, and functions package workflows for reuse.\n\n[tts-break]\n\nThe larger goal is to make complex table transformations readable, testable, and repeatable.\n\n[tts-break]\n\nModule 12 shifts the focus from transforming data to checking whether the data is actually ready for analysis. We’ll work with missing values, duplicates, incorrect data types, inconsistent categories, possible outliers, and exploratory summaries. The goal is to understand the dataset before trusting any result from it.",
       "wav": "wav/module11_slide_12.wav",
       "audio": "audio/module11_slide_12.mp3",
       "captions": "audio/module11_slide_12.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     }
   ]
 }

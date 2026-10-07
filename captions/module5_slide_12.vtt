@@ -1,31 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.362
-On this slide, we are focusing on create a set.
+00:00:00.000 --> 00:00:02.992
+A set keeps only unique values.
 
-00:00:03.362 --> 00:00:08.072
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.992 --> 00:00:08.472
+The channels list contains web three times and email twice.
 
-00:00:08.072 --> 00:00:14.137
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:08.472 --> 00:00:16.036
+When we convert it to a set, the duplicates disappear and we are left with web, email, and store.
 
-00:00:14.137 --> 00:00:16.647
-A set stores unique values.
+00:00:16.771 --> 00:00:20.253
+Do not depend on a set for meaningful ordering.
 
-00:00:16.647 --> 00:00:23.002
-It is useful for distinct categories, membership tests, and comparing overlap between groups.
+00:00:20.253 --> 00:00:23.258
+Its main purpose here is uniqueness.
 
-00:00:23.002 --> 00:00:25.362
-Choose the structure based on meaning.
-
-00:00:25.362 --> 00:00:30.632
-Use dictionaries for labeled fields and sets for uniqueness or membership.
-
-00:00:30.632 --> 00:00:35.647
-A good data structure makes later code shorter and easier to reason about.
-
-00:00:35.647 --> 00:00:41.402
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:41.402 --> 00:00:46.822
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:23.258 --> 00:00:30.951
+Sets are useful when you need distinct categories, unique IDs, or a quick count of unique values.

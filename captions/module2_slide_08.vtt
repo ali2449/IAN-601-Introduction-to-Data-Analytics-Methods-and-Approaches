@@ -1,31 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.262
-On this slide, we are focusing on elif handles several categories.
+00:00:00.000 --> 00:00:02.817
+Sometimes we need more than two outcomes.
 
-00:00:04.262 --> 00:00:08.967
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.817 --> 00:00:06.262
+Elif lets us test several rules in order.
 
-00:00:08.967 --> 00:00:15.117
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:06.262 --> 00:00:12.942
+With a score of eighty-six, the first condition—score at least ninety—is false.
 
-00:00:15.117 --> 00:00:18.352
-Elif supports several possible categories.
+00:00:12.942 --> 00:00:21.737
+Python then checks score at least eighty, which is true, so it prints “Good” and stops checking the remaining branches.
 
-00:00:18.352 --> 00:00:25.627
-Python checks conditions from top to bottom and stops at the first true branch, so rule order matters.
+00:00:22.453 --> 00:00:25.735
+Order matters because the first true branch wins.
 
-00:00:25.627 --> 00:00:32.592
-In real analytics, this pattern can support thresholds, validation rules, category assignment, alerts,
+00:00:25.735 --> 00:00:31.725
+For threshold categories, it is often easiest to check from the highest threshold downward.
 
-00:00:32.592 --> 00:00:33.582
-and repeated processing.
+00:00:31.725 --> 00:00:36.370
+Try scores of ninety-five, eighty-five, seventy-five, and sixty.
 
-00:00:33.582 --> 00:00:41.577
-The examples are intentionally small so you can trace the logic from the condition to the result.
-
-00:00:41.577 --> 00:00:47.337
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:47.337 --> 00:00:52.754
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:36.370 --> 00:00:41.196
+Trace which branch should run before executing the code.

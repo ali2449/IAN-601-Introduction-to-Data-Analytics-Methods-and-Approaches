@@ -1,31 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.357
-On this slide, we are focusing on membership testing.
+00:00:00.000 --> 00:00:04.627
+The in operator asks whether a value belongs to a collection.
 
-00:00:03.357 --> 00:00:08.212
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.627 --> 00:00:09.912
+Allowed_statuses contains new, open, and closed.
 
-00:00:08.212 --> 00:00:15.797
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.912 --> 00:00:14.457
+The loop checks each submitted status against that set.
 
-00:00:15.797 --> 00:00:17.292
-Before clicking Run, predict the output.
+00:00:14.457 --> 00:00:17.582
+New and closed are valid.
 
-00:00:17.292 --> 00:00:23.442
-Then run the cell, inspect the result, and change one value or condition at a time.
+00:00:17.582 --> 00:00:23.196
+Pending and review are not in the allowed set, so they are flagged for review.
 
-00:00:23.442 --> 00:00:26.782
-Rerun it and explain why the output changed.
-
-00:00:26.782 --> 00:00:31.967
-The goal is to understand the relationship between input, process, and output.
-
-00:00:31.967 --> 00:00:34.332
-Choose the structure based on meaning.
-
-00:00:34.332 --> 00:00:39.597
-Use dictionaries for labeled fields and sets for uniqueness or membership.
-
-00:00:39.597 --> 00:00:44.445
-A good data structure makes later code shorter and easier to reason about.
+00:00:23.910 --> 00:00:29.692
+This pattern is useful for validation because sets make membership rules clear and efficient.

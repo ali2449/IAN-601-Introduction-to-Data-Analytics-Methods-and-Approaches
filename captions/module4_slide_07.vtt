@@ -1,28 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.472
-On this slide, we are focusing on change a list.
+00:00:00.000 --> 00:00:06.917
+Lists are mutable, which means we can change them after they are created.
 
-00:00:03.472 --> 00:00:08.517
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:06.917 --> 00:00:11.362
+We start with twenty-one, nineteen, and twenty-four visits.
 
-00:00:08.517 --> 00:00:14.737
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:11.362 --> 00:00:13.672
+Append adds twenty-seven to the end.
 
-00:00:14.737 --> 00:00:17.982
-A list is an ordered collection that can change.
+00:00:13.672 --> 00:00:18.347
+Then index one is changed from nineteen to twenty.
 
-00:00:17.982 --> 00:00:24.847
-It is useful when values may be added, removed, replaced, sorted, or processed over time.
+00:00:18.347 --> 00:00:27.323
+Pop zero removes the first value, twenty-one, and also returns it so we can store it in removed_value.
 
-00:00:24.847 --> 00:00:27.987
-Before clicking Run, predict the output.
+00:00:27.789 --> 00:00:30.781
+Run the example one line at a time mentally.
 
-00:00:27.987 --> 00:00:34.137
-Then run the cell, inspect the result, and change one value or condition at a time.
+00:00:30.781 --> 00:00:36.226
+The final list should contain twenty, twenty-four, and twenty-seven.
 
-00:00:34.137 --> 00:00:37.482
-Rerun it and explain why the output changed.
-
-00:00:37.482 --> 00:00:42.493
-The goal is to understand the relationship between input, process, and output.
+00:00:36.226 --> 00:00:41.511
+This ability to grow and change is one of the main reasons to use a list.

@@ -1,25 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.642
-Welcome to Module 4. We are moving from individual values to collections.
+00:00:00.000 --> 00:00:07.422
+Welcome to Module 4. Up to now, many of our variables have held one value at a time.
 
-00:00:05.642 --> 00:00:12.712
-Lists and tuples let Python organize several related observations so we can access, change, loop through,
+00:00:07.422 --> 00:00:13.587
+Lists and tuples let us organize several related values inside one object.
 
-00:00:12.712 --> 00:00:19.292
-and summarize them. A tuple is ordered like a list but is intended to stay fixed.
+00:00:13.587 --> 00:00:22.812
+That matters in analytics because we usually work with collections: several scores, several sales values, several ages,
 
-00:00:19.292 --> 00:00:23.797
-It works well for compact records whose positions should not change.
+00:00:22.812 --> 00:00:24.233
+or several records.
 
-00:00:23.797 --> 00:00:26.942
-Before clicking Run, predict the output.
+00:00:24.867 --> 00:00:32.419
+We’ll learn how to create these collections, access individual values, update lists, loop through them, summarize them,
 
-00:00:26.942 --> 00:00:33.087
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:33.087 --> 00:00:36.432
-Rerun it and explain why the output changed.
-
-00:00:36.432 --> 00:00:41.444
-The goal is to understand the relationship between input, process, and output.
+00:00:32.419 --> 00:00:37.224
+and decide when a list or tuple is the better choice.

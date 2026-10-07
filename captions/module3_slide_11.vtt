@@ -1,31 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.247
-On this slide, we are focusing on default parameters supply common values.
+00:00:00.000 --> 00:00:05.637
+A default parameter gives the function a value to use when the caller does not provide one.
 
-00:00:05.247 --> 00:00:10.307
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.637 --> 00:00:08.977
+Here the default tax rate is ten percent.
 
-00:00:10.307 --> 00:00:16.582
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:08.977 --> 00:00:15.177
+Calling calculate_tax with only five hundred uses that rate and returns fifty.
 
-00:00:16.582 --> 00:00:20.692
-A parameter is the placeholder name in the function definition.
+00:00:15.177 --> 00:00:23.131
+If we supply zero point one five as a second argument, the default is overridden and the tax becomes seventy-five.
 
-00:00:20.692 --> 00:00:25.252
-An argument is the actual value supplied when the function is called.
+00:00:23.747 --> 00:00:30.469
+Defaults are useful for common assumptions, but they should be chosen carefully and documented clearly so the caller
 
-00:00:25.252 --> 00:00:28.942
-Think about where this function would appear in a larger project.
-
-00:00:28.942 --> 00:00:37.037
-Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
-
-00:00:37.037 --> 00:00:38.622
-across many rows, files, or notebooks.
-
-00:00:38.622 --> 00:00:44.392
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:44.392 --> 00:00:49.807
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:30.469 --> 00:00:32.591
+knows what will happen.

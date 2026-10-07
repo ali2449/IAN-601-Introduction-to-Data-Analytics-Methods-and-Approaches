@@ -1,28 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.287
-On this slide, we are focusing on return is different from print.
+00:00:00.000 --> 00:00:03.552
+Print and return are not the same thing.
 
-00:00:04.287 --> 00:00:09.392
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.552 --> 00:00:07.022
+Print displays a value for a person to see.
 
-00:00:09.392 --> 00:00:15.687
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:07.022 --> 00:00:15.538
+Return sends a value back to the rest of the program so it can be stored, formatted, or used in another calculation.
 
-00:00:15.687 --> 00:00:21.212
-Return sends a value back to the program so later code can store it, combine it, test it,
+00:00:16.088 --> 00:00:23.130
+A useful rule is: if the result will be reused later, return is usually the better choice.
 
-00:00:21.212 --> 00:00:24.267
-or pass it into another function.
-
-00:00:24.267 --> 00:00:26.667
-Print only displays a value.
-
-00:00:26.667 --> 00:00:30.362
-Think about where this function would appear in a larger project.
-
-00:00:30.362 --> 00:00:37.622
-Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
-
-00:00:37.622 --> 00:00:39.886
-across many rows, files, or notebooks.
+00:00:23.130 --> 00:00:26.997
+This distinction becomes very important as programs grow.

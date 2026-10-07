@@ -1,28 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.822
-On this slide, we are focusing on add a docstring.
+00:00:00.000 --> 00:00:03.267
+A docstring documents the purpose of a function.
 
-00:00:03.822 --> 00:00:08.657
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.267 --> 00:00:08.872
+The triple-quoted text says that average returns the arithmetic mean of two numbers.
 
-00:00:08.657 --> 00:00:14.642
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:08.872 --> 00:00:15.492
+That description becomes part of the function’s built-in documentation and can be accessed through average dot
 
-00:00:14.642 --> 00:00:18.322
-A docstring explains what a function is designed to do.
+00:00:15.492 --> 00:00:18.943
+underscore underscore doc underscore underscore.
 
-00:00:18.322 --> 00:00:24.117
-Good documentation makes the expected inputs and returned result easier to understand.
+00:00:19.871 --> 00:00:27.258
+Good documentation is especially useful when code will be reused by other people—or by you several months later.
 
-00:00:24.117 --> 00:00:27.252
-Before clicking Run, predict the output.
-
-00:00:27.252 --> 00:00:33.402
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:33.402 --> 00:00:36.742
-Rerun it and explain why the output changed.
-
-00:00:36.742 --> 00:00:41.759
-The goal is to understand the relationship between input, process, and output.
+00:00:27.258 --> 00:00:31.874
+Try rewriting the docstring in your own words while keeping the meaning accurate.

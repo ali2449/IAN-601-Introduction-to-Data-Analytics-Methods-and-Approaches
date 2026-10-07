@@ -1,31 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.152
-On this slide, we are focusing on return a value.
+00:00:00.000 --> 00:00:04.072
+Get_profit returns the difference between sales and costs.
 
-00:00:03.152 --> 00:00:07.662
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.072 --> 00:00:09.677
+When we call it with one thousand and eight hundred, the returned value is two hundred.
 
-00:00:07.662 --> 00:00:16.327
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.677 --> 00:00:13.583
+That value is stored in the variable profit and then printed.
 
-00:00:16.327 --> 00:00:19.792
-Return sends a value back to the program so later code can store it, combine it, test it,
+00:00:14.033 --> 00:00:21.315
+Because the value was returned, we could just as easily use it in a tax calculation, a margin calculation,
 
-00:00:19.792 --> 00:00:22.087
-or pass it into another function.
-
-00:00:22.087 --> 00:00:26.117
-Print only displays a value.
-
-00:00:26.117 --> 00:00:27.617
-Before clicking Run, predict the output.
-
-00:00:27.617 --> 00:00:33.767
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:33.767 --> 00:00:37.112
-Rerun it and explain why the output changed.
-
-00:00:37.112 --> 00:00:42.122
-The goal is to understand the relationship between input, process, and output.
+00:00:21.315 --> 00:00:28.113
+or another report. That makes return much more flexible than printing inside every function.

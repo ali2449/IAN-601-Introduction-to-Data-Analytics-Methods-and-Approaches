@@ -1,28 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.247
-On this slide, we are focusing on predict a new case.
+00:00:00.000 --> 00:00:10.077
+After training, a model can generate a prediction for a new row—as long as the new row has the same feature structure
 
-00:00:03.247 --> 00:00:07.867
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:10.077 --> 00:00:17.677
+used during training. The example contains four feature values because the model was trained with four input features.
 
-00:00:07.867 --> 00:00:13.957
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:17.677 --> 00:00:25.258
+Predict returns the class, and predict_proba returns estimated class probabilities.
 
-00:00:13.957 --> 00:00:19.057
-New data must use the same feature structure and preprocessing as the training data.
+00:00:25.892 --> 00:00:33.979
+The largest probability is printed as a confidence-like value, but remember that a probability estimate is not a
 
-00:00:19.057 --> 00:00:24.952
-Before clicking Run, predict the structure of the output.
-
-00:00:24.952 --> 00:00:29.392
-After it runs, identify the features, target, split, prediction, or evaluation result involved.
-
-00:00:29.392 --> 00:00:34.632
-Change one input carefully and explain why the result did or did not change.
-
-00:00:34.632 --> 00:00:40.392
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:40.392 --> 00:00:45.811
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:33.979 --> 00:00:37.822
+guarantee. New data must be prepared in the same way as the training data.

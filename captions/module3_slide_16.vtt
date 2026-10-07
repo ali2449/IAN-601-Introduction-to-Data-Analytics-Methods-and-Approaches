@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.302
-On this slide, we are focusing on catch a conversion error.
+00:00:00.000 --> 00:00:06.597
+Real data is messy, so functions often need a safe way to handle predictable problems.
 
-00:00:03.302 --> 00:00:08.052
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:06.597 --> 00:00:10.592
+Safe_integer tries to convert text to an integer.
 
-00:00:08.052 --> 00:00:14.047
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.592 --> 00:00:16.497
+The string “42” converts successfully and returns forty-two.
 
-00:00:14.047 --> 00:00:19.102
-A conversion error tells us the input does not satisfy our assumption.
+00:00:16.497 --> 00:00:24.024
+The text “forty-two” raises a ValueError, so the except block catches it and returns None instead.
 
-00:00:19.102 --> 00:00:26.847
-Real analytical workflows validate messy input instead of silently pretending it is correct.
+00:00:24.691 --> 00:00:29.968
+Try values such as “007”, “3.5”, and an empty string.
 
-00:00:26.847 --> 00:00:28.352
-Before clicking Run, predict the output.
+00:00:29.968 --> 00:00:37.503
+Notice that not every string that looks numeric in some way is a valid integer.
 
-00:00:28.352 --> 00:00:34.497
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:34.497 --> 00:00:37.842
-Rerun it and explain why the output changed.
-
-00:00:37.842 --> 00:00:42.856
-The goal is to understand the relationship between input, process, and output.
+00:00:37.503 --> 00:00:41.028
+This is a simple example of defensive programming.

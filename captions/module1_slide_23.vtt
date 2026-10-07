@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.647
-On this slide, we are focusing on boolean conversion previews decision logic.
+00:00:00.000 --> 00:00:03.422
+Boolean values represent True and False.
 
-00:00:04.647 --> 00:00:09.427
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.422 --> 00:00:08.262
+They become especially important when we start writing conditions and filters.
 
-00:00:09.427 --> 00:00:15.337
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:08.262 --> 00:00:14.757
+Zero converts to False. A nonzero number such as one becomes True.
 
-00:00:15.337 --> 00:00:18.512
-Connect the concept to a small analytics task.
+00:00:14.757 --> 00:00:20.955
+An empty string becomes False, while nonempty text such as “Hello” becomes True.
 
-00:00:18.512 --> 00:00:23.587
-Imagine the value came from a sales file, survey, or operational system.
+00:00:21.516 --> 00:00:25.303
+This gives us a preview of the logic used in the next module.
 
-00:00:23.587 --> 00:00:31.032
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+00:00:25.303 --> 00:00:34.558
+Programs often ask questions such as: does a value exist, is an amount above a threshold, or does a record meet a rule?
 
-00:00:31.032 --> 00:00:32.732
-from the names and output.
-
-00:00:32.732 --> 00:00:36.962
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:36.962 --> 00:00:42.379
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:34.558 --> 00:00:38.350
+Those questions eventually evaluate to True or False.

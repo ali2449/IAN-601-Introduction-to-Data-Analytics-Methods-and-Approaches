@@ -1,28 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.972
-On this slide, we are focusing on print makes results visible.
+00:00:00.000 --> 00:00:06.127
+The print function gives us a quick way to see what the program is doing.
 
-00:00:03.972 --> 00:00:08.782
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:06.127 --> 00:00:09.387
+Here we store a name, age, sales, and costs.
 
-00:00:08.782 --> 00:00:15.057
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.387 --> 00:00:15.312
+The print statements combine labels with values so the output has context.
 
-00:00:15.057 --> 00:00:18.232
-Connect the concept to a small analytics task.
+00:00:15.312 --> 00:00:22.897
+The last line calculates sales minus costs directly, so with one thousand in sales and eight hundred in costs,
 
-00:00:18.232 --> 00:00:23.307
-Imagine the value came from a sales file, survey, or operational system.
+00:00:22.897 --> 00:00:25.002
+the displayed profit is two hundred.
 
-00:00:23.307 --> 00:00:28.322
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+00:00:25.545 --> 00:00:30.762
+Print is simple, but it is extremely useful while learning and debugging.
 
-00:00:28.322 --> 00:00:30.912
-from the names and output.
+00:00:30.762 --> 00:00:37.747
+If you are unsure what a variable contains at a certain point, printing it is often the fastest way to inspect the
 
-00:00:30.912 --> 00:00:36.682
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:36.682 --> 00:00:42.101
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:37.747 --> 00:00:39.095
+program state.

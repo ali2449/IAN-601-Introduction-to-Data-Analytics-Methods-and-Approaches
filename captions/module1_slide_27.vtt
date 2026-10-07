@@ -1,34 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.187
-On this slide, we are focusing on profit and margin.
+00:00:00.000 --> 00:00:04.827
+Here we combine variables, arithmetic, and formatting in one example.
 
-00:00:03.187 --> 00:00:08.177
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.827 --> 00:00:10.652
+Sales are twenty-five hundred dollars and costs are seventeen hundred fifty dollars,
 
-00:00:08.177 --> 00:00:14.397
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.652 --> 00:00:13.852
+so profit is seven hundred fifty dollars.
 
-00:00:14.397 --> 00:00:17.532
-Before clicking Run, predict the output.
+00:00:13.852 --> 00:00:21.176
+Margin is profit divided by sales, which gives zero point three, or thirty percent when formatted.
 
-00:00:17.532 --> 00:00:23.682
-Then run the cell, inspect the result, and change one value or condition at a time.
+00:00:21.776 --> 00:00:25.778
+Profit and margin describe related but different ideas.
 
-00:00:23.682 --> 00:00:27.022
-Rerun it and explain why the output changed.
+00:00:25.778 --> 00:00:27.908
+Profit is a dollar amount.
 
-00:00:27.022 --> 00:00:30.417
-The goal is to understand the relationship between input, process, and output.
+00:00:27.908 --> 00:00:33.038
+Margin is a ratio that tells us what share of sales remains as profit.
 
-00:00:30.417 --> 00:00:35.372
-Connect the concept to a small analytics task.
+00:00:33.038 --> 00:00:36.673
+Increase costs and run the example again.
 
-00:00:35.372 --> 00:00:40.447
-Imagine the value came from a sales file, survey, or operational system.
-
-00:00:40.447 --> 00:00:45.462
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
-
-00:00:45.462 --> 00:00:47.877
-from the names and output.
+00:00:36.673 --> 00:00:39.568
+Both profit and margin should move downward.

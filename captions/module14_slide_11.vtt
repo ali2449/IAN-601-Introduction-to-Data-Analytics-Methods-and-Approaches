@@ -1,31 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.632
-On this slide, we are focusing on avoid leakage.
+00:00:00.000 --> 00:00:08.167
+Data leakage happens when the model receives information during training that would not truly be available when making a
 
-00:00:03.632 --> 00:00:08.287
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:08.167 --> 00:00:08.532
+future prediction.
 
-00:00:08.287 --> 00:00:14.317
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:08.532 --> 00:00:15.217
+A direct example would be accidentally including the target itself—or a variable derived from the future answer—inside
 
-00:00:14.317 --> 00:00:19.827
-Leakage happens when training uses information that would not be available at prediction time.
+00:00:15.217 --> 00:00:16.668
+the feature set.
 
-00:00:19.827 --> 00:00:23.477
-It can make evaluation look unrealistically strong.
+00:00:17.207 --> 00:00:21.149
+Leakage can make evaluation look unrealistically strong.
 
-00:00:23.477 --> 00:00:27.272
-Machine learning is a workflow rather than a single fit command.
+00:00:21.149 --> 00:00:27.054
+Split data before final evaluation, keep target information out of the features,
 
-00:00:27.272 --> 00:00:32.757
-Keep training information separate from evaluation data, compare against a baseline,
+00:00:27.054 --> 00:00:33.934
+and make sure cleaning steps are applied consistently without using test information improperly.
 
-00:00:32.757 --> 00:00:37.227
-and interpret model performance in the context of the real prediction problem.
-
-00:00:37.227 --> 00:00:42.982
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:42.982 --> 00:00:48.402
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:33.934 --> 00:00:40.542
+A model is only useful if its evaluation resembles the conditions in which it will actually be used.

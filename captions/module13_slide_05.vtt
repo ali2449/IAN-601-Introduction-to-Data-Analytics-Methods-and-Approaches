@@ -1,31 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.687
-On this slide, we are focusing on distribution with bins.
+00:00:00.000 --> 00:00:04.042
+A distribution tells us how values are spread across ranges.
 
-00:00:03.687 --> 00:00:08.242
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.042 --> 00:00:11.327
+The code places each number into a bin such as forty to forty-nine or fifty to fifty-nine.
 
-00:00:08.242 --> 00:00:16.742
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:11.327 --> 00:00:15.869
+The number of hash marks represents how many values fall into that interval.
 
-00:00:16.742 --> 00:00:21.962
-A distribution shows how values are spread across ranges and can reveal concentration, skew, gaps,
+00:00:16.609 --> 00:00:23.396
+This is the same basic idea as a histogram, just displayed with text instead of graphical bars.
 
-00:00:21.962 --> 00:00:28.692
-or unusual observations. Before clicking Run, predict the statistic or pattern you expect.
-
-00:00:28.692 --> 00:00:32.497
-After it runs, interpret the result in words.
-
-00:00:32.497 --> 00:00:36.947
-Then change one value and see whether the interpretation changes.
-
-00:00:36.947 --> 00:00:41.157
-Focus on meaning and limitations, not only the calculation.
-
-00:00:41.157 --> 00:00:46.902
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:46.902 --> 00:00:52.318
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:23.396 --> 00:00:30.614
+Look for where the values concentrate and whether the frequencies are balanced or uneven across the ranges.

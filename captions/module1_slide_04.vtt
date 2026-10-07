@@ -1,28 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.892
-On this slide, we are focusing on what is python doing for us?.
+00:00:00.000 --> 00:00:05.592
+Before writing more code, think about what Python is doing for us as analysts.
 
-00:00:04.892 --> 00:00:09.872
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.592 --> 00:00:12.722
+Python lets us describe a repeatable process once and then reuse it whenever new data arrives.
 
-00:00:09.872 --> 00:00:16.082
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:12.722 --> 00:00:19.232
+A simple analytics workflow often looks like this: represent information with variables,
 
-00:00:16.082 --> 00:00:19.287
-Connect the concept to a small analytics task.
+00:00:19.232 --> 00:00:25.022
+transform those values with calculations, and communicate the result with readable output.
 
-00:00:19.287 --> 00:00:24.362
-Imagine the value came from a sales file, survey, or operational system.
+00:00:25.545 --> 00:00:28.432
+Suppose we begin with sales and costs.
 
-00:00:24.362 --> 00:00:29.382
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+00:00:28.432 --> 00:00:34.187
+Those are raw values. We subtract costs from sales to create profit.
 
-00:00:29.382 --> 00:00:31.967
-from the names and output.
+00:00:34.187 --> 00:00:39.182
+Profit is a derived metric because we created it from other values.
 
-00:00:31.967 --> 00:00:37.737
-Before moving on, explain the main idea in one sentence without reading the slide.
+00:00:39.182 --> 00:00:44.827
+Then we display the result so another person can understand it.
 
-00:00:37.737 --> 00:00:43.155
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:44.827 --> 00:00:51.733
+That pattern—raw value, code, derived metric, readable result—comes up again and again in analytics.

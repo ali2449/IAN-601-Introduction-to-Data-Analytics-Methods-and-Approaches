@@ -1,28 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.392
-On this slide, we are focusing on assign several values at once.
+00:00:00.000 --> 00:00:03.487
+Python can assign several values in one line.
 
-00:00:04.392 --> 00:00:09.407
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.487 --> 00:00:11.877
+Here, Jordan goes into employee_name, thirty goes into age, and fifty thousand goes into salary.
 
-00:00:09.407 --> 00:00:15.802
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:11.877 --> 00:00:19.595
+The order matters. The first value is matched with the first variable, the second with the second, and so on.
 
-00:00:15.802 --> 00:00:18.982
-Connect the concept to a small analytics task.
+00:00:20.212 --> 00:00:26.254
+This feature is convenient when the values clearly belong together, but readability still matters.
 
-00:00:18.982 --> 00:00:24.057
-Imagine the value came from a sales file, survey, or operational system.
+00:00:26.254 --> 00:00:31.959
+If one line becomes crowded or confusing, separate assignments are perfectly fine.
 
-00:00:24.057 --> 00:00:29.072
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+00:00:31.959 --> 00:00:39.733
+Run the example, then replace the fictional values with another set and confirm that each variable receives the correct
 
-00:00:29.072 --> 00:00:31.662
-from the names and output.
-
-00:00:31.662 --> 00:00:37.432
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:37.432 --> 00:00:42.848
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:39.733 --> 00:00:40.380
+value.

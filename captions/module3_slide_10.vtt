@@ -1,31 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.052
-On this slide, we are focusing on pass two analytical inputs.
+00:00:00.000 --> 00:00:04.482
+Now the function receives two values: sales and costs.
 
-00:00:04.052 --> 00:00:08.992
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:04.482 --> 00:00:12.542
+When we call profit_report with twelve hundred fifty and nine hundred, those numbers flow into the two parameters.
 
-00:00:08.992 --> 00:00:15.007
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:12.542 --> 00:00:19.037
+The function subtracts costs from sales, giving a profit of three hundred fifty dollars,
 
-00:00:15.007 --> 00:00:18.142
-Before clicking Run, predict the output.
+00:00:19.037 --> 00:00:21.401
+then formats the result as money.
 
-00:00:18.142 --> 00:00:24.292
-Then run the cell, inspect the result, and change one value or condition at a time.
+00:00:22.195 --> 00:00:25.827
+Try a second call with two thousand and sixteen hundred.
 
-00:00:24.292 --> 00:00:27.632
-Rerun it and explain why the output changed.
+00:00:25.827 --> 00:00:30.137
+The same function should produce four hundred dollars in profit.
 
-00:00:27.632 --> 00:00:32.822
-The goal is to understand the relationship between input, process, and output.
-
-00:00:32.822 --> 00:00:36.517
-Think about where this function would appear in a larger project.
-
-00:00:36.517 --> 00:00:44.607
-Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
-
-00:00:44.607 --> 00:00:46.040
-across many rows, files, or notebooks.
+00:00:30.137 --> 00:00:37.311
+This is a common analytics pattern: define the metric once, then reuse it with different records.

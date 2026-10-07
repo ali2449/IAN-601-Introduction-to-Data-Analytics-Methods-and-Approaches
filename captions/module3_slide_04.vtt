@@ -1,31 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.942
-On this slide, we are focusing on why functions matter in analytics.
+00:00:00.000 --> 00:00:05.322
+Functions reduce repetition and make analytical code easier to manage.
 
-00:00:03.942 --> 00:00:10.827
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.322 --> 00:00:10.937
+Without functions, the same formula may be copied into several places.
 
-00:00:10.827 --> 00:00:14.722
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.937 --> 00:00:15.652
+If the rule changes later, every copy has to be updated.
 
-00:00:14.722 --> 00:00:17.997
-A function gives a reusable task a clear name.
+00:00:15.652 --> 00:00:19.338
+With a function, the logic has one clear home.
 
-00:00:17.997 --> 00:00:26.207
-In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.
+00:00:19.868 --> 00:00:23.005
+A name such as get_profit also communicates intent.
 
-00:00:26.207 --> 00:00:29.947
-Think about where this function would appear in a larger project.
+00:00:23.005 --> 00:00:31.520
+It tells the reader what the code is supposed to do before they even inspect the details.
 
-00:00:29.947 --> 00:00:38.037
-Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
-
-00:00:38.037 --> 00:00:39.622
-across many rows, files, or notebooks.
-
-00:00:39.622 --> 00:00:45.392
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:45.392 --> 00:00:50.808
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:31.520 --> 00:00:37.632
+Functions are also easier to test because each small unit can be checked independently.

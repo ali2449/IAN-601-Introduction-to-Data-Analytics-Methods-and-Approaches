@@ -1,629 +1,324 @@
 {
   "module": "module1",
+  "generation_version": "ian620_safe_v4_exact_reference_text_seed1234",
   "filename_prefix": "module1",
-  "source_file": "IAN_601_Module_01_Narration.txt",
-  "voice_consistency_version": 3,
+  "source_file": "IAN_601_Module_01_Narration_Natural_Final.txt",
   "reference_audio": "/home/ali/breeze-tts/voice_reference/course_instructor_consistent_v4.wav",
+  "reference_text_version": "course_instructor_consistent_v4_exact_transcript",
   "reference_text": "Welcome to the course. We will work through each concept carefully, connect the\nideas step by step, and use practical examples to make technical topics easier\nto understand. When we introduce a new method, focus first on the problem it\nsolves and why it is useful. For example, in machine learning, features are the\ninformation we give the model, while the target is what we want it to predict.\nNow consider a simple question: what changes when the data contains missing\nvalues? We will think through the reason and then look at the code. In Python,\nwe can inspect the data, run one small step at a time, and explain what the\nresult means. The goal is to understand the logic, not simply memorize syntax.",
-  "locked_narration_seed": true,
-  "narration_seed": 1234,
-  "long_narration": {
-    "automatic_chunking": true,
-    "max_text_tokens_per_call": 260,
-    "chunk_pause_seconds": 0.38,
-    "manual_break_marker": "[tts-break]",
-    "breeze_max_new_tokens": 1500,
-    "breeze_max_seq_len": 2048
+  "subtitle_method": "tts_break_section_generation",
+  "generation_boundary": "[tts-break]",
+  "instruction_mode": "disabled_to_prevent_spoken_prompt_leakage",
+  "spoken_instruction_sent_to_breeze": false,
+  "audio_settings": {
+    "speech_speed": 0.93,
+    "speed_method": "ffmpeg_atempo_before_vtt_alignment"
   },
-  "subtitle_method": "whole_slide_silence_alignment",
   "caption_settings": {
-    "max_words": 18,
-    "max_chars": 110,
-    "minimum_silence_seconds": 0.2,
-    "boundary_search_window_seconds": 1.4
+    "max_words": 24,
+    "max_chars": 120,
+    "tts_break_pause_seconds": 0.45
   },
   "slides": [
     {
       "slide": 1,
       "title": "Python Fundamentals & Business Context",
-      "transcript": "Welcome to Module 1. We are building the Python foundation that every later analytics module depends on. We will focus on how Python stores values, understands data types, performs calculations, and produces readable output. The goal is not memorizing isolated syntax. The goal is to understand how small pieces of code represent a real analytical idea.",
-      "seed": 1234,
-      "tts_text_tokens": 66,
-      "tts_chunk_count": 1,
-      "tts_chunk_tokens": [
-        66
-      ],
-      "tts_explicit_breaks": 0,
-      "tts_chunk_limit": 260,
-      "stitched_audio": false,
+      "transcript": "Welcome to IAN 601, Introduction to Data Analytics Methods and Approaches. This course is designed to build your data analytics skills step by step, starting with Python fundamentals and gradually moving into practical data analysis.\n\nAcross the fourteen modules, we begin with variables, decisions, functions, and core data structures. Then we move into organizing larger Python programs, more advanced Python techniques, professional coding practices, NumPy, and Pandas. In the later modules, we focus on advanced Pandas, data cleaning and exploratory analysis, statistics and visualization, and finally an introduction to machine learning and working with external data.\n\n[tts-break]\n\nModule 1 is where that foundation begins. We’ll learn how Python stores values, understands data types, performs calculations, and presents results clearly. You do not need to memorize every symbol. Focus on the logic. In analytics, we usually start with data, apply a rule or calculation, and produce a result that helps us answer a question.\n\nAs we go, keep connecting the code to something real. A value might represent sales, cost, age, temperature, or another measurement. By the end of the module, you’ll combine these ideas in a small sales calculator and be able to explain what each line is doing.",
       "wav": "wav/module1_slide_01.wav",
       "audio": "audio/module1_slide_01.mp3",
       "captions": "audio/module1_slide_01.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 2,
       "title": "How to use this slide lesson",
-      "transcript": "Use this lesson actively. Read the idea first and make a prediction before running any code. When a Python cell is available, click Run, inspect the output, and then change one small value or condition. Run it again and explain what changed. This predict, run, modify, and explain cycle is more useful than copying a finished example.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 146,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        68,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Use these slides actively. Read the idea first, pause for a moment, and predict what you think the code will do before you run it.\n\nAfter you run an example, change one value and run it again. Small changes are one of the best ways to understand Python because you can immediately see which part of the output depends on which input.\n\n[tts-break]\n\nFor example, if sales is one thousand dollars, run the calculation once. Then change sales to twelve hundred fifty and see what changes. Ask yourself why the result moved.\n\nThe editor looks like VS Code, but the Python ideas are the same whether you use VS Code, Jupyter Notebook, Google Colab, or another environment.",
       "wav": "wav/module1_slide_02.wav",
       "audio": "audio/module1_slide_02.mp3",
       "captions": "audio/module1_slide_02.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 3,
       "title": "Learning path for Module 1",
-      "transcript": "Use this slide as a roadmap. The ideas are intentionally ordered so later examples build on earlier concepts. As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of treating each method as an isolated command.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 125,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Here is the path we’ll follow. We begin with variables, because variables give names to values. Then we look at data types so Python can distinguish numbers, text, and True or False values.\n\nNext, we use arithmetic to create useful metrics, then we format results so they are easier for people to read. We also look at type conversion because data often arrives as text even when we eventually want to calculate with it.\n\n[tts-break]\n\nEverything builds toward a small sales calculator. If you can follow how a value moves from raw input to calculation and finally to readable output, you have the main idea of this module.",
       "wav": "wav/module1_slide_03.wav",
       "audio": "audio/module1_slide_03.mp3",
       "captions": "audio/module1_slide_03.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 4,
       "title": "What is Python doing for us?",
-      "transcript": "On this slide, we are focusing on what is python doing for us?. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 128,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        50,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Before writing more code, think about what Python is doing for us as analysts. Python lets us describe a repeatable process once and then reuse it whenever new data arrives.\n\nA simple analytics workflow often looks like this: represent information with variables, transform those values with calculations, and communicate the result with readable output.\n\n[tts-break]\n\nSuppose we begin with sales and costs. Those are raw values. We subtract costs from sales to create profit. Profit is a derived metric because we created it from other values. Then we display the result so another person can understand it.\n\nThat pattern—raw value, code, derived metric, readable result—comes up again and again in analytics.",
       "wav": "wav/module1_slide_04.wav",
       "audio": "audio/module1_slide_04.mp3",
       "captions": "audio/module1_slide_04.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 5,
       "title": "Variables store values",
-      "transcript": "On this slide, we are focusing on variables store values. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA variable is a meaningful name connected to a value. Clear names help the code communicate what the data represents, and later calculations can reuse the stored value.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.",
-      "seed": 1234,
-      "tts_text_tokens": 125,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        31,
-        45
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s start with variables. A variable is simply a meaningful name connected to a value.\n\nIf a company has one thousand dollars in sales, we can store that value in a variable named sales. We can do the same with costs. Once those values have names, a formula such as sales minus costs is much easier to understand than a formula made only of numbers.\n\n[tts-break]\n\nGood variable names communicate meaning. Names like monthly_sales, patient_age, or total_cost tell the reader what the data represents. A vague name like x may work, but it makes the code harder to read.\n\nVariables also make code reusable. Change the value, and the same calculation can run again.",
       "wav": "wav/module1_slide_05.wav",
       "audio": "audio/module1_slide_05.mp3",
       "captions": "audio/module1_slide_05.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 6,
       "title": "Code: store values in variables",
-      "transcript": "On this slide, we are focusing on store values in variables. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA variable is a meaningful name connected to a value. Clear names help the code communicate what the data represents, and later calculations can reuse the stored value.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 133,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        31,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s run our first complete example with variables.\n\nSales is one thousand, costs is eight hundred, and profit is calculated by subtracting costs from sales. So before you run the cell, you should already expect profit to be two hundred.\n\nThe print statements simply make those three values visible in the output.\n\n[tts-break]\n\nNow change sales from one thousand to twelve hundred fifty and run the cell again. Notice that you do not need to rewrite the profit formula. Python automatically uses the new value of sales.\n\nThat is a basic but important idea in analytics: the logic can stay the same even when the data changes.",
       "wav": "wav/module1_slide_06.wav",
       "audio": "audio/module1_slide_06.mp3",
       "captions": "audio/module1_slide_06.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 7,
       "title": "Visual: variables become metrics",
-      "transcript": "On this slide, we are focusing on visual: variables become metrics. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA variable is a meaningful name connected to a value. Clear names help the code communicate what the data represents, and later calculations can reuse the stored value.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.",
-      "seed": 1234,
-      "tts_text_tokens": 127,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        31,
-        45
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Now connect the code to the visual. Sales is one thousand dollars, costs are eight hundred dollars, and profit becomes two hundred dollars.\n\nThe key idea is that profit was not directly entered. We created it from the other values. That makes it a derived metric.\n\n[tts-break]\n\nMany familiar measures work the same way. Profit margin, growth rate, average order value, and conversion rate are all built from other values.\n\nIf you change sales or costs, the profit bar should move too. That visual connection helps reinforce how inputs drive derived metrics.",
       "wav": "wav/module1_slide_07.wav",
       "audio": "audio/module1_slide_07.mp3",
       "captions": "audio/module1_slide_07.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 8,
       "title": "Variables can be reassigned",
-      "transcript": "On this slide, we are focusing on variables can be reassigned. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA variable is a meaningful name connected to a value. Clear names help the code communicate what the data represents, and later calculations can reuse the stored value.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.",
-      "seed": 1234,
-      "tts_text_tokens": 127,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        31,
-        45
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A variable does not have to keep the same value forever. Python lets us assign a new value to an existing variable.\n\nAt first, sales is one thousand. After the second assignment, sales becomes fifteen hundred. When Python reaches the second print statement, it uses the most recent value.\n\n[tts-break]\n\nThis is called reassignment. It is common when information changes during a workflow—for example, replacing an estimate with an updated value.\n\nUse reassignment carefully. The value may change, but the variable name should still describe the same kind of information.",
       "wav": "wav/module1_slide_08.wav",
       "audio": "audio/module1_slide_08.mp3",
       "captions": "audio/module1_slide_08.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 9,
       "title": "Assign several values at once",
-      "transcript": "On this slide, we are focusing on assign several values at once. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 127,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Python can assign several values in one line. Here, Jordan goes into employee_name, thirty goes into age, and fifty thousand goes into salary.\n\nThe order matters. The first value is matched with the first variable, the second with the second, and so on.\n\n[tts-break]\n\nThis feature is convenient when the values clearly belong together, but readability still matters. If one line becomes crowded or confusing, separate assignments are perfectly fine.\n\nRun the example, then replace the fictional values with another set and confirm that each variable receives the correct value.",
       "wav": "wav/module1_slide_09.wav",
       "audio": "audio/module1_slide_09.mp3",
       "captions": "audio/module1_slide_09.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 10,
       "title": "Variable naming rules and habits",
-      "transcript": "On this slide, we are focusing on variable naming rules and habits. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA variable is a meaningful name connected to a value. Clear names help the code communicate what the data represents, and later calculations can reuse the stored value.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.",
-      "seed": 1234,
-      "tts_text_tokens": 127,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        31,
-        45
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Good variable names make code easier to understand. Monthly_sales is descriptive, and patient_age is clear because the words are separated with an underscore.\n\nShort names such as ms might save a few keystrokes, but they force the reader to guess what the variable means.\n\n[tts-break]\n\nThere are also syntax rules. A variable name cannot begin with a number, and it cannot contain spaces. Python programmers commonly use lowercase words separated by underscores.\n\nA useful test is to imagine opening your code again six months from now. If the names still make sense without extra explanation, they are probably good names.",
       "wav": "wav/module1_slide_10.wav",
       "audio": "audio/module1_slide_10.mp3",
       "captions": "audio/module1_slide_10.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 11,
       "title": "Data types tell Python what values mean",
-      "transcript": "On this slide, we are focusing on data types tell python what values mean. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA data type tells Python what a value means and which operations are valid. Numeric values support arithmetic, strings represent text, and Boolean values represent True or False logic.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.",
-      "seed": 1234,
-      "tts_text_tokens": 131,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        51,
-        33,
-        45
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Now we move from variable names to data types. A data type tells Python what kind of value it is working with and what operations make sense.\n\nAn integer is a whole number. A float includes a decimal. A string represents text. A Boolean stores True or False.\n\n[tts-break]\n\nThe meaning matters. Twelve visits is naturally an integer because it is a count. Nineteen point ninety-nine is a float when it represents a price. A city name is text, and an active flag is Boolean.\n\nBefore calculating with any value, think about what it represents—not just what it looks like.",
       "wav": "wav/module1_slide_11.wav",
       "audio": "audio/module1_slide_11.mp3",
       "captions": "audio/module1_slide_11.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 12,
       "title": "Code: inspect data types",
-      "transcript": "On this slide, we are focusing on inspect data types. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA data type tells Python what a value means and which operations are valid. Numeric values support arithmetic, strings represent text, and Boolean values represent True or False logic.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 134,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        33,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s inspect a few values with Python’s type function.\n\nAge is thirty, so Python sees an integer. Height is five point nine, so that is a float. Jordan is text, so the type is string. True is a Boolean.\n\nRun the cell and verify those four results.\n\n[tts-break]\n\nThen put quotation marks around thirty. To us it still looks like the number thirty, but Python now sees text. That small change can affect whether arithmetic works correctly.\n\nChecking types is one of the simplest ways to diagnose confusing behavior in a data workflow.",
       "wav": "wav/module1_slide_12.wav",
       "audio": "audio/module1_slide_12.mp3",
       "captions": "audio/module1_slide_12.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 13,
       "title": "Some numbers should stay as text",
-      "transcript": "On this slide, we are focusing on some numbers should stay as text. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 128,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        50,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Not every value made of digits should be numeric. Some values are identifiers rather than quantities.\n\nTake employee ID zero zero one two five. We do not add or average employee IDs. We use them to identify records. If we store that ID as a number, the leading zeros disappear.\n\n[tts-break]\n\nThe same issue appears with ZIP codes, account numbers, product codes, and many other identifiers.\n\nA better question than “Does this value contain digits?” is “Do I plan to calculate with this value?” If not, and the exact formatting matters, text is often the right choice.",
       "wav": "wav/module1_slide_13.wav",
       "audio": "audio/module1_slide_13.mp3",
       "captions": "audio/module1_slide_13.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 14,
       "title": "Arithmetic creates derived metrics",
-      "transcript": "On this slide, we are focusing on arithmetic creates derived metrics. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nArithmetic turns raw values into derived metrics such as profit, margin, tax, rates, and growth. Understand the formula before trusting the output.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 155,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        48,
-        28,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Arithmetic lets us turn raw values into useful metrics.\n\nSales minus costs gives profit. Profit divided by sales can give a margin. Profit minus tax can give net profit. These are derived metrics because they are created from other values.\n\n[tts-break]\n\nPython uses familiar operators: plus for addition, minus for subtraction, an asterisk for multiplication, a forward slash for division, and two asterisks for exponentiation.\n\nThe formula matters more than the syntax. Python can run a perfectly valid calculation that represents the wrong business idea, so always understand the meaning of the metric before trusting the result.",
       "wav": "wav/module1_slide_14.wav",
       "audio": "audio/module1_slide_14.mp3",
       "captions": "audio/module1_slide_14.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 15,
       "title": "Code: calculate profit and tax",
-      "transcript": "On this slide, we are focusing on calculate profit and tax. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.",
-      "seed": 1234,
-      "tts_text_tokens": 147,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        52,
-        45
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s trace this calculation carefully.\n\nSales is one thousand and costs are eight hundred, so profit is two hundred. Tax is five percent of profit. Five percent is zero point zero five, so the tax becomes ten dollars. Net profit is two hundred minus ten, which gives one hundred ninety dollars.\n\n[tts-break]\n\nNotice the dependency chain. Net profit depends on tax. Tax depends on profit. Profit depends on sales and costs.\n\nThat kind of chain is common in analytics. Change the tax rate to ten percent, predict the new result, and then run the cell to check yourself.",
       "wav": "wav/module1_slide_15.wav",
       "audio": "audio/module1_slide_15.mp3",
       "captions": "audio/module1_slide_15.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 16,
       "title": "Three useful operators",
-      "transcript": "On this slide, we are focusing on three useful operators. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 125,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Here are three operators that are easy to overlook but very useful.\n\nTwo asterisks mean exponentiation, so two to the power of three equals eight. Double forward slashes give whole-number division. One hundred twenty-five floor-divided by sixty gives two complete groups of sixty.\n\nThe percent sign gives the remainder, so one hundred twenty-five modulo sixty gives five.\n\n[tts-break]\n\nFloor division and modulo often work together. For one hundred twenty-five minutes, floor division tells us there are two full hours and modulo tells us five minutes remain.\n\nRun the example and make sure the logic makes sense, not just the output.",
       "wav": "wav/module1_slide_16.wav",
       "audio": "audio/module1_slide_16.mp3",
       "captions": "audio/module1_slide_16.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 17,
       "title": "Parentheses control calculation order",
-      "transcript": "On this slide, we are focusing on parentheses control calculation order. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nParentheses make the intended calculation order explicit. Code can run without an error and still be analytically wrong if the formula is grouped incorrectly.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.",
-      "seed": 1234,
-      "tts_text_tokens": 122,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        27,
-        45
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Calculation order matters. Python follows the normal rules of arithmetic, so multiplication happens before addition unless parentheses change the grouping.\n\nTen plus five times two becomes twenty because five times two happens first. But when we write parentheses around ten plus five, Python calculates fifteen first, then multiplies by two to get thirty.\n\n[tts-break]\n\nBoth expressions are valid. Neither produces an error. The danger is that a wrong formula can still run successfully.\n\nUse parentheses when they make the intended calculation clearer for you and for anyone else reading the code.",
       "wav": "wav/module1_slide_17.wav",
       "audio": "audio/module1_slide_17.mp3",
       "captions": "audio/module1_slide_17.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 18,
       "title": "Print makes results visible",
-      "transcript": "On this slide, we are focusing on print makes results visible. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 126,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "The print function gives us a quick way to see what the program is doing.\n\nHere we store a name, age, sales, and costs. The print statements combine labels with values so the output has context.\n\nThe last line calculates sales minus costs directly, so with one thousand in sales and eight hundred in costs, the displayed profit is two hundred.\n\n[tts-break]\n\nPrint is simple, but it is extremely useful while learning and debugging. If you are unsure what a variable contains at a certain point, printing it is often the fastest way to inspect the program state.",
       "wav": "wav/module1_slide_18.wav",
       "audio": "audio/module1_slide_18.mp3",
       "captions": "audio/module1_slide_18.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 19,
       "title": "f-strings create readable messages",
-      "transcript": "On this slide, we are focusing on f-strings create readable messages. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nF-strings combine labels and values into readable messages. This is useful when turning a calculation into output another person can understand.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 154,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        50,
-        25,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Now we make output cleaner with f-strings.\n\nAn f-string begins with the letter f before the quotation mark. Curly braces mark the places where Python should insert variable values or expressions.\n\nPatient A and age forty-five are inserted directly into the text. For temperature, colon dot one f tells Python to display one digit after the decimal point.\n\n[tts-break]\n\nSo ninety-eight point six three four five becomes ninety-eight point six in the output.\n\nThe important idea is that good analytical output includes both the value and enough context for another person to understand it.",
       "wav": "wav/module1_slide_19.wav",
       "audio": "audio/module1_slide_19.mp3",
       "captions": "audio/module1_slide_19.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 20,
       "title": "Format money and percentages",
-      "transcript": "On this slide, we are focusing on format money and percentages. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nFormatting changes presentation, not the underlying value. Keep the stored value numeric and add currency or percentage formatting only when displaying it.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 152,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        48,
-        25,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Formatting changes how a number is displayed, not the numeric value itself.\n\nFor revenue, comma dot two f adds thousands separators and keeps two digits after the decimal point. That makes large monetary values much easier to read.\n\nFor growth, percent formatting turns zero point one five six seven eight into fifteen point six eight percent.\n\n[tts-break]\n\nDifferent outputs call for different formats. Money usually needs commas and decimals. Rates often make more sense as percentages. Scientific notation is useful for very large or very small numbers.\n\nGood formatting helps the reader interpret the result quickly.",
       "wav": "wav/module1_slide_20.wav",
       "audio": "audio/module1_slide_20.mp3",
       "captions": "audio/module1_slide_20.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 21,
       "title": "Input usually starts as text",
-      "transcript": "On this slide, we are focusing on input usually starts as text. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nValues from forms, keyboards, files, and APIs often arrive as text. Inspect and convert them deliberately before performing arithmetic.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 152,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        49,
-        24,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A common source of confusion is that data often arrives as text. Forms, CSV files, APIs, and user input frequently give us strings even when the characters look numeric.\n\nThe text “29.99” looks like a price to us, but Python may still treat it as a string.\n\n[tts-break]\n\nBefore doing arithmetic, we convert the text to an appropriate numeric type. Float is useful for decimal values, while int is useful for whole numbers.\n\nThe pattern is simple: receive text, convert it, then calculate.",
       "wav": "wav/module1_slide_21.wav",
       "audio": "audio/module1_slide_21.mp3",
       "captions": "audio/module1_slide_21.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 22,
       "title": "Code: convert text into numbers",
-      "transcript": "On this slide, we are focusing on convert text into numbers. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.",
-      "seed": 1234,
-      "tts_text_tokens": 147,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        52,
-        45
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s apply that conversion pattern.\n\nPrice begins as the text “29.99” and quantity begins as the text “5”. Float converts the price to a decimal number. Int converts the quantity to a whole number.\n\nNow Python can multiply them. Twenty-nine dollars and ninety-nine cents times five gives one hundred forty-nine dollars and ninety-five cents.\n\n[tts-break]\n\nThe final f-string formats that number as money.\n\nChange the quantity from five to eight, predict the new total, and then run the code. This is a very typical data-cleaning step.",
       "wav": "wav/module1_slide_22.wav",
       "audio": "audio/module1_slide_22.mp3",
       "captions": "audio/module1_slide_22.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 23,
       "title": "Boolean conversion previews decision logic",
-      "transcript": "On this slide, we are focusing on boolean conversion previews decision logic. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 127,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Boolean values represent True and False. They become especially important when we start writing conditions and filters.\n\nZero converts to False. A nonzero number such as one becomes True. An empty string becomes False, while nonempty text such as “Hello” becomes True.\n\n[tts-break]\n\nThis gives us a preview of the logic used in the next module. Programs often ask questions such as: does a value exist, is an amount above a threshold, or does a record meet a rule?\n\nThose questions eventually evaluate to True or False.",
       "wav": "wav/module1_slide_23.wav",
       "audio": "audio/module1_slide_23.mp3",
       "captions": "audio/module1_slide_23.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 24,
       "title": "Preview a conversion error",
-      "transcript": "On this slide, we are focusing on preview a conversion error. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA conversion error tells us the input does not satisfy our assumption. Real analytical workflows validate messy input instead of silently pretending it is correct.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.",
-      "seed": 1234,
-      "tts_text_tokens": 122,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        27,
-        45
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Now consider what happens when the text cannot be converted to a number.\n\nThe variable contains “abc”. Calling float on that text would fail because those characters do not represent a numeric value.\n\nThe example performs a simple check first. It removes one decimal point if there is one, then uses isdigit to see whether the remaining characters are digits.\n\n[tts-break]\n\nWith “abc”, the condition is false, so the program prints a warning instead of attempting the conversion.\n\nThis is only a simple preview of validation. Real data can contain negative signs, spaces, commas, missing values, and other complications. The key idea is to check assumptions before trusting incoming data.",
       "wav": "wav/module1_slide_24.wav",
       "audio": "audio/module1_slide_24.mp3",
       "captions": "audio/module1_slide_24.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 25,
       "title": "Practice: small tasks",
-      "transcript": "Treat these as guided practice rather than a checklist to rush through. Solve one task at a time, predict what Python should do, and explain your reasoning before running the code. If the result differs from the prediction, inspect intermediate values instead of immediately replacing your work.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 131,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        53,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Now it is time to combine the ideas in short exercises.\n\nStart by creating variables for a fictional patient and printing them. Then inspect types for an identifier, an amount, and a Boolean flag. After that, calculate something simple such as area and perimeter.\n\n[tts-break]\n\nMove next to a revenue statement with formatted money, and then calculate profit and margin from sales and costs.\n\nDo not rush through the tasks. For each one, explain what the variables represent, why their types make sense, and what the output means.",
       "wav": "wav/module1_slide_25.wav",
       "audio": "audio/module1_slide_25.mp3",
       "captions": "audio/module1_slide_25.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 26,
       "title": "Practice code: patient variables",
-      "transcript": "On this slide, we are focusing on patient variables. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA variable is a meaningful name connected to a value. Clear names help the code communicate what the data represents, and later calculations can reuse the stored value.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 131,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        46,
-        31,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "This practice example represents one fictional patient record with four different data types.\n\nPatient_label is text, age is an integer, temperature is a float, and is_follow_up is Boolean. The f-strings turn those values into readable output.\n\n[tts-break]\n\nRun the example once, then change the values. As you edit, ask why each type makes sense. You would not average a patient label, but averaging temperatures could be meaningful because temperature is numeric.\n\nThinking about meaning and type together is an important data habit.",
       "wav": "wav/module1_slide_26.wav",
       "audio": "audio/module1_slide_26.mp3",
       "captions": "audio/module1_slide_26.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 27,
       "title": "Practice code: profit and margin",
-      "transcript": "On this slide, we are focusing on profit and margin. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.",
-      "seed": 1234,
-      "tts_text_tokens": 146,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        52,
-        45
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Here we combine variables, arithmetic, and formatting in one example.\n\nSales are twenty-five hundred dollars and costs are seventeen hundred fifty dollars, so profit is seven hundred fifty dollars. Margin is profit divided by sales, which gives zero point three, or thirty percent when formatted.\n\n[tts-break]\n\nProfit and margin describe related but different ideas. Profit is a dollar amount. Margin is a ratio that tells us what share of sales remains as profit.\n\nIncrease costs and run the example again. Both profit and margin should move downward.",
       "wav": "wav/module1_slide_27.wav",
       "audio": "audio/module1_slide_27.mp3",
       "captions": "audio/module1_slide_27.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 28,
       "title": "Mini project: simple sales calculator",
-      "transcript": "On this slide, we are focusing on simple sales calculator. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.",
-      "seed": 1234,
-      "tts_text_tokens": 146,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        52,
-        45
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "This mini project brings the whole module together.\n\nSales are forty-two hundred dollars, costs are thirty-one hundred dollars, and the tax rate is six percent. Profit is eleven hundred. Tax is sixty-six. Net profit becomes one thousand thirty-four dollars.\n\nThen net profit is divided by sales to get a net margin of about twenty-four point six percent.\n\n[tts-break]\n\nNotice how many Module 1 ideas appear here: meaningful variables, numeric types, arithmetic, derived metrics, f-strings, money formatting, and percentages.\n\nChange one input, predict which outputs should move, and then run the code to verify your reasoning.",
       "wav": "wav/module1_slide_28.wav",
       "audio": "audio/module1_slide_28.mp3",
       "captions": "audio/module1_slide_28.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 29,
       "title": "Self-check",
-      "transcript": "Use this self-check without looking back at the code first. Explain the main concepts in your own words and give one small example. If you can explain why a pattern works and when you would use it, that is stronger evidence of understanding than remembering the exact syntax.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 132,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        54,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Use these questions as a quick check before finishing the module.\n\nCan you explain what a variable is? Can you tell the difference between an integer, float, string, and Boolean? Can you trace a calculation from input values to a final result?\n\n[tts-break]\n\nAlso think about formatting and conversion. Why would we display a decimal as a percentage? Why might the text “29.99” need conversion before arithmetic?\n\nYou do not need to memorize every symbol yet. What matters is understanding the concepts well enough to recognize what Python needs.",
       "wav": "wav/module1_slide_29.wav",
       "audio": "audio/module1_slide_29.mp3",
       "captions": "audio/module1_slide_29.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 30,
       "title": "Summary",
-      "transcript": "This slide brings Module 1 together. Review the patterns you can now recognize and reuse. Focus on the decisions behind the syntax: what structure or method fits the problem, what assumptions are being made, and what you should check before trusting the result.\n\n[tts-break]\n\nConnect the concept to a small analytics task. Imagine the value came from a sales file, survey, or operational system. Ask whether Python is interpreting it correctly and whether another person could understand the calculation from the names and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 128,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        50,
-        45,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s bring the main ideas together.\n\nVariables give names to values. Data types tell Python what those values mean. Arithmetic creates derived metrics. Formatting helps us communicate results clearly. Type conversion helps when data arrives in the wrong form for calculation.\n\n[tts-break]\n\nThe larger pattern is simple: store the data, understand its type, transform it, and communicate the result.\n\nNext, we add decisions and repetition with if statements, for loops, and while loops.\n\n[tts-break]\n\nIn Module 2, we’ll build directly on this foundation by giving Python the ability to make decisions and repeat work. You’ll use conditions, if statements, for loops, and while loops to classify values, apply rules, and process more than one observation at a time. That is where your programs begin to behave more like real analytical workflows.",
       "wav": "wav/module1_slide_30.wav",
       "audio": "audio/module1_slide_30.mp3",
       "captions": "audio/module1_slide_30.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     }
   ]
 }

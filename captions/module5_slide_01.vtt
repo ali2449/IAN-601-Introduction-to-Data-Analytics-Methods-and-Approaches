@@ -1,13 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.432
-Welcome to Module 5. We will add dictionaries and sets to our Python toolkit.
+00:00:00.000 --> 00:00:06.222
+Welcome to Module 5. Lists and tuples organize values by position.
 
-00:00:05.432 --> 00:00:12.582
-Dictionaries store labeled information using key-value pairs, while sets help us work with unique values,
+00:00:06.222 --> 00:00:09.872
+Dictionaries and sets give us two new ideas: labels and uniqueness.
 
-00:00:12.582 --> 00:00:17.012
-membership, and overlap. A set stores unique values.
+00:00:09.872 --> 00:00:19.147
+A dictionary stores key-value pairs, so instead of remembering that a value is at position two,
 
-00:00:17.012 --> 00:00:23.198
-It is useful for distinct categories, membership tests, and comparing overlap between groups.
+00:00:19.147 --> 00:00:22.152
+we can retrieve it by a meaningful label.
+
+00:00:22.152 --> 00:00:25.457
+A set automatically keeps unique values.
+
+00:00:26.068 --> 00:00:34.803
+These structures are extremely useful for records, category counts, lookup tables, unique IDs, and data-cleaning tasks.

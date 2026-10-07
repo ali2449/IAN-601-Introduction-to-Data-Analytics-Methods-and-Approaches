@@ -1,28 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.362
-On this slide, we are focusing on convert data types.
+00:00:00.000 --> 00:00:06.152
+Numeric values stored as text need conversion before reliable numerical analysis.
 
-00:00:03.362 --> 00:00:07.962
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:06.152 --> 00:00:11.217
+The amount column contains “45”, “72”, “missing”, and “91”.
 
-00:00:07.962 --> 00:00:14.007
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:11.217 --> 00:00:15.872
+Pd dot to_numeric attempts to convert them.
 
-00:00:14.007 --> 00:00:17.877
-Numbers stored as text cannot be analyzed reliably.
+00:00:15.872 --> 00:00:24.986
+Errors equals coerce turns anything that cannot be converted into NaN instead of raising an exception.
 
-00:00:17.877 --> 00:00:23.757
-Convert deliberately and inspect values that fail conversion.
+00:00:25.461 --> 00:00:30.643
+After conversion, the word “missing” becomes a missing numeric value.
 
-00:00:23.757 --> 00:00:26.032
-Before clicking Run, predict how the table should change.
-
-00:00:26.032 --> 00:00:31.562
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:31.562 --> 00:00:37.007
-or flags that matter. Change one input and rerun it.
-
-00:00:37.007 --> 00:00:43.185
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
+00:00:30.643 --> 00:00:36.528
+That makes the problem visible and lets us handle it using standard missing-data tools.

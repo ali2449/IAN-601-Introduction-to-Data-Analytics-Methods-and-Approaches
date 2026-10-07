@@ -1,31 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.332
-On this slide, we are focusing on variables store values.
+00:00:00.000 --> 00:00:06.217
+Let’s start with variables. A variable is simply a meaningful name connected to a value.
 
-00:00:04.332 --> 00:00:09.357
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:06.217 --> 00:00:13.147
+If a company has one thousand dollars in sales, we can store that value in a variable named sales.
 
-00:00:09.357 --> 00:00:15.807
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:13.147 --> 00:00:15.672
+We can do the same with costs.
 
-00:00:15.807 --> 00:00:19.477
-A variable is a meaningful name connected to a value.
+00:00:15.672 --> 00:00:23.662
+Once those values have names, a formula such as sales minus costs is much easier to understand than a formula made only
 
-00:00:19.477 --> 00:00:23.407
-Clear names help the code communicate what the data represents,
+00:00:23.662 --> 00:00:25.444
+of numbers.
 
-00:00:23.407 --> 00:00:26.752
-and later calculations can reuse the stored value.
+00:00:25.894 --> 00:00:28.546
+Good variable names communicate meaning.
 
-00:00:26.752 --> 00:00:29.932
-Connect the concept to a small analytics task.
+00:00:28.546 --> 00:00:35.336
+Names like monthly_sales, patient_age, or total_cost tell the reader what the data represents.
 
-00:00:29.932 --> 00:00:35.007
-Imagine the value came from a sales file, survey, or operational system.
+00:00:35.336 --> 00:00:43.121
+A vague name like x may work, but it makes the code harder to read.
 
-00:00:35.007 --> 00:00:40.022
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+00:00:43.121 --> 00:00:46.416
+Variables also make code reusable.
 
-00:00:40.022 --> 00:00:42.439
-from the names and output.
+00:00:46.416 --> 00:00:50.046
+Change the value, and the same calculation can run again.

@@ -1,28 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.022
-Use this lesson actively. Read the idea first and make a prediction before running any code.
+00:00:00.000 --> 00:00:04.827
+Treat each example as a small workflow rather than an isolated command.
 
-00:00:06.022 --> 00:00:10.677
-When a Python cell is available, click Run, inspect the output,
+00:00:04.827 --> 00:00:11.982
+Before you run a cell, look at the starting table and predict what the shape or columns should look like afterward.
 
-00:00:10.677 --> 00:00:13.632
-and then change one small value or condition.
+00:00:11.982 --> 00:00:15.598
+Then run the code and compare the result with your expectation.
 
-00:00:13.632 --> 00:00:16.432
-Run it again and explain what changed.
+00:00:16.091 --> 00:00:20.783
+Change one value, category, or condition and run it again.
 
-00:00:16.432 --> 00:00:22.582
-This predict, run, modify, and explain cycle is more useful than copying a finished example.
-
-00:00:22.582 --> 00:00:29.202
-In a real Pandas workflow, check the shape and meaning of the DataFrame after important transformations.
-
-00:00:29.202 --> 00:00:35.087
-Compact code is useful only when another analyst can still understand what each step changes.
-
-00:00:35.087 --> 00:00:40.847
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:40.847 --> 00:00:46.266
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:20.783 --> 00:00:26.183
+Pandas becomes much easier when you can visualize how each step changes the table.

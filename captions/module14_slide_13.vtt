@@ -1,28 +1,43 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.692
-This slide brings Module 14 together.
+00:00:00.000 --> 00:00:02.122
+Let’s finish with the full workflow.
 
-00:00:02.692 --> 00:00:06.337
-Review the patterns you can now recognize and reuse.
+00:00:02.122 --> 00:00:05.507
+Read the data. Separate features and target.
 
-00:00:06.337 --> 00:00:11.772
-Focus on the decisions behind the syntax: what structure or method fits the problem,
+00:00:05.507 --> 00:00:10.067
+Split before evaluation. Train a model on the training set.
 
-00:00:11.772 --> 00:00:16.322
-what assumptions are being made, and what you should check before trusting the result.
+00:00:10.067 --> 00:00:12.947
+Evaluate on unseen test rows.
 
-00:00:16.322 --> 00:00:20.117
-Machine learning is a workflow rather than a single fit command.
+00:00:12.947 --> 00:00:15.412
+Compare performance with a baseline.
 
-00:00:20.117 --> 00:00:25.602
-Keep training information separate from evaluation data, compare against a baseline,
+00:00:15.412 --> 00:00:19.059
+Make new predictions carefully, and watch for leakage.
 
-00:00:25.602 --> 00:00:30.067
-and interpret model performance in the context of the real prediction problem.
+00:00:19.533 --> 00:00:24.005
+You now have a first end-to-end machine learning workflow in Python.
 
-00:00:30.067 --> 00:00:35.827
-Before moving on, explain the main idea in one sentence without reading the slide.
+00:00:24.005 --> 00:00:32.710
+The next step in a dedicated machine learning course would be deeper work on preprocessing, model selection, validation,
 
-00:00:35.827 --> 00:00:41.248
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:32.710 --> 00:00:36.461
+metrics, tuning, and responsible deployment.
+
+00:00:36.916 --> 00:00:42.833
+This is the final module in the course, so there is not another numbered module after this one.
+
+00:00:42.833 --> 00:00:50.828
+The next step is to bring the full workflow together in your own analytics work: obtain data, prepare it carefully,
+
+00:00:50.828 --> 00:00:58.923
+explore it, summarize it, communicate what you find, and use predictive methods only when they fit the question.
+
+00:00:58.923 --> 00:01:05.928
+The goal is not simply to know individual Python commands, but to be able to choose and connect the right methods for a
+
+00:01:05.928 --> 00:01:07.628
+complete analytical problem.

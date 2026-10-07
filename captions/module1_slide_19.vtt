@@ -1,34 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.327
-On this slide, we are focusing on f-strings create readable messages.
+00:00:00.000 --> 00:00:02.952
+Now we make output cleaner with f-strings.
 
-00:00:04.327 --> 00:00:09.002
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.952 --> 00:00:07.642
+An f-string begins with the letter f before the quotation mark.
 
-00:00:09.002 --> 00:00:15.047
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:07.642 --> 00:00:15.802
+Curly braces mark the places where Python should insert variable values or expressions.
 
-00:00:15.047 --> 00:00:19.082
-F-strings combine labels and values into readable messages.
+00:00:15.802 --> 00:00:20.427
+Patient A and age forty-five are inserted directly into the text.
 
-00:00:19.082 --> 00:00:23.977
-This is useful when turning a calculation into output another person can understand.
+00:00:20.427 --> 00:00:27.247
+For temperature, colon dot one f tells Python to display one digit after the decimal point.
 
-00:00:23.977 --> 00:00:27.167
-Connect the concept to a small analytics task.
+00:00:27.787 --> 00:00:34.174
+So ninety-eight point six three four five becomes ninety-eight point six in the output.
 
-00:00:27.167 --> 00:00:32.237
-Imagine the value came from a sales file, survey, or operational system.
+00:00:34.174 --> 00:00:41.229
+The important idea is that good analytical output includes both the value and enough context for another person to
 
-00:00:32.237 --> 00:00:39.652
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
-
-00:00:39.652 --> 00:00:41.387
-from the names and output.
-
-00:00:41.387 --> 00:00:45.617
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:45.617 --> 00:00:51.034
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:41.229 --> 00:00:43.150
+understand it.

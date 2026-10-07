@@ -1,34 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.782
-On this slide, we are focusing on correlation.
+00:00:00.000 --> 00:00:07.617
+Correlation measures the strength and direction of a linear relationship between two numeric variables.
 
-00:00:02.782 --> 00:00:07.247
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:07.617 --> 00:00:14.512
+Here hours studied increases as score increases, so we expect a strong positive correlation.
 
-00:00:07.247 --> 00:00:12.917
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:14.512 --> 00:00:20.025
+A value close to one indicates a strong positive linear relationship.
 
-00:00:12.917 --> 00:00:17.842
-Correlation describes the direction and strength of a linear relationship.
+00:00:20.475 --> 00:00:23.377
+But correlation does not prove causation.
 
-00:00:17.842 --> 00:00:22.732
-It does not prove that one variable causes the other.
+00:00:23.377 --> 00:00:30.357
+Two variables can move together because of other factors, reverse direction, or coincidence.
 
-00:00:22.732 --> 00:00:27.197
-Before clicking Run, predict the statistic or pattern you expect.
-
-00:00:27.197 --> 00:00:29.477
-After it runs, interpret the result in words.
-
-00:00:29.477 --> 00:00:33.927
-Then change one value and see whether the interpretation changes.
-
-00:00:33.927 --> 00:00:38.137
-Focus on meaning and limitations, not only the calculation.
-
-00:00:38.137 --> 00:00:43.882
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:43.882 --> 00:00:49.298
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:30.357 --> 00:00:37.090
+Use correlation as evidence of association, not as proof that one variable causes the other.

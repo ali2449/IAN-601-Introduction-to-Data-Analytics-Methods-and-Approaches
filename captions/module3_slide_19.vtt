@@ -1,28 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.877
-Treat these as guided practice rather than a checklist to rush through.
+00:00:00.000 --> 00:00:03.377
+Use this practice ladder to build skill gradually.
 
-00:00:03.877 --> 00:00:08.372
-Solve one task at a time, predict what Python should do,
+00:00:03.377 --> 00:00:09.452
+Start with a no-parameter function, then add one parameter, then return a value.
 
-00:00:08.372 --> 00:00:11.612
-and explain your reasoning before running the code.
+00:00:09.452 --> 00:00:17.535
+After that, practice handling a predictable error and combine defaults, documentation, and return values.
 
-00:00:11.612 --> 00:00:18.482
-If the result differs from the prediction, inspect intermediate values instead of immediately replacing your
+00:00:17.985 --> 00:00:24.332
+At every level, explain the function in terms of input, process, and output.
 
-00:00:18.482 --> 00:00:22.182
-work. Think about where this function would appear in a larger project.
-
-00:00:22.182 --> 00:00:30.267
-Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
-
-00:00:30.267 --> 00:00:31.862
-across many rows, files, or notebooks.
-
-00:00:31.862 --> 00:00:37.622
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:37.622 --> 00:00:43.042
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:24.332 --> 00:00:28.633
+That explanation is more important than memorizing syntax.

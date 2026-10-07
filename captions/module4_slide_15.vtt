@@ -1,25 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.492
-On this slide, we are focusing on choose the right sequence.
+00:00:00.000 --> 00:00:05.622
+The choice between a list and a tuple depends on how you expect the data to behave.
 
-00:00:03.492 --> 00:00:08.262
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.622 --> 00:00:10.462
+Use a list when values may be added, removed, sorted, or updated.
 
-00:00:08.262 --> 00:00:14.547
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.462 --> 00:00:19.062
+Use a tuple when the values form a fixed record or when you want to return several results that belong together.
 
-00:00:14.547 --> 00:00:18.422
-Think of the sequence as a small collection of observations.
+00:00:19.873 --> 00:00:26.165
+A simple rule is: lists are flexible collections; tuples are fixed records.
 
-00:00:18.422 --> 00:00:25.122
-Ask whether order matters, whether values need to change, and whether you need one item, a range,
-
-00:00:25.122 --> 00:00:27.507
-or a summary of the entire collection.
-
-00:00:27.507 --> 00:00:33.267
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:33.267 --> 00:00:38.684
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:26.165 --> 00:00:29.490
+That rule will cover many beginner use cases.

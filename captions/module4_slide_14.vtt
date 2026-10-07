@@ -1,28 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.792
-On this slide, we are focusing on list + tuple capstone.
+00:00:00.000 --> 00:00:05.167
+This example combines a list, a function, and a tuple return value.
 
-00:00:03.792 --> 00:00:08.612
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.167 --> 00:00:09.507
+Summarize_range receives a list of weekly sales.
 
-00:00:08.612 --> 00:00:14.687
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.507 --> 00:00:14.937
+It finds the lowest value, the highest value, and the spread between them.
 
-00:00:14.687 --> 00:00:19.132
-A tuple is ordered like a list but is intended to stay fixed.
+00:00:14.937 --> 00:00:18.802
+Those three results are returned together as a tuple.
 
-00:00:19.132 --> 00:00:23.637
-It works well for compact records whose positions should not change.
+00:00:18.802 --> 00:00:24.682
+For the current data, the low is thirty-nine hundred, the high is sixty-one hundred,
 
-00:00:23.637 --> 00:00:26.777
-Before clicking Run, predict the output.
+00:00:24.682 --> 00:00:26.746
+and the range is twenty-two hundred.
 
-00:00:26.777 --> 00:00:32.927
-Then run the cell, inspect the result, and change one value or condition at a time.
+00:00:27.436 --> 00:00:31.693
+The caller then unpacks those results into three variables.
 
-00:00:32.927 --> 00:00:36.272
-Rerun it and explain why the output changed.
-
-00:00:36.272 --> 00:00:41.284
-The goal is to understand the relationship between input, process, and output.
+00:00:31.693 --> 00:00:35.963
+This is a clean way to package several related summary values.

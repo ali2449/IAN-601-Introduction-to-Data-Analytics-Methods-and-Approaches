@@ -1,25 +1,13 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:01.807
-Use this slide as a roadmap.
+00:00:00.008 --> 00:00:08.257
+We’ll start with method chaining, which connects DataFrame operations into one readable sequence.
 
-00:00:01.807 --> 00:00:07.152
-The ideas are intentionally ordered so later examples build on earlier concepts.
+00:00:08.257 --> 00:00:13.462
+Then we’ll create pivot tables, reshape wide data into long data, extract features from dates,
 
-00:00:07.152 --> 00:00:12.917
-As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of
+00:00:13.462 --> 00:00:22.927
+calculate rolling summaries, map category codes, inspect joins, and finally wrap a Pandas workflow inside a function.
 
-00:00:12.917 --> 00:00:16.247
-treating each method as an isolated command.
-
-00:00:16.247 --> 00:00:22.882
-In a real Pandas workflow, check the shape and meaning of the DataFrame after important transformations.
-
-00:00:22.882 --> 00:00:28.767
-Compact code is useful only when another analyst can still understand what each step changes.
-
-00:00:28.767 --> 00:00:34.527
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:34.527 --> 00:00:39.946
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:23.573 --> 00:00:30.009
+These are practical patterns you will see in reporting, data preparation, and production analytics code.

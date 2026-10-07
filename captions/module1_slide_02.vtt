@@ -1,34 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.022
-Use this lesson actively. Read the idea first and make a prediction before running any code.
+00:00:00.000 --> 00:00:01.947
+Use these slides actively.
 
-00:00:06.022 --> 00:00:09.242
-When a Python cell is available, click Run, inspect the output,
+00:00:01.947 --> 00:00:08.592
+Read the idea first, pause for a moment, and predict what you think the code will do before you run it.
 
-00:00:09.242 --> 00:00:13.632
-and then change one small value or condition.
+00:00:08.592 --> 00:00:13.427
+After you run an example, change one value and run it again.
 
-00:00:13.632 --> 00:00:16.427
-Run it again and explain what changed.
+00:00:13.427 --> 00:00:19.902
+Small changes are one of the best ways to understand Python because you can immediately see which part of the output
 
-00:00:16.427 --> 00:00:22.582
-This predict, run, modify, and explain cycle is more useful than copying a finished example.
+00:00:19.902 --> 00:00:21.522
+depends on which input.
 
-00:00:22.582 --> 00:00:25.732
-Connect the concept to a small analytics task.
+00:00:22.196 --> 00:00:27.937
+For example, if sales is one thousand dollars, run the calculation once.
 
-00:00:25.732 --> 00:00:30.807
-Imagine the value came from a sales file, survey, or operational system.
+00:00:27.937 --> 00:00:31.997
+Then change sales to twelve hundred fifty and see what changes.
 
-00:00:30.807 --> 00:00:35.822
-Ask whether Python is interpreting it correctly and whether another person could understand the calculation
+00:00:31.997 --> 00:00:34.937
+Ask yourself why the result moved.
 
-00:00:35.822 --> 00:00:38.417
-from the names and output.
+00:00:34.937 --> 00:00:43.057
+The editor looks like VS Code, but the Python ideas are the same whether you use VS Code, Jupyter Notebook,
 
-00:00:38.417 --> 00:00:44.182
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:44.182 --> 00:00:49.602
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:43.057 --> 00:00:45.649
+Google Colab, or another environment.

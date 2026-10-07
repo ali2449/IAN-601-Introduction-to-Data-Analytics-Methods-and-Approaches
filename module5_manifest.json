@@ -1,370 +1,194 @@
 {
   "module": "module5",
+  "generation_version": "ian620_safe_v4_exact_reference_text_seed1234",
   "filename_prefix": "module5",
-  "source_file": "IAN_601_Module_05_Narration.txt",
-  "voice_consistency_version": 3,
+  "source_file": "IAN_601_Module_05_Narration_Natural_Final.txt",
   "reference_audio": "/home/ali/breeze-tts/voice_reference/course_instructor_consistent_v4.wav",
+  "reference_text_version": "course_instructor_consistent_v4_exact_transcript",
   "reference_text": "Welcome to the course. We will work through each concept carefully, connect the\nideas step by step, and use practical examples to make technical topics easier\nto understand. When we introduce a new method, focus first on the problem it\nsolves and why it is useful. For example, in machine learning, features are the\ninformation we give the model, while the target is what we want it to predict.\nNow consider a simple question: what changes when the data contains missing\nvalues? We will think through the reason and then look at the code. In Python,\nwe can inspect the data, run one small step at a time, and explain what the\nresult means. The goal is to understand the logic, not simply memorize syntax.",
-  "locked_narration_seed": true,
-  "narration_seed": 1234,
-  "long_narration": {
-    "automatic_chunking": true,
-    "max_text_tokens_per_call": 260,
-    "chunk_pause_seconds": 0.38,
-    "manual_break_marker": "[tts-break]",
-    "breeze_max_new_tokens": 1500,
-    "breeze_max_seq_len": 2048
+  "subtitle_method": "tts_break_section_generation",
+  "generation_boundary": "[tts-break]",
+  "instruction_mode": "disabled_to_prevent_spoken_prompt_leakage",
+  "spoken_instruction_sent_to_breeze": false,
+  "audio_settings": {
+    "speech_speed": 0.93,
+    "speed_method": "ffmpeg_atempo_before_vtt_alignment"
   },
-  "subtitle_method": "whole_slide_silence_alignment",
   "caption_settings": {
-    "max_words": 18,
-    "max_chars": 110,
-    "minimum_silence_seconds": 0.2,
-    "boundary_search_window_seconds": 1.4
+    "max_words": 24,
+    "max_chars": 120,
+    "tts_break_pause_seconds": 0.45
   },
   "slides": [
     {
       "slide": 1,
       "title": "Dictionaries & Sets",
-      "transcript": "Welcome to Module 5. We will add dictionaries and sets to our Python toolkit. Dictionaries store labeled information using key-value pairs, while sets help us work with unique values, membership, and overlap.\n\n[tts-break]\n\nA set stores unique values. It is useful for distinct categories, membership tests, and comparing overlap between groups.",
-      "seed": 1234,
-      "tts_text_tokens": 65,
-      "tts_chunk_count": 2,
-      "tts_chunk_tokens": [
-        42,
-        22
-      ],
-      "tts_explicit_breaks": 1,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Welcome to Module 5. Lists and tuples organize values by position. Dictionaries and sets give us two new ideas: labels and uniqueness.\n\nA dictionary stores key-value pairs, so instead of remembering that a value is at position two, we can retrieve it by a meaningful label. A set automatically keeps unique values.\n\n[tts-break]\n\nThese structures are extremely useful for records, category counts, lookup tables, unique IDs, and data-cleaning tasks.",
       "wav": "wav/module5_slide_01.wav",
       "audio": "audio/module5_slide_01.mp3",
       "captions": "audio/module5_slide_01.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 2,
       "title": "How to use this page",
-      "transcript": "Use this lesson actively. Read the idea first and make a prediction before running any code. When a Python cell is available, click Run, inspect the output, and then change one small value or condition. Run it again and explain what changed. This predict, run, modify, and explain cycle is more useful than copying a finished example.\n\n[tts-break]\n\nChoose the structure based on meaning. Use dictionaries for labeled fields and sets for uniqueness or membership. A good data structure makes later code shorter and easier to reason about.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 134,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        68,
-        33,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "As you work through the examples, pay attention to how the data is being accessed.\n\nWith a dictionary, ask which key identifies the value. With a set, ask what duplicates disappear or what group comparison is being performed.\n\n[tts-break]\n\nRun the code, then change one key, one value, or one set item. Small experiments will make the behavior much easier to remember.",
       "wav": "wav/module5_slide_02.wav",
       "audio": "audio/module5_slide_02.mp3",
       "captions": "audio/module5_slide_02.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 3,
       "title": "Learning path for Module 5",
-      "transcript": "Use this slide as a roadmap. The ideas are intentionally ordered so later examples build on earlier concepts. As you move forward, keep asking how the new idea connects to the larger analytics workflow instead of treating each method as an isolated command.\n\n[tts-break]\n\nChoose the structure based on meaning. Use dictionaries for labeled fields and sets for uniqueness or membership. A good data structure makes later code shorter and easier to reason about.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 113,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        33,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "We’ll begin with dictionary basics: creating labeled data, retrieving values, and updating records.\n\nThen we’ll loop through keys and values, count categories, represent small datasets, and work with nested dictionaries.\n\nAfter that, sets help us remove duplicates, compare groups, and test membership.\n\n[tts-break]\n\nThe final examples combine dictionaries and sets in one analytics workflow.",
       "wav": "wav/module5_slide_03.wav",
       "audio": "audio/module5_slide_03.mp3",
       "captions": "audio/module5_slide_03.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 4,
       "title": "Why dictionaries and sets matter",
-      "transcript": "On this slide, we are focusing on why dictionaries and sets matter. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA set stores unique values. It is useful for distinct categories, membership tests, and comparing overlap between groups.\n\n[tts-break]\n\nChoose the structure based on meaning. Use dictionaries for labeled fields and sets for uniqueness or membership. A good data structure makes later code shorter and easier to reason about.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 138,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        49,
-        22,
-        33,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Lists are great when position matters. Dictionaries are better when labels matter, and sets are useful when uniqueness matters.\n\nWith a list, scores zero means “the first value.” With a dictionary, student score lets the key itself describe the meaning.\n\nA set is different again: it focuses on distinct values rather than position.\n\n[tts-break]\n\nIn analytics, dictionaries often represent records or counts, while sets help with unique categories, IDs, and group comparisons.",
       "wav": "wav/module5_slide_04.wav",
       "audio": "audio/module5_slide_04.mp3",
       "captions": "audio/module5_slide_04.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 5,
       "title": "Create a dictionary",
-      "transcript": "On this slide, we are focusing on create a dictionary. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA dictionary stores key-value pairs. Meaningful keys such as name, status, amount, or category make the structure easier to understand than position alone.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 132,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        31,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s build a customer record as a dictionary.\n\nThe keys are id, visits, total_spent, and status. Each key points to one value. Instead of remembering positions, we can ask directly for customer id or customer visits.\n\n[tts-break]\n\nThat makes the code much more readable. Customer bracket id clearly means “give me the customer ID.”\n\nTry adding another key such as region or membership level and print it.",
       "wav": "wav/module5_slide_05.wav",
       "audio": "audio/module5_slide_05.mp3",
       "captions": "audio/module5_slide_05.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 6,
       "title": "Access values safely",
-      "transcript": "On this slide, we are focusing on access values safely. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBracket access expects a dictionary key to exist. The get method can provide a safer fallback when a key may be missing.\n\n[tts-break]\n\nChoose the structure based on meaning. Use dictionaries for labeled fields and sets for uniqueness or membership. A good data structure makes later code shorter and easier to reason about.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 138,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        47,
-        24,
-        33,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "There are two common ways to retrieve dictionary values.\n\nSquare brackets work when you are confident the key exists. Ticket priority is safe because priority is present in the record.\n\nGet is useful when a key may be missing. Owner does not exist, so ticket dot get returns the default value “unassigned” instead of raising an error.\n\n[tts-break]\n\nThis is especially helpful with real-world records where some fields may be optional or incomplete.",
       "wav": "wav/module5_slide_06.wav",
       "audio": "audio/module5_slide_06.mp3",
       "captions": "audio/module5_slide_06.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 7,
       "title": "Update a dictionary",
-      "transcript": "On this slide, we are focusing on update a dictionary. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA dictionary stores key-value pairs. Meaningful keys such as name, status, amount, or category make the structure easier to understand than position alone.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 132,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        47,
-        31,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Dictionaries are mutable, so a record can change over time.\n\nProjects begins at two and is updated to three. Department is a completely new key, so assignment adds it. Pop removes role and returns the removed value.\n\n[tts-break]\n\nThis mirrors many real data workflows: a record arrives, fields are corrected or enriched, and outdated fields may be removed.\n\nRun the example and watch the record change step by step.",
       "wav": "wav/module5_slide_07.wav",
       "audio": "audio/module5_slide_07.mp3",
       "captions": "audio/module5_slide_07.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 8,
       "title": "Loop through a dictionary",
-      "transcript": "On this slide, we are focusing on loop through a dictionary. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA dictionary stores key-value pairs. Meaningful keys such as name, status, amount, or category make the structure easier to understand than position alone.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 133,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        31,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A dictionary can be looped in several ways. Keys gives labels, values gives the stored values, and items gives both together.\n\nHere items is the most useful because we want both the survey question and its score.\n\nAfter printing each pair, the values are averaged. Four, five, and three have an average of four.\n\n[tts-break]\n\nThis is a common pattern when the labels matter during reporting but the values are used for calculation.",
       "wav": "wav/module5_slide_08.wav",
       "audio": "audio/module5_slide_08.mp3",
       "captions": "audio/module5_slide_08.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 9,
       "title": "Count categories with a dictionary",
-      "transcript": "On this slide, we are focusing on count categories with a dictionary. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA dictionary stores key-value pairs. Meaningful keys such as name, status, amount, or category make the structure easier to understand than position alone.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 134,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        49,
-        31,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Frequency counting is one of the most useful dictionary patterns.\n\nWe begin with an empty dictionary. For each channel, get looks for the current count. If the channel has not appeared yet, the default is zero. Then we add one.\n\n[tts-break]\n\nFor the current list, web appears three times, email twice, and store once.\n\nThis initialize-and-increment pattern is the foundation of many category summaries.",
       "wav": "wav/module5_slide_09.wav",
       "audio": "audio/module5_slide_09.mp3",
       "captions": "audio/module5_slide_09.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 10,
       "title": "Represent records with dictionaries",
-      "transcript": "On this slide, we are focusing on represent records with dictionaries. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nChoose the structure based on meaning. Use dictionaries for labeled fields and sets for uniqueness or membership. A good data structure makes later code shorter and easier to reason about.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 114,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        33,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A list of dictionaries looks very much like a small table.\n\nEach dictionary is one order, and the keys act like column names: order_id, channel, and amount.\n\nThe loop processes one order at a time, adds its amount to the running total, and prints the record.\n\n[tts-break]\n\nThe three amounts add to one hundred fifty-five dollars and seventy-five cents.\n\nThis structure is important because Pandas DataFrames are often created from records that look exactly like this.",
       "wav": "wav/module5_slide_10.wav",
       "audio": "audio/module5_slide_10.mp3",
       "captions": "audio/module5_slide_10.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 11,
       "title": "Nested dictionaries",
-      "transcript": "On this slide, we are focusing on nested dictionaries. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nChoose the structure based on meaning. Use dictionaries for labeled fields and sets for uniqueness or membership. A good data structure makes later code shorter and easier to reason about.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 112,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        46,
-        33,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A dictionary can contain another dictionary, which lets us organize related fields into sections.\n\nThe employee record contains basic information plus a skills dictionary. To reach the Python skill level, we first access skills and then access python inside that nested dictionary.\n\n[tts-break]\n\nNested structures are common in JSON files and APIs, so learning to follow one key at a time is a useful practical skill.",
       "wav": "wav/module5_slide_11.wav",
       "audio": "audio/module5_slide_11.mp3",
       "captions": "audio/module5_slide_11.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 12,
       "title": "Create a set",
-      "transcript": "On this slide, we are focusing on create a set. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA set stores unique values. It is useful for distinct categories, membership tests, and comparing overlap between groups.\n\n[tts-break]\n\nChoose the structure based on meaning. Use dictionaries for labeled fields and sets for uniqueness or membership. A good data structure makes later code shorter and easier to reason about.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 136,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        47,
-        22,
-        33,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "A set keeps only unique values.\n\nThe channels list contains web three times and email twice. When we convert it to a set, the duplicates disappear and we are left with web, email, and store.\n\n[tts-break]\n\nDo not depend on a set for meaningful ordering. Its main purpose here is uniqueness.\n\nSets are useful when you need distinct categories, unique IDs, or a quick count of unique values.",
       "wav": "wav/module5_slide_12.wav",
       "audio": "audio/module5_slide_12.mp3",
       "captions": "audio/module5_slide_12.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 13,
       "title": "Set operations",
-      "transcript": "On this slide, we are focusing on set operations. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA set stores unique values. It is useful for distinct categories, membership tests, and comparing overlap between groups.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 154,
-      "tts_chunk_count": 4,
-      "tts_chunk_tokens": [
-        46,
-        22,
-        52,
-        31
-      ],
-      "tts_explicit_breaks": 3,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Sets also make group comparison very convenient.\n\nUnion gives every customer who appeared in either season. Intersection gives customers in both seasons, which here are C103 and C104.\n\nSpring minus summer gives customers who appeared only in spring, while summer minus spring gives those who appeared only in summer.\n\n[tts-break]\n\nThese operations are useful for comparing cohorts, membership lists, categories, and other groups.",
       "wav": "wav/module5_slide_13.wav",
       "audio": "audio/module5_slide_13.mp3",
       "captions": "audio/module5_slide_13.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 14,
       "title": "Membership testing",
-      "transcript": "On this slide, we are focusing on membership testing. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.\n\n[tts-break]\n\nChoose the structure based on meaning. Use dictionaries for labeled fields and sets for uniqueness or membership. A good data structure makes later code shorter and easier to reason about.",
-      "seed": 1234,
-      "tts_text_tokens": 133,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        46,
-        52,
-        33
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "The in operator asks whether a value belongs to a collection.\n\nAllowed_statuses contains new, open, and closed. The loop checks each submitted status against that set.\n\nNew and closed are valid. Pending and review are not in the allowed set, so they are flagged for review.\n\n[tts-break]\n\nThis pattern is useful for validation because sets make membership rules clear and efficient.",
       "wav": "wav/module5_slide_14.wav",
       "audio": "audio/module5_slide_14.mp3",
       "captions": "audio/module5_slide_14.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 15,
       "title": "Dictionary + set workflow",
-      "transcript": "On this slide, we are focusing on dictionary + set workflow. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nA dictionary stores key-value pairs. Meaningful keys such as name, status, amount, or category make the structure easier to understand than position alone.\n\n[tts-break]\n\nBefore clicking Run, predict the output. Then run the cell, inspect the result, and change one value or condition at a time. Rerun it and explain why the output changed. The goal is to understand the relationship between input, process, and output.",
-      "seed": 1234,
-      "tts_text_tokens": 133,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        31,
-        52
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Now we combine the two structures in one order-processing example.\n\nThe dictionary totals_by_channel keeps a running sales total for each channel. The set unique_customers stores customer IDs without duplicates.\n\n[tts-break]\n\nC101 appears twice, but the set still counts that customer only once. The dictionary, however, adds both web orders to the web total.\n\nThis is a nice example of choosing a structure based on the question: dictionaries for labeled totals, sets for uniqueness.",
       "wav": "wav/module5_slide_15.wav",
       "audio": "audio/module5_slide_15.mp3",
       "captions": "audio/module5_slide_15.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 16,
       "title": "Choose the right structure",
-      "transcript": "On this slide, we are focusing on choose the right structure. Start with the meaning of the idea before worrying about the exact syntax. Ask what information is going in, what Python is doing with it, and what result should come out.\n\n[tts-break]\n\nChoose the structure based on meaning. Use dictionaries for labeled fields and sets for uniqueness or membership. A good data structure makes later code shorter and easier to reason about.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 114,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        48,
-        33,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "At this point we have four core collection types.\n\nUse a list when order matters and duplicates are allowed. Use a tuple for a fixed record. Use a dictionary when values need meaningful labels. Use a set when you need uniqueness or group comparison.\n\n[tts-break]\n\nThe goal is not to memorize a rigid rule. Ask how the data will be accessed and changed. That usually points you toward the right structure.",
       "wav": "wav/module5_slide_16.wav",
       "audio": "audio/module5_slide_16.mp3",
       "captions": "audio/module5_slide_16.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     },
     {
       "slide": 17,
       "title": "Module 5 wrap-up",
-      "transcript": "This slide brings Module 5 together. Review the patterns you can now recognize and reuse. Focus on the decisions behind the syntax: what structure or method fits the problem, what assumptions are being made, and what you should check before trusting the result.\n\n[tts-break]\n\nChoose the structure based on meaning. Use dictionaries for labeled fields and sets for uniqueness or membership. A good data structure makes later code shorter and easier to reason about.\n\n[tts-break]\n\nBefore moving on, explain the main idea in one sentence without reading the slide. That quick explanation is a useful check that the concept is becoming reusable knowledge.",
-      "seed": 1234,
-      "tts_text_tokens": 116,
-      "tts_chunk_count": 3,
-      "tts_chunk_tokens": [
-        50,
-        33,
-        31
-      ],
-      "tts_explicit_breaks": 2,
-      "tts_chunk_limit": 260,
-      "stitched_audio": true,
+      "transcript": "Let’s review what you can now do.\n\nYou can create dictionaries, retrieve values safely, update records, loop through key-value pairs, and build frequency counts. You can use sets to remove duplicates, compare groups, and validate membership.\n\n[tts-break]\n\nThese structures give us more realistic ways to organize data in Python.\n\nNext, we’ll use packages and object-oriented ideas to organize larger programs.\n\n[tts-break]\n\nIn Module 6, we’ll focus on organizing larger Python programs. You’ll see how modules and packages help separate code into reusable files, and we’ll introduce object-oriented programming so related data and behavior can be organized together. This is an important step from small scripts toward maintainable applications.",
       "wav": "wav/module5_slide_17.wav",
       "audio": "audio/module5_slide_17.mp3",
       "captions": "audio/module5_slide_17.vtt",
-      "sync_method": "whole_slide_silence_alignment"
+      "sync_method": "tts_break_section_generation",
+      "speech_speed": 0.93
     }
   ]
 }

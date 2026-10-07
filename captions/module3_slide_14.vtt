@@ -1,31 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.857
-On this slide, we are focusing on return more than one value.
+00:00:00.000 --> 00:00:02.907
+A function can return more than one result.
 
-00:00:03.857 --> 00:00:08.607
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:02.907 --> 00:00:09.817
+Summarize receives a list of values, finds the minimum and maximum, and returns both.
 
-00:00:08.607 --> 00:00:14.667
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:09.817 --> 00:00:14.707
+Python then unpacks those two results into low and high.
 
-00:00:14.667 --> 00:00:20.952
-Return sends a value back to the program so later code can store it, combine it, test it,
+00:00:14.707 --> 00:00:19.646
+With the current values, low is nine and high is twenty-one.
 
-00:00:20.952 --> 00:00:23.247
-or pass it into another function.
-
-00:00:23.247 --> 00:00:25.637
-Print only displays a value.
-
-00:00:25.637 --> 00:00:28.777
-Before clicking Run, predict the output.
-
-00:00:28.777 --> 00:00:34.927
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:34.927 --> 00:00:38.272
-Rerun it and explain why the output changed.
-
-00:00:38.272 --> 00:00:43.284
-The goal is to understand the relationship between input, process, and output.
+00:00:20.488 --> 00:00:26.372
+This pattern is useful when one analytical function naturally produces several related metrics.

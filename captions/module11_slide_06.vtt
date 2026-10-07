@@ -1,28 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.097
-On this slide, we are focusing on melt wide data into long data.
+00:00:00.000 --> 00:00:05.427
+Sometimes a table is convenient for people to read but awkward for analysis.
 
-00:00:04.097 --> 00:00:08.892
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.427 --> 00:00:10.287
+The starting table has separate quiz1 and quiz2 columns.
 
-00:00:08.892 --> 00:00:15.037
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:10.287 --> 00:00:17.933
+Melt turns those column names into values inside a new quiz column, with the scores placed in one score column.
 
-00:00:15.037 --> 00:00:19.287
-Melting converts wide columns into a longer key-value structure.
+00:00:18.485 --> 00:00:22.897
+Each student now has multiple rows—one row per quiz.
 
-00:00:19.287 --> 00:00:27.157
-Long format is often easier for grouping, plotting, and repeated analysis across variables.
+00:00:22.897 --> 00:00:29.632
+This long format is often easier for grouping, plotting, and statistical analysis.
 
-00:00:27.157 --> 00:00:29.427
-Before clicking Run, predict how the table should change.
-
-00:00:29.427 --> 00:00:34.962
-Then run the cell and inspect the row count, column values, grouping, dates, missing values,
-
-00:00:34.962 --> 00:00:40.402
-or flags that matter. Change one input and rerun it.
-
-00:00:40.402 --> 00:00:46.584
-Connect the DataFrame operation to an analytical question rather than simply making the code execute.
+00:00:29.632 --> 00:00:34.566
+Think of melt as moving information from column headers down into rows.

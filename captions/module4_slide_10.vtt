@@ -1,28 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.177
-On this slide, we are focusing on create and unpack a tuple.
+00:00:00.000 --> 00:00:07.982
+A tuple is another ordered collection, but it is designed for values that should stay together and not be changed
 
-00:00:04.177 --> 00:00:09.047
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:07.982 --> 00:00:13.317
+casually. The example stores latitude and longitude as one location tuple.
 
-00:00:09.047 --> 00:00:15.152
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:13.317 --> 00:00:17.787
+Python can then unpack those two values into separate variables.
 
-00:00:15.152 --> 00:00:19.597
-A tuple is ordered like a list but is intended to stay fixed.
+00:00:18.237 --> 00:00:24.134
+This works nicely for fixed records such as coordinates, a pair of summary statistics,
 
-00:00:19.597 --> 00:00:24.102
-It works well for compact records whose positions should not change.
+00:00:24.134 --> 00:00:27.174
+or several results returned from a function.
 
-00:00:24.102 --> 00:00:27.242
-Before clicking Run, predict the output.
-
-00:00:27.242 --> 00:00:33.392
-Then run the cell, inspect the result, and change one value or condition at a time.
-
-00:00:33.392 --> 00:00:36.737
-Rerun it and explain why the output changed.
-
-00:00:36.737 --> 00:00:41.750
-The goal is to understand the relationship between input, process, and output.
+00:00:27.174 --> 00:00:32.462
+The tuple still supports indexing, so position zero gives the latitude.

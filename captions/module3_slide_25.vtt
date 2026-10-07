@@ -1,31 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.497
-On this slide, we are focusing on function design checklist.
+00:00:00.000 --> 00:00:05.477
+A good function should have a clear name, clear inputs, one focused job, and a useful output.
 
-00:00:03.497 --> 00:00:08.422
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:05.477 --> 00:00:07.762
+Also think about predictable problems.
 
-00:00:08.422 --> 00:00:14.337
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:07.762 --> 00:00:13.012
+Should the function validate something?
 
-00:00:14.337 --> 00:00:17.817
-A function gives a reusable task a clear name.
+00:00:13.012 --> 00:00:15.407
+Should it handle a conversion error?
 
-00:00:17.817 --> 00:00:26.027
-In analytics, functions are useful for cleaning, validation, scoring, calculation, and reporting logic.
+00:00:15.407 --> 00:00:19.847
+Would a future reader understand its purpose from the name and documentation?
 
-00:00:26.027 --> 00:00:29.772
-Think about where this function would appear in a larger project.
-
-00:00:29.772 --> 00:00:37.857
-Cleaning one value, calculating one metric, or validating one record can become a reusable function applied
-
-00:00:37.857 --> 00:00:39.447
-across many rows, files, or notebooks.
-
-00:00:39.447 --> 00:00:45.212
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:45.212 --> 00:00:50.632
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:20.297 --> 00:00:28.120
+Small, focused functions are easier to test, easier to reuse, and easier to combine into larger workflows.

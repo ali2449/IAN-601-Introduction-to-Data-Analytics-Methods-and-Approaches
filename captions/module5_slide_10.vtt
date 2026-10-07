@@ -1,25 +1,16 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.342
-On this slide, we are focusing on represent records with dictionaries.
+00:00:00.000 --> 00:00:03.607
+A list of dictionaries looks very much like a small table.
 
-00:00:04.342 --> 00:00:09.597
-Start with the meaning of the idea before worrying about the exact syntax.
+00:00:03.607 --> 00:00:11.482
+Each dictionary is one order, and the keys act like column names: order_id, channel, and amount.
 
-00:00:09.597 --> 00:00:15.887
-Ask what information is going in, what Python is doing with it, and what result should come out.
+00:00:11.482 --> 00:00:19.567
+The loop processes one order at a time, adds its amount to the running total, and prints the record.
 
-00:00:15.887 --> 00:00:18.242
-Choose the structure based on meaning.
+00:00:20.212 --> 00:00:25.048
+The three amounts add to one hundred fifty-five dollars and seventy-five cents.
 
-00:00:18.242 --> 00:00:23.517
-Use dictionaries for labeled fields and sets for uniqueness or membership.
-
-00:00:23.517 --> 00:00:28.527
-A good data structure makes later code shorter and easier to reason about.
-
-00:00:28.527 --> 00:00:34.287
-Before moving on, explain the main idea in one sentence without reading the slide.
-
-00:00:34.287 --> 00:00:39.707
-That quick explanation is a useful check that the concept is becoming reusable knowledge.
+00:00:25.048 --> 00:00:32.587
+This structure is important because Pandas DataFrames are often created from records that look exactly like this.
