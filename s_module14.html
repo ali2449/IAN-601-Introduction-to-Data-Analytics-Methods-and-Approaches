@@ -78,44 +78,111 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
 .ian603-bottombar .audio-player{grid-area:auto!important;grid-column:auto!important;grid-row:auto!important;width:100%!important}
 .ian603-bottombar .nav-left,.ian603-bottombar .nav-right,.ian603-bottombar .bottom-nav-panel{align-self:center!important}
 .topbar>.toolbar,.topbar>.controls,.topbar>.top-controls{margin-left:auto!important}.topbar .ian603-tool{box-shadow:none!important}
-</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-focusflow"><!-- IAN601_UI_SHELL_END --></head>
+</style><!-- IAN601_UI_SHELL_START --><link rel="stylesheet" href="assets/ian601-ui-shell.css?v=20261005-focusflow"><!-- IAN601_UI_SHELL_END -->
+<style id="module14-revision-style">
+.module14-title-grid{grid-template-columns:minmax(0,1.12fr) minmax(300px,.78fr)!important;gap:34px!important}
+.module14-hero-lead{font-size:clamp(1.9rem,3.05vw,3.3rem)!important;line-height:1.07!important;letter-spacing:-.045em!important;margin:0 0 16px!important}
+.module14-hero-sub{font-size:clamp(1rem,1.35vw,1.22rem)!important;line-height:1.55!important;margin:0!important;color:var(--ian-muted,var(--muted))}
+.module14-flow{display:grid;gap:10px;padding:24px;border:1px solid var(--ian-border,var(--line));border-radius:22px;background:linear-gradient(145deg,rgba(31,95,155,.08),rgba(79,70,229,.08));text-align:center}.module14-flow div{padding:14px 18px;border:1px solid var(--ian-border,var(--line));border-radius:14px;background:var(--ian-surface,var(--panel));display:grid;gap:2px}.module14-flow strong{font-size:1.02rem}.module14-flow small{color:var(--ian-muted,var(--muted));font-weight:650}.module14-flow span{font-size:.78rem;font-weight:850;color:var(--ian-primary,var(--accent));text-transform:uppercase;letter-spacing:.07em}
+.module14-path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}.module14-path>div{border:1px solid var(--ian-border,var(--line));border-radius:16px;padding:18px;background:var(--ian-surface2,var(--panel2))}.module14-path>div.current{border-color:var(--ian-primary,var(--accent));box-shadow:0 0 0 2px color-mix(in srgb,var(--ian-primary,var(--accent)) 18%,transparent)}.module14-path span{font-size:.75rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--ian-primary,var(--accent))}.module14-path h3{margin:5px 0 6px}.module14-path p{margin:0;color:var(--ian-muted,var(--muted))}
+.module14-task-grid,.module14-source-grid{display:grid;gap:14px;margin-top:18px}.module14-task-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.module14-source-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.module14-task-grid>div,.module14-source-grid>div{border:1px solid var(--ian-border,var(--line));border-radius:15px;padding:16px;background:var(--ian-surface2,var(--panel2))}.module14-task-grid h3,.module14-source-grid h3{margin:0 0 7px;color:var(--ian-primary,var(--accent))}.module14-task-grid p,.module14-source-grid p{margin:0 0 8px}.module14-task-grid span,.module14-source-grid code{color:var(--ian-muted,var(--muted));font-size:.9rem}
+.module14-feature-box{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin:18px 0}.module14-feature-box>div{border:1px solid var(--ian-border,var(--line));border-radius:14px;padding:14px;background:var(--ian-surface2,var(--panel2));display:flex;gap:7px;flex-wrap:wrap}.module14-feature-box strong{width:100%;color:var(--ian-primary,var(--accent))}.module14-feature-box span{padding:5px 8px;border-radius:999px;background:var(--ian-surface,var(--panel));border:1px solid var(--ian-border,var(--line));font-size:.82rem}
+.module14-split{display:grid;grid-template-columns:3fr 1fr;gap:10px;margin:18px 0}.module14-split>div{border:1px solid var(--ian-border,var(--line));border-radius:14px;padding:16px;background:var(--ian-surface2,var(--panel2));display:grid;gap:4px}.module14-split strong{color:var(--ian-primary,var(--accent))}.module14-split span{color:var(--ian-muted,var(--muted))}
+.module14-matrix{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:18px 0}.module14-matrix span{padding:14px;border:1px solid var(--ian-border,var(--line));border-radius:11px;background:var(--ian-surface2,var(--panel2));text-align:center;font-weight:750}
+.module14-metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:10px 0 18px}.module14-metric-grid>div{border:1px solid var(--ian-border,var(--line));border-radius:15px;padding:16px;background:var(--ian-surface2,var(--panel2))}.module14-metric-grid h3{margin:0 0 6px;color:var(--ian-primary,var(--accent))}.module14-metric-grid p{margin:0;color:var(--ian-muted,var(--muted))}
+.compact-top{margin-top:14px;align-items:start}.compact-top .lead{font-size:1.03rem}
+.module14-threshold{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;align-items:center;margin:20px 0}.module14-threshold span,.module14-threshold strong{padding:10px 6px;border:1px solid var(--ian-border,var(--line));border-radius:10px;text-align:center;background:var(--ian-surface2,var(--panel2))}.module14-threshold strong{color:var(--ian-primary,var(--accent))}
+.module14-leak{display:grid;gap:12px}.module14-leak>div{border:1px solid var(--ian-border,var(--line));border-radius:14px;padding:17px;background:var(--ian-surface2,var(--panel2));display:grid;gap:5px}.module14-leak strong{color:var(--ian-primary,var(--accent))}.module14-leak span{color:var(--ian-muted,var(--muted))}
+.module14-process{display:grid;gap:8px;margin:18px 0}.module14-process span{padding:10px 12px;border-left:4px solid var(--ian-primary,var(--accent));border-radius:8px;background:var(--ian-surface2,var(--panel2));font-weight:750}.module14-next{margin-top:18px!important}
+@media(max-width:1100px){.module14-source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.module14-title-grid,.module14-path,.module14-task-grid,.module14-source-grid,.module14-feature-box,.module14-metric-grid{grid-template-columns:1fr!important}.module14-threshold{grid-template-columns:1fr}.module14-split{grid-template-columns:1fr}}
+@media(max-height:850px) and (min-width:901px){.slide{padding:28px!important}.slide-header{margin-bottom:12px!important}.module14-hero-lead{font-size:clamp(1.75rem,2.7vw,2.9rem)!important}.module14-flow{padding:18px}.code-input{min-height:150px}.monaco-host{height:190px}.module14-source-grid>div,.module14-task-grid>div{padding:12px}}
+</style>
+</head>
 <body>
 <div class="deck">
   <header class="topbar">
     <div class="brand"><span class="brand-mark">14</span><span>IAN 601 · Module 14</span></div>
     <div class="top-controls"><div id="runtime" class="runtime"><span class="runtime-dot"></span><span id="runtime-text">Python not loaded yet</span></div><button class="btn ghost" id="theme-btn" type="button"><i class="fa-solid fa-moon"></i> Theme</button><button class="btn ghost" id="restart-python" type="button">Reset Python</button><button class="ian603-tool" id="ian-progress-btn" type="button">Progress <span id="ian-progress-pct">0%</span></button><button class="ian603-tool" id="ian-fullscreen-btn" type="button">Fullscreen</button><button class="ian603-tool primary" id="run-slide-btn" type="button">Run slide ▶</button><button class="ian603-tool" id="ian-course-modules-btn" type="button">☰ Course Modules</button></div>
   </header>
-  <main class="stage" id="stage"><section class="slide" data-title="Machine Learning &amp; External Data">
+  <main class="stage" id="stage">
+
+<section class="slide" data-title="Machine Learning &amp;amp; External Data">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Module 14 · Interactive slide lesson</span><h2>Machine Learning &amp; External Data</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
-    <div class="slide-content"><div class="title-grid">
-               <div><p class="big-lead">Machine learning uses data to train models that make predictions, but good results depend on clean data, careful evaluation, and responsible interpretation.</p><div class="pill-row"><span>Self-paced slides</span><span>Executable Python cells</span><span>VS Code-style editor</span><span>Separate study notes</span></div>
-               <div class="hero-actions-inline"><button class="btn big start-btn" type="button">Start presentation</button><button class="btn ghost big run-all-btn" type="button">Run code on slide</button></div></div>
-               <div><div class="flow-visual"><div>Data</div><span>split</span><div>Train</div><span>test</span><div>Evaluate</div><span>use</span><div>Predict</div></div></div>
-             </div><div class="callout"><strong>Goal:</strong> Read external-style data, prepare features, split data, train a simple model, evaluate results, compare to a baseline, and interpret predictions carefully.</div></div>
+    <header class="slide-header"><div><span class="kicker">Module 14 · Final interactive lesson</span><h2>Machine Learning &amp; External Data</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="title-grid module14-title-grid">
+  <div>
+    <p class="big-lead module14-hero-lead">Bring data into Python, prepare it carefully, and build a simple machine learning workflow that can make predictions on new cases.</p>
+    <p class="lead module14-hero-sub">This final module connects many ideas from the course: external data, Pandas, cleaning, statistics, evaluation, and responsible interpretation.</p>
+    <div class="pill-row"><span>External data</span><span>Features</span><span>Train/test</span><span>Classification</span><span>Evaluation</span></div>
+  </div>
+  <div class="module14-flow">
+    <div><strong>External data</strong><small>CSV · JSON · API · database</small></div><span>prepare</span>
+    <div><strong>Model</strong><small>learn from training examples</small></div><span>evaluate</span>
+    <div><strong>Prediction</strong><small>new cases + clear limitations</small></div>
+  </div>
+</div></div>
     <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 1</span></footer>
   </div>
 </section>
-<section class="slide" data-title="How to use this page">
+
+<section class="slide" data-title="From analysis to prediction">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Self-paced workflow</span><h2>How to use this page</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
-    <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>Read</h3><p>Start with the main idea on the slide.</p></div><div class="timeline-item"><span>2</span><h3>Run</h3><p>Execute the Python code in the browser.</p></div><div class="timeline-item"><span>3</span><h3>Compare</h3><p>Connect the output to the concept.</p></div><div class="timeline-item"><span>4</span><h3>Edit</h3><p>Change one value, variable, or condition.</p></div><div class="timeline-item"><span>5</span><h3>Reuse</h3><p>Apply the pattern to a new example.</p></div></div><div class="callout secondary">All slide points are visible. Use Next, Previous, arrow keys, or the slide menu.</div></div>
+    <header class="slide-header"><div><span class="kicker">Connect the course to the final workflow</span><h2>From analysis to prediction</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<p class="lead">Earlier modules helped us organize, clean, summarize, and visualize data. Machine learning adds a new question: can patterns in existing data help us predict an outcome for a new case?</p>
+<div class="module14-path">
+  <div><span>Earlier modules</span><h3>Prepare</h3><p>Python, NumPy, Pandas, cleaning, reshaping, and external data structures.</p></div>
+  <div><span>Module 13</span><h3>Understand</h3><p>Statistics and visualization help us inspect distributions, differences, and relationships.</p></div>
+  <div class="current"><span>Module 14</span><h3>Predict</h3><p>Separate features and target, train a model, evaluate it, and use it carefully.</p></div>
+</div>
+<div class="callout secondary"><strong>Prediction is not magic.</strong> The model learns from the examples and variables we provide, so data quality and evaluation still matter.</div></div>
     <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 2</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Learning path for Module 14">
+
+<section class="slide" data-title="Analytics questions and machine learning tasks">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Roadmap</span><h2>Learning path for Module 14</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
-    <div class="slide-content"><div class="timeline"><div class="timeline-item"><span>1</span><h3>External data</h3><p>Read CSV-style data.</p></div><div class="timeline-item"><span>2</span><h3>Features</h3><p>Choose inputs and target.</p></div><div class="timeline-item"><span>3</span><h3>Split</h3><p>Separate training and testing.</p></div><div class="timeline-item"><span>4</span><h3>Model</h3><p>Train a simple classifier.</p></div><div class="timeline-item"><span>5</span><h3>Evaluate</h3><p>Use accuracy and confusion matrix.</p></div><div class="timeline-item"><span>6</span><h3>Interpret</h3><p>Compare to baseline and explain limits.</p></div></div></div>
+    <header class="slide-header"><div><span class="kicker">Choose the method after the question</span><h2>Analytics questions and machine learning tasks</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="module14-task-grid">
+  <div><h3>Descriptive analytics</h3><p>What happened?</p><span>Example: What was the average order amount?</span></div>
+  <div><h3>Classification</h3><p>Which category?</p><span>Example: Will a customer respond: yes or no?</span></div>
+  <div><h3>Regression</h3><p>What numeric value?</p><span>Example: What order amount should we expect?</span></div>
+</div>
+<div class="callout"><strong>In this module:</strong> we use a simple binary classification problem because the target has two classes: responded or did not respond.</div></div>
     <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 3</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Read external-style data">
+
+<section class="slide" data-title="External data sources">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">CSV input</span><h2>Read external-style data</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Many analytics projects begin by reading data from a CSV file. In this browser example, the CSV is stored as text.</p></div><div><div class="code-cell" data-filename="module14_read_csv.py">
+    <header class="slide-header"><div><span class="kicker">Analytics rarely begins with a hand-built DataFrame</span><h2>External data sources</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="module14-source-grid">
+  <div><h3>CSV / TSV</h3><p>Common exported table files.</p><code>pd.read_csv(...)</code></div>
+  <div><h3>Excel</h3><p>Workbooks with sheets and formatted tables.</p><code>pd.read_excel(...)</code></div>
+  <div><h3>JSON / APIs</h3><p>Nested records returned by web services.</p><code>pd.json_normalize(...)</code></div>
+  <div><h3>Databases</h3><p>Structured data retrieved with queries.</p><code>pd.read_sql(...)</code></div>
+</div>
+<div class="callout secondary"><strong>Before using any external source:</strong> understand where the data came from, what each field means, when it was updated, and whether you are allowed to use it.</div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 4</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Read CSV data">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Start by checking the structure</span><h2>Read CSV data</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">CSV is one of the most common ways to exchange tabular data. In this browser example, we store the CSV as text so the code runs without downloading a file.</p>
+  <ul class="clean-list"><li>Read the data.</li><li>Inspect the first rows.</li><li>Check shape and data types.</li><li>Confirm the columns mean what you expect.</li></ul>
+  <div class="callout"><strong>In VS Code or Jupyter:</strong> replace <code>StringIO(csv_text)</code> with a real file path such as <code>"customers.csv"</code>.</div>
+</div><div>
+<div class="code-cell" data-filename="module14_read_csv.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Read CSV text with pandas</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
+    <div><div class="cell-label">Executable Python</div><h3>Read a CSV-style dataset</h3><p>The same Pandas function works with a real CSV file.</p></div>
     <span class="file-pill">module14_read_csv.py</span>
   </div>
   <div class="editor-shell">
@@ -123,50 +190,20 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
     <textarea class="code-input" spellcheck="false">import pandas as pd
 from io import StringIO
 
-csv_text = &quot;&quot;&quot;hours,practice,passed
-2,1,0
-4,2,0
-6,3,1
-8,4,1
-10,5,1
-&quot;&quot;&quot;
+csv_text = """customer_id,visits,past_orders,responded
+101,2,0,0
+102,8,3,1
+103,4,1,0
+104,10,4,1
+105,3,0,0
+"""
 
 data = pd.read_csv(StringIO(csv_text))
-print(data)</textarea>
-    <div class="monaco-host" aria-label="Python editor"></div>
-    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
-  </div>
-  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
-  <pre class="output">Click Run to execute this cell.</pre>
-</div></div></div></div>
-    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 4</span></footer>
-  </div>
-</section>
-<section class="slide" data-title="Inputs and target">
-  <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">ML vocabulary</span><h2>Inputs and target</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Features are input columns. The target is what the model learns to predict.</p><div class="table-wrap"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>Features / X</td><td>Input columns used by the model</td></tr><tr><td>Target / y</td><td>Outcome column to predict</td></tr><tr><td>Training data</td><td>Rows used to learn</td></tr><tr><td>Test data</td><td>Rows used to evaluate</td></tr></tbody></table></div></div><div><div class="code-cell" data-filename="module14_features_target.py">
-  <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Separate X and y</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module14_features_target.py</span>
-  </div>
-  <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_features_target.py</span></div>
-    <textarea class="code-input" spellcheck="false">import pandas as pd
 
-data = pd.DataFrame({
-    &quot;hours&quot;: [2, 4, 6, 8, 10],
-    &quot;practice&quot;: [1, 2, 3, 4, 5],
-    &quot;passed&quot;: [0, 0, 1, 1, 1]
-})
-
-X = data[[&quot;hours&quot;, &quot;practice&quot;]]
-y = data[&quot;passed&quot;]
-
-print(&quot;Features:&quot;)
-print(X)
-print(&quot;Target:&quot;)
-print(y.to_list())</textarea>
+print(data)
+print("\nShape:", data.shape)
+print("\nData types:")
+print(data.dtypes)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -176,24 +213,37 @@ print(y.to_list())</textarea>
     <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 5</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Train/test split">
+
+<section class="slide" data-title="JSON and API-style data">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Evaluation design</span><h2>Train/test split</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A model should be evaluated on data it did not use for learning.</p></div><div><div class="code-cell" data-filename="module14_split.py">
+    <header class="slide-header"><div><span class="kicker">Nested records need to become a table</span><h2>JSON and API-style data</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Web APIs often return JSON rather than rows and columns. Pandas can normalize nested records into a DataFrame.</p>
+  <ul class="clean-list"><li>An API endpoint returns a response.</li><li>The response is commonly JSON.</li><li>Nested records may need normalization.</li><li>Authentication and rate limits must be respected.</li></ul>
+  <div class="callout secondary"><strong>Security rule:</strong> never put private API keys directly into code that will be published to GitHub.</div>
+</div><div>
+<div class="code-cell" data-filename="module14_json.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Split a dataset</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module14_split.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Normalize API-style JSON</h3><p>This simulates a response without making a live web request.</p></div>
+    <span class="file-pill">module14_json.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_split.py</span></div>
-    <textarea class="code-input" spellcheck="false">from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_json.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
 
-X, y = make_classification(n_samples=80, n_features=4, n_informative=3, n_redundant=0, random_state=42)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
+api_response = {
+    "updated": "2026-10-01",
+    "customers": [
+        {"id": 101, "activity": {"visits": 2, "orders": 0}},
+        {"id": 102, "activity": {"visits": 8, "orders": 3}},
+        {"id": 103, "activity": {"visits": 4, "orders": 1}}
+    ]
+}
 
-print(&quot;Training rows:&quot;, len(X_train))
-print(&quot;Test rows:&quot;, len(X_test))</textarea>
+data = pd.json_normalize(api_response["customers"])
+
+print(data)</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -203,28 +253,47 @@ print(&quot;Test rows:&quot;, len(X_test))</textarea>
     <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 6</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Train a simple classifier">
+
+<section class="slide" data-title="Inspect external data before modeling">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Model fitting</span><h2>Train a simple classifier</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A classifier learns patterns from features and predicts a category.</p></div><div><div class="code-cell" data-filename="module14_train_model.py">
+    <header class="slide-header"><div><span class="kicker">Do not send raw input directly into a model</span><h2>Inspect external data before modeling</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">External data should go through the same quality checks you learned earlier in the course.</p>
+  <ol class="clean-list"><li>Check shape and column names.</li><li>Check missing values.</li><li>Check data types.</li><li>Check ranges and unusual values.</li><li>Check the target balance.</li></ol>
+  <div class="callout"><strong>Machine learning can learn bad patterns from bad data.</strong> A model does not automatically recognize that a source field is incorrect.</div>
+</div><div>
+<div class="code-cell" data-filename="module14_inspect.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Train logistic regression</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module14_train_model.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Inspect the modeling dataset</h3><p>Pay special attention to the target counts.</p></div>
+    <span class="file-pill">module14_inspect.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_train_model.py</span></div>
-    <textarea class="code-input" spellcheck="false">from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_inspect.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
 
-X, y = make_classification(n_samples=100, n_features=4, n_informative=3, n_redundant=0, random_state=42)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
+customers = pd.DataFrame({
+    "visits": [2, 8, 4, 10, 3, 7, 5, 9, 1, 6, 4, 8,
+               2, 9, 5, 7, 3, 10, 6, 8, 1, 5, 7, 9],
+    "pages_viewed": [5, 18, 9, 22, 6, 16, 11, 20, 3, 14, 8, 19,
+                     4, 21, 10, 17, 7, 24, 13, 18, 2, 12, 15, 23],
+    "past_orders": [0, 3, 1, 4, 0, 2, 1, 5, 0, 2, 1, 3,
+                    0, 4, 1, 2, 0, 5, 2, 3, 0, 1, 2, 4],
+    "days_since_last": [90, 12, 45, 5, 75, 18, 40, 7, 120, 25, 55, 10,
+                        100, 6, 48, 20, 80, 4, 28, 11, 140, 50, 22, 8],
+    "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+                  0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+})
 
-model = LogisticRegression(max_iter=1000)
-model.fit(X_train, y_train)
+print("Shape:", customers.shape)
+print("\nMissing values:")
+print(customers.isna().sum())
 
-print(&quot;Model trained.&quot;)
-print(&quot;First 5 predictions:&quot;, model.predict(X_test[:5]).tolist())</textarea>
+print("\nData types:")
+print(customers.dtypes)
+
+print("\nTarget counts:")
+print(customers["responded"].value_counts())</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -234,29 +303,53 @@ print(&quot;First 5 predictions:&quot;, model.predict(X_test[:5]).tolist())</tex
     <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 7</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Evaluate predictions">
+
+<section class="slide" data-title="Features and target">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Metrics</span><h2>Evaluate predictions</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Accuracy is the percent of correct predictions. A confusion matrix shows correct and incorrect predictions by class.</p></div><div><div class="code-cell" data-filename="module14_evaluate.py">
+    <header class="slide-header"><div><span class="kicker">Separate what the model knows from what it predicts</span><h2>Features and target</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Features are the input columns available when a prediction is made. The target is the outcome the model is trained to predict.</p>
+  <div class="module14-feature-box"><div><strong>X · Features</strong><span>visits</span><span>pages_viewed</span><span>past_orders</span><span>days_since_last</span></div><div><strong>y · Target</strong><span>responded</span></div></div>
+  <div class="callout secondary"><strong>Question:</strong> would each feature actually be available at the moment we need to make the prediction?</div>
+</div><div>
+<div class="code-cell" data-filename="module14_features_target.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Accuracy and confusion matrix</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module14_evaluate.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Create X and y</h3><p>Inspect the feature columns and target separately.</p></div>
+    <span class="file-pill">module14_features_target.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_evaluate.py</span></div>
-    <textarea class="code-input" spellcheck="false">from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, confusion_matrix
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_features_target.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
 
-X, y = make_classification(n_samples=100, n_features=4, n_informative=3, n_redundant=0, random_state=42)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
-model = LogisticRegression(max_iter=1000).fit(X_train, y_train)
-predictions = model.predict(X_test)
+customers = pd.DataFrame({
+    "visits": [2, 8, 4, 10, 3, 7, 5, 9, 1, 6, 4, 8,
+               2, 9, 5, 7, 3, 10, 6, 8, 1, 5, 7, 9],
+    "pages_viewed": [5, 18, 9, 22, 6, 16, 11, 20, 3, 14, 8, 19,
+                     4, 21, 10, 17, 7, 24, 13, 18, 2, 12, 15, 23],
+    "past_orders": [0, 3, 1, 4, 0, 2, 1, 5, 0, 2, 1, 3,
+                    0, 4, 1, 2, 0, 5, 2, 3, 0, 1, 2, 4],
+    "days_since_last": [90, 12, 45, 5, 75, 18, 40, 7, 120, 25, 55, 10,
+                        100, 6, 48, 20, 80, 4, 28, 11, 140, 50, 22, 8],
+    "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+                  0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+})
 
-print(&quot;Accuracy:&quot;, round(accuracy_score(y_test, predictions), 3))
-print(&quot;Confusion matrix:&quot;)
-print(confusion_matrix(y_test, predictions))</textarea>
+features = [
+    "visits",
+    "pages_viewed",
+    "past_orders",
+    "days_since_last"
+]
+
+X = customers[features]
+y = customers["responded"]
+
+print("Features:")
+print(X.head())
+
+print("\nTarget:")
+print(y.head())</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -266,30 +359,55 @@ print(confusion_matrix(y_test, predictions))</textarea>
     <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 8</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Compare with a baseline">
+
+<section class="slide" data-title="Train and test data">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Context</span><h2>Compare with a baseline</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">A model should beat a simple baseline. Otherwise, it may not be useful.</p></div><div><div class="code-cell" data-filename="module14_baseline.py">
+    <header class="slide-header"><div><span class="kicker">Evaluate on cases the model did not learn from</span><h2>Train and test data</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Training data teaches the model. Test data is held aside and used later to estimate how the model performs on unseen cases.</p>
+  <div class="module14-split"><div><strong>Training set</strong><span>fit the model</span></div><div><strong>Test set</strong><span>evaluate only after training</span></div></div>
+  <ul class="clean-list"><li><code>random_state</code> makes the example reproducible.</li><li><code>stratify=y</code> helps preserve class proportions.</li></ul>
+</div><div>
+<div class="code-cell" data-filename="module14_split.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Baseline accuracy</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module14_baseline.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Create a reproducible train/test split</h3><p>Check how many rows go into each set.</p></div>
+    <span class="file-pill">module14_split.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_baseline.py</span></div>
-    <textarea class="code-input" spellcheck="false">from sklearn.datasets import make_classification
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_split.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+customers = pd.DataFrame({
+    "visits": [2, 8, 4, 10, 3, 7, 5, 9, 1, 6, 4, 8,
+               2, 9, 5, 7, 3, 10, 6, 8, 1, 5, 7, 9],
+    "pages_viewed": [5, 18, 9, 22, 6, 16, 11, 20, 3, 14, 8, 19,
+                     4, 21, 10, 17, 7, 24, 13, 18, 2, 12, 15, 23],
+    "past_orders": [0, 3, 1, 4, 0, 2, 1, 5, 0, 2, 1, 3,
+                    0, 4, 1, 2, 0, 5, 2, 3, 0, 1, 2, 4],
+    "days_since_last": [90, 12, 45, 5, 75, 18, 40, 7, 120, 25, 55, 10,
+                        100, 6, 48, 20, 80, 4, 28, 11, 140, 50, 22, 8],
+    "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+                  0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+})
 from sklearn.model_selection import train_test_split
-from sklearn.dummy import DummyClassifier
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
 
-X, y = make_classification(n_samples=120, n_features=4, n_informative=3, n_redundant=0, random_state=42)
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
+X = customers[
+    ["visits", "pages_viewed",
+     "past_orders", "days_since_last"]
+]
+y = customers["responded"]
 
-baseline = DummyClassifier(strategy=&quot;most_frequent&quot;).fit(X_train, y_train)
-model = LogisticRegression(max_iter=1000).fit(X_train, y_train)
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.25,
+    random_state=42,
+    stratify=y
+)
 
-print(&quot;Baseline accuracy:&quot;, round(accuracy_score(y_test, baseline.predict(X_test)), 3))
-print(&quot;Model accuracy:&quot;, round(accuracy_score(y_test, model.predict(X_test)), 3))</textarea>
+print("Training rows:", len(X_train))
+print("Test rows:", len(X_test))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -299,28 +417,61 @@ print(&quot;Model accuracy:&quot;, round(accuracy_score(y_test, model.predict(X_
     <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 9</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Predict a new case">
+
+<section class="slide" data-title="Start with a baseline">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Using a model</span><h2>Predict a new case</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">After training, a model can predict new rows with the same feature structure.</p></div><div><div class="code-cell" data-filename="module14_predict_new.py">
+    <header class="slide-header"><div><span class="kicker">A model should beat a simple rule</span><h2>Start with a baseline</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Before evaluating a machine learning model, create a simple baseline. For classification, one baseline is predicting the most common class every time.</p>
+  <div class="callout"><strong>Why?</strong> An accuracy of 80 percent sounds good until you discover that 80 percent of all cases belong to the same class.</div>
+  <p class="concept-note">The baseline gives the model a minimum standard to beat.</p>
+</div><div>
+<div class="code-cell" data-filename="module14_baseline.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>Make one prediction</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module14_predict_new.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Measure majority-class accuracy</h3><p>Compare this baseline with the trained model later.</p></div>
+    <span class="file-pill">module14_baseline.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_predict_new.py</span></div>
-    <textarea class="code-input" spellcheck="false">from sklearn.datasets import make_classification
-from sklearn.linear_model import LogisticRegression
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_baseline.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
 
-X, y = make_classification(n_samples=80, n_features=4, n_informative=3, n_redundant=0, random_state=42)
-model = LogisticRegression(max_iter=1000).fit(X, y)
+customers = pd.DataFrame({
+    "visits": [2, 8, 4, 10, 3, 7, 5, 9, 1, 6, 4, 8,
+               2, 9, 5, 7, 3, 10, 6, 8, 1, 5, 7, 9],
+    "pages_viewed": [5, 18, 9, 22, 6, 16, 11, 20, 3, 14, 8, 19,
+                     4, 21, 10, 17, 7, 24, 13, 18, 2, 12, 15, 23],
+    "past_orders": [0, 3, 1, 4, 0, 2, 1, 5, 0, 2, 1, 3,
+                    0, 4, 1, 2, 0, 5, 2, 3, 0, 1, 2, 4],
+    "days_since_last": [90, 12, 45, 5, 75, 18, 40, 7, 120, 25, 55, 10,
+                        100, 6, 48, 20, 80, 4, 28, 11, 140, 50, 22, 8],
+    "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+                  0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+})
+from sklearn.model_selection import train_test_split
+from sklearn.dummy import DummyClassifier
+from sklearn.metrics import accuracy_score
 
-new_case = [[0.2, -1.1, 1.4, 0.7]]
-prediction = model.predict(new_case)[0]
-probability = model.predict_proba(new_case)[0].max()
+X = customers[
+    ["visits", "pages_viewed",
+     "past_orders", "days_since_last"]
+]
+y = customers["responded"]
 
-print(&quot;Predicted class:&quot;, prediction)
-print(&quot;Confidence-like probability:&quot;, round(probability, 3))</textarea>
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y,
+    test_size=0.25,
+    random_state=42,
+    stratify=y
+)
+
+baseline = DummyClassifier(strategy="most_frequent")
+baseline.fit(X_train, y_train)
+
+baseline_pred = baseline.predict(X_test)
+
+print("Baseline accuracy:",
+      round(accuracy_score(y_test, baseline_pred), 3))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -330,37 +481,123 @@ print(&quot;Confidence-like probability:&quot;, round(probability, 3))</textarea
     <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 10</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Avoid leakage">
+
+<section class="slide" data-title="Train a logistic regression classifier">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">Responsible modeling</span><h2>Avoid leakage</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">Data leakage happens when training uses information that would not be available at prediction time.</p><ul class="clean-list"><li>Split data before final evaluation.</li><li>Do not let the target leak into features.</li><li>Clean training data and test data consistently.</li><li>Report limitations clearly.</li></ul></div><div><div class="leakage-visual"><div>Past data</div><span>allowed</span><div>Future answer</div><span>not allowed</span></div></div></div></div>
+    <header class="slide-header"><div><span class="kicker">Fit a simple predictive model</span><h2>Train a logistic regression classifier</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Logistic regression is a common starting model for binary classification. It learns how the feature values relate to the probability of class 1.</p>
+  <ol class="clean-list"><li>Create the model.</li><li>Fit it on training data.</li><li>Predict the unseen test rows.</li><li>Evaluate the predictions.</li></ol>
+  <div class="callout secondary"><strong>Important:</strong> training accuracy alone is not enough. We care about performance on data that was not used for fitting.</div>
+</div><div>
+<div class="code-cell" data-filename="module14_train.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Train and predict</h3><p>The model is fitted only on the training rows.</p></div>
+    <span class="file-pill">module14_train.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_train.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+customers = pd.DataFrame({
+    "visits": [2, 8, 4, 10, 3, 7, 5, 9, 1, 6, 4, 8,
+               2, 9, 5, 7, 3, 10, 6, 8, 1, 5, 7, 9],
+    "pages_viewed": [5, 18, 9, 22, 6, 16, 11, 20, 3, 14, 8, 19,
+                     4, 21, 10, 17, 7, 24, 13, 18, 2, 12, 15, 23],
+    "past_orders": [0, 3, 1, 4, 0, 2, 1, 5, 0, 2, 1, 3,
+                    0, 4, 1, 2, 0, 5, 2, 3, 0, 1, 2, 4],
+    "days_since_last": [90, 12, 45, 5, 75, 18, 40, 7, 120, 25, 55, 10,
+                        100, 6, 48, 20, 80, 4, 28, 11, 140, 50, 22, 8],
+    "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+                  0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+})
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+
+X = customers[
+    ["visits", "pages_viewed",
+     "past_orders", "days_since_last"]
+]
+y = customers["responded"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y,
+    test_size=0.25,
+    random_state=42,
+    stratify=y
+)
+
+model = LogisticRegression(max_iter=1000)
+model.fit(X_train, y_train)
+
+predictions = model.predict(X_test)
+
+print("Predictions:", predictions.tolist())
+print("Actual:     ", y_test.tolist())</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
     <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 11</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Mini ML workflow">
+
+<section class="slide" data-title="Accuracy and confusion matrix">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">End-to-end</span><h2>Mini ML workflow</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
-    <div class="slide-content"><div class="two-col tight"><div><p class="lead">This final example joins the main steps: data, split, train, evaluate, and report.</p></div><div><div class="code-cell" data-filename="module14_workflow.py">
+    <header class="slide-header"><div><span class="kicker">See what the model got right and wrong</span><h2>Accuracy and confusion matrix</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Accuracy gives one overall percentage. A confusion matrix separates the predictions into correct and incorrect cases for each class.</p>
+  <div class="module14-matrix"><span>True Negative</span><span>False Positive</span><span>False Negative</span><span>True Positive</span></div>
+  <div class="callout"><strong>Use both.</strong> Two models can have the same accuracy but make very different types of mistakes.</div>
+</div><div>
+<div class="code-cell" data-filename="module14_evaluate.py">
   <div class="cell-head">
-    <div><div class="cell-label">Executable Python</div><h3>End-to-end classifier</h3><p>Run this cell in the browser. Edit the code and run again.</p></div>
-    <span class="file-pill">module14_workflow.py</span>
+    <div><div class="cell-label">Executable Python</div><h3>Evaluate test predictions</h3><p>Read the confusion matrix together with the accuracy.</p></div>
+    <span class="file-pill">module14_evaluate.py</span>
   </div>
   <div class="editor-shell">
-    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_workflow.py</span></div>
-    <textarea class="code-input" spellcheck="false">from sklearn.datasets import make_classification
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_evaluate.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+customers = pd.DataFrame({
+    "visits": [2, 8, 4, 10, 3, 7, 5, 9, 1, 6, 4, 8,
+               2, 9, 5, 7, 3, 10, 6, 8, 1, 5, 7, 9],
+    "pages_viewed": [5, 18, 9, 22, 6, 16, 11, 20, 3, 14, 8, 19,
+                     4, 21, 10, 17, 7, 24, 13, 18, 2, 12, 15, 23],
+    "past_orders": [0, 3, 1, 4, 0, 2, 1, 5, 0, 2, 1, 3,
+                    0, 4, 1, 2, 0, 5, 2, 3, 0, 1, 2, 4],
+    "days_since_last": [90, 12, 45, 5, 75, 18, 40, 7, 120, 25, 55, 10,
+                        100, 6, 48, 20, 80, 4, 28, 11, 140, 50, 22, 8],
+    "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+                  0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+})
 from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix
 
-X, y = make_classification(n_samples=120, n_features=5, n_informative=3, random_state=7)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=7)
+X = customers[
+    ["visits", "pages_viewed",
+     "past_orders", "days_since_last"]
+]
+y = customers["responded"]
 
-model = DecisionTreeClassifier(max_depth=3, random_state=7)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.25,
+    random_state=42, stratify=y
+)
+
+model = LogisticRegression(max_iter=1000)
 model.fit(X_train, y_train)
-predictions = model.predict(X_test)
+pred = model.predict(X_test)
 
-print(&quot;Test accuracy:&quot;, round(accuracy_score(y_test, predictions), 3))
-print(&quot;Test rows:&quot;, len(y_test))</textarea>
+print("Accuracy:",
+      round(accuracy_score(y_test, pred), 3))
+print("\nConfusion matrix:")
+print(confusion_matrix(y_test, pred))</textarea>
     <div class="monaco-host" aria-label="Python editor"></div>
     <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
   </div>
@@ -370,110 +607,578 @@ print(&quot;Test rows:&quot;, len(y_test))</textarea>
     <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 12</span></footer>
   </div>
 </section>
-<section class="slide" data-title="Module 14 wrap-up">
+
+<section class="slide" data-title="Precision, recall, and F1">
   <div class="slide-inner">
-    <header class="slide-header"><div><span class="kicker">What you can now do</span><h2>Module 14 wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
-    <div class="slide-content"><div class="summary-grid"><div><h3>Read data</h3><p>Load CSV-style data.</p></div><div><h3>Choose X and y</h3><p>Separate features and target.</p></div><div><h3>Split data</h3><p>Evaluate on unseen rows.</p></div><div><h3>Train model</h3><p>Fit a classifier.</p></div><div><h3>Evaluate</h3><p>Use accuracy and confusion matrix.</p></div><div><h3>Interpret responsibly</h3><p>Compare to baseline and state limits.</p></div></div><div class="callout success">You can now run a first end-to-end machine learning workflow in Python.</div></div>
+    <header class="slide-header"><div><span class="kicker">Different mistakes matter in different projects</span><h2>Precision, recall, and F1</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="module14-metric-grid">
+  <div><h3>Precision</h3><p>Of the cases predicted positive, how many were actually positive?</p></div>
+  <div><h3>Recall</h3><p>Of the actual positive cases, how many did the model find?</p></div>
+  <div><h3>F1</h3><p>A combined measure that balances precision and recall.</p></div>
+</div>
+<div class="callout secondary"><strong>Choose metrics based on consequences.</strong> Missing a disease case, blocking a legitimate transaction, and sending an unnecessary marketing message have very different costs.</div>
+<div class="two-col compact-top"><div><p class="lead">Scikit-learn can calculate several classification metrics at once.</p></div><div>
+<div class="code-cell" data-filename="module14_metrics.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Print a classification report</h3><p>Focus on the meaning of each metric rather than memorizing formulas.</p></div>
+    <span class="file-pill">module14_metrics.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_metrics.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+customers = pd.DataFrame({
+    "visits": [2, 8, 4, 10, 3, 7, 5, 9, 1, 6, 4, 8,
+               2, 9, 5, 7, 3, 10, 6, 8, 1, 5, 7, 9],
+    "pages_viewed": [5, 18, 9, 22, 6, 16, 11, 20, 3, 14, 8, 19,
+                     4, 21, 10, 17, 7, 24, 13, 18, 2, 12, 15, 23],
+    "past_orders": [0, 3, 1, 4, 0, 2, 1, 5, 0, 2, 1, 3,
+                    0, 4, 1, 2, 0, 5, 2, 3, 0, 1, 2, 4],
+    "days_since_last": [90, 12, 45, 5, 75, 18, 40, 7, 120, 25, 55, 10,
+                        100, 6, 48, 20, 80, 4, 28, 11, 140, 50, 22, 8],
+    "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+                  0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+})
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
+
+X = customers[
+    ["visits", "pages_viewed",
+     "past_orders", "days_since_last"]
+]
+y = customers["responded"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.25,
+    random_state=42, stratify=y
+)
+
+model = LogisticRegression(max_iter=1000)
+model.fit(X_train, y_train)
+
+print(classification_report(
+    y_test,
+    model.predict(X_test),
+    zero_division=0
+))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
     <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 13</span></footer>
   </div>
-</section></main>
-  <footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"></select><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 13</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
+</section>
+
+<section class="slide" data-title="Prediction probabilities and thresholds">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">A prediction begins as a score</span><h2>Prediction probabilities and thresholds</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Many classifiers can return a probability. A threshold converts that probability into a class label.</p>
+  <div class="module14-threshold"><span>0.18</span><span>0.42</span><strong>0.50 threshold</strong><span>0.67</span><span>0.91</span></div>
+  <div class="callout secondary"><strong>Changing the threshold changes the tradeoff</strong> between false positives and false negatives. The default threshold is not automatically the best choice for every application.</div>
+</div><div>
+<div class="code-cell" data-filename="module14_probability.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Inspect predicted probabilities</h3><p>Compare probabilities with the final class predictions.</p></div>
+    <span class="file-pill">module14_probability.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_probability.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+customers = pd.DataFrame({
+    "visits": [2, 8, 4, 10, 3, 7, 5, 9, 1, 6, 4, 8,
+               2, 9, 5, 7, 3, 10, 6, 8, 1, 5, 7, 9],
+    "pages_viewed": [5, 18, 9, 22, 6, 16, 11, 20, 3, 14, 8, 19,
+                     4, 21, 10, 17, 7, 24, 13, 18, 2, 12, 15, 23],
+    "past_orders": [0, 3, 1, 4, 0, 2, 1, 5, 0, 2, 1, 3,
+                    0, 4, 1, 2, 0, 5, 2, 3, 0, 1, 2, 4],
+    "days_since_last": [90, 12, 45, 5, 75, 18, 40, 7, 120, 25, 55, 10,
+                        100, 6, 48, 20, 80, 4, 28, 11, 140, 50, 22, 8],
+    "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+                  0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+})
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+
+X = customers[
+    ["visits", "pages_viewed",
+     "past_orders", "days_since_last"]
+]
+y = customers["responded"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.25,
+    random_state=42, stratify=y
+)
+
+model = LogisticRegression(max_iter=1000)
+model.fit(X_train, y_train)
+
+probability = model.predict_proba(X_test)[:, 1]
+prediction = (probability &gt;= 0.50).astype(int)
+
+result = X_test.copy()
+result["probability"] = probability.round(3)
+result["prediction"] = prediction
+result["actual"] = y_test
+
+print(result)</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 14</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Predict a new case">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Use the same feature structure</span><h2>Predict a new case</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">After training, the model can predict a new row, but the new data must have the same feature meanings and preprocessing as the training data.</p>
+  <div class="callout"><strong>New case:</strong> 7 visits, 16 pages viewed, 2 past orders, and 15 days since the last activity.</div>
+  <p class="concept-note">A prediction is model output, not guaranteed truth. It should be interpreted with the model's evaluation results and limitations.</p>
+</div><div>
+<div class="code-cell" data-filename="module14_new_case.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Predict one new customer</h3><p>Change the values and see how the probability changes.</p></div>
+    <span class="file-pill">module14_new_case.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_new_case.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+customers = pd.DataFrame({
+    "visits": [2, 8, 4, 10, 3, 7, 5, 9, 1, 6, 4, 8,
+               2, 9, 5, 7, 3, 10, 6, 8, 1, 5, 7, 9],
+    "pages_viewed": [5, 18, 9, 22, 6, 16, 11, 20, 3, 14, 8, 19,
+                     4, 21, 10, 17, 7, 24, 13, 18, 2, 12, 15, 23],
+    "past_orders": [0, 3, 1, 4, 0, 2, 1, 5, 0, 2, 1, 3,
+                    0, 4, 1, 2, 0, 5, 2, 3, 0, 1, 2, 4],
+    "days_since_last": [90, 12, 45, 5, 75, 18, 40, 7, 120, 25, 55, 10,
+                        100, 6, 48, 20, 80, 4, 28, 11, 140, 50, 22, 8],
+    "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+                  0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+})
+from sklearn.linear_model import LogisticRegression
+
+features = [
+    "visits", "pages_viewed",
+    "past_orders", "days_since_last"
+]
+
+X = customers[features]
+y = customers["responded"]
+
+model = LogisticRegression(max_iter=1000)
+model.fit(X, y)
+
+new_customer = pd.DataFrame([{
+    "visits": 7,
+    "pages_viewed": 16,
+    "past_orders": 2,
+    "days_since_last": 15
+}])
+
+pred = model.predict(new_customer)[0]
+prob = model.predict_proba(new_customer)[0, 1]
+
+print("Predicted class:", int(pred))
+print("Probability of response:", round(prob, 3))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 15</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Avoid data leakage">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Do not let the model see the answer indirectly</span><h2>Avoid data leakage</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col">
+  <div>
+    <p class="lead">Data leakage occurs when training uses information that would not really be available when the future prediction is made.</p>
+    <ul class="clean-list"><li>Including the target itself in the features</li><li>Using information created after the outcome happened</li><li>Cleaning or scaling with knowledge from the test set</li><li>Duplicating the same person or event across train and test</li></ul>
+  </div>
+  <div class="module14-leak"><div><strong>Correct</strong><span>Past information → model → future prediction</span></div><div><strong>Leakage</strong><span>Future/outcome information → training features</span></div></div>
+</div>
+<div class="callout secondary"><strong>Leakage can make a weak model look excellent during testing and fail badly in real use.</strong></div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 16</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Keep preprocessing consistent with a pipeline">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Fit transformations on training data</span><h2>Keep preprocessing consistent with a pipeline</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">A scikit-learn Pipeline connects preprocessing and the model so the same steps are applied consistently to training, test, and new data.</p>
+  <ul class="clean-list"><li>Fit preprocessing only on training data.</li><li>Transform test data using what was learned from training.</li><li>Keep the workflow together for future predictions.</li></ul>
+  <div class="callout"><strong>Why this matters:</strong> consistency reduces mistakes and helps prevent leakage.</div>
+</div><div>
+<div class="code-cell" data-filename="module14_pipeline.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Scale features and train in one pipeline</h3><p>The scaler and classifier are treated as one workflow.</p></div>
+    <span class="file-pill">module14_pipeline.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_pipeline.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+customers = pd.DataFrame({
+    "visits": [2, 8, 4, 10, 3, 7, 5, 9, 1, 6, 4, 8,
+               2, 9, 5, 7, 3, 10, 6, 8, 1, 5, 7, 9],
+    "pages_viewed": [5, 18, 9, 22, 6, 16, 11, 20, 3, 14, 8, 19,
+                     4, 21, 10, 17, 7, 24, 13, 18, 2, 12, 15, 23],
+    "past_orders": [0, 3, 1, 4, 0, 2, 1, 5, 0, 2, 1, 3,
+                    0, 4, 1, 2, 0, 5, 2, 3, 0, 1, 2, 4],
+    "days_since_last": [90, 12, 45, 5, 75, 18, 40, 7, 120, 25, 55, 10,
+                        100, 6, 48, 20, 80, 4, 28, 11, 140, 50, 22, 8],
+    "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+                  0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+})
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+X = customers[
+    ["visits", "pages_viewed",
+     "past_orders", "days_since_last"]
+]
+y = customers["responded"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.25,
+    random_state=42, stratify=y
+)
+
+model = Pipeline([
+    ("scale", StandardScaler()),
+    ("classifier", LogisticRegression())
+])
+
+model.fit(X_train, y_train)
+pred = model.predict(X_test)
+
+print("Accuracy:",
+      round(accuracy_score(y_test, pred), 3))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 17</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Mini end-to-end ML workflow">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">External data to evaluated model</span><h2>Mini end-to-end ML workflow</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">This final example connects the main machine learning steps into one reproducible workflow.</p>
+  <div class="module14-process"><span>1. Load data</span><span>2. Inspect quality</span><span>3. Define X and y</span><span>4. Split</span><span>5. Fit pipeline</span><span>6. Evaluate</span></div>
+  <div class="callout secondary"><strong>Real projects continue beyond this point:</strong> monitoring, retraining, documentation, privacy, fairness, and operational decisions all matter.</div>
+</div><div>
+<div class="code-cell" data-filename="module14_end_to_end.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Build and evaluate the workflow</h3><p>Read each block as one stage of the analytical process.</p></div>
+    <span class="file-pill">module14_end_to_end.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_end_to_end.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+customers = pd.DataFrame({
+    "visits": [2, 8, 4, 10, 3, 7, 5, 9, 1, 6, 4, 8,
+               2, 9, 5, 7, 3, 10, 6, 8, 1, 5, 7, 9],
+    "pages_viewed": [5, 18, 9, 22, 6, 16, 11, 20, 3, 14, 8, 19,
+                     4, 21, 10, 17, 7, 24, 13, 18, 2, 12, 15, 23],
+    "past_orders": [0, 3, 1, 4, 0, 2, 1, 5, 0, 2, 1, 3,
+                    0, 4, 1, 2, 0, 5, 2, 3, 0, 1, 2, 4],
+    "days_since_last": [90, 12, 45, 5, 75, 18, 40, 7, 120, 25, 55, 10,
+                        100, 6, 48, 20, 80, 4, 28, 11, 140, 50, 22, 8],
+    "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+                  0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+})
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix
+
+features = [
+    "visits", "pages_viewed",
+    "past_orders", "days_since_last"
+]
+
+X = customers[features]
+y = customers["responded"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y,
+    test_size=0.25,
+    random_state=42,
+    stratify=y
+)
+
+workflow = Pipeline([
+    ("scale", StandardScaler()),
+    ("model", LogisticRegression())
+])
+
+workflow.fit(X_train, y_train)
+pred = workflow.predict(X_test)
+
+print("Accuracy:",
+      round(accuracy_score(y_test, pred), 3))
+print("\nConfusion matrix:")
+print(confusion_matrix(y_test, pred))</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 18</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Practice challenge">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">Build the workflow yourself</span><h2>Practice challenge</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="two-col tight"><div>
+  <p class="lead">Use the starter dataset to complete a small classification workflow. The completed answer is intentionally not provided.</p>
+  <ol class="clean-list"><li>Inspect the data and target balance.</li><li>Create <code>X</code> and <code>y</code>.</li><li>Create a stratified train/test split.</li><li>Build a baseline classifier.</li><li>Train logistic regression.</li><li>Calculate accuracy and a confusion matrix.</li><li>Predict the probability for one new customer.</li><li>Write two limitations of the model.</li></ol>
+</div><div>
+<div class="code-cell" data-filename="module14_practice.py">
+  <div class="cell-head">
+    <div><div class="cell-label">Executable Python</div><h3>Complete the classification workflow</h3><p>Build and test one step at a time.</p></div>
+    <span class="file-pill">module14_practice.py</span>
+  </div>
+  <div class="editor-shell">
+    <div class="editor-topbar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="tab-name">module14_practice.py</span></div>
+    <textarea class="code-input" spellcheck="false">import pandas as pd
+
+customers = pd.DataFrame({
+    "visits": [2, 8, 4, 10, 3, 7, 5, 9, 1, 6, 4, 8,
+               2, 9, 5, 7, 3, 10, 6, 8, 1, 5, 7, 9],
+    "pages_viewed": [5, 18, 9, 22, 6, 16, 11, 20, 3, 14, 8, 19,
+                     4, 21, 10, 17, 7, 24, 13, 18, 2, 12, 15, 23],
+    "past_orders": [0, 3, 1, 4, 0, 2, 1, 5, 0, 2, 1, 3,
+                    0, 4, 1, 2, 0, 5, 2, 3, 0, 1, 2, 4],
+    "days_since_last": [90, 12, 45, 5, 75, 18, 40, 7, 120, 25, 55, 10,
+                        100, 6, 48, 20, 80, 4, 28, 11, 140, 50, 22, 8],
+    "responded": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+                  0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+})
+
+# 1. Inspect the data.
+
+# 2. Separate features X and target y.
+
+# 3. Create a train/test split.
+
+# 4. Fit a baseline.
+
+# 5. Train logistic regression.
+
+# 6. Evaluate the model.
+
+# 7. Predict one new case.
+
+# 8. Write two limitations in your notes.
+</textarea>
+    <div class="monaco-host" aria-label="Python editor"></div>
+    <div class="editor-status"><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Python</span></div>
+  </div>
+  <div class="cell-actions"><button class="btn run-cell" type="button"><i class="fa-solid fa-play"></i> Run</button><button class="btn ghost reset-cell" type="button">Reset</button><button class="btn ghost copy-cell" type="button">Copy</button></div>
+  <pre class="output">Click Run to execute this cell.</pre>
+</div></div></div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 19</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-title="Course wrap-up">
+  <div class="slide-inner">
+    <header class="slide-header"><div><span class="kicker">From raw data to analytical decisions</span><h2>Course wrap-up</h2></div><div class="slide-badge">IAN 601 · Module 14</div></header>
+    <div class="slide-content">
+<div class="summary-grid">
+  <div><h3>Program</h3><p>Use Python fundamentals, functions, modules, and reusable code.</p></div>
+  <div><h3>Work with data</h3><p>Use NumPy and Pandas to organize, transform, reshape, and summarize tables.</p></div>
+  <div><h3>Clean</h3><p>Identify missing values, duplicates, inconsistent types, unusual values, and quality problems.</p></div>
+  <div><h3>Explore</h3><p>Use descriptive statistics and visualization to understand distributions and relationships.</p></div>
+  <div><h3>Predict</h3><p>Separate features and target, train a simple model, and evaluate it on unseen data.</p></div>
+  <div><h3>Think critically</h3><p>Check assumptions, prevent leakage, document limitations, and connect every method to the analytical question.</p></div>
+</div>
+<div class="callout success module14-next"><strong>You have reached the final module of IAN 601.</strong> The next step is to apply these ideas in larger projects: begin with a real question, bring in data, inspect and clean it, explore it, choose an appropriate analytical method, evaluate the result, and communicate what the evidence does and does not support.</div></div>
+    <footer class="slide-footer"><span>Machine Learning &amp; External Data · From Data to Prediction</span><span>IAN 601 · Module 14 · Slide 20</span></footer>
+  </div>
+</section>
+</main>
+  <footer class="bottom-nav ian603-bottombar"><div class="nav-left"><button class="btn ghost" id="prev-btn" type="button">Previous</button></div><div class="audio-block"><div class="narration-controls"><button class="btn" id="start-narration-btn" type="button">Start Narration</button><button class="btn ghost" id="narration-toggle-btn" type="button">Narration Off</button><button class="btn ghost" id="cc-toggle-btn" type="button" aria-pressed="false">CC Off</button><button class="btn ghost" id="transcript-btn" type="button">Transcript</button><label class="audio-time" for="speed-select">Speed</label><select id="speed-select"><option value=".75">0.75x</option><option value="1" selected>1.0x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="subtitle-bar" id="subtitle-bar" hidden aria-live="polite"></div><div class="audio-player"><span class="audio-title" id="audio-title">Slide 1 audio ready</span><input class="seek-slider" id="audio-seek" type="range" min="0" max="1000" value="0"><span class="audio-time" id="audio-time">0:00 / 0:00</span><button class="btn ghost" id="audio-play-btn" type="button">Play</button></div></div><div class="bottom-nav-panel"><select class="bottom-slide-select" id="slide-select" aria-label="Choose slide"></select><div class="bottom-progress"><div class="progress"><div class="progress-bar" id="progress-bar"></div></div><div class="counter" id="counter">1 / 20</div></div></div><div class="nav-right"><button class="btn" id="next-btn" type="button">Next</button></div><audio id="narration-audio" preload="metadata"></audio></footer><aside class="transcript-panel" id="transcript-panel"><div class="transcript-head"><div><h2 id="transcript-title">Transcript</h2><div class="audio-time">VTT captions are used when available.</div></div><button class="btn ghost" id="transcript-close-btn">Close</button></div><div class="transcript-body" id="transcript-body"></div></aside>
 </div>
 <script>
 const MANIFEST = {
   "prefix": "module14",
-  "slide_count": 13,
+  "slide_count": 20,
   "slides": [
     {
       "slide": 1,
       "title": "Machine Learning & External Data",
       "audio": "audio/module14_slide_01.mp3",
       "captions": "captions/module14_slide_01.vtt",
-      "text": "Welcome to Module 14. This module focuses on Machine Learning & External Data. We will connect the methods to careful analytical interpretation and practical decision making. Machine learning uses data to train models that make predictions, but good results depend on clean data, careful evaluation, and responsible interpretation."
+      "text": "Welcome to Module 14, the final module of IAN 601. This lesson connects external data, Pandas, cleaning, statistics, and machine learning into one workflow. We will bring data into Python, define features and a target, train a simple classifier, evaluate it, and discuss how to interpret predictions responsibly."
     },
     {
       "slide": 2,
-      "title": "How to use this page",
+      "title": "From analysis to prediction",
       "audio": "audio/module14_slide_02.mp3",
       "captions": "captions/module14_slide_02.vtt",
-      "text": "Use this lesson interactively. Read the question first, predict the result, run the example, and then explain what the output does and does not tell you. Start with the main idea on the slide. Execute the Python code in the browser. Connect the output to the concept. Change one value, variable, or condition. Apply the pattern to a new example."
+      "text": "Earlier modules focused on preparing, cleaning, summarizing, and visualizing data. Machine learning adds a predictive question: can patterns in existing examples help us estimate an outcome for a new case? Prediction still depends on careful data preparation and honest evaluation."
     },
     {
       "slide": 3,
-      "title": "Learning path for Module 14",
+      "title": "Analytics questions and machine learning tasks",
       "audio": "audio/module14_slide_03.mp3",
       "captions": "captions/module14_slide_03.vtt",
-      "text": "This slide is the roadmap for Module 14. Follow the progression from the core idea to evaluation and the final integrated workflow. Read CSV-style data. Choose inputs and target. Separate training and testing. Train a simple classifier. Use accuracy and confusion matrix. Compare to baseline and explain limits."
+      "text": "Different questions require different methods. Descriptive analytics asks what happened. Classification predicts a category such as yes or no. Regression predicts a numeric value. In this module, we focus on binary classification, where the target has two possible classes."
     },
     {
       "slide": 4,
-      "title": "Read external-style data",
+      "title": "External data sources",
       "audio": "audio/module14_slide_04.mp3",
       "captions": "captions/module14_slide_04.vtt",
-      "text": "This slide focuses on Read external-style data. Start with the analytical question and the meaning of the output before focusing on the syntax. Many analytics projects begin by reading data from a CSV file. In this browser example, the CSV is stored as text. Read CSV text with pandas Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes."
+      "text": "Real analytics projects often begin with external data from CSV files, Excel workbooks, JSON APIs, or databases. Before using an external source, understand where the data came from, what each field means, when it was updated, and whether you have permission to use it."
     },
     {
       "slide": 5,
-      "title": "Inputs and target",
+      "title": "Read CSV data",
       "audio": "audio/module14_slide_05.mp3",
       "captions": "captions/module14_slide_05.vtt",
-      "text": "This slide focuses on Inputs and target. Start with the analytical question and the meaning of the output before focusing on the syntax. Features are input columns. The target is what the model learns to predict. Separate X and y Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes."
+      "text": "CSV is a common format for tabular data. In the browser example, we store CSV content as text so the code runs without a file download. In a normal Python environment, the same Pandas function can read a real file path. Always inspect shape, columns, and data types after loading."
     },
     {
       "slide": 6,
-      "title": "Train/test split",
+      "title": "JSON and API-style data",
       "audio": "audio/module14_slide_06.mp3",
       "captions": "captions/module14_slide_06.vtt",
-      "text": "This slide focuses on Train/test split. Start with the analytical question and the meaning of the output before focusing on the syntax. A model should be evaluated on data it did not use for learning. Split a dataset Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes."
+      "text": "Web APIs commonly return JSON rather than a flat table. Pandas json_normalize can convert nested records into a DataFrame. In real API work, also consider authentication, rate limits, documentation, and data-use rules. Never publish private API keys in source code."
     },
     {
       "slide": 7,
-      "title": "Train a simple classifier",
+      "title": "Inspect external data before modeling",
       "audio": "audio/module14_slide_07.mp3",
       "captions": "captions/module14_slide_07.vtt",
-      "text": "This slide focuses on Train a simple classifier. Start with the analytical question and the meaning of the output before focusing on the syntax. A classifier learns patterns from features and predicts a category. Train logistic regression Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes."
+      "text": "External data should be audited before modeling. Check shape, missingness, data types, value ranges, and the target distribution. A model can learn patterns from incorrect data just as easily as from correct data, so quality checks remain essential."
     },
     {
       "slide": 8,
-      "title": "Evaluate predictions",
+      "title": "Features and target",
       "audio": "audio/module14_slide_08.mp3",
       "captions": "captions/module14_slide_08.vtt",
-      "text": "This slide focuses on Evaluate predictions. Start with the analytical question and the meaning of the output before focusing on the syntax. Accuracy is the percent of correct predictions. A confusion matrix shows correct and incorrect predictions by class. Accuracy and confusion matrix Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes."
+      "text": "Features are the input variables available at prediction time. The target is the outcome the model learns to predict. When selecting features, ask whether each value would truly be available when a future prediction needs to be made."
     },
     {
       "slide": 9,
-      "title": "Compare with a baseline",
+      "title": "Train and test data",
       "audio": "audio/module14_slide_09.mp3",
       "captions": "captions/module14_slide_09.vtt",
-      "text": "This slide focuses on Compare with a baseline. Start with the analytical question and the meaning of the output before focusing on the syntax. A model should beat a simple baseline. Otherwise, it may not be useful. Baseline accuracy Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes."
+      "text": "Training data is used to fit the model, while test data is held aside for later evaluation. This separation helps us estimate performance on unseen cases. A fixed random state makes the example reproducible, and stratification helps preserve class proportions."
     },
     {
       "slide": 10,
-      "title": "Predict a new case",
+      "title": "Start with a baseline",
       "audio": "audio/module14_slide_10.mp3",
       "captions": "captions/module14_slide_10.vtt",
-      "text": "This slide focuses on Predict a new case. Start with the analytical question and the meaning of the output before focusing on the syntax. After training, a model can predict new rows with the same feature structure. Make one prediction Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes."
+      "text": "A predictive model should be compared with a simple baseline. In classification, one baseline is predicting the most common class every time. Without a baseline, an apparently high accuracy may be less impressive than it first appears."
     },
     {
       "slide": 11,
-      "title": "Avoid leakage",
+      "title": "Train a logistic regression classifier",
       "audio": "audio/module14_slide_11.mp3",
       "captions": "captions/module14_slide_11.vtt",
-      "text": "This slide focuses on Avoid leakage. Start with the analytical question and the meaning of the output before focusing on the syntax. Data leakage happens when training uses information that would not be available at prediction time. Split data before final evaluation. Do not let the target leak into features. Clean training data and test data consistently. Report limitations clearly."
+      "text": "Logistic regression is a common starting model for binary classification. We fit it on the training data and then ask it to predict the unseen test rows. Training performance alone is not enough because the goal is to generalize to new cases."
     },
     {
       "slide": 12,
-      "title": "Mini ML workflow",
+      "title": "Accuracy and confusion matrix",
       "audio": "audio/module14_slide_12.mp3",
       "captions": "captions/module14_slide_12.vtt",
-      "text": "This slide focuses on Mini ML workflow. Start with the analytical question and the meaning of the output before focusing on the syntax. This final example joins the main steps: data, split, train, evaluate, and report. End-to-end classifier Before running the example, predict the structure of the output. Run it in the browser and inspect the features, target, split, predictions, evaluation result, or external-style records. Then change one input and compare what changes."
+      "text": "Accuracy measures the overall fraction of correct predictions. A confusion matrix separates correct and incorrect predictions by class. Use both because models with the same accuracy can make very different types of mistakes."
     },
     {
       "slide": 13,
-      "title": "Module 14 wrap-up",
+      "title": "Precision, recall, and F1",
       "audio": "audio/module14_slide_13.mp3",
       "captions": "captions/module14_slide_13.vtt",
-      "text": "This slide summarizes Module 14. Focus on the main analytical decisions, interpretation limits, and reusable workflow patterns. Load CSV-style data. Separate features and target. Evaluate on unseen rows. Fit a classifier. Use accuracy and confusion matrix. Interpret responsibly"
+      "text": "Precision, recall, and F1 focus on different aspects of classification performance. The best metric depends on the consequences of errors in the real application. Missing an important positive case and generating an unnecessary false alarm may have very different costs."
+    },
+    {
+      "slide": 14,
+      "title": "Prediction probabilities and thresholds",
+      "audio": "audio/module14_slide_14.mp3",
+      "captions": "captions/module14_slide_14.vtt",
+      "text": "Many classifiers produce probabilities before converting them into class labels. A decision threshold determines when a probability becomes a positive prediction. Changing the threshold changes the balance between false positives and false negatives, so the default threshold is not automatically best for every problem."
+    },
+    {
+      "slide": 15,
+      "title": "Predict a new case",
+      "audio": "audio/module14_slide_15.mp3",
+      "captions": "captions/module14_slide_15.vtt",
+      "text": "A trained model can predict a new observation when the new row has the same feature meanings and preprocessing as the training data. A prediction is model output, not guaranteed truth. Interpret it together with the model's evaluation results and known limitations."
+    },
+    {
+      "slide": 16,
+      "title": "Avoid data leakage",
+      "audio": "audio/module14_slide_16.mp3",
+      "captions": "captions/module14_slide_16.vtt",
+      "text": "Data leakage occurs when training uses information that would not truly be available at prediction time. The target itself, future information, test-set knowledge, or duplicate records across training and test data can all cause leakage. Leakage can make a model look excellent during testing and fail in real use."
+    },
+    {
+      "slide": 17,
+      "title": "Keep preprocessing consistent with a pipeline",
+      "audio": "audio/module14_slide_17.mp3",
+      "captions": "captions/module14_slide_17.vtt",
+      "text": "A scikit-learn Pipeline connects preprocessing and modeling so the same transformations are applied consistently to training, test, and future data. Keeping the steps together also reduces leakage risk and makes the workflow easier to reproduce."
+    },
+    {
+      "slide": 18,
+      "title": "Mini end-to-end ML workflow",
+      "audio": "audio/module14_slide_18.mp3",
+      "captions": "captions/module14_slide_18.vtt",
+      "text": "The end-to-end workflow loads and inspects data, defines features and target, creates a train-test split, fits a preprocessing and modeling pipeline, and evaluates predictions. Real production projects continue with monitoring, documentation, privacy, fairness, and retraining decisions."
+    },
+    {
+      "slide": 19,
+      "title": "Practice challenge",
+      "audio": "audio/module14_slide_19.mp3",
+      "captions": "captions/module14_slide_19.vtt",
+      "text": "Now build the classification workflow yourself. Inspect the data, create features and target, split the data, establish a baseline, train logistic regression, evaluate predictions, predict a new case, and write down limitations. The completed solution is intentionally not included on the slide."
+    },
+    {
+      "slide": 20,
+      "title": "Course wrap-up",
+      "audio": "audio/module14_slide_20.mp3",
+      "captions": "captions/module14_slide_20.vtt",
+      "text": "You have reached the final module of IAN 601. Across the course, you worked from Python fundamentals through NumPy, Pandas, data cleaning, exploratory analysis, statistics, visualization, external data, and introductory machine learning. The next step is to apply these methods to larger projects while continuing to question data quality, assumptions, evaluation, and interpretation."
     }
   ]
 };
@@ -495,7 +1200,7 @@ const audioPlayBtn=document.getElementById('audio-play-btn');
 const audioSeek=document.getElementById('audio-seek');
 const audioTime=document.getElementById('audio-time');
 const speedSelect=document.getElementById('speed-select');
-const NARRATION_STORAGE_KEY='ian601_module14_presentation';
+const NARRATION_STORAGE_KEY='ian601_module14_presentation_v2';
 let narrationEnabled=false;
 let narrationStarted=false;
 let ccEnabled=false;
@@ -577,7 +1282,7 @@ initMonaco();const initialSlide=initNarr();
 showSlide(initialSlide);
 </script>
 <div class="ian603-modal-backdrop" id="ian-course-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">IAN 601 Course Modules</h2><button class="ian603-tool" id="ian-course-close" type="button">Close</button></div><div class="ian603-module-links"><a class="" href="s_module1.html">Module 1</a><a class="" href="s_module2.html">Module 2</a><a class="" href="s_module3.html">Module 3</a><a class="" href="s_module4.html">Module 4</a><a class="" href="s_module5.html">Module 5</a><a class="" href="s_module6.html">Module 6</a><a class="" href="s_module7.html">Module 7</a><a class="" href="s_module8.html">Module 8</a><a class="" href="s_module9.html">Module 9</a><a class="" href="s_module10.html">Module 10</a><a class="" href="s_module11.html">Module 11</a><a class="" href="s_module12.html">Module 12</a><a class="" href="s_module13.html">Module 13</a><a class="current" href="s_module14.html">Module 14 · Current</a></div></div></div><div class="ian603-modal-backdrop" id="ian-progress-modal"><div class="ian603-modal"><div class="ian603-modal-head"><h2 style="margin:0">Module 14 Progress</h2><button class="ian603-tool" id="ian-progress-close" type="button">Close</button></div><p style="color:var(--ian-muted)">Progress is saved only in this browser.</p><div style="height:12px;background:var(--ian-border);border-radius:999px;overflow:hidden"><div id="ian-progress-meter" style="height:100%;width:0;background:var(--ian-good)"></div></div><div id="ian-progress-text" style="margin:8px 0;color:var(--ian-muted)"></div><div id="ian-progress-list" class="ian603-module-links"></div><button class="ian603-tool" id="ian-progress-reset" type="button" style="margin-top:14px">Reset saved progress</button></div></div><script id="ian603-generic-ui">
-(()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module14_shell_progress_v1';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
+(()=>{const slides=[...document.querySelectorAll('.slide')],key='ian601_module14_shell_progress_v2';let visited=[];try{visited=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
 const activeIndex=()=>Math.max(0,slides.findIndex(s=>s.classList.contains('active')));
 function save(){localStorage.setItem(key,JSON.stringify(visited))}
 function render(){const i=activeIndex();if(!visited.includes(i+1)){visited.push(i+1);save()}const count=new Set(visited).size,pct=slides.length?Math.round(count/slides.length*100):0;const p=document.getElementById('ian-progress-pct');if(p)p.textContent=pct+'%';const meter=document.getElementById('ian-progress-meter');if(meter)meter.style.width=pct+'%';const text=document.getElementById('ian-progress-text');if(text)text.textContent=count+' of '+slides.length+' slides visited';const list=document.getElementById('ian-progress-list');if(list){list.innerHTML=slides.map((s,j)=>'<a href="#" data-shell-go="'+j+'" class="'+(visited.includes(j+1)?'current':'')+'">Slide '+(j+1)+': '+(s.dataset.title||'Slide')+'</a>').join('');list.querySelectorAll('[data-shell-go]').forEach(a=>a.onclick=e=>{e.preventDefault();const j=Number(a.dataset.shellGo);const sel=document.getElementById('slide-select');if(sel){sel.value=String(j);sel.dispatchEvent(new Event('change',{bubbles:true}))}document.getElementById('ian-progress-modal')?.classList.remove('show')})}}
