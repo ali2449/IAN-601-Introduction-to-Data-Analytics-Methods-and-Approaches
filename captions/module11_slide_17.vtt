@@ -4,7 +4,7 @@ WEBVTT
 Now we can put several ideas together into one complete workflow.
 
 00:00:04.072 --> 00:00:06.957
-We begin with the raw orders Data frame.
+We begin with the raw orders DataFrame.
 
 00:00:06.957 --> 00:00:11.132
 First, we convert the date column to a real datetime value.
@@ -13,7 +13,7 @@ First, we convert the date column to a real datetime value.
 Then we keep valid positive amounts.
 
 00:00:15.107 --> 00:00:21.997
-Next, we create a monthly period, group by month and region, calculate total sales and order counts,
+Next, we create a monthly period, groupby month and region, calculate total sales and order counts,
 
 00:00:21.997 --> 00:00:24.106
 and finally sort the results.

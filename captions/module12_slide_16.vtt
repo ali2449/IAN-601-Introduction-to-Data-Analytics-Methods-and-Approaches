@@ -1,7 +1,7 @@
 WEBVTT
 
 00:00:00.000 --> 00:00:06.252
-A clean Data frame is useful, but a reproducible cleaning process is much more valuable.
+A clean DataFrame is useful, but a reproducible cleaning process is much more valuable.
 
 00:00:06.252 --> 00:00:13.532
 You should be able to explain what issue you found, what action you took, how many values were affected,

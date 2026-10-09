@@ -4,7 +4,7 @@ WEBVTT
 Random numbers are extremely useful for simulation, testing, and statistical experiments.
 
 00:00:06.212 --> 00:00:13.427
-Modern NumPy recommends creating a random-number generator with N P dot random dot default R N G.
+Modern NumPy recommends creating a random-number generator with N P dot random dot default RNG.
 
 00:00:13.427 --> 00:00:15.077
 In this example, we use a seed of forty-two.

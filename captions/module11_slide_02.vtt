@@ -4,7 +4,7 @@ WEBVTT
 Think of Module 10 as learning individual Pandas tools, and Module 11 as learning how to combine those tools into a
 
 00:00:09.027 --> 00:00:13.972
-workflow. For example, filtering a Data frame is useful by itself.
+workflow. For example, filtering a DataFrame is useful by itself.
 
 00:00:13.972 --> 00:00:17.182
 Grouping data is useful by itself.

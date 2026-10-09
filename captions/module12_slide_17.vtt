@@ -25,7 +25,7 @@ This is a strong pattern for real analytical work: automate what you know is saf
 preserve uncertainty where investigation is still needed, and keep the transformations readable.
 
 00:00:46.042 --> 00:00:53.177
-Run the code and inspect both the cleaned Data frame and the missing-value summary after conversion.
+Run the code and inspect both the cleaned DataFrame and the missing-value summary after conversion.
 
 00:00:53.177 --> 00:00:59.811
 A good pipeline should make the data better while also making the cleaning logic easy to understand.

@@ -16,10 +16,10 @@ The fiftieth percentile is the median, and the seventy-fifth percentile is Q thr
 Click Run and inspect these values.
 
 00:00:22.537 --> 00:00:29.452
-We also calculate the interquartile range, or I Q R, by subtracting Q one from Q three.
+We also calculate the interquartile range, or IQR, by subtracting Q one from Q three.
 
 00:00:29.452 --> 00:00:34.152
-The I Q R describes the spread of the middle fifty percent of the data.
+The IQR describes the spread of the middle fifty percent of the data.
 
 00:00:34.152 --> 00:00:39.777
 It is often used in box plots and in simple rules for flagging potential outliers.

@@ -16,7 +16,7 @@ Then it applies a calculation within each group.
 Finally, it combines the results into a summary.
 
 00:00:20.587 --> 00:00:25.207
-In this example, we group by channel and sum the amount column.
+In this example, we groupby channel and sum the amount column.
 
 00:00:25.207 --> 00:00:29.432
 Click Run. The result tells us total revenue for web, email, and store.

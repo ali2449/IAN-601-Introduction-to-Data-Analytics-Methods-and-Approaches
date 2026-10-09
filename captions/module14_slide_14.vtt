@@ -13,7 +13,7 @@ In VS Code or Jupyter, you would normally pass a file path to read CSV.
 After loading the data, do not jump directly into modeling.
 
 00:00:22.829 --> 00:00:31.459
-Inspect the Data frame. Check the shape, column names, data types, missing values, and target values.
+Inspect the DataFrame. Check the shape, column names, data types, missing values, and target values.
 
 00:00:31.459 --> 00:00:38.199
 Machine learning workflows often fail because the analyst assumes the input is ready without checking it.

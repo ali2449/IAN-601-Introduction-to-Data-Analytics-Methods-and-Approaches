@@ -1,7 +1,7 @@
 WEBVTT
 
 00:00:00.000 --> 00:00:06.447
-Real machine learning projects rarely begin with a small Data frame typed directly into Python.
+Real machine learning projects rarely begin with a small DataFrame typed directly into Python.
 
 00:00:06.447 --> 00:00:14.552
 Data may come from CSV or TSV files, Excel workbooks, APIs that return JSON, or databases queried with SQL.

@@ -1,7 +1,7 @@
 WEBVTT
 
 00:00:00.000 --> 00:00:04.167
-Sometimes one Data frame cell contains more than one value.
+Sometimes one DataFrame cell contains more than one value.
 
 00:00:04.167 --> 00:00:11.207
 For example, a customer may have several interests, a patient may have several diagnosis codes,
@@ -22,7 +22,7 @@ After exploding the interests column, each interest gets its own row while the c
 This structure is much easier to analyze.
 
 00:00:37.485 --> 00:00:43.515
-We can count interests, group by interest, or join the values with another table.
+We can count interests, groupby interest, or join the values with another table.
 
 00:00:43.515 --> 00:00:47.385
 Run the example and look at the value counts at the bottom.

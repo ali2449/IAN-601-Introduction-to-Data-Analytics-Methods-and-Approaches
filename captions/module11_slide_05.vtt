@@ -13,7 +13,7 @@ Instead of writing a Boolean expression inside square brackets, you can often wr
 expression. In this example, we keep Web orders with an amount of at least fifty.
 
 00:00:21.012 --> 00:00:28.602
-Assign creates a new column and returns a new Data frame, which makes it convenient inside a method chain.
+Assign creates a new column and returns a new DataFrame, which makes it convenient inside a method chain.
 
 00:00:28.602 --> 00:00:32.671
 Here, we calculate a tax value based on the amount.
@@ -37,4 +37,4 @@ Run the code and inspect the result.
 Then change Web to Store, or change the minimum amount.
 
 00:00:57.463 --> 00:01:03.992
-Small experiments like this are a good way to understand exactly how each condition affects the Data frame.
+Small experiments like this are a good way to understand exactly how each condition affects the DataFrame.

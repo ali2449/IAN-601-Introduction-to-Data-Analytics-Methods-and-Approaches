@@ -10,7 +10,7 @@ In this example, region becomes the rows and channel becomes the columns.
 The amount column provides the values, and we sum those values for each region and channel combination.
 
 00:00:18.462 --> 00:00:22.344
-The result looks more like a report than a raw Data frame.
+The result looks more like a report than a raw DataFrame.
 
 00:00:22.964 --> 00:00:29.041
 Pivot tables are useful when people need to scan across categories quickly.

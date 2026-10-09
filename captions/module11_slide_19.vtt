@@ -1,7 +1,7 @@
 WEBVTT
 
 00:00:00.000 --> 00:00:05.852
-You have now moved beyond basic Data frame commands and into complete Pandas workflows.
+You have now moved beyond basic DataFrame commands and into complete Pandas workflows.
 
 00:00:05.852 --> 00:00:14.627
 We worked with method chaining, query and assign, named aggregation, transform, pivot tables, melt, explode,

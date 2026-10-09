@@ -7,7 +7,7 @@ Aggregation and transformation can both be used with groups, but they return dif
 Agg reduces each group to one or more summary rows.
 
 00:00:10.582 --> 00:00:18.217
-If we group by region and calculate the average amount, the result is a smaller table with one average per region.
+If we groupby region and calculate the average amount, the result is a smaller table with one average per region.
 
 00:00:18.217 --> 00:00:26.207
 Transform works differently. It calculates a group statistic but returns a value for every original row.

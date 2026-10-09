@@ -1,13 +1,13 @@
 WEBVTT
 
 00:00:00.000 --> 00:00:06.342
-Method chaining is a way to connect several Data frame operations into one readable sequence.
+Method chaining is a way to connect several DataFrame operations into one readable sequence.
 
 00:00:06.342 --> 00:00:09.217
 Look at the code from top to bottom.
 
 00:00:09.217 --> 00:00:12.237
-We start with the orders Data frame.
+We start with the orders DataFrame.
 
 00:00:12.237 --> 00:00:17.592
 Then we use query to keep only orders with an amount of at least seventy.

@@ -10,7 +10,7 @@ We may want to know the number of orders, total revenue, and average order value
 The agg method lets us calculate several measures in one grouped analysis.
 
 00:00:13.717 --> 00:00:18.567
-In this example, we group by channel and use named aggregation.
+In this example, we groupby channel and use named aggregation.
 
 00:00:18.567 --> 00:00:21.137
 Orders counts the number of records.

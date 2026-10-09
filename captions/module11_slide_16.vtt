@@ -4,10 +4,10 @@ WEBVTT
 When the same transformation is used more than once, it is often a good idea to place that logic inside a function.
 
 00:00:07.442 --> 00:00:14.782
-In the example, the add order size function receives a Data frame, creates an order-size category,
+In the example, the add order size function receives a DataFrame, creates an order-size category,
 
 00:00:14.782 --> 00:00:17.432
-and returns the updated Data frame.
+and returns the updated DataFrame.
 
 00:00:17.432 --> 00:00:22.197
 Pipe lets us insert that function naturally into a Pandas method chain.
@@ -25,7 +25,7 @@ For example, one function might clean column names, another might create categor
 and another might calculate a report.
 
 00:00:43.372 --> 00:00:49.727
-Run the code and follow how the Data frame moves through the pipe function and then into sort values.
+Run the code and follow how the DataFrame moves through the pipe function and then into sort values.
 
 00:00:49.727 --> 00:00:54.922
 A useful rule is to keep each function focused on one clear responsibility.

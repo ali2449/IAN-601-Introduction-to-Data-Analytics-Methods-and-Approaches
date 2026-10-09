@@ -4,7 +4,7 @@ WEBVTT
 Welcome to Module 11, Advanced Pandas.
 
 00:00:03.492 --> 00:00:10.117
-In the previous module, we worked with the basic building blocks of a Data frame: selecting columns, filtering rows,
+In the previous module, we worked with the basic building blocks of a DataFrame: selecting columns, filtering rows,
 
 00:00:10.117 --> 00:00:15.302
 sorting values, and creating simple summaries.
