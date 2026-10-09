@@ -1,46 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.352
+00:00:00.000 --> 00:00:04.887
 NumPy provides common descriptive statistics directly on arrays.
 
-00:00:04.352 --> 00:00:07.682
-Here we have seven daily website-visit counts.
+00:00:04.887 --> 00:00:13.301
+We can calculate the mean, median, minimum, maximum, standard deviation, and total sum with simple functions.
 
-00:00:07.682 --> 00:00:10.572
-Click Run and examine the results.
+00:00:13.852 --> 00:00:19.699
+These calculations help us understand the center, spread, and range of numerical data.
 
-00:00:10.572 --> 00:00:13.267
-Sum gives us the total activity.
+00:00:19.699 --> 00:00:26.459
+For example, an analyst might calculate average daily sales, the median response time,
 
-00:00:13.267 --> 00:00:16.162
-Mean gives us the average daily visits.
+00:00:26.459 --> 00:00:29.369
+or the standard deviation of measurements.
 
-00:00:16.162 --> 00:00:20.442
-Median gives us the middle value after ordering the observations.
+00:00:29.369 --> 00:00:37.804
+Summary statistics are often the first step in exploring numerical data, but remember that one number never tells the
 
-00:00:20.442 --> 00:00:26.947
-Standard deviation gives us a measure of variability, while minimum and maximum show the observed range.
-
-00:00:26.947 --> 00:00:34.502
-These summaries are useful during exploratory data analysis because they help us understand the center and
-
-00:00:34.502 --> 00:00:37.317
-spread of the data before building more complicated models.
-
-00:00:37.317 --> 00:00:41.447
-But remember that a single statistic never tells the whole story.
-
-00:00:41.447 --> 00:00:46.457
-Two datasets can have similar means but very different distributions.
-
-00:00:46.457 --> 00:00:52.232
-In real projects, use numerical summaries together with plots, domain knowledge,
-
-00:00:52.232 --> 00:00:55.297
-and checks for missing or unusual values.
-
-00:00:55.297 --> 00:00:57.862
-NumPy gives us the calculations.
-
-00:00:57.862 --> 00:01:01.829
-The analyst still has to interpret what those calculations mean.
+00:00:37.804 --> 00:00:43.920
+whole story. We should still inspect distributions, unusual values, and the context of the data.

@@ -1,37 +1,28 @@
 WEBVTT
 
-00:00:00.017 --> 00:00:04.037
-Percentiles tell us where values fall within a distribution.
+00:00:00.012 --> 00:00:04.822
+Percentiles help us understand where values fall within a distribution.
 
-00:00:04.037 --> 00:00:10.417
-On this slide, we calculate the twenty-fifth, fiftieth, and seventy-fifth percentiles.
+00:00:04.822 --> 00:00:11.587
+The twenty-fifth percentile is a value below which about twenty-five percent of observations fall.
 
-00:00:10.417 --> 00:00:14.282
-The twenty-fifth percentile is often called Q one.
+00:00:11.587 --> 00:00:14.697
+The fiftieth percentile is the median.
 
-00:00:14.282 --> 00:00:19.787
-The fiftieth percentile is the median, and the seventy-fifth percentile is Q three.
+00:00:14.697 --> 00:00:21.237
+The seventy-fifth percentile marks the point below which about seventy-five percent of observations fall.
 
-00:00:19.787 --> 00:00:22.537
-Click Run and inspect these values.
+00:00:21.768 --> 00:00:27.550
+These values are useful for describing distributions and for identifying possible outliers.
 
-00:00:22.537 --> 00:00:29.452
-We also calculate the interquartile range, or IQR, by subtracting Q one from Q three.
+00:00:27.550 --> 00:00:34.280
+The distance between the seventy-fifth and twenty-fifth percentiles is called the interquartile range,
 
-00:00:29.452 --> 00:00:34.152
-The IQR describes the spread of the middle fifty percent of the data.
+00:00:34.280 --> 00:00:37.040
+often spoken as IQR.
 
-00:00:34.152 --> 00:00:39.777
-It is often used in box plots and in simple rules for flagging potential outliers.
+00:00:37.040 --> 00:00:42.810
+Later, you may use IQR rules to flag unusually low or high values.
 
-00:00:39.777 --> 00:00:43.622
-Percentiles are useful when the average alone is not enough.
-
-00:00:43.622 --> 00:00:50.902
-For example, income, transaction amounts, response times, and hospital length of stay can all have skewed
-
-00:00:50.902 --> 00:00:52.462
-distributions.
-
-00:00:52.462 --> 00:00:59.333
-A percentile helps us ask questions such as: what value separates the top twenty-five percent from the rest?
+00:00:42.810 --> 00:00:48.241
+For now, focus on how percentiles divide a distribution into meaningful cutoffs.

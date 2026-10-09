@@ -1,43 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.332
-This slide summarizes the entire module into one practical sequence.
+00:00:00.000 --> 00:00:04.822
+Most everyday Pandas work can be organized into a compact sequence.
 
-00:00:04.332 --> 00:00:11.807
-Load the data. Profile it using head, shape, info, missing-value counts, and duplicate checks.
+00:00:04.822 --> 00:00:09.777
+Load the data. Profile it using head, shape, and info.
 
-00:00:11.807 --> 00:00:19.272
-Clean the important problems using tools such as to_numeric, fillna, drop_duplicates, and string methods.
+00:00:09.777 --> 00:00:17.352
+Clean values using type conversion, missing-value handling, duplicate checks, and string methods.
 
-00:00:19.272 --> 00:00:22.652
-Select the rows and columns relevant to the question.
+00:00:17.352 --> 00:00:19.422
+Select the rows you need.
 
-00:00:22.652 --> 00:00:27.907
-Create useful transformations, including derived columns and date features.
+00:00:19.422 --> 00:00:25.067
+Create useful transformations. Summarize with groupby and pivot tables.
 
-00:00:27.907 --> 00:00:30.227
-Summarize using groupby, agg, and pivot tables.
+00:00:25.067 --> 00:00:30.793
+Combine tables when necessary. Then validate row counts, keys, and totals.
 
-00:00:30.227 --> 00:00:35.752
-Combine related sources using merge or concat.
+00:00:31.394 --> 00:00:38.636
+You do not need to memorize hundreds of functions if you understand this workflow and know how to consult documentation.
 
-00:00:35.752 --> 00:00:39.247
-Then validate row counts, keys, missing values, and totals.
+00:00:38.636 --> 00:00:42.546
+Also remember that Pandas is not always the right tool.
 
-00:00:39.247 --> 00:00:45.462
-If you remember this workflow, you do not need to memorize hundreds of Pandas functions.
+00:00:42.546 --> 00:00:48.326
+Very large datasets may be better processed in SQL, Spark, Polars,
 
-00:00:45.462 --> 00:00:50.307
-You can use documentation when you need a specific method.
-
-00:00:50.307 --> 00:00:55.442
-Also remember that Pandas is not always the best tool for every dataset.
-
-00:00:55.442 --> 00:01:01.947
-If the data is extremely large, it may be more appropriate to perform part of the work in
-
-00:01:01.947 --> 00:01:04.347
-SQL, Spark, Pollars, or another system.
-
-00:01:04.347 --> 00:01:11.050
-Knowing when to use Pandas and when not to use Pandas is also part of professional analytical judgment.
+00:00:48.326 --> 00:00:51.899
+or another system designed for larger-scale computation.

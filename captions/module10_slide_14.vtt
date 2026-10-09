@@ -1,43 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.062
-Sorting helps us prioritize records and understand extremes.
+00:00:00.000 --> 00:00:07.982
+Sorting is useful when you want to quickly identify high, low, early, late, or otherwise important records.
 
-00:00:04.062 --> 00:00:10.747
-In this example, sort_values orders the DataFrame by amount from largest to smallest.
+00:00:07.982 --> 00:00:12.952
+The sort values method can order the table using one or more columns.
 
-00:00:10.747 --> 00:00:16.107
-Then nlargest returns the three rows with the largest amount values.
+00:00:12.952 --> 00:00:22.692
+For a numeric column, the N largest method is a convenient way to return the highest values without manually sorting the
 
-00:00:16.107 --> 00:00:19.192
-Click Run and compare the two outputs.
+00:00:22.692 --> 00:00:29.667
+entire table. For example, you might use it to find the five largest transactions, the highest-performing stores,
 
-00:00:19.192 --> 00:00:21.492
-Sort_values keeps all rows but changes their order.
+00:00:29.667 --> 00:00:32.722
+or the customers with the largest balances.
 
-00:00:21.492 --> 00:00:27.147
-Nlargest is useful when you only want the top few records.
+00:00:32.722 --> 00:00:37.432
+Whenever you look at top records, also consider context.
 
-00:00:27.147 --> 00:00:29.792
-This pattern appears often in real work.
+00:00:37.432 --> 00:00:44.672
+A very large value may represent strong performance, a rare event, or a data quality problem.
 
-00:00:29.792 --> 00:00:34.842
-You may want the highest-revenue products, the customers with the largest balances,
-
-00:00:34.842 --> 00:00:39.527
-the departments with the most incidents, or the top-performing campaigns.
-
-00:00:39.527 --> 00:00:44.892
-The opposite function, nsmallest, can help identify the lowest values.
-
-00:00:44.892 --> 00:00:49.977
-One caution: top values are not automatically the most important values.
-
-00:00:49.977 --> 00:00:55.622
-A large transaction may be valid, or it may be an outlier or data-entry error.
-
-00:00:55.622 --> 00:00:58.512
-Sorting helps you find what deserves attention.
-
-00:00:58.512 --> 00:01:01.244
-Interpretation still requires context.
+00:00:44.672 --> 00:00:49.588
+Sorting helps us find the record; interpretation tells us what it means.

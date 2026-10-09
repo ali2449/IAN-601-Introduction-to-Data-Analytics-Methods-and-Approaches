@@ -1,46 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.392
-You now have the NumPy foundation needed for the next stage of the course.
+00:00:00.000 --> 00:00:08.687
+This final slide provides official NumPy learning resources and examples of how NumPy appears in current data roles.
 
-00:00:06.392 --> 00:00:11.687
-If you want additional practice, the official NumPy learning resources and user guide are excellent
+00:00:08.687 --> 00:00:17.907
+The official beginner guide is especially useful when you need to review array creation, indexing, shape, broadcasting,
 
-00:00:11.687 --> 00:00:14.757
-references.
+00:00:17.907 --> 00:00:19.722
+and common calculations.
 
-00:00:14.757 --> 00:00:20.212
-The beginner materials are especially useful because they reinforce arrays, indexing, shapes, broadcasting,
+00:00:20.233 --> 00:00:24.460
+The best way to continue is to practice on small numerical problems.
 
-00:00:20.212 --> 00:00:23.542
-and numerical operations using short examples.
+00:00:24.460 --> 00:00:30.225
+Take a Python list from an earlier module and convert it to a NumPy array.
 
-00:00:23.542 --> 00:00:31.977
-The slide also includes examples of data-science roles where NumPy appears alongside tools such as Pandas,
+00:00:30.225 --> 00:00:35.125
+Then try to replace a manual loop with a vectorized calculation.
 
-00:00:31.977 --> 00:00:34.687
-scikit-learn, SQL, Jupyter, and visualization libraries.
+00:00:35.125 --> 00:00:44.250
+In the next module, we move into Pandas, where the same array-oriented ideas become part of a more complete workflow for
 
-00:00:34.687 --> 00:00:42.862
-For your own practice, take a numerical problem you previously solved with Python lists and loops and rewrite
-
-00:00:42.862 --> 00:00:45.217
-it with a NumPy array.
-
-00:00:45.217 --> 00:00:52.072
-For example, calculate averages, filter values above a threshold, standardize measurements,
-
-00:00:52.072 --> 00:00:54.642
-or summarize several months of sales.
-
-00:00:54.642 --> 00:00:57.137
-Then compare the two approaches.
-
-00:00:57.137 --> 00:01:01.327
-In Module 10, we will build on these ideas with Pandas,
-
-00:01:01.327 --> 00:01:08.657
-where rows and columns receive labels and we gain tools for real table-shaped datasets, cleaning, grouping,
-
-00:01:08.657 --> 00:01:09.704
-and analysis.
+00:00:44.250 --> 00:00:48.462
+cleaning, transforming, summarizing, and combining tabular data.

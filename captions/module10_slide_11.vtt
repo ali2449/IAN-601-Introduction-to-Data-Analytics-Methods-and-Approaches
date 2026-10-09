@@ -1,37 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.392
-Analytical datasets often contain more columns than we need for a specific task.
+00:00:00.000 --> 00:00:04.242
+Selecting columns is one of the most common operations in Pandas.
 
-00:00:05.392 --> 00:00:10.102
-In this example, we select one column and then two columns.
+00:00:04.242 --> 00:00:09.407
+When we use one column name, Pandas usually returns a Series.
 
-00:00:10.102 --> 00:00:16.287
-When we use one set of brackets with a single column name, Pandas usually returns a Series.
+00:00:09.407 --> 00:00:16.347
+When we provide several column names, Pandas returns a new DataFrame containing those columns.
 
-00:00:16.287 --> 00:00:22.037
-When we use a list of column names inside double brackets, Pandas returns a DataFrame.
+00:00:16.347 --> 00:00:22.792
+This matters because narrowing the table makes later analysis easier to read and reason about.
 
-00:00:22.037 --> 00:00:24.802
-Click Run and compare the outputs.
+00:00:22.792 --> 00:00:31.167
+If a dataset contains fifty columns but your question requires only customer I D, channel, and amount,
 
-00:00:24.802 --> 00:00:29.987
-Selecting only the variables you need can make an analysis easier to understand.
+00:00:31.167 --> 00:00:36.332
+working with those relevant columns reduces visual and logical clutter.
 
-00:00:29.987 --> 00:00:35.762
-Imagine a dataset with fifty columns, but your question only involves customer segment, order amount,
+00:00:36.332 --> 00:00:43.477
+Run the example and compare the Python types of the one-column result and the two-column result.
 
-00:00:35.762 --> 00:00:43.407
-and date. Keeping those three columns visible can reduce confusion while you develop the analysis.
-
-00:00:43.407 --> 00:00:46.857
-This also helps when sharing results with someone else.
-
-00:00:46.857 --> 00:00:52.822
-A small, focused table is often easier to review than a very wide DataFrame.
-
-00:00:52.822 --> 00:00:58.597
-Remember the key idea: one column selected directly usually gives you a Series.
-
-00:00:58.597 --> 00:01:00.976
-A list of columns gives you a DataFrame.
+00:00:43.477 --> 00:00:48.732
+The values may look similar on screen, but they are different Pandas objects.

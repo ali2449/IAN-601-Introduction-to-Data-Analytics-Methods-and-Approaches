@@ -1,49 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.327
-The most direct way to create a NumPy array is to start with a familiar Python sequence and
+00:00:00.000 --> 00:00:06.052
+The standard way to import NumPy is with the short name N P.
 
-00:00:05.327 --> 00:00:07.872
-pass it to N P dot array.
+00:00:06.052 --> 00:00:09.857
+In the code, you will see import NumPy as N P.
 
-00:00:07.872 --> 00:00:12.032
-The standard import is import NumPy as N P.
+00:00:09.857 --> 00:00:16.711
+After that, we can use the NumPy array function to convert a Python list into an array.
 
-00:00:12.032 --> 00:00:18.772
-The alias N P is used throughout NumPy documentation and in most professional Python code,
+00:00:17.216 --> 00:00:22.753
+Once the values are stored as an array, we can use NumPy operations directly.
 
-00:00:18.772 --> 00:00:21.447
-so I recommend following that convention.
+00:00:22.753 --> 00:00:29.773
+For example, we can add, subtract, multiply, or divide all values in one statement.
 
-00:00:21.447 --> 00:00:25.492
-In this example, we create an array of five scores.
+00:00:29.773 --> 00:00:36.478
+When you run the example, look carefully at the output and compare it with a normal Python list.
 
-00:00:25.492 --> 00:00:28.092
-Click Run. The first output displays the numeric array.
-
-00:00:28.092 --> 00:00:33.822
-The second output confirms that the object is a NumPy ndarray rather than a regular Python list.
-
-00:00:33.822 --> 00:00:39.867
-Then we call the mean method directly on the array.
-
-00:00:39.867 --> 00:00:42.622
-NumPy calculates the average across all five scores.
-
-00:00:42.622 --> 00:00:48.132
-Notice how the array carries useful numerical behavior with it.
-
-00:00:48.132 --> 00:00:52.667
-We do not need to manually add every score and divide by the count.
-
-00:00:52.667 --> 00:00:56.142
-Try changing one of the scores and run the code again.
-
-00:00:56.142 --> 00:00:58.467
-The average updates immediately.
-
-00:00:58.467 --> 00:01:04.532
-This small example introduces the basic pattern we will use repeatedly: create an array,
-
-00:01:04.532 --> 00:01:07.804
-then apply array operations to the entire collection.
+00:00:36.478 --> 00:00:43.186
+The values may look similar, but the array now supports a much richer set of numerical operations.

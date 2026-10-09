@@ -1,31 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.037
-Z-scores can also help us identify observations that are far from the center of a distribution.
+00:00:00.000 --> 00:00:07.132
+Once we have z scores, we can use a threshold to flag values that are far from the center of the distribution.
 
-00:00:06.037 --> 00:00:12.227
-In this example, most values are around fifty, but one value is one hundred twenty.
+00:00:07.132 --> 00:00:13.316
+For example, values with a large absolute z score may deserve further investigation.
 
-00:00:12.227 --> 00:00:20.627
-We calculate the z-score for every observation and then create a Boolean mask where the absolute z-score is
+00:00:13.862 --> 00:00:16.969
+This does not automatically mean the value is wrong.
 
-00:00:20.627 --> 00:00:25.412
-greater than two. Click Run and inspect both the z-scores and the flagged values.
+00:00:16.969 --> 00:00:24.214
+An unusual value could be a data-entry problem, or it could be a genuine and important observation.
 
-00:00:25.412 --> 00:00:31.882
-The important lesson is not that two standard deviations is a universal outlier rule.
+00:00:24.214 --> 00:00:28.409
+The threshold should depend on the context and distribution.
 
-00:00:31.882 --> 00:00:37.422
-It is not. The useful pattern is: calculate a diagnostic measure, create a condition,
+00:00:28.409 --> 00:00:34.914
+The purpose of this example is to show how NumPy combines vectorized calculations, absolute values,
 
-00:00:37.422 --> 00:00:40.417
-and flag observations for investigation.
-
-00:00:40.417 --> 00:00:44.877
-Do not automatically delete a value simply because it looks unusual.
-
-00:00:44.877 --> 00:00:51.437
-An unusual value may be a data-entry error, but it may also be a rare and important real
-
-00:00:51.437 --> 00:00:57.796
-event. The analyst's job is to flag first, investigate second, and decide based on context.
+00:00:34.914 --> 00:00:41.115
+and Boolean filtering to identify values that meet an analytical rule.

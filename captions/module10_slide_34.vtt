@@ -1,43 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.317
-This final slide gives you resources for continuing your Pandas learning.
+00:00:00.000 --> 00:00:08.492
+The final slide points you toward the official Pandas documentation and examples of how Pandas skills appear in current
 
-00:00:04.317 --> 00:00:09.477
-The official Pandas documentation should become a normal part of your workflow.
+00:00:08.492 --> 00:00:12.277
+data roles. Documentation should become part of your normal workflow.
 
-00:00:09.477 --> 00:00:14.762
-You do not need to memorize every parameter.
+00:00:12.277 --> 00:00:21.182
+Even experienced analysts look up function options, examples, and edge cases rather than relying only on memory.
 
-00:00:14.762 --> 00:00:18.217
-Learn the core patterns, and then use the documentation when you need details.
+00:00:21.182 --> 00:00:25.667
+The best next step is to practice on a small real dataset.
 
-00:00:18.217 --> 00:00:26.142
-The Pandas user guide and the introductory tutorials are especially useful because they provide examples for
+00:00:25.667 --> 00:00:34.432
+Begin with a clear question, inspect the data before changing it, and make every cleaning or transformation step support
 
-00:00:26.142 --> 00:00:32.452
-selection, missing data, grouping, merging, reshaping, and many other common tasks.
+00:00:34.432 --> 00:00:38.460
+that question. Then validate the result and explain what you learned.
 
-00:00:32.452 --> 00:00:34.902
-Your best next step is practice.
+00:00:39.580 --> 00:00:46.687
+In the next module, we will move beyond the core workflow and explore more advanced Pandas techniques.
 
-00:00:34.902 --> 00:00:40.637
-Choose a small real CSV dataset and begin with a question, not with code.
+00:00:46.687 --> 00:00:51.352
+The goal will be to make your data work more expressive, more efficient,
 
-00:00:40.637 --> 00:00:43.397
-Write down what you want to learn from the data.
-
-00:00:43.397 --> 00:00:50.442
-Then load the file, inspect it, identify quality problems, clean only what needs to be cleaned,
-
-00:00:50.442 --> 00:00:54.257
-create useful transformations, summarize the result, and validate what you produced.
-
-00:00:54.257 --> 00:01:00.852
-That process is more valuable than memorizing a long list of functions.
-
-00:01:00.852 --> 00:01:06.972
-In the next module, we can build on this foundation with more advanced Pandas workflows, reshaping,
-
-00:01:06.972 --> 00:01:10.676
-time-series analysis, and performance-oriented techniques.
+00:00:51.352 --> 00:00:54.955
+and easier to reuse in larger analytical projects.

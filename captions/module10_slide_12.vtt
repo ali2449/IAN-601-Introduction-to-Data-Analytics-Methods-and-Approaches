@@ -1,40 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.627
-Pandas gives us two important selection tools: loc and iloc.
+00:00:00.000 --> 00:00:05.357
+Pandas gives us two common ways to select rows and columns more precisely.
 
-00:00:04.627 --> 00:00:12.082
-Loc is label-based. We normally use column names and, when needed, row labels or Boolean conditions.
+00:00:05.357 --> 00:00:09.172
+loc works with labels and conditions.
 
-00:00:12.082 --> 00:00:14.282
-Iloc is position-based. It uses integer positions.
+00:00:09.172 --> 00:00:12.817
+I loc works with integer positions.
 
-00:00:14.282 --> 00:00:17.882
-In the first example, loc finds rows where channel equals web,
+00:00:12.817 --> 00:00:21.662
+In the first example, loc keeps rows where the channel is web and returns only order I D and amount.
 
-00:00:17.882 --> 00:00:24.147
-then returns the order ID and amount columns.
+00:00:21.662 --> 00:00:27.302
+The code communicates the meaning of the selection because it uses column names.
 
-00:00:24.147 --> 00:00:30.502
-In the second example, iloc selects rows zero through one and columns zero through one using positions.
+00:00:27.302 --> 00:00:34.072
+In the second example, I loc selects rows and columns by their numeric positions.
 
-00:00:30.502 --> 00:00:33.112
-Click Run and compare the results.
+00:00:34.662 --> 00:00:43.539
+For analytical work, label-based selection is often easier to understand later because names describe the purpose of the
 
-00:00:33.112 --> 00:00:40.672
-For analytical code, loc is often easier to read because the code tells us what the columns mean.
-
-00:00:40.672 --> 00:00:45.982
-For example, selecting order ID and amount is much clearer to a future reader than selecting columns zero
-
-00:00:45.982 --> 00:00:48.762
-and two.
-
-00:00:48.762 --> 00:00:54.657
-Iloc is still useful when position itself matters, such as selecting the first few columns or working with
-
-00:00:54.657 --> 00:00:57.107
-a known table structure.
-
-00:00:57.107 --> 00:01:04.290
-The important distinction is simple: loc means labels and conditions; iloc means integer positions.
+00:00:43.539 --> 00:00:48.378
+data. Position-based selection is still useful when location itself is important.

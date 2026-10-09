@@ -1,34 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.212
-Random numbers are extremely useful for simulation, testing, and statistical experiments.
+00:00:00.000 --> 00:00:07.112
+Random numbers are useful for simulations, experiments, sampling, and creating test data.
 
-00:00:06.212 --> 00:00:13.427
-Modern NumPy recommends creating a random-number generator with N P dot random dot default RNG.
+00:00:07.112 --> 00:00:11.607
+Modern NumPy recommends using its generator interface.
 
-00:00:13.427 --> 00:00:15.077
-In this example, we use a seed of forty-two.
+00:00:11.607 --> 00:00:15.912
+In code, you will often see the default RNG function.
 
-00:00:15.077 --> 00:00:21.882
-The seed is important because it makes the generated sequence reproducible.
+00:00:16.771 --> 00:00:20.903
+A seed lets us reproduce the same sequence of random values.
 
-00:00:21.882 --> 00:00:27.517
-If you run the same code with the same seed, you should receive the same simulated values.
+00:00:20.903 --> 00:00:29.073
+Reproducibility is important because it allows someone else to run the same analysis and obtain the same simulated data.
 
-00:00:27.517 --> 00:00:35.197
-We generate eight observations from a normal distribution centered around one hundred with a standard
+00:00:29.073 --> 00:00:35.988
+In a classroom example, a fixed seed also means everyone can compare results more easily.
 
-00:00:35.197 --> 00:00:39.197
-deviation of fifteen. Click Run and inspect the sample and its mean.
+00:00:35.988 --> 00:00:41.603
+Remember that setting a seed does not make the values non-random in a statistical sense;
 
-00:00:39.197 --> 00:00:46.362
-A different seed will produce a different sample, while the same seed helps another analyst reproduce your
-
-00:00:46.362 --> 00:00:48.537
-result. This is a professional habit.
-
-00:00:48.537 --> 00:00:55.782
-When randomness is part of an analysis, documenting the seed can make experiments, examples,
-
-00:00:55.782 --> 00:00:57.615
-and debugging much easier to reproduce.
+00:00:41.603 --> 00:00:44.548
+it simply makes the generated sequence repeatable.

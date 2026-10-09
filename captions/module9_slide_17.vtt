@@ -1,37 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.132
-Real datasets often contain missing values.
+00:00:00.000 --> 00:00:03.807
+Numerical datasets often contain missing values.
 
-00:00:03.132 --> 00:00:10.357
-In NumPy floating-point arrays, missing numeric information is commonly represented with N P dot nan.
+00:00:03.807 --> 00:00:10.727
+NumPy commonly represents a missing floating-point value as NaN.
 
-00:00:10.357 --> 00:00:15.267
-Notice what happens if we calculate the regular mean of an array containing nan.
+00:00:10.727 --> 00:00:13.434
+In code, you will see N P dot nan.
 
-00:00:15.267 --> 00:00:20.337
-The result becomes nan because the missing value propagates through the calculation.
+00:00:14.097 --> 00:00:19.819
+A regular mean can return NaN if the array contains a missing value.
 
-00:00:20.337 --> 00:00:26.547
-Click Run and compare the regular mean with N P dot nanmean and N P dot nanmedian.
+00:00:19.819 --> 00:00:26.329
+NumPy also provides missing-aware functions, such as nan mean and nan median,
 
-00:00:26.547 --> 00:00:31.022
-The nan-aware functions ignore missing values during the calculation.
+00:00:26.329 --> 00:00:30.284
+that ignore those missing values during the calculation.
 
-00:00:31.022 --> 00:00:39.167
-The final part of the example replaces the missing value with the mean using N P dot nan
+00:00:30.284 --> 00:00:34.494
+This does not mean we should always ignore missing data.
 
-00:00:39.167 --> 00:00:42.097
-to num. This is useful for teaching the mechanics, but in a real project,
+00:00:34.494 --> 00:00:38.574
+The correct decision depends on why the value is missing.
 
-00:00:42.097 --> 00:00:47.832
-do not automatically replace every missing value with the mean.
+00:00:38.574 --> 00:00:46.589
+The important point is to recognize missing values and choose a method deliberately rather than letting them silently
 
-00:00:47.832 --> 00:00:52.772
-The correct treatment depends on why the data is missing, how much is missing,
-
-00:00:52.772 --> 00:00:55.257
-and what the analysis requires.
-
-00:00:55.257 --> 00:00:59.456
-First detect missingness. Then decide how it should be handled.
+00:00:46.589 --> 00:00:47.325
+affect the result.

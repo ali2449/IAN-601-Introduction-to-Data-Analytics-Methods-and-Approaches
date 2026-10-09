@@ -1,40 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.707
-Why should an analyst learn NumPy when we also have Pandas and other higher-level tools?
+00:00:00.000 --> 00:00:05.592
+NumPy is often working behind the scenes in data analysis and machine learning.
 
-00:00:05.707 --> 00:00:14.177
-The answer is that NumPy provides many of the numerical ideas that those tools build upon.
+00:00:05.592 --> 00:00:12.067
+Analysts may use it together with Pandas, SQL, and Jupiter notebooks.
 
-00:00:14.177 --> 00:00:20.342
-Arrays, shapes, Boolean masks, vectorized operations, and numerical data types appear throughout the Python
+00:00:12.067 --> 00:00:20.379
+Data scientists often use it with Pandas, scikit-learn, statistical methods, and machine learning models.
 
-00:00:20.342 --> 00:00:23.047
-data science ecosystem.
+00:00:20.829 --> 00:00:24.561
+The practical skill is understanding numerical arrays.
 
-00:00:23.047 --> 00:00:28.852
-For a data analyst, the most useful NumPy skills include creating arrays, filtering values,
+00:00:24.561 --> 00:00:32.166
+Imagine that you have thousands of sales values, temperatures, sensor readings, or model features.
 
-00:00:28.852 --> 00:00:34.387
-calculating summaries, working with missing numeric values,
+00:00:32.166 --> 00:00:37.161
+You usually do not want to write a Python loop for every calculation.
 
-00:00:34.387 --> 00:00:38.252
-and understanding how array operations support Pandas.
+00:00:37.161 --> 00:00:42.691
+NumPy lets you apply one operation to many values at the same time.
 
-00:00:38.252 --> 00:00:45.057
-For a data scientist, these ideas go further into multidimensional arrays, broadcasting, simulations,
+00:00:42.691 --> 00:00:48.346
+That makes the code shorter, easier to read, and often much faster.
 
-00:00:45.057 --> 00:00:53.792
-normalization, and matrix-style calculations. You do not need advanced numerical engineering for this course.
+00:00:48.346 --> 00:00:55.816
+When you later work with machine learning, you will see the same idea because models typically expect numerical data
 
-00:00:53.792 --> 00:01:00.697
-You do not need to become an expert in Fourier transforms or low-level memory optimization.
-
-00:01:00.697 --> 00:01:06.252
-A better professional question is this: when you see unfamiliar NumPy code, can you identify the array shape,
-
-00:01:06.252 --> 00:01:13.742
-understand what the operation is doing, and explain what the result means?
-
-00:01:13.742 --> 00:01:17.230
-That is the practical level of fluency we are building.
+00:00:55.816 --> 00:00:58.492
+organized as vectors or matrices.

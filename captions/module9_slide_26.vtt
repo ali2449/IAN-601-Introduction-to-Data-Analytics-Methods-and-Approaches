@@ -1,37 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.947
-A z-score tells us how far a value is from the mean in units of standard deviation.
+00:00:00.000 --> 00:00:06.667
+A z score describes how far a value is from the mean, measured in standard deviations.
 
-00:00:05.947 --> 00:00:11.492
-The formula is the value minus the mean, divided by the standard deviation.
+00:00:06.667 --> 00:00:13.002
+We calculate it by subtracting the mean from each value and dividing by the standard deviation.
 
-00:00:11.492 --> 00:00:17.462
-In this example, we calculate the mean and standard deviation of five observations,
+00:00:13.833 --> 00:00:21.600
+This is a good example of vectorized NumPy code because the same calculation is applied to every element in the array.
 
-00:00:17.462 --> 00:00:21.112
-then apply the formula to the entire array at once.
+00:00:21.600 --> 00:00:29.215
+Standardization is common in statistics and machine learning, especially when variables have different scales.
 
-00:00:21.112 --> 00:00:24.017
-Click Run and inspect the z-scores.
+00:00:29.215 --> 00:00:35.435
+In a production machine learning workflow, we usually use a fitted scaler from scikit-learn so the same transformation
 
-00:00:24.017 --> 00:00:26.937
-Values near zero are close to the mean.
-
-00:00:26.937 --> 00:00:29.692
-Positive z-scores are above the mean, and negative z-scores are below it.
-
-00:00:29.692 --> 00:00:37.307
-Standardization is useful when variables are measured on different scales.
-
-00:00:37.307 --> 00:00:41.122
-For example, one feature might be measured in dollars while another is measured in years.
-
-00:00:41.122 --> 00:00:49.142
-In production machine-learning workflows, we often use a fitted scaler from scikit-learn rather than manually
-
-00:00:49.142 --> 00:00:51.942
-applying this formula.
-
-00:00:51.942 --> 00:00:57.578
-But understanding the NumPy calculation helps you understand what the scaler is doing conceptually.
+00:00:35.435 --> 00:00:41.242
+learned from the training data can be applied consistently to new data.

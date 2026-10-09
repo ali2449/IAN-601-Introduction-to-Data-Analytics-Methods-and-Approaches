@@ -1,46 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.682
-Pivot tables and crosstabs are useful when we want to compare two categorical dimensions.
+00:00:00.000 --> 00:00:06.537
+Pivot tables provide a spreadsheet-like way to summarize numeric values across categories.
 
-00:00:05.682 --> 00:00:11.727
-In the first example, pivot_table summarizes amount by channel and status.
+00:00:06.537 --> 00:00:12.772
+In the example, a pivot table compares revenue using channel and order status.
 
-00:00:11.727 --> 00:00:16.487
-Rows represent channels. Columns represent status values.
+00:00:12.772 --> 00:00:18.342
+This helps us see how a measure changes across two categorical dimensions.
 
-00:00:16.487 --> 00:00:19.057
-The cells contain summed revenue.
+00:00:18.342 --> 00:00:21.022
+A cross tab is slightly different.
 
-00:00:19.057 --> 00:00:23.962
-Fill_value equals zero makes empty combinations easier to interpret.
+00:00:21.022 --> 00:00:24.157
+It counts combinations of categories.
 
-00:00:23.962 --> 00:00:29.822
-Then crosstab counts how many records occur for each channel and status combination.
+00:00:24.157 --> 00:00:30.218
+For example, it can show how many completed and cancelled orders occurred in each channel.
 
-00:00:29.822 --> 00:00:32.727
-Click Run and compare the two tables.
+00:00:30.801 --> 00:00:35.893
+These tools are useful when you want a compact summary that can be inspected quickly.
 
-00:00:32.727 --> 00:00:36.667
-Think of pivot_table as similar to an Excel pivot table.
+00:00:35.893 --> 00:00:42.123
+The main difference to remember is that a pivot table usually summarizes a numeric measure,
 
-00:00:36.667 --> 00:00:40.492
-It is useful when you want a compact matrix-style summary.
-
-00:00:40.492 --> 00:00:45.512
-Crosstab is especially convenient when you want counts of category combinations.
-
-00:00:45.512 --> 00:00:51.332
-For example, you could compare department by diagnosis, product type by region,
-
-00:00:51.332 --> 00:00:54.347
-or survey response by demographic group.
-
-00:00:54.347 --> 00:00:57.452
-The important question is what the cell means.
-
-00:00:57.452 --> 00:01:02.232
-Is it a count, a sum, an average, or another statistic?
-
-00:01:02.232 --> 00:01:04.793
-Always make the meaning of the table clear.
+00:00:42.123 --> 00:00:45.799
+while a cross tab is commonly used for category counts.

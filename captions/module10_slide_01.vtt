@@ -1,43 +1,37 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.197
+00:00:00.000 --> 00:00:01.972
 Welcome to Module 10.
 
-00:00:02.197 --> 00:00:09.202
-In this module, we are moving from general Python programming into one of the most important tools used
+00:00:01.972 --> 00:00:10.517
+We are now moving from general Python and numerical work into one of the most useful tools for practical data analysis:
 
-00:00:09.202 --> 00:00:12.837
-in day-to-day data analysis: Pandas.
+00:00:10.517 --> 00:00:11.912
+Pandas.
 
-00:00:12.837 --> 00:00:19.742
-Pandas helps us work with tabular data, meaning data organized into rows and columns.
+00:00:11.912 --> 00:00:21.232
+Pandas helps us work with table-shaped data, where each row represents an observation and each column represents a
 
-00:00:19.742 --> 00:00:25.887
-Think about CSV files, Excel worksheets, database query results, survey data, transaction records,
+00:00:21.232 --> 00:00:27.522
+variable. Throughout this module, we will follow the same workflow analysts use in real projects.
 
-00:00:25.887 --> 00:00:33.202
-or patient records. These are all common examples of data that can be represented as a Pandas DataFrame.
+00:00:27.522 --> 00:00:34.747
+We will load data, inspect it, identify quality problems, clean and transform columns, summarize groups,
 
-00:00:33.202 --> 00:00:36.207
-The goal is not to memorize a long list of commands.
+00:00:34.747 --> 00:00:38.372
+combine related tables, and validate the final result.
 
-00:00:36.207 --> 00:00:41.092
-Instead, I want you to learn a repeatable workflow.
+00:00:38.372 --> 00:00:44.402
+The goal is not to memorize every Pandas function.
 
-00:00:41.092 --> 00:00:48.497
-We will load data, inspect it, identify problems, clean those problems, create useful variables,
+00:00:44.402 --> 00:00:50.458
+The goal is to become comfortable solving common data problems in a clear and repeatable way.
 
-00:00:48.497 --> 00:00:53.462
-summarize the data, combine tables, and then validate the final result.
+00:00:51.106 --> 00:00:56.408
+As you work through the examples, pay attention to the reasoning behind each step.
 
-00:00:53.462 --> 00:00:58.932
-As we move through the module, notice that we will keep asking the same question:
+00:00:56.408 --> 00:01:01.098
+A successful analysis is not just code that runs.
 
-00:00:58.932 --> 00:01:04.352
-can we trust the data we are about to analyze?
-
-00:01:04.352 --> 00:01:09.462
-By the end of this module, you should be able to take a small messy dataset and turn
-
-00:01:09.462 --> 00:01:13.765
-it into a clean, understandable, and analysis-ready table.
+00:01:01.098 --> 00:01:06.632
+It is a process that produces data you understand and results you can explain.

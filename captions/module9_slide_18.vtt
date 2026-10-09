@@ -1,40 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.207
-A two-dimensional NumPy array can be thought of as a grid of rows and columns.
+00:00:00.000 --> 00:00:04.867
+A two-dimensional array can be viewed as a grid with rows and columns.
 
-00:00:06.207 --> 00:00:08.652
-In this example, each row contains three scores.
+00:00:04.867 --> 00:00:08.682
+This structure is similar to a table or matrix.
 
-00:00:08.652 --> 00:00:12.802
-Click Run. Shape tells us the size of the matrix.
+00:00:08.682 --> 00:00:15.812
+In analytics, each row often represents one observation, such as a customer or product,
 
-00:00:12.802 --> 00:00:17.797
-The expression scores zero comma colon selects the entire first row.
+00:00:15.812 --> 00:00:19.772
+while each column represents a numerical variable or measurement.
 
-00:00:17.797 --> 00:00:22.572
-Scores colon comma one selects the entire second column.
+00:00:20.495 --> 00:00:26.286
+For example, we could store products as rows and months as columns.
 
-00:00:22.572 --> 00:00:26.912
-Scores two comma one selects one specific value: the element in the third row and second column.
+00:00:26.286 --> 00:00:34.201
+Once data is two dimensional, selection and calculation become more powerful, but we also need to pay closer attention
 
-00:00:26.912 --> 00:00:34.797
-This row-and-column notation is fundamental when working with numerical datasets.
+00:00:34.201 --> 00:00:37.106
+to shape and axis.
 
-00:00:34.797 --> 00:00:38.722
-In analytics, rows often represent observations and columns often represent variables,
+00:00:37.106 --> 00:00:43.636
+When you inspect a two-dimensional array, identify how many rows and columns it contains and decide what each direction
 
-00:00:38.722 --> 00:00:41.177
-although the meaning depends on the project.
-
-00:00:41.177 --> 00:00:46.887
-For example, rows could represent patients and columns could represent measurements.
-
-00:00:46.887 --> 00:00:53.632
-Or rows could represent products and columns could represent months.
-
-00:00:53.632 --> 00:00:58.182
-Always connect the array dimensions to the real-world meaning of the data.
-
-00:00:58.182 --> 00:01:03.960
-A numerical matrix is much easier to understand when you know what each axis represents.
+00:00:43.636 --> 00:00:47.778
+means in the context of the problem.

@@ -1,43 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.732
-NumPy includes many vectorized mathematical functions called universal functions, or ufuncs.
+00:00:00.000 --> 00:00:05.167
+NumPy provides many mathematical functions that operate element by element.
 
-00:00:06.732 --> 00:00:11.172
-These functions operate element by element across arrays.
+00:00:05.167 --> 00:00:10.742
+These are often called universal functions.
 
-00:00:11.172 --> 00:00:18.297
-In the example, N P dot square root calculates the square root of every value in the array.
+00:00:10.742 --> 00:00:16.583
+Examples include square root, logarithm, exponential, absolute value, minimum, and maximum.
 
-00:00:18.297 --> 00:00:22.312
-N P dot log calculates the natural logarithm.
+00:00:17.045 --> 00:00:25.332
+If we pass an array into one of these functions, NumPy applies the operation to every element and returns a new array.
 
-00:00:22.312 --> 00:00:28.007
-We also apply N P dot absolute to an array containing negative values.
+00:00:25.332 --> 00:00:32.217
+This is useful for transformations that appear in statistics and machine learning.
 
-00:00:28.007 --> 00:00:30.867
-Click Run and examine the outputs.
+00:00:32.217 --> 00:00:39.827
+For example, logarithms may be used to transform highly skewed data, while square roots and absolute values appear in
 
-00:00:30.867 --> 00:00:34.377
-The important idea is not to memorize every ufunc.
-
-00:00:34.377 --> 00:00:37.152
-Instead, recognize the pattern.
-
-00:00:37.152 --> 00:00:42.742
-You provide an array, and NumPy returns a new array containing the transformed values.
-
-00:00:42.742 --> 00:00:50.527
-Common functions include square root, log, exponential, absolute value, minimum, maximum, sine, cosine,
-
-00:00:50.527 --> 00:00:51.397
-and many others.
-
-00:00:51.397 --> 00:00:59.682
-In a real analytics workflow, these functions may be used when transforming skewed measurements,
-
-00:00:59.682 --> 00:01:06.037
-calculating distances, scaling variables, or preparing features for statistical models.
-
-00:01:06.037 --> 00:01:12.971
-When reading NumPy code, ask what transformation is being applied and whether it operates element by element.
+00:00:39.827 --> 00:00:48.211
+many mathematical calculations. The important idea is that one function can process an entire numerical array at once.

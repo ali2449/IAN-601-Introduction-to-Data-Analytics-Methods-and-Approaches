@@ -1,46 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.182
-Most of the time, we will not type our data directly into Python.
+00:00:00.000 --> 00:00:04.302
+In real projects, we usually do not type records manually.
 
-00:00:04.182 --> 00:00:06.752
-We will load it from somewhere.
+00:00:04.302 --> 00:00:12.587
+Data often comes from a CSV file, an exported report, an API, or a database query.
 
-00:00:06.752 --> 00:00:14.257
-One of the most common formats is CSV, which stands for comma-separated values.
+00:00:12.587 --> 00:00:20.182
+Pandas provides the read CSV function to load comma-separated data directly into a DataFrame.
 
-00:00:14.257 --> 00:00:20.892
-In this example, we create CSV text inside Python and then use StringIO so Pandas can treat that
+00:00:20.182 --> 00:00:30.042
+This example uses string I O so everything can run inside the browser, but conceptually it behaves like reading a small
 
-00:00:20.892 --> 00:00:22.727
-text like a small file.
+00:00:30.042 --> 00:00:35.675
+file from disk. After loading the data, we print the table and check its Python type.
 
-00:00:22.727 --> 00:00:27.137
-The important function is pd.read_csv.
+00:00:36.297 --> 00:00:42.944
+A common professional workflow is to use SQL to retrieve the necessary records from a database,
 
-00:00:27.137 --> 00:00:31.337
-Click Run. Pandas reads the header row and uses those values as column names.
-
-00:00:31.337 --> 00:00:35.842
-Each later line becomes one row in the DataFrame.
-
-00:00:35.842 --> 00:00:43.867
-We also print the type of the result, and you should see that it is a Pandas DataFrame.
-
-00:00:43.867 --> 00:00:49.717
-In real work, the syntax may be as simple as pd.read_csv followed by the filename.
-
-00:00:49.717 --> 00:00:55.362
-The same general idea applies when data comes from SQL.
-
-00:00:55.362 --> 00:01:01.062
-SQL may retrieve the rows, and Pandas becomes the environment where we inspect, clean, transform,
-
-00:01:01.062 --> 00:01:09.082
-and summarize those rows. A good practice is to never assume that a file loaded perfectly.
-
-00:01:09.082 --> 00:01:11.562
-Loading is only the first step.
-
-00:01:11.562 --> 00:01:14.038
-The next step should always be inspection.
+00:00:42.944 --> 00:00:49.296
+then use Pandas for additional inspection, cleaning, transformation, and analysis.

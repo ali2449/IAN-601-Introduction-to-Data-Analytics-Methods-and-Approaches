@@ -1,46 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.527
+00:00:00.000 --> 00:00:04.807
 A useful way to learn NumPy is to think of it as a workflow.
 
-00:00:04.527 --> 00:00:06.402
-First, we create numeric data.
+00:00:04.807 --> 00:00:07.542
+First, create or load numerical data.
 
-00:00:06.402 --> 00:00:12.652
-That might come from a Python list, a simulation, a file, or another library.
+00:00:07.542 --> 00:00:11.912
+Second, inspect the array so you understand its structure.
 
-00:00:12.652 --> 00:00:15.507
-Second, we inspect the array.
+00:00:11.912 --> 00:00:19.682
+Then transform or calculate values, select the values you need, and reshape the array if the analysis requires a
 
-00:00:15.507 --> 00:00:22.982
-Before doing calculations, we ask questions such as: what is the shape, what data type is being stored,
+00:00:19.682 --> 00:00:21.646
+different organization.
 
-00:00:22.982 --> 00:00:25.497
-and how many dimensions do we have?
+00:00:22.452 --> 00:00:27.904
+After that, summarize the data and check whether the results make sense.
 
-00:00:25.497 --> 00:00:29.432
-Third, we transform the values using vectorized calculations.
+00:00:27.904 --> 00:00:30.054
+This order is important.
 
-00:00:29.432 --> 00:00:34.992
-Fourth, we select the values that matter using indexing, slicing, or Boolean masks.
+00:00:30.054 --> 00:00:39.744
+For example, before calculating an average across columns, you should know what each column represents and which axis
 
-00:00:34.992 --> 00:00:42.007
-As our data becomes more structured, we may reshape it into rows and columns and use axes to
+00:00:39.744 --> 00:00:44.949
+you are using. Many mistakes with NumPy come from skipping the inspection step.
 
-00:00:42.007 --> 00:00:48.127
-summarize specific dimensions. Then we calculate descriptive statistics or generate simulated data.
-
-00:00:48.127 --> 00:00:51.382
-Finally, we validate our assumptions.
-
-00:00:51.382 --> 00:00:53.237
-Does the shape match what we expected?
-
-00:00:53.237 --> 00:01:00.442
-Are there missing values? Did an operation modify the original array?
-
-00:01:00.442 --> 00:01:05.662
-This workflow is useful because many NumPy problems are easier to solve when we first understand the structure
-
-00:01:05.662 --> 00:01:08.252
-of the data.
+00:00:44.949 --> 00:00:53.757
+So throughout this module, we will repeatedly check shape, dimensions, and data type before performing calculations.

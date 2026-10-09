@@ -1,43 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.112
-NumPy indexing will feel familiar because it follows many of the same ideas as Python lists.
+00:00:00.000 --> 00:00:04.857
+Indexing lets us select specific positions from a one-dimensional array.
 
-00:00:06.112 --> 00:00:09.227
-Index zero selects the first element.
+00:00:04.857 --> 00:00:13.047
+Just like Python lists, NumPy uses zero-based indexing, so the first element is at position zero.
 
-00:00:09.227 --> 00:00:12.732
-Index negative one selects the last element.
+00:00:13.047 --> 00:00:16.558
+We can also use negative positions to count from the end.
 
-00:00:12.732 --> 00:00:17.352
-A slice such as colon three selects the first three values.
+00:00:17.207 --> 00:00:20.219
+Slicing lets us select a range of values.
 
-00:00:17.352 --> 00:00:21.412
-A slice with a step of two selects every other value.
+00:00:20.219 --> 00:00:26.009
+We can choose the first few values, a middle section, or every second value.
 
-00:00:21.412 --> 00:00:24.482
-Click Run and observe all four examples.
+00:00:26.009 --> 00:00:33.884
+These patterns become even more important when we move to two-dimensional arrays because we will select rows, columns,
 
-00:00:24.482 --> 00:00:30.997
-These operations are simple with a one-dimensional array, but they form the foundation for selecting rows,
+00:00:33.884 --> 00:00:36.809
+and rectangular sections of a matrix.
 
-00:00:30.997 --> 00:00:34.852
-columns, and blocks from multidimensional arrays later.
-
-00:00:34.852 --> 00:00:38.512
-Remember that Python uses zero-based indexing.
-
-00:00:38.512 --> 00:00:42.527
-The first item is at position zero, not position one.
-
-00:00:42.527 --> 00:00:48.967
-In real analysis, slicing can help us examine a time window, choose a subset of observations,
-
-00:00:48.967 --> 00:00:51.752
-or inspect part of a numerical sequence.
-
-00:00:51.752 --> 00:00:58.557
-The syntax is compact, so when you read an unfamiliar slice, slow down and identify the start position,
-
-00:00:58.557 --> 00:01:00.508
-stop position, and step.
+00:00:36.809 --> 00:00:44.142
+For now, make sure you are comfortable reading an index or slice and predicting which values it will return.

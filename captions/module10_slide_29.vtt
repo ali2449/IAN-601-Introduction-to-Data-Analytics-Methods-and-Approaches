@@ -1,46 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.902
-Now we will combine several ideas into one small workflow.
+00:00:00.000 --> 00:00:03.932
+Now we combine the ideas into one small cleaning workflow.
 
-00:00:03.902 --> 00:00:06.912
-The input is a messy sales extract.
+00:00:03.932 --> 00:00:11.797
+The raw sales extract contains inconsistent text, a currency-formatted amount, an invalid date, missing values,
 
-00:00:06.912 --> 00:00:11.622
-First, we remove duplicate order IDs and create a copy.
+00:00:11.797 --> 00:00:13.287
+and a duplicated order.
 
-00:00:11.622 --> 00:00:16.422
-Then we standardize channel and status using strip and lower.
+00:00:13.287 --> 00:00:20.397
+The workflow removes the duplicate, standardizes channel and status text, removes the currency symbol,
 
-00:00:16.422 --> 00:00:23.852
-Next, we clean the amount column by removing the dollar sign and converting the result to numeric values.
+00:00:20.397 --> 00:00:27.062
+converts amount to numeric, converts order date to a date-time type, fills the missing city,
 
-00:00:23.852 --> 00:00:29.292
-We convert the date column to datetime and coerce invalid dates to missing values.
+00:00:27.062 --> 00:00:31.269
+and fills the missing amount using the median.
 
-00:00:29.292 --> 00:00:34.732
-Then we fill the missing city with Unknown and fill the missing amount using the median for this
+00:00:31.746 --> 00:00:33.953
+The important lesson is the sequence.
 
-00:00:34.732 --> 00:00:39.432
-teaching example. Click Run and inspect the final DataFrame.
+00:00:33.953 --> 00:00:36.988
+We are not collecting random cleaning functions.
 
-00:00:39.432 --> 00:00:42.562
-The important lesson is the order of operations.
+00:00:36.988 --> 00:00:42.248
+We are moving from raw data toward a table with consistent types and categories.
 
-00:00:42.562 --> 00:00:45.902
-We are not randomly applying Pandas functions.
-
-00:00:45.902 --> 00:00:49.032
-We are following a sequence that we can explain.
-
-00:00:49.032 --> 00:00:55.577
-Profile the data, understand the problems, convert types, standardize categories, handle missingness,
-
-00:00:55.577 --> 00:00:58.582
-remove true duplicates, and then inspect the result.
-
-00:00:58.582 --> 00:01:05.722
-In a production project, each decision would need to be justified more carefully,
-
-00:01:05.722 --> 00:01:08.257
-but this gives you a practical starting pattern.
+00:00:42.248 --> 00:00:47.386
+Each transformation should solve a specific problem that we previously identified.

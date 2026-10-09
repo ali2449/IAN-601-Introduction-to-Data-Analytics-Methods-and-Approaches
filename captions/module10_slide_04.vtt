@@ -1,49 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.777
-This slide gives us the workflow we will follow throughout the module.
+00:00:00.000 --> 00:00:04.322
+A useful way to remember Pandas is as an eight-step workflow.
 
-00:00:06.777 --> 00:00:08.347
-First, we create or load a DataFrame.
+00:00:04.322 --> 00:00:13.837
+We create or load a table, inspect it, select the rows and columns we need, clean quality problems, transform values,
 
-00:00:08.347 --> 00:00:13.362
-In real projects, this may come from a CSV file, an Excel file, a database query,
+00:00:13.837 --> 00:00:20.247
+summarize the data, combine related tables, and finally validate the result.
 
-00:00:13.362 --> 00:00:18.467
-or another application. Second, we inspect the data.
+00:00:20.247 --> 00:00:22.137
+This order matters.
 
-00:00:18.467 --> 00:00:22.737
-Before changing anything, we need to understand what we received.
+00:00:22.137 --> 00:00:29.232
+For example, calculating revenue by category before checking whether the amount column is actually numeric can produce
 
-00:00:22.737 --> 00:00:28.527
-We look at sample rows, the shape of the table, column names, and data types.
+00:00:29.232 --> 00:00:32.962
+incorrect or unusable results.
 
-00:00:28.527 --> 00:00:35.452
-Third, we select the rows and columns that are relevant to our question.
+00:00:32.962 --> 00:00:40.070
+Similarly, joining two tables before understanding their keys can accidentally duplicate rows.
 
-00:00:35.452 --> 00:00:37.617
-Then we clean the data.
+00:00:40.520 --> 00:00:43.972
+Think of this workflow as a checklist you can reuse.
 
-00:00:37.617 --> 00:00:42.697
-This may include fixing types, handling missing values, removing true duplicates, and standardizing text.
-
-00:00:42.697 --> 00:00:47.942
-After cleaning, we can transform the data.
-
-00:00:47.942 --> 00:00:54.547
-We might create a profit column, extract the month from a date, or classify transactions into size categories.
-
-00:00:54.547 --> 00:01:01.927
-Next, we summarize the data using tools such as groupby, agg, pivot_table, and crosstab.
-
-00:01:01.927 --> 00:01:08.567
-If information is spread across multiple tables, we combine them using merge or concat.
-
-00:01:08.567 --> 00:01:10.937
-Finally, we validate.
-
-00:01:10.937 --> 00:01:15.457
-We compare row counts, inspect keys, check totals, and make sure our assumptions still hold.
-
-00:01:15.457 --> 00:01:23.647
-This sequence is useful because it gives structure to an otherwise messy analytical problem.
+00:00:43.972 --> 00:00:50.645
+Different projects may require different functions, but the reasoning process remains very similar.

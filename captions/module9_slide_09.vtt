@@ -1,46 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.247
-Vectorization is one of the central ideas in NumPy.
+00:00:00.000 --> 00:00:08.352
+Vectorization means applying a calculation to an entire array rather than processing one element at a time in a Python
 
-00:00:03.247 --> 00:00:07.077
-Instead of writing a loop that processes one value at a time,
+00:00:08.352 --> 00:00:11.962
+loop. Suppose we have an array of monthly sales values.
 
-00:00:07.077 --> 00:00:12.267
-we describe an operation that applies to an entire array.
+00:00:11.962 --> 00:00:19.091
+If we want to increase every value by five percent, we can multiply the whole array by one point zero five.
 
-00:00:12.267 --> 00:00:14.062
-In this example, we have a group of grades.
+00:00:19.871 --> 00:00:27.543
+The same idea works for subtraction, division, powers, comparisons, and many other operations.
 
-00:00:14.062 --> 00:00:19.897
-We add five points to every grade with one expression.
+00:00:27.543 --> 00:00:34.703
+Vectorized code is usually more concise and often faster because NumPy performs the numerical work using optimized
 
-00:00:19.897 --> 00:00:24.147
-Then we use N P dot minimum to make sure no grade goes above one hundred.
+00:00:34.703 --> 00:00:37.373
+low-level routines.
 
-00:00:24.147 --> 00:00:29.567
-Click Run and compare the original grades with the curved grades.
+00:00:37.373 --> 00:00:44.073
+As you practice, try to ask yourself whether an operation can be expressed across the whole array instead of writing a
 
-00:00:29.567 --> 00:00:31.202
-Notice that we never wrote a for loop.
-
-00:00:31.202 --> 00:00:35.072
-NumPy applies the arithmetic across the whole array.
-
-00:00:35.072 --> 00:00:39.982
-This style is usually easier to read for numerical problems,
-
-00:00:39.982 --> 00:00:42.242
-and NumPy can perform these operations efficiently.
-
-00:00:42.242 --> 00:00:49.112
-In analytics, vectorization is useful for adjustments, unit conversions, scaling, revenue calculations,
-
-00:00:49.112 --> 00:00:54.912
-percentages, feature transformations, and many other repetitive numerical tasks.
-
-00:00:54.912 --> 00:01:01.272
-When a calculation naturally applies to every element, think first about whether an array operation can
-
-00:01:01.272 --> 00:01:02.686
-express the idea directly.
+00:00:44.073 --> 00:00:46.003
+manual loop.

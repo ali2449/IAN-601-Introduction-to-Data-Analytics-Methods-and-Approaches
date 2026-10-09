@@ -1,37 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.307
-NumPy can sort values and also tell us where the minimum or maximum occurs.
+00:00:00.000 --> 00:00:05.692
+Sorting is useful when we want to rank values from smallest to largest or largest to smallest.
 
-00:00:05.307 --> 00:00:09.992
-In this example, we have revenue values from five observations.
+00:00:05.692 --> 00:00:08.672
+NumPy can sort an array directly.
 
-00:00:09.992 --> 00:00:14.037
-N P dot sort returns the values in ascending order.
+00:00:08.672 --> 00:00:15.763
+It can also tell us the position of the smallest or largest value using arg min and arg max.
 
-00:00:14.037 --> 00:00:22.252
-The max method returns the largest revenue value, while argmax returns the position where that largest value
+00:00:16.341 --> 00:00:19.883
+That position can be useful when the index has meaning.
 
-00:00:22.252 --> 00:00:26.677
-occurs. The same pattern applies to the minimum using min and argmin.
+00:00:19.883 --> 00:00:29.128
+For example, if each value represents sales for a different month, arg max can identify which month had the highest
 
-00:00:26.677 --> 00:00:30.232
-Click Run and compare the values with their positions.
+00:00:29.128 --> 00:00:29.463
+sales.
 
-00:00:30.232 --> 00:00:34.722
-This distinction is useful. Sometimes we only need the highest value.
+00:00:29.463 --> 00:00:37.748
+The distinction is important: max gives the largest value, while arg max gives the position where that value occurs.
 
-00:00:34.722 --> 00:00:39.467
-Other times we need to know which observation produced it.
-
-00:00:39.467 --> 00:00:44.597
-For example, if each position corresponds to a store, product, day, or model,
-
-00:00:44.597 --> 00:00:50.947
-argmax lets us identify the winning position and then connect that position to other information.
-
-00:00:50.947 --> 00:00:56.427
-Remember that argmax returns an index, not the actual maximum value.
-
-00:00:56.427 --> 00:00:59.760
-That small distinction prevents many beginner mistakes.
+00:00:37.748 --> 00:00:41.425
+The same relationship applies to min and arg min.

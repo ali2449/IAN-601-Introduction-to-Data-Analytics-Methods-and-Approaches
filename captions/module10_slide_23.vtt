@@ -1,43 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.512
-GroupBy is one of the most important patterns in Pandas.
+00:00:00.000 --> 00:00:04.082
+groupby is one of the most important patterns in Pandas.
 
-00:00:03.512 --> 00:00:07.702
-A useful way to understand it is split, apply, combine.
+00:00:04.082 --> 00:00:12.277
+Conceptually, it follows three steps: split the rows into groups, apply a calculation to each group,
 
-00:00:07.702 --> 00:00:13.637
-First, Pandas splits the rows into groups based on a category.
+00:00:12.277 --> 00:00:20.632
+and combine the results. In the example, orders are grouped by channel and the amount values are summed.
 
-00:00:13.637 --> 00:00:16.812
-Then it applies a calculation within each group.
+00:00:20.632 --> 00:00:26.587
+The result answers a simple business question: which channel contributes the most revenue?
 
-00:00:16.812 --> 00:00:20.587
-Finally, it combines the results into a summary.
+00:00:27.094 --> 00:00:33.036
+Once you understand this pattern, many analyses become easier.
 
-00:00:20.587 --> 00:00:25.207
-In this example, we groupby channel and sum the amount column.
+00:00:33.036 --> 00:00:40.711
+You can groupby department, city, product, customer segment, month, diagnosis category, or any other meaningful field,
 
-00:00:25.207 --> 00:00:29.432
-Click Run. The result tells us total revenue for web, email, and store.
-
-00:00:29.432 --> 00:00:35.812
-Now connect that code to a business question: which channel contributes the most revenue?
-
-00:00:35.812 --> 00:00:37.177
-That is the important part.
-
-00:00:37.177 --> 00:00:45.542
-GroupBy is not just syntax; it is a way to answer questions at a different level of detail.
-
-00:00:45.542 --> 00:00:48.772
-The original table has one row per order.
-
-00:00:48.772 --> 00:00:52.527
-The grouped result has one row or value per channel.
-
-00:00:52.527 --> 00:00:57.187
-Whenever you group data, ask what one output row represents.
-
-00:00:57.187 --> 00:01:01.489
-This is the same concept of grain that we discussed during duplicate handling.
+00:00:40.711 --> 00:00:47.324
+then calculate counts, totals, averages, minimums, maximums, or other summaries.

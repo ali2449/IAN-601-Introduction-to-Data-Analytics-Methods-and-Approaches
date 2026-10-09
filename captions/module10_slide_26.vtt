@@ -1,43 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.137
-Real analytical projects often require information from more than one table.
+00:00:00.000 --> 00:00:04.642
+Real analysis often requires information stored in more than one table.
 
-00:00:05.137 --> 00:00:11.707
-In this example, the orders table has customer IDs but does not have the customer segment.
+00:00:04.642 --> 00:00:12.347
+An orders table may contain customer I D, while a separate customers table contains the customer segment.
 
-00:00:11.707 --> 00:00:15.667
-The customers table contains customer ID and segment.
+00:00:12.347 --> 00:00:17.182
+A merge combines those related tables using a shared key.
 
-00:00:15.667 --> 00:00:19.882
-We use merge to bring the segment information into the order table.
+00:00:17.182 --> 00:00:24.492
+The example performs a left merge so all orders remain in the result and customer information is added when a matching
 
-00:00:19.882 --> 00:00:25.382
-The key is customer_id. We use a left join because we want to keep every order,
+00:00:24.492 --> 00:00:32.132
+customer exists. The validation option checks the expected relationship between the tables.
 
-00:00:25.382 --> 00:00:27.812
-even if a customer record is missing.
+00:00:32.685 --> 00:00:36.457
+Never assume a merge is correct just because it runs.
 
-00:00:27.812 --> 00:00:31.032
-Click Run and inspect the merged result.
+00:00:36.457 --> 00:00:42.037
+Check the row count before and after the merge, inspect unmatched keys,
 
-00:00:31.032 --> 00:00:33.762
-The validate argument is very important.
+00:00:42.037 --> 00:00:47.937
+and think about whether the relationship should be one-to-one, one-to-many, or many-to-many.
 
-00:00:33.762 --> 00:00:38.412
-Many-to-one tells Pandas that many orders may belong to one customer,
-
-00:00:38.412 --> 00:00:42.882
-but each customer ID should appear only once in the customer table.
-
-00:00:42.882 --> 00:00:49.502
-If that assumption is violated, Pandas can raise an error instead of silently multiplying rows.
-
-00:00:49.502 --> 00:00:54.577
-After any merge, check the row count and look for unmatched keys.
-
-00:00:54.577 --> 00:00:59.062
-A join can run without errors and still be logically wrong.
-
-00:00:59.062 --> 00:01:03.400
-Validation protects us from that kind of silent analytical mistake.
+00:00:47.937 --> 00:00:51.252
+Incorrect joins can silently duplicate data.

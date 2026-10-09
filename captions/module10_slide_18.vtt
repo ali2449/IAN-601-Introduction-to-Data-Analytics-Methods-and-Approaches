@@ -1,43 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.232
-Missing values require reasoning. There is no single correct command that works for every situation.
+00:00:00.000 --> 00:00:03.032
+Missing data is not only a technical problem.
 
-00:00:06.232 --> 00:00:10.637
-In this example, the city column contains one missing value.
+00:00:03.032 --> 00:00:05.262
+It is a decision problem.
 
-00:00:10.637 --> 00:00:13.782
-We replace that value with the label Unknown.
+00:00:05.262 --> 00:00:11.652
+We need to understand why a value is missing and what that absence means for the analysis.
 
-00:00:13.782 --> 00:00:17.932
-For amount, we demonstrate filling the missing value with the median.
+00:00:11.652 --> 00:00:18.812
+In this teaching example, a missing city is replaced with the label Unknown, while a missing amount is filled using the
 
-00:00:17.932 --> 00:00:21.782
-Click Run and compare the missing-value counts before and after.
+00:00:18.812 --> 00:00:22.072
+median of the available amounts.
 
-00:00:21.782 --> 00:00:25.727
-The important lesson is not that median is always the correct answer.
+00:00:22.072 --> 00:00:26.398
+These are two different strategies because the columns have different meanings.
 
-00:00:25.727 --> 00:00:27.897
-It is only a teaching example.
+00:00:26.848 --> 00:00:29.860
+Median filling is not a universal rule.
 
-00:00:27.897 --> 00:00:32.162
-Imagine that amount is missing because the transaction was cancelled.
+00:00:29.860 --> 00:00:35.335
+In another project, dropping the row, preserving the missing value, using a domain-specific default,
 
-00:00:32.162 --> 00:00:36.717
-Filling it with the median might create a false transaction value.
+00:00:35.335 --> 00:00:42.140
+or building a separate missing indicator could be more appropriate.
 
-00:00:36.717 --> 00:00:42.692
-In another dataset, a missing city may mean the customer refused to provide a location.
-
-00:00:42.692 --> 00:00:48.592
-Replacing it with Unknown may be appropriate because the missingness itself has meaning.
-
-00:00:48.592 --> 00:00:53.137
-Other choices include dropping the row, leaving the value missing, using a business rule,
-
-00:00:53.137 --> 00:00:59.222
-or creating a separate indicator showing that the original value was missing.
-
-00:00:59.222 --> 00:01:03.273
-Always ask why the value is missing before deciding how to handle it.
+00:00:42.140 --> 00:00:46.879
+The correct choice depends on the question and the data-generating process.

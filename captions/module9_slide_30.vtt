@@ -1,40 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.162
-Let's extend the sales project beyond simple totals.
+00:00:00.000 --> 00:00:03.967
+A useful analysis usually asks more than one question.
 
-00:00:03.162 --> 00:00:07.397
-First, we calculate month-to-month growth for the first product.
+00:00:03.967 --> 00:00:10.682
+In this continuation of the product sales example, we can calculate month-to-month growth for a product and compare
 
-00:00:07.397 --> 00:00:11.692
-N P dot diff calculates the difference between consecutive values.
+00:00:10.682 --> 00:00:13.500
+variability across products.
 
-00:00:11.692 --> 00:00:18.482
-We divide those differences by the previous month's value to convert the change into a relative growth rate.
+00:00:14.094 --> 00:00:22.196
+Growth tells us how values change over time, while standard deviation can help us compare how stable or variable
 
-00:00:18.482 --> 00:00:22.462
-Click Run and look at the three growth values.
+00:00:22.196 --> 00:00:24.516
+different product sales patterns are.
 
-00:00:22.462 --> 00:00:25.447
-Four monthly sales values produce three month-to-month changes.
+00:00:24.516 --> 00:00:29.521
+When interpreting the result, avoid focusing only on the code.
 
-00:00:25.447 --> 00:00:30.752
-Then we calculate standard deviation across each product row using axis one.
+00:00:29.521 --> 00:00:32.176
+Ask what the calculation means.
 
-00:00:30.752 --> 00:00:35.487
-This gives us a measure of how much each product's monthly sales vary.
+00:00:32.176 --> 00:00:39.991
+A product with high average sales but very high variability may behave differently from a product with slightly lower
 
-00:00:35.487 --> 00:00:41.452
-A higher standard deviation means the values fluctuate more across the observed months.
-
-00:00:41.452 --> 00:00:46.827
-The important professional lesson is that NumPy produces numerical summaries,
-
-00:00:46.827 --> 00:00:49.592
-but the analyst must explain their meaning.
-
-00:00:49.592 --> 00:00:54.427
-A result such as zero point one two growth is not just a number.
-
-00:00:54.427 --> 00:00:59.072
-It represents approximately twelve percent growth from one month to the next.
+00:00:39.991 --> 00:00:42.038
+but much more stable sales.

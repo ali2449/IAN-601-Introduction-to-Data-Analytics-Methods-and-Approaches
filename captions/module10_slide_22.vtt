@@ -1,46 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.722
-Dates become much more useful after they are converted to a real datetime type.
+00:00:00.000 --> 00:00:05.402
+Dates become much more useful after they are converted into a true date-time type.
 
-00:00:04.722 --> 00:00:11.292
-In this example, the order_date column is already converted using pd.to_datetime.
+00:00:05.402 --> 00:00:11.942
+Pandas provides a date-time accessor that lets us extract calendar information from a date column.
 
-00:00:11.292 --> 00:00:13.757
-Then we use the dt accessor.
+00:00:11.942 --> 00:00:16.037
+In the example, we create month, weekday, and quarter from order date.
 
-00:00:13.757 --> 00:00:17.107
-Dt.month_name returns the month name.
+00:00:16.037 --> 00:00:23.512
+These new columns can support questions such as whether sales are stronger on certain days,
 
-00:00:17.107 --> 00:00:20.327
-Dt.day_name returns the weekday. Dt.quarter returns the quarter number.
+00:00:23.512 --> 00:00:29.087
+whether activity changes by month, or how performance compares across quarters.
 
-00:00:20.327 --> 00:00:23.552
-Click Run and inspect the new columns.
+00:00:29.087 --> 00:00:34.157
+Date features are especially useful in reporting and time-based analysis.
 
-00:00:23.552 --> 00:00:26.682
-These features can support many analytical questions.
+00:00:34.157 --> 00:00:40.467
+Always confirm that the original date values were parsed correctly before extracting features from them,
 
-00:00:26.682 --> 00:00:29.957
-Do sales change by weekday?
-
-00:00:29.957 --> 00:00:34.272
-Are there seasonal patterns? Which quarter had the most transactions?
-
-00:00:34.272 --> 00:00:40.357
-Are hospital admissions higher during certain months?
-
-00:00:40.357 --> 00:00:44.942
-We can also calculate differences between dates, extract the year, or group records by time periods.
-
-00:00:44.942 --> 00:00:51.237
-The key lesson is that a date stored as text is limited.
-
-00:00:51.237 --> 00:00:55.927
-A true datetime value gives us access to time-based operations.
-
-00:00:55.927 --> 00:01:00.777
-Before using a date in analysis, confirm that it was parsed successfully and check for invalid values that
-
-00:01:00.777 --> 00:01:03.500
-became missing.
+00:00:40.467 --> 00:00:44.376
+because an invalid date can become a missing date during conversion.

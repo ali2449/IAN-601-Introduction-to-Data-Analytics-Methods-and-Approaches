@@ -1,34 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:08.932
-Reshape changes how values are arranged into dimensions without changing the sequence of underlying values.
+00:00:00.000 --> 00:00:05.712
+Reshaping changes the dimensions of an array while keeping the same underlying values.
 
-00:00:08.932 --> 00:00:16.047
-We begin with the numbers one through twelve in a one-dimensional array.
+00:00:05.712 --> 00:00:12.852
+For example, six values in a one-dimensional array can be reshaped into two rows and three columns,
 
-00:00:16.047 --> 00:00:21.407
-Then we reshape those twelve values into three rows and four columns.
+00:00:12.852 --> 00:00:16.054
+as long as the total number of elements stays the same.
 
-00:00:21.407 --> 00:00:28.242
-Click Run and compare the original array, the matrix, and the matrix shape.
+00:00:16.943 --> 00:00:21.630
+Transposing swaps rows and columns in a two-dimensional array.
 
-00:00:28.242 --> 00:00:31.062
-The total number of elements must remain compatible.
+00:00:21.630 --> 00:00:29.010
+If we start with three rows and two columns, the transpose will have two rows and three columns.
 
-00:00:31.062 --> 00:00:38.482
-Twelve values can be reshaped into three by four, two by six, or four by three,
+00:00:29.010 --> 00:00:36.630
+These operations are useful when a model, algorithm, or calculation expects data in a particular shape.
 
-00:00:38.482 --> 00:00:44.102
-but not into a shape that requires a different number of elements.
-
-00:00:44.102 --> 00:00:49.507
-The transpose, shown with dot T, swaps rows and columns.
-
-00:00:49.507 --> 00:00:53.327
-A three-by-four matrix becomes four-by-three.
-
-00:00:53.327 --> 00:01:00.437
-Reshaping is useful when numerical data needs a specific structure for analysis, visualization,
-
-00:01:00.437 --> 00:01:08.173
-or machine-learning algorithms. Before reshaping, ask what each new dimension is supposed to represent.
+00:00:36.630 --> 00:00:43.185
+Before reshaping, check the current size and think about what the new rows and columns will represent.

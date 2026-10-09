@@ -1,49 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.417
-Duplicates can distort an analysis, but we must define what duplicate means.
+00:00:00.000 --> 00:00:03.437
+Duplicates can quietly distort an analysis.
 
-00:00:05.417 --> 00:00:09.942
-In this example, order ID is treated as the business key.
+00:00:03.437 --> 00:00:11.837
+Repeated records can inflate counts, totals, averages, and even the size of a machine learning training set.
 
-00:00:09.942 --> 00:00:13.162
-That means we expect one row per order.
+00:00:11.837 --> 00:00:16.137
+The duplicated function can identify repeated values.
 
-00:00:13.162 --> 00:00:19.037
-We use duplicated with subset equal to order ID and keep equals false to display every record involved
+00:00:16.137 --> 00:00:19.707
+The drop duplicates function can then remove them.
 
-00:00:19.037 --> 00:00:24.882
-in a duplicate. Then drop_duplicates keeps the first record for each repeated order ID.
+00:00:19.707 --> 00:00:27.752
+In the example, we check duplicates using order I D as the business key and keep the first occurrence.
 
-00:00:24.882 --> 00:00:28.457
-Click Run and inspect the output.
+00:00:27.752 --> 00:00:32.437
+Before deleting anything, confirm the grain of the table.
 
-00:00:28.457 --> 00:00:31.262
-Now consider an important real-world question.
-
-00:00:31.262 --> 00:00:35.952
-What if the table represents order line items instead of orders?
-
-00:00:35.952 --> 00:00:42.007
-One order ID could legitimately appear several times because the customer purchased several products.
-
-00:00:42.007 --> 00:00:47.932
-In that case, removing repeated order IDs would destroy valid data.
-
-00:00:47.932 --> 00:00:49.637
-This is why row grain matters.
-
-00:00:49.637 --> 00:00:51.847
+00:00:32.437 --> 00:00:36.047
 Grain means what one row represents.
 
-00:00:51.847 --> 00:00:56.712
-Before removing duplicates, state the grain explicitly.
+00:00:36.047 --> 00:00:42.832
+If one row represents one order, repeated order I D values may be suspicious.
 
-00:00:56.712 --> 00:01:00.162
-One row per order? One row per customer?
+00:00:42.832 --> 00:00:50.512
+If one row represents one product within an order, repeated order I D values may be expected.
 
-00:01:00.162 --> 00:01:01.867
-One row per product within an order?
-
-00:01:01.867 --> 00:01:08.358
-Duplicate removal is only correct when it respects the meaning of the row.
+00:00:50.512 --> 00:00:54.368
+Never deduplicate without understanding the row meaning.

@@ -1,43 +1,22 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.572
-Often one summary measure is not enough.
+00:00:00.000 --> 00:00:02.727
+Sometimes one summary is not enough.
 
-00:00:02.572 --> 00:00:08.822
-We may want to know the number of orders, total revenue, and average order value for each channel.
+00:00:02.727 --> 00:00:10.227
+We may want the number of orders, total revenue, and average order value for each channel at the same time.
 
-00:00:08.822 --> 00:00:13.717
-The agg method lets us calculate several measures in one grouped analysis.
+00:00:10.227 --> 00:00:15.767
+The aggregate method lets us calculate several grouped metrics in one operation.
 
-00:00:13.717 --> 00:00:18.567
-In this example, we groupby channel and use named aggregation.
+00:00:15.767 --> 00:00:24.962
+Named aggregation is especially useful because we choose clear output names such as orders, revenue, and average order.
 
-00:00:18.567 --> 00:00:21.137
-Orders counts the number of records.
+00:00:24.962 --> 00:00:30.012
+That makes the result easier to read and closer to a reporting table.
 
-00:00:21.137 --> 00:00:25.512
-Revenue sums the amount. Average order calculates the mean.
+00:00:30.012 --> 00:00:34.132
+This pattern is common in dashboards and business reports.
 
-00:00:25.512 --> 00:00:27.852
-Click Run and look at the result.
-
-00:00:27.852 --> 00:00:33.947
-Named aggregation is especially useful because the output columns already have meaningful names.
-
-00:00:33.947 --> 00:00:40.447
-This is much easier to use in a report or dashboard than columns with confusing multi-level labels.
-
-00:00:40.447 --> 00:00:41.927
-Also notice as_index equals false.
-
-00:00:41.927 --> 00:00:47.552
-This keeps channel as a regular column rather than moving it into the index.
-
-00:00:47.552 --> 00:00:54.627
-When building summaries, think about the measures that answer the question.
-
-00:00:54.627 --> 00:00:57.472
-More metrics are not automatically better.
-
-00:00:57.472 --> 00:01:01.295
-Choose metrics that help someone understand the behavior of each group.
+00:00:34.132 --> 00:00:41.525
+Rather than producing several separate tables, one grouped summary can collect the key metrics needed for comparison.

@@ -1,49 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.467
-Once we understand the basic structure, we can begin a quick exploratory analysis.
+00:00:00.000 --> 00:00:04.637
+After checking the basic structure, we can build a quick profile of the data.
 
-00:00:05.467 --> 00:00:09.097
-The describe method summarizes numerical columns.
+00:00:04.637 --> 00:00:13.602
+The describe function summarizes a numeric column with information such as count, mean, standard deviation, minimum,
 
-00:00:09.097 --> 00:00:14.022
-It can show the count, mean, standard deviation, minimum, quartiles, and maximum.
+00:00:13.602 --> 00:00:22.092
+maximum, and quartiles. For categorical columns, value counts tells us how often each value appears.
 
-00:00:14.022 --> 00:00:19.102
-Value_counts is especially useful for categorical data.
+00:00:22.092 --> 00:00:27.072
+The number of unique values tells us how many distinct categories exist.
 
-00:00:19.102 --> 00:00:22.322
-It tells us how often each category appears.
+00:00:27.072 --> 00:00:33.747
+These simple checks are part of exploratory data analysis because they help us understand distributions and identify
 
-00:00:22.322 --> 00:00:26.012
-Nunique tells us how many distinct values exist.
+00:00:33.747 --> 00:00:36.707
+suspicious values early.
 
-00:00:26.012 --> 00:00:27.592
-Click Run and inspect the output.
+00:00:36.707 --> 00:00:42.692
+For example, if a sales channel should have only web, email, and store, but the unique count is six,
 
-00:00:27.592 --> 00:00:33.317
-These simple functions can reveal problems very quickly.
-
-00:00:33.317 --> 00:00:39.252
-For example, suppose a channel column is expected to contain web, email, and store.
-
-00:00:39.252 --> 00:00:42.867
-If value_counts returns Web, web, WEB, and web with spaces as separate categories,
-
-00:00:42.867 --> 00:00:48.202
-we probably have a text-cleaning issue.
-
-00:00:48.202 --> 00:00:49.882
-For numeric data, describe can reveal suspicious ranges.
-
-00:00:49.882 --> 00:00:55.697
-If an age column has a minimum of negative five or a maximum of nine hundred,
-
-00:00:55.697 --> 00:01:02.737
-we need to investigate. EDA does not begin with complicated charts.
-
-00:01:02.737 --> 00:01:08.942
-Often it begins with simple counts, ranges, and questions about whether the values make sense in the
-
-00:01:08.942 --> 00:01:09.747
-real-world context.
+00:00:42.692 --> 00:00:46.865
+we should investigate before continuing.

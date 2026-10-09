@@ -1,43 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.372
-Two Pandas objects appear throughout this module: Series and DataFrame.
+00:00:00.000 --> 00:00:03.422
+Pandas mainly gives us two important structures.
 
-00:00:05.372 --> 00:00:09.097
-A Series is essentially one labeled dimension of data.
+00:00:03.422 --> 00:00:09.497
+A Series represents one labeled dimension, which you can think of as one column.
 
-00:00:09.097 --> 00:00:12.732
-You can think of it as one column together with an index.
+00:00:09.497 --> 00:00:15.197
+A DataFrame represents a full table with rows and multiple named columns.
 
-00:00:12.732 --> 00:00:20.032
-For example, if we select only the amount column from an orders table, Pandas usually returns a Series.
+00:00:15.197 --> 00:00:20.952
+If we select one column, such as amount, Pandas often returns a Series.
 
-00:00:20.032 --> 00:00:24.487
-A DataFrame is a two-dimensional table with rows and columns.
+00:00:20.952 --> 00:00:25.867
+If we select several columns, Pandas returns another DataFrame.
 
-00:00:24.487 --> 00:00:29.097
-Each column has a name, and each column also has a data type.
+00:00:25.867 --> 00:00:32.457
+This distinction matters because some methods behave differently depending on the object you are working with.
 
-00:00:29.097 --> 00:00:36.002
-This distinction matters because some operations behave differently depending on whether you are working with
+00:00:32.457 --> 00:00:37.977
+A useful beginner habit is to ask, what object do I have right now?
 
-00:00:36.002 --> 00:00:38.632
-a Series or a DataFrame.
+00:00:37.977 --> 00:00:40.867
+Is it a Series or a DataFrame?
 
-00:00:38.632 --> 00:00:43.827
-For example, orders bracket amount returns one column and usually gives us a Series.
-
-00:00:43.827 --> 00:00:51.862
-If we place amount inside a list and use double brackets, Pandas returns a DataFrame containing one column.
-
-00:00:51.862 --> 00:00:57.292
-This may look like a small difference, but it explains many common beginner errors.
-
-00:00:57.292 --> 00:01:02.012
-A useful habit is to ask: what kind of object do I have right now?
-
-00:01:02.012 --> 00:01:06.062
-If you are unsure, use type and inspect the result.
-
-00:01:06.062 --> 00:01:11.282
-Understanding the object you are working with makes the rest of Pandas much easier.
+00:00:40.867 --> 00:00:45.654
+Many confusing errors become easier to understand once you know the answer.

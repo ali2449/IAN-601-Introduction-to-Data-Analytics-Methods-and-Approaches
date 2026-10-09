@@ -1,40 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.612
-Merge combines tables using a key.
+00:00:00.000 --> 00:00:02.917
+Concatenation is different from merging.
 
-00:00:02.612 --> 00:00:04.822
-Concat does something different.
+00:00:02.917 --> 00:00:06.762
+A merge combines columns using a shared key.
 
-00:00:04.822 --> 00:00:12.067
-Concat is commonly used when tables have the same or compatible columns and we want to stack them
+00:00:06.762 --> 00:00:11.477
+Concatenation usually stacks similar tables on top of each other.
 
-00:00:12.067 --> 00:00:17.057
-together. In this example, we have January orders and February orders.
+00:00:11.477 --> 00:00:17.272
+The example contains a January table and a February table with the same structure.
 
-00:00:17.057 --> 00:00:21.082
-Both tables contain order ID, month, and amount.
+00:00:17.272 --> 00:00:23.552
+Pandas concatenates the rows into one larger orders table and resets the index.
 
-00:00:21.082 --> 00:00:26.537
-Pd.concat stacks the February rows underneath the January rows.
+00:00:23.552 --> 00:00:31.567
+This pattern is common when data arrives in separate monthly, regional, departmental, or batch files.
 
-00:00:26.537 --> 00:00:31.017
-Ignore_index equals true creates a fresh continuous index.
+00:00:31.567 --> 00:00:37.002
+Before concatenating, check that the column names and meanings are compatible.
 
-00:00:31.017 --> 00:00:34.212
-Click Run and inspect the combined table.
-
-00:00:34.212 --> 00:00:41.242
-This is a common workflow when data arrives as separate monthly files, regional files, or batches.
-
-00:00:41.242 --> 00:00:47.802
-Before concatenating many files, check that the columns have compatible meanings and data types.
-
-00:00:47.802 --> 00:00:54.712
-For example, one file may call a column amount while another calls it sales_amount.
-
-00:00:54.712 --> 00:01:00.357
-One month may store numbers as numeric values while another stores them as text.
-
-00:01:00.357 --> 00:01:05.233
-Concat is simple, but the consistency of the source tables still matters.
+00:00:37.002 --> 00:00:42.762
+A column called amount should represent the same concept in every file being stacked.

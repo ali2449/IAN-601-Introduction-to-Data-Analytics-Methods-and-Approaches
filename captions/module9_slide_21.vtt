@@ -1,43 +1,25 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.302
+00:00:00.000 --> 00:00:05.812
 Broadcasting allows NumPy to combine arrays with different but compatible shapes.
 
-00:00:05.302 --> 00:00:09.197
-In this example, sales is a three-by-two array.
+00:00:05.812 --> 00:00:09.927
+The simplest example is adding a single number to an array.
 
-00:00:09.197 --> 00:00:11.647
-Each row has two values.
+00:00:09.927 --> 00:00:13.628
+That one number is automatically applied to every element.
 
-00:00:11.647 --> 00:00:14.867
-The adjustment array contains only two values: five and ten.
+00:00:14.194 --> 00:00:20.496
+Broadcasting can also apply a one-dimensional array across the rows of a two-dimensional array.
 
-00:00:14.867 --> 00:00:20.462
-When we add them, NumPy applies five to the first column and ten to the second column for
+00:00:20.496 --> 00:00:28.666
+For example, if each column has a different adjustment value, NumPy can apply those adjustments across many rows
 
-00:00:20.462 --> 00:00:24.882
-every row. Click Run and inspect the resulting matrix.
+00:00:28.666 --> 00:00:31.116
+without manually repeating them.
 
-00:00:24.882 --> 00:00:28.722
-We did not manually repeat the adjustment three times.
+00:00:31.116 --> 00:00:39.551
+Broadcasting is convenient, but incompatible shapes can cause errors or produce results you did not intend.
 
-00:00:28.722 --> 00:00:35.617
-Broadcasting lets NumPy conceptually expand the smaller array across the larger one.
-
-00:00:35.617 --> 00:00:38.437
-A scalar is an even simpler example.
-
-00:00:38.437 --> 00:00:43.662
-If you add five to an entire array, that five is applied to every element.
-
-00:00:43.662 --> 00:00:48.592
-Broadcasting is powerful, but shape mistakes can create confusing errors or even valid-looking results that
-
-00:00:48.592 --> 00:00:52.087
-are not what you intended.
-
-00:00:52.087 --> 00:00:57.077
-So when using broadcasting, always inspect the shapes of both operands and make sure the dimensions represent
-
-00:00:57.077 --> 00:01:00.598
-the relationship you expect.
+00:00:39.551 --> 00:00:45.918
+When something looks wrong, inspect the shapes of both arrays before trying to fix the calculation.

@@ -1,46 +1,31 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.267
-Filtering is how we turn a business question into a subset of rows.
+00:00:00.000 --> 00:00:04.012
+Filtering lets us turn a business question into a condition.
 
-00:00:04.267 --> 00:00:10.697
-In this example, the first question is: which web orders have an amount of at least one hundred?
+00:00:04.012 --> 00:00:09.492
+We might ask for orders above a certain amount, orders from a specific channel,
 
-00:00:10.697 --> 00:00:16.707
-We create two conditions and combine them using the ampersand operator, which means AND.
+00:00:09.492 --> 00:00:14.007
+or records that satisfy several conditions at the same time.
 
-00:00:16.707 --> 00:00:19.707
-Notice the parentheses around each condition.
+00:00:14.007 --> 00:00:17.532
+Pandas uses Boolean masks for this.
 
-00:00:19.707 --> 00:00:24.857
-In Pandas, those parentheses are important when combining Boolean expressions.
+00:00:17.532 --> 00:00:24.992
+A Boolean mask is simply a sequence of true and false values that tells Pandas which rows to keep.
 
-00:00:24.857 --> 00:00:31.442
-The second example uses query to find all orders with amount greater than or equal to one hundred.
+00:00:24.992 --> 00:00:32.802
+When combining conditions, use the ampersand operator for AND and the vertical bar operator for OR,
 
-00:00:31.442 --> 00:00:34.597
-Click Run and compare the two results.
+00:00:32.802 --> 00:00:36.572
+with each condition placed inside parentheses.
 
-00:00:34.597 --> 00:00:37.952
-Filtering should always connect to a meaningful question.
+00:00:36.572 --> 00:00:43.197
+Pandas also provides the query method, which can make some filters easier to read.
 
-00:00:37.952 --> 00:00:42.602
-Instead of thinking, I need to practice greater-than syntax, think:
+00:00:43.197 --> 00:00:47.067
+The important idea is not the syntax itself.
 
-00:00:42.602 --> 00:00:45.887
-which transactions exceed our review threshold?
-
-00:00:45.887 --> 00:00:48.907
-Which patients are older than sixty-five?
-
-00:00:48.907 --> 00:00:51.922
-Which products had sales below target?
-
-00:00:51.922 --> 00:00:58.297
-That change in thinking matters because the syntax becomes attached to a real analytical purpose.
-
-00:00:58.297 --> 00:01:02.222
-Also remember that a filter changes which rows are included.
-
-00:01:02.222 --> 00:01:06.831
-Before continuing, it is often useful to check how many rows remain.
+00:00:47.067 --> 00:00:51.794
+It is translating a question into a precise rule for selecting rows.
