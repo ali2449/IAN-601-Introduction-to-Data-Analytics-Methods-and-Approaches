@@ -1,0 +1,87 @@
+{
+  "about": "Synthetic teaching data used by IAN 601 Python Interview Studio. No real students, patients, or customers.",
+  "orders": [
+    {
+      "order_id": 101,
+      "region": "North",
+      "amount": 120,
+      "status": "paid"
+    },
+    {
+      "order_id": 102,
+      "region": "South",
+      "amount": 80,
+      "status": "pending"
+    },
+    {
+      "order_id": 103,
+      "region": "North",
+      "amount": 65,
+      "status": "paid"
+    },
+    {
+      "order_id": 104,
+      "region": "East",
+      "amount": 140,
+      "status": "paid"
+    },
+    {
+      "order_id": 105,
+      "region": "South",
+      "amount": 45,
+      "status": "returned"
+    },
+    {
+      "order_id": 106,
+      "region": "East",
+      "amount": 0,
+      "status": "pending"
+    }
+  ],
+  "students": [
+    {
+      "student_id": 1,
+      "name": "Ava",
+      "score": 88
+    },
+    {
+      "student_id": 2,
+      "name": "Liam",
+      "score": 74
+    },
+    {
+      "student_id": 3,
+      "name": "Mia",
+      "score": 95
+    },
+    {
+      "student_id": 4,
+      "name": "Noah",
+      "score": 62
+    }
+  ],
+  "temperatures": [
+    21.5,
+    23.2,
+    19.8,
+    24.1,
+    22,
+    20.4
+  ],
+  "sales": [
+    120,
+    85,
+    140,
+    65,
+    180,
+    100,
+    95
+  ],
+  "regions": [
+    "North",
+    "South",
+    "North",
+    "East",
+    "South"
+  ]
+}
