@@ -1072,8 +1072,9 @@ def _run_user_code(code):
     images = []
     html = ""
     try:
-        warnings.filterwarnings("ignore", category=DeprecationWarning, module=r"pandas.*")
-        warnings.filterwarnings("ignore", message=r".*Pyarrow will become a required dependency.*")
+        warnings.filterwarnings("ignore", category=DeprecationWarning)
+        warnings.filterwarnings("ignore", message=r"(?s).*Pyarrow will become a required dependency.*")
+        warnings.filterwarnings("ignore", message=r"(?s).*Matplotlib is currently using agg.*", category=UserWarning)
 
         try:
             import matplotlib
