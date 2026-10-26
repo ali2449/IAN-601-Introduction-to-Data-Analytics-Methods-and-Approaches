@@ -1,0 +1,301 @@
+order_id,order_date,customer_id,channel,city,region,category,quantity,amount,status
+1001,2026-01-01,C001, Web ,,,Office,4,, complete 
+1002,2026-01-02,C002,email,Raleigh,Triangle,Home,2,$283.48,returned
+1003,2026-01-03,C003,email,Winston-Salem,Piedmont,Office,1,$61.03,returned
+1004,2026-01-04,C004,web,Greensboro,Piedmont,Home,4,$402.08,cancelled
+1005,2026-01-05,C005,store,Winston-Salem,Piedmont,Books,3,$91.86,complete
+1006,2026-01-06,C006,web,Greensboro,Piedmont,Home,4,$519.52,cancelled
+1007,2026-01-07,C007,web,Charlotte,Charlotte Metro,Books,3,$113.58,complete
+1008,2026-01-08,C008,email,Winston-Salem,Piedmont,Home,5,$608.85,complete
+1009,2026-01-09,C009,store,Durham,Triangle,Office,3,$242.79,complete
+1010,2026-01-10,C010,web,Greensboro,Piedmont,Books,1,$80.91,complete
+1011,2026-01-11,C011,store,Durham,Triangle,Office,5,$566.60,complete
+1012,2026-01-12,C012,store,Greensboro,Piedmont,Books,5,$779.00,returned
+1013,2026-01-13,C013,web,Raleigh,Triangle,Tech,4,$461.76,returned
+1014,2026-01-14,C014,web,Charlotte,Charlotte Metro,Office,1,$116.83,cancelled
+1015,2026-01-15,C015,email,Charlotte,Charlotte Metro,Office,5,$664.05,cancelled
+1016,2026-01-16,C016,web,Winston-Salem,Piedmont,Tech,2,$269.72,returned
+1017,2026-01-17,C017,store,Winston-Salem,Piedmont,Home,2,$62.20,returned
+1018,2026-01-18,C018, Web ,Raleigh,Triangle,Tech,3,$138.99,cancelled
+1019,2026-01-19,C019,store,Winston-Salem,Piedmont,Tech,5,$852.85,complete
+1020,2026-01-20,C020,email,Greensboro,Piedmont,Tech,5,$400.60,cancelled
+1021,2026-01-21,C021,web,Raleigh,Triangle,Books,1,$49.35,cancelled
+1022,2026-01-22,C022,store,Charlotte,Charlotte Metro,Office,4,$264.08,cancelled
+1023,2026-01-23,C023,store,Greensboro,Piedmont,Office,5,$389.45,returned
+1024,2026-01-24,C024,email,Durham,Triangle,Books,3,$145.53,Complete
+1025,2026-01-25,C025,store,Raleigh,Triangle,Home,5,$636.25,cancelled
+1026,2026-01-26,C026,store,Greensboro,Piedmont,Home,5,$733.75,complete
+1027,2026-01-27,C027,email,Greensboro,Piedmont,Tech,3,$260.67,cancelled
+1028,2026-01-28,C028,store,Winston-Salem,Piedmont,Office,2,$292.20,cancelled
+1029,2026-01-29,C029,store,Winston-Salem,Piedmont,Tech,5,$348.60,cancelled
+1030,2026-01-30,C030,EMAIL,Winston-Salem,Piedmont,Books,4,$591.24,complete
+1031,2026-01-31,C031,web,Durham,Triangle,Office,1,$133.27,complete
+1032,2026-02-01,C032,web,Raleigh,Triangle,Books,1,$23.01, complete 
+1033,2026-02-02,C033,email,Durham,Triangle,Home,4,$314.88,complete
+1034,2026-02-03,C034,web,Charlotte,Charlotte Metro,Books,2,$153.44,cancelled
+1035,2026-02-04,C035, Web ,Winston-Salem,Piedmont,Tech,2,$107.92,returned
+1036,2026-02-05,C036,store,Greensboro,Piedmont,Books,2,$155.38,complete
+1037,2026-02-06,C037,email,Raleigh,Triangle,Tech,2,$289.72,complete
+1038,2026-02-07,C038,store,Greensboro,Piedmont,Home,2,,returned
+1039,2026-02-08,C039,store,Raleigh,Triangle,Books,4,$238.72,cancelled
+1040,2026-02-09,C040,web,Durham,Triangle,Office,4,$556.00,complete
+1041,2026-02-10,C041,email,Greensboro,Piedmont,Tech,3,$309.60,complete
+1042,2026-02-11,C042,email,,,Books,2,$343.22,complete
+1043,2026-02-12,C043,email,Durham,Triangle,Office,2,$99.10,complete
+1044,2026-02-13,C044, Store ,Winston-Salem,Piedmont,Books,5,$580.55,complete
+1045,2026-02-14,C045,email,Raleigh,Triangle,Tech,4,$296.36,complete
+1046,2026-02-15,C046,email,Raleigh,Triangle,Office,2,$193.88,complete
+1047,2026-02-16,C047,email,Raleigh,Triangle,Books,4,$618.44,Complete
+1048,not-a-date,C048,web,Greensboro,Piedmont,Books,5,$698.45,complete
+1049,2026-02-18,C049,store,Raleigh,Triangle,Home,5,$490.90,complete
+1050,2026-02-19,C050,email,Durham,Triangle,Home,2,$202.40,complete
+1051,2026-02-20,C051,email,Greensboro,Piedmont,Home,1,$68.72,complete
+1052,2026-02-21,C052, Web ,Raleigh,Triangle,Home,1,$133.63,complete
+1053,2026-02-22,C053,email,Winston-Salem,Piedmont,Office,2,$274.36,complete
+1054,2026-02-23,C054,web,Winston-Salem,Piedmont,Home,5,$586.95,cancelled
+1055,2026-02-24,C055,web,Durham,Triangle,Office,4,$520.64,cancelled
+1056,2026-02-25,C056,email,Durham,Triangle,Office,4,$576.16,cancelled
+1057,2026-02-26,C057,web,Greensboro,Piedmont,Office,5,$678.95,complete
+1058,2026-02-27,C058,web,Charlotte,Charlotte Metro,Books,5,$864.10,complete
+1059,2026-02-28,C059,EMAIL,Winston-Salem,Piedmont,Home,5,$234.75,complete
+1060,2026-03-01,C060,web,Winston-Salem,Piedmont,Office,3,$59.04,returned
+1061,2026-03-02,C061,store,Durham,Triangle,Books,4,$476.28,returned
+1062,2026-03-03,C062,email,Winston-Salem,Piedmont,Office,2,$317.02,complete
+1063,2026-03-04,C063,email,Durham,Triangle,Books,2,$43.60, complete 
+1064,2026-03-05,C064,email,Durham,Triangle,Home,3,$74.85,complete
+1065,2026-03-06,C065,web,Raleigh,Triangle,Books,5,$604.70,complete
+1066,2026-03-07,C066,email,Winston-Salem,Piedmont,Books,3,$354.30,cancelled
+1067,2026-03-08,C067,web,Durham,Triangle,Office,2,$224.10,returned
+1068,2026-03-09,C068,web,Durham,Triangle,Home,2,$249.68,returned
+1069,2026-03-10,C069, Web ,Greensboro,Piedmont,Books,3,$419.67,complete
+1070,2026-03-11,C070,store,Durham,Triangle,Tech,3,$100.35,Complete
+1071,2026-03-12,C071,store,Raleigh,Triangle,Tech,2,$323.98,complete
+1072,2026-03-13,C072,web,Charlotte,Charlotte Metro,Office,3,$185.16,returned
+1073,2026-03-14,C073,email,Raleigh,Triangle,Books,3,$461.28,cancelled
+1074,2026-03-15,C074,web,Raleigh,Triangle,Books,3,$105.60,complete
+1075,2026-03-16,C075,email,Greensboro,Piedmont,Tech,1,,cancelled
+1076,2026-03-17,C076,store,Winston-Salem,Piedmont,Office,1,$47.93,complete
+1077,2026-03-18,C077,email,Charlotte,Charlotte Metro,Books,2,$328.72,complete
+1078,2026-03-19,C078,store,Winston-Salem,Piedmont,Office,3,$296.70,complete
+1079,2026-03-20,C079,store,Winston-Salem,Piedmont,Books,2,$194.88,returned
+1080,2026-03-21,C080,store,Durham,Triangle,Home,1,$103.32,cancelled
+1081,2026-03-22,C001,store,Raleigh,Triangle,Office,1,$49.34,complete
+1082,2026-03-23,C002,store,Raleigh,Triangle,Tech,5,$228.45,complete
+1083,2026-03-24,C003,store,,,Home,2,$305.12,returned
+1084,2026-03-25,C004,store,Winston-Salem,Piedmont,Office,2,$200.48,complete
+1085,2026-03-26,C005,web,Greensboro,Piedmont,Books,3,$220.14,complete
+1086,2026-03-27,C006, Web ,Greensboro,Piedmont,Tech,4,$385.84,cancelled
+1087,2026-03-28,C007, Store ,Raleigh,Triangle,Books,1,$135.35,complete
+1088,2026-03-29,C008,EMAIL,Raleigh,Triangle,Books,5,$839.40,complete
+1089,2026-03-30,C009,email,Winston-Salem,Piedmont,Books,3,$95.40,complete
+1090,2026-03-31,C010,web,Durham,Triangle,Home,4,$347.88,cancelled
+1091,2026-04-01,C011,store,Durham,Triangle,Tech,3,$493.65,complete
+1092,2026-04-02,C012,store,Durham,Triangle,Home,2,$73.36,complete
+1093,2026-04-03,C013,web,Raleigh,Triangle,Home,1,$129.05,cancelled
+1094,2026-04-04,C014,store,Durham,Triangle,Books,4,$506.24, complete 
+1095,2026-04-05,C015,web,Winston-Salem,Piedmont,Tech,3,$343.14,returned
+1096,2026-01-01,C016,web,Greensboro,Piedmont,Home,5,$801.20,returned
+1097,2026-01-02,C017,email,Winston-Salem,Piedmont,Books,2,$229.40,complete
+1098,2026-01-03,C018,web,Raleigh,Triangle,Office,1,$139.18,complete
+1099,2026-01-04,C019,web,Raleigh,Triangle,Office,4,$551.92,cancelled
+1100,2026-01-05,C020,web,Durham,Triangle,Office,2,$308.30,cancelled
+1101,2026-01-06,C021,web,Greensboro,Piedmont,Home,1,$129.95,returned
+1102,2026-01-07,C022,store,Durham,Triangle,Books,1,$45.98,returned
+1103,2026-01-08,C023, Web ,Durham,Triangle,Office,2,$98.98,complete
+1104,2026-01-09,C024,web,Charlotte,Charlotte Metro,Office,3,$337.41,cancelled
+1105,2026-01-10,C025,web,Durham,Triangle,Books,2,$87.44,complete
+1106,2026-01-11,C026,email,Raleigh,Triangle,Office,3,$341.28,cancelled
+1107,2026-01-12,C027,email,Winston-Salem,Piedmont,Home,4,$504.32,complete
+1108,2026-01-13,C028,email,Raleigh,Triangle,Office,5,$584.25,cancelled
+1109,2026-01-14,C029,store,Winston-Salem,Piedmont,Tech,2,$93.52,complete
+1110,2026-01-15,C030,store,Raleigh,Triangle,Tech,3,$233.70,cancelled
+1111,2026-01-16,C031,web,Winston-Salem,Piedmont,Home,4,$653.96,complete
+1112,2026-01-17,C032,web,Winston-Salem,Piedmont,Tech,2,,complete
+1113,2026-01-18,C033,email,Charlotte,Charlotte Metro,Books,1,$91.63,cancelled
+1114,2026-01-19,C034,store,Raleigh,Triangle,Tech,1,$172.58,complete
+1115,2026-01-20,C035,web,Raleigh,Triangle,Home,2,$137.58,complete
+1116,2026-01-21,C036,email,Charlotte,Charlotte Metro,Tech,1,$150.75,Complete
+1117,2026-01-22,C037,EMAIL,Raleigh,Triangle,Office,1,$136.12,complete
+1118,2026-01-23,C038,store,Greensboro,Piedmont,Office,5,$747.60,returned
+1119,2026-01-24,C039,web,Durham,Triangle,Office,1,$148.52,cancelled
+1120,2026-01-25,C040, Web ,Raleigh,Triangle,Office,1,$40.06,returned
+1121,2026-01-26,C041,email,Winston-Salem,Piedmont,Books,5,$418.25,complete
+1122,2026-01-27,C042,store,Durham,Triangle,Books,1,$94.50,returned
+1123,2026-01-28,C043,email,Winston-Salem,Piedmont,Tech,5,$452.05,complete
+1124,2026-01-29,C044,web,,,Home,3,$360.03,cancelled
+1125,2026-01-30,C045,email,Raleigh,Triangle,Home,3,$131.61, complete 
+1126,2026-01-31,C046,store,Winston-Salem,Piedmont,Office,5,$681.25,complete
+1127,2026-02-01,C047,email,Charlotte,Charlotte Metro,Home,4,$601.12,complete
+1128,2026-02-02,C048,store,Winston-Salem,Piedmont,Home,4,$227.64,returned
+1129,2026-02-03,C049,web,Greensboro,Piedmont,Office,2,$126.20,cancelled
+1130,2026-02-04,C050, Store ,Charlotte,Charlotte Metro,Office,3,$476.04,returned
+1131,2026-02-05,C051,store,Greensboro,Piedmont,Office,1,$65.94,complete
+1132,2026-02-06,C052,email,Winston-Salem,Piedmont,Books,3,$157.65,cancelled
+1133,2026-02-07,C053,store,Durham,Triangle,Books,5,$853.25,returned
+1134,2026-02-08,C054,web,Winston-Salem,Piedmont,Home,2,$142.92,complete
+1135,2026-02-09,C055,store,Winston-Salem,Piedmont,Tech,1,$52.07,complete
+1136,2026-02-10,C056,email,Durham,Triangle,Books,2,$288.50,returned
+1137,2026-02-11,C057, Web ,Raleigh,Triangle,Home,5,$561.25,complete
+1138,2026-02-12,C058,store,Greensboro,Piedmont,Tech,4,$573.28,complete
+1139,2026-02-13,C059,store,Winston-Salem,Piedmont,Books,3,$313.08,Complete
+1140,2026-02-14,C060,store,Durham,Triangle,Office,1,$76.68,cancelled
+1141,2026-02-15,C061,store,Raleigh,Triangle,Books,2,$55.32,complete
+1142,2026-02-16,C062,store,Durham,Triangle,Books,4,$687.12,cancelled
+1143,2026-02-17,C063,store,Greensboro,Piedmont,Tech,1,$167.64,complete
+1144,2026-02-18,C064,web,Durham,Triangle,Office,4,$392.96,complete
+1145,2026-02-19,C065,email,Greensboro,Piedmont,Office,2,$205.36,complete
+1146,2026-02-20,C066,EMAIL,Durham,Triangle,Tech,1,$150.00,cancelled
+1147,2026-02-21,C067,email,Charlotte,Charlotte Metro,Tech,2,$251.10,returned
+1148,2026-02-22,C068,email,Winston-Salem,Piedmont,Home,3,$350.25,complete
+1149,2026-02-23,C069,email,Durham,Triangle,Tech,3,,complete
+1150,2026-02-24,C070,email,Charlotte,Charlotte Metro,Tech,3,$195.00,complete
+1151,2026-02-25,C071,web,Charlotte,Charlotte Metro,Home,5,$369.60,returned
+1152,2026-02-26,C072,email,Charlotte,Charlotte Metro,Home,2,$168.22,complete
+1153,2026-02-27,C073,email,Winston-Salem,Piedmont,Tech,2,$313.62,complete
+1154,2026-02-28,C074, Web ,Greensboro,Piedmont,Tech,2,$323.16,complete
+1155,2026-03-01,C075,email,Winston-Salem,Piedmont,Office,4,$208.96,complete
+1156,2026-03-02,C076,web,Raleigh,Triangle,Home,2,$173.76, complete 
+1157,2026-03-03,C077,email,Raleigh,Triangle,Books,4,$554.20,complete
+1158,2026-03-04,C078,store,Greensboro,Piedmont,Home,5,$752.35,complete
+1159,2026-03-05,C079,store,Greensboro,Piedmont,Office,3,$304.47,cancelled
+1160,not-a-date,C080,web,Winston-Salem,Piedmont,Books,3,$369.33,cancelled
+1161,2026-03-07,C001,email,Durham,Triangle,Office,5,$538.85,returned
+1162,2026-03-08,C002,web,Raleigh,Triangle,Tech,2,$69.38,Complete
+1163,2026-03-09,C003,store,Raleigh,Triangle,Tech,5,$162.75,returned
+1164,2026-03-10,C004,store,Greensboro,Piedmont,Books,5,$703.75,complete
+1165,2026-03-11,C005,web,,,Home,3,$326.64,complete
+1166,2026-03-12,C006,email,Charlotte,Charlotte Metro,Tech,2,$294.24,complete
+1167,2026-03-13,C007,store,Charlotte,Charlotte Metro,Books,5,$189.10,complete
+1168,2026-03-14,C008,store,Greensboro,Piedmont,Home,5,$478.05,cancelled
+1169,2026-03-15,C009,store,Durham,Triangle,Office,4,$550.36,returned
+1170,2026-03-16,C010,store,Raleigh,Triangle,Tech,2,$175.46,returned
+1171,2026-03-17,C011, Web ,Charlotte,Charlotte Metro,Books,2,$57.10,complete
+1172,2026-03-18,C012,email,Charlotte,Charlotte Metro,Office,3,$121.50,returned
+1173,2026-03-19,C013, Store ,Charlotte,Charlotte Metro,Tech,4,$485.00,cancelled
+1174,2026-03-20,C014,store,Winston-Salem,Piedmont,Office,2,$180.04,cancelled
+1175,2026-03-21,C015,EMAIL,Raleigh,Triangle,Office,1,$161.48,complete
+1176,2026-03-22,C016,store,Winston-Salem,Piedmont,Tech,1,$102.24,cancelled
+1177,2026-03-23,C017,store,Raleigh,Triangle,Tech,3,$302.13,complete
+1178,2026-03-24,C018,email,Raleigh,Triangle,Tech,4,$418.00,complete
+1179,2026-03-25,C019,store,Durham,Triangle,Home,4,$205.76,returned
+1180,2026-03-26,C020,email,Raleigh,Triangle,Tech,1,$115.57,returned
+1181,2026-03-27,C021,web,Charlotte,Charlotte Metro,Tech,5,$407.70,complete
+1182,2026-03-28,C022,store,Greensboro,Piedmont,Tech,1,$53.48,complete
+1183,2026-03-29,C023,email,Winston-Salem,Piedmont,Tech,3,$381.06,returned
+1184,2026-03-30,C024,email,Charlotte,Charlotte Metro,Books,2,$182.16,cancelled
+1185,2026-03-31,C025,web,Raleigh,Triangle,Home,1,$20.83,Complete
+1186,2026-04-01,C026,store,Greensboro,Piedmont,Tech,5,,returned
+1187,2026-04-02,C027,email,Raleigh,Triangle,Home,2,$185.34, complete 
+1188,2026-04-03,C028, Web ,Durham,Triangle,Tech,2,$227.52,complete
+1189,2026-04-04,C029,web,Winston-Salem,Piedmont,Office,2,$185.86,complete
+1190,2026-04-05,C030,store,Winston-Salem,Piedmont,Home,4,$655.08,returned
+1191,2026-01-01,C031,email,Winston-Salem,Piedmont,Home,1,$20.69,complete
+1192,2026-01-02,C032,store,Greensboro,Piedmont,Books,1,$165.91,complete
+1193,2026-01-03,C033,email,Durham,Triangle,Home,2,$124.00,cancelled
+1194,2026-01-04,C034,store,Winston-Salem,Piedmont,Office,2,$163.38,cancelled
+1195,2026-01-05,C035,email,Raleigh,Triangle,Books,1,$59.88,returned
+1196,2026-01-06,C036,web,Charlotte,Charlotte Metro,Tech,1,$97.25,complete
+1197,2026-01-07,C037,email,Durham,Triangle,Books,5,$224.45,returned
+1198,2026-01-08,C038,store,Durham,Triangle,Office,3,$337.11,cancelled
+1199,2026-01-09,C039,web,Greensboro,Piedmont,Tech,3,$78.21,complete
+1200,2026-01-10,C040,store,Durham,Triangle,Tech,1,$152.60,complete
+1201,2026-01-11,C041,store,Raleigh,Triangle,Home,1,$113.08,complete
+1202,2026-01-12,C042,email,Raleigh,Triangle,Books,3,$398.31,complete
+1203,2026-01-13,C043,store,Greensboro,Piedmont,Books,4,$142.16,complete
+1204,2026-01-14,C044,EMAIL,Raleigh,Triangle,Home,3,$518.01,complete
+1205,2026-01-15,C045, Web ,Winston-Salem,Piedmont,Home,5,$292.55,cancelled
+1206,2026-01-16,C046,web,,,Tech,3,$104.16,cancelled
+1207,2026-01-17,C047,web,Durham,Triangle,Office,4,$481.24,complete
+1208,2026-01-18,C048,web,Greensboro,Piedmont,Office,2,$322.82,returned
+1209,2026-01-19,C049,email,Charlotte,Charlotte Metro,Tech,1,$83.49,complete
+1210,2026-01-20,C050,web,Winston-Salem,Piedmont,Office,1,$151.01,complete
+1211,2026-01-21,C051,store,Durham,Triangle,Home,5,$412.55,complete
+1212,2026-01-22,C052,store,Winston-Salem,Piedmont,Home,2,$166.66,complete
+1213,2026-01-23,C053,email,Greensboro,Piedmont,Office,4,$348.88,complete
+1214,2026-01-24,C054,store,Charlotte,Charlotte Metro,Books,5,$608.30,cancelled
+1215,2026-01-25,C055,store,Greensboro,Piedmont,Home,1,$63.45,returned
+1216,2026-01-26,C056, Store ,Winston-Salem,Piedmont,Tech,4,$386.04,complete
+1217,2026-01-27,C057,store,Raleigh,Triangle,Office,1,$127.31,complete
+1218,2026-01-28,C058,email,Greensboro,Piedmont,Home,2,$137.22, complete 
+1219,2026-01-29,C059,web,Durham,Triangle,Books,3,$175.02,complete
+1220,2026-01-30,C060,store,Durham,Triangle,Home,2,$236.82,complete
+1221,2026-01-31,C061,email,Raleigh,Triangle,Office,4,$282.80,complete
+1222,2026-02-01,C062, Web ,Winston-Salem,Piedmont,Home,5,$226.75,complete
+1223,2026-02-02,C063,web,Winston-Salem,Piedmont,Tech,4,,complete
+1224,2026-02-03,C064,store,Greensboro,Piedmont,Books,5,$767.30,cancelled
+1225,2026-02-04,C065,email,Durham,Triangle,Office,4,$142.32,cancelled
+1226,2026-02-05,C066,web,Winston-Salem,Piedmont,Office,1,$141.57,cancelled
+1227,2026-02-06,C067,store,Greensboro,Piedmont,Tech,1,$53.47,cancelled
+1228,2026-02-07,C068,web,Charlotte,Charlotte Metro,Books,1,$38.27,cancelled
+1229,2026-02-08,C069,store,Winston-Salem,Piedmont,Home,2,$44.50,complete
+1230,2026-02-09,C070,web,Durham,Triangle,Home,2,$133.48,returned
+1231,2026-02-10,C071,email,Durham,Triangle,Home,1,$46.30,cancelled
+1232,2026-02-11,C072,email,Charlotte,Charlotte Metro,Tech,1,$123.79,complete
+1233,2026-02-12,C073,EMAIL,Greensboro,Piedmont,Home,1,$95.12,complete
+1234,2026-02-13,C074,store,Winston-Salem,Piedmont,Office,5,$350.60,cancelled
+1235,2026-02-14,C075,store,Durham,Triangle,Home,5,$360.85,complete
+1236,2026-02-15,C076,email,Charlotte,Charlotte Metro,Books,3,$206.43,complete
+1237,2026-02-16,C077,email,Durham,Triangle,Tech,4,$209.20,complete
+1238,2026-02-17,C078,web,Charlotte,Charlotte Metro,Home,2,$173.30,complete
+1239,2026-02-18,C079, Web ,Charlotte,Charlotte Metro,Home,4,$400.48,cancelled
+1240,2026-02-19,C080,store,Greensboro,Piedmont,Office,4,$550.64,cancelled
+1241,2026-02-20,C001,store,Raleigh,Triangle,Books,1,$34.39,complete
+1242,2026-02-21,C002,store,Charlotte,Charlotte Metro,Tech,3,$278.52,complete
+1243,2026-02-22,C003,store,Durham,Triangle,Tech,2,$62.52,complete
+1244,2026-02-23,C004,web,Winston-Salem,Piedmont,Home,2,$165.78,complete
+1245,not-a-date,C005,web,Durham,Triangle,Home,3,$469.17,complete
+1246,2026-02-25,C006,web,Greensboro,Piedmont,Books,2,$152.84,returned
+1247,2026-02-26,C007,web,,,Home,1,$103.08,returned
+1248,2026-02-27,C008,web,Charlotte,Charlotte Metro,Books,1,$70.52,returned
+1249,2026-02-28,C009,store,Raleigh,Triangle,Tech,3,$173.82, complete 
+1250,2026-03-01,C010,email,Charlotte,Charlotte Metro,Office,4,$141.56,complete
+1251,2026-03-02,C011,email,Winston-Salem,Piedmont,Home,4,$291.08,complete
+1252,2026-03-03,C012,web,Charlotte,Charlotte Metro,Home,3,$221.40,complete
+1253,2026-03-04,C013,web,Winston-Salem,Piedmont,Tech,3,$316.05,returned
+1254,2026-03-05,C014,email,Durham,Triangle,Home,5,$815.15,cancelled
+1255,2026-03-06,C015,email,Charlotte,Charlotte Metro,Home,2,$114.78,returned
+1256,2026-03-07,C016, Web ,Durham,Triangle,Office,1,$71.91,complete
+1257,2026-03-08,C017,store,Durham,Triangle,Books,5,$584.70,complete
+1258,2026-03-09,C018,email,Greensboro,Piedmont,Books,3,$154.77,complete
+1259,2026-03-10,C019, Store ,Winston-Salem,Piedmont,Home,3,$351.90,complete
+1260,2026-03-11,C020,email,Winston-Salem,Piedmont,Books,4,,complete
+1261,2026-03-12,C021,web,Durham,Triangle,Books,1,$32.85,cancelled
+1262,2026-03-13,C022,EMAIL,Greensboro,Piedmont,Books,2,$129.80,complete
+1263,2026-03-14,C023,store,Durham,Triangle,Tech,2,$254.48,returned
+1264,2026-03-15,C024,store,Charlotte,Charlotte Metro,Home,4,$249.16,cancelled
+1265,2026-03-16,C025,email,Greensboro,Piedmont,Office,4,$172.80,complete
+1266,2026-03-17,C026,email,Raleigh,Triangle,Office,3,$222.90,cancelled
+1267,2026-03-18,C027,email,Charlotte,Charlotte Metro,Tech,1,$50.20,returned
+1268,2026-03-19,C028,store,Raleigh,Triangle,Home,3,$449.43,complete
+1269,2026-03-20,C029,web,Raleigh,Triangle,Books,3,$90.87,complete
+1270,2026-03-21,C030,email,Durham,Triangle,Tech,2,$90.44,returned
+1271,2026-03-22,C031,web,Charlotte,Charlotte Metro,Books,3,$247.80,cancelled
+1272,2026-03-23,C032,store,Greensboro,Piedmont,Home,5,$294.35,complete
+1273,2026-03-24,C033, Web ,Winston-Salem,Piedmont,Home,2,$150.72,returned
+1274,2026-03-25,C034,email,Charlotte,Charlotte Metro,Home,2,$59.46,complete
+1275,2026-03-26,C035,web,Raleigh,Triangle,Home,2,$117.32,complete
+1276,2026-03-27,C036,email,Charlotte,Charlotte Metro,Tech,3,$449.70,complete
+1277,2026-03-28,C037,web,Charlotte,Charlotte Metro,Home,4,$535.48,Complete
+1278,2026-03-29,C038,email,Charlotte,Charlotte Metro,Tech,4,$574.92,complete
+1279,2026-03-30,C039,email,Winston-Salem,Piedmont,Tech,5,$799.80,complete
+1280,2026-03-31,C040,store,Charlotte,Charlotte Metro,Books,2,$147.34, complete 
+1281,2026-04-01,C041,email,Raleigh,Triangle,Tech,3,$217.53,complete
+1282,2026-04-02,C042,web,Durham,Triangle,Office,5,$806.85,complete
+1283,2026-04-03,C043,store,Winston-Salem,Piedmont,Books,2,$128.98,complete
+1284,2026-04-04,C044,web,Winston-Salem,Piedmont,Tech,2,$302.44,complete
+1285,2026-04-05,C045,email,Winston-Salem,Piedmont,Tech,5,$476.00,complete
+1286,2026-01-01,C046,email,Winston-Salem,Piedmont,Tech,3,$420.81,complete
+1287,2026-01-02,C047,store,Raleigh,Triangle,Home,5,$308.85,complete
+1288,2026-01-03,C048,email,,,Tech,2,$136.82,complete
+1289,2026-01-04,C049,web,Greensboro,Piedmont,Home,5,$345.25,complete
+1290,2026-01-05,C050, Web ,Raleigh,Triangle,Books,5,$517.00,complete
+1291,2026-01-06,C051,EMAIL,Raleigh,Triangle,Books,2,$173.56,complete
+1292,2026-01-07,C052,web,Winston-Salem,Piedmont,Tech,3,$134.01,returned
+1293,2026-01-08,C053,store,Raleigh,Triangle,Tech,5,$814.60,cancelled
+1294,2026-01-09,C054,web,Winston-Salem,Piedmont,Office,4,$462.76,complete
+1295,2026-01-10,C055,email,Charlotte,Charlotte Metro,Tech,5,$718.95,complete
+1021,2026-01-21,C021,web,Raleigh,Triangle,Books,1,$49.35,cancelled
+1076,2026-03-17,C076,store,Winston-Salem,Piedmont,Office,1,$47.93,complete
+1131,2026-02-05,C051,store,Greensboro,Piedmont,Office,1,$65.94,complete
+1191,2026-01-01,C031,email,Winston-Salem,Piedmont,Home,1,$20.69,complete
+1251,2026-03-02,C011,email,Winston-Salem,Piedmont,Home,4,$291.08,complete
