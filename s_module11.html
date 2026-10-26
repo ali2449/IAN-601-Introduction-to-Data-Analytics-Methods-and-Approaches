@@ -1245,7 +1245,7 @@ document.getElementById('prev-btn').onclick=()=>showSlide(current-1);document.ge
 document.getElementById('theme-btn').onclick=()=>{const root=document.documentElement;root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';if(window.monaco){monaco.editor.setTheme(root.dataset.theme==='dark'?'vs-dark':'vs');}};
 function packagesFor(code){const pkgs=[];if(/(^|\n)\s*(import|from)\s+numpy\b/.test(code))pkgs.push('numpy');if(/(^|\n)\s*(import|from)\s+pandas\b/.test(code))pkgs.push('pandas');if(/(^|\n)\s*(import|from)\s+matplotlib\b/.test(code))pkgs.push('matplotlib');if(/(^|\n)\s*(import|from)\s+sklearn\b/.test(code))pkgs.push('scikit-learn');return [...new Set(pkgs)];}
 async function loadPython(){if(!pyodideLoading){setRuntime('','Loading Python...');pyodideLoading=loadPyodide().then(async py=>{await py.runPythonAsync(`
-import sys, io, traceback, ast
+import sys, io, traceback, ast, warnings
 
 def _run_user_code(code):
     stdout = io.StringIO()
@@ -1255,6 +1255,9 @@ def _run_user_code(code):
     ns = globals()
     html = ""
     try:
+        # Hide library deprecation noise so students see their actual result.
+        warnings.filterwarnings("ignore", category=DeprecationWarning, module=r"pandas.*")
+        warnings.filterwarnings("ignore", message=r".*Pyarrow will become a required dependency.*")
         tree = ast.parse(code)
         last_value = None
 
