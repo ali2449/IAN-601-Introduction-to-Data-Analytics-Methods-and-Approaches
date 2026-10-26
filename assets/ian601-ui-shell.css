@@ -1486,3 +1486,27 @@ body[data-theme="dark"] .ian601-runtime-warning{
   }
 }
 /* IAN601_ACCESSIBILITY_SHARED_END */
+
+
+/* IAN601_SHARED_DATAFRAME_VIEWER_START
+   Keep pandas DataFrame output compact like a VS Code/Jupyter data viewer. */
+body.ian601-shell .output.has-dataframe{
+  padding:8px!important;
+  overflow:auto!important;
+  background:#1f242a!important;
+}
+body.ian601-shell .df-viewer{
+  width:min(100%,920px)!important;
+  max-width:920px!important;
+  margin:8px 0!important;
+  overflow:auto!important;
+}
+body.ian601-shell .df-viewer table.dataframe{
+  width:max-content!important;
+  min-width:100%!important;
+}
+body.ian601-shell .code-cell.ian601-python-focus .df-viewer{
+  width:min(100%,920px)!important;
+  max-width:920px!important;
+}
+/* IAN601_SHARED_DATAFRAME_VIEWER_END */
