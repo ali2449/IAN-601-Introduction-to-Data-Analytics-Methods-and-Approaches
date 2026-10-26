@@ -289,15 +289,18 @@ body.ian601-shell .slide:has(.module10-code) .slide-header h2{
 <style id="ian601-vscode-dataframe-style">
 /* VS Code-inspired pandas DataFrame output with improved readability */
 .output.has-dataframe{
-  padding:0!important;
-  background:#252a30!important;
+  padding:8px!important;
+  background:#1f242a!important;
   color:#eef2f7!important;
   white-space:normal!important;
+  overflow:auto!important;
 }
 .df-viewer{
-  width:100%;
+  width:min(100%,920px);
+  max-width:920px;
   max-height:240px;
   overflow:auto;
+  margin:8px 0;
   background:#252a30;
   font-family:"Source Code Pro",Consolas,monospace;
   font-size:13px;
@@ -1680,8 +1683,8 @@ def _run_user_code(code):
     ns = globals()
     html = ""
     try:
-        warnings.filterwarnings("ignore", category=DeprecationWarning, module=r"pandas.*")
-        warnings.filterwarnings("ignore", message=r".*Pyarrow will become a required dependency.*")
+        warnings.filterwarnings("ignore", category=DeprecationWarning)
+        warnings.filterwarnings("ignore", message=r"(?s).*Pyarrow will become a required dependency.*")
         tree = ast.parse(code)
         last_value = None
 
