@@ -142,6 +142,102 @@ html,body{height:100%!important}body{margin:0!important;overflow:hidden!importan
 }
 </style>
 
+
+<style id="ian601-vscode-dataframe-style">
+/* VS Code-style pandas DataFrame output */
+.output.has-dataframe{
+  padding:0!important;
+  background:#1e1e1e!important;
+  color:#d4d4d4!important;
+  white-space:normal!important;
+}
+.df-viewer{
+  width:100%;
+  max-height:240px;
+  overflow:auto;
+  background:#1e1e1e;
+  font-family:"Source Code Pro",Consolas,monospace;
+  font-size:13px;
+}
+.df-viewer .df-toolbar{
+  position:sticky;
+  top:0;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-height:32px;
+  padding:6px 10px;
+  color:#cccccc;
+  background:#252526;
+  border-bottom:1px solid #3c3c3c;
+  font-family:Inter,system-ui,sans-serif;
+  font-size:11px;
+  font-weight:700;
+}
+.df-viewer .df-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#3fb950;
+}
+.df-viewer table.dataframe{
+  width:max-content;
+  min-width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  background:#1e1e1e!important;
+  color:#d4d4d4!important;
+}
+.df-viewer table.dataframe thead th{
+  position:sticky;
+  top:32px;
+  z-index:2;
+  padding:7px 12px;
+  background:#2d2d30!important;
+  color:#9cdcfe!important;
+  border-right:1px solid #3c3c3c!important;
+  border-bottom:1px solid #565656!important;
+  text-align:left;
+  font-weight:700;
+  white-space:nowrap;
+}
+.df-viewer table.dataframe tbody th{
+  position:sticky;
+  left:0;
+  z-index:1;
+  padding:7px 10px;
+  background:#252526!important;
+  color:#858585!important;
+  border-right:1px solid #3c3c3c!important;
+  border-bottom:1px solid #333!important;
+  text-align:right;
+  font-weight:500;
+}
+.df-viewer table.dataframe td{
+  padding:7px 12px;
+  background:#1e1e1e!important;
+  color:#d4d4d4!important;
+  border-right:1px solid #333!important;
+  border-bottom:1px solid #333!important;
+  text-align:left;
+  white-space:nowrap;
+}
+.df-viewer table.dataframe tbody tr:hover td,
+.df-viewer table.dataframe tbody tr:hover th{
+  background:#2a2d2e!important;
+}
+.df-console{
+  margin:0;
+  padding:9px 12px;
+  border-top:1px solid #3c3c3c;
+  background:#181818;
+  color:#c8c8c8;
+  white-space:pre-wrap;
+  font:12px/1.45 "Source Code Pro",Consolas,monospace;
+}
+</style>
+
 </head>
 <body>
 <div class="deck">
@@ -1149,7 +1245,7 @@ document.getElementById('prev-btn').onclick=()=>showSlide(current-1);document.ge
 document.getElementById('theme-btn').onclick=()=>{const root=document.documentElement;root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';if(window.monaco){monaco.editor.setTheme(root.dataset.theme==='dark'?'vs-dark':'vs');}};
 function packagesFor(code){const pkgs=[];if(/(^|\n)\s*(import|from)\s+numpy\b/.test(code))pkgs.push('numpy');if(/(^|\n)\s*(import|from)\s+pandas\b/.test(code))pkgs.push('pandas');if(/(^|\n)\s*(import|from)\s+matplotlib\b/.test(code))pkgs.push('matplotlib');if(/(^|\n)\s*(import|from)\s+sklearn\b/.test(code))pkgs.push('scikit-learn');return [...new Set(pkgs)];}
 async function loadPython(){if(!pyodideLoading){setRuntime('','Loading Python...');pyodideLoading=loadPyodide().then(async py=>{await py.runPythonAsync(`
-import sys, io, traceback
+import sys, io, traceback, ast
 
 def _run_user_code(code):
     stdout = io.StringIO()
@@ -1157,19 +1253,66 @@ def _run_user_code(code):
     old_stdout, old_stderr = sys.stdout, sys.stderr
     sys.stdout, sys.stderr = stdout, stderr
     ns = globals()
+    html = ""
     try:
-        exec(code, ns, ns)
+        tree = ast.parse(code)
+        last_value = None
+
+        # Execute everything except the final expression so it can behave
+        # like a notebook / VS Code interactive window.
+        if tree.body and isinstance(tree.body[-1], ast.Expr):
+            prefix = ast.Module(body=tree.body[:-1], type_ignores=[])
+            if prefix.body:
+                exec(compile(prefix, "<string>", "exec"), ns, ns)
+
+            expr = tree.body[-1].value
+
+            # Common teaching pattern: print(dataframe)
+            # Render that DataFrame as a grid instead of plain text.
+            if (
+                isinstance(expr, ast.Call)
+                and isinstance(expr.func, ast.Name)
+                and expr.func.id == "print"
+                and len(expr.args) == 1
+                and not expr.keywords
+            ):
+                candidate = eval(compile(ast.Expression(expr.args[0]), "<string>", "eval"), ns, ns)
+                if candidate.__class__.__name__ in ("DataFrame", "Series"):
+                    last_value = candidate
+                else:
+                    print(candidate)
+            else:
+                last_value = eval(compile(ast.Expression(expr), "<string>", "eval"), ns, ns)
+        else:
+            exec(compile(tree, "<string>", "exec"), ns, ns)
+
+        if last_value is not None and last_value.__class__.__name__ in ("DataFrame", "Series"):
+            if last_value.__class__.__name__ == "Series":
+                last_value = last_value.to_frame()
+            html = last_value.to_html(
+                border=0,
+                classes=["dataframe"],
+                justify="left",
+                escape=True
+            )
+
         ok = True
     except Exception:
         ok = False
         stderr.write(traceback.format_exc())
     finally:
         sys.stdout, sys.stderr = old_stdout, old_stderr
-    return {"ok": ok, "stdout": stdout.getvalue(), "stderr": stderr.getvalue()}
+
+    return {
+        "ok": ok,
+        "stdout": stdout.getvalue(),
+        "stderr": stderr.getvalue(),
+        "html": html
+    }
 `);pyodide=py;setRuntime('ready','Python ready');return py;}).catch(err=>{setRuntime('error','Python failed to load');throw err;});}return pyodideLoading;}
 function getCellCode(cell){const host=cell.querySelector('.monaco-host');const ed=monacoEditors.get(host);return ed?ed.getValue():cell.querySelector('.code-input').value;}
 function setCellCode(cell,code){const host=cell.querySelector('.monaco-host');const ed=monacoEditors.get(host);if(ed)ed.setValue(code);cell.querySelector('.code-input').value=code;}
-async function runCell(cell){if(!cell)return;const btn=cell.querySelector('.run-cell');const output=cell.querySelector('.output');btn.classList.add('running');btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Running';output.className='output';output.textContent='Running...';try{const py=await loadPython();const code=getCellCode(cell);const pkgs=packagesFor(code);if(pkgs.length){setRuntime('', 'Loading package: '+pkgs.join(', '));for(const pkg of pkgs){await py.loadPackage(pkg);}setRuntime('ready','Python ready');}const result=py.globals.get('_run_user_code')(code).toJs({dict_converter:Object.fromEntries});const text=(result.stdout||'')+(result.stderr?('\n'+result.stderr):'');output.textContent=text.trim()||'Code ran successfully with no printed output.';output.className='output '+(result.ok?'success':'error');setRuntime(result.ok?'ready':'error',result.ok?'Python ready':'Python error');}catch(err){output.textContent=String(err);output.className='output error';setRuntime('error','Python error');}finally{btn.classList.remove('running');btn.innerHTML='<i class="fa-solid fa-play"></i> Run';}}
+async function runCell(cell){if(!cell)return;const btn=cell.querySelector('.run-cell');const output=cell.querySelector('.output');btn.classList.add('running');btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Running';output.className='output';output.textContent='Running...';try{const py=await loadPython();const code=getCellCode(cell);const pkgs=packagesFor(code);if(pkgs.length){setRuntime('', 'Loading package: '+pkgs.join(', '));for(const pkg of pkgs){await py.loadPackage(pkg);}setRuntime('ready','Python ready');}const result=py.globals.get('_run_user_code')(code).toJs({dict_converter:Object.fromEntries});const text=(result.stdout||'')+(result.stderr?('\n'+result.stderr):'');if(result.html&&result.ok){output.className='output success has-dataframe';const consolePart=text.trim()?'<pre class="df-console"></pre>':'';output.innerHTML='<div class="df-viewer"><div class="df-toolbar"><span class="df-dot"></span><span>DataFrame Viewer</span></div>'+result.html+consolePart+'</div>';if(text.trim()){const pre=output.querySelector('.df-console');if(pre)pre.textContent=text.trim();}}else{output.textContent=text.trim()||'Code ran successfully with no printed output.';output.className='output '+(result.ok?'success':'error');}setRuntime(result.ok?'ready':'error',result.ok?'Python ready':'Python error');}catch(err){output.textContent=String(err);output.className='output error';setRuntime('error','Python error');}finally{btn.classList.remove('running');btn.innerHTML='<i class="fa-solid fa-play"></i> Run';}}
 async function runActiveSlide(){const cells=[...slides[current].querySelectorAll('.code-cell')];for(const cell of cells)await runCell(cell);}
 document.getElementById('run-slide-btn')?.addEventListener('click',runActiveSlide);document.querySelectorAll('.run-all-btn').forEach(b=>b.onclick=runActiveSlide);document.getElementById('restart-python').onclick=()=>{pyodide=null;pyodideLoading=null;setRuntime('', 'Python reset. It will reload when a code cell runs.');document.querySelectorAll('.output').forEach(o=>{o.className='output';o.textContent='Python reset. Click Run to execute this cell.';});};
 document.querySelectorAll('.code-cell').forEach(cell=>{const textarea=cell.querySelector('.code-input');originalCode.set(cell,textarea.value);cell.querySelector('.run-cell').onclick=()=>runCell(cell);cell.querySelector('.reset-cell').onclick=()=>{setCellCode(cell,originalCode.get(cell));cell.querySelector('.output').className='output';cell.querySelector('.output').textContent='Code reset. Click Run to execute this cell.';};cell.querySelector('.copy-cell').onclick=async()=>{try{await navigator.clipboard.writeText(getCellCode(cell));const b=cell.querySelector('.copy-cell');b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1000);}catch(e){cell.querySelector('.output').textContent='Copy failed. You can select and copy manually.';}};});
