@@ -852,3 +852,228 @@
   });
 })();
 /* IAN601_CODE_OUTPUT_VISIBILITY_END */
+/* IAN601_ACCESSIBILITY_SHARED_START
+   Shared accessibility and dependency-resilience enhancements.
+   Does not alter lesson content, narration manifests, audio, captions, or slide order. */
+(function(){
+  'use strict';
+
+  function ready(fn){
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn,{once:true});
+    else fn();
+  }
+  function all(selector,root){
+    return [].slice.call((root||document).querySelectorAll(selector));
+  }
+  function byIds(ids){
+    for(var i=0;i<ids.length;i++){
+      var node=document.getElementById(ids[i]);
+      if(node) return node;
+    }
+    return null;
+  }
+  function label(ids,text){
+    var node=byIds(ids);
+    if(node && !node.getAttribute('aria-label')) node.setAttribute('aria-label',text);
+    return node;
+  }
+  function syncTogglePressed(node){
+    if(!node) return;
+    function apply(){
+      var value=String(node.textContent||'').toLowerCase();
+      if(/\boff\b/.test(value)) node.setAttribute('aria-pressed','false');
+      else if(/\bon\b/.test(value)) node.setAttribute('aria-pressed','true');
+    }
+    apply();
+    if(window.MutationObserver){
+      try{new MutationObserver(apply).observe(node,{childList:true,subtree:true,characterData:true});}catch(e){}
+    }
+  }
+
+  ready(function(){
+    var main=document.querySelector('main.stage,main.slides,main#stage,#stage');
+    var topbar=document.querySelector('.topbar');
+    var footer=document.querySelector('footer.ian603-bottombar,footer.bottombar,.bottom-nav');
+
+    if(topbar){
+      topbar.setAttribute('role','banner');
+      if(!topbar.getAttribute('aria-label')) topbar.setAttribute('aria-label','IAN 601 module toolbar');
+    }
+
+    if(main){
+      if(!main.id) main.id='ian601-main-content';
+      main.setAttribute('role','main');
+      if(!main.getAttribute('aria-label')) main.setAttribute('aria-label','IAN 601 module lesson');
+      if(!main.hasAttribute('tabindex')) main.setAttribute('tabindex','-1');
+
+      if(!document.getElementById('ian601SkipLink')){
+        var skip=document.createElement('a');
+        skip.id='ian601SkipLink';
+        skip.className='ian601-skip-link';
+        skip.href='#'+main.id;
+        skip.textContent='Skip to lesson content';
+        document.body.insertBefore(skip,document.body.firstChild);
+      }
+    }
+
+    if(footer){
+      footer.setAttribute('role','region');
+      if(!footer.getAttribute('aria-label')) footer.setAttribute('aria-label','Narration and slide navigation controls');
+    }
+
+    var runtime=byIds(['runtime','runtime-status','pyStatus']);
+    if(runtime){
+      runtime.setAttribute('role','status');
+      runtime.setAttribute('aria-live','polite');
+      runtime.setAttribute('aria-atomic','true');
+    }
+
+    label(['prev-btn','prevBtn'],'Go to previous slide');
+    label(['next-btn','nextBtn'],'Go to next slide');
+    label(['slide-select','slideSelect'],'Choose a slide');
+    label(['theme-btn','themeBtn','theme-toggle'],'Switch light or dark theme');
+    label(['run-slide-btn','runSlideBtn'],'Run Python code on the current slide');
+    label(['restart-python','resetPythonBtn','shell-reset-python'],'Reset the Python runtime');
+    label(['ian-progress-btn','learningProgressBtn','progressBtn'],'Open module progress');
+    label(['ian-course-modules-btn','courseModulesBtn','modulesBtn'],'Open IAN 601 course modules');
+    label(['fullscreen-btn','ian-fullscreen-btn','fullBtn'],'Enter or exit fullscreen mode');
+    label(['start-narration-btn','startNarration'],'Start narration for the current slide');
+    var narrationToggle=label(['narration-toggle-btn','narrationToggle'],'Turn narration on or off');
+    var ccToggle=label(['cc-toggle-btn','ccToggle'],'Turn closed captions on or off');
+    label(['transcript-btn','transcriptBtn'],'Open slide transcript');
+    label(['speed-select','speedSelect'],'Narration playback speed');
+    label(['audio-play-btn','audioPlay'],'Play or pause slide narration');
+    label(['audio-seek','audioSeek'],'Narration position');
+    label(['transcript-close-btn','transcriptClose'],'Close slide transcript');
+    syncTogglePressed(narrationToggle);
+    syncTogglePressed(ccToggle);
+
+    var settingsBtn=document.querySelector('.shell-settings-btn');
+    var settingsMenu=document.querySelector('.shell-settings-menu');
+    if(settingsBtn && settingsMenu){
+      if(!settingsMenu.id) settingsMenu.id='ian601SettingsMenu';
+      settingsBtn.setAttribute('aria-haspopup','menu');
+      settingsBtn.setAttribute('aria-controls',settingsMenu.id);
+      if(!settingsBtn.getAttribute('aria-label')) settingsBtn.setAttribute('aria-label','Open presentation settings');
+    }
+
+    function enhanceSlides(){
+      all('.slide').forEach(function(slide,index){
+        slide.setAttribute('role','group');
+        slide.setAttribute('aria-roledescription','slide');
+
+        var heading=slide.querySelector('h1,h2,h3');
+        if(heading){
+          if(!heading.id) heading.id='ian601-slide-'+(index+1)+'-title';
+          slide.setAttribute('aria-labelledby',heading.id);
+        }else if(!slide.getAttribute('aria-label')){
+          slide.setAttribute('aria-label','Slide '+(index+1));
+        }
+
+        slide.setAttribute('aria-hidden',slide.classList.contains('active')?'false':'true');
+
+        if(!slide.dataset.ian601A11yObserved && window.MutationObserver){
+          slide.dataset.ian601A11yObserved='1';
+          try{
+            new MutationObserver(function(){
+              slide.setAttribute('aria-hidden',slide.classList.contains('active')?'false':'true');
+            }).observe(slide,{attributes:true,attributeFilter:['class']});
+          }catch(e){}
+        }
+      });
+    }
+
+    enhanceSlides();
+    if(main && window.MutationObserver){
+      try{new MutationObserver(enhanceSlides).observe(main,{childList:true,subtree:false});}catch(e){}
+    }
+
+    all('.code-cell').forEach(function(cell,index){
+      var number=index+1;
+      var titleNode=cell.querySelector('.cell-head h3');
+      var title=titleNode?String(titleNode.textContent||'').trim():'';
+      var groupLabel=title?('Python example '+number+': '+title):('Python example '+number);
+
+      cell.setAttribute('role','group');
+      if(!cell.getAttribute('aria-label')) cell.setAttribute('aria-label',groupLabel);
+
+      var textarea=cell.querySelector('textarea.code-input');
+      if(textarea){
+        textarea.setAttribute('aria-label','Editable Python code for example '+number);
+        textarea.setAttribute('spellcheck','false');
+      }
+
+      var monacoHost=cell.querySelector('.monaco-host');
+      if(monacoHost){
+        monacoHost.setAttribute('role','group');
+        monacoHost.setAttribute('aria-label','Python code editor for example '+number);
+      }
+
+      var run=cell.querySelector('.run-cell');
+      if(run) run.setAttribute('aria-label','Run Python example '+number);
+
+      var reset=cell.querySelector('.reset-cell');
+      if(reset) reset.setAttribute('aria-label','Reset Python example '+number);
+
+      var copy=cell.querySelector('.copy-cell');
+      if(copy) copy.setAttribute('aria-label','Copy Python example '+number);
+
+      var output=cell.querySelector('.output');
+      if(output){
+        output.setAttribute('role','status');
+        output.setAttribute('aria-live','polite');
+        output.setAttribute('aria-atomic','true');
+        output.setAttribute('aria-label','Output for Python example '+number);
+      }
+    });
+
+    var subtitle=byIds(['subtitle-bar','subtitleBar']);
+    if(subtitle && !subtitle.getAttribute('aria-label')) subtitle.setAttribute('aria-label','Closed captions');
+
+    all('.transcript-panel').forEach(function(panel){
+      panel.setAttribute('role','dialog');
+      if(!panel.getAttribute('aria-label') && !panel.getAttribute('aria-labelledby')) panel.setAttribute('aria-label','Slide transcript');
+    });
+
+    all('.modal-backdrop .modal,.ian603-modal-backdrop .ian603-modal').forEach(function(modal,index){
+      modal.setAttribute('role','dialog');
+      modal.setAttribute('aria-modal','true');
+      if(!modal.getAttribute('aria-label') && !modal.getAttribute('aria-labelledby')){
+        var heading=modal.querySelector('h1,h2,h3');
+        if(heading){
+          if(!heading.id) heading.id='ian601-dialog-'+(index+1);
+          modal.setAttribute('aria-labelledby',heading.id);
+        }else{
+          modal.setAttribute('aria-label','Module dialog');
+        }
+      }
+    });
+
+    var codeCells=all('.code-cell');
+    if(codeCells.length && !document.getElementById('ian601RuntimeWarning')){
+      var warning=document.createElement('div');
+      warning.id='ian601RuntimeWarning';
+      warning.className='ian601-runtime-warning';
+      warning.setAttribute('role','alert');
+      warning.hidden=true;
+      warning.innerHTML='<strong>Interactive Python is temporarily unavailable.</strong> You can continue reading the lesson and reviewing the code. Refresh the page when you are ready to try the code again.';
+      if(topbar && topbar.parentNode) topbar.parentNode.insertBefore(warning,topbar.nextSibling);
+      else document.body.appendChild(warning);
+
+      window.addEventListener('load',function(){
+        setTimeout(function(){
+          if(typeof window.loadPyodide!=='function') warning.hidden=false;
+
+          if(!window.monaco){
+            all('.code-cell.monaco-ready').forEach(function(cell){
+              cell.classList.remove('monaco-ready');
+              var textarea=cell.querySelector('textarea.code-input');
+              if(textarea) textarea.style.display='block';
+            });
+          }
+        },6000);
+      },{once:true});
+    }
+  });
+})();
+/* IAN601_ACCESSIBILITY_SHARED_END */
