@@ -74,12 +74,48 @@
     var full=byIds(['fullscreen-btn','ian-fullscreen-btn','fullBtn']);
     var reset=byIds(['restart-python','resetPythonBtn']);
 
+    function stableMenuLabel(node,label){
+      if(!node) return;
+      node.classList.add('shell-menu-item');
+      if(node.textContent!==label) node.textContent=label;
+      node.addEventListener('click',function(){
+        setTimeout(function(){
+          if(node.textContent!==label) node.textContent=label;
+        },0);
+      });
+      if(window.MutationObserver){
+        try{
+          new MutationObserver(function(){
+            if(node.textContent!==label) node.textContent=label;
+          }).observe(node,{childList:true,subtree:true,characterData:true});
+        }catch(e){}
+      }
+    }
+
+    if(!reset){
+      reset=make('button','shell-menu-item','Reset Python');
+      reset.type='button';
+      reset.id='shell-reset-python';
+      reset.addEventListener('click',function(){
+        // Older modules do not expose a runtime-reset control.
+        // Reloading resets Pyodide while the shared slide-memory feature
+        // returns the learner to the same slide.
+        try{ sessionStorage.setItem('ian601_shell_python_reset','1'); }catch(e){}
+        window.location.reload();
+      });
+    }
+
+    stableMenuLabel(theme,'☾ Theme');
+    stableMenuLabel(reset,'Reset Python');
+    stableMenuLabel(full,'Fullscreen');
+
     if(progress){
       progress.classList.add('shell-progress-action');
       actions.appendChild(progress);
     }
     if(run){
       run.classList.add('shell-run-action');
+      run.textContent='Run slide ▶';
       actions.appendChild(run);
     }
 
@@ -97,7 +133,7 @@
       }
     });
 
-    var autoBtn=make('button','','Auto-hide Off');
+    var autoBtn=make('button','shell-menu-item','Auto-hide Off');
     autoBtn.type='button';
     autoBtn.id='shellAutoHideBtn';
     autoBtn.setAttribute('role','menuitem');
