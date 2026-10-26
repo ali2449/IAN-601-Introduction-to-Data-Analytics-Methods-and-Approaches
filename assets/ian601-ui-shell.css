@@ -1406,3 +1406,83 @@ body.ian601-shell .code-cell.ian601-python-focus .output.show{
   margin:0!important;
 }
 /* IAN601_FOCUS_NATURAL_FLOW_FIX_END */
+/* IAN601_ACCESSIBILITY_SHARED_START
+   Keyboard focus, skip navigation, reduced motion, touch targets, and runtime fallback. */
+.ian601-skip-link{
+  position:fixed!important;
+  top:8px!important;
+  left:8px!important;
+  z-index:10000!important;
+  padding:9px 13px!important;
+  border:2px solid #fff!important;
+  border-radius:8px!important;
+  background:#0f172a!important;
+  color:#fff!important;
+  font-size:13px!important;
+  font-weight:850!important;
+  text-decoration:none!important;
+  transform:translateY(-160%)!important;
+  transition:transform .16s ease!important;
+}
+.ian601-skip-link:focus{
+  transform:translateY(0)!important;
+}
+
+body.ian601-shell button:focus-visible,
+body.ian601-shell select:focus-visible,
+body.ian601-shell a:focus-visible,
+body.ian601-shell textarea:focus-visible,
+body.ian601-shell input:focus-visible,
+body.ian601-shell [tabindex]:focus-visible{
+  outline:3px solid #f59e0b!important;
+  outline-offset:3px!important;
+}
+
+.ian601-runtime-warning{
+  position:fixed!important;
+  top:58px!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  z-index:7900!important;
+  width:min(760px,calc(100vw - 28px))!important;
+  padding:10px 14px!important;
+  border:1px solid #f59e0b!important;
+  border-left:5px solid #f59e0b!important;
+  border-radius:9px!important;
+  background:#fffbeb!important;
+  color:#78350f!important;
+  box-shadow:0 12px 30px rgba(15,23,42,.18)!important;
+  font-size:12.5px!important;
+  line-height:1.5!important;
+}
+.ian601-runtime-warning[hidden]{
+  display:none!important;
+}
+html[data-theme="dark"] .ian601-runtime-warning,
+body.dark .ian601-runtime-warning,
+body[data-theme="dark"] .ian601-runtime-warning{
+  background:#292111!important;
+  color:#fde68a!important;
+}
+
+@media(pointer:coarse){
+  body.ian601-shell button,
+  body.ian601-shell select,
+  body.ian601-shell .btn,
+  body.ian601-shell .control,
+  body.ian601-shell .ian603-tool{
+    min-height:44px!important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  body.ian601-shell *,
+  body.ian601-shell *::before,
+  body.ian601-shell *::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}
+/* IAN601_ACCESSIBILITY_SHARED_END */
