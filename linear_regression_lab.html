@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>Interactive Linear Regression Lab | IAN 601</title>
+  <title>Interactive House Price Regression Lab | IAN 601</title>
   <style>
     :root {
       --ink: #1b293b; --muted: #59697c; --line: #dde4ee;
@@ -18,6 +18,13 @@
     h1 { font-size: clamp(22px, 3vw, 29px); line-height: 1.2; margin: 6px 0 8px; letter-spacing: -.02em; }
     p { margin: 0; }
     .lead { color: var(--muted); max-width: 760px; font-size: 14px; }
+    .example-band { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 12px; }
+    .example-chip { font-size: 13px; color: #34506a; background: #e8f1fc; border: 1px solid #d4e6f8; border-radius: 9px; padding: 7px 10px; }
+    .example-chip strong { color: #205c99; margin-right: 5px; }
+    .example-arrow { color: #53697e; font-weight: 750; }
+    .house-detail { margin: 10px 8px 0; padding: 10px 12px; background: #f3f8fd; border: 1px solid #deecf9; border-radius: 10px; color: #3f5871; font-size: 12px; line-height: 1.5; min-height: 60px; }
+    .house-detail strong { color: #163b62; }
+    .metric-explain { font-size: 11px; margin-top: 7px; color: #647487; }
     .lab { margin-top: 17px; display: grid; grid-template-columns: minmax(0,1.32fr) minmax(310px,.88fr); background: var(--paper); border: 1px solid var(--line); border-radius: 21px; overflow: hidden; box-shadow: 0 8px 25px rgba(30,50,80,.045); }
     .chart-area { padding: 17px 16px 12px; min-width: 0; border-right: 1px solid var(--line); }
     .chart-title { font-size: 15px; font-weight: 720; margin: 0 0 5px 8px; }
@@ -37,7 +44,7 @@
     .small-heading { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #6d7c90; margin-bottom: 7px; }
     .equation { background: #f4f9f7; border: 1px solid #e0eee7; border-radius: 13px; padding: 17px 13px; text-align: center; }
     .eq-label { color: #5a7169; font-size: 12px; margin-bottom: 4px; }
-    #equation { font-size: clamp(19px, 2.4vw, 24px); font-weight: 740; font-variant-numeric: tabular-nums; letter-spacing: -.015em; }
+    #equation { font-size: clamp(16px, 2vw, 21px); font-weight: 740; font-variant-numeric: tabular-nums; letter-spacing: -.015em; overflow-wrap: anywhere; }
     .metric-row { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; }
     .metric { border: 1px solid var(--line); padding: 9px 7px; border-radius: 11px; text-align: center; min-width: 0; }
     .metric-name { font-size: 11px; color: #647287; }
@@ -74,13 +81,18 @@
 <body>
   <main class="wrap">
     <div class="eyebrow">IAN 601 &middot; Module 14 &middot; Practice Lab</div>
-    <h1>Interactive Linear Regression</h1>
-    <p class="lead">Move the blue observations and watch the least-squares line update. Explore slope, intercept, residuals, and R-squared without changing Python code.</p>
+    <h1>Interactive Linear Regression: House Prices</h1>
+    <p class="lead">Imagine we have home sales data. Can we predict a house's sale price from its size? Drag a blue house to change its size or sale price, then watch the regression line update.</p>
+    <div class="example-band" aria-label="Regression features and target">
+      <span class="example-chip"><strong>Input (X)</strong> House size in square feet</span>
+      <span class="example-arrow" aria-hidden="true">→</span>
+      <span class="example-chip"><strong>Target (Y)</strong> House sale price in dollars</span>
+    </div>
     <section class="lab" aria-label="Interactive regression model">
       <div class="chart-area">
-        <p class="chart-title">Drag a blue point to refit the line</p>
-        <p class="chart-subtitle">Tip: you can also select a point and use your arrow keys.</p>
-        <svg id="plot" viewBox="0 0 710 460" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Interactive data scatterplot and least-squares regression line">
+        <p class="chart-title">Each blue dot is a sold house</p>
+        <p class="chart-subtitle">Drag a house to change its size or price (illustrative data). You can also use arrow keys.</p>
+        <svg id="plot" viewBox="0 0 710 460" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Interactive house sales chart: square footage versus sale price, with best-fit regression line">
           <defs><clipPath id="plot-clip"><rect x="62" y="20" width="624" height="374"></rect></clipPath></defs>
           <g id="axes"></g>
           <g clip-path="url(#plot-clip)">
@@ -88,50 +100,52 @@
           </g>
         </svg>
         <div class="legend" aria-label="Plot legend">
-          <span class="key">Observed data</span><span class="key line">Fitted line</span><span class="key residual">Prediction error</span>
+          <span class="key">Actual sale price (house)</span><span class="key line">Predicted price (line)</span><span class="key residual">Prediction error ($)</span>
         </div>
+        <div class="house-detail" id="house-detail" aria-live="polite">Select a house to compare its actual and predicted sale prices.</div>
       </div>
       <aside class="controls">
         <div>
           <div class="small-heading">Model equation</div>
-          <div class="equation"><div class="eq-label">Predicted response</div><div id="equation" aria-live="polite">Loading...</div></div>
+          <div class="equation"><div class="eq-label">Predicted sale price from house size</div><div id="equation" aria-live="polite">Loading...</div></div>
         </div>
         <div class="metric-row" aria-label="Model statistics">
-          <div class="metric"><div class="metric-name">Slope</div><div class="metric-value" id="slope">--</div></div>
-          <div class="metric"><div class="metric-name">Intercept</div><div class="metric-value" id="intercept">--</div></div>
-          <div class="metric"><div class="metric-name">R-squared</div><div class="metric-value" id="r2">--</div></div>
+          <div class="metric" title="Expected change in predicted price for one additional square foot"><div class="metric-name">Slope ($/sq ft)</div><div class="metric-value" id="slope">--</div></div>
+          <div class="metric" title="Mathematical price prediction for a 0-square-foot house; 0 is outside this example"><div class="metric-name">Intercept ($)</div><div class="metric-value" id="intercept">--</div></div>
+          <div class="metric" title="How closely the regression line fits the home sale prices"><div class="metric-name">R² (fit)</div><div class="metric-value" id="r2">--</div></div>
         </div>
+        <p class="metric-explain">Slope = estimated dollars added per square foot. Intercept = predicted price at 0 sq ft (not a realistic house). R² = how well this line fits these sales.</p>
         <div>
           <div class="small-heading">How to fit the line</div>
           <div class="switch" role="group" aria-label="Regression fit type">
             <button type="button" data-fit="with_intercept" aria-pressed="true">With intercept</button>
-            <button type="button" data-fit="through_origin" aria-pressed="false">Through origin</button>
+            <button type="button" data-fit="through_origin" aria-pressed="false">Force $0 at 0 sq ft</button>
           </div>
         </div>
         <div>
           <div class="small-heading">What to focus on</div>
           <div class="switch" role="group" aria-label="Chart focus">
-            <button type="button" data-focus="residuals" aria-pressed="true">Residuals</button>
+            <button type="button" data-focus="residuals" aria-pressed="true">Errors</button>
             <button type="button" data-focus="predictions" aria-pressed="false">Predictions</button>
-            <button type="button" data-focus="line" aria-pressed="false">Line</button>
-            <button type="button" data-focus="data" aria-pressed="false">Data</button>
+            <button type="button" data-focus="line" aria-pressed="false">Regression line</button>
+            <button type="button" data-focus="data" aria-pressed="false">Houses</button>
           </div>
           <p id="hint" class="hint" aria-live="polite"></p>
         </div>
         <div>
-          <div class="small-heading">Try a prediction</div>
-          <div class="input-line"><label for="new-x">x = <output id="x-value">6.0</output></label><input id="new-x" type="range" min="0" max="10" step=".1" value="6" aria-label="X value for prediction"></div>
-          <div class="prediction">Predicted y: <strong id="predicted-y">--</strong></div>
+          <div class="small-heading">Predict a new house's price</div>
+          <div class="input-line"><label for="new-x"><output id="x-value">2,000 sq ft</output></label><input id="new-x" type="range" min="500" max="3500" step="50" value="2000" aria-label="New house size in square feet"></div>
+          <div class="prediction">Estimated sale price: <strong id="predicted-y">--</strong></div>
         </div>
         <div class="buttons">
-          <button class="action" type="button" id="generate">Generate new data</button>
+          <button class="action" type="button" id="generate">Generate new home sales</button>
           <button type="button" id="reset">Reset example</button>
         </div>
       </aside>
     </section>
     <div class="lesson">
-      <section class="note"><h2>Why does the line move?</h2><p>The model chooses the slope and intercept that make the <strong>sum of squared residuals</strong> as small as possible. Every time a point moves, the model is fitted again.</p></section>
-      <section class="note"><h2>Try this</h2><p>Move one observation far from the line. What happens to <strong>R-squared</strong>? Then select <strong>Through origin</strong>. Why might forcing the intercept to zero worsen the fit?</p></section>
+      <section class="note"><h2>What is the model learning?</h2><p><strong>Feature (X):</strong> house size. <strong>Target (Y):</strong> sale price. The green line gives an estimated price for each size. Orange gaps (residuals) show how much real sale prices differ from predictions.</p></section>
+      <section class="note"><h2>Try this with a house</h2><p>Move a house worth <strong>$500,000</strong> to a much higher sale price. Does the best-fit line change? How does the dollar prediction error change? Then try forcing the line to predict $0 at 0 sq ft.</p></section>
     </div>
   </main>
   <script>
@@ -145,17 +159,25 @@
     const probeLayer = document.getElementById("probe");
     const NS = "http://www.w3.org/2000/svg";
     const B = {left:62, top:20, w:624, h:374, xmax:10, ymax:24};
-    const initialY = [3.0, 5.4, 5.0, 8.0, 7.9, 11.2, 10.5, 13.7, 14.6, 16.5];
+    const initialY = [5.1, 6.7, 5.8, 9.8, 9.2, 11.0, 13.4, 13.8, 17.2, 17.5];
     const initial = initialY.map((y,i) => ({x:0.7 + 0.94*i, y:y}));
     let data = initial.map(p=>({...p}));
     let fitMode = "with_intercept";
     let focusMode = "residuals";
     let activePoint = -1;
+    let selectedPoint = 0;
     let currentFit = null;
     const X = x => B.left + B.w*x/B.xmax;
     const Y = y => B.top + B.h*(B.ymax-y)/B.ymax;
     const clamp = (v,low,high) => Math.max(low,Math.min(high,v));
     const fmt = n => (Math.abs(n) < 0.005 ? 0 : n).toFixed(2);
+    // Chart coordinates are scaled for easy dragging: x=0 is 500 sq ft; y=1 is $50,000.
+    const toSqft = x => 500 + 300*x;
+    const toPrice = y => 50000*y;
+    const toPlotX = size => (size - 500)/300;
+    const whole = n => Math.round(n).toLocaleString("en-US");
+    const usd = n => (n<0 ? "-" : "") + "$" + whole(Math.abs(n));
+    const compactPrice = n => Math.abs(n)>=1000000 ? "$"+(n/1000000).toFixed(1)+"M" : "$"+whole(n/1000)+"k";
     function element(parent,tag,attrs) {
       const e = document.createElementNS(NS,tag);
       for (const [key,val] of Object.entries(attrs || {})) e.setAttribute(key,String(val));
@@ -169,27 +191,27 @@
       axes.replaceChildren();
       for (let y=0;y<=24;y+=4) {
         element(axes,"line",{x1:B.left,y1:Y(y),x2:B.left+B.w,y2:Y(y),stroke:y===0?"#8997a8":"#e5eaf1","stroke-width":y===0?1.8:1});
-        textSvg(axes,B.left-12,Y(y)+5,String(y),{"text-anchor":"end",class:"tick"});
+        textSvg(axes,B.left-12,Y(y)+5,compactPrice(toPrice(y)),{"text-anchor":"end",class:"tick"});
       }
       for (let x=0;x<=10;x+=2) {
         element(axes,"line",{x1:X(x),y1:B.top,x2:X(x),y2:B.top+B.h,stroke:x===0?"#8997a8":"#e9edf2","stroke-width":x===0?1.8:1});
-        textSvg(axes,X(x),B.top+B.h+27,String(x),{"text-anchor":"middle",class:"tick"});
+        textSvg(axes,X(x),B.top+B.h+27,whole(toSqft(x)),{"text-anchor":"middle",class:"tick"});
       }
-      textSvg(axes,374,452,"Predictor (x)",{"text-anchor":"middle",class:"axis-label"});
-      textSvg(axes,18,210,"Response (y)",{"text-anchor":"middle",class:"axis-label",transform:"rotate(-90 18 210)"});
+      textSvg(axes,374,452,"House size (square feet)",{"text-anchor":"middle",class:"axis-label"});
+      textSvg(axes,18,210,"Sale price ($)",{"text-anchor":"middle",class:"axis-label",transform:"rotate(-90 18 210)"});
     }
     function fitLine() {
       const n = data.length;
       const mx = data.reduce((a,p)=>a+p.x,0)/n;
       const my = data.reduce((a,p)=>a+p.y,0)/n;
       const numerator = fitMode==="through_origin"
-        ? data.reduce((a,p)=>a+p.x*p.y,0)
+        ? data.reduce((a,p)=>a+(p.x+500/300)*p.y,0)
         : data.reduce((a,p)=>a+(p.x-mx)*(p.y-my),0);
       const denominator = fitMode==="through_origin"
-        ? data.reduce((a,p)=>a+p.x*p.x,0)
+        ? data.reduce((a,p)=>a+(p.x+500/300)**2,0)
         : data.reduce((a,p)=>a+(p.x-mx)**2,0);
       const slope = denominator > 1e-12 ? numerator/denominator : 0;
-      const intercept = fitMode==="through_origin" ? 0 : my-slope*mx;
+      const intercept = fitMode==="through_origin" ? slope*(500/300) : my-slope*mx;
       const predict = x=>intercept+slope*x;
       const squaredError = data.reduce((a,p)=>a+(p.y-predict(p.x))**2,0);
       const totalVariation = data.reduce((a,p)=>a+(p.y-my)**2,0);
@@ -197,10 +219,10 @@
       return {slope,intercept,r2,predict};
     }
     const hintText = {
-      residuals:"Orange vertical distances show actual y minus predicted y. The fitted line minimizes their squared total.",
-      predictions:"Green rings show predicted values on the line. Blue points are the actual observations.",
-      line:"The green line is the least-squares solution. Drag a blue point to see how slope and intercept change.",
-      data:"Blue observations are the input data. Try moving one point much higher or lower."
+      residuals:"The orange gap for each house is its actual sale price minus its predicted price. A smaller gap means a more accurate prediction.",
+      predictions:"Green circles show predicted prices at each house's size; blue circles show what those houses really sold for.",
+      line:"The green line shows estimated sale price as square footage increases. The model picks the line with the smallest sum of squared errors.",
+      data:"Every blue dot represents one sold house. Moving one house updates the model using all 10 houses."
     };
     function updateButtons() {
       document.querySelectorAll("[data-fit]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.fit===fitMode)));
@@ -209,10 +231,11 @@
     function render() {
       currentFit = fitLine();
       const m=currentFit.slope, b=currentFit.intercept, f=currentFit.predict;
-      const sign = m<0 ? " - " : " + ";
-      document.getElementById("equation").textContent="y\u0302 = "+fmt(b)+sign+fmt(Math.abs(m))+"x";
-      document.getElementById("slope").textContent=fmt(m);
-      document.getElementById("intercept").textContent=fmt(b);
+      const dollarsPerSqft = m * 50000/300;
+      const interceptDollars = b * 50000 - dollarsPerSqft * 500;
+      document.getElementById("equation").textContent="Price = "+usd(interceptDollars)+(dollarsPerSqft<0?" − ":" + ")+usd(Math.abs(dollarsPerSqft))+" × sq ft";
+      document.getElementById("slope").textContent=usd(dollarsPerSqft);
+      document.getElementById("intercept").textContent=usd(interceptDollars);
       document.getElementById("r2").textContent=fmt(currentFit.r2);
       document.getElementById("hint").textContent=hintText[focusMode];
       residualLayer.replaceChildren();lineLayer.replaceChildren();predictionLayer.replaceChildren();pointLayer.replaceChildren();probeLayer.replaceChildren();
@@ -224,22 +247,37 @@
       }
       element(lineLayer,"line",{x1:X(0),y1:Y(f(0)),x2:X(10),y2:Y(f(10)),stroke:"#15966b","stroke-width":focusMode==="line"?4:3,opacity:focusMode==="data"?.40:1,"stroke-linecap":"round"});
       for(let i=0;i<data.length;i++) {
-        const p=data[i], c=element(pointLayer,"circle",{cx:X(p.x),cy:Y(p.y),r:focusMode==="data"?8.8:8,tabindex:"0",role:"slider","aria-label":"Observation "+(i+1)+", x "+fmt(p.x)+", y "+fmt(p.y)+". Use arrow keys to move.","aria-valuenow":fmt(p.y),"aria-valuemin":"0","aria-valuemax":"24",class:"observed",opacity:focusMode==="line"?.75:1});
-        element(c,"title",{}).textContent="Point "+(i+1)+": x="+fmt(p.x)+", y="+fmt(p.y);
-        c.addEventListener("pointerdown",e=>{e.preventDefault();activePoint=i;svg.setPointerCapture(e.pointerId);});
+        const p=data[i], c=element(pointLayer,"circle",{cx:X(p.x),cy:Y(p.y),r:focusMode==="data"?8.8:8,tabindex:"0",role:"slider","aria-label":"House "+(i+1)+": "+whole(toSqft(p.x))+" square feet, sale price "+usd(toPrice(p.y))+". Use arrow keys to move.","aria-valuenow":String(Math.round(toPrice(p.y))),"aria-valuemin":"0","aria-valuemax":"1200000",class:"observed",opacity:focusMode==="line"?.75:1});
+        element(c,"title",{}).textContent="House "+(i+1)+" | Size: "+whole(toSqft(p.x))+" sq ft | Sold for: "+usd(toPrice(p.y));
+        c.addEventListener("pointerdown",e=>{e.preventDefault();activePoint=i;selectedPoint=i;svg.setPointerCapture(e.pointerId);render();});
         c.addEventListener("keydown",e=>{
-          const steps={"ArrowUp":[0,.25],"ArrowDown":[0,-.25],"ArrowRight":[.15,0],"ArrowLeft":[-.15,0]};
+          const steps={"ArrowUp":[0,.2],"ArrowDown":[0,-.2],"ArrowRight":[1/6,0],"ArrowLeft":[-1/6,0]};
           if(!steps[e.key])return;
           e.preventDefault();
           const step=steps[e.key];
           data[i]={x:clamp(data[i].x+step[0],0,10),y:clamp(data[i].y+step[1],0,24)};
+          selectedPoint=i;
           render();
           pointLayer.children[i].focus();
         });
       }
-      const newX=Number(document.getElementById("new-x").value);
-      document.getElementById("x-value").textContent=newX.toFixed(1);
-      document.getElementById("predicted-y").textContent=fmt(f(newX));
+      // Highlight the currently selected house and explain the values in dollars.
+      const selected=data[selectedPoint];
+      if(selected){
+        const sx=X(selected.x), sy=Y(selected.y);
+        const lx=clamp(sx-35,B.left+6,B.left+B.w-93), ly=clamp(sy-28,B.top+10,B.top+B.h-24);
+        element(pointLayer,"rect",{x:lx-5,y:ly-17,width:96,height:23,rx:6,fill:"#e5effb",stroke:"#accbeb","stroke-width":1,"pointer-events":"none"});
+        textSvg(pointLayer,lx,ly,"House "+(selectedPoint+1),{fill:"#164b82","font-size":14,"font-weight":700,"pointer-events":"none"});
+        const actual=toPrice(selected.y),predicted=toPrice(f(selected.x));
+        const error=actual-predicted;
+        document.getElementById("house-detail").innerHTML="<strong>Selected house "+(selectedPoint+1)+"</strong> · "+whole(toSqft(selected.x))+" sq ft"+
+          "<br>Actual: <strong>"+usd(actual)+"</strong> · Predicted: <strong>"+usd(predicted)+"</strong>"+
+          "<br>Residual (actual − predicted): <strong>"+usd(error)+"</strong>";
+      }
+      const houseSize=Number(document.getElementById("new-x").value);
+      const newX=toPlotX(houseSize);
+      document.getElementById("x-value").textContent=whole(houseSize)+" sq ft";
+      document.getElementById("predicted-y").textContent=usd(toPrice(f(newX)));
       if(focusMode==="predictions"){
         element(probeLayer,"line",{x1:X(newX),x2:X(newX),y1:Y(0),y2:Y(f(newX)),stroke:"#af65a1","stroke-width":1.5,"stroke-dasharray":"5 4",opacity:.8});
         element(probeLayer,"circle",{cx:X(newX),cy:Y(f(newX)),r:7,fill:"#af65a1",stroke:"#fff","stroke-width":2});
@@ -268,17 +306,17 @@
     document.querySelectorAll("[data-focus]").forEach(b=>b.addEventListener("click",()=>{focusMode=b.dataset.focus;render();}));
     document.getElementById("new-x").addEventListener("input",render);
     document.getElementById("generate").addEventListener("click",()=>{
-      const positive=Math.random()>.5;
-      const slope=(positive?1:-1)*(1.15+Math.random()*.65);
-      const intercept=positive?2+Math.random()*2:17+Math.random()*2;
+      const slope=1.1+Math.random()*.75;
+      const intercept=2.8+Math.random()*2.1;
       data=Array.from({length:10},(_,i)=>{
         const x=.7+.94*i;
         const noise=(Math.random()+Math.random()+Math.random()-1.5)*3.9;
         return {x,y:clamp(intercept+slope*x+noise,.6,23.4)};
       });
+      selectedPoint=0;
       render();
     });
-    document.getElementById("reset").addEventListener("click",()=>{data=initial.map(p=>({...p}));fitMode="with_intercept";focusMode="residuals";document.getElementById("new-x").value="6";render();});
+    document.getElementById("reset").addEventListener("click",()=>{data=initial.map(p=>({...p}));fitMode="with_intercept";focusMode="residuals";selectedPoint=0;document.getElementById("new-x").value="2000";render();});
     drawAxes();
     render();
   </script>
