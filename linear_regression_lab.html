@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Interactive Linear Regression Lab | IAN 601</title>
+  <style>
+    :root {
+      --ink: #1b293b; --muted: #59697c; --line: #dde4ee;
+      --blue: #1878dc; --green: #15966b; --orange: #da7a28;
+      --paper: #ffffff; --bg: #f5f8fc;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.48; }
+    .wrap { max-width: 1190px; margin: 0 auto; padding: 23px 18px 36px; }
+    .eyebrow { color: #365a80; font-size: 12px; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
+    h1 { font-size: clamp(22px, 3vw, 29px); line-height: 1.2; margin: 6px 0 8px; letter-spacing: -.02em; }
+    p { margin: 0; }
+    .lead { color: var(--muted); max-width: 760px; font-size: 14px; }
+    .lab { margin-top: 17px; display: grid; grid-template-columns: minmax(0,1.32fr) minmax(310px,.88fr); background: var(--paper); border: 1px solid var(--line); border-radius: 21px; overflow: hidden; box-shadow: 0 8px 25px rgba(30,50,80,.045); }
+    .chart-area { padding: 17px 16px 12px; min-width: 0; border-right: 1px solid var(--line); }
+    .chart-title { font-size: 15px; font-weight: 720; margin: 0 0 5px 8px; }
+    .chart-subtitle { margin: 0 0 6px 8px; font-size: 12px; color: var(--muted); }
+    svg { display: block; width: 100%; height: auto; overflow: hidden; touch-action: none; user-select: none; }
+    .tick { font-size: 15px; fill: #617184; }
+    .axis-label { font-size: 17px; font-weight: 720; fill: #273449; }
+    .observed { fill: var(--blue); stroke: #fff; stroke-width: 2.2; cursor: grab; }
+    .observed:focus { outline: none; stroke: #102c49; stroke-width: 3; }
+    .observed:active { cursor: grabbing; }
+    .legend { display: flex; flex-wrap: wrap; gap: 14px; padding: 0 10px 4px; color: #556479; font-size: 12px; }
+    .key { display: inline-flex; gap: 6px; align-items: center; }
+    .key::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--blue); }
+    .key.line::before { background: var(--green); }
+    .key.residual::before { background: var(--orange); }
+    .controls { padding: 20px 21px 19px; display: flex; flex-direction: column; gap: 18px; }
+    .small-heading { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #6d7c90; margin-bottom: 7px; }
+    .equation { background: #f4f9f7; border: 1px solid #e0eee7; border-radius: 13px; padding: 17px 13px; text-align: center; }
+    .eq-label { color: #5a7169; font-size: 12px; margin-bottom: 4px; }
+    #equation { font-size: clamp(19px, 2.4vw, 24px); font-weight: 740; font-variant-numeric: tabular-nums; letter-spacing: -.015em; }
+    .metric-row { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; }
+    .metric { border: 1px solid var(--line); padding: 9px 7px; border-radius: 11px; text-align: center; min-width: 0; }
+    .metric-name { font-size: 11px; color: #647287; }
+    .metric-value { font-size: 17px; font-weight: 760; font-variant-numeric: tabular-nums; }
+    .switch { display: flex; align-items: stretch; flex-wrap: wrap; gap: 6px; }
+    button { font: inherit; cursor: pointer; border: 1px solid #dbe3ed; color: #34445a; background: #f6f8fb; border-radius: 9px; padding: 7px 10px; font-size: 12px; line-height: 1.3; }
+    button:hover { background: #eaf1f9; }
+    button[aria-pressed="true"] { background: #e2f0fb; border-color: #7fb6e8; color: #125a9f; font-weight: 750; }
+    button:focus-visible, input:focus-visible { outline: 3px solid #88b8f0; outline-offset: 2px; }
+    .action { background: #155f9e; color: white; border-color: #155f9e; font-weight: 700; padding: 10px 13px; }
+    .action:hover { background: #104f85; }
+    .buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+    .input-line { display: flex; align-items: center; gap: 9px; font-size: 12px; }
+    .input-line label { flex: none; font-weight: 650; }
+    input[type="range"] { min-width: 80px; width: 100%; accent-color: #1878dc; }
+    .prediction { font-size: 12px; color: #52677a; }
+    .prediction strong { color: #1f354d; font-size: 14px; }
+    .hint { color: #556579; font-size: 12px; min-height: 35px; }
+    .lesson { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 15px; }
+    .note { padding: 15px 17px; background: white; border: 1px solid var(--line); border-radius: 14px; }
+    .note h2 { margin: 0 0 5px; font-size: 14px; }
+    .note p { color: #58697b; font-size: 13px; }
+    .note strong { color: #22374e; }
+    @media(max-width:800px) {
+      .lab { grid-template-columns: minmax(0,1fr); }
+      .chart-area { border-right: 0; border-bottom: 1px solid var(--line); }
+      .controls { gap: 13px; }
+      .lesson { grid-template-columns: 1fr; }
+    }
+    @media(max-width:440px) { .wrap { padding: 15px 10px; } .chart-area { padding: 14px 5px 10px; } .controls { padding: 16px; } .legend { gap: 9px; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="eyebrow">IAN 601 &middot; Module 14 &middot; Practice Lab</div>
+    <h1>Interactive Linear Regression</h1>
+    <p class="lead">Move the blue observations and watch the least-squares line update. Explore slope, intercept, residuals, and R-squared without changing Python code.</p>
+    <section class="lab" aria-label="Interactive regression model">
+      <div class="chart-area">
+        <p class="chart-title">Drag a blue point to refit the line</p>
+        <p class="chart-subtitle">Tip: you can also select a point and use your arrow keys.</p>
+        <svg id="plot" viewBox="0 0 710 460" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Interactive data scatterplot and least-squares regression line">
+          <defs><clipPath id="plot-clip"><rect x="62" y="20" width="624" height="374"></rect></clipPath></defs>
+          <g id="axes"></g>
+          <g clip-path="url(#plot-clip)">
+            <g id="residuals"></g><g id="fit-line"></g><g id="predictions"></g><g id="points"></g><g id="probe"></g>
+          </g>
+        </svg>
+        <div class="legend" aria-label="Plot legend">
+          <span class="key">Observed data</span><span class="key line">Fitted line</span><span class="key residual">Prediction error</span>
+        </div>
+      </div>
+      <aside class="controls">
+        <div>
+          <div class="small-heading">Model equation</div>
+          <div class="equation"><div class="eq-label">Predicted response</div><div id="equation" aria-live="polite">Loading...</div></div>
+        </div>
+        <div class="metric-row" aria-label="Model statistics">
+          <div class="metric"><div class="metric-name">Slope</div><div class="metric-value" id="slope">--</div></div>
+          <div class="metric"><div class="metric-name">Intercept</div><div class="metric-value" id="intercept">--</div></div>
+          <div class="metric"><div class="metric-name">R-squared</div><div class="metric-value" id="r2">--</div></div>
+        </div>
+        <div>
+          <div class="small-heading">How to fit the line</div>
+          <div class="switch" role="group" aria-label="Regression fit type">
+            <button type="button" data-fit="with_intercept" aria-pressed="true">With intercept</button>
+            <button type="button" data-fit="through_origin" aria-pressed="false">Through origin</button>
+          </div>
+        </div>
+        <div>
+          <div class="small-heading">What to focus on</div>
+          <div class="switch" role="group" aria-label="Chart focus">
+            <button type="button" data-focus="residuals" aria-pressed="true">Residuals</button>
+            <button type="button" data-focus="predictions" aria-pressed="false">Predictions</button>
+            <button type="button" data-focus="line" aria-pressed="false">Line</button>
+            <button type="button" data-focus="data" aria-pressed="false">Data</button>
+          </div>
+          <p id="hint" class="hint" aria-live="polite"></p>
+        </div>
+        <div>
+          <div class="small-heading">Try a prediction</div>
+          <div class="input-line"><label for="new-x">x = <output id="x-value">6.0</output></label><input id="new-x" type="range" min="0" max="10" step=".1" value="6" aria-label="X value for prediction"></div>
+          <div class="prediction">Predicted y: <strong id="predicted-y">--</strong></div>
+        </div>
+        <div class="buttons">
+          <button class="action" type="button" id="generate">Generate new data</button>
+          <button type="button" id="reset">Reset example</button>
+        </div>
+      </aside>
+    </section>
+    <div class="lesson">
+      <section class="note"><h2>Why does the line move?</h2><p>The model chooses the slope and intercept that make the <strong>sum of squared residuals</strong> as small as possible. Every time a point moves, the model is fitted again.</p></section>
+      <section class="note"><h2>Try this</h2><p>Move one observation far from the line. What happens to <strong>R-squared</strong>? Then select <strong>Through origin</strong>. Why might forcing the intercept to zero worsen the fit?</p></section>
+    </div>
+  </main>
+  <script>
+    "use strict";
+    const svg = document.getElementById("plot");
+    const axes = document.getElementById("axes");
+    const pointLayer = document.getElementById("points");
+    const lineLayer = document.getElementById("fit-line");
+    const residualLayer = document.getElementById("residuals");
+    const predictionLayer = document.getElementById("predictions");
+    const probeLayer = document.getElementById("probe");
+    const NS = "http://www.w3.org/2000/svg";
+    const B = {left:62, top:20, w:624, h:374, xmax:10, ymax:24};
+    const initialY = [3.0, 5.4, 5.0, 8.0, 7.9, 11.2, 10.5, 13.7, 14.6, 16.5];
+    const initial = initialY.map((y,i) => ({x:0.7 + 0.94*i, y:y}));
+    let data = initial.map(p=>({...p}));
+    let fitMode = "with_intercept";
+    let focusMode = "residuals";
+    let activePoint = -1;
+    let currentFit = null;
+    const X = x => B.left + B.w*x/B.xmax;
+    const Y = y => B.top + B.h*(B.ymax-y)/B.ymax;
+    const clamp = (v,low,high) => Math.max(low,Math.min(high,v));
+    const fmt = n => (Math.abs(n) < 0.005 ? 0 : n).toFixed(2);
+    function element(parent,tag,attrs) {
+      const e = document.createElementNS(NS,tag);
+      for (const [key,val] of Object.entries(attrs || {})) e.setAttribute(key,String(val));
+      parent.appendChild(e);
+      return e;
+    }
+    function textSvg(parent,x,y,label,attrs={}) {
+      const t=element(parent,"text",{x:x,y:y,...attrs});t.textContent=label;return t;
+    }
+    function drawAxes() {
+      axes.replaceChildren();
+      for (let y=0;y<=24;y+=4) {
+        element(axes,"line",{x1:B.left,y1:Y(y),x2:B.left+B.w,y2:Y(y),stroke:y===0?"#8997a8":"#e5eaf1","stroke-width":y===0?1.8:1});
+        textSvg(axes,B.left-12,Y(y)+5,String(y),{"text-anchor":"end",class:"tick"});
+      }
+      for (let x=0;x<=10;x+=2) {
+        element(axes,"line",{x1:X(x),y1:B.top,x2:X(x),y2:B.top+B.h,stroke:x===0?"#8997a8":"#e9edf2","stroke-width":x===0?1.8:1});
+        textSvg(axes,X(x),B.top+B.h+27,String(x),{"text-anchor":"middle",class:"tick"});
+      }
+      textSvg(axes,374,452,"Predictor (x)",{"text-anchor":"middle",class:"axis-label"});
+      textSvg(axes,18,210,"Response (y)",{"text-anchor":"middle",class:"axis-label",transform:"rotate(-90 18 210)"});
+    }
+    function fitLine() {
+      const n = data.length;
+      const mx = data.reduce((a,p)=>a+p.x,0)/n;
+      const my = data.reduce((a,p)=>a+p.y,0)/n;
+      const numerator = fitMode==="through_origin"
+        ? data.reduce((a,p)=>a+p.x*p.y,0)
+        : data.reduce((a,p)=>a+(p.x-mx)*(p.y-my),0);
+      const denominator = fitMode==="through_origin"
+        ? data.reduce((a,p)=>a+p.x*p.x,0)
+        : data.reduce((a,p)=>a+(p.x-mx)**2,0);
+      const slope = denominator > 1e-12 ? numerator/denominator : 0;
+      const intercept = fitMode==="through_origin" ? 0 : my-slope*mx;
+      const predict = x=>intercept+slope*x;
+      const squaredError = data.reduce((a,p)=>a+(p.y-predict(p.x))**2,0);
+      const totalVariation = data.reduce((a,p)=>a+(p.y-my)**2,0);
+      const r2 = totalVariation<1e-12 ? (squaredError<1e-12?1:0) : 1-squaredError/totalVariation;
+      return {slope,intercept,r2,predict};
+    }
+    const hintText = {
+      residuals:"Orange vertical distances show actual y minus predicted y. The fitted line minimizes their squared total.",
+      predictions:"Green rings show predicted values on the line. Blue points are the actual observations.",
+      line:"The green line is the least-squares solution. Drag a blue point to see how slope and intercept change.",
+      data:"Blue observations are the input data. Try moving one point much higher or lower."
+    };
+    function updateButtons() {
+      document.querySelectorAll("[data-fit]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.fit===fitMode)));
+      document.querySelectorAll("[data-focus]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.focus===focusMode)));
+    }
+    function render() {
+      currentFit = fitLine();
+      const m=currentFit.slope, b=currentFit.intercept, f=currentFit.predict;
+      const sign = m<0 ? " - " : " + ";
+      document.getElementById("equation").textContent="y\u0302 = "+fmt(b)+sign+fmt(Math.abs(m))+"x";
+      document.getElementById("slope").textContent=fmt(m);
+      document.getElementById("intercept").textContent=fmt(b);
+      document.getElementById("r2").textContent=fmt(currentFit.r2);
+      document.getElementById("hint").textContent=hintText[focusMode];
+      residualLayer.replaceChildren();lineLayer.replaceChildren();predictionLayer.replaceChildren();pointLayer.replaceChildren();probeLayer.replaceChildren();
+      const residualOpacity=focusMode==="residuals" ? .95 : focusMode==="predictions" ? .3 : .12;
+      const predictOpacity=focusMode==="predictions" || focusMode==="residuals" ? 1 : .35;
+      for(const p of data) {
+        element(residualLayer,"line",{x1:X(p.x),x2:X(p.x),y1:Y(p.y),y2:Y(f(p.x)),stroke:"#e7953d","stroke-width":focusMode==="residuals"?3:1.8,"stroke-dasharray":focusMode==="residuals"?"":"3 4",opacity:residualOpacity});
+        element(predictionLayer,"circle",{cx:X(p.x),cy:Y(f(p.x)),r:focusMode==="predictions"?6:4.6,fill:"#fff",stroke:"#15966b","stroke-width":2.4,opacity:predictOpacity});
+      }
+      element(lineLayer,"line",{x1:X(0),y1:Y(f(0)),x2:X(10),y2:Y(f(10)),stroke:"#15966b","stroke-width":focusMode==="line"?4:3,opacity:focusMode==="data"?.40:1,"stroke-linecap":"round"});
+      for(let i=0;i<data.length;i++) {
+        const p=data[i], c=element(pointLayer,"circle",{cx:X(p.x),cy:Y(p.y),r:focusMode==="data"?8.8:8,tabindex:"0",role:"slider","aria-label":"Observation "+(i+1)+", x "+fmt(p.x)+", y "+fmt(p.y)+". Use arrow keys to move.","aria-valuenow":fmt(p.y),"aria-valuemin":"0","aria-valuemax":"24",class:"observed",opacity:focusMode==="line"?.75:1});
+        element(c,"title",{}).textContent="Point "+(i+1)+": x="+fmt(p.x)+", y="+fmt(p.y);
+        c.addEventListener("pointerdown",e=>{e.preventDefault();activePoint=i;svg.setPointerCapture(e.pointerId);});
+        c.addEventListener("keydown",e=>{
+          const steps={"ArrowUp":[0,.25],"ArrowDown":[0,-.25],"ArrowRight":[.15,0],"ArrowLeft":[-.15,0]};
+          if(!steps[e.key])return;
+          e.preventDefault();
+          const step=steps[e.key];
+          data[i]={x:clamp(data[i].x+step[0],0,10),y:clamp(data[i].y+step[1],0,24)};
+          render();
+          pointLayer.children[i].focus();
+        });
+      }
+      const newX=Number(document.getElementById("new-x").value);
+      document.getElementById("x-value").textContent=newX.toFixed(1);
+      document.getElementById("predicted-y").textContent=fmt(f(newX));
+      if(focusMode==="predictions"){
+        element(probeLayer,"line",{x1:X(newX),x2:X(newX),y1:Y(0),y2:Y(f(newX)),stroke:"#af65a1","stroke-width":1.5,"stroke-dasharray":"5 4",opacity:.8});
+        element(probeLayer,"circle",{cx:X(newX),cy:Y(f(newX)),r:7,fill:"#af65a1",stroke:"#fff","stroke-width":2});
+      }
+      updateButtons();
+    }
+    function svgToData(event) {
+      const mat=svg.getScreenCTM();
+      if (!mat) return null;
+      const point=svg.createSVGPoint();
+      point.x=event.clientX;point.y=event.clientY;
+      const location=point.matrixTransform(mat.inverse());
+      return {x:clamp((location.x-B.left)/B.w*B.xmax,0,10),y:clamp((B.top+B.h-location.y)/B.h*B.ymax,0,24)};
+    }
+    svg.addEventListener("pointermove",e=>{
+      if(activePoint<0)return;
+      const p=svgToData(e);
+      if(!p)return;
+      data[activePoint]=p;
+      render();
+    });
+    function endDrag(e){if(activePoint>=0){activePoint=-1;if(svg.hasPointerCapture(e.pointerId))svg.releasePointerCapture(e.pointerId);}}
+    svg.addEventListener("pointerup",endDrag);
+    svg.addEventListener("pointercancel",endDrag);
+    document.querySelectorAll("[data-fit]").forEach(b=>b.addEventListener("click",()=>{fitMode=b.dataset.fit;render();}));
+    document.querySelectorAll("[data-focus]").forEach(b=>b.addEventListener("click",()=>{focusMode=b.dataset.focus;render();}));
+    document.getElementById("new-x").addEventListener("input",render);
+    document.getElementById("generate").addEventListener("click",()=>{
+      const positive=Math.random()>.5;
+      const slope=(positive?1:-1)*(1.15+Math.random()*.65);
+      const intercept=positive?2+Math.random()*2:17+Math.random()*2;
+      data=Array.from({length:10},(_,i)=>{
+        const x=.7+.94*i;
+        const noise=(Math.random()+Math.random()+Math.random()-1.5)*3.9;
+        return {x,y:clamp(intercept+slope*x+noise,.6,23.4)};
+      });
+      render();
+    });
+    document.getElementById("reset").addEventListener("click",()=>{data=initial.map(p=>({...p}));fitMode="with_intercept";focusMode="residuals";document.getElementById("new-x").value="6";render();});
+    drawAxes();
+    render();
+  </script>
+</body>
+</html>
