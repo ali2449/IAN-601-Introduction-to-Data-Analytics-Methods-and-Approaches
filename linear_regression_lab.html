@@ -22,7 +22,7 @@
     .example-chip { font-size: 13px; color: #34506a; background: #e8f1fc; border: 1px solid #d4e6f8; border-radius: 9px; padding: 7px 10px; }
     .example-chip strong { color: #205c99; margin-right: 5px; }
     .example-arrow { color: #53697e; font-weight: 750; }
-    .house-detail { margin: 10px 8px 0; padding: 10px 12px; background: #f3f8fd; border: 1px solid #deecf9; border-radius: 10px; color: #3f5871; font-size: 12px; line-height: 1.5; min-height: 60px; }
+    .house-detail { margin: 10px 8px 0; padding: 10px 12px; background: #f3f8fd; border: 1px solid #deecf9; border-radius: 10px; color: #3f5871; font-size: 13px; line-height: 1.5; min-height: 65px; }
     .house-detail strong { color: #163b62; }
     .metric-explain { font-size: 11px; margin-top: 7px; color: #647487; }
     .lab { margin-top: 17px; display: grid; grid-template-columns: minmax(0,1.32fr) minmax(310px,.88fr); background: var(--paper); border: 1px solid var(--line); border-radius: 21px; overflow: hidden; box-shadow: 0 8px 25px rgba(30,50,80,.045); }
@@ -102,7 +102,7 @@
         <div class="legend" aria-label="Plot legend">
           <span class="key">Actual sale price (house)</span><span class="key line">Predicted price (line)</span><span class="key residual">Prediction error ($)</span>
         </div>
-        <div class="house-detail" id="house-detail" aria-live="polite">Select a house to compare its actual and predicted sale prices.</div>
+        <div class="house-detail" id="house-detail" aria-live="polite">Select a blue dot to see the house size, sale price, model prediction, and difference.</div>
       </div>
       <aside class="controls">
         <div>
@@ -158,7 +158,7 @@
     const predictionLayer = document.getElementById("predictions");
     const probeLayer = document.getElementById("probe");
     const NS = "http://www.w3.org/2000/svg";
-    const B = {left:62, top:20, w:624, h:374, xmax:10, ymax:24};
+    const B = {left:62, top:20, w:624, h:374, xmax:10, ymax:20};
     const initialY = [5.1, 6.7, 5.8, 9.8, 9.2, 11.0, 13.4, 13.8, 17.2, 17.5];
     const initial = initialY.map((y,i) => ({x:0.7 + 0.94*i, y:y}));
     let data = initial.map(p=>({...p}));
@@ -177,7 +177,7 @@
     const toPlotX = size => (size - 500)/300;
     const whole = n => Math.round(n).toLocaleString("en-US");
     const usd = n => (n<0 ? "-" : "") + "$" + whole(Math.abs(n));
-    const compactPrice = n => Math.abs(n)>=1000000 ? "$"+(n/1000000).toFixed(1)+"M" : "$"+whole(n/1000)+"k";
+    const compactPrice = n => n===0 ? "$0" : Math.abs(n)>=1000000 ? "$"+(n/1000000).toFixed(0)+"M" : "$"+whole(n/1000)+"k";
     function element(parent,tag,attrs) {
       const e = document.createElementNS(NS,tag);
       for (const [key,val] of Object.entries(attrs || {})) e.setAttribute(key,String(val));
@@ -189,7 +189,7 @@
     }
     function drawAxes() {
       axes.replaceChildren();
-      for (let y=0;y<=24;y+=4) {
+      for (let y=0;y<=B.ymax;y+=4) {
         element(axes,"line",{x1:B.left,y1:Y(y),x2:B.left+B.w,y2:Y(y),stroke:y===0?"#8997a8":"#e5eaf1","stroke-width":y===0?1.8:1});
         textSvg(axes,B.left-12,Y(y)+5,compactPrice(toPrice(y)),{"text-anchor":"end",class:"tick"});
       }
@@ -247,7 +247,7 @@
       }
       element(lineLayer,"line",{x1:X(0),y1:Y(f(0)),x2:X(10),y2:Y(f(10)),stroke:"#15966b","stroke-width":focusMode==="line"?4:3,opacity:focusMode==="data"?.40:1,"stroke-linecap":"round"});
       for(let i=0;i<data.length;i++) {
-        const p=data[i], c=element(pointLayer,"circle",{cx:X(p.x),cy:Y(p.y),r:focusMode==="data"?8.8:8,tabindex:"0",role:"slider","aria-label":"House "+(i+1)+": "+whole(toSqft(p.x))+" square feet, sale price "+usd(toPrice(p.y))+". Use arrow keys to move.","aria-valuenow":String(Math.round(toPrice(p.y))),"aria-valuemin":"0","aria-valuemax":"1200000",class:"observed",opacity:focusMode==="line"?.75:1});
+        const p=data[i], c=element(pointLayer,"circle",{cx:X(p.x),cy:Y(p.y),r:focusMode==="data"?8.8:8,tabindex:"0",role:"slider","aria-label":"House "+(i+1)+": "+whole(toSqft(p.x))+" square feet, sale price "+usd(toPrice(p.y))+". Use arrow keys to move.","aria-valuenow":String(Math.round(toPrice(p.y))),"aria-valuemin":"0","aria-valuemax":"1000000",class:"observed",opacity:focusMode==="line"?.75:1});
         element(c,"title",{}).textContent="House "+(i+1)+" | Size: "+whole(toSqft(p.x))+" sq ft | Sold for: "+usd(toPrice(p.y));
         c.addEventListener("pointerdown",e=>{e.preventDefault();activePoint=i;selectedPoint=i;svg.setPointerCapture(e.pointerId);render();});
         c.addEventListener("keydown",e=>{
@@ -255,7 +255,7 @@
           if(!steps[e.key])return;
           e.preventDefault();
           const step=steps[e.key];
-          data[i]={x:clamp(data[i].x+step[0],0,10),y:clamp(data[i].y+step[1],0,24)};
+          data[i]={x:clamp(data[i].x+step[0],0,10),y:clamp(data[i].y+step[1],0,B.ymax)};
           selectedPoint=i;
           render();
           pointLayer.children[i].focus();
@@ -265,9 +265,8 @@
       const selected=data[selectedPoint];
       if(selected){
         const sx=X(selected.x), sy=Y(selected.y);
-        const lx=clamp(sx-35,B.left+6,B.left+B.w-93), ly=clamp(sy-28,B.top+10,B.top+B.h-24);
-        element(pointLayer,"rect",{x:lx-5,y:ly-17,width:96,height:23,rx:6,fill:"#e5effb",stroke:"#accbeb","stroke-width":1,"pointer-events":"none"});
-        textSvg(pointLayer,lx,ly,"House "+(selectedPoint+1),{fill:"#164b82","font-size":14,"font-weight":700,"pointer-events":"none"});
+        // A small halo identifies the selected house without covering the regression line.
+        element(pointLayer,"circle",{cx:sx,cy:sy,r:13.5,fill:"none",stroke:"#163d70","stroke-width":2.4,"pointer-events":"none"});
         const actual=toPrice(selected.y),predicted=toPrice(f(selected.x));
         const error=actual-predicted;
         document.getElementById("house-detail").innerHTML="<strong>Selected house "+(selectedPoint+1)+"</strong> · "+whole(toSqft(selected.x))+" sq ft"+
@@ -290,7 +289,7 @@
       const point=svg.createSVGPoint();
       point.x=event.clientX;point.y=event.clientY;
       const location=point.matrixTransform(mat.inverse());
-      return {x:clamp((location.x-B.left)/B.w*B.xmax,0,10),y:clamp((B.top+B.h-location.y)/B.h*B.ymax,0,24)};
+      return {x:clamp((location.x-B.left)/B.w*B.xmax,0,10),y:clamp((B.top+B.h-location.y)/B.h*B.ymax,0,B.ymax)};
     }
     svg.addEventListener("pointermove",e=>{
       if(activePoint<0)return;
@@ -311,7 +310,7 @@
       data=Array.from({length:10},(_,i)=>{
         const x=.7+.94*i;
         const noise=(Math.random()+Math.random()+Math.random()-1.5)*3.9;
-        return {x,y:clamp(intercept+slope*x+noise,.6,23.4)};
+        return {x,y:clamp(intercept+slope*x+noise,.6,B.ymax-.5)};
       });
       selectedPoint=0;
       render();
