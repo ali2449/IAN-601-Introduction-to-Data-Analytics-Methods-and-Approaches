@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>Interactive House Price Regression Lab | IAN 601</title>
+  <title>Interactive Regression Explorer | IAN 601</title>
   <style>
     :root {
       --ink: #1b293b; --muted: #59697c; --line: #dde4ee;
@@ -76,12 +76,49 @@
     }
     @media(max-width:440px) { .wrap { padding: 15px 10px; } .chart-area { padding: 14px 5px 10px; } .controls { padding: 16px; } .legend { gap: 9px; } }
     @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior: auto !important; transition: none !important; } }
+
+
+    /* Additional beginner-friendly practice tabs */
+    .lab-tabs { display:flex; gap:9px; overflow-x:auto; padding:7px 1px 11px; margin:17px 0 8px; scrollbar-width:thin; }
+    .tab-button { flex:1 0 186px; text-align:left; border:1px solid #d9e3ef; border-radius:12px; background:white; padding:11px 12px; color:#263d56; font-weight:750; font-size:13px; min-height:61px; }
+    .tab-button span { display:block; margin-top:2px; color:#65778a; font-size:11px; font-weight:550; }
+    .tab-button[aria-selected="true"] { border:2px solid #2a76bb; padding:10px 11px; background:#eaf4ff; color:#124f85; }
+    .tab-button[aria-selected="true"] span { color:#335f86; }
+    .tab-panel[hidden] { display:none !important; }
+    .demo-intro { margin-top:8px; }
+    .demo-plot { width:100%; display:block; height:auto; touch-action:none; user-select:none; overflow:hidden; }
+    .demo-equation { font-size:clamp(15px,1.8vw,19px); font-weight:730; font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+    .slider-label { display:flex; justify-content:space-between; gap:8px; font-size:12px; color:#44576b; margin:8px 0 4px; }
+    .slider-label strong { color:#24415c; font-variant-numeric:tabular-nums; }
+    .controls input[type="range"] { width:100%; display:block; margin:7px 0 10px; }
+    .feature-check { display:flex; align-items:center; flex-wrap:wrap; gap:7px; font-size:13px; margin:8px 0; font-weight:620; cursor:pointer; }
+    .feature-check input { accent-color:#216eb2; width:16px; height:16px; }
+    .feature-check span { font-size:11px; font-weight:450; color:#728095; }
+    .coeff-list { display:grid; grid-template-columns:1fr; gap:5px; font-size:12px; }
+    .coeff-item { display:flex; justify-content:space-between; gap:9px; border-bottom:1px solid #e7edf5; padding:5px 1px; }
+    .coeff-item span:first-child { color:#5d6b7c; }
+    .coeff-item strong { font-variant-numeric:tabular-nums; text-align:right; }
+    .demo-tick { fill:#627488; font-size:12.5px; }
+    .demo-axis-label { fill:#253b50; font-size:15px; font-weight:720; }
+    .demo-point { stroke:#fff; stroke-width:2; fill:#1878dc; cursor:pointer; }
+    .demo-point:focus { outline:none; stroke:#102c49; stroke-width:3; }
+    .mini-caption { color:#607388; font-size:11px; }
+    @media(max-width:800px) { .lab-tabs{gap:7px} .tab-button{flex:0 0 190px;} }
+    @media(max-width:440px) { .tab-button{flex:0 0 170px;} .demo-axis-label{font-size:13px;} }
+
   </style>
 </head>
 <body>
   <main class="wrap">
     <div class="eyebrow">IAN 601 &middot; Module 14 &middot; Practice Lab</div>
-    <h1>Interactive Linear Regression: House Prices</h1>
+    <h1>Regression Explorer: Interactive Practice</h1>
+<div class="lab-tabs" role="tablist" aria-label="Choose a regression example">
+      <button type="button" class="tab-button" id="tab-button-house" data-tab="house" role="tab" aria-selected="true" aria-controls="tab-house" tabindex="0">1 · House prices <span>One feature</span></button>
+      <button type="button" class="tab-button" id="tab-button-car" data-tab="car" role="tab" aria-selected="false" aria-controls="tab-car" tabindex="-1">2 · Used cars <span>One feature, negative slope</span></button>
+      <button type="button" class="tab-button" id="tab-button-multi" data-tab="multi" role="tab" aria-selected="false" aria-controls="tab-multi" tabindex="-1">3 · House prices <span>Multiple features</span></button>
+      <button type="button" class="tab-button" id="tab-button-poly" data-tab="poly" role="tab" aria-selected="false" aria-controls="tab-poly" tabindex="-1">4 · Exam scores <span>Polynomial</span></button>
+    </div>
+    <section id="tab-house" class="tab-panel" role="tabpanel" aria-labelledby="tab-button-house">
     <p class="lead">Imagine we have home sales data. Can we predict a house's sale price from its size? Drag a blue house to change its size or sale price, then watch the regression line update.</p>
     <div class="example-band" aria-label="Regression features and target">
       <span class="example-chip"><strong>Input (X)</strong> House size in square feet</span>
@@ -147,6 +184,142 @@
       <section class="note"><h2>What is the model learning?</h2><p><strong>Feature (X):</strong> house size. <strong>Target (Y):</strong> sale price. The green line gives an estimated price for each size. Orange gaps (residuals) show how much real sale prices differ from predictions.</p></section>
       <section class="note"><h2>Try this with a house</h2><p>Move a house worth <strong>$500,000</strong> to a much higher sale price. Does the best-fit line change? How does the dollar prediction error change? Then try forcing the line to predict $0 at 0 sq ft.</p></section>
     </div>
+
+    </section><!-- tab-house: preserves the original draggable house-price lab -->
+
+    <section id="tab-car" class="tab-panel" role="tabpanel" aria-labelledby="tab-button-car" hidden>
+      <p class="lead demo-intro">A used car usually loses value as its mileage increases. Explore a <strong>negative slope</strong> by moving the blue cars. These are illustrative, not real dealership transactions.</p>
+      <div class="example-band">
+        <span class="example-chip"><strong>Input (X)</strong> Odometer mileage</span><span class="example-arrow" aria-hidden="true">→</span>
+        <span class="example-chip"><strong>Target (Y)</strong> Used-car sale price ($)</span>
+      </div>
+      <section class="lab" aria-label="Used-car linear regression demonstration">
+        <div class="chart-area">
+          <p class="chart-title">Car mileage versus sale price</p>
+          <p class="chart-subtitle">Drag a blue car to change its mileage or sale price. The fitted line responds immediately.</p>
+          <svg id="car-chart" class="demo-plot" viewBox="0 0 720 455" role="group" aria-label="Draggable mileage versus used-car sale price plot"></svg>
+          <div class="legend"><span class="key">Sold car</span><span class="key line">Predicted price</span><span class="key residual">Dollar error</span></div>
+          <div class="house-detail" id="car-selected" aria-live="polite"></div>
+        </div>
+        <aside class="controls">
+          <div><div class="small-heading">Learned relationship</div>
+            <div class="equation"><div class="eq-label">Price from mileage</div><div class="demo-equation" id="car-equation">--</div></div>
+          </div>
+          <div class="metric-row">
+            <div class="metric"><div class="metric-name">Slope ($/mile)</div><div class="metric-value" id="car-slope">--</div></div>
+            <div class="metric"><div class="metric-name">R² (fit)</div><div class="metric-value" id="car-r2">--</div></div>
+            <div class="metric"><div class="metric-name">MAE ($)</div><div class="metric-value" id="car-mae">--</div></div>
+          </div>
+          <p class="metric-explain" id="car-meaning">A negative slope means more miles are associated with a lower predicted sale price.</p>
+          <div><div class="small-heading">Predict the price of another car</div>
+            <label class="slider-label" for="car-miles">Mileage: <strong><output id="car-miles-label">75,000</output> miles</strong></label>
+            <input type="range" id="car-miles" min="0" max="180000" value="75000" step="5000">
+            <p class="prediction">Estimated price: <strong id="car-prediction">--</strong></p>
+          </div>
+          <div class="buttons"><button type="button" class="action" id="car-generate">Generate new car sales</button><button type="button" id="car-reset">Reset</button></div>
+          <p class="hint">The line is fitted using all cars. Moving one observation changes the training data and can change the slope and R².</p>
+        </aside>
+      </section>
+      <div class="lesson">
+        <section class="note"><h2>What does a negative slope mean?</h2><p>A fitted slope of <strong>−$0.18 per mile</strong> would mean that increasing mileage by 1,000 miles is associated with about <strong>$180 less</strong> in the model's predicted price. It does not prove mileage causes that exact price change.</p></section>
+        <section class="note"><h2>Practice</h2><p>Move a high-mileage car above the line. Does the slope become less negative? Does R² change? Predict the price of a car with <strong>100,000 miles</strong>.</p></section>
+      </div>
+    </section>
+
+    <section id="tab-multi" class="tab-panel" role="tabpanel" aria-labelledby="tab-button-multi" hidden>
+      <p class="lead demo-intro">House prices depend on more than floor area. Train a model using <strong>square footage</strong>, then optionally add <strong>bedrooms</strong> and <strong>house age</strong>. Compare how the fitted model changes.</p>
+      <div class="example-band">
+        <span class="example-chip"><strong>Inputs (X)</strong> Size + bedrooms + age</span><span class="example-arrow" aria-hidden="true">→</span>
+        <span class="example-chip"><strong>Target (Y)</strong> House sale price ($)</span>
+      </div>
+      <section class="lab" aria-label="Multiple linear regression with three home features">
+        <div class="chart-area">
+          <p class="chart-title">Actual versus model-predicted sale price</p>
+          <p class="chart-subtitle">Each dot is a house. Closer to the green diagonal means a smaller prediction error. Click a dot to inspect that house.</p>
+          <svg id="multi-chart" class="demo-plot" viewBox="0 0 720 455" role="group" aria-label="Predicted house prices versus actual house prices"></svg>
+          <div class="legend"><span class="key">Sold house</span><span class="key line">Perfect prediction</span><span class="key residual">Prediction error</span></div>
+          <div class="house-detail" id="multi-selected" aria-live="polite"></div>
+        </div>
+        <aside class="controls">
+          <div><div class="small-heading">Choose model inputs</div>
+            <label class="feature-check"><input type="checkbox" checked disabled> Square feet <span>(always included)</span></label>
+            <label class="feature-check"><input type="checkbox" id="multi-bed" checked> Number of bedrooms</label>
+            <label class="feature-check"><input type="checkbox" id="multi-age" checked> House age (years)</label>
+          </div>
+          <div class="metric-row">
+            <div class="metric"><div class="metric-name">Model R²</div><div class="metric-value" id="multi-r2">--</div></div>
+            <div class="metric"><div class="metric-name">MAE</div><div class="metric-value" id="multi-mae">--</div></div>
+            <div class="metric"><div class="metric-name">Inputs used</div><div class="metric-value" id="multi-count">--</div></div>
+          </div>
+          <div>
+            <div class="small-heading">Learned coefficients</div>
+            <div class="coeff-list" id="multi-coeffs"></div>
+            <p class="metric-explain">A coefficient describes the predicted price change for one input <strong>while the other included inputs stay fixed</strong>.</p>
+          </div>
+          <div>
+            <div class="small-heading">Predict the price of a different house</div>
+            <label class="slider-label" for="multi-size">House size: <strong><output id="multi-size-label"></output></strong></label>
+            <input id="multi-size" type="range" min="800" max="3400" step="100" value="2000">
+            <label class="slider-label" for="multi-beds">Bedrooms: <strong><output id="multi-beds-label"></output></strong></label>
+            <input id="multi-beds" type="range" min="1" max="6" step="1" value="3">
+            <label class="slider-label" for="multi-years">House age: <strong><output id="multi-years-label"></output></strong></label>
+            <input id="multi-years" type="range" min="0" max="40" step="1" value="12">
+            <p class="prediction">Estimated price: <strong id="multi-prediction">--</strong></p>
+          </div>
+          <div class="buttons"><button type="button" class="action" id="multi-generate">Generate new house sales</button><button type="button" id="multi-reset">Reset</button></div>
+        </aside>
+      </section>
+      <div class="lesson">
+        <section class="note"><h2>Why use a predicted-versus-actual chart?</h2><p>With multiple features, there is no single line that captures the entire model on a simple x–y scatterplot. The green diagonal instead marks <strong>perfect predictions</strong>. Vertical gaps show dollar errors.</p></section>
+        <section class="note"><h2>Practice</h2><p>Uncheck <strong>bedrooms</strong> and <strong>age</strong>, then add them back. Did R² improve on these training examples? Change only house age in the sliders. Why does the estimated price change?</p></section>
+      </div>
+    </section>
+
+    <section id="tab-poly" class="tab-panel" role="tabpanel" aria-labelledby="tab-button-poly" hidden>
+      <p class="lead demo-intro">A straight line does not always fit the pattern. Study hours and exam scores often have <strong>diminishing gains</strong>: more study helps, but improvements may level off. Compare a straight line with a curved polynomial fit.</p>
+      <div class="example-band">
+        <span class="example-chip"><strong>Input (X)</strong> Hours studied</span><span class="example-arrow" aria-hidden="true">→</span>
+        <span class="example-chip"><strong>Target (Y)</strong> Exam score (0–100)</span>
+      </div>
+      <section class="lab" aria-label="Polynomial regression with study hours and exam score">
+        <div class="chart-area">
+          <p class="chart-title">Study hours versus exam score</p>
+          <p class="chart-subtitle">Change the polynomial degree and watch the fitted curve. You can drag scores up or down.</p>
+          <svg id="poly-chart" class="demo-plot" viewBox="0 0 720 455" role="group" aria-label="Interactive exam score versus hours studied plot"></svg>
+          <div class="legend"><span class="key">Student exam score</span><span class="key line">Model prediction</span><span class="key residual">Prediction error</span></div>
+          <div class="house-detail" id="poly-selected" aria-live="polite"></div>
+        </div>
+        <aside class="controls">
+          <div><div class="small-heading">Select a model</div>
+            <div class="switch" role="group" aria-label="Polynomial regression degree">
+              <button type="button" data-poly-degree="1" aria-pressed="false">Degree 1 · line</button>
+              <button type="button" data-poly-degree="2" aria-pressed="true">Degree 2 · curve</button>
+              <button type="button" data-poly-degree="3" aria-pressed="false">Degree 3</button>
+            </div>
+          </div>
+          <div><div class="small-heading">Learned equation</div>
+            <div class="equation"><div class="eq-label">Predicted exam score from study hours (h)</div><div class="demo-equation" id="poly-equation">--</div></div>
+          </div>
+          <div class="metric-row">
+            <div class="metric"><div class="metric-name">Degree</div><div class="metric-value" id="poly-degree-value">--</div></div>
+            <div class="metric"><div class="metric-name">R² (fit)</div><div class="metric-value" id="poly-r2">--</div></div>
+            <div class="metric"><div class="metric-name">RMSE (pts)</div><div class="metric-value" id="poly-rmse">--</div></div>
+          </div>
+          <div><div class="small-heading">Predict a student's exam score</div>
+            <label class="slider-label" for="poly-hours">Study time: <strong><output id="poly-hours-label">5</output> hours</strong></label>
+            <input id="poly-hours" type="range" min="0" max="10" step="0.5" value="5">
+            <p class="prediction">Predicted score: <strong id="poly-prediction">--</strong></p>
+          </div>
+          <div class="buttons"><button type="button" class="action" id="poly-generate">Generate new student scores</button><button type="button" id="poly-reset">Reset</button></div>
+          <p class="hint">A higher-degree model can fit these <em>training</em> points more closely. That does not guarantee better predictions on new students.</p>
+        </aside>
+      </section>
+      <div class="lesson">
+        <section class="note"><h2>Linear versus polynomial</h2><p><strong>Degree 1</strong> is a straight line. <strong>Degree 2</strong> adds a squared-hours term, so the fitted shape can bend. <strong>Degree 3</strong> adds a cubic term and is more flexible.</p></section>
+        <section class="note"><h2>Practice</h2><p>Compare R² for degrees 1, 2, and 3. Which shape seems to fit these observed scores? Move one student's score far away and compare the results again.</p></section>
+      </div>
+    </section>
+
   </main>
   <script>
     "use strict";
@@ -318,6 +491,369 @@
     document.getElementById("reset").addEventListener("click",()=>{data=initial.map(p=>({...p}));fitMode="with_intercept";focusMode="residuals";selectedPoint=0;document.getElementById("new-x").value="2000";render();});
     drawAxes();
     render();
+  </script>
+
+  <script>
+  (function(){
+    "use strict";
+    const q=id=>document.getElementById(id);
+    const N="http://www.w3.org/2000/svg";
+    const money=v=>(v<0?"-":"")+"$"+Math.round(Math.abs(v)).toLocaleString("en-US");
+    const num=v=>Math.round(v).toLocaleString("en-US");
+    const fmt=(v,places=2)=> (Math.abs(v)<Math.pow(10,-places)/2 ? 0:v).toFixed(places);
+    const clamp=(x,a,b)=>Math.max(a,Math.min(x,b));
+    const originalTab="house";
+    const tabNames=["house","car","multi","poly"];
+    function chooseTab(which, moveFocus=false) {
+      if(!tabNames.includes(which)) which=originalTab;
+      for(const name of tabNames){
+        const selected=name===which;
+        const b=q("tab-button-"+name), panel=q("tab-"+name);
+        b.setAttribute("aria-selected",String(selected));
+        b.setAttribute("tabindex",selected?"0":"-1");
+        panel.hidden=!selected;
+      }
+      if(moveFocus) q("tab-button-"+which).focus();
+    }
+    for(const [index,name] of tabNames.entries()){
+      const tab=q("tab-button-"+name);
+      tab.addEventListener("click",()=>chooseTab(name));
+      tab.addEventListener("keydown",e=>{
+        let next=null;
+        if(e.key==="ArrowRight") next=tabNames[(index+1)%tabNames.length];
+        if(e.key==="ArrowLeft") next=tabNames[(index-1+tabNames.length)%tabNames.length];
+        if(e.key==="Home")next=tabNames[0];
+        if(e.key==="End")next=tabNames[tabNames.length-1];
+        if(next){e.preventDefault();chooseTab(next,true);}
+      });
+    }
+    chooseTab(originalTab);
+
+    function elem(parent,tag,attr={},text=null) {
+      const el=document.createElementNS(N,tag);
+      Object.entries(attr).forEach(([k,v])=>el.setAttribute(k,String(v)));
+      if(text!==null)el.textContent=text;
+      parent.appendChild(el);
+      return el;
+    }
+    function label(g,x,y,t,attr={}) {
+      return elem(g,"text",{x,y,...attr},t);
+    }
+    function graph(id,opt){
+      const svg=q(id);svg.replaceChildren();
+      const box={left:88,top:23,width:607,height:344};
+      const X=x=>box.left+(x-opt.xmin)/(opt.xmax-opt.xmin)*box.width;
+      const Y=y=>box.top+box.height-(y-opt.ymin)/(opt.ymax-opt.ymin)*box.height;
+      const axes=elem(svg,"g");
+      for(const x of opt.xticks){
+        elem(axes,"line",{x1:X(x),x2:X(x),y1:box.top,y2:box.top+box.height,stroke:"#e7ecf2","stroke-width":1});
+        label(axes,X(x),box.top+box.height+25,opt.xLabelTick(x),{"text-anchor":"middle",class:"demo-tick"});
+      }
+      for(const y of opt.yticks){
+        elem(axes,"line",{x1:box.left,x2:box.left+box.width,y1:Y(y),y2:Y(y),stroke:"#e7ecf2","stroke-width":1});
+        label(axes,box.left-11,Y(y)+4,opt.yLabelTick(y),{"text-anchor":"end",class:"demo-tick"});
+      }
+      elem(axes,"line",{x1:box.left,x2:box.left,y1:box.top,y2:box.top+box.height,stroke:"#8293a8","stroke-width":1.7});
+      elem(axes,"line",{x1:box.left,x2:box.left+box.width,y1:box.top+box.height,y2:box.top+box.height,stroke:"#8293a8","stroke-width":1.7});
+      label(axes,box.left+box.width/2,437,opt.xlabel,{"text-anchor":"middle",class:"demo-axis-label"});
+      label(axes,20,box.top+box.height/2,opt.ylabel,{"text-anchor":"middle",class:"demo-axis-label",transform:"rotate(-90 20 "+(box.top+box.height/2)+")"});
+      const defs=elem(svg,"defs");
+      const clipId="clip-"+id;
+      const clip=elem(defs,"clipPath",{id:clipId});
+      elem(clip,"rect",{x:box.left,y:box.top,width:box.width,height:box.height});
+      const content=elem(svg,"g",{"clip-path":"url(#"+clipId+")"});
+      return {svg,X,Y,box,content,model:opt};
+    }
+    function regression(xy){
+      const n=xy.length;
+      const xm=xy.reduce((s,p)=>s+p.x,0)/n,ym=xy.reduce((s,p)=>s+p.y,0)/n;
+      const sxx=xy.reduce((s,p)=>s+(p.x-xm)**2,0);
+      const sxy=xy.reduce((s,p)=>s+(p.x-xm)*(p.y-ym),0);
+      const slope=sxx>1e-9?sxy/sxx:0,intercept=ym-slope*xm;
+      const predict=x=>intercept+slope*x;
+      const sse=xy.reduce((s,p)=>s+(p.y-predict(p.x))**2,0);
+      const tss=xy.reduce((s,p)=>s+(p.y-ym)**2,0);
+      const r2=tss<1e-9?(sse<1e-9?1:0):1-sse/tss;
+      const mae=xy.reduce((s,p)=>s+Math.abs(p.y-predict(p.x)),0)/n;
+      return {slope,intercept,predict,r2,mae,sse};
+    }
+    function toCoordinates(svg,event,view){
+      const screen=svg.getScreenCTM();
+      if(!screen)return null;
+      const pt=svg.createSVGPoint();pt.x=event.clientX;pt.y=event.clientY;
+      const loc=pt.matrixTransform(screen.inverse()),b=view.box;
+      return {
+        x:clamp(view.model.xmin+(loc.x-b.left)/b.width*(view.model.xmax-view.model.xmin),view.model.xmin,view.model.xmax),
+        y:clamp(view.model.ymin+(b.top+b.height-loc.y)/b.height*(view.model.ymax-view.model.ymin),view.model.ymin,view.model.ymax)
+      };
+    }
+    const originals={
+      car:[{x:8,y:43},{x:20,y:40},{x:34,y:37},{x:47,y:35},{x:60,y:30},{x:74,y:30},{x:86,y:27},{x:99,y:25},{x:112,y:23},{x:130,y:20},{x:148,y:17},{x:165,y:14}],
+      poly:[{x:0,y:14},{x:1,y:27},{x:2,y:40},{x:3,y:55},{x:4,y:67},{x:5,y:76},{x:6,y:83},{x:7,y:89},{x:8,y:90},{x:9,y:93},{x:10,y:95}]
+    };
+    const car={rows:originals.car.map(p=>({...p})),selected:0,drag:-1,view:null};
+    const carOptions={xmin:0,xmax:180,ymin:0,ymax:50,xticks:[0,30,60,90,120,150,180],yticks:[0,10,20,30,40,50],
+      xLabelTick:x=>x+"k",yLabelTick:y=>"$"+y+"k",xlabel:"Car mileage (thousands of miles)",ylabel:"Sale price ($ thousands)"};
+    function drawCar(){
+      const model=regression(car.rows);car.view=graph("car-chart",carOptions);
+      const {X,Y,content,svg}=car.view;
+      for(const p of car.rows){
+        elem(content,"line",{x1:X(p.x),x2:X(p.x),y1:Y(p.y),y2:Y(model.predict(p.x)),stroke:"#da842b","stroke-width":2.7});
+      }
+      elem(content,"line",{x1:X(0),x2:X(180),y1:Y(model.predict(0)),y2:Y(model.predict(180)),stroke:"#15966b","stroke-width":3.5});
+      car.rows.forEach((p,i)=>{
+        if(i===car.selected)elem(content,"circle",{cx:X(p.x),cy:Y(p.y),r:13,fill:"none",stroke:"#153d6a","stroke-width":2});
+        const dot=elem(content,"circle",{cx:X(p.x),cy:Y(p.y),r:8,class:"demo-point",tabindex:"0",role:"button","aria-label":"Car "+(i+1)+": "+num(p.x*1000)+" miles, sold for "+money(p.y*1000)+". Use arrow keys to move."});
+        elem(dot,"title",{},"Car "+(i+1)+": "+num(p.x*1000)+" miles, "+money(p.y*1000));
+        dot.addEventListener("pointerdown",e=>{
+          e.preventDefault();car.selected=i;car.drag=i;svg.setPointerCapture(e.pointerId);drawCar();
+        });
+        dot.addEventListener("keydown",e=>{
+          const steps={ArrowUp:[0,.5],ArrowDown:[0,-.5],ArrowLeft:[-2,0],ArrowRight:[2,0]};
+          if(!steps[e.key])return;
+          e.preventDefault();const [dx,dy]=steps[e.key];
+          car.rows[i]={x:clamp(p.x+dx,0,180),y:clamp(p.y+dy,0,50)};car.selected=i;
+          drawCar();car.view.content.querySelectorAll(".demo-point")[i].focus();
+        });
+      });
+      const s=car.rows[car.selected];
+      q("car-selected").innerHTML="<strong>Car "+(car.selected+1)+"</strong> · "+num(s.x*1000)+" miles<br>Actual price: <strong>"+money(s.y*1000)+"</strong> · Predicted: <strong>"+money(model.predict(s.x)*1000)+"</strong><br>Residual (actual − predicted): <strong>"+money((s.y-model.predict(s.x))*1000)+"</strong>";
+      const coeff=model.slope,sign=coeff<0?" − ":" + ";
+      q("car-equation").textContent="Price ≈ "+money(model.intercept*1000)+sign+"$"+fmt(Math.abs(coeff),2)+" × miles";
+      q("car-slope").textContent=(coeff<0?"−":"+")+"$"+fmt(Math.abs(coeff),2);
+      q("car-r2").textContent=fmt(model.r2);
+      q("car-mae").textContent=money(model.mae*1000);
+      q("car-meaning").textContent=coeff<0?
+        "More mileage is associated with a lower predicted price: around "+money(Math.abs(coeff)*1000)+" per additional 1,000 miles.":
+        "For this modified sample, the estimated slope is positive. Compare it with the original downward trend.";
+      const miles=Number(q("car-miles").value);
+      q("car-miles-label").textContent=num(miles);
+      q("car-prediction").textContent=money(model.predict(miles/1000)*1000);
+    }
+    q("car-chart").addEventListener("pointermove",e=>{
+      if(car.drag<0 || !car.view)return;
+      const pos=toCoordinates(q("car-chart"),e,car.view);
+      if(!pos)return;
+      car.rows[car.drag]=pos;drawCar();
+    });
+    function stopCar(e){
+      if(car.drag>=0){car.drag=-1;if(q("car-chart").hasPointerCapture(e.pointerId))q("car-chart").releasePointerCapture(e.pointerId);}
+    }
+    q("car-chart").addEventListener("pointerup",stopCar);
+    q("car-chart").addEventListener("pointercancel",stopCar);
+    q("car-miles").addEventListener("input",drawCar);
+    q("car-reset").addEventListener("click",()=>{
+      car.rows=originals.car.map(p=>({...p}));car.selected=0;q("car-miles").value=75000;drawCar();
+    });
+    q("car-generate").addEventListener("click",()=>{
+      car.rows=originals.car.map(p=>({
+        x:clamp(p.x+(Math.random()-.5)*10,0,180),
+        y:clamp(44-.182*p.x+(Math.random()-.5)*8,0,50)
+      }));car.selected=0;drawCar();
+    });
+    drawCar();
+
+    // Multiple regression: OLS on rescaled columns so the calculations remain stable.
+    function solve(matrix,vector) {
+      const n=vector.length;
+      const a=matrix.map((row,i)=>[...row,vector[i]]);
+      for(let j=0;j<n;j++){
+        let best=j;
+        for(let i=j+1;i<n;i++)if(Math.abs(a[i][j])>Math.abs(a[best][j]))best=i;
+        [a[j],a[best]]=[a[best],a[j]];
+        if(Math.abs(a[j][j])<1e-10)return Array(n).fill(0);
+        const denom=a[j][j];for(let k=j;k<=n;k++)a[j][k]/=denom;
+        for(let i=0;i<n;i++){
+          if(i===j)continue;
+          const z=a[i][j];
+          for(let k=j;k<=n;k++)a[i][k]-=z*a[j][k];
+        }
+      }
+      return a.map(row=>row[n]);
+    }
+    function normalFit(rows,features,target){
+      const p=features[0].length;
+      const XtX=Array.from({length:p},()=>Array(p).fill(0)),Xty=Array(p).fill(0);
+      for(let i=0;i<rows.length;i++){
+        const xs=features[i],yy=target[i];
+        for(let j=0;j<p;j++){
+          Xty[j]+=xs[j]*yy;
+          for(let k=0;k<p;k++)XtX[j][k]+=xs[j]*xs[k];
+        }
+      }
+      const beta=solve(XtX,Xty);
+      const fitted=features.map(xs=>xs.reduce((s,x,j)=>s+x*beta[j],0));
+      const mean=target.reduce((a,b)=>a+b,0)/rows.length;
+      const sse=target.reduce((s,y,i)=>s+(y-fitted[i])**2,0);
+      const sst=target.reduce((s,y)=>s+(y-mean)**2,0);
+      const r2=sst<1e-12?(sse<1e-12?1:0):1-sse/sst;
+      const mae=target.reduce((s,y,i)=>s+Math.abs(y-fitted[i]),0)/rows.length;
+      return {beta,fitted,r2,mae,rmse:Math.sqrt(sse/rows.length)};
+    }
+    const multibase={
+      sizes:[890,1050,1190,1370,1500,1640,1790,1900,2040,2170,2300,2430,2590,2770,2960,3170],
+      beds:[2,2,3,3,2,3,4,3,4,3,4,4,4,5,4,5],
+      ages:[28,30,22,15,18,12,27,20,8,15,6,22,9,8,4,5],
+      noise:[13000,-20000,8000,-15000,18000,9000,-11000,17000,-12000,16000,-19000,6000,-5000,14000,-8000,17000]
+    };
+    function generateBaseMulti(noiseScale=1){
+      return multibase.sizes.map((size,i)=>({
+        size,beds:multibase.beds[i],age:multibase.ages[i],
+        price:90000+160*size+22000*multibase.beds[i]-1500*multibase.ages[i]+multibase.noise[i]*noiseScale
+      }));
+    }
+    const multi={rows:generateBaseMulti(),selected:0};
+    const moneyK=v=>"$"+Math.round(v)+"k";
+    const multiOpts={xmin:0,xmax:800,ymin:0,ymax:800,xticks:[0,200,400,600,800],yticks:[0,200,400,600,800],
+      xLabelTick:moneyK,yLabelTick:moneyK,xlabel:"Model-predicted house price",ylabel:"Actual house sale price"};
+    let multiModel=null;
+    function activeFeatures(h){
+      return [1,h.size/1000,...(q("multi-bed").checked?[h.beds]:[]),...(q("multi-age").checked?[h.age/10]:[])];
+    }
+    function updateMultiPrediction(){
+      if(!multiModel)return;
+      const example={
+        size:Number(q("multi-size").value),
+        beds:Number(q("multi-beds").value),
+        age:Number(q("multi-years").value)
+      };
+      q("multi-size-label").textContent=num(example.size)+" sq ft";
+      q("multi-beds-label").textContent=String(example.beds);
+      q("multi-years-label").textContent=String(example.age)+" years";
+      q("multi-beds").disabled=!q("multi-bed").checked;
+      q("multi-years").disabled=!q("multi-age").checked;
+      const newX=activeFeatures(example);
+      const prediction=multiModel.beta.reduce((a,b,i)=>a+b*newX[i],0);
+      q("multi-prediction").textContent=money(prediction*1000);
+    }
+    function drawMulti(){
+      const xs=multi.rows.map(activeFeatures),ys=multi.rows.map(h=>h.price/1000);
+      const model=normalFit(multi.rows,xs,ys);multiModel=model;
+      const view=graph("multi-chart",multiOpts);
+      const {X,Y,content}=view;
+      elem(content,"line",{x1:X(0),y1:Y(0),x2:X(800),y2:Y(800),stroke:"#15966b","stroke-width":3,"stroke-dasharray":"7 5"});
+      multi.rows.forEach((h,i)=>{
+        const px=model.fitted[i],ay=ys[i];
+        elem(content,"line",{x1:X(px),y1:Y(px),x2:X(px),y2:Y(ay),stroke:"#da842b","stroke-width":2.2});
+        if(i===multi.selected)elem(content,"circle",{cx:X(px),cy:Y(ay),r:12,fill:"none",stroke:"#153d6a","stroke-width":2});
+        const c=elem(content,"circle",{cx:X(px),cy:Y(ay),r:7.5,class:"demo-point",role:"button",tabindex:"0","aria-label":"House "+(i+1)+"; "+num(h.size)+" square feet; "+h.beds+" bedrooms; "+h.age+" years old; sold for "+money(h.price)});
+        elem(c,"title",{},"House "+(i+1)+" - "+num(h.size)+" sq ft - "+money(h.price));
+        c.addEventListener("click",()=>{multi.selected=i;drawMulti();});
+        c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();multi.selected=i;drawMulti();}});
+      });
+      const sel=multi.rows[multi.selected];
+      q("multi-selected").innerHTML="<strong>House "+(multi.selected+1)+"</strong> · "+num(sel.size)+" sq ft · "+sel.beds+" bedrooms · "+sel.age+" years old"+
+        "<br>Actual sale: <strong>"+money(sel.price)+"</strong> · Model predicts: <strong>"+money(model.fitted[multi.selected]*1000)+"</strong>"+
+        "<br>Residual: <strong>"+money(sel.price-model.fitted[multi.selected]*1000)+"</strong>";
+      q("multi-r2").textContent=fmt(model.r2);
+      q("multi-mae").textContent=money(model.mae*1000);
+      q("multi-count").textContent=String(xs[0].length-1);
+      let idx=1;
+      const cells=[
+        ["Starting value (intercept)",money(model.beta[0]*1000)],
+        ["Per additional square foot",money(model.beta[idx++])+"/sq ft"]
+      ];
+      if(q("multi-bed").checked)cells.push(["Per additional bedroom",money(model.beta[idx++]*1000)+"/bedroom"]);
+      if(q("multi-age").checked)cells.push(["Per additional year",money(model.beta[idx++]*100)+"/year"]);
+      const el=q("multi-coeffs");el.replaceChildren();
+      for(const [name,value] of cells){
+        const row=document.createElement("div");row.className="coeff-item";
+        const label=document.createElement("span");label.textContent=name;
+        const val=document.createElement("strong");val.textContent=value;
+        row.append(label,val);el.appendChild(row);
+      }
+      updateMultiPrediction();
+    }
+    q("multi-bed").addEventListener("change",drawMulti);
+    q("multi-age").addEventListener("change",drawMulti);
+    ["multi-size","multi-beds","multi-years"].forEach(id=>q(id).addEventListener("input",updateMultiPrediction));
+    q("multi-reset").addEventListener("click",()=>{
+      multi.rows=generateBaseMulti();multi.selected=0;
+      q("multi-bed").checked=true;q("multi-age").checked=true;
+      q("multi-size").value=2000;q("multi-beds").value=3;q("multi-years").value=12;drawMulti();
+    });
+    q("multi-generate").addEventListener("click",()=>{
+      multi.rows=generateBaseMulti().map(h=>({...h,price:h.price+Math.round((Math.random()-.5)*50000)}));
+      multi.selected=0;drawMulti();
+    });
+    drawMulti();
+
+    // Polynomial regression via least-squares: x is scaled to [0,1] for numerical stability.
+    const poly={rows:originals.poly.map(p=>({...p})),degree:2,selected:0,drag:-1,view:null};
+    const polyOpt={xmin:0,xmax:10,ymin:0,ymax:100,xticks:[0,2,4,6,8,10],yticks:[0,20,40,60,80,100],
+      xLabelTick:x=>String(x),yLabelTick:y=>String(y),xlabel:"Time spent studying (hours)",ylabel:"Exam score (points)"};
+    function polyModel(){
+      const features=poly.rows.map(p=>Array.from({length:poly.degree+1},(_,j)=>(p.x/10)**j));
+      const output=poly.rows.map(p=>p.y);
+      const result=normalFit(poly.rows,features,output);
+      const predict=x=>result.beta.reduce((s,b,j)=>s+b*(x/10)**j,0);
+      return {...result,predict};
+    }
+    function drawPoly(){
+      const model=polyModel();poly.view=graph("poly-chart",polyOpt);
+      const {X,Y,content,svg}=poly.view;
+      poly.rows.forEach(p=>{
+        elem(content,"line",{x1:X(p.x),x2:X(p.x),y1:Y(p.y),y2:Y(model.predict(p.x)),stroke:"#da842b","stroke-width":2.4});
+      });
+      let path="";
+      for(let i=0;i<=160;i++){
+        const h=i/16;
+        path+=(i===0?"M":"L")+fmt(X(h),2)+","+fmt(Y(model.predict(h)),2)+" ";
+      }
+      elem(content,"path",{d:path,fill:"none",stroke:"#15966b","stroke-width":3.5,"stroke-linecap":"round"});
+      poly.rows.forEach((p,i)=>{
+        if(i===poly.selected)elem(content,"circle",{cx:X(p.x),cy:Y(p.y),r:12,fill:"none",stroke:"#153d6a","stroke-width":2});
+        const dot=elem(content,"circle",{cx:X(p.x),cy:Y(p.y),r:8,tabindex:"0",role:"button",class:"demo-point","aria-label":"Student "+(i+1)+" studied "+fmt(p.x,1)+" hours, scored "+fmt(p.y,1)+" points. Arrow keys adjust score and hours."});
+        elem(dot,"title",{},"Student "+(i+1)+" | "+fmt(p.x,1)+" hours | score "+fmt(p.y,1));
+        dot.addEventListener("pointerdown",e=>{
+          e.preventDefault();poly.selected=i;poly.drag=i;svg.setPointerCapture(e.pointerId);drawPoly();
+        });
+        dot.addEventListener("keydown",e=>{
+          const steps={ArrowUp:[0,2],ArrowDown:[0,-2],ArrowLeft:[-.25,0],ArrowRight:[.25,0]};
+          if(!steps[e.key])return;e.preventDefault();
+          const [dx,dy]=steps[e.key];
+          poly.rows[i]={x:clamp(p.x+dx,0,10),y:clamp(p.y+dy,0,100)};
+          poly.selected=i;drawPoly();poly.view.content.querySelectorAll(".demo-point")[i].focus();
+        });
+      });
+      const selected=poly.rows[poly.selected];
+      q("poly-selected").innerHTML="<strong>Student "+(poly.selected+1)+"</strong> · Studied "+fmt(selected.x,1)+" hours · Actual score: <strong>"+fmt(selected.y,1)+"</strong>"+
+        "<br>Predicted score: <strong>"+fmt(model.predict(selected.x),1)+"</strong> · Residual: <strong>"+fmt(selected.y-model.predict(selected.x),1)+" points</strong>";
+      q("poly-degree-value").textContent=String(poly.degree);
+      q("poly-r2").textContent=fmt(model.r2);
+      q("poly-rmse").textContent=fmt(model.rmse,1);
+      const pieces=model.beta.map((b,j)=>{
+        const coefficient=b/10**j,term=j===0?"":j===1?"h":"h"+(j===2?"²":"³");
+        return {coefficient,term};
+      });
+      let equation="Score ≈ "+fmt(pieces[0].coefficient,1);
+      for(const p of pieces.slice(1))equation+=(p.coefficient<0?" − ":" + ")+fmt(Math.abs(p.coefficient),2)+p.term;
+      q("poly-equation").textContent=equation;
+      const h=Number(q("poly-hours").value);
+      q("poly-hours-label").textContent=fmt(h,1);
+      q("poly-prediction").textContent=fmt(model.predict(h),1)+" / 100";
+      document.querySelectorAll("[data-poly-degree]").forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.polyDegree)===poly.degree)));
+    }
+    q("poly-chart").addEventListener("pointermove",e=>{
+      if(poly.drag<0||!poly.view)return;
+      const p=toCoordinates(q("poly-chart"),e,poly.view);
+      if(!p)return;
+      // Keep study hours fixed during vertical dragging to make the error easier to interpret.
+      poly.rows[poly.drag].y=p.y;
+      drawPoly();
+    });
+    function stopPoly(e){if(poly.drag>=0){poly.drag=-1;if(q("poly-chart").hasPointerCapture(e.pointerId))q("poly-chart").releasePointerCapture(e.pointerId);}}
+    q("poly-chart").addEventListener("pointerup",stopPoly);
+    q("poly-chart").addEventListener("pointercancel",stopPoly);
+    document.querySelectorAll("[data-poly-degree]").forEach(b=>b.addEventListener("click",()=>{poly.degree=Number(b.dataset.polyDegree);drawPoly();}));
+    q("poly-hours").addEventListener("input",drawPoly);
+    q("poly-reset").addEventListener("click",()=>{poly.rows=originals.poly.map(p=>({...p}));poly.degree=2;poly.selected=0;q("poly-hours").value=5;drawPoly();});
+    q("poly-generate").addEventListener("click",()=>{
+      poly.rows=originals.poly.map(p=>({...p,y:clamp(p.y+(Math.random()-.5)*16,0,100)}));
+      poly.selected=0;drawPoly();
+    });
+    drawPoly();
+  })();
   </script>
 </body>
 </html>
